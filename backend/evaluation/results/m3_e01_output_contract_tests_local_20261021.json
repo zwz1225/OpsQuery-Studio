@@ -1,0 +1,76 @@
+{
+  "stage": "M3 E01 output contract local implementation checks",
+  "date": "2026-10-21",
+  "run_status": "failed",
+  "test_modules": [
+    "test_m3_output_contract",
+    "test_m2_development_diagnostics",
+    "test_m2_sql_repair",
+    "test_m2_intent_candidate",
+    "test_m2_intent_v2",
+    "test_m2_intent_v3",
+    "test_m2_intent_v4",
+    "test_m2_schema_coverage",
+    "test_m2_source_semantics",
+    "test_m2_native_replay",
+    "test_m2_units_context",
+    "test_m2_c_bird_runtime",
+    "test_m2_grain_diagnostics"
+  ],
+  "tests_run": 314,
+  "skipped": [
+    {
+      "test": "test_hard_supervisor_timeout (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    },
+    {
+      "test": "test_real_filesystem_network_process_and_env_isolation (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    },
+    {
+      "test": "test_real_indexer_builds_without_project_file_access (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    }
+  ],
+  "failures": [
+    {
+      "test": "test_two_real_reports_and_all_variants_have_exact_provenance (test_m2_units_context.ProvenanceTest)",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\tests\\test_m2_units_context.py\", line 221, in test_two_real_reports_and_all_variants_have_exact_provenance\n    self.assertTrue(all(current.get(name)==sha for name,sha in server['files'].items() if name not in changed_generation))\nAssertionError: False is not true\n"
+    },
+    {
+      "test": "test_added_audit_scripts_leave_producer_code_inventory_unchanged (test_m2_grain_diagnostics.CaptureProvenanceTest)",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\tests\\test_m2_grain_diagnostics.py\", line 119, in test_added_audit_scripts_leave_producer_code_inventory_unchanged\n    self.assertEqual(set(current),set(self.source['code_binding']['files']))\nAssertionError: Items in the first set but not the second:\n'evaluation/bird/output_contract.py'\n"
+    },
+    {
+      "test": "test_real_reports_select_exact_three_unchanged_captures (test_m2_grain_diagnostics.CaptureProvenanceTest)",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\tests\\test_m2_grain_diagnostics.py\", line 81, in test_real_reports_select_exact_three_unchanged_captures\n    p1,p2,p3=self.producer_patches()\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\tests\\test_m2_grain_diagnostics.py\", line 51, in producer_patches\n    self.assertEqual(set(current),set(saved))\nAssertionError: Items in the first set but not the second:\n'evaluation/bird/output_contract.py'\n"
+    }
+  ],
+  "errors": [
+    {
+      "test": "test_audit_executes_eight_raw_queries_without_semantic_rewrite_or_models (test_m2_intent_v2.CapturedTrajectoryTest)",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\tests\\test_m2_intent_v2.py\", line 200, in test_audit_executes_eight_raw_queries_without_semantic_rewrite_or_models\n    report,calls,registry=self.run_fake_audit()\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\tests\\test_m2_intent_v2.py\", line 196, in run_fake_audit\n    else:run_first_audit(self.e,BASE/'evaluation/results/m2_public_intent_diagnostics14_server.json',BASE/'evaluation/results/m2_public_intent_native14_server.json',None,report,registry_factory=Registry)\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\bird\\first_sql_audit.py\", line 63, in run_first_audit\n    source,pairs=first_captures(source_path,native_path,evidence)\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\bird\\first_sql_audit.py\", line 32, in first_captures\n    require(all(current['files'].get(k)==v for k,v in binding['files'].items() if k not in changed_generation),\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\scripts\\m2_b_common.py\", line 26, in require\n    raise PreparationError(message)\nscripts.m2_b_common.PreparationError: Execution/scoring/source code changed since captured first SQLs\n"
+    },
+    {
+      "test": "test_audit_failure_preserves_consumed_budget_and_closes_pools (test_m2_intent_v2.CapturedTrajectoryTest)",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\tests\\test_m2_intent_v2.py\", line 209, in test_audit_failure_preserves_consumed_budget_and_closes_pools\n    report,calls,registry=self.run_fake_audit(fail_second=True)\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\tests\\test_m2_intent_v2.py\", line 195, in run_fake_audit\n    run_first_audit(self.e,BASE/'evaluation/results/m2_public_intent_diagnostics14_server.json',BASE/'evaluation/results/m2_public_intent_native14_server.json',None,report,registry_factory=Registry)\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\bird\\first_sql_audit.py\", line 63, in run_first_audit\n    source,pairs=first_captures(source_path,native_path,evidence)\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\bird\\first_sql_audit.py\", line 32, in first_captures\n    require(all(current['files'].get(k)==v for k,v in binding['files'].items() if k not in changed_generation),\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\scripts\\m2_b_common.py\", line 26, in require\n    raise PreparationError(message)\nscripts.m2_b_common.PreparationError: Execution/scoring/source code changed since captured first SQLs\n"
+    },
+    {
+      "test": "test_first_capture_reads_exact_four_public_sqls_not_final_predictions (test_m2_intent_v2.CapturedTrajectoryTest)",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\tests\\test_m2_intent_v2.py\", line 163, in test_first_capture_reads_exact_four_public_sqls_not_final_predictions\n    source,pairs=first_captures(BASE/'evaluation/results/m2_public_intent_diagnostics14_server.json',BASE/'evaluation/results/m2_public_intent_native14_server.json',self.e)\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\bird\\first_sql_audit.py\", line 32, in first_captures\n    require(all(current['files'].get(k)==v for k,v in binding['files'].items() if k not in changed_generation),\n  File \"E:\\PythonLearn\\askdata_studio_ops_release\\backend\\scripts\\m2_b_common.py\", line 26, in require\n    raise PreparationError(message)\nscripts.m2_b_common.PreparationError: Execution/scoring/source code changed since captured first SQLs\n"
+    }
+  ],
+  "preserved_baseline_file_count": 143,
+  "preserved_baseline_verified": true,
+  "changed_frozen_execution_paths": [
+    "evaluation/bird/case_worker.py",
+    "evaluation/bird/diagnostic_runner.py"
+  ],
+  "protected_source_files_unchanged_count": 141,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "score_improvement_verified": false,
+  "formal_holdout_rerun": false,
+  "frozen_controller_or_scoring_changed": false,
+  "caveat": "Windows fake-broker tests exercise the real Agent loop, not Linux kernel isolation or PostgreSQL execution."
+}

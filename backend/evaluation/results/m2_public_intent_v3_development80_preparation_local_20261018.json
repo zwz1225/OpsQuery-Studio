@@ -1,0 +1,24 @@
+{
+  "stage": "M2 v3 development80 local readiness review",
+  "run_status": "complete",
+  "checks": {
+    "unchanged_v3_code_files": true,
+    "unchanged_policy": true,
+    "same_source": true,
+    "same_recorded_models": true,
+    "exact_eighty_original_order": true,
+    "eight_databases_ten_each": true
+  },
+  "case_list_sha256": "237b6f09f8b7ee9965f9e18b3ab2195a79b5ad949e55e6d56868a3266df29b10",
+  "baseline_report_sha256": "7f59478b5d589a49d85027e965e8b3596416ac998df4618c655984841fc8c01d",
+  "accepted_v3_diagnostic14_sha256": "5d08c78e4937f1f6cbd5fb6d8df61f76453cd1331f55fdec0fd64a0c43f55f84",
+  "baseline_pass_count": 34,
+  "baseline_case_count": 80,
+  "baseline_clarifications": 20,
+  "baseline_validation_failures": 2,
+  "runbook": "evaluation/M2_PUBLIC_INTENT_V3_DEVELOPMENT80_RUNBOOK.md",
+  "postgresql_connected": false,
+  "new_model_request_count": 0,
+  "candidate_code_modified": false,
+  "scope": "Local static readiness only; server command verifies its environment/model configuration and runner freshly verifies database."
+}

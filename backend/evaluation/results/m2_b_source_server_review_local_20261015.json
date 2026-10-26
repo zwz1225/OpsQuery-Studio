@@ -1,0 +1,127 @@
+{
+  "accepted_for_independent_initialization_implementation": true,
+  "column_type_counts": {
+    "BIGINT": 366,
+    "DATE": 19,
+    "REAL": 73,
+    "TEXT": 329,
+    "TIMESTAMPTZ": 11
+  },
+  "control_statement_count": 462,
+  "control_statement_hashes_and_classification_verified": true,
+  "copy_byte_ranges_valid_and_nonoverlapping": true,
+  "copy_headers_match_ddl_columns": true,
+  "cross_domain_foreign_keys_detected": 0,
+  "database_initialized": false,
+  "domain_statistics": [
+    {
+      "column_count": 89,
+      "database_id": "california_schools",
+      "source_row_count": 29941,
+      "table_count": 3
+    },
+    {
+      "column_count": 115,
+      "database_id": "card_games",
+      "source_row_count": 803445,
+      "table_count": 6
+    },
+    {
+      "column_count": 71,
+      "database_id": "codebase_community",
+      "source_row_count": 740646,
+      "table_count": 8
+    },
+    {
+      "column_count": 21,
+      "database_id": "debit_card_specializing",
+      "source_row_count": 423050,
+      "table_count": 5
+    },
+    {
+      "column_count": 199,
+      "database_id": "european_football_2",
+      "source_row_count": 222796,
+      "table_count": 7
+    },
+    {
+      "column_count": 55,
+      "database_id": "financial",
+      "source_row_count": 1079680,
+      "table_count": 8
+    },
+    {
+      "column_count": 94,
+      "database_id": "formula_1",
+      "source_row_count": 493257,
+      "table_count": 13
+    },
+    {
+      "column_count": 48,
+      "database_id": "student_club",
+      "source_row_count": 42511,
+      "table_count": 8
+    },
+    {
+      "column_count": 31,
+      "database_id": "superhero",
+      "source_row_count": 10614,
+      "table_count": 10
+    },
+    {
+      "column_count": 64,
+      "database_id": "thrombosis_prediction",
+      "source_row_count": 15252,
+      "table_count": 3
+    },
+    {
+      "column_count": 11,
+      "database_id": "toxicology",
+      "source_row_count": 36922,
+      "table_count": 4
+    }
+  ],
+  "foreign_key_count_checked": 87,
+  "gold_execution_verified": false,
+  "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede",
+  "manifest_byte_identical_to_frozen_spec": true,
+  "new_model_request_count": 0,
+  "next": "Implement guarded independent target/role initialization with fresh live checks; then controlled import and typed target validation",
+  "not_null_columns_with_source_nulls": 0,
+  "null_cell_count_source": 6143987,
+  "postgresql_connected_during_local_review": false,
+  "recorded_at": "2026-10-15T15:00:33.782821+00:00",
+  "run_status": "complete",
+  "scope": "Review of downloaded server source reports against local frozen specification; no live target queries or data import performed",
+  "server_preflight_v2_sha256": "b3e71673dee329a06f3e1f02b4d80385a98798eb0b2fe0a63ded2ef13de59a88",
+  "source_artifact_sha256": {
+    "import_manifest.json": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879",
+    "preparation_review.json": "35d54773a698b120c6836744b990f7c8559237f4ab43e5b0d7540d810c8cd864",
+    "source_preflight.json": "f33ed1e7c190205ab595966073e9cb4a4a51d57653f958cb2f1fb40bdb6a215d"
+  },
+  "source_directory": "m2_b_source_server_20261015",
+  "source_provenance_matches_frozen_lineage": true,
+  "stage": "M2 B server source preparation acceptance review",
+  "summary": {
+    "column_count": 798,
+    "control_statement_counts": {
+      "column_default": 24,
+      "constraint": 155,
+      "create_sequence": 24,
+      "create_table": 75,
+      "index": 25,
+      "owner": 99,
+      "search_path": 1,
+      "sequence_owned_by": 24,
+      "sequence_value": 24,
+      "session_setting": 11
+    },
+    "logical_database_count": 11,
+    "question_count": 500,
+    "sequence_count": 24,
+    "source_row_count": 3898114,
+    "table_count": 75
+  },
+  "target_and_query_roles_match_protocol": true,
+  "target_data_verified": false
+}

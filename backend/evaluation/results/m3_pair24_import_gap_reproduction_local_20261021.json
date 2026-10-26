@@ -1,0 +1,26 @@
+{
+  "stage": "M3 paired preflight import failure reproduction",
+  "run_status": "complete",
+  "checks": [
+    {
+      "side": "baseline",
+      "missing_asset": "data/databases/short_video_ops/_schema.json",
+      "before_exit": 1,
+      "after_exit": 0,
+      "static_context_passed": true,
+      "linux_dependency_gate_mocked_for_windows_test_only": true
+    },
+    {
+      "side": "candidate",
+      "missing_asset": "data/databases/short_video_ops/_schema.json",
+      "before_exit": 1,
+      "after_exit": 0,
+      "static_context_passed": true,
+      "linux_dependency_gate_mocked_for_windows_test_only": true
+    }
+  ],
+  "static_asset_sha256": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede",
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "root_cause": "Bundle omitted app.database import-time public Schema JSON; diagnostic_runner imports retrieval.graph via the retrieval package"
+}

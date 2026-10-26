@@ -1,0 +1,21 @@
+{
+  "stage": "M3 E01 pair24 offline local verification",
+  "run_status": "complete",
+  "started_at": "2026-10-21T10:06:54.404250+00:00",
+  "finished_at": "2026-10-21T10:09:44.834398+00:00",
+  "tests_run": 56,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "linux_live_verified": false,
+  "bundle_id": "f24a2863ab1d90c747d387350198cd70dda44f91561e1f6fce0eaee57fbd8bcf",
+  "tests_sha256": {
+    "test_m3_pair24_workflow.py": "c3e992fd97e01ffe467108ab51c258061f124dace6c9db8f77b7cbd182f71233",
+    "test_m3_output_contract.py": "497d94cff7f78fc04e78a7b8f5de6065d35892d27bdb28aa61b95169b15d61c7"
+  },
+  "log_sha256": "663be762f09762649eb4a130fc28cbc1e5037e2f332c77dc27e4f190fb08d7d7",
+  "failed_tests": [],
+  "previous_attempt": "Initial workflow run had 8 fixture errors (Namespace shadowed runner_args); fixed test helper naming. No live operations were run."
+}

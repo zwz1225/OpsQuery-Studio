@@ -1,0 +1,4548 @@
+{
+  "summary": {
+    "mode": "gold",
+    "case_count": 30,
+    "schema_recall": null,
+    "schema_precision": null,
+    "sql_execution_success_rate": 1.0,
+    "average_execution_ms": 11812.838,
+    "p95_execution_ms": 26178.679,
+    "result_accuracy": 1.0,
+    "result_scored_count": 30,
+    "strict_result_accuracy": 1.0,
+    "strict_scored_count": 30,
+    "unscored_count": 0,
+    "column_name_match_rate": 1.0,
+    "clarification_count": 0,
+    "error_count": 0,
+    "timeout_count": 0,
+    "connection_error_count": 0,
+    "model_request_attempt_count": 0,
+    "model_retry_count": 0,
+    "model_timeout_event_count": 0,
+    "model_connection_error_event_count": 0,
+    "result_accuracy_given_executed_sql": 1.0
+  },
+  "cases": [
+    {
+      "case_id": "GROWTH_OPS-007",
+      "scenario": "growth_ops",
+      "category": "趋势汇总",
+      "query_type": "日趋势",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "查看2026-01每天的激活用户数变化；请返回指标日期、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.growth_daily_metrics.metric_date",
+          "short_video_ops.growth_daily_metrics.activated_users"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT metric_date, SUM(activated_users) AS value FROM growth_daily_metrics WHERE strftime(metric_date, '%Y-%m') = '2026-01' GROUP BY 1 ORDER BY 1",
+        "execution_success": true,
+        "execution_ms": 3765.377
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\GROWTH_OPS-007_2be8f7065cd0.json",
+        "generated_result_rows": 31,
+        "gold_result_rows": 31
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-007",
+          "question": "查看2026-01每天的激活用户数变化；请返回指标日期、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+          "query_type": "日趋势"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT metric_date, SUM(activated_users) AS value FROM growth_daily_metrics WHERE strftime(metric_date, '%Y-%m') = '2026-01' GROUP BY 1 ORDER BY 1",
+          "success": true,
+          "execution_ms": 3765.377,
+          "result_rows": 31,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.growth_daily_metrics.metric_date",
+        "short_video_ops.growth_daily_metrics.activated_users"
+      ],
+      "generated_sql": "SELECT metric_date, SUM(activated_users) AS value FROM growth_daily_metrics WHERE strftime(metric_date, '%Y-%m') = '2026-01' GROUP BY 1 ORDER BY 1",
+      "sql_execution_success": true,
+      "execution_ms": 3765.377,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:GROWTH_OPS-007"
+    },
+    {
+      "case_id": "GROWTH_OPS-050",
+      "scenario": "growth_ops",
+      "category": "渠道与拉新",
+      "query_type": "渠道排行",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "2026-02Android端各渠道注册人数排行；请返回渠道名称、注册用户数；聚合口径：数量指标按对应业务记录计数；按核心指标从高到低展示。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.user_registrations.registered_at",
+          "short_video_ops.user_registrations.platform",
+          "short_video_ops.user_registrations.registration_id",
+          "short_video_ops.acquisition_channels.channel_name"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT c.channel_name, COUNT(r.registration_id) AS registrations FROM user_registrations r JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE strftime(r.registered_at,'%Y-%m')='2026-02' AND r.platform='Android' GROUP BY 1 ORDER BY 2 DESC,1",
+        "execution_success": true,
+        "execution_ms": 3715.48
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\GROWTH_OPS-050_e7156f483f07.json",
+        "generated_result_rows": 10,
+        "gold_result_rows": 10
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-050",
+          "question": "2026-02Android端各渠道注册人数排行；请返回渠道名称、注册用户数；聚合口径：数量指标按对应业务记录计数；按核心指标从高到低展示。",
+          "query_type": "渠道排行"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT c.channel_name, COUNT(r.registration_id) AS registrations FROM user_registrations r JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE strftime(r.registered_at,'%Y-%m')='2026-02' AND r.platform='Android' GROUP BY 1 ORDER BY 2 DESC,1",
+          "success": true,
+          "execution_ms": 3715.48,
+          "result_rows": 10,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.user_registrations.registered_at",
+        "short_video_ops.user_registrations.platform",
+        "short_video_ops.user_registrations.registration_id",
+        "short_video_ops.acquisition_channels.channel_name"
+      ],
+      "generated_sql": "SELECT c.channel_name, COUNT(r.registration_id) AS registrations FROM user_registrations r JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE strftime(r.registered_at,'%Y-%m')='2026-02' AND r.platform='Android' GROUP BY 1 ORDER BY 2 DESC,1",
+      "sql_execution_success": true,
+      "execution_ms": 3715.48,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:GROWTH_OPS-050"
+    },
+    {
+      "case_id": "GROWTH_OPS-051",
+      "scenario": "growth_ops",
+      "category": "激活与漏斗",
+      "query_type": "转化率",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "2026-01各渠道注册到激活的转化率；请返回渠道名称、注册用户数、激活用户数、激活率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.user_registrations.registered_at",
+          "short_video_ops.user_registrations.registration_id",
+          "short_video_ops.user_activations.is_activated",
+          "short_video_ops.acquisition_channels.channel_name"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT c.channel_name, COUNT(r.registration_id) AS registrations, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END) AS activated_users, ROUND(SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/NULLIF(COUNT(r.registration_id),0),4) AS activation_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE strftime(r.registered_at,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4 DESC,1",
+        "execution_success": true,
+        "execution_ms": 12217.064
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\GROWTH_OPS-051_5a3b951c1f0e.json",
+        "generated_result_rows": 10,
+        "gold_result_rows": 10
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-051",
+          "question": "2026-01各渠道注册到激活的转化率；请返回渠道名称、注册用户数、激活用户数、激活率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+          "query_type": "转化率"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT c.channel_name, COUNT(r.registration_id) AS registrations, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END) AS activated_users, ROUND(SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/NULLIF(COUNT(r.registration_id),0),4) AS activation_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE strftime(r.registered_at,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4 DESC,1",
+          "success": true,
+          "execution_ms": 12217.064,
+          "result_rows": 10,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.user_registrations.registered_at",
+        "short_video_ops.user_registrations.registration_id",
+        "short_video_ops.user_activations.is_activated",
+        "short_video_ops.acquisition_channels.channel_name"
+      ],
+      "generated_sql": "SELECT c.channel_name, COUNT(r.registration_id) AS registrations, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END) AS activated_users, ROUND(SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/NULLIF(COUNT(r.registration_id),0),4) AS activation_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE strftime(r.registered_at,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4 DESC,1",
+      "sql_execution_success": true,
+      "execution_ms": 12217.064,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:GROWTH_OPS-051"
+    },
+    {
+      "case_id": "GROWTH_OPS-075",
+      "scenario": "growth_ops",
+      "category": "激活与漏斗",
+      "query_type": "月度漏斗",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "统计2026-05注册的用户数、其中最终激活的用户数，以及注册到激活率；请返回月份、注册用户数、激活用户数、激活率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.user_registrations.registered_at",
+          "short_video_ops.user_registrations.registration_id",
+          "short_video_ops.user_activations.is_activated"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT '2026-05' AS month, COUNT(r.registration_id) AS registrations, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END) AS activated_users, ROUND(SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(r.registration_id),4) AS activation_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-05'",
+        "execution_success": true,
+        "execution_ms": 26178.679
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\GROWTH_OPS-075_d682f6df89e3.json",
+        "generated_result_rows": 1,
+        "gold_result_rows": 1
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-075",
+          "question": "统计2026-05注册的用户数、其中最终激活的用户数，以及注册到激活率；请返回月份、注册用户数、激活用户数、激活率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+          "query_type": "月度漏斗"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT '2026-05' AS month, COUNT(r.registration_id) AS registrations, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END) AS activated_users, ROUND(SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(r.registration_id),4) AS activation_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-05'",
+          "success": true,
+          "execution_ms": 26178.679,
+          "result_rows": 1,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.user_registrations.registered_at",
+        "short_video_ops.user_registrations.registration_id",
+        "short_video_ops.user_activations.is_activated"
+      ],
+      "generated_sql": "SELECT '2026-05' AS month, COUNT(r.registration_id) AS registrations, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END) AS activated_users, ROUND(SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(r.registration_id),4) AS activation_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-05'",
+      "sql_execution_success": true,
+      "execution_ms": 26178.679,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:GROWTH_OPS-075"
+    },
+    {
+      "case_id": "GROWTH_OPS-076",
+      "scenario": "growth_ops",
+      "category": "留存与活跃",
+      "query_type": "留存率",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "各渠道1日留存率排名；请返回渠道名称、观察用户数、留存率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按核心指标从高到低展示。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.user_retention.retention_day",
+          "short_video_ops.user_retention.is_retained",
+          "short_video_ops.acquisition_channels.channel_name"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT c.channel_name, COUNT(*) AS observed_users, ROUND(SUM(CASE WHEN r.is_retained THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS retention_rate FROM user_retention r JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE r.retention_day=1 GROUP BY 1 ORDER BY 3 DESC,1",
+        "execution_success": true,
+        "execution_ms": 4435.13
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\GROWTH_OPS-076_b9bc965cce3a.json",
+        "generated_result_rows": 10,
+        "gold_result_rows": 10
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-076",
+          "question": "各渠道1日留存率排名；请返回渠道名称、观察用户数、留存率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按核心指标从高到低展示。",
+          "query_type": "留存率"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT c.channel_name, COUNT(*) AS observed_users, ROUND(SUM(CASE WHEN r.is_retained THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS retention_rate FROM user_retention r JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE r.retention_day=1 GROUP BY 1 ORDER BY 3 DESC,1",
+          "success": true,
+          "execution_ms": 4435.13,
+          "result_rows": 10,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.user_retention.retention_day",
+        "short_video_ops.user_retention.is_retained",
+        "short_video_ops.acquisition_channels.channel_name"
+      ],
+      "generated_sql": "SELECT c.channel_name, COUNT(*) AS observed_users, ROUND(SUM(CASE WHEN r.is_retained THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS retention_rate FROM user_retention r JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE r.retention_day=1 GROUP BY 1 ORDER BY 3 DESC,1",
+      "sql_execution_success": true,
+      "execution_ms": 4435.13,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:GROWTH_OPS-076"
+    },
+    {
+      "case_id": "GROWTH_OPS-100",
+      "scenario": "growth_ops",
+      "category": "留存与活跃",
+      "query_type": "平台活跃",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "统计2026-05期间注册平台为iOS的用户产生的播放总次数除以去重用户数；请返回注册平台、人均播放次数；聚合口径：去重数量按对应实体唯一标识计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.user_registrations.registered_at",
+          "short_video_ops.user_registrations.platform",
+          "short_video_ops.user_daily_activity.play_count"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT 'iOS' AS platform, ROUND(SUM(a.play_count)*1.0/COUNT(DISTINCT a.user_id),2) AS plays_per_user FROM user_daily_activity a JOIN user_registrations r ON a.user_id=r.user_id WHERE r.platform='iOS' AND strftime(a.activity_date,'%Y-%m')='2026-05'",
+        "execution_success": true,
+        "execution_ms": 3887.055
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\GROWTH_OPS-100_e3dba08c99bc.json",
+        "generated_result_rows": 1,
+        "gold_result_rows": 1
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-100",
+          "question": "统计2026-05期间注册平台为iOS的用户产生的播放总次数除以去重用户数；请返回注册平台、人均播放次数；聚合口径：去重数量按对应实体唯一标识计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+          "query_type": "平台活跃"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT 'iOS' AS platform, ROUND(SUM(a.play_count)*1.0/COUNT(DISTINCT a.user_id),2) AS plays_per_user FROM user_daily_activity a JOIN user_registrations r ON a.user_id=r.user_id WHERE r.platform='iOS' AND strftime(a.activity_date,'%Y-%m')='2026-05'",
+          "success": true,
+          "execution_ms": 3887.055,
+          "result_rows": 1,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.user_registrations.registered_at",
+        "short_video_ops.user_registrations.platform",
+        "short_video_ops.user_daily_activity.play_count"
+      ],
+      "generated_sql": "SELECT 'iOS' AS platform, ROUND(SUM(a.play_count)*1.0/COUNT(DISTINCT a.user_id),2) AS plays_per_user FROM user_daily_activity a JOIN user_registrations r ON a.user_id=r.user_id WHERE r.platform='iOS' AND strftime(a.activity_date,'%Y-%m')='2026-05'",
+      "sql_execution_success": true,
+      "execution_ms": 3887.055,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:GROWTH_OPS-100"
+    },
+    {
+      "case_id": "GROWTH_OPS-102",
+      "scenario": "growth_ops",
+      "category": "用户分层与流失",
+      "query_type": "画像分布",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "用户按年龄段的分布；请返回年龄段、用户数；聚合口径：数量指标按对应业务记录计数。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.user_profiles.age_group",
+          "short_video_ops.user_profiles.user_id"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT age_group, COUNT(user_id) AS users FROM user_profiles GROUP BY 1 ORDER BY 2 DESC,1",
+        "execution_success": true,
+        "execution_ms": 14970.195
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\GROWTH_OPS-102_e35657357606.json",
+        "generated_result_rows": 6,
+        "gold_result_rows": 6
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-102",
+          "question": "用户按年龄段的分布；请返回年龄段、用户数；聚合口径：数量指标按对应业务记录计数。",
+          "query_type": "画像分布"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT age_group, COUNT(user_id) AS users FROM user_profiles GROUP BY 1 ORDER BY 2 DESC,1",
+          "success": true,
+          "execution_ms": 14970.195,
+          "result_rows": 6,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.user_profiles.age_group",
+        "short_video_ops.user_profiles.user_id"
+      ],
+      "generated_sql": "SELECT age_group, COUNT(user_id) AS users FROM user_profiles GROUP BY 1 ORDER BY 2 DESC,1",
+      "sql_execution_success": true,
+      "execution_ms": 14970.195,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:GROWTH_OPS-102"
+    },
+    {
+      "case_id": "GROWTH_OPS-125",
+      "scenario": "growth_ops",
+      "category": "用户分层与流失",
+      "query_type": "高价值用户",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "按生命周期快照中的参与度评分，查询华中评分最高的前10名用户；请返回用户ID、参与度评分；按核心指标从高到低展示；最多返回10行。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.user_profiles.region",
+          "short_video_ops.user_lifecycle_snapshots.user_id",
+          "short_video_ops.user_lifecycle_snapshots.engagement_score"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT l.user_id, l.engagement_score FROM user_lifecycle_snapshots l JOIN user_profiles p ON l.user_id=p.user_id WHERE p.region='华中' ORDER BY l.engagement_score DESC,l.user_id LIMIT 10",
+        "execution_success": true,
+        "execution_ms": 4136.779
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\GROWTH_OPS-125_f2df46a39632.json",
+        "generated_result_rows": 10,
+        "gold_result_rows": 10
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-125",
+          "question": "按生命周期快照中的参与度评分，查询华中评分最高的前10名用户；请返回用户ID、参与度评分；按核心指标从高到低展示；最多返回10行。",
+          "query_type": "高价值用户"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT l.user_id, l.engagement_score FROM user_lifecycle_snapshots l JOIN user_profiles p ON l.user_id=p.user_id WHERE p.region='华中' ORDER BY l.engagement_score DESC,l.user_id LIMIT 10",
+          "success": true,
+          "execution_ms": 4136.779,
+          "result_rows": 10,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.user_profiles.region",
+        "short_video_ops.user_lifecycle_snapshots.user_id",
+        "short_video_ops.user_lifecycle_snapshots.engagement_score"
+      ],
+      "generated_sql": "SELECT l.user_id, l.engagement_score FROM user_lifecycle_snapshots l JOIN user_profiles p ON l.user_id=p.user_id WHERE p.region='华中' ORDER BY l.engagement_score DESC,l.user_id LIMIT 10",
+      "sql_execution_success": true,
+      "execution_ms": 4136.779,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:GROWTH_OPS-125"
+    },
+    {
+      "case_id": "GROWTH_OPS-126",
+      "scenario": "growth_ops",
+      "category": "召回与目标",
+      "query_type": "召回转化",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "push触达方式的送达率、点击率和召回率；请返回触达方式、触达数量、送达率、点击率、召回率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.recall_touches.touch_channel",
+          "short_video_ops.recall_touches.delivered",
+          "short_video_ops.recall_touches.clicked",
+          "short_video_ops.recall_results.recalled"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT t.touch_channel, COUNT(*) AS touches, ROUND(SUM(CASE WHEN t.delivered THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS delivery_rate, ROUND(SUM(CASE WHEN t.clicked THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS click_rate, ROUND(SUM(CASE WHEN r.recalled THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS recall_rate FROM recall_touches t JOIN recall_results r ON t.touch_id=r.touch_id WHERE t.touch_channel='push' GROUP BY 1",
+        "execution_success": true,
+        "execution_ms": 5170.699
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\GROWTH_OPS-126_0686d31aecea.json",
+        "generated_result_rows": 1,
+        "gold_result_rows": 1
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-126",
+          "question": "push触达方式的送达率、点击率和召回率；请返回触达方式、触达数量、送达率、点击率、召回率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+          "query_type": "召回转化"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT t.touch_channel, COUNT(*) AS touches, ROUND(SUM(CASE WHEN t.delivered THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS delivery_rate, ROUND(SUM(CASE WHEN t.clicked THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS click_rate, ROUND(SUM(CASE WHEN r.recalled THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS recall_rate FROM recall_touches t JOIN recall_results r ON t.touch_id=r.touch_id WHERE t.touch_channel='push' GROUP BY 1",
+          "success": true,
+          "execution_ms": 5170.699,
+          "result_rows": 1,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.recall_touches.touch_channel",
+        "short_video_ops.recall_touches.delivered",
+        "short_video_ops.recall_touches.clicked",
+        "short_video_ops.recall_results.recalled"
+      ],
+      "generated_sql": "SELECT t.touch_channel, COUNT(*) AS touches, ROUND(SUM(CASE WHEN t.delivered THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS delivery_rate, ROUND(SUM(CASE WHEN t.clicked THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS click_rate, ROUND(SUM(CASE WHEN r.recalled THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS recall_rate FROM recall_touches t JOIN recall_results r ON t.touch_id=r.touch_id WHERE t.touch_channel='push' GROUP BY 1",
+      "sql_execution_success": true,
+      "execution_ms": 5170.699,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:GROWTH_OPS-126"
+    },
+    {
+      "case_id": "GROWTH_OPS-148",
+      "scenario": "growth_ops",
+      "category": "召回与目标",
+      "query_type": "目标差距",
+      "difficulty": "复杂",
+      "classic": false,
+      "query": "2026-03各渠道激活率实际值与目标差距；请返回渠道名称、实际比率、激活率目标、目标差距；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.growth_targets.target_month",
+          "short_video_ops.growth_targets.activation_rate_target",
+          "short_video_ops.user_registrations.registered_at",
+          "short_video_ops.user_activations.is_activated",
+          "short_video_ops.acquisition_channels.channel_name"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "WITH actual AS (SELECT r.channel_id, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(*) AS actual_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-03' GROUP BY 1) SELECT c.channel_name,ROUND(a.actual_rate,4) AS actual_rate,t.activation_rate_target, ROUND(a.actual_rate-t.activation_rate_target,4) AS gap FROM growth_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-03' ORDER BY gap DESC,1",
+        "execution_success": true,
+        "execution_ms": 5297.068
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\GROWTH_OPS-148_e4037da6d861.json",
+        "generated_result_rows": 10,
+        "gold_result_rows": 10
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-148",
+          "question": "2026-03各渠道激活率实际值与目标差距；请返回渠道名称、实际比率、激活率目标、目标差距；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+          "query_type": "目标差距"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "WITH actual AS (SELECT r.channel_id, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(*) AS actual_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-03' GROUP BY 1) SELECT c.channel_name,ROUND(a.actual_rate,4) AS actual_rate,t.activation_rate_target, ROUND(a.actual_rate-t.activation_rate_target,4) AS gap FROM growth_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-03' ORDER BY gap DESC,1",
+          "success": true,
+          "execution_ms": 5297.068,
+          "result_rows": 10,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.growth_targets.target_month",
+        "short_video_ops.growth_targets.activation_rate_target",
+        "short_video_ops.user_registrations.registered_at",
+        "short_video_ops.user_activations.is_activated",
+        "short_video_ops.acquisition_channels.channel_name"
+      ],
+      "generated_sql": "WITH actual AS (SELECT r.channel_id, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(*) AS actual_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-03' GROUP BY 1) SELECT c.channel_name,ROUND(a.actual_rate,4) AS actual_rate,t.activation_rate_target, ROUND(a.actual_rate-t.activation_rate_target,4) AS gap FROM growth_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-03' ORDER BY gap DESC,1",
+      "sql_execution_success": true,
+      "execution_ms": 5297.068,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:GROWTH_OPS-148"
+    },
+    {
+      "case_id": "CHANNEL_OPS-006",
+      "scenario": "channel_ops",
+      "category": "消耗趋势",
+      "query_type": "渠道趋势",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "信息流广告2026年各月广告消耗；请返回月份、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.acquisition_channels.channel_name",
+          "short_video_ops.ad_daily_stats.stat_date",
+          "short_video_ops.ad_daily_stats.spend"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT strftime(s.stat_date,'%Y-%m') AS month,ROUND(SUM(s.spend),2) spend FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE c.channel_name='信息流广告' GROUP BY 1 ORDER BY 1",
+        "execution_success": true,
+        "execution_ms": 20568.059
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CHANNEL_OPS-006_645fe8214a04.json",
+        "generated_result_rows": 8,
+        "gold_result_rows": 8
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "channel_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CHANNEL_OPS-006",
+          "question": "信息流广告2026年各月广告消耗；请返回月份、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+          "query_type": "渠道趋势"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_channel_ops",
+          "roles": [
+            "channel_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 16,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT strftime(s.stat_date,'%Y-%m') AS month,ROUND(SUM(s.spend),2) spend FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE c.channel_name='信息流广告' GROUP BY 1 ORDER BY 1",
+          "success": true,
+          "execution_ms": 20568.059,
+          "result_rows": 8,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.acquisition_channels.channel_name",
+        "short_video_ops.ad_daily_stats.stat_date",
+        "short_video_ops.ad_daily_stats.spend"
+      ],
+      "generated_sql": "SELECT strftime(s.stat_date,'%Y-%m') AS month,ROUND(SUM(s.spend),2) spend FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE c.channel_name='信息流广告' GROUP BY 1 ORDER BY 1",
+      "sql_execution_success": true,
+      "execution_ms": 20568.059,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CHANNEL_OPS-006"
+    },
+    {
+      "case_id": "CHANNEL_OPS-025",
+      "scenario": "channel_ops",
+      "category": "消耗趋势",
+      "query_type": "环比",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "截至2026-05各月广告消耗及环比变化；请返回月份、广告消耗、环比变化率；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按时间升序展示。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.ad_daily_stats.stat_date",
+          "short_video_ops.ad_daily_stats.spend"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "WITH m AS (SELECT strftime(stat_date,'%Y-%m') AS month,SUM(spend) spend FROM ad_daily_stats WHERE strftime(stat_date,'%Y-%m')<='2026-05' GROUP BY 1) SELECT month,ROUND(spend,2) spend,ROUND((spend-LAG(spend) OVER(ORDER BY month))/NULLIF(LAG(spend) OVER(ORDER BY month),0),4) mom FROM m ORDER BY month",
+        "execution_success": true,
+        "execution_ms": 8532.597
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CHANNEL_OPS-025_82400a4777e1.json",
+        "generated_result_rows": 5,
+        "gold_result_rows": 5
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "channel_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CHANNEL_OPS-025",
+          "question": "截至2026-05各月广告消耗及环比变化；请返回月份、广告消耗、环比变化率；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按时间升序展示。",
+          "query_type": "环比"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_channel_ops",
+          "roles": [
+            "channel_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 16,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "WITH m AS (SELECT strftime(stat_date,'%Y-%m') AS month,SUM(spend) spend FROM ad_daily_stats WHERE strftime(stat_date,'%Y-%m')<='2026-05' GROUP BY 1) SELECT month,ROUND(spend,2) spend,ROUND((spend-LAG(spend) OVER(ORDER BY month))/NULLIF(LAG(spend) OVER(ORDER BY month),0),4) mom FROM m ORDER BY month",
+          "success": true,
+          "execution_ms": 8532.597,
+          "result_rows": 5,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.ad_daily_stats.stat_date",
+        "short_video_ops.ad_daily_stats.spend"
+      ],
+      "generated_sql": "WITH m AS (SELECT strftime(stat_date,'%Y-%m') AS month,SUM(spend) spend FROM ad_daily_stats WHERE strftime(stat_date,'%Y-%m')<='2026-05' GROUP BY 1) SELECT month,ROUND(spend,2) spend,ROUND((spend-LAG(spend) OVER(ORDER BY month))/NULLIF(LAG(spend) OVER(ORDER BY month),0),4) mom FROM m ORDER BY month",
+      "sql_execution_success": true,
+      "execution_ms": 8532.597,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CHANNEL_OPS-025"
+    },
+    {
+      "case_id": "CHANNEL_OPS-026",
+      "scenario": "channel_ops",
+      "category": "曝光点击",
+      "query_type": "渠道效率",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "2026-01各渠道曝光、点击和点击率；请返回渠道名称、曝光量、点击数、点击率；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.ad_daily_stats.stat_date",
+          "short_video_ops.ad_daily_stats.impressions",
+          "short_video_ops.ad_daily_stats.clicks",
+          "short_video_ops.acquisition_channels.channel_name"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT c.channel_name,SUM(s.impressions) impressions,SUM(s.clicks) clicks, ROUND(SUM(s.clicks)*1.0/NULLIF(SUM(s.impressions),0),4) ctr FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4 DESC,1",
+        "execution_success": true,
+        "execution_ms": 14463.593
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CHANNEL_OPS-026_da54ed23cf89.json",
+        "generated_result_rows": 4,
+        "gold_result_rows": 4
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "channel_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CHANNEL_OPS-026",
+          "question": "2026-01各渠道曝光、点击和点击率；请返回渠道名称、曝光量、点击数、点击率；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+          "query_type": "渠道效率"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_channel_ops",
+          "roles": [
+            "channel_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 16,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT c.channel_name,SUM(s.impressions) impressions,SUM(s.clicks) clicks, ROUND(SUM(s.clicks)*1.0/NULLIF(SUM(s.impressions),0),4) ctr FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4 DESC,1",
+          "success": true,
+          "execution_ms": 14463.593,
+          "result_rows": 4,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.ad_daily_stats.stat_date",
+        "short_video_ops.ad_daily_stats.impressions",
+        "short_video_ops.ad_daily_stats.clicks",
+        "short_video_ops.acquisition_channels.channel_name"
+      ],
+      "generated_sql": "SELECT c.channel_name,SUM(s.impressions) impressions,SUM(s.clicks) clicks, ROUND(SUM(s.clicks)*1.0/NULLIF(SUM(s.impressions),0),4) ctr FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4 DESC,1",
+      "sql_execution_success": true,
+      "execution_ms": 14463.593,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CHANNEL_OPS-026"
+    },
+    {
+      "case_id": "CHANNEL_OPS-050",
+      "scenario": "channel_ops",
+      "category": "曝光点击",
+      "query_type": "点击成本",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "请汇总信息流广告的平均点击成本；请返回渠道名称、平均点击成本；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.acquisition_channels.channel_name",
+          "short_video_ops.ad_daily_stats.spend",
+          "short_video_ops.ad_daily_stats.clicks"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT c.channel_name,ROUND(SUM(s.spend)/NULLIF(SUM(s.clicks),0),4) cpc FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE c.channel_name='信息流广告' GROUP BY 1",
+        "execution_success": true,
+        "execution_ms": 18647.148
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CHANNEL_OPS-050_6702de4e7efa.json",
+        "generated_result_rows": 1,
+        "gold_result_rows": 1
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "channel_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CHANNEL_OPS-050",
+          "question": "请汇总信息流广告的平均点击成本；请返回渠道名称、平均点击成本；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+          "query_type": "点击成本"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_channel_ops",
+          "roles": [
+            "channel_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 16,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT c.channel_name,ROUND(SUM(s.spend)/NULLIF(SUM(s.clicks),0),4) cpc FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE c.channel_name='信息流广告' GROUP BY 1",
+          "success": true,
+          "execution_ms": 18647.148,
+          "result_rows": 1,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.acquisition_channels.channel_name",
+        "short_video_ops.ad_daily_stats.spend",
+        "short_video_ops.ad_daily_stats.clicks"
+      ],
+      "generated_sql": "SELECT c.channel_name,ROUND(SUM(s.spend)/NULLIF(SUM(s.clicks),0),4) cpc FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE c.channel_name='信息流广告' GROUP BY 1",
+      "sql_execution_success": true,
+      "execution_ms": 18647.148,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CHANNEL_OPS-050"
+    },
+    {
+      "case_id": "CHANNEL_OPS-051",
+      "scenario": "channel_ops",
+      "category": "转化成本",
+      "query_type": "渠道转化",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "2026-01各渠道转化数、转化率和CPA；请返回渠道名称、转化数、转化率、CPA；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.ad_daily_stats.stat_date",
+          "short_video_ops.ad_daily_stats.clicks",
+          "short_video_ops.ad_daily_stats.conversions",
+          "short_video_ops.ad_daily_stats.spend",
+          "short_video_ops.acquisition_channels.channel_name"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT c.channel_name,SUM(s.conversions) conversions, ROUND(SUM(s.conversions)*1.0/NULLIF(SUM(s.clicks),0),4) conversion_rate, ROUND(SUM(s.spend)/NULLIF(SUM(s.conversions),0),2) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4,1",
+        "execution_success": true,
+        "execution_ms": 13127.118
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CHANNEL_OPS-051_4f646c6a581d.json",
+        "generated_result_rows": 4,
+        "gold_result_rows": 4
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "channel_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CHANNEL_OPS-051",
+          "question": "2026-01各渠道转化数、转化率和CPA；请返回渠道名称、转化数、转化率、CPA；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+          "query_type": "渠道转化"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_channel_ops",
+          "roles": [
+            "channel_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 16,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT c.channel_name,SUM(s.conversions) conversions, ROUND(SUM(s.conversions)*1.0/NULLIF(SUM(s.clicks),0),4) conversion_rate, ROUND(SUM(s.spend)/NULLIF(SUM(s.conversions),0),2) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4,1",
+          "success": true,
+          "execution_ms": 13127.118,
+          "result_rows": 4,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.ad_daily_stats.stat_date",
+        "short_video_ops.ad_daily_stats.clicks",
+        "short_video_ops.ad_daily_stats.conversions",
+        "short_video_ops.ad_daily_stats.spend",
+        "short_video_ops.acquisition_channels.channel_name"
+      ],
+      "generated_sql": "SELECT c.channel_name,SUM(s.conversions) conversions, ROUND(SUM(s.conversions)*1.0/NULLIF(SUM(s.clicks),0),4) conversion_rate, ROUND(SUM(s.spend)/NULLIF(SUM(s.conversions),0),2) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4,1",
+      "sql_execution_success": true,
+      "execution_ms": 13127.118,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CHANNEL_OPS-051"
+    },
+    {
+      "case_id": "CHANNEL_OPS-080",
+      "scenario": "channel_ops",
+      "category": "计划账户",
+      "query_type": "计划状态",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "请分析统计active状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.ad_campaigns.status",
+          "short_video_ops.ad_campaigns.budget",
+          "short_video_ops.ad_campaigns.ad_campaign_id"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT status,COUNT(ad_campaign_id) campaigns,ROUND(SUM(budget),2) budget FROM ad_campaigns WHERE status='active' GROUP BY 1",
+        "execution_success": true,
+        "execution_ms": 12967.948
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CHANNEL_OPS-080_599ee55f6c7e.json",
+        "generated_result_rows": 1,
+        "gold_result_rows": 1
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "channel_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CHANNEL_OPS-080",
+          "question": "请分析统计active状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+          "query_type": "计划状态"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_channel_ops",
+          "roles": [
+            "channel_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 16,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT status,COUNT(ad_campaign_id) campaigns,ROUND(SUM(budget),2) budget FROM ad_campaigns WHERE status='active' GROUP BY 1",
+          "success": true,
+          "execution_ms": 12967.948,
+          "result_rows": 1,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.ad_campaigns.status",
+        "short_video_ops.ad_campaigns.budget",
+        "short_video_ops.ad_campaigns.ad_campaign_id"
+      ],
+      "generated_sql": "SELECT status,COUNT(ad_campaign_id) campaigns,ROUND(SUM(budget),2) budget FROM ad_campaigns WHERE status='active' GROUP BY 1",
+      "sql_execution_success": true,
+      "execution_ms": 12967.948,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CHANNEL_OPS-080"
+    },
+    {
+      "case_id": "CHANNEL_OPS-100",
+      "scenario": "channel_ops",
+      "category": "计划账户",
+      "query_type": "预算调整",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "请汇总预算调整原因为转化成本偏高的调整次数和平均幅度；请返回调整原因、调整次数、平均调整幅度；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.budget_adjustments.adjustment_reason",
+          "short_video_ops.budget_adjustments.previous_budget",
+          "short_video_ops.budget_adjustments.new_budget"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT adjustment_reason,COUNT(*) adjustments, ROUND(AVG(new_budget-previous_budget),2) avg_change FROM budget_adjustments WHERE adjustment_reason='转化成本偏高' GROUP BY 1",
+        "execution_success": true,
+        "execution_ms": 22867.119
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CHANNEL_OPS-100_58e04eab0bc5.json",
+        "generated_result_rows": 1,
+        "gold_result_rows": 1
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "channel_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CHANNEL_OPS-100",
+          "question": "请汇总预算调整原因为转化成本偏高的调整次数和平均幅度；请返回调整原因、调整次数、平均调整幅度；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+          "query_type": "预算调整"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_channel_ops",
+          "roles": [
+            "channel_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 16,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT adjustment_reason,COUNT(*) adjustments, ROUND(AVG(new_budget-previous_budget),2) avg_change FROM budget_adjustments WHERE adjustment_reason='转化成本偏高' GROUP BY 1",
+          "success": true,
+          "execution_ms": 22867.119,
+          "result_rows": 1,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.budget_adjustments.adjustment_reason",
+        "short_video_ops.budget_adjustments.previous_budget",
+        "short_video_ops.budget_adjustments.new_budget"
+      ],
+      "generated_sql": "SELECT adjustment_reason,COUNT(*) adjustments, ROUND(AVG(new_budget-previous_budget),2) avg_change FROM budget_adjustments WHERE adjustment_reason='转化成本偏高' GROUP BY 1",
+      "sql_execution_success": true,
+      "execution_ms": 22867.119,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CHANNEL_OPS-100"
+    },
+    {
+      "case_id": "CHANNEL_OPS-102",
+      "scenario": "channel_ops",
+      "category": "素材结构",
+      "query_type": "素材分布",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "图文创意的状态分布；请返回创意状态、创意数量；聚合口径：数量指标按对应业务记录计数。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.ad_creatives.creative_type",
+          "short_video_ops.ad_creatives.creative_status",
+          "short_video_ops.ad_creatives.creative_id"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT creative_status,COUNT(creative_id) creatives FROM ad_creatives WHERE creative_type='图文' GROUP BY 1 ORDER BY 2 DESC,1",
+        "execution_success": true,
+        "execution_ms": 4915.079
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CHANNEL_OPS-102_28c85598bf80.json",
+        "generated_result_rows": 2,
+        "gold_result_rows": 2
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "channel_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CHANNEL_OPS-102",
+          "question": "图文创意的状态分布；请返回创意状态、创意数量；聚合口径：数量指标按对应业务记录计数。",
+          "query_type": "素材分布"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_channel_ops",
+          "roles": [
+            "channel_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 16,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT creative_status,COUNT(creative_id) creatives FROM ad_creatives WHERE creative_type='图文' GROUP BY 1 ORDER BY 2 DESC,1",
+          "success": true,
+          "execution_ms": 4915.079,
+          "result_rows": 2,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.ad_creatives.creative_type",
+        "short_video_ops.ad_creatives.creative_status",
+        "short_video_ops.ad_creatives.creative_id"
+      ],
+      "generated_sql": "SELECT creative_status,COUNT(creative_id) creatives FROM ad_creatives WHERE creative_type='图文' GROUP BY 1 ORDER BY 2 DESC,1",
+      "sql_execution_success": true,
+      "execution_ms": 4915.079,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CHANNEL_OPS-102"
+    },
+    {
+      "case_id": "CHANNEL_OPS-126",
+      "scenario": "channel_ops",
+      "category": "归因与目标",
+      "query_type": "归因分布",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "last_click归因按渠道的用户数和平均置信度；请返回渠道名称、用户数、平均置信度；聚合口径：去重数量按对应实体唯一标识计数，平均指标取算术平均。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.channel_attributions.attribution_type",
+          "short_video_ops.channel_attributions.user_id",
+          "short_video_ops.channel_attributions.confidence_score",
+          "short_video_ops.acquisition_channels.channel_name"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT c.channel_name,COUNT(DISTINCT a.user_id) users,ROUND(AVG(a.confidence_score),4) avg_confidence FROM channel_attributions a JOIN acquisition_channels c ON a.channel_id=c.channel_id WHERE a.attribution_type='last_click' GROUP BY 1 ORDER BY 2 DESC,1",
+        "execution_success": true,
+        "execution_ms": 4592.412
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CHANNEL_OPS-126_9076855d120c.json",
+        "generated_result_rows": 4,
+        "gold_result_rows": 4
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "channel_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CHANNEL_OPS-126",
+          "question": "last_click归因按渠道的用户数和平均置信度；请返回渠道名称、用户数、平均置信度；聚合口径：去重数量按对应实体唯一标识计数，平均指标取算术平均。",
+          "query_type": "归因分布"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_channel_ops",
+          "roles": [
+            "channel_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 16,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT c.channel_name,COUNT(DISTINCT a.user_id) users,ROUND(AVG(a.confidence_score),4) avg_confidence FROM channel_attributions a JOIN acquisition_channels c ON a.channel_id=c.channel_id WHERE a.attribution_type='last_click' GROUP BY 1 ORDER BY 2 DESC,1",
+          "success": true,
+          "execution_ms": 4592.412,
+          "result_rows": 4,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.channel_attributions.attribution_type",
+        "short_video_ops.channel_attributions.user_id",
+        "short_video_ops.channel_attributions.confidence_score",
+        "short_video_ops.acquisition_channels.channel_name"
+      ],
+      "generated_sql": "SELECT c.channel_name,COUNT(DISTINCT a.user_id) users,ROUND(AVG(a.confidence_score),4) avg_confidence FROM channel_attributions a JOIN acquisition_channels c ON a.channel_id=c.channel_id WHERE a.attribution_type='last_click' GROUP BY 1 ORDER BY 2 DESC,1",
+      "sql_execution_success": true,
+      "execution_ms": 4592.412,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CHANNEL_OPS-126"
+    },
+    {
+      "case_id": "CHANNEL_OPS-136",
+      "scenario": "channel_ops",
+      "category": "归因与目标",
+      "query_type": "CPA目标",
+      "difficulty": "复杂",
+      "classic": false,
+      "query": "2026-01各渠道实际CPA与目标CPA差距；请返回渠道名称、实际CPA、目标CPA、目标差距；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.channel_targets.target_month",
+          "short_video_ops.channel_targets.target_cpa",
+          "short_video_ops.ad_daily_stats.spend",
+          "short_video_ops.ad_daily_stats.conversions",
+          "short_video_ops.acquisition_channels.channel_name"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "WITH actual AS (SELECT p.channel_id,SUM(s.spend)/NULLIF(SUM(s.conversions),0) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1) SELECT c.channel_name,ROUND(a.cpa,2) actual_cpa,t.target_cpa,ROUND(a.cpa-t.target_cpa,2) gap FROM channel_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-01' ORDER BY gap,1",
+        "execution_success": true,
+        "execution_ms": 20368.616
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CHANNEL_OPS-136_23b929064747.json",
+        "generated_result_rows": 4,
+        "gold_result_rows": 4
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "channel_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CHANNEL_OPS-136",
+          "question": "2026-01各渠道实际CPA与目标CPA差距；请返回渠道名称、实际CPA、目标CPA、目标差距；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+          "query_type": "CPA目标"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_channel_ops",
+          "roles": [
+            "channel_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 16,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "WITH actual AS (SELECT p.channel_id,SUM(s.spend)/NULLIF(SUM(s.conversions),0) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1) SELECT c.channel_name,ROUND(a.cpa,2) actual_cpa,t.target_cpa,ROUND(a.cpa-t.target_cpa,2) gap FROM channel_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-01' ORDER BY gap,1",
+          "success": true,
+          "execution_ms": 20368.616,
+          "result_rows": 4,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.channel_targets.target_month",
+        "short_video_ops.channel_targets.target_cpa",
+        "short_video_ops.ad_daily_stats.spend",
+        "short_video_ops.ad_daily_stats.conversions",
+        "short_video_ops.acquisition_channels.channel_name"
+      ],
+      "generated_sql": "WITH actual AS (SELECT p.channel_id,SUM(s.spend)/NULLIF(SUM(s.conversions),0) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1) SELECT c.channel_name,ROUND(a.cpa,2) actual_cpa,t.target_cpa,ROUND(a.cpa-t.target_cpa,2) gap FROM channel_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-01' ORDER BY gap,1",
+      "sql_execution_success": true,
+      "execution_ms": 20368.616,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CHANNEL_OPS-136"
+    },
+    {
+      "case_id": "CONTENT_OPS-002",
+      "scenario": "content_ops",
+      "category": "曝光播放",
+      "query_type": "月度趋势",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "2026-02每天的视频曝光量和播放量；请返回指标日期、曝光量、播放量；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.content_daily_metrics.metric_date",
+          "short_video_ops.content_daily_metrics.impressions",
+          "short_video_ops.content_daily_metrics.play_count"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT metric_date,SUM(impressions) impressions,SUM(play_count) plays FROM content_daily_metrics WHERE strftime(metric_date,'%Y-%m')='2026-02' GROUP BY 1 ORDER BY 1",
+        "execution_success": true,
+        "execution_ms": 6362.438
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CONTENT_OPS-002_dc8a60277368.json",
+        "generated_result_rows": 28,
+        "gold_result_rows": 28
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "content_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CONTENT_OPS-002",
+          "question": "2026-02每天的视频曝光量和播放量；请返回指标日期、曝光量、播放量；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+          "query_type": "月度趋势"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_content_ops",
+          "roles": [
+            "content_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 19,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT metric_date,SUM(impressions) impressions,SUM(play_count) plays FROM content_daily_metrics WHERE strftime(metric_date,'%Y-%m')='2026-02' GROUP BY 1 ORDER BY 1",
+          "success": true,
+          "execution_ms": 6362.438,
+          "result_rows": 28,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.content_daily_metrics.metric_date",
+        "short_video_ops.content_daily_metrics.impressions",
+        "short_video_ops.content_daily_metrics.play_count"
+      ],
+      "generated_sql": "SELECT metric_date,SUM(impressions) impressions,SUM(play_count) plays FROM content_daily_metrics WHERE strftime(metric_date,'%Y-%m')='2026-02' GROUP BY 1 ORDER BY 1",
+      "sql_execution_success": true,
+      "execution_ms": 6362.438,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CONTENT_OPS-002"
+    },
+    {
+      "case_id": "CONTENT_OPS-025",
+      "scenario": "content_ops",
+      "category": "曝光播放",
+      "query_type": "内容排行",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "体育类播放量最高的前10条内容；请返回内容标题、播放量；聚合口径：可加总指标按当前查询粒度求和；按核心指标从高到低展示；最多返回10行。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.content_categories.category_name",
+          "short_video_ops.contents.content_title",
+          "short_video_ops.content_daily_metrics.play_count"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT c.content_title,SUM(m.play_count) plays FROM content_daily_metrics m JOIN contents c ON m.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='体育' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+        "execution_success": true,
+        "execution_ms": 7725.804
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CONTENT_OPS-025_d78426bc8a91.json",
+        "generated_result_rows": 10,
+        "gold_result_rows": 10
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "content_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CONTENT_OPS-025",
+          "question": "体育类播放量最高的前10条内容；请返回内容标题、播放量；聚合口径：可加总指标按当前查询粒度求和；按核心指标从高到低展示；最多返回10行。",
+          "query_type": "内容排行"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_content_ops",
+          "roles": [
+            "content_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 19,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT c.content_title,SUM(m.play_count) plays FROM content_daily_metrics m JOIN contents c ON m.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='体育' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+          "success": true,
+          "execution_ms": 7725.804,
+          "result_rows": 10,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.content_categories.category_name",
+        "short_video_ops.contents.content_title",
+        "short_video_ops.content_daily_metrics.play_count"
+      ],
+      "generated_sql": "SELECT c.content_title,SUM(m.play_count) plays FROM content_daily_metrics m JOIN contents c ON m.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='体育' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+      "sql_execution_success": true,
+      "execution_ms": 7725.804,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CONTENT_OPS-025"
+    },
+    {
+      "case_id": "CONTENT_OPS-026",
+      "scenario": "content_ops",
+      "category": "观看互动",
+      "query_type": "观看质量",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "基于播放明细，计算搞笑类内容每次播放的平均观看时长和平均完播率；请返回内容分类、平均观看时长、平均完播率；聚合口径：平均指标取算术平均。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.content_categories.category_name",
+          "short_video_ops.video_plays.watch_seconds",
+          "short_video_ops.video_plays.completion_rate"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT cat.category_name,ROUND(AVG(p.watch_seconds),2) avg_watch_seconds, ROUND(AVG(p.completion_rate),4) avg_completion_rate FROM video_plays p JOIN contents c ON p.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='搞笑' GROUP BY 1",
+        "execution_success": true,
+        "execution_ms": 29898.09
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CONTENT_OPS-026_21cb57a5b109.json",
+        "generated_result_rows": 1,
+        "gold_result_rows": 1
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "content_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CONTENT_OPS-026",
+          "question": "基于播放明细，计算搞笑类内容每次播放的平均观看时长和平均完播率；请返回内容分类、平均观看时长、平均完播率；聚合口径：平均指标取算术平均。",
+          "query_type": "观看质量"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_content_ops",
+          "roles": [
+            "content_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 19,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT cat.category_name,ROUND(AVG(p.watch_seconds),2) avg_watch_seconds, ROUND(AVG(p.completion_rate),4) avg_completion_rate FROM video_plays p JOIN contents c ON p.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='搞笑' GROUP BY 1",
+          "success": true,
+          "execution_ms": 29898.09,
+          "result_rows": 1,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.content_categories.category_name",
+        "short_video_ops.video_plays.watch_seconds",
+        "short_video_ops.video_plays.completion_rate"
+      ],
+      "generated_sql": "SELECT cat.category_name,ROUND(AVG(p.watch_seconds),2) avg_watch_seconds, ROUND(AVG(p.completion_rate),4) avg_completion_rate FROM video_plays p JOIN contents c ON p.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='搞笑' GROUP BY 1",
+      "sql_execution_success": true,
+      "execution_ms": 29898.09,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CONTENT_OPS-026"
+    },
+    {
+      "case_id": "CONTENT_OPS-050",
+      "scenario": "content_ops",
+      "category": "观看互动",
+      "query_type": "完播排行",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "2026-05平均完播率最高的前10条内容；请返回内容标题、完播率；聚合口径：平均指标取算术平均；按核心指标从高到低展示；最多返回10行。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.content_daily_metrics.metric_date",
+          "short_video_ops.content_daily_metrics.completion_rate",
+          "short_video_ops.contents.content_title"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT c.content_title,ROUND(AVG(m.completion_rate),4) completion_rate FROM content_daily_metrics m JOIN contents c ON m.content_id=c.content_id WHERE strftime(m.metric_date,'%Y-%m')='2026-05' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+        "execution_success": true,
+        "execution_ms": 8816.416
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CONTENT_OPS-050_fb2aeebece35.json",
+        "generated_result_rows": 10,
+        "gold_result_rows": 10
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "content_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CONTENT_OPS-050",
+          "question": "2026-05平均完播率最高的前10条内容；请返回内容标题、完播率；聚合口径：平均指标取算术平均；按核心指标从高到低展示；最多返回10行。",
+          "query_type": "完播排行"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_content_ops",
+          "roles": [
+            "content_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 19,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT c.content_title,ROUND(AVG(m.completion_rate),4) completion_rate FROM content_daily_metrics m JOIN contents c ON m.content_id=c.content_id WHERE strftime(m.metric_date,'%Y-%m')='2026-05' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+          "success": true,
+          "execution_ms": 8816.416,
+          "result_rows": 10,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.content_daily_metrics.metric_date",
+        "short_video_ops.content_daily_metrics.completion_rate",
+        "short_video_ops.contents.content_title"
+      ],
+      "generated_sql": "SELECT c.content_title,ROUND(AVG(m.completion_rate),4) completion_rate FROM content_daily_metrics m JOIN contents c ON m.content_id=c.content_id WHERE strftime(m.metric_date,'%Y-%m')='2026-05' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+      "sql_execution_success": true,
+      "execution_ms": 8816.416,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CONTENT_OPS-050"
+    },
+    {
+      "case_id": "CONTENT_OPS-052",
+      "scenario": "content_ops",
+      "category": "分类内容",
+      "query_type": "内容供给",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "生活类内容数量和平均视频时长；请返回内容分类、内容数量、平均视频时长；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.content_categories.category_name",
+          "short_video_ops.contents.content_id",
+          "short_video_ops.contents.duration_seconds"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT cat.category_name,COUNT(c.content_id) contents,ROUND(AVG(c.duration_seconds),2) avg_duration_seconds FROM contents c JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='生活' GROUP BY 1",
+        "execution_success": true,
+        "execution_ms": 12258.397
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CONTENT_OPS-052_530dde54791b.json",
+        "generated_result_rows": 1,
+        "gold_result_rows": 1
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "content_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CONTENT_OPS-052",
+          "question": "生活类内容数量和平均视频时长；请返回内容分类、内容数量、平均视频时长；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+          "query_type": "内容供给"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_content_ops",
+          "roles": [
+            "content_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 19,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT cat.category_name,COUNT(c.content_id) contents,ROUND(AVG(c.duration_seconds),2) avg_duration_seconds FROM contents c JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='生活' GROUP BY 1",
+          "success": true,
+          "execution_ms": 12258.397,
+          "result_rows": 1,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.content_categories.category_name",
+        "short_video_ops.contents.content_id",
+        "short_video_ops.contents.duration_seconds"
+      ],
+      "generated_sql": "SELECT cat.category_name,COUNT(c.content_id) contents,ROUND(AVG(c.duration_seconds),2) avg_duration_seconds FROM contents c JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='生活' GROUP BY 1",
+      "sql_execution_success": true,
+      "execution_ms": 12258.397,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CONTENT_OPS-052"
+    },
+    {
+      "case_id": "CONTENT_OPS-077",
+      "scenario": "content_ops",
+      "category": "创作者",
+      "query_type": "创作者分层",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "成长级创作者数量和状态分布；请返回创作者状态、创作者数量；聚合口径：数量指标按对应业务记录计数。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.creators.creator_level",
+          "short_video_ops.creators.creator_status",
+          "short_video_ops.creators.creator_id"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT creator_status,COUNT(creator_id) creators FROM creators WHERE creator_level='成长' GROUP BY 1 ORDER BY 2 DESC,1",
+        "execution_success": true,
+        "execution_ms": 19417.071
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CONTENT_OPS-077_29ed4fa046fa.json",
+        "generated_result_rows": 3,
+        "gold_result_rows": 3
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "content_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CONTENT_OPS-077",
+          "question": "成长级创作者数量和状态分布；请返回创作者状态、创作者数量；聚合口径：数量指标按对应业务记录计数。",
+          "query_type": "创作者分层"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_content_ops",
+          "roles": [
+            "content_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 19,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT creator_status,COUNT(creator_id) creators FROM creators WHERE creator_level='成长' GROUP BY 1 ORDER BY 2 DESC,1",
+          "success": true,
+          "execution_ms": 19417.071,
+          "result_rows": 3,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.creators.creator_level",
+        "short_video_ops.creators.creator_status",
+        "short_video_ops.creators.creator_id"
+      ],
+      "generated_sql": "SELECT creator_status,COUNT(creator_id) creators FROM creators WHERE creator_level='成长' GROUP BY 1 ORDER BY 2 DESC,1",
+      "sql_execution_success": true,
+      "execution_ms": 19417.071,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CONTENT_OPS-077"
+    },
+    {
+      "case_id": "CONTENT_OPS-100",
+      "scenario": "content_ops",
+      "category": "创作者",
+      "query_type": "互动质量",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "请汇总查询2026年8月新星级创作者的每日互动率算术平均值前10名；请返回创作者名称、互动率；聚合口径：平均指标取算术平均；按核心指标从高到低展示；最多返回10行。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.creator_daily_metrics.metric_date",
+          "short_video_ops.creator_daily_metrics.interaction_rate",
+          "short_video_ops.creators.creator_name",
+          "short_video_ops.creators.creator_level"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT c.creator_name,ROUND(AVG(m.interaction_rate),4) interaction_rate FROM creator_daily_metrics m JOIN creators c ON m.creator_id=c.creator_id WHERE strftime(m.metric_date,'%Y-%m')='2026-08' AND c.creator_level='新星' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+        "execution_success": true,
+        "execution_ms": 5181.187
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CONTENT_OPS-100_2e60b17e1711.json",
+        "generated_result_rows": 10,
+        "gold_result_rows": 10
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "content_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CONTENT_OPS-100",
+          "question": "请汇总查询2026年8月新星级创作者的每日互动率算术平均值前10名；请返回创作者名称、互动率；聚合口径：平均指标取算术平均；按核心指标从高到低展示；最多返回10行。",
+          "query_type": "互动质量"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_content_ops",
+          "roles": [
+            "content_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 19,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT c.creator_name,ROUND(AVG(m.interaction_rate),4) interaction_rate FROM creator_daily_metrics m JOIN creators c ON m.creator_id=c.creator_id WHERE strftime(m.metric_date,'%Y-%m')='2026-08' AND c.creator_level='新星' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+          "success": true,
+          "execution_ms": 5181.187,
+          "result_rows": 10,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.creator_daily_metrics.metric_date",
+        "short_video_ops.creator_daily_metrics.interaction_rate",
+        "short_video_ops.creators.creator_name",
+        "short_video_ops.creators.creator_level"
+      ],
+      "generated_sql": "SELECT c.creator_name,ROUND(AVG(m.interaction_rate),4) interaction_rate FROM creator_daily_metrics m JOIN creators c ON m.creator_id=c.creator_id WHERE strftime(m.metric_date,'%Y-%m')='2026-08' AND c.creator_level='新星' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+      "sql_execution_success": true,
+      "execution_ms": 5181.187,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CONTENT_OPS-100"
+    },
+    {
+      "case_id": "CONTENT_OPS-101",
+      "scenario": "content_ops",
+      "category": "标签热点",
+      "query_type": "标签分布",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "content类型内容标签的使用次数；请返回标签名称、使用次数；聚合口径：数量指标按对应业务记录计数。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.content_tags.tag_type",
+          "short_video_ops.content_tags.tag_name",
+          "short_video_ops.content_tag_relations.content_id"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT t.tag_name,COUNT(r.content_id) uses FROM content_tags t JOIN content_tag_relations r ON t.content_tag_id=r.content_tag_id WHERE t.tag_type='content' GROUP BY 1 ORDER BY 2 DESC,1",
+        "execution_success": true,
+        "execution_ms": 5083.774
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CONTENT_OPS-101_a7501d58fca2.json",
+        "generated_result_rows": 4,
+        "gold_result_rows": 4
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "content_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CONTENT_OPS-101",
+          "question": "content类型内容标签的使用次数；请返回标签名称、使用次数；聚合口径：数量指标按对应业务记录计数。",
+          "query_type": "标签分布"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_content_ops",
+          "roles": [
+            "content_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 19,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT t.tag_name,COUNT(r.content_id) uses FROM content_tags t JOIN content_tag_relations r ON t.content_tag_id=r.content_tag_id WHERE t.tag_type='content' GROUP BY 1 ORDER BY 2 DESC,1",
+          "success": true,
+          "execution_ms": 5083.774,
+          "result_rows": 4,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.content_tags.tag_type",
+        "short_video_ops.content_tags.tag_name",
+        "short_video_ops.content_tag_relations.content_id"
+      ],
+      "generated_sql": "SELECT t.tag_name,COUNT(r.content_id) uses FROM content_tags t JOIN content_tag_relations r ON t.content_tag_id=r.content_tag_id WHERE t.tag_type='content' GROUP BY 1 ORDER BY 2 DESC,1",
+      "sql_execution_success": true,
+      "execution_ms": 5083.774,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CONTENT_OPS-101"
+    },
+    {
+      "case_id": "CONTENT_OPS-125",
+      "scenario": "content_ops",
+      "category": "标签热点",
+      "query_type": "热点加热",
+      "difficulty": "简单",
+      "classic": false,
+      "query": "流量加热系数至少3.0的热点内容数量和平均排名；请返回最低流量加热系数、内容数量、平均排名；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均；按核心指标从高到低展示。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.topic_content_relations.traffic_boost",
+          "short_video_ops.topic_content_relations.content_id",
+          "short_video_ops.topic_content_relations.ranking"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT 3.0 min_traffic_boost,COUNT(content_id) contents,ROUND(AVG(ranking),2) avg_ranking FROM topic_content_relations WHERE traffic_boost>=3.0",
+        "execution_success": true,
+        "execution_ms": 15988.132
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CONTENT_OPS-125_7f1d15c4f87b.json",
+        "generated_result_rows": 1,
+        "gold_result_rows": 1
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "content_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CONTENT_OPS-125",
+          "question": "流量加热系数至少3.0的热点内容数量和平均排名；请返回最低流量加热系数、内容数量、平均排名；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均；按核心指标从高到低展示。",
+          "query_type": "热点加热"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_content_ops",
+          "roles": [
+            "content_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 19,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT 3.0 min_traffic_boost,COUNT(content_id) contents,ROUND(AVG(ranking),2) avg_ranking FROM topic_content_relations WHERE traffic_boost>=3.0",
+          "success": true,
+          "execution_ms": 15988.132,
+          "result_rows": 1,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.topic_content_relations.traffic_boost",
+        "short_video_ops.topic_content_relations.content_id",
+        "short_video_ops.topic_content_relations.ranking"
+      ],
+      "generated_sql": "SELECT 3.0 min_traffic_boost,COUNT(content_id) contents,ROUND(AVG(ranking),2) avg_ranking FROM topic_content_relations WHERE traffic_boost>=3.0",
+      "sql_execution_success": true,
+      "execution_ms": 15988.132,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CONTENT_OPS-125"
+    },
+    {
+      "case_id": "CONTENT_OPS-150",
+      "scenario": "content_ops",
+      "category": "审核举报",
+      "query_type": "审核方式",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "请汇总human审核方式的通过率和驳回率；请返回审核方式、审核数量、通过率、驳回率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.content_audits.review_mode",
+          "short_video_ops.content_audits.audit_status"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT review_mode,COUNT(*) audits, ROUND(SUM(CASE WHEN audit_status='approved' THEN 1 ELSE 0 END)*1.0/COUNT(*),4) approval_rate, ROUND(SUM(CASE WHEN audit_status='rejected' THEN 1 ELSE 0 END)*1.0/COUNT(*),4) rejection_rate FROM content_audits WHERE review_mode='human' GROUP BY 1",
+        "execution_success": true,
+        "execution_ms": 18830.61
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\CONTENT_OPS-150_a4e82dc8abf7.json",
+        "generated_result_rows": 1,
+        "gold_result_rows": 1
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "content_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CONTENT_OPS-150",
+          "question": "请汇总human审核方式的通过率和驳回率；请返回审核方式、审核数量、通过率、驳回率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+          "query_type": "审核方式"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_content_ops",
+          "roles": [
+            "content_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 19,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT review_mode,COUNT(*) audits, ROUND(SUM(CASE WHEN audit_status='approved' THEN 1 ELSE 0 END)*1.0/COUNT(*),4) approval_rate, ROUND(SUM(CASE WHEN audit_status='rejected' THEN 1 ELSE 0 END)*1.0/COUNT(*),4) rejection_rate FROM content_audits WHERE review_mode='human' GROUP BY 1",
+          "success": true,
+          "execution_ms": 18830.61,
+          "result_rows": 1,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.content_audits.review_mode",
+        "short_video_ops.content_audits.audit_status"
+      ],
+      "generated_sql": "SELECT review_mode,COUNT(*) audits, ROUND(SUM(CASE WHEN audit_status='approved' THEN 1 ELSE 0 END)*1.0/COUNT(*),4) approval_rate, ROUND(SUM(CASE WHEN audit_status='rejected' THEN 1 ELSE 0 END)*1.0/COUNT(*),4) rejection_rate FROM content_audits WHERE review_mode='human' GROUP BY 1",
+      "sql_execution_success": true,
+      "execution_ms": 18830.61,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+      "trace_id": "37ea81bf97314815b63477cc5a1bbdf1:CONTENT_OPS-150"
+    }
+  ],
+  "run_manifest": {
+    "manifest_version": 1,
+    "mode": "gold",
+    "scope": "all",
+    "dataset": {
+      "source": "evaluation/cases/all_cases.jsonl",
+      "case_list": "evaluation/cases/phase83_validation.json",
+      "case_ids": [
+        "GROWTH_OPS-007",
+        "GROWTH_OPS-050",
+        "GROWTH_OPS-051",
+        "GROWTH_OPS-075",
+        "GROWTH_OPS-076",
+        "GROWTH_OPS-100",
+        "GROWTH_OPS-102",
+        "GROWTH_OPS-125",
+        "GROWTH_OPS-126",
+        "GROWTH_OPS-148",
+        "CHANNEL_OPS-006",
+        "CHANNEL_OPS-025",
+        "CHANNEL_OPS-026",
+        "CHANNEL_OPS-050",
+        "CHANNEL_OPS-051",
+        "CHANNEL_OPS-080",
+        "CHANNEL_OPS-100",
+        "CHANNEL_OPS-102",
+        "CHANNEL_OPS-126",
+        "CHANNEL_OPS-136",
+        "CONTENT_OPS-002",
+        "CONTENT_OPS-025",
+        "CONTENT_OPS-026",
+        "CONTENT_OPS-050",
+        "CONTENT_OPS-052",
+        "CONTENT_OPS-077",
+        "CONTENT_OPS-100",
+        "CONTENT_OPS-101",
+        "CONTENT_OPS-125",
+        "CONTENT_OPS-150"
+      ],
+      "version": "d8b9832134cebdab2f270a03c78d4722b8e50f8b9cb18f44478fd43b410c5b59"
+    },
+    "versions": {
+      "data": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+      "schema": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede",
+      "application": "df84a6e587ab0ecc565092fa596c3bdd5298fd1250c59102a1f055e7cc8b2496",
+      "evaluator": "658828ce736b51b8b678864df31eeddb01ffadf63207a8713bd26e6068ad42da",
+      "evaluation_code": "d72330ccb5e8809d9e0c0309190404d2fcb6c3bf0506e6676c4ff94606d2033d"
+    },
+    "config": {
+      "api_key_configured": false,
+      "llm_model": "qwen-plus",
+      "llm_enable_thinking": false,
+      "embedding_model": "text-embedding-v4",
+      "embedding_dimensions": 1024,
+      "rerank_model": "qwen3-rerank",
+      "semantic_fallbacks": false,
+      "route_availability_fallback": "direct_response_no_database",
+      "schema_recall_threshold": 0.55,
+      "bm25_top_k": 30,
+      "dense_top_k": 30,
+      "rrf_top_k": 40,
+      "max_schema_fields": 20,
+      "time_field_supplement": {
+        "enabled": false,
+        "max_extra_fields": 2,
+        "max_total_fields": 22
+      },
+      "max_saved_memories": 20,
+      "mcp_max_tool_calls": 3,
+      "short_term_memory": {
+        "summary_enabled": true,
+        "summary_trigger_tokens": 12000,
+        "summary_batch_tokens": 6000,
+        "min_recent_turns": 5,
+        "archive_enabled": false,
+        "table_row_limit": 50
+      },
+      "route_context_turns": 6,
+      "llm_temperature": 0.0,
+      "llm_timeout": 60,
+      "llm_max_retries": 2,
+      "workers": 1,
+      "user_roles": [
+        "demo_channel_ops",
+        "demo_content_ops",
+        "demo_growth_ops"
+      ],
+      "evaluation_date": "2026-09-29"
+    },
+    "run_id": "37ea81bf97314815b63477cc5a1bbdf1",
+    "created_at": "2026-09-29T09:06:30.456028Z",
+    "fingerprint": "54d64d75a2df0d4542283b535e779046a5f64e3ad6d22bbc1ece55a0f751ab6f"
+  },
+  "run_status": "complete"
+}

@@ -1,0 +1,93 @@
+{
+  "stage": "M1 D2 runtime SQL implementation and local compatibility verification",
+  "recorded_at": "2026-10-10T10:13:57.824245+00:00",
+  "new_model_request_count": 0,
+  "remote_postgresql_connected": false,
+  "case_count": 430,
+  "specialized_test_count": 23,
+  "scope": "Local code regression and DuckDB compatibility. PostgreSQL contracts use explicit test doubles; no remote PostgreSQL or live model acceptance.",
+  "all_430_duckdb_gold_call_validation": {
+    "statuses": {
+      "PASS": 430
+    },
+    "blocked_cases": [],
+    "sql_executed": false,
+    "purpose": "Parser, namespaces, application ACL and full runtime column checks; not result scoring."
+  },
+  "actual_duckdb_source": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "actual_duckdb_mcp_agent_smoke": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "execution_success": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "sql_validation_status": "PASS",
+      "constraint_validation_status": "PASS",
+      "metric_validation_error_count": 0,
+      "runtime_shared": true,
+      "actual_sql_unchanged": true,
+      "decision_source": "fixed local stub, not a model API",
+      "simulated_model_decision_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-069",
+      "execution_success": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "sql_validation_status": "PASS",
+      "constraint_validation_status": "PASS",
+      "metric_validation_error_count": 0,
+      "runtime_shared": true,
+      "actual_sql_unchanged": true,
+      "decision_source": "fixed local stub, not a model API",
+      "simulated_model_decision_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-029",
+      "execution_success": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "sql_validation_status": "PASS",
+      "constraint_validation_status": "PASS",
+      "metric_validation_error_count": 0,
+      "runtime_shared": true,
+      "actual_sql_unchanged": true,
+      "decision_source": "fixed local stub, not a model API",
+      "simulated_model_decision_count": 1
+    }
+  ],
+  "source_data_version_preserved": true,
+  "original_cases_sha256": "0eb11d55d07cbcc8926b4c5de6657c1f897e7559387cfb5f5c884ef20ec9e6ec",
+  "original_cases_preserved": true,
+  "c3_raw_report_sha256": "2cd9a7b9ad94300b36a9494b22a76e28db2d64a91c8d23835c96e982e6ea7166",
+  "c3_raw_report_preserved": true,
+  "run_status": "complete",
+  "full_regression": {
+    "stage": "M1 D2 full local code regression",
+    "recorded_at": "2026-10-10T10:14:01.137353+00:00",
+    "run_status": "complete",
+    "test_count": 427,
+    "failure_count": 0,
+    "error_count": 0,
+    "skipped_count": 0,
+    "elapsed_seconds": 73.383,
+    "new_model_request_count": 0,
+    "remote_postgresql_connected": false
+  },
+  "prior_server_regression": {
+    "source": "user-provided server output reviewed before D2 implementation",
+    "test_count": 404,
+    "elapsed_seconds": 25.664,
+    "run_status": "complete",
+    "attachment_sha256": "c85e256b7de0f9c8022ffe5bd84d1c43ee2e8a7de622908ed1bc29b8d03e51b3"
+  }
+}

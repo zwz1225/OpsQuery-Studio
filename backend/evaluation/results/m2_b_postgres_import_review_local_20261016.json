@@ -1,0 +1,1898 @@
+{
+  "by_domain": {
+    "california_schools": {
+      "copy_bytes": 10408105,
+      "row_count": 29941,
+      "table_count": 3
+    },
+    "card_games": {
+      "copy_bytes": 172812078,
+      "row_count": 803445,
+      "table_count": 6
+    },
+    "codebase_community": {
+      "copy_bytes": 416149819,
+      "row_count": 740646,
+      "table_count": 8
+    },
+    "debit_card_specializing": {
+      "copy_bytes": 8443410,
+      "row_count": 423050,
+      "table_count": 5
+    },
+    "european_football_2": {
+      "copy_bytes": 310555020,
+      "row_count": 222796,
+      "table_count": 7
+    },
+    "financial": {
+      "copy_bytes": 63785112,
+      "row_count": 1079680,
+      "table_count": 8
+    },
+    "formula_1": {
+      "copy_bytes": 14202273,
+      "row_count": 493257,
+      "table_count": 13
+    },
+    "student_club": {
+      "copy_bytes": 2207802,
+      "row_count": 42511,
+      "table_count": 8
+    },
+    "superhero": {
+      "copy_bytes": 113631,
+      "row_count": 10614,
+      "table_count": 10
+    },
+    "thrombosis_prediction": {
+      "copy_bytes": 2248609,
+      "row_count": 15252,
+      "table_count": 3
+    },
+    "toxicology": {
+      "copy_bytes": 845730,
+      "row_count": 36922,
+      "table_count": 4
+    }
+  },
+  "checks": [
+    {
+      "name": "completed_committed_import",
+      "passed": true
+    },
+    {
+      "name": "phase_flags",
+      "passed": true
+    },
+    {
+      "name": "frozen_target_protocol_spec",
+      "passed": true
+    },
+    {
+      "name": "evidence_source_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "evidence_import_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "evidence_preparation_review.json",
+      "passed": true
+    },
+    {
+      "name": "initialization_evidence",
+      "passed": true
+    },
+    {
+      "name": "run_order",
+      "passed": true
+    },
+    {
+      "name": "source_identity",
+      "passed": true
+    },
+    {
+      "name": "capacity_record",
+      "passed": true
+    },
+    {
+      "name": "copy_unique_table_set",
+      "passed": true
+    },
+    {
+      "name": "copy_account",
+      "passed": true
+    },
+    {
+      "name": "copy_alignment",
+      "passed": true
+    },
+    {
+      "name": "copy_atom",
+      "passed": true
+    },
+    {
+      "name": "copy_attendance",
+      "passed": true
+    },
+    {
+      "name": "copy_attribute",
+      "passed": true
+    },
+    {
+      "name": "copy_badges",
+      "passed": true
+    },
+    {
+      "name": "copy_bond",
+      "passed": true
+    },
+    {
+      "name": "copy_budget",
+      "passed": true
+    },
+    {
+      "name": "copy_card",
+      "passed": true
+    },
+    {
+      "name": "copy_cards",
+      "passed": true
+    },
+    {
+      "name": "copy_circuits",
+      "passed": true
+    },
+    {
+      "name": "copy_client",
+      "passed": true
+    },
+    {
+      "name": "copy_colour",
+      "passed": true
+    },
+    {
+      "name": "copy_comments",
+      "passed": true
+    },
+    {
+      "name": "copy_connected",
+      "passed": true
+    },
+    {
+      "name": "copy_constructorresults",
+      "passed": true
+    },
+    {
+      "name": "copy_constructors",
+      "passed": true
+    },
+    {
+      "name": "copy_constructorstandings",
+      "passed": true
+    },
+    {
+      "name": "copy_country",
+      "passed": true
+    },
+    {
+      "name": "copy_customers",
+      "passed": true
+    },
+    {
+      "name": "copy_disp",
+      "passed": true
+    },
+    {
+      "name": "copy_district",
+      "passed": true
+    },
+    {
+      "name": "copy_drivers",
+      "passed": true
+    },
+    {
+      "name": "copy_driverstandings",
+      "passed": true
+    },
+    {
+      "name": "copy_event",
+      "passed": true
+    },
+    {
+      "name": "copy_examination",
+      "passed": true
+    },
+    {
+      "name": "copy_expense",
+      "passed": true
+    },
+    {
+      "name": "copy_foreign_data",
+      "passed": true
+    },
+    {
+      "name": "copy_frpm",
+      "passed": true
+    },
+    {
+      "name": "copy_gasstations",
+      "passed": true
+    },
+    {
+      "name": "copy_gender",
+      "passed": true
+    },
+    {
+      "name": "copy_hero_attribute",
+      "passed": true
+    },
+    {
+      "name": "copy_hero_power",
+      "passed": true
+    },
+    {
+      "name": "copy_income",
+      "passed": true
+    },
+    {
+      "name": "copy_laboratory",
+      "passed": true
+    },
+    {
+      "name": "copy_laptimes",
+      "passed": true
+    },
+    {
+      "name": "copy_league",
+      "passed": true
+    },
+    {
+      "name": "copy_legalities",
+      "passed": true
+    },
+    {
+      "name": "copy_loan",
+      "passed": true
+    },
+    {
+      "name": "copy_major",
+      "passed": true
+    },
+    {
+      "name": "copy_match",
+      "passed": true
+    },
+    {
+      "name": "copy_member",
+      "passed": true
+    },
+    {
+      "name": "copy_molecule",
+      "passed": true
+    },
+    {
+      "name": "copy_order",
+      "passed": true
+    },
+    {
+      "name": "copy_patient",
+      "passed": true
+    },
+    {
+      "name": "copy_pitstops",
+      "passed": true
+    },
+    {
+      "name": "copy_player",
+      "passed": true
+    },
+    {
+      "name": "copy_player_attributes",
+      "passed": true
+    },
+    {
+      "name": "copy_posthistory",
+      "passed": true
+    },
+    {
+      "name": "copy_postlinks",
+      "passed": true
+    },
+    {
+      "name": "copy_posts",
+      "passed": true
+    },
+    {
+      "name": "copy_products",
+      "passed": true
+    },
+    {
+      "name": "copy_publisher",
+      "passed": true
+    },
+    {
+      "name": "copy_qualifying",
+      "passed": true
+    },
+    {
+      "name": "copy_race",
+      "passed": true
+    },
+    {
+      "name": "copy_races",
+      "passed": true
+    },
+    {
+      "name": "copy_results",
+      "passed": true
+    },
+    {
+      "name": "copy_rulings",
+      "passed": true
+    },
+    {
+      "name": "copy_satscores",
+      "passed": true
+    },
+    {
+      "name": "copy_schools",
+      "passed": true
+    },
+    {
+      "name": "copy_seasons",
+      "passed": true
+    },
+    {
+      "name": "copy_set_translations",
+      "passed": true
+    },
+    {
+      "name": "copy_sets",
+      "passed": true
+    },
+    {
+      "name": "copy_status",
+      "passed": true
+    },
+    {
+      "name": "copy_superhero",
+      "passed": true
+    },
+    {
+      "name": "copy_superpower",
+      "passed": true
+    },
+    {
+      "name": "copy_tags",
+      "passed": true
+    },
+    {
+      "name": "copy_team",
+      "passed": true
+    },
+    {
+      "name": "copy_team_attributes",
+      "passed": true
+    },
+    {
+      "name": "copy_trans",
+      "passed": true
+    },
+    {
+      "name": "copy_transactions_1k",
+      "passed": true
+    },
+    {
+      "name": "copy_users",
+      "passed": true
+    },
+    {
+      "name": "copy_votes",
+      "passed": true
+    },
+    {
+      "name": "copy_yearmonth",
+      "passed": true
+    },
+    {
+      "name": "copy_zip_code",
+      "passed": true
+    },
+    {
+      "name": "total_rows",
+      "passed": true
+    },
+    {
+      "name": "eleven_exact_domain_grants",
+      "passed": true
+    },
+    {
+      "name": "domain_partition",
+      "passed": true
+    },
+    {
+      "name": "structure_passed",
+      "passed": true
+    },
+    {
+      "name": "catalog_digest",
+      "passed": true
+    },
+    {
+      "name": "column_table_set",
+      "passed": true
+    },
+    {
+      "name": "columns_account",
+      "passed": true
+    },
+    {
+      "name": "columns_alignment",
+      "passed": true
+    },
+    {
+      "name": "columns_atom",
+      "passed": true
+    },
+    {
+      "name": "columns_attendance",
+      "passed": true
+    },
+    {
+      "name": "columns_attribute",
+      "passed": true
+    },
+    {
+      "name": "columns_badges",
+      "passed": true
+    },
+    {
+      "name": "columns_bond",
+      "passed": true
+    },
+    {
+      "name": "columns_budget",
+      "passed": true
+    },
+    {
+      "name": "columns_card",
+      "passed": true
+    },
+    {
+      "name": "columns_cards",
+      "passed": true
+    },
+    {
+      "name": "columns_circuits",
+      "passed": true
+    },
+    {
+      "name": "columns_client",
+      "passed": true
+    },
+    {
+      "name": "columns_colour",
+      "passed": true
+    },
+    {
+      "name": "columns_comments",
+      "passed": true
+    },
+    {
+      "name": "columns_connected",
+      "passed": true
+    },
+    {
+      "name": "columns_constructorresults",
+      "passed": true
+    },
+    {
+      "name": "columns_constructors",
+      "passed": true
+    },
+    {
+      "name": "columns_constructorstandings",
+      "passed": true
+    },
+    {
+      "name": "columns_country",
+      "passed": true
+    },
+    {
+      "name": "columns_customers",
+      "passed": true
+    },
+    {
+      "name": "columns_disp",
+      "passed": true
+    },
+    {
+      "name": "columns_district",
+      "passed": true
+    },
+    {
+      "name": "columns_drivers",
+      "passed": true
+    },
+    {
+      "name": "columns_driverstandings",
+      "passed": true
+    },
+    {
+      "name": "columns_event",
+      "passed": true
+    },
+    {
+      "name": "columns_examination",
+      "passed": true
+    },
+    {
+      "name": "columns_expense",
+      "passed": true
+    },
+    {
+      "name": "columns_foreign_data",
+      "passed": true
+    },
+    {
+      "name": "columns_frpm",
+      "passed": true
+    },
+    {
+      "name": "columns_gasstations",
+      "passed": true
+    },
+    {
+      "name": "columns_gender",
+      "passed": true
+    },
+    {
+      "name": "columns_hero_attribute",
+      "passed": true
+    },
+    {
+      "name": "columns_hero_power",
+      "passed": true
+    },
+    {
+      "name": "columns_income",
+      "passed": true
+    },
+    {
+      "name": "columns_laboratory",
+      "passed": true
+    },
+    {
+      "name": "columns_laptimes",
+      "passed": true
+    },
+    {
+      "name": "columns_league",
+      "passed": true
+    },
+    {
+      "name": "columns_legalities",
+      "passed": true
+    },
+    {
+      "name": "columns_loan",
+      "passed": true
+    },
+    {
+      "name": "columns_major",
+      "passed": true
+    },
+    {
+      "name": "columns_match",
+      "passed": true
+    },
+    {
+      "name": "columns_member",
+      "passed": true
+    },
+    {
+      "name": "columns_molecule",
+      "passed": true
+    },
+    {
+      "name": "columns_order",
+      "passed": true
+    },
+    {
+      "name": "columns_patient",
+      "passed": true
+    },
+    {
+      "name": "columns_pitstops",
+      "passed": true
+    },
+    {
+      "name": "columns_player",
+      "passed": true
+    },
+    {
+      "name": "columns_player_attributes",
+      "passed": true
+    },
+    {
+      "name": "columns_posthistory",
+      "passed": true
+    },
+    {
+      "name": "columns_postlinks",
+      "passed": true
+    },
+    {
+      "name": "columns_posts",
+      "passed": true
+    },
+    {
+      "name": "columns_products",
+      "passed": true
+    },
+    {
+      "name": "columns_publisher",
+      "passed": true
+    },
+    {
+      "name": "columns_qualifying",
+      "passed": true
+    },
+    {
+      "name": "columns_race",
+      "passed": true
+    },
+    {
+      "name": "columns_races",
+      "passed": true
+    },
+    {
+      "name": "columns_results",
+      "passed": true
+    },
+    {
+      "name": "columns_rulings",
+      "passed": true
+    },
+    {
+      "name": "columns_satscores",
+      "passed": true
+    },
+    {
+      "name": "columns_schools",
+      "passed": true
+    },
+    {
+      "name": "columns_seasons",
+      "passed": true
+    },
+    {
+      "name": "columns_set_translations",
+      "passed": true
+    },
+    {
+      "name": "columns_sets",
+      "passed": true
+    },
+    {
+      "name": "columns_status",
+      "passed": true
+    },
+    {
+      "name": "columns_superhero",
+      "passed": true
+    },
+    {
+      "name": "columns_superpower",
+      "passed": true
+    },
+    {
+      "name": "columns_tags",
+      "passed": true
+    },
+    {
+      "name": "columns_team",
+      "passed": true
+    },
+    {
+      "name": "columns_team_attributes",
+      "passed": true
+    },
+    {
+      "name": "columns_trans",
+      "passed": true
+    },
+    {
+      "name": "columns_transactions_1k",
+      "passed": true
+    },
+    {
+      "name": "columns_users",
+      "passed": true
+    },
+    {
+      "name": "columns_votes",
+      "passed": true
+    },
+    {
+      "name": "columns_yearmonth",
+      "passed": true
+    },
+    {
+      "name": "columns_zip_code",
+      "passed": true
+    },
+    {
+      "name": "constraint_unique_set",
+      "passed": true
+    },
+    {
+      "name": "constraint_account/account_district_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_account/idx_17818_account_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_alignment/idx_16745_alignment_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_atom/atom_molecule_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_atom/idx_16953_sqlite_autoindex_atom_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_attendance/attendance_link_to_event_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_attendance/attendance_link_to_member_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_attendance/idx_17070_sqlite_autoindex_attendance_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_attribute/idx_16750_attribute_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_badges/badges_userid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_badges/idx_86323_badges_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_bond/bond_molecule_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_bond/idx_16958_sqlite_autoindex_bond_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_budget/budget_link_to_event_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_budget/idx_17075_sqlite_autoindex_budget_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_card/card_disp_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_card/idx_17825_card_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_cards/idx_48549_cards_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_circuits/idx_17559_circuits_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_client/client_district_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_client/idx_17831_client_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_colour/idx_16755_colour_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_comments/comments_userid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_comments/idx_86328_comments_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_connected/connected_atom_id2_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_connected/connected_atom_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_connected/connected_bond_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_connected/idx_16963_sqlite_autoindex_connected_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_constructorresults/constructorresults_constructorid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_constructorresults/idx_17608_constructorresults_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_constructors/idx_17569_constructors_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_constructorstandings/constructorstandings_constructorid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_constructorstandings/idx_17617_constructorstandings_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_country/idx_143142_country_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_customers/idx_47287_customers_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_disp/disp_account_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_disp/disp_client_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_disp/idx_17836_disp_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_district/idx_17841_district_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_drivers/idx_17579_drivers_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_driverstandings/driverstandings_driverid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_driverstandings/idx_17628_driverstandings_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_event/idx_17055_sqlite_autoindex_event_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_examination/examination_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_expense/expense_link_to_budget_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_expense/expense_link_to_member_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_expense/idx_17080_sqlite_autoindex_expense_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_foreign_data/idx_48571_foreign_data_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_frpm/frpm_cdscode_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_gasstations/idx_47292_gasstations_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_gender/idx_16760_gender_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_hero_attribute/hero_attribute_attribute_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_hero_attribute/hero_attribute_hero_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_hero_power/hero_power_hero_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_hero_power/hero_power_power_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_income/idx_17085_sqlite_autoindex_income_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_income/income_link_to_member_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_laboratory/laboratory_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_laptimes/idx_17638_laptimes_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_laptimes/laptimes_driverid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_laptimes/laptimes_raceid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_league/idx_143135_league_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_legalities/idx_48578_legalities_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_loan/idx_17847_loan_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_loan/loan_account_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_major/idx_17060_sqlite_autoindex_major_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/idx_143163_match_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_player_10_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_player_11_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_player_1_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_player_2_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_player_3_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_player_4_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_player_5_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_player_6_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_player_7_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_player_8_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_player_9_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_away_team_api_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_player_10_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_player_11_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_player_1_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_player_2_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_player_3_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_player_4_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_player_5_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_player_6_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_player_7_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_player_8_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_player_9_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_match/match_home_team_api_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_member/idx_17090_sqlite_autoindex_member_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_member/member_link_to_major_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_member/member_zip_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_molecule/idx_16968_sqlite_autoindex_molecule_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_order/idx_17853_order_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_order/order_account_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_patient/idx_16904_patient_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_pitstops/idx_17643_pitstops_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_pitstops/pitstops_driverid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_pitstops/pitstops_raceid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_player/idx_143128_player_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_player_attributes/idx_143121_player_attributes_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_player_attributes/player_attributes_player_api_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_posthistory/idx_86333_posthistory_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_posthistory/posthistory_userid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_postlinks/idx_86338_postlinks_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_posts/idx_86341_posts_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_posts/posts_lasteditoruserid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_posts/posts_owneruserid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_products/idx_47297_products_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_publisher/idx_16765_publisher_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_qualifying/idx_17649_qualifying_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_qualifying/qualifying_constructorid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_qualifying/qualifying_driverid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_qualifying/qualifying_raceid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_race/idx_16770_race_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_races/idx_17597_races_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_races/races_circuitid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_races/races_year_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_results/idx_17668_results_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_results/results_constructorid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_results/results_driverid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_results/results_raceid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_results/results_statusid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_rulings/idx_48604_rulings_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_rulings/rulings_uuid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_satscores/idx_48501_sqlite_autoindex_satscores_1",
+      "passed": true
+    },
+    {
+      "name": "constraint_satscores/satscores_cds_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_seasons/idx_17589_seasons_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_set_translations/idx_48597_set_translations_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_set_translations/set_translations_setcode_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_sets/idx_48585_sets_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_status/idx_17660_status_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_superhero/idx_16775_superhero_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_superhero/superhero_alignment_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_superhero/superhero_eye_colour_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_superhero/superhero_gender_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_superhero/superhero_hair_colour_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_superhero/superhero_publisher_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_superhero/superhero_race_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_superhero/superhero_skin_colour_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_superpower/idx_16783_superpower_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_tags/idx_86346_tags_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_team/idx_143149_team_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_team_attributes/idx_143156_team_attributes_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_team_attributes/team_attributes_team_api_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_trans/idx_17859_trans_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_trans/trans_account_id_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_transactions_1k/idx_47303_transactions_1k_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_users/idx_86351_users_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_votes/idx_86356_votes_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_votes/votes_postid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_votes/votes_userid_fkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_zip_code/idx_17065_zip_code_pkey",
+      "passed": true
+    },
+    {
+      "name": "constraint_set_exact",
+      "passed": true
+    },
+    {
+      "name": "index_unique_set",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143121_player_attributes_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143128_player_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143128_sqlite_autoindex_player_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143128_sqlite_autoindex_player_2",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143135_league_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143135_sqlite_autoindex_league_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143142_country_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143142_sqlite_autoindex_country_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143149_sqlite_autoindex_team_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143149_team_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143156_team_attributes_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143163_match_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_143163_sqlite_autoindex_match_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16745_alignment_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16750_attribute_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16755_colour_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16760_gender_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16765_publisher_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16770_race_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16775_superhero_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16783_superpower_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16904_patient_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16910_sqlite_autoindex_laboratory_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16953_sqlite_autoindex_atom_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16958_sqlite_autoindex_bond_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16963_sqlite_autoindex_connected_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_16968_sqlite_autoindex_molecule_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17055_sqlite_autoindex_event_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17060_sqlite_autoindex_major_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17065_zip_code_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17070_sqlite_autoindex_attendance_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17075_sqlite_autoindex_budget_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17080_sqlite_autoindex_expense_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17085_sqlite_autoindex_income_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17090_sqlite_autoindex_member_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17559_circuits_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17559_sqlite_autoindex_circuits_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17569_constructors_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17569_sqlite_autoindex_constructors_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17579_drivers_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17579_sqlite_autoindex_drivers_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17589_seasons_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17589_sqlite_autoindex_seasons_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17597_races_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17597_sqlite_autoindex_races_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17608_constructorresults_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17617_constructorstandings_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17628_driverstandings_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17638_laptimes_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17638_sqlite_autoindex_laptimes_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17643_pitstops_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17643_sqlite_autoindex_pitstops_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17649_qualifying_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17660_status_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17668_results_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17818_account_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17825_card_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17831_client_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17836_disp_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17841_district_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17847_loan_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17853_order_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_17859_trans_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_47287_customers_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_47287_sqlite_autoindex_customers_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_47292_gasstations_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_47292_sqlite_autoindex_gasstations_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_47297_products_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_47297_sqlite_autoindex_products_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_47303_transactions_1k_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_47309_sqlite_autoindex_yearmonth_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_48496_sqlite_autoindex_frpm_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_48501_sqlite_autoindex_satscores_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_48506_sqlite_autoindex_schools_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_48549_cards_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_48549_sqlite_autoindex_cards_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_48571_foreign_data_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_48578_legalities_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_48585_sets_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_48585_sqlite_autoindex_sets_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_48597_set_translations_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_48604_rulings_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_86323_badges_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_86328_comments_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_86333_posthistory_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_86333_sqlite_autoindex_posthistory_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_86338_postlinks_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_86341_posts_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_86341_sqlite_autoindex_posts_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_86346_tags_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_86351_sqlite_autoindex_users_1",
+      "passed": true
+    },
+    {
+      "name": "index_idx_86351_users_pkey",
+      "passed": true
+    },
+    {
+      "name": "index_idx_86356_votes_pkey",
+      "passed": true
+    },
+    {
+      "name": "sequence_set",
+      "passed": true
+    },
+    {
+      "name": "sequence_cards_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_circuits_circuitid_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_constructorresults_constructorresultsid_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_constructors_constructorid_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_constructorstandings_constructorstandingsid_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_country_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_drivers_driverid_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_driverstandings_driverstandingsid_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_foreign_data_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_league_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_legalities_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_match_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_player_attributes_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_player_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_qualifying_qualifyid_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_races_raceid_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_results_resultid_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_rulings_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_set_translations_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_sets_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_status_statusid_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_team_attributes_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_team_id_seq",
+      "passed": true
+    },
+    {
+      "name": "sequence_transactions_1k_transactionid_seq",
+      "passed": true
+    },
+    {
+      "name": "structure_counts",
+      "passed": true
+    },
+    {
+      "name": "summary_counts",
+      "passed": true
+    },
+    {
+      "name": "owner_mapping",
+      "passed": true
+    },
+    {
+      "name": "source_session_replacement",
+      "passed": true
+    },
+    {
+      "name": "no_credential_values",
+      "passed": true
+    }
+  ],
+  "conclusion": "Controlled import accepted. Proceed to independent full typed-row and real query-role ACL validation.",
+  "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+  "initialization_report_sha256": "5e21e8f20b0581a772fbc3c03e43f8fb60748ffe104a370565cd8bbfaf56a1b2",
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "review_scope": "Downloaded server report compared to frozen local specification and initialization evidence; no live connection or independent target row read performed.",
+  "reviewed_at": "2026-10-16T04:58:21.614741+00:00",
+  "run_status": "complete",
+  "source_report": "m2_b_postgres_import_server.json",
+  "source_report_sha256": "1fa4621f73e2b1b70953c2e92debd7f992e57b80cea1a47ed8b46f56550c1123",
+  "stage": "M2 B controlled import local evidence review",
+  "summary": {
+    "check_count": 448,
+    "check_pass_count": 448,
+    "column_count": 798,
+    "copy_bytes": 1001771589,
+    "copy_row_count": 3898114,
+    "copy_table_count": 75,
+    "elapsed_seconds": 14.488278,
+    "foreign_key_constraint_count": 87,
+    "index_count": 93,
+    "logical_domain_count": 11,
+    "primary_key_constraint_count": 68,
+    "sequence_count": 24
+  },
+  "target": {
+    "database": "askdata_m2_bird",
+    "import_role": "askdata_m2_import",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "schema": "public"
+  },
+  "target_data_verified": false,
+  "verified_import_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636"
+}

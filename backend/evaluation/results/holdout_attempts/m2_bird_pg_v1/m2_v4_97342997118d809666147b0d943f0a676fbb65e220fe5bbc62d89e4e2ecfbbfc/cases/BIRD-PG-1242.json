@@ -1,0 +1,1601 @@
+{
+  "agent_isolation": {
+    "additional_landlock_abi": 4,
+    "direct_database_access": false,
+    "environment_credentials": false,
+    "filesystem": "seccomp_deny_all_new_file_opens",
+    "kernel": "6.8.0-59-generic",
+    "network_and_process": "seccomp",
+    "project_read_access": false,
+    "seccomp_library_version": "2.5.3"
+  },
+  "agent_started": true,
+  "agent_status": "answered",
+  "agent_trace": [
+    {
+      "sql_round": 1,
+      "valid": true,
+      "validation_attempt": 1
+    }
+  ],
+  "budget": {
+    "chat_http_attempts": 1,
+    "elapsed_seconds": 5.225,
+    "generation_attempts": {
+      "1": 1
+    },
+    "model_events": [
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 92,
+          "total_tokens": 92
+        }
+      },
+      {
+        "endpoint_kind": "rerank",
+        "kind": "rerank",
+        "retry": 0,
+        "returned_model": "qwen3-rerank",
+        "status": "complete",
+        "usage": {
+          "total_tokens": 8040
+        }
+      },
+      {
+        "endpoint_kind": "chat",
+        "kind": "chat",
+        "retry": 0,
+        "returned_model": "qwen3.7-plus",
+        "status": "complete",
+        "usage": {
+          "completion_tokens": 84,
+          "prompt_tokens": 4321,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "text_tokens": 4321
+          },
+          "total_tokens": 4405
+        }
+      }
+    ],
+    "model_http_attempts": 3,
+    "sql_tool_calls": 1,
+    "validation_attempts": {
+      "1": 1
+    }
+  },
+  "candidate_sha256": "97342997118d809666147b0d943f0a676fbb65e220fe5bbc62d89e4e2ecfbbfc",
+  "canonical_lookup": {
+    "executed": false,
+    "matches": [],
+    "max_values_per_probe": 3,
+    "policy": "bird_public_intent_candidate_v4",
+    "probe_count": 0,
+    "source_identity": {
+      "backend": "postgresql",
+      "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+      "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c",
+      "dialect": "postgres",
+      "logical_database_id": "thrombosis_prediction",
+      "physical_schema": "public",
+      "prompt_dialect": "PostgreSQL",
+      "source_id": "bird_mini_dev_postgres_thrombosis_prediction"
+    },
+    "sql_tool_calls": 0
+  },
+  "case_id": "BIRD-PG-1242",
+  "case_wall_seconds": 5.483,
+  "complete": true,
+  "database_id": "thrombosis_prediction",
+  "development_diagnostics": {
+    "attempts": [
+      {
+        "action": "query",
+        "clarification_reason": {
+          "provided": false,
+          "redacted": false,
+          "text": null,
+          "truncated": false
+        },
+        "kind": "model_decision",
+        "sql": {
+          "original_sha256": "169f394131afb92e6fba54ea1169ff4ac5a44ce3471ebfaf209a228e8d66c53c",
+          "original_utf8_bytes": 221,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT DISTINCT p.id\nFROM patient p\nJOIN laboratory l ON p.id = l.id\nWHERE EXTRACT(YEAR FROM l.date) = 1984\n  AND (EXTRACT(YEAR FROM CURRENT_TIMESTAMP) - EXTRACT(YEAR FROM p.birthday)) < 50\n  AND l.plt BETWEEN 100 AND 400",
+          "truncated": false
+        },
+        "sql_round": 1
+      },
+      {
+        "kind": "validate",
+        "sql": {
+          "original_sha256": "169f394131afb92e6fba54ea1169ff4ac5a44ce3471ebfaf209a228e8d66c53c",
+          "original_utf8_bytes": 221,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT DISTINCT p.id\nFROM patient p\nJOIN laboratory l ON p.id = l.id\nWHERE EXTRACT(YEAR FROM l.date) = 1984\n  AND (EXTRACT(YEAR FROM CURRENT_TIMESTAMP) - EXTRACT(YEAR FROM p.birthday)) < 50\n  AND l.plt BETWEEN 100 AND 400",
+          "truncated": false
+        },
+        "sql_round": 1,
+        "success": true
+      },
+      {
+        "kind": "execute",
+        "sql": {
+          "original_sha256": "169f394131afb92e6fba54ea1169ff4ac5a44ce3471ebfaf209a228e8d66c53c",
+          "original_utf8_bytes": 221,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT DISTINCT p.id\nFROM patient p\nJOIN laboratory l ON p.id = l.id\nWHERE EXTRACT(YEAR FROM l.date) = 1984\n  AND (EXTRACT(YEAR FROM CURRENT_TIMESTAMP) - EXTRACT(YEAR FROM p.birthday)) < 50\n  AND l.plt BETWEEN 100 AND 400",
+          "truncated": false
+        },
+        "sql_round": 1,
+        "success": true
+      }
+    ],
+    "clarification_reason": null,
+    "limits": {
+      "max_events": 21,
+      "reason_utf8_bytes": 2048,
+      "schema_graph_utf8_bytes": 98304,
+      "sql_text_utf8_bytes": 8192,
+      "total_utf8_bytes": 393216
+    },
+    "omitted_events": 0,
+    "policy": "bird_development_observation_v1",
+    "report_only": true,
+    "retrieval": {
+      "added_relation_key_field_ids": [
+        "thrombosis_prediction.patient.id",
+        "thrombosis_prediction.laboratory.id"
+      ],
+      "anchored_table_ids": [
+        "thrombosis_prediction.laboratory"
+      ],
+      "baseline_field_ids": [
+        "thrombosis_prediction.laboratory.plt",
+        "thrombosis_prediction.laboratory.rf"
+      ],
+      "candidate_count": 40,
+      "candidates": [
+        {
+          "bm25_rank": 1,
+          "bm25_score": 1.0,
+          "dense_rank": 1,
+          "dense_score": 0.655712765935195,
+          "field_id": "thrombosis_prediction.laboratory.plt",
+          "matched_intent_terms": [],
+          "rerank_rank": 1,
+          "rerank_score": 0.7508740631991657,
+          "rrf_rank": 1,
+          "rrf_score": 0.03278688524590164,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 2,
+          "bm25_score": 0.4772406254478056,
+          "dense_rank": 5,
+          "dense_score": 0.5510952604711394,
+          "field_id": "thrombosis_prediction.patient.birthday",
+          "matched_intent_terms": [
+            "birthday"
+          ],
+          "rerank_rank": 34,
+          "rerank_score": 0.4073729574141196,
+          "rrf_rank": 2,
+          "rrf_score": 0.0315136476426799,
+          "selected": true,
+          "selection_reason": "selected_intent_coverage",
+          "uncovered_intent_terms": [
+            "birthday"
+          ]
+        },
+        {
+          "bm25_rank": 7,
+          "bm25_score": 0.26390893469843146,
+          "dense_rank": 2,
+          "dense_score": 0.594938561822975,
+          "field_id": "thrombosis_prediction.laboratory.date",
+          "matched_intent_terms": [
+            "date"
+          ],
+          "rerank_rank": 24,
+          "rerank_score": 0.44818732560490304,
+          "rrf_rank": 3,
+          "rrf_score": 0.031054405392392875,
+          "selected": true,
+          "selection_reason": "selected_intent_coverage",
+          "uncovered_intent_terms": [
+            "date"
+          ]
+        },
+        {
+          "bm25_rank": 8,
+          "bm25_score": 0.2198892641356096,
+          "dense_rank": 8,
+          "dense_score": 0.5400094580669889,
+          "field_id": "thrombosis_prediction.examination.Examination Date",
+          "matched_intent_terms": [
+            "date",
+            "examination"
+          ],
+          "rerank_rank": 37,
+          "rerank_score": 0.38092277511986483,
+          "rrf_rank": 4,
+          "rrf_score": 0.029411764705882353,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "date",
+            "examination"
+          ]
+        },
+        {
+          "bm25_rank": 12,
+          "bm25_score": 0.08496308782599649,
+          "dense_rank": 16,
+          "dense_score": 0.5288804510424856,
+          "field_id": "thrombosis_prediction.laboratory.DNA-II",
+          "matched_intent_terms": [],
+          "rerank_rank": 9,
+          "rerank_score": 0.49803566893535345,
+          "rrf_rank": 5,
+          "rrf_score": 0.027046783625730993,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 6,
+          "bm25_score": 0.28691719929467563,
+          "dense_rank": 25,
+          "dense_score": 0.5116936320732002,
+          "field_id": "thrombosis_prediction.laboratory.rf",
+          "matched_intent_terms": [],
+          "rerank_rank": 2,
+          "rerank_score": 0.5518022043790823,
+          "rrf_rank": 6,
+          "rrf_score": 0.026916221033868093,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 21,
+          "bm25_score": 0.07724262318932193,
+          "dense_rank": 10,
+          "dense_score": 0.5356866824634744,
+          "field_id": "thrombosis_prediction.laboratory.ldh",
+          "matched_intent_terms": [],
+          "rerank_rank": 28,
+          "rerank_score": 0.44041035748930246,
+          "rrf_rank": 7,
+          "rrf_score": 0.026631393298059962,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 15,
+          "bm25_score": 0.07965534252757465,
+          "dense_rank": 18,
+          "dense_score": 0.5216477748072978,
+          "field_id": "thrombosis_prediction.laboratory.tg",
+          "matched_intent_terms": [],
+          "rerank_rank": 35,
+          "rerank_score": 0.4037532183464964,
+          "rrf_rank": 8,
+          "rrf_score": 0.026153846153846153,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 26,
+          "bm25_score": 0.07724262318932193,
+          "dense_rank": 11,
+          "dense_score": 0.5341013897194564,
+          "field_id": "thrombosis_prediction.laboratory.c4",
+          "matched_intent_terms": [],
+          "rerank_rank": 14,
+          "rerank_score": 0.4759233272673586,
+          "rrf_rank": 9,
+          "rrf_score": 0.02571241401899771,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 16,
+          "bm25_score": 0.07965534252757465,
+          "dense_rank": 24,
+          "dense_score": 0.5122743145972242,
+          "field_id": "thrombosis_prediction.laboratory.centromea",
+          "matched_intent_terms": [],
+          "rerank_rank": 25,
+          "rerank_score": 0.4471745662894474,
+          "rrf_rank": 10,
+          "rrf_score": 0.02506265664160401,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 28,
+          "bm25_score": 0.07609025584085266,
+          "dense_rank": 13,
+          "dense_score": 0.5314429619032264,
+          "field_id": "thrombosis_prediction.laboratory.igg",
+          "matched_intent_terms": [],
+          "rerank_rank": 15,
+          "rerank_score": 0.47405626221173014,
+          "rrf_rank": 11,
+          "rrf_score": 0.025062266500622665,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 18,
+          "bm25_score": 0.07843043190216731,
+          "dense_rank": 29,
+          "dense_score": 0.5076950107888586,
+          "field_id": "thrombosis_prediction.laboratory.sc170",
+          "matched_intent_terms": [],
+          "rerank_rank": 16,
+          "rerank_score": 0.46842608638325184,
+          "rrf_rank": 12,
+          "rrf_score": 0.024056467876692595,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 20,
+          "bm25_score": 0.07843043190216731,
+          "dense_rank": 30,
+          "dense_score": 0.5069138135148733,
+          "field_id": "thrombosis_prediction.laboratory.ssb",
+          "matched_intent_terms": [],
+          "rerank_rank": 33,
+          "rerank_score": 0.42890659034792633,
+          "rrf_rank": 13,
+          "rrf_score": 0.02361111111111111,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 22,
+          "bm25_score": 0.07724262318932193,
+          "dense_rank": 28,
+          "dense_score": 0.5081801494446663,
+          "field_id": "thrombosis_prediction.laboratory.un",
+          "matched_intent_terms": [],
+          "rerank_rank": 8,
+          "rerank_score": 0.5087835809049155,
+          "rrf_rank": 14,
+          "rrf_score": 0.023558758314855877,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 29,
+          "bm25_score": 0.07609025584085266,
+          "dense_rank": 22,
+          "dense_score": 0.5135169908228977,
+          "field_id": "thrombosis_prediction.laboratory.iga",
+          "matched_intent_terms": [],
+          "rerank_rank": 6,
+          "rerank_score": 0.5118571092624449,
+          "rrf_rank": 15,
+          "rrf_score": 0.023431077007399288,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 27,
+          "bm25_score": 0.07609025584085266,
+          "dense_rank": 27,
+          "dense_score": 0.5106005800908155,
+          "field_id": "thrombosis_prediction.laboratory.T-CHO",
+          "matched_intent_terms": [],
+          "rerank_rank": 13,
+          "rerank_score": 0.4784250704823396,
+          "rrf_rank": 16,
+          "rrf_score": 0.022988505747126436,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 3,
+          "bm25_score": 0.4693105480874405,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.patient.First Date",
+          "matched_intent_terms": [
+            "date"
+          ],
+          "rerank_rank": 36,
+          "rerank_score": 0.39881038557677606,
+          "rrf_rank": 17,
+          "rrf_score": 0.015873015873015872,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "date"
+          ]
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 3,
+          "dense_score": 0.5567381552042145,
+          "field_id": "thrombosis_prediction.laboratory.aptt",
+          "matched_intent_terms": [],
+          "rerank_rank": 26,
+          "rerank_score": 0.44605789771538445,
+          "rrf_rank": 18,
+          "rrf_score": 0.015873015873015872,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 4,
+          "bm25_score": 0.42577626222206627,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.examination.ANA Pattern",
+          "matched_intent_terms": [
+            "examination"
+          ],
+          "rerank_rank": 38,
+          "rerank_score": 0.3796058332714553,
+          "rrf_rank": 19,
+          "rrf_score": 0.015625,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "examination"
+          ]
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 4,
+          "dense_score": 0.5511289010526179,
+          "field_id": "thrombosis_prediction.laboratory.tat",
+          "matched_intent_terms": [],
+          "rerank_rank": 31,
+          "rerank_score": 0.4308580534614854,
+          "rrf_rank": 20,
+          "rrf_score": 0.015625,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 5,
+          "bm25_score": 0.3610546500840174,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.patient.admission",
+          "matched_intent_terms": [],
+          "rerank_rank": 39,
+          "rerank_score": 0.3601637389794584,
+          "rrf_rank": 21,
+          "rrf_score": 0.015384615384615385,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 6,
+          "dense_score": 0.5452139834641957,
+          "field_id": "thrombosis_prediction.laboratory.pic",
+          "matched_intent_terms": [],
+          "rerank_rank": 30,
+          "rerank_score": 0.43365742395898,
+          "rrf_rank": 22,
+          "rrf_score": 0.015151515151515152,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 7,
+          "dense_score": 0.5434614065549583,
+          "field_id": "thrombosis_prediction.laboratory.id",
+          "matched_intent_terms": [],
+          "rerank_rank": 22,
+          "rerank_score": 0.4525331836637373,
+          "rrf_rank": 23,
+          "rrf_score": 0.014925373134328358,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 9,
+          "bm25_score": 0.21743217728487763,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.igm",
+          "matched_intent_terms": [],
+          "rerank_rank": 5,
+          "rerank_score": 0.5136354635395292,
+          "rrf_rank": 24,
+          "rrf_score": 0.014492753623188406,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 9,
+          "dense_score": 0.5382095478405169,
+          "field_id": "thrombosis_prediction.laboratory.hct",
+          "matched_intent_terms": [],
+          "rerank_rank": 3,
+          "rerank_score": 0.5441562684518289,
+          "rrf_rank": 25,
+          "rrf_score": 0.014492753623188406,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 10,
+          "bm25_score": 0.20283542366459026,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.U-PRO",
+          "matched_intent_terms": [],
+          "rerank_rank": 11,
+          "rerank_score": 0.48551929537418953,
+          "rrf_rank": 26,
+          "rrf_score": 0.014285714285714285,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 11,
+          "bm25_score": 0.19435158849916032,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.patient.description",
+          "matched_intent_terms": [],
+          "rerank_rank": 40,
+          "rerank_score": 0.35620666130667333,
+          "rrf_rank": 27,
+          "rrf_score": 0.014084507042253521,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 12,
+          "dense_score": 0.5326622508692316,
+          "field_id": "thrombosis_prediction.laboratory.tat2",
+          "matched_intent_terms": [],
+          "rerank_rank": 29,
+          "rerank_score": 0.4359613658061456,
+          "rrf_rank": 28,
+          "rrf_score": 0.013888888888888888,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 13,
+          "bm25_score": 0.08222364711465423,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.ra",
+          "matched_intent_terms": [],
+          "rerank_rank": 23,
+          "rerank_score": 0.44829005273406203,
+          "rrf_rank": 29,
+          "rrf_score": 0.0136986301369863,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 14,
+          "bm25_score": 0.07965534252757465,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.alp",
+          "matched_intent_terms": [],
+          "rerank_rank": 21,
+          "rerank_score": 0.45950027160711193,
+          "rrf_rank": 30,
+          "rrf_score": 0.013513513513513514,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 14,
+          "dense_score": 0.531379261064871,
+          "field_id": "thrombosis_prediction.laboratory.got",
+          "matched_intent_terms": [],
+          "rerank_rank": 27,
+          "rerank_score": 0.44095156736821217,
+          "rrf_rank": 31,
+          "rrf_score": 0.013513513513513514,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 15,
+          "dense_score": 0.5310535780965345,
+          "field_id": "thrombosis_prediction.examination.id",
+          "matched_intent_terms": [],
+          "rerank_rank": 7,
+          "rerank_score": 0.5116965505669105,
+          "rrf_rank": 32,
+          "rrf_score": 0.013333333333333334,
+          "selected": false,
+          "selection_reason": "coverage_table_not_anchored",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 17,
+          "bm25_score": 0.07843043190216731,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.sm",
+          "matched_intent_terms": [],
+          "rerank_rank": 19,
+          "rerank_score": 0.4608014409965887,
+          "rrf_rank": 33,
+          "rrf_score": 0.012987012987012988,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 17,
+          "dense_score": 0.5257398478756836,
+          "field_id": "thrombosis_prediction.laboratory.pt",
+          "matched_intent_terms": [],
+          "rerank_rank": 12,
+          "rerank_score": 0.4795252607263531,
+          "rrf_rank": 34,
+          "rrf_score": 0.012987012987012988,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 19,
+          "bm25_score": 0.07843043190216731,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.ssa",
+          "matched_intent_terms": [],
+          "rerank_rank": 20,
+          "rerank_score": 0.4602129191383335,
+          "rrf_rank": 35,
+          "rrf_score": 0.012658227848101266,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 19,
+          "dense_score": 0.5203871069274335,
+          "field_id": "thrombosis_prediction.laboratory.gpt",
+          "matched_intent_terms": [],
+          "rerank_rank": 32,
+          "rerank_score": 0.4302288349824831,
+          "rrf_rank": 36,
+          "rrf_score": 0.012658227848101266,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 20,
+          "dense_score": 0.5151743269727646,
+          "field_id": "thrombosis_prediction.laboratory.hgb",
+          "matched_intent_terms": [],
+          "rerank_rank": 17,
+          "rerank_score": 0.46572105375662126,
+          "rrf_rank": 37,
+          "rrf_score": 0.0125,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 21,
+          "dense_score": 0.5151542121871528,
+          "field_id": "thrombosis_prediction.laboratory.wbc",
+          "matched_intent_terms": [],
+          "rerank_rank": 4,
+          "rerank_score": 0.5137557921511402,
+          "rrf_rank": 38,
+          "rrf_score": 0.012345679012345678,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 23,
+          "bm25_score": 0.07724262318932193,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.cpk",
+          "matched_intent_terms": [],
+          "rerank_rank": 18,
+          "rerank_score": 0.46136182626459904,
+          "rrf_rank": 39,
+          "rrf_score": 0.012048192771084338,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 23,
+          "dense_score": 0.5133371225520512,
+          "field_id": "thrombosis_prediction.laboratory.dna",
+          "matched_intent_terms": [],
+          "rerank_rank": 10,
+          "rerank_score": 0.4871911275021614,
+          "rrf_rank": 40,
+          "rrf_score": 0.012048192771084338,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        }
+      ],
+      "coverage_field_ids": [],
+      "intent_selection": {
+        "added_field_ids": [
+          "thrombosis_prediction.laboratory.date",
+          "thrombosis_prediction.patient.birthday"
+        ],
+        "baseline_field_ids": [
+          "thrombosis_prediction.laboratory.plt",
+          "thrombosis_prediction.laboratory.rf"
+        ],
+        "decisions": [
+          {
+            "basis": "public_input_and_authorized_metadata",
+            "field_id": "thrombosis_prediction.laboratory.date",
+            "priority": 4,
+            "reason": "explicit_public_identifier_or_label",
+            "rerank_score": 0.44818732560490304,
+            "score_source": "provider_rerank",
+            "selected": true,
+            "selection_reason": "explicit_public_identifier_or_label",
+            "table_id": "thrombosis_prediction.laboratory"
+          },
+          {
+            "basis": "public_input_and_authorized_metadata",
+            "field_id": "thrombosis_prediction.patient.birthday",
+            "priority": 4,
+            "reason": "explicit_public_identifier_or_label",
+            "rerank_score": 0.4073729574141196,
+            "score_source": "provider_rerank",
+            "selected": true,
+            "selection_reason": "explicit_public_identifier_or_label",
+            "table_id": "thrombosis_prediction.patient"
+          }
+        ],
+        "policy": {
+          "baseline_preserved": true,
+          "canonical_lookup_max_pairs": 4,
+          "canonical_lookup_sql_tool_calls": 1,
+          "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+          "development_candidate": true,
+          "formal_protocol_override": false,
+          "grain_policy": "public_explicit_entity_grain_v2",
+          "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+          "join_source": "declared_foreign_keys_only",
+          "lookup_consumes_existing_sql_budget": true,
+          "max_added_fields": 8,
+          "max_fields": 20,
+          "max_related_hops": 2,
+          "native_ex_unchanged": true,
+          "numeric_policy": "floating_count_ratio_order_advisory_v3",
+          "output_group_policy": "participant_action_target_pair_v1",
+          "policy_id": "bird_public_intent_candidate_v4",
+          "predicate_policy": "public_condition_roles_conflicts_v3",
+          "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+          "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+          "unit_policy": "public_percentage_units_precision_v2"
+        },
+        "sample_condition_candidates": []
+      },
+      "relation_key_field_ids": [
+        "thrombosis_prediction.patient.id",
+        "thrombosis_prediction.laboratory.id"
+      ],
+      "schema_graph": {
+        "complete": true,
+        "omission_reason": null,
+        "sha256": "d9160cb7e92fe73fdb5d04957fbb6522da77ffbac134126f7b5add386cd1856f",
+        "utf8_bytes": 3555,
+        "value": {
+          "database": "thrombosis_prediction",
+          "databases": [
+            "thrombosis_prediction"
+          ],
+          "fields": [
+            {
+              "description": "platelet",
+              "id": "thrombosis_prediction.laboratory.plt",
+              "label": "platelet",
+              "name": "plt",
+              "role": "field",
+              "score": 0.7508740631991657,
+              "source": "retrieval",
+              "sql_name": "laboratory.plt",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "bigint"
+            },
+            {
+              "description": "RAHA",
+              "id": "thrombosis_prediction.laboratory.rf",
+              "label": "RAHA",
+              "name": "rf",
+              "role": "field",
+              "score": 0.5518022043790823,
+              "source": "retrieval",
+              "sql_name": "laboratory.rf",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "text"
+            },
+            {
+              "description": "Date of the laboratory tests (YYMMDD)",
+              "id": "thrombosis_prediction.laboratory.date",
+              "label": "date",
+              "name": "date",
+              "role": "field",
+              "score": 0.44818732560490304,
+              "source": "intent_coverage",
+              "sql_name": "laboratory.date",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "date"
+            },
+            {
+              "description": "Birthday",
+              "id": "thrombosis_prediction.patient.birthday",
+              "label": "birthday",
+              "name": "birthday",
+              "role": "field",
+              "score": 0.4073729574141196,
+              "source": "intent_coverage",
+              "sql_name": "patient.birthday",
+              "table_id": "thrombosis_prediction.patient",
+              "table_name": "patient",
+              "type": "date"
+            },
+            {
+              "description": "identification of the patient",
+              "id": "thrombosis_prediction.patient.id",
+              "label": "id",
+              "name": "id",
+              "role": "primary_key",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "patient.id",
+              "table_id": "thrombosis_prediction.patient",
+              "table_name": "patient",
+              "type": "bigint"
+            },
+            {
+              "description": "identification of the patient",
+              "id": "thrombosis_prediction.laboratory.id",
+              "label": "id",
+              "name": "id",
+              "role": "field",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "laboratory.id",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "bigint"
+            }
+          ],
+          "graph_version": "d00f5ba16c59",
+          "joins": [
+            {
+              "description": "Official database foreign key",
+              "id": "laboratory_id_fkey:id",
+              "left_field": "id",
+              "left_table": "thrombosis_prediction.patient",
+              "left_table_name": "patient",
+              "relation_type": "foreign_key",
+              "right_field": "id",
+              "right_table": "thrombosis_prediction.laboratory",
+              "right_table_name": "laboratory"
+            }
+          ],
+          "relation_role_context": {
+            "context_output_groups": [],
+            "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges.",
+            "joins_are_alternatives": true,
+            "policy": "authorized_role_alternatives_v1",
+            "preferred_actor_relations": [],
+            "roles": [
+              {
+                "child_field": "id",
+                "child_table": "thrombosis_prediction.laboratory",
+                "mandatory": false,
+                "parent_field": "id",
+                "parent_table": "thrombosis_prediction.patient",
+                "relation_id": "laboratory_id_fkey:id",
+                "role_description": "identification of the patient",
+                "role_label": "id",
+                "source": "current_authorized_declared_foreign_key"
+              }
+            ]
+          },
+          "source_identity": {
+            "backend": "postgresql",
+            "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+            "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c",
+            "dialect": "postgres",
+            "logical_database_id": "thrombosis_prediction",
+            "physical_schema": "public",
+            "prompt_dialect": "PostgreSQL",
+            "source_id": "bird_mini_dev_postgres_thrombosis_prediction"
+          },
+          "tables": [
+            {
+              "database": "thrombosis_prediction",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "thrombosis_prediction",
+              "id": "thrombosis_prediction.laboratory",
+              "label": "laboratory",
+              "name": "laboratory"
+            },
+            {
+              "database": "thrombosis_prediction",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "thrombosis_prediction",
+              "id": "thrombosis_prediction.patient",
+              "label": "patient",
+              "name": "patient"
+            }
+          ]
+        }
+      },
+      "selected_field_ids": [
+        "thrombosis_prediction.laboratory.plt",
+        "thrombosis_prediction.laboratory.rf",
+        "thrombosis_prediction.laboratory.date",
+        "thrombosis_prediction.patient.birthday"
+      ],
+      "selection_policy": {
+        "coverage_enabled": true,
+        "coverage_floor": 0.5,
+        "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+        "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+        "development_candidate": true,
+        "formal_protocol_override": false,
+        "intent_source": "original_question_and_official_evidence",
+        "max_coverage_fields": 4,
+        "max_fields": 20,
+        "metadata_match": "native_field_name_or_official_field_label",
+        "policy_id": "bird_authorized_schema_coverage_v1",
+        "score_representation": "provider score clamped to [0,1] by existing broker",
+        "threshold": 0.55
+      }
+    }
+  },
+  "errors": [],
+  "ex_correct": false,
+  "executions": [
+    {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "int"
+        ],
+        "ordered_native_diagnostic_sha256": "e43c4c401571b2c9a52eea57207e045c0618e569a53fc4e4ddff5247c0ae655d",
+        "payload_bytes": 116,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 5
+      },
+      "success": true
+    }
+  ],
+  "final_sql_execution_success": true,
+  "first_sql_execution_success": true,
+  "formal_benchmark": true,
+  "generated_sql": "SELECT DISTINCT p.id\nFROM patient p\nJOIN laboratory l ON p.id = l.id\nWHERE EXTRACT(YEAR FROM l.date) = 1984\n  AND (EXTRACT(YEAR FROM CURRENT_TIMESTAMP) - EXTRACT(YEAR FROM p.birthday)) < 50\n  AND l.plt BETWEEN 100 AND 400",
+  "generation_status": "diagnostic_answered",
+  "generation_worker_mode": "diagnostic",
+  "gold_executed": true,
+  "gold_execution_attempted": true,
+  "gold_sql_sha256": "086ac494b5a3816137f2b808f0ecf007f795df3d5873c85c846e56cb5cd1bf4e",
+  "index_sha256": "2a340fe146cdd604a2b761a722bff9581e66ddb8f96733e6b988c427649ec8bd",
+  "intent_candidate_policy": {
+    "baseline_preserved": true,
+    "canonical_lookup_max_pairs": 4,
+    "canonical_lookup_sql_tool_calls": 1,
+    "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "grain_policy": "public_explicit_entity_grain_v2",
+    "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+    "join_source": "declared_foreign_keys_only",
+    "lookup_consumes_existing_sql_budget": true,
+    "max_added_fields": 8,
+    "max_fields": 20,
+    "max_related_hops": 2,
+    "native_ex_unchanged": true,
+    "numeric_policy": "floating_count_ratio_order_advisory_v3",
+    "output_group_policy": "participant_action_target_pair_v1",
+    "policy_id": "bird_public_intent_candidate_v4",
+    "predicate_policy": "public_condition_roles_conflicts_v3",
+    "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+    "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+    "unit_policy": "public_percentage_units_precision_v2"
+  },
+  "intent_contract": {
+    "canonical_values": [],
+    "entity_grain": {},
+    "entity_identifier_output": null,
+    "explicit_top_n": null,
+    "guidance": [
+      "For ranked nonmissing values, write NULLS LAST explicitly on nullable ORDER BY expressions, including ABS and aggregates. Preserve any explicit request to rank missing values first.",
+      "Preserve Top-N size, ordinal offset, direction, ties and requested output order; do not add arbitrary tie-breakers.",
+      "Project exactly the requested attributes. For a list of entity instances without requested attributes, prefer that entity primary key; do not SELECT table.*. This is an explicit development output convention, not an inferred reference answer.",
+      "For full names, keep first/last fields together and include all numbered person slots requested, in slot order. Do not add email/contact fields.",
+      "Cover every business population and condition from question/evidence. A difference calculation returns the requested signed difference, not ABS or an extra Yes/No column unless requested.",
+      "Profile samples are coverage hints, never new mandatory filters. Do not turn names, table/role nouns or arithmetic constants into equality predicates. Required conditions below bind a specific public evidence field and value; preserve that ownership.",
+      "Inspect entity_grain.enforcement and its public_basis. Only an explicit distinct-entity request mandates deduplication. A primary key or one-to-many join alone is advisory: preserve requested joined-row weighting and state unresolved grain; do not invent DISTINCT or choose reference answers.",
+      "Join edges in relation_role_context are alternatives. Select the participant matching the question action, not an editor/owner merely because it is the first shortest path. Context output groups use the explicit development convention to include the named related entity title/name alongside the requested actor label; they are not reference-answer hints.",
+      "If quantity_difference_scalar is true, the evidence provides the quantity formula for an independent yes/no comparison: return only that signed numeric difference, whose sign also answers the comparison. If entity_identifier_output is supplied, the explicit entity-list development convention requests that primary identifier alone.",
+      "Foreign keys store identifiers, not human names. Join the authorized referenced entity and filter its name field. Name fields on different tables are not assumed interchangeable.",
+      "Canonical values below come from bounded case-insensitive equality lookups. Use a unique stored spelling without removing/changing conditions; not_found and ambiguous are not permission to guess.",
+      "Use output_units for scale/type decisions and participant_output for projection groups. These are versioned public development conventions with explicit overrides and ambiguity records, not hidden reference requirements. For count percentages, prefer a REAL or DOUBLE PRECISION numerator scaled before division; operation order alone never triggers rejection. Preserve explicit fraction, exact-formula, decimal and rounding requests. Native EX has no tolerance.",
+      "Missing schema is a reason to clarify only after checking the supplied authorized field groups and declared FK paths. Explain the specific missing field or ambiguity."
+    ],
+    "name_groups": [],
+    "ordinal_descending": null,
+    "ordinal_rank": null,
+    "output_units": {
+      "arithmetic_preference": "requested_or_source_type",
+      "formula_excerpt": null,
+      "guidance": "Percentage means a 0-100 numeric output under this visible development convention. An evidence DIVIDE formula without a scale supplies the base ratio; the percentage question supplies *100. Explicit 0-1/fraction requests or an exact-formula instruction override this default. Record conflicts; never consult a reference answer. For unrounded count percentages prefer CAST(conditional_count AS REAL) * 100 / NULLIF(total_count,0), preserving entity grain; DOUBLE PRECISION is also allowed. Scaling before division is a numerical suggestion, never an operation-order rejection. Do not change types, round, or normalize returned results to make comparisons pass.",
+      "operation_order_authority": "advisory_only",
+      "output_unit": "unspecified",
+      "policy": "public_percentage_units_precision_v2",
+      "precision": {
+        "conflict": false,
+        "decimal_places": null,
+        "enforcement": "advisory",
+        "guidance": "Implement explicitly requested decimal places in the final SQL numeric output (for example ROUND(numeric_expression, n)). Preserve the requested unit and population; do not round driver results or add scoring tolerance. Ambiguous/complex output ownership is advisory.",
+        "policy": "explicit_public_decimal_places_v1",
+        "requests": [],
+        "unsupported": false
+      },
+      "question_formula_scale_conflict": false,
+      "ratio_multiplier": null,
+      "resolution_basis": "no_explicit_output_unit",
+      "resolution_is_development_convention": false
+    },
+    "participant_output": {
+      "advisory_groups": [],
+      "basis": "public_action_target_frame_and_unique_authorized_role",
+      "guidance": "Required groups are an explicit development output convention: project the requested participant label and the named action-target title, in that order. Mere filter/context mentions do not mandate projection. Explicit only/exclude instructions take precedence. Do not add contact fields, all columns or other candidate join roles.",
+      "policy": "participant_action_target_pair_v1",
+      "required_groups": []
+    },
+    "percentage_real_arithmetic": false,
+    "policy": {
+      "baseline_preserved": true,
+      "canonical_lookup_max_pairs": 4,
+      "canonical_lookup_sql_tool_calls": 1,
+      "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+      "development_candidate": true,
+      "formal_protocol_override": false,
+      "grain_policy": "public_explicit_entity_grain_v2",
+      "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+      "join_source": "declared_foreign_keys_only",
+      "lookup_consumes_existing_sql_budget": true,
+      "max_added_fields": 8,
+      "max_fields": 20,
+      "max_related_hops": 2,
+      "native_ex_unchanged": true,
+      "numeric_policy": "floating_count_ratio_order_advisory_v3",
+      "output_group_policy": "participant_action_target_pair_v1",
+      "policy_id": "bird_public_intent_candidate_v4",
+      "predicate_policy": "public_condition_roles_conflicts_v3",
+      "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+      "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+      "unit_policy": "public_percentage_units_precision_v2"
+    },
+    "profile_coverage_hints": [],
+    "public_evidence": {
+      "conditions": [],
+      "conflicts": [],
+      "guidance": "Keep numerator, denominator and population roles separate. Conflicting bindings are advisory; do not require their conjunction or guess which is correct.",
+      "policy": "public_condition_roles_conflicts_v3"
+    },
+    "quantity_difference_scalar": false,
+    "relation_role_context": {
+      "context_output_groups": [],
+      "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges.",
+      "joins_are_alternatives": true,
+      "policy": "authorized_role_alternatives_v1",
+      "preferred_actor_relations": [],
+      "roles": [
+        {
+          "child_field": "id",
+          "child_table": "thrombosis_prediction.laboratory",
+          "mandatory": false,
+          "parent_field": "id",
+          "parent_table": "thrombosis_prediction.patient",
+          "relation_id": "laboratory_id_fkey:id",
+          "role_description": "identification of the patient",
+          "role_label": "id",
+          "source": "current_authorized_declared_foreign_key"
+        }
+      ]
+    },
+    "remaining_sql_execution_rounds": 3,
+    "required_profile_conditions": []
+  },
+  "mode": "live",
+  "native_comparison": {
+    "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion",
+    "difference_codes": [
+      "prediction_missing_reference_tuples"
+    ],
+    "difference_preview_row_limit": 5,
+    "difference_preview_utf8_byte_limit": 65536,
+    "gold_column_count": 1,
+    "gold_only_preview": {
+      "oversized_rows_omitted": 0,
+      "preview_truncated": true,
+      "rows": [
+        [
+          [
+            "int",
+            "30609"
+          ]
+        ],
+        [
+          [
+            "int",
+            "48473"
+          ]
+        ],
+        [
+          [
+            "int",
+            "52199"
+          ]
+        ],
+        [
+          [
+            "int",
+            "58139"
+          ]
+        ],
+        [
+          [
+            "int",
+            "81043"
+          ]
+        ]
+      ],
+      "utf8_bytes": 85
+    },
+    "gold_only_tuple_count": 71,
+    "gold_row_count": 76,
+    "gold_unique_tuple_count": 76,
+    "matches_frozen_gold": false,
+    "native_type_sets_differ": false,
+    "prediction_column_count": 1,
+    "prediction_only_preview": {
+      "oversized_rows_omitted": 0,
+      "preview_truncated": false,
+      "rows": [],
+      "utf8_bytes": 0
+    },
+    "prediction_only_tuple_count": 0,
+    "prediction_row_count": 5,
+    "prediction_unique_tuple_count": 5,
+    "preview_only": true
+  },
+  "native_results": {
+    "prediction": {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "int"
+        ],
+        "ordered_native_diagnostic_sha256": "e43c4c401571b2c9a52eea57207e045c0618e569a53fc4e4ddff5247c0ae655d",
+        "payload_bytes": 116,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 5
+      },
+      "preview": {
+        "columns": [
+          "id"
+        ],
+        "complete_result_row_count": 5,
+        "preview_only": true,
+        "preview_truncated": false,
+        "rows": [
+          [
+            [
+              "int",
+              "102490"
+            ]
+          ],
+          [
+            [
+              "int",
+              "460574"
+            ]
+          ],
+          [
+            [
+              "int",
+              "1086485"
+            ]
+          ],
+          [
+            [
+              "int",
+              "2047892"
+            ]
+          ],
+          [
+            [
+              "int",
+              "3173679"
+            ]
+          ]
+        ]
+      },
+      "preview_row_limit": 20
+    },
+    "reference": {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "int"
+        ],
+        "ordered_native_diagnostic_sha256": "5281d7e60afd9041748ac389b1d60e01ac7476116ae38a5421898a4015d7047c",
+        "payload_bytes": 1512,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 76
+      },
+      "preview": {
+        "columns": [
+          "id"
+        ],
+        "complete_result_row_count": 76,
+        "preview_only": true,
+        "preview_truncated": true,
+        "rows": [
+          [
+            [
+              "int",
+              "30609"
+            ]
+          ],
+          [
+            [
+              "int",
+              "48473"
+            ]
+          ],
+          [
+            [
+              "int",
+              "52199"
+            ]
+          ],
+          [
+            [
+              "int",
+              "58139"
+            ]
+          ],
+          [
+            [
+              "int",
+              "81043"
+            ]
+          ],
+          [
+            [
+              "int",
+              "102490"
+            ]
+          ],
+          [
+            [
+              "int",
+              "108788"
+            ]
+          ],
+          [
+            [
+              "int",
+              "115272"
+            ]
+          ],
+          [
+            [
+              "int",
+              "128012"
+            ]
+          ],
+          [
+            [
+              "int",
+              "130312"
+            ]
+          ],
+          [
+            [
+              "int",
+              "250391"
+            ]
+          ],
+          [
+            [
+              "int",
+              "283032"
+            ]
+          ],
+          [
+            [
+              "int",
+              "287122"
+            ]
+          ],
+          [
+            [
+              "int",
+              "299839"
+            ]
+          ],
+          [
+            [
+              "int",
+              "444499"
+            ]
+          ],
+          [
+            [
+              "int",
+              "460574"
+            ]
+          ],
+          [
+            [
+              "int",
+              "525998"
+            ]
+          ],
+          [
+            [
+              "int",
+              "549080"
+            ]
+          ],
+          [
+            [
+              "int",
+              "585659"
+            ]
+          ],
+          [
+            [
+              "int",
+              "933793"
+            ]
+          ]
+        ]
+      },
+      "preview_row_limit": 20
+    }
+  },
+  "new_model_request_count": 3,
+  "query_role": "askdata_m2_ro_thrombosis_prediction",
+  "result": {
+    "column_count": 1,
+    "complete": true,
+    "native_types": [
+      "int"
+    ],
+    "ordered_native_diagnostic_sha256": "e43c4c401571b2c9a52eea57207e045c0618e569a53fc4e4ddff5247c0ae655d",
+    "payload_bytes": 116,
+    "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+    "row_count": 5
+  },
+  "result_diagnostics": {
+    "column_count_match": true,
+    "ordered_rows_match": false,
+    "row_multiset_match": false
+  },
+  "retrieval": {
+    "baseline_field_ids": [
+      "thrombosis_prediction.laboratory.plt",
+      "thrombosis_prediction.laboratory.rf"
+    ],
+    "bm25_count": 30,
+    "coverage_field_ids": [],
+    "dense_count": 30,
+    "intent_selection": {
+      "added_field_ids": [
+        "thrombosis_prediction.laboratory.date",
+        "thrombosis_prediction.patient.birthday"
+      ],
+      "baseline_field_ids": [
+        "thrombosis_prediction.laboratory.plt",
+        "thrombosis_prediction.laboratory.rf"
+      ],
+      "decisions": [
+        {
+          "basis": "public_input_and_authorized_metadata",
+          "field_id": "thrombosis_prediction.laboratory.date",
+          "priority": 4,
+          "reason": "explicit_public_identifier_or_label",
+          "rerank_score": 0.44818732560490304,
+          "score_source": "provider_rerank",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label",
+          "table_id": "thrombosis_prediction.laboratory"
+        },
+        {
+          "basis": "public_input_and_authorized_metadata",
+          "field_id": "thrombosis_prediction.patient.birthday",
+          "priority": 4,
+          "reason": "explicit_public_identifier_or_label",
+          "rerank_score": 0.4073729574141196,
+          "score_source": "provider_rerank",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label",
+          "table_id": "thrombosis_prediction.patient"
+        }
+      ],
+      "policy": {
+        "baseline_preserved": true,
+        "canonical_lookup_max_pairs": 4,
+        "canonical_lookup_sql_tool_calls": 1,
+        "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+        "development_candidate": true,
+        "formal_protocol_override": false,
+        "grain_policy": "public_explicit_entity_grain_v2",
+        "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+        "join_source": "declared_foreign_keys_only",
+        "lookup_consumes_existing_sql_budget": true,
+        "max_added_fields": 8,
+        "max_fields": 20,
+        "max_related_hops": 2,
+        "native_ex_unchanged": true,
+        "numeric_policy": "floating_count_ratio_order_advisory_v3",
+        "output_group_policy": "participant_action_target_pair_v1",
+        "policy_id": "bird_public_intent_candidate_v4",
+        "predicate_policy": "public_condition_roles_conflicts_v3",
+        "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+        "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+        "unit_policy": "public_percentage_units_precision_v2"
+      },
+      "sample_condition_candidates": []
+    },
+    "rrf_count": 40,
+    "schema_selection_policy": {
+      "coverage_enabled": true,
+      "coverage_floor": 0.5,
+      "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+      "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+      "development_candidate": true,
+      "formal_protocol_override": false,
+      "intent_source": "original_question_and_official_evidence",
+      "max_coverage_fields": 4,
+      "max_fields": 20,
+      "metadata_match": "native_field_name_or_official_field_label",
+      "policy_id": "bird_authorized_schema_coverage_v1",
+      "threshold": 0.55
+    },
+    "selected_count": 4,
+    "selected_field_ids": [
+      "thrombosis_prediction.laboratory.plt",
+      "thrombosis_prediction.laboratory.rf",
+      "thrombosis_prediction.laboratory.date",
+      "thrombosis_prediction.patient.birthday"
+    ],
+    "source_identity": {
+      "backend": "postgresql",
+      "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+      "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c",
+      "dialect": "postgres",
+      "logical_database_id": "thrombosis_prediction",
+      "physical_schema": "public",
+      "prompt_dialect": "PostgreSQL",
+      "source_id": "bird_mini_dev_postgres_thrombosis_prediction"
+    }
+  },
+  "runtime_closed": true,
+  "schema_selection_policy": {
+    "coverage_enabled": true,
+    "coverage_floor": 0.5,
+    "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+    "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "intent_source": "original_question_and_official_evidence",
+    "max_coverage_fields": 4,
+    "max_fields": 20,
+    "metadata_match": "native_field_name_or_official_field_label",
+    "policy_id": "bird_authorized_schema_coverage_v1",
+    "threshold": 0.55
+  },
+  "scorer_runtime_closed": true,
+  "scoring_scope": "trusted_after_agent_exit_with_original_case_deadline",
+  "source_identity": {
+    "backend": "postgresql",
+    "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+    "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c",
+    "dialect": "postgres",
+    "logical_database_id": "thrombosis_prediction",
+    "physical_schema": "public",
+    "prompt_dialect": "PostgreSQL",
+    "source_id": "bird_mini_dev_postgres_thrombosis_prediction"
+  },
+  "sql_repair_policy": "bird_authorized_sql_repair_v2",
+  "status": "scored",
+  "validation_events": [
+    {
+      "sql_round": 1,
+      "valid": true
+    }
+  ]
+}

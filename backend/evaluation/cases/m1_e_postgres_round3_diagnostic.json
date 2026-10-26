@@ -1,0 +1,4 @@
+{
+  "description": "M1 E isolated PostgreSQL live rerun for the three SQLSTATE 42883 cases.",
+  "case_ids": ["GROWTH_OPS-150", "GROWTH_OPS-148", "CHANNEL_OPS-136"]
+}

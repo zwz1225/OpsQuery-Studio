@@ -1,0 +1,8 @@
+{
+  "description": "Development-only Schema coverage validation; 0095 is a SQL-repair regression control. No Gold or answer data.",
+  "case_ids": [
+    "BIRD-PG-0050",
+    "BIRD-PG-0095",
+    "BIRD-PG-1473"
+  ]
+}

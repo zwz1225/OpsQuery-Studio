@@ -1,0 +1,117 @@
+{
+  "capacity_policy": {
+    "minimum_additional_free_bytes": 10737418240,
+    "scope": "Conservative preparation gate, not a measured import footprint; recheck after source upload"
+  },
+  "checks": [
+    {
+      "name": "maintenance_identity",
+      "passed": true
+    },
+    {
+      "name": "postgresql_16",
+      "passed": true
+    },
+    {
+      "name": "encoding_locale",
+      "passed": true
+    },
+    {
+      "name": "local_endpoint",
+      "passed": false
+    },
+    {
+      "name": "expected_cluster_directory",
+      "passed": true
+    },
+    {
+      "name": "initialization_privileges",
+      "passed": true
+    },
+    {
+      "name": "independent_target_absent",
+      "passed": true
+    },
+    {
+      "name": "m2_roles_absent",
+      "passed": true
+    },
+    {
+      "name": "import_capacity_budget",
+      "passed": true
+    }
+  ],
+  "data_imported": false,
+  "database_created": false,
+  "database_state": {
+    "can_create_database": true,
+    "can_create_role": true,
+    "current_user": "askdata_admin",
+    "data_directory": "/home/zhangwenzong_25/.local/share/askdata/pg16-data",
+    "encoding": "UTF8",
+    "existing_m2_roles": [],
+    "maintenance_collation": "C",
+    "maintenance_ctype": "C",
+    "maintenance_database": "postgres",
+    "maintenance_locale_provider": "c",
+    "server_address": "127.0.0.1/32",
+    "server_port": 55432,
+    "server_version_num": 160015,
+    "superuser": true,
+    "target_exists": false,
+    "timezone": "UTC"
+  },
+  "dependencies": {
+    "psycopg": "3.2.13",
+    "psycopg-pool": "3.2.8"
+  },
+  "disk": {
+    "postgres_data": {
+      "free_bytes": 98755670016,
+      "path": "/home/zhangwenzong_25/.local/share/askdata/pg16-data"
+    },
+    "project": {
+      "free_bytes": 98755670016,
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend"
+    },
+    "report_storage": {
+      "free_bytes": 98755670016,
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/evaluation/results"
+    },
+    "source_storage": {
+      "free_bytes": 98755670016,
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data"
+    }
+  },
+  "errors": [],
+  "finished_at": "2026-10-15T14:33:21.030849+00:00",
+  "host": {
+    "machine": "x86_64",
+    "python": "3.11.15",
+    "system": "Linux"
+  },
+  "new_model_request_count": 0,
+  "postgresql_connected": true,
+  "ready_for_initialization": false,
+  "run_status": "blocked",
+  "stage": "M2 B read-only server preflight",
+  "started_at": "2026-10-15T14:33:15.372181+00:00",
+  "target": {
+    "database": "askdata_m2_bird",
+    "import_role": "askdata_m2_import",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "schema": "public"
+  }
+}

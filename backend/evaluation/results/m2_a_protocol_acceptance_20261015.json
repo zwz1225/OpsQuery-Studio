@@ -1,0 +1,41 @@
+{
+  "stage": "M2 A offline protocol acceptance",
+  "run_status": "complete",
+  "recorded_at": "2026-10-15T12:51:55.640079+00:00",
+  "protocol_id": "m2_bird_pg_v1",
+  "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+  "artifact_count": 11,
+  "counts": {
+    "development": 80,
+    "holdout": 30,
+    "smoke_subset": 8,
+    "total_unique_selected": 110,
+    "unused": 390
+  },
+  "database_disjoint": true,
+  "smoke_is_development_subset": true,
+  "public_inputs_and_scorer_gold_separate": true,
+  "checks": {
+    "freeze_report_sha256": "6e8fb1a0f919476b52a3d84da9c70356bcc86a28573a19844d13b9222fd9d647",
+    "independent_rebuild_report_sha256": "597216f4b6f1466d9f7a26d814c61b2754a9b4f194bd6ee51724fe89fbc3acfc",
+    "all_11_artifact_hashes_match": true,
+    "document_local_links_resolve": true
+  },
+  "tests": {
+    "command": "python -m unittest discover -s tests -p test_m2_bird_protocol.py -v",
+    "passed": 14,
+    "failed": 0,
+    "scope": "Focused offline contracts; no database or live model invocation"
+  },
+  "implementation_sha256": {
+    "evaluation/bird_protocol.py": "f1a60f00ae8bd8f757b28f3139e9be83fa196e8c981c0884e41315bb4c5e6b91",
+    "scripts/freeze_m2_bird_protocol.py": "98c45535cd283dc7b15006d8110a509dd666d0b4b877484f7c8a5f346ae879c2",
+    "tests/test_m2_bird_protocol.py": "58e3e571453cdce245648adb612a5f2de4a51194bf407068b7a57c0ff2c1e068"
+  },
+  "controlled_import_plan_prepared": true,
+  "runtime_integration_ready": false,
+  "database_imported": false,
+  "gold_execution_verified": false,
+  "new_model_request_count": 0,
+  "next_stage": "M2 B server preflight, controlled import and source verification implementation"
+}

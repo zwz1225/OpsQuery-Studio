@@ -1,0 +1,455 @@
+{
+  "stage": "M1 B downloaded PostgreSQL import/validation review",
+  "reviewed_at": "2026-10-08T13:14:17.709889+00:00",
+  "status": "passed",
+  "errors": [],
+  "summary": {
+    "table_count": 41,
+    "field_count": 276,
+    "row_count": 722732,
+    "relation_count": 53,
+    "error_count": 0,
+    "full_typed_row_match_count": 41,
+    "readonly_table_select_count": 41,
+    "actual_write_denial_count": 4,
+    "actual_write_denial_sqlstate": "42501"
+  },
+  "source_preparation": {
+    "canonical_import_spec_sha256": "8f936c3089614a38b17194b76e0c073c20cfe5b194ecb8f9f1e27b8f4d2ca7fd",
+    "source_data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+    "preparation_artifact_sha256": {
+      "source_preflight.json": "32b3bbff54e327e4ada230395fd82909f538bddafc0481e59f190f72f0f95929",
+      "import_manifest.json": "4b8952e8d8c29965a1fa79d544e913772a9d12a9b3f36d09b433daaf47561ef7",
+      "preparation_review.json": "ae6f34b0452f4602f4e33caa67c33a8119761a4d584c45c143b6e3b6d24bcf5b"
+    },
+    "source_file_count": 43
+  },
+  "server_report_sha256": {
+    "import": "215c9ce2e1ae53e140b7c17e4222d8eae29dcce7dd423ab03f74918d13032ce9",
+    "validation": "1e8e9b757f6391b15766169b631f3c7d287a1fdd95ea933570773989a57851f6"
+  },
+  "verified_target_data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+  "import_reference_bytes_match": true,
+  "raw_reports_preserved": true,
+  "import_pending_flag_superseded_by_independent_validation": true,
+  "tables": [
+    {
+      "name": "acquisition_channels",
+      "rows": 10,
+      "fields": 5,
+      "typed_row_multiset_sha256": "ca4fc733b93355fdf88e569b077681d8c4c17f610f585a59b69dd85846b5b0ce"
+    },
+    {
+      "name": "ad_accounts",
+      "rows": 8,
+      "fields": 5,
+      "typed_row_multiset_sha256": "0699e8d293e0e7e5fe3847ae1b7064e03fbacf6382fa1f8de407aa7e155dc10b"
+    },
+    {
+      "name": "ad_campaigns",
+      "rows": 100,
+      "fields": 9,
+      "typed_row_multiset_sha256": "4f6f2b996b56e6ec48681f95e37e3d80b89b68e530428844f4f202531af11712"
+    },
+    {
+      "name": "ad_creatives",
+      "rows": 408,
+      "fields": 6,
+      "typed_row_multiset_sha256": "3a4f65ce5ce4a2502a4f69679daafbcd84687af0935febef620e2af88cef9b21"
+    },
+    {
+      "name": "ad_daily_stats",
+      "rows": 5978,
+      "fields": 9,
+      "typed_row_multiset_sha256": "0250cffdec380454b72ccddae7841cba9d10cd39b321dece87252451c9cdb392"
+    },
+    {
+      "name": "budget_adjustments",
+      "rows": 700,
+      "fields": 7,
+      "typed_row_multiset_sha256": "beaaeb0dbed2cabc4d75d6ff7babac260c034fdae45c92c4cee9645db9d26679"
+    },
+    {
+      "name": "channel_attributions",
+      "rows": 5816,
+      "fields": 7,
+      "typed_row_multiset_sha256": "0694ba61f836206f341ae7fbdc494a4f334b3f93430e024dceff13e642c30c78"
+    },
+    {
+      "name": "channel_conversion_events",
+      "rows": 9920,
+      "fields": 7,
+      "typed_row_multiset_sha256": "5fcde3fbb8812dec89388cc572185db9c0c14b83994794761949cccf0a973184"
+    },
+    {
+      "name": "channel_targets",
+      "rows": 32,
+      "fields": 7,
+      "typed_row_multiset_sha256": "36d2fe518756f8498b61a42445246cbe295151080f357d3e61c2b3b35244f957"
+    },
+    {
+      "name": "content_audits",
+      "rows": 8000,
+      "fields": 6,
+      "typed_row_multiset_sha256": "e6e3c45621b283faaf4cc9bafb4925b4a85a72b6b4c91e4b98c7851ffb092725"
+    },
+    {
+      "name": "content_categories",
+      "rows": 12,
+      "fields": 4,
+      "typed_row_multiset_sha256": "e79fd97fe5af2854b27ee91fa7b57867c90756c7855b1a4b8c6e9dd6261a7908"
+    },
+    {
+      "name": "content_daily_metrics",
+      "rows": 9000,
+      "fields": 9,
+      "typed_row_multiset_sha256": "fbdf0f15c19458033045c1df9e24fe03df47dc29c4306afd3631920973438639"
+    },
+    {
+      "name": "content_reports",
+      "rows": 5000,
+      "fields": 6,
+      "typed_row_multiset_sha256": "0d0940a53bbff5a641dbde9c1afc779d64dd74e1f2c72b6cd0f53e648b7d7bae"
+    },
+    {
+      "name": "content_tag_relations",
+      "rows": 37475,
+      "fields": 5,
+      "typed_row_multiset_sha256": "05c1645d27a79323c2df4292b247ca7a9def8335c09d70b6f76ca83b76bb2ae8"
+    },
+    {
+      "name": "content_tags",
+      "rows": 18,
+      "fields": 4,
+      "typed_row_multiset_sha256": "daa3f7a88348bdb546774373a90daa49d764cf5c65f27f8dd8ff2965786f9c95"
+    },
+    {
+      "name": "contents",
+      "rows": 15000,
+      "fields": 9,
+      "typed_row_multiset_sha256": "32a50b82636767d40e1383fe8f578410c499fc23dd70eb5d7e31aac3a3f54894"
+    },
+    {
+      "name": "creator_daily_metrics",
+      "rows": 1800,
+      "fields": 7,
+      "typed_row_multiset_sha256": "037c11d3228ea16cf04110c1d636aa4d4778976fff37c2f28d70d5d2c7e7052c"
+    },
+    {
+      "name": "creator_profiles",
+      "rows": 1800,
+      "fields": 7,
+      "typed_row_multiset_sha256": "6042f0a5506560e27a60f50de7d467053544139ac72c2c816c4564d7ec0b0454"
+    },
+    {
+      "name": "creators",
+      "rows": 1800,
+      "fields": 5,
+      "typed_row_multiset_sha256": "1a517a336a547901c34079806bfd9a229c1d9b45f10192ebee9d9678ef141f73"
+    },
+    {
+      "name": "growth_daily_metrics",
+      "rows": 2400,
+      "fields": 8,
+      "typed_row_multiset_sha256": "53d958ebc1e771e95022c35d094135deced28b2d4d49c25859061331f463df8c"
+    },
+    {
+      "name": "growth_targets",
+      "rows": 80,
+      "fields": 7,
+      "typed_row_multiset_sha256": "715fdea3c21e6b6c1b83091314ee101adc7c1d88ba794032b8e8ec28632f33d5"
+    },
+    {
+      "name": "recall_campaigns",
+      "rows": 24,
+      "fields": 7,
+      "typed_row_multiset_sha256": "6672b9239f99296244ef06165cfe17782d2e5a62f99b7d0fbd8ccae16a7a1887"
+    },
+    {
+      "name": "recall_results",
+      "rows": 9000,
+      "fields": 6,
+      "typed_row_multiset_sha256": "b1a9618b3013ae7ed0c3d5b75b95e3c1df5a5c3e239a0299656fd76e3582b696"
+    },
+    {
+      "name": "recall_touches",
+      "rows": 9000,
+      "fields": 7,
+      "typed_row_multiset_sha256": "d0b1b926e059b0fa6c231259e42640a9b5acf8416a0e03fd2be637892748d84d"
+    },
+    {
+      "name": "topic_content_relations",
+      "rows": 4500,
+      "fields": 6,
+      "typed_row_multiset_sha256": "0fd9d007e51033fd8adf172b243f4ab94f3f6196b8150956ece2f9c4203ceb84"
+    },
+    {
+      "name": "trending_topics",
+      "rows": 120,
+      "fields": 7,
+      "typed_row_multiset_sha256": "0e8ad875086aa5393ad5091e506298877b44bc5fdcc2d39c1548a5ce9f4ffe43"
+    },
+    {
+      "name": "user_activations",
+      "rows": 12000,
+      "fields": 7,
+      "typed_row_multiset_sha256": "7f67636d57aa30ca6a3953d47dd8f82803b48aef94e6e31d3c98404b9dd6e014"
+    },
+    {
+      "name": "user_churn_events",
+      "rows": 7149,
+      "fields": 6,
+      "typed_row_multiset_sha256": "2a0c68416492a805f1af78060fc4b4ae135bbbd627362c304237e7b2ebefc6f3"
+    },
+    {
+      "name": "user_daily_activity",
+      "rows": 86017,
+      "fields": 8,
+      "typed_row_multiset_sha256": "4613d5193227526b3ad45c09caf664bfb4fc2fb49ec15328b24889dcfe9cee30"
+    },
+    {
+      "name": "user_devices",
+      "rows": 13985,
+      "fields": 6,
+      "typed_row_multiset_sha256": "731b6d81c98b20a591c01d84fe85f18ee5c08432662ffb1eb9c88b935b1c7836"
+    },
+    {
+      "name": "user_lifecycle_snapshots",
+      "rows": 12000,
+      "fields": 7,
+      "typed_row_multiset_sha256": "3c64e45d991c11f0e9b8e394123bf90fa387ec4da0f3cfda5530cda9b33179cc"
+    },
+    {
+      "name": "user_profiles",
+      "rows": 12000,
+      "fields": 9,
+      "typed_row_multiset_sha256": "41319bc9a57ce4372ce0bca2ac940e5b4bdd13b0bae5d53f914636daf12bceea"
+    },
+    {
+      "name": "user_registrations",
+      "rows": 12000,
+      "fields": 7,
+      "typed_row_multiset_sha256": "895fa7802cd8a52213850f9bb02c31cdf4cee76c6ee114c992305f829d7264bf"
+    },
+    {
+      "name": "user_retention",
+      "rows": 57334,
+      "fields": 7,
+      "typed_row_multiset_sha256": "3f3cafa77bfbb8c8fff90cb732941613c4ef90c94a956327f323cc1e0dc8e1e2"
+    },
+    {
+      "name": "user_sessions",
+      "rows": 151094,
+      "fields": 8,
+      "typed_row_multiset_sha256": "1cf5245fce7acfa20edbf13c06c17f13f47f97429d734828ae921477111ed040"
+    },
+    {
+      "name": "user_tag_relations",
+      "rows": 24000,
+      "fields": 6,
+      "typed_row_multiset_sha256": "c6f1b14c5b166430c1c21b0c7d722d38636e132491b285fd96039f1c3a549ffa"
+    },
+    {
+      "name": "user_tags",
+      "rows": 12,
+      "fields": 4,
+      "typed_row_multiset_sha256": "77696166c28367e37dbfda336e671d7ba60fe47a2863923b2c7bf63f2373c1cc"
+    },
+    {
+      "name": "users",
+      "rows": 12000,
+      "fields": 6,
+      "typed_row_multiset_sha256": "560dc32419710110023edc08e1c66c44a2b82d0df646f62f221aba34aca107b8"
+    },
+    {
+      "name": "video_exposures",
+      "rows": 140000,
+      "fields": 7,
+      "typed_row_multiset_sha256": "e3e9db27ecc1b6a207dd26dfbb916c563bd7003b3826dafec462972a23488b9c"
+    },
+    {
+      "name": "video_interactions",
+      "rows": 6443,
+      "fields": 7,
+      "typed_row_multiset_sha256": "55a2d88fa0d37bc4cbcf5019725730443f6716b55c943195367211222e9242f9"
+    },
+    {
+      "name": "video_plays",
+      "rows": 48697,
+      "fields": 9,
+      "typed_row_multiset_sha256": "e95bee4bc38d0e668325ae7b724d87104e393a9e94691470a3a284ccb2ba8c86"
+    }
+  ],
+  "nullable_columns": [
+    {
+      "table": "channel_attributions",
+      "column": "ad_campaign_id",
+      "null_count": 177
+    },
+    {
+      "table": "channel_conversion_events",
+      "column": "ad_campaign_id",
+      "null_count": 306
+    },
+    {
+      "table": "recall_results",
+      "column": "returned_at",
+      "null_count": 8255
+    },
+    {
+      "table": "user_activations",
+      "column": "activated_at",
+      "null_count": 3022
+    },
+    {
+      "table": "user_activations",
+      "column": "activation_seconds",
+      "null_count": 3022
+    }
+  ],
+  "timestamp_columns": [
+    {
+      "table": "budget_adjustments",
+      "column": "adjusted_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "channel_attributions",
+      "column": "attributed_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "channel_conversion_events",
+      "column": "converted_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "content_audits",
+      "column": "audited_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "content_reports",
+      "column": "reported_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "contents",
+      "column": "published_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "creators",
+      "column": "joined_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "recall_results",
+      "column": "returned_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "recall_touches",
+      "column": "sent_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "topic_content_relations",
+      "column": "joined_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "user_activations",
+      "column": "activated_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "user_devices",
+      "column": "first_seen_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "user_profiles",
+      "column": "updated_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "user_registrations",
+      "column": "registered_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "user_sessions",
+      "column": "started_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "user_sessions",
+      "column": "ended_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "user_tag_relations",
+      "column": "assigned_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "users",
+      "column": "registered_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "video_exposures",
+      "column": "exposed_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "video_interactions",
+      "column": "interacted_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    },
+    {
+      "table": "video_plays",
+      "column": "played_at",
+      "nonzero_microsecond_count": 0,
+      "max_significant_fractional_digits": 0
+    }
+  ],
+  "csv_bytes": 51894889,
+  "run_windows": {
+    "import": {
+      "started_at": "2026-10-08T12:58:53.179287+00:00",
+      "finished_at": "2026-10-08T12:59:14.065978+00:00",
+      "elapsed_seconds": 20.886691
+    },
+    "validation": {
+      "started_at": "2026-10-08T12:59:32.184570+00:00",
+      "finished_at": "2026-10-08T12:59:45.110764+00:00",
+      "elapsed_seconds": 12.926194
+    }
+  },
+  "review_connected_to_postgresql": false,
+  "review_executed_sql": false,
+  "new_model_request_count": 0,
+  "scope": "Offline review of server snapshot evidence; not a live PostgreSQL state check or application-adapter acceptance."
+}

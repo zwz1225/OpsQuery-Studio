@@ -1,0 +1,3622 @@
+{
+  "stage": "M2 public intent candidate native audit; not formal benchmark",
+  "run_status": "complete",
+  "started_at": "2026-10-18T07:25:01.586892+00:00",
+  "errors": [],
+  "postgresql_connected": true,
+  "database_created": false,
+  "database_imported": false,
+  "target_data_verified": true,
+  "new_model_request_count": 0,
+  "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+  "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede",
+  "replay_entrypoint_sha256": "3a97911ac03a0d6f73345f36d990fc5ffa7e2258cd31360c1c4d466ea3458b1c",
+  "candidate_replay_policy": "bird_public_intent_native_audit_v1",
+  "mode": "trusted_captured_sql_replay",
+  "policy": "bird_captured_development_native_replay_v1",
+  "formal_benchmark": false,
+  "primary_ex": null,
+  "holdout_live_allowed": false,
+  "gold_executed": true,
+  "source_report_sha256": "5d08c78e4937f1f6cbd5fb6d8df61f76453cd1331f55fdec0fd64a0c43f55f84",
+  "producer_code_sha256": "ad9ede65218a065a3b0d2bcecb23a73b50a20502a1f5df884845aa9572d64bc2",
+  "source_binding": {
+    "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+    "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+    "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+    "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+    "physical_database": "askdata_m2_bird",
+    "physical_schema": "public",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "budgets": {
+      "case_wall_timeout_seconds": 600,
+      "chat_max_output_tokens": 4096,
+      "connect_timeout_seconds": 10,
+      "enforcement_status": "required_in_external_runner_before_live; existing internal runners are not claimed compliant",
+      "lock_timeout_ms": 5000,
+      "max_chat_http_attempts_per_case": 10,
+      "max_prompt_utf8_bytes": 98304,
+      "max_sql_tool_calls": 3,
+      "max_total_model_http_attempts_per_case": 16,
+      "max_transport_retries_per_request": 1,
+      "max_validation_attempts_per_sql_round": 3,
+      "model_request_timeout_seconds": 180,
+      "result_limit_probe": "fetch limit+1; never score preview or partial rows",
+      "result_payload_byte_limit": 67108864,
+      "result_row_limit": 100000,
+      "shared_attempt_counters": "Include generation, preprocessing, embeddings, reranking and transport retries; shared index build reported separately",
+      "sql_statement_timeout_ms": 30000,
+      "usage": "record provider usage when available; missing usage is unknown, never zero",
+      "workers": 1
+    },
+    "scoring_policy": "bird_native_tuple_set_ex_v1",
+    "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1"
+  },
+  "code_binding": {
+    "sha256": "ad9ede65218a065a3b0d2bcecb23a73b50a20502a1f5df884845aa9572d64bc2",
+    "files": {
+      "app/__init__.py": "355b723e052e3e6c211f4cd922a2cccafd16836360ce633afbafdbf32bdd90ad",
+      "app/api/__init__.py": "e13d97d643b76827935fb88232e4012ce4161d82adffe01e040e48090b2887ea",
+      "app/api/routes.py": "3237efe75ad8141ca01d03b08e303c8bc30130f1dbeddd5f01e62e52087f893c",
+      "app/config.py": "7e71979bf12e33bc7636d64c9a608552103c97cf176db64f8d731c73a7fc75b3",
+      "app/database.py": "30ad145862f13262fcc4b6c3881a4823533dda3814fc9e062ba069780f92a863",
+      "app/datasources/__init__.py": "660dc93b3ad4e3454e433dd79bcfd7f2db67274baeac0ebf7d84682296b117b2",
+      "app/datasources/contracts.py": "b9da804d820b1d5f20fb642cf60bf37039a6fb6dd33e6212081b3335dd32c869",
+      "app/datasources/csv_metadata.py": "ef68964f78da54eee5b0cd64b8f0dd3c53adde04adbcfc9cf471494f9e144638",
+      "app/datasources/dialects.py": "27eeb0134a3802e5a71ab013f1b7fd6f375bce3720823a449b762c962c9bc13b",
+      "app/datasources/postgres_config.py": "cc1dc6f6c80dd88f2e3937cd6753f84b02e5ef2b7b0ae9a151524c715e5442d2",
+      "app/datasources/postgres_connections.py": "26b08a853c6f691a21a3f11b615f6caea7eb6eb22ab10a22a3e544ac1146f0a1",
+      "app/datasources/postgres_metadata.py": "1a1f3cd0bac6193231a9403e010a3c482904f851ae433abb1d95bb94183c771e",
+      "app/datasources/row_digest.py": "06cb48c69b2b0d2e05006de64f6555fe8b0ab4460118afb92af8e9c3efc28b06",
+      "app/datasources/runtime.py": "586c9024d8b8dbca5ffa9ea3f04d403190285333e4c04b3a19036e897ddcbe24",
+      "app/datasources/sql_policy.py": "32407706c83ce218440a0d25cc2b07a245463a5cb93a52e21aa0d4514dd6ded9",
+      "app/datasources/values.py": "869fa4ba783aebb71a5a643ede27c1997894e1740e865f205fd935790662e7df",
+      "app/errors.py": "b71518301668603cb4dce07daed44f611bdad0a31b1e0fd9f50ba8b6fdbe4b8d",
+      "app/main.py": "cae83be9b955964b25f17045a742226fae2db7751c8567e5263c88ea0a785c0f",
+      "app/mcp_runtime/__init__.py": "25afe0d37fd99611244cc7ff3e903cfa5c2dade31a15870e15269a609c6a7053",
+      "app/mcp_runtime/client.py": "549774b6d3b0b5d2903e56f538e61299a3c9a69abcb2be6c5c155f82d0d3e51d",
+      "app/mcp_runtime/schemas.py": "d71c055298a5a338f5126235c5604ce0ca96cb719db629d06a91b23a03d3787a",
+      "app/mcp_runtime/server.py": "bc5cd3e3b1be1dfc2e12dc742046c44d0b701fe8893a82f4897471a0e915afdd",
+      "app/mcp_runtime/tools/__init__.py": "b465bdc3de9e8878a59a8bd244b2e42fa03594e886d90ac5a6b218bf3892535f",
+      "app/mcp_runtime/tools/database_tools.py": "4e916e5043d6bad56429f727377415bdac14c025a585fe2ab3865ef0911e83c9",
+      "app/mcp_runtime/tools/presentation_tools.py": "1524ab3baaf0ecca5e8df1b03e5682f6dd8bdfff37e3f2b64b7cf88aa9f19653",
+      "app/mcp_runtime/tools/time_tools.py": "59a95659eafcc50f4c9ef2b2d1f783a04617e29018251fce64fb3af55d500974",
+      "app/model_client.py": "f68cd0ced71c42e6e18464f86310aed22b71386f63f1160e49fad8bd02c92093",
+      "app/models.py": "2fea8f78c9078f6bbf876d18193d4503b42f94daa4ba5c2f31b6fdd8784cf83e",
+      "app/preprocessing.py": "28a9359411a925147457f5514837471e75be910e182540344add5aac21a000a2",
+      "app/querying/__init__.py": "6dc948905075e824c2a2607ef66f9b842d53c013f2644bd78ed7551eac2c652c",
+      "app/querying/constraint_planner.py": "73fc8d4fe47e69285903a80b9e783acbd45bf0bc65575c49380b3f9fec8f5ef0",
+      "app/querying/constraint_validator.py": "d9ebea98ba3dea34f89bf8b2645dcd6a81bcc6b72f2af7df5f334f241db2db7c",
+      "app/querying/data_qa_agent.py": "59a3faf139e9da26e5fd373f20f1e2a85166363eea9b1c8e9888740ec49b6fe3",
+      "app/querying/duckdb_engine.py": "0ad6bd9980b1962dd630519cb9d8256b06f7aabbaa3446fb9009f4a27aa0cc26",
+      "app/querying/metric_planner.py": "28d1d3bc60988779b1e3d845993e73861c15cb6a9511554605eca94aff662e38",
+      "app/querying/models.py": "4472388a7ae0bcf5803b32b02c6290757ffc4ae62c7ea2611a9eac5de7499ad3",
+      "app/querying/postgres_engine.py": "eb533e3bb5a022bcab33a181fc992cf575bdca92debbbdd486a184a09df4c857",
+      "app/querying/response_generator.py": "c99a6d87dd7774a003a076f4ade68b4ba364b497a6a5fc5c3cbe3ea4b524561c",
+      "app/querying/single_database_agent.py": "9115867fb1b964ee1aba0bde5d07364703a8c381814cbe22a91c933c8a37a107",
+      "app/querying/sql_context.py": "893df35a113720a94276b2f3108a38b51f1f8167231ff9b8bc179f078c2c543f",
+      "app/querying/sql_validator.py": "f516de49204f43129383ce4396c1ecbbc732cbc72336507597e82e74b5e18e90",
+      "app/retrieval/__init__.py": "af173889acb98646a899576f7f784db01a799c468e9736c511c500bef1ef5c53",
+      "app/retrieval/graph.py": "60195e45df0671a5c8e273aa5584a11907c87131816da5fac9773b0f6d0bf2ad",
+      "app/retrieval/service.py": "ad490b0ed8154f9237d671507896874f4fd9929e0b8edb13972f905846b2979e",
+      "app/retrieval/store.py": "965e5fd6c774229ece9c82f053e9f2d932e7ad368fde6c1c336422b6b5131656",
+      "app/retrieval/time_field_policy.py": "62178d671b4e3772d98a36833ece3cbf0e6d0beee10d3d9b9386605b2ab0d0a4",
+      "app/security/__init__.py": "f64ea4a1b53332090130642c17e6265aa4df9019634fc075448b25f3ba4e94a6",
+      "app/security/access_control.py": "0165c9bf5d87cbe21da951642bcac8f68055be41ce9eac91ad8892ec3dd6f1ee",
+      "app/security/auth.py": "1aaa891fc7f443bb8a7d678ac4be82a975ae1722dba56f7e228e112435dc76e3",
+      "app/service.py": "3961513ad9e067f749d6bb4aa7bcb5d680219bb564baa06fcfa6b0d5a6516296",
+      "app/services/__init__.py": "020f361755c5bedb3b0b82e4d1458b862c7b8f3d2073d0a87325f2772220de0c",
+      "app/services/askdata_service.py": "f13e3041bd8ca20dfc7af5d7153afa934f6da9411cde8729bc8ca42663b069d5",
+      "app/services/memory_store.py": "d4ed8600af12b383a459aeebf4c40d74ef99209da3fff8d611865a9b36b6cb14",
+      "app/services/session_archive.py": "008336024d456a019341dcebaefbc7527adbcd8aa9d351a49914225d07951b51",
+      "app/services/session_context.py": "b4590ae4410f13e05d678fbcbf8b69c102400ae67986d4ad8d4ef7093ccbbe7c",
+      "app/services/short_term_memory.py": "bfbc81597254e58f8303b81e53ebcd24a244fc4d6cd7053c1d5cabe8ad48299f",
+      "app/skills/__init__.py": "680726c976c87e1e888df0697b232234722401e1d1b02636949f18afab163949",
+      "app/skills/registry.py": "b1578a6829402fd103be8b40920d8fff682694ed4c4fd986935b6c8b6eb37f53",
+      "app/workflows/__init__.py": "3da3f98de22b4df4c01d7082562b1decac29704d80539cc9e7a8e4f9378ae397",
+      "app/workflows/clarification.py": "17314e22bdd5194f41b360cea4a38f22850a6afecc7514ec73bc9be4fb355eb8",
+      "app/workflows/query_graph.py": "9b818c9309a178b049da9edf750354bf2af8ba2781bd7091ea1447bdaafe3461",
+      "app/workflows/result_builder.py": "bfca63b31f0b71f1e823bc59912b58a75317d80f2d34cef1abec5aec46dad72e",
+      "app/workflows/state.py": "7532b4d7d9223b555e22f9bb38810da1c8fa44c9c58bbe5992c42c72094ffeaf",
+      "evaluation/bird/__init__.py": "b9d0c593cf9368540295851f3c4acb9242bc17aaa48f1b779ee7b174f9fc98f3",
+      "evaluation/bird/budgets.py": "688de220e22e28e1fe4366db4348866d61eb946d5345fd918e02e573cc013e39",
+      "evaluation/bird/case_worker.py": "8d6df5e8e44d7cf1548e583c0d0e5f11ee8b370191826044fc06afb529662a4c",
+      "evaluation/bird/coverage.py": "c857134e5bc6909ca476f7c74cfcd184769f6234bbc912be3c9c0759d61c1451",
+      "evaluation/bird/diagnostic_runner.py": "e01532e49e7fa9ee3195dcf8bcb74d44ed599a7fff0df4a7d6a628bb12a01a36",
+      "evaluation/bird/diagnostics.py": "f12dbf459bc15c7f126d27d304da3582b1a42d6f5ff2ec8cf636f8cc797364b7",
+      "evaluation/bird/evidence.py": "131ed1bd820938e7e09c0f530ebede143941fd0b418e27c2a9d802b4208f3fec",
+      "evaluation/bird/first_sql_audit.py": "fc50ac8d1804ed8b88b3dac3bb53b8a6c076fae4a7c97f99a161e10d2946f8e5",
+      "evaluation/bird/intent.py": "b77e6a90cf78fd02d7bb70cb324ce849e8a5d1db2f6834669f4efd69bc0ba469",
+      "evaluation/bird/intent_replay.py": "e53cab7957736840ad65bb3b7e3c17ab4e582bdad4d4396b4b1a22b6eafabab2",
+      "evaluation/bird/isolated_agent.py": "6c0bc159fac5ecc39e1f336a8b4cf0c3656a0fcd5ee465160a02ee33ca2cf8bd",
+      "evaluation/bird/manifest.py": "b32775e26be5eda69e76d19cd987224f187a71a6fcc1ba99866883b8adcbd83f",
+      "evaluation/bird/metrics.py": "83cf7d18559f51a532d2726100eff27353f5c6a5c24a46f5f857081d8b20c7c7",
+      "evaluation/bird/model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+      "evaluation/bird/native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f",
+      "evaluation/bird/relationships.py": "c7154cf3ada71d96d541136a9b679071d19fcbe73aad2246eb0e9f1d8ce3020d",
+      "evaluation/bird/repair.py": "fe8120bbc9bf5e3dc4b6dcd6b2a845cf2aeadfe95851f6438f58d198837d6644",
+      "evaluation/bird/replay.py": "f035e1f678bb77c87044f64b141481b6370f16a0cec04f14e309f42fb1bfde02",
+      "evaluation/bird/retrieval.py": "6b6ef17afb5a3bcbc838e1ef59593bf45a02df47a95bc264c835207c39e10077",
+      "evaluation/bird/runner.py": "fbdbde667433949fe755cbd1680f140d7a2b6e8478816f3beb21c095368402e5",
+      "evaluation/bird/runtime.py": "24644dd5f69959cd46db7e430ec4900c78acebee567720a132ab37563d1d12d2",
+      "evaluation/bird/semantics.py": "8ed2db1ba25f8837780d245d0f5a2dda8af8bfe58d231473aa07349db80a072d",
+      "evaluation/bird/sql.py": "b84ca3e5a2adcb979e65fc995f920910b00583d1ca006c45cbcbe53a3f2e81fd",
+      "evaluation/bird/supervisor.py": "2a13f26b43b26ba756723f883a84d37ab5f2c3968096eb6daecde0e30ec9d082",
+      "evaluation/bird/units_output.py": "481cc1cbdf532c30353b8808f62c4432d14ae1ef8c8f2965f43e235a4df0fcd2",
+      "evaluation/bird_protocol.py": "f1a60f00ae8bd8f757b28f3139e9be83fa196e8c981c0884e41315bb4c5e6b91",
+      "evaluation/run_bird_benchmark.py": "df76b1ad2280f1a1a89f76743890abcd194c0660def407f95113421dae15f48d",
+      "scripts/check_m2_c_bird_runtime.py": "70d54f2a35d8ef37de21eb01055ddd1e8a25d479638ca71eeb536334fd85b87c",
+      "scripts/m2_b_common.py": "47d4696ddd7a61f2a6c60b29ba4785f31eac1929c484d1b69d30d752745affef",
+      "scripts/m2_b_dump.py": "116345a7e0a8f3a6dc49c305b899f47655cc5d6416adcdcc8eb6bce6b0e6944f",
+      "scripts/m2_b_structure.py": "e4a33335815cb511c3e0ee6c173bfdaafd9ba5214f88e8bbd8c3e325a4f9a1a6",
+      "scripts/m2_b_target.py": "6a952d812604e27c1e43335fe82d4e4958c3c07ca37b9af980c034e8ad19f7a9",
+      "scripts/m2_b_typed_rows.py": "805165db8aba54ee61512e40f4dcb216f9a2f6b90f460d41163ca4b66e26b9ac"
+    },
+    "dependencies": {
+      "psycopg": "3.2.13",
+      "psycopg-pool": "3.2.8",
+      "sqlglot": "30.17.0"
+    },
+    "python": "3.11.15",
+    "system": "Linux",
+    "kernel": "6.8.0-59-generic",
+    "machine": "x86_64",
+    "seccomp_library_version": "2.5.3"
+  },
+  "source_case_count": 14,
+  "selected_case_ids": [
+    "BIRD-PG-0050",
+    "BIRD-PG-0095",
+    "BIRD-PG-1473",
+    "BIRD-PG-1435",
+    "BIRD-PG-0201",
+    "BIRD-PG-1399",
+    "BIRD-PG-0586",
+    "BIRD-PG-0036",
+    "BIRD-PG-0082",
+    "BIRD-PG-1486",
+    "BIRD-PG-0159",
+    "BIRD-PG-1405",
+    "BIRD-PG-0368",
+    "BIRD-PG-0766"
+  ],
+  "excluded_cases": [],
+  "cases": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "california_schools",
+        "source_id": "bird_mini_dev_postgres_california_schools",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+        "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+      },
+      "query_role": "askdata_m2_ro_california_schools",
+      "queries": {
+        "captured_generated": "SELECT s.mailstreet, sc.sname FROM schools s JOIN satscores sc ON s.cdscode = sc.cds ORDER BY sc.avgscrmath DESC NULLS LAST LIMIT 1 OFFSET 6",
+        "frozen_gold": "SELECT T2.MailStreet, T2.School FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode ORDER BY T1.AvgScrMath DESC NULLS LAST LIMIT 1 OFFSET 6"
+      },
+      "generated_sql_sha256": "844e4cf44146b7a0fb357855d799fe343cd8f765a2a795111c9d502e6742e65e",
+      "gold_sql_sha256": "84767e6311bf2f6fae4853411b0a6a368bc364d1d8b8ec8e66ed70589fb1bfd9",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "844e4cf44146b7a0fb357855d799fe343cd8f765a2a795111c9d502e6742e65e",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "84767e6311bf2f6fae4853411b0a6a368bc364d1d8b8ec8e66ed70589fb1bfd9",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 2,
+            "payload_bytes": 76,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "NoneType",
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "13bfb78fd7110a9632aca464f68c493592dd849553610e5cd4bf913a0ab0de97"
+          },
+          "preview": {
+            "columns": [
+              "mailstreet",
+              "sname"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "25 Churchill Avenue"
+                ],
+                [
+                  "null"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 2,
+            "payload_bytes": 77,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "NoneType",
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "13bfb78fd7110a9632aca464f68c493592dd849553610e5cd4bf913a0ab0de97"
+          },
+          "preview": {
+            "columns": [
+              "mailstreet",
+              "school"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "25 Churchill Avenue"
+                ],
+                [
+                  "null"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 0.725
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 2,
+        "gold_column_count": 2,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 2,
+        "payload_bytes": 76,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "NoneType",
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "13bfb78fd7110a9632aca464f68c493592dd849553610e5cd4bf913a0ab0de97"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "satscores",
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "sc.avgscrmath",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "satscores",
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "t1.avgscrmath",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "financial",
+        "source_id": "bird_mini_dev_postgres_financial",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+        "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+      },
+      "query_role": "askdata_m2_ro_financial",
+      "queries": {
+        "captured_generated": "SELECT d.account_id\nFROM disp d\nJOIN client c ON d.client_id = c.client_id\nJOIN district dist ON c.district_id = dist.district_id\nORDER BY c.birth_date DESC NULLS LAST, dist.a11 DESC NULLS LAST\nLIMIT 1",
+        "frozen_gold": "SELECT T1.account_id FROM account AS T1 INNER JOIN disp AS T2 ON T1.account_id = T2.account_id INNER JOIN client AS T3 ON T2.client_id = T3.client_id INNER JOIN district AS T4 ON T4.district_id = T1.district_id WHERE T2.client_id = (SELECT client_id FROM client ORDER BY birth_date DESC NULLS LAST LIMIT 1) GROUP BY T4.A11, T1.account_id"
+      },
+      "generated_sql_sha256": "44132f378cf3bf630780303147500ffb3ff35003eefc3a4a0592cbb74e2e991a",
+      "gold_sql_sha256": "4cb3c502c6a3db5ecb98afd9c5e506a763e5fa64d5dbf48f4ac5e81762f55d68",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "44132f378cf3bf630780303147500ffb3ff35003eefc3a4a0592cbb74e2e991a",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "4cb3c502c6a3db5ecb98afd9c5e506a763e5fa64d5dbf48f4ac5e81762f55d68",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 43,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "int"
+            ],
+            "ordered_native_diagnostic_sha256": "9829421c931e384807f4b646e0bb1970e6072cb42949a17d1148d09465562a93"
+          },
+          "preview": {
+            "columns": [
+              "account_id"
+            ],
+            "rows": [
+              [
+                [
+                  "int",
+                  "2836"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 43,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "int"
+            ],
+            "ordered_native_diagnostic_sha256": "9829421c931e384807f4b646e0bb1970e6072cb42949a17d1148d09465562a93"
+          },
+          "preview": {
+            "columns": [
+              "account_id"
+            ],
+            "rows": [
+              [
+                [
+                  "int",
+                  "2836"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 5.643
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 43,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "int"
+        ],
+        "ordered_native_diagnostic_sha256": "9829421c931e384807f4b646e0bb1970e6072cb42949a17d1148d09465562a93"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [
+          "referenced_tables_differ",
+          "reference_where_columns_absent_from_prediction"
+        ],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "client",
+            "disp",
+            "district"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "c.birth_date",
+              "descending": true,
+              "nulls_first": false
+            },
+            {
+              "expression": "dist.a11",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "account",
+            "client",
+            "disp",
+            "district"
+          ],
+          "string_literals": [],
+          "where_column_names": [
+            "birth_date",
+            "client_id"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [
+          "birth_date",
+          "client_id"
+        ],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "debit_card_specializing",
+        "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+        "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+      },
+      "query_role": "askdata_m2_ro_debit_card_specializing",
+      "queries": {
+        "captured_generated": "SELECT AVG(ym.consumption) / 12 AS average_monthly_consumption FROM yearmonth ym JOIN customers c ON ym.customerid = c.customerid WHERE c.segment = 'SME' AND LEFT(ym.date, 4) = '2013'",
+        "frozen_gold": "SELECT AVG(T2.Consumption) / NULLIF(12, 0) FROM customers AS T1 INNER JOIN yearmonth AS T2 ON T1.CustomerID = T2.CustomerID WHERE SUBSTR(T2.Date, 1, 4) = '2013' AND T1.Segment = 'SME'"
+      },
+      "generated_sql_sha256": "288630801671f90ef83d9fecd33d906b5247cb9eec5af1f18ac76588709ebbb3",
+      "gold_sql_sha256": "6b0e66dee0ac500d9ae990d2f35f9810e52dee07decc895d6c900ae5de2b3ff6",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "288630801671f90ef83d9fecd33d906b5247cb9eec5af1f18ac76588709ebbb3",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "6b0e66dee0ac500d9ae990d2f35f9810e52dee07decc895d6c900ae5de2b3ff6",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 78,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "b6836bcbfe86173cf99cf6594a5e708852d1b82c0f7910a7cf33568cc2974e20"
+          },
+          "preview": {
+            "columns": [
+              "average_monthly_consumption"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.cbf4cdbb399f7p+8"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 59,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "b6836bcbfe86173cf99cf6594a5e708852d1b82c0f7910a7cf33568cc2974e20"
+          },
+          "preview": {
+            "columns": [
+              "?column?"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.cbf4cdbb399f7p+8"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 2.879
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 78,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "float"
+        ],
+        "ordered_native_diagnostic_sha256": "b6836bcbfe86173cf99cf6594a5e708852d1b82c0f7910a7cf33568cc2974e20"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "customers",
+            "yearmonth"
+          ],
+          "string_literals": [
+            "2013",
+            "SME"
+          ],
+          "where_column_names": [
+            "date",
+            "segment"
+          ],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "customers",
+            "yearmonth"
+          ],
+          "string_literals": [
+            "2013",
+            "SME"
+          ],
+          "where_column_names": [
+            "date",
+            "segment"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "student_club",
+        "source_id": "bird_mini_dev_postgres_student_club",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+        "data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2"
+      },
+      "query_role": "askdata_m2_ro_student_club",
+      "queries": {
+        "captured_generated": "SELECT event_name FROM public.event WHERE type = 'Game' AND status = 'Closed' AND event_date BETWEEN '2019-03-15' AND '2020-03-20'",
+        "frozen_gold": "SELECT DISTINCT event_name FROM event WHERE type = 'Game' AND DATE(SUBSTR(event_date, 1, 10)) BETWEEN '2019-03-15' AND '2020-03-20' AND status = 'Closed'"
+      },
+      "generated_sql_sha256": "1b1643c4f9f576f36e55d6faf889fc40b073e51df28a6841f68efa1d1dae10ec",
+      "gold_sql_sha256": "274e4d4f1603b56ed6190de41a38f8885eda8124b1ab3bcd33a082e990bc3d36",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "1b1643c4f9f576f36e55d6faf889fc40b073e51df28a6841f68efa1d1dae10ec",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "274e4d4f1603b56ed6190de41a38f8885eda8124b1ab3bcd33a082e990bc3d36",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 3,
+            "column_count": 1,
+            "payload_bytes": 108,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "d9af5b2d685cb18f72b28aeb0b8cbb43b8a8d89d910153eea22d5df6b34e8f93"
+          },
+          "preview": {
+            "columns": [
+              "event_name"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "Women's Soccer"
+                ]
+              ],
+              [
+                [
+                  "text",
+                  "Football game"
+                ]
+              ],
+              [
+                [
+                  "text",
+                  "Football game"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 3
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 2,
+            "column_count": 1,
+            "payload_bytes": 81,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "b5c1ff0d76d7e2183fb74fd11cbf1487be461d5d89138ffdaa26694b0ab62a92"
+          },
+          "preview": {
+            "columns": [
+              "event_name"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "Football game"
+                ]
+              ],
+              [
+                [
+                  "text",
+                  "Women's Soccer"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 2
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 0.42
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 3,
+        "gold_row_count": 2,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 2,
+        "gold_unique_tuple_count": 2,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 3,
+        "column_count": 1,
+        "payload_bytes": 108,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "d9af5b2d685cb18f72b28aeb0b8cbb43b8a8d89d910153eea22d5df6b34e8f93"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "event"
+          ],
+          "string_literals": [
+            "2019-03-15",
+            "2020-03-20",
+            "Closed",
+            "Game"
+          ],
+          "where_column_names": [
+            "event_date",
+            "status",
+            "type"
+          ],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "event"
+          ],
+          "string_literals": [
+            "2019-03-15",
+            "2020-03-20",
+            "Closed",
+            "Game"
+          ],
+          "where_column_names": [
+            "event_date",
+            "status",
+            "type"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "toxicology",
+        "source_id": "bird_mini_dev_postgres_toxicology",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+        "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+      },
+      "query_role": "askdata_m2_ro_toxicology",
+      "queries": {
+        "captured_generated": "SELECT CAST(SUM(CASE WHEN a.element = 'c' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(DISTINCT a.atom_id), 0) AS percentage FROM atom a WHERE EXISTS (SELECT 1 FROM bond b WHERE b.molecule_id = a.molecule_id AND b.bond_type = '=')",
+        "frozen_gold": "SELECT CAST(COUNT(DISTINCT CASE WHEN T1.element = 'c' THEN T1.atom_id ELSE NULL END) AS REAL) * 100 / NULLIF(COUNT(DISTINCT T1.atom_id), 0) FROM atom AS T1 INNER JOIN bond AS T2 ON T1.molecule_id = T2.molecule_id WHERE T2.bond_type = '='"
+      },
+      "generated_sql_sha256": "ab2d2abaca4ee9cd2aa8d53de58dafdb99fe6af32f6f9b7e633c75169f8010e2",
+      "gold_sql_sha256": "60c2e02a7c57bf66cef89965f839bccb08e3ee37a9f494e85f6494141a595750",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "ab2d2abaca4ee9cd2aa8d53de58dafdb99fe6af32f6f9b7e633c75169f8010e2",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "60c2e02a7c57bf66cef89965f839bccb08e3ee37a9f494e85f6494141a595750",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 61,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "4703e01855c381676e89944e3289005c214e2c892344f0c94ea4b0f0ebe1573f"
+          },
+          "preview": {
+            "columns": [
+              "percentage"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.367a154b5784ep+5"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 59,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "4703e01855c381676e89944e3289005c214e2c892344f0c94ea4b0f0ebe1573f"
+          },
+          "preview": {
+            "columns": [
+              "?column?"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.367a154b5784ep+5"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 0.334
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 61,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "float"
+        ],
+        "ordered_native_diagnostic_sha256": "4703e01855c381676e89944e3289005c214e2c892344f0c94ea4b0f0ebe1573f"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "atom",
+            "bond"
+          ],
+          "string_literals": [
+            "=",
+            "c"
+          ],
+          "where_column_names": [
+            "bond_type",
+            "molecule_id"
+          ],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "atom",
+            "bond"
+          ],
+          "string_literals": [
+            "=",
+            "c"
+          ],
+          "where_column_names": [
+            "bond_type"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-1399",
+      "database_id": "student_club",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "student_club",
+        "source_id": "bird_mini_dev_postgres_student_club",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+        "data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2"
+      },
+      "query_role": "askdata_m2_ro_student_club",
+      "queries": {
+        "captured_generated": "SELECT CASE WHEN COUNT(*) > 0 THEN 'Yes' ELSE 'No' END AS attended FROM attendance a JOIN member m ON a.link_to_member = m.member_id JOIN event e ON a.link_to_event = e.event_id WHERE m.first_name = 'Maya' AND m.last_name = 'Mclean' AND e.event_name = 'Women''s Soccer'",
+        "frozen_gold": "SELECT CASE WHEN T3.event_name = 'Women''s Soccer' THEN 'YES' END AS result FROM member AS T1 INNER JOIN attendance AS T2 ON T1.member_id = T2.link_to_member INNER JOIN event AS T3 ON T2.link_to_event = T3.event_id WHERE T1.first_name = 'Maya' AND T1.last_name = 'Mclean'"
+      },
+      "generated_sql_sha256": "647113aad6216100faca63594df8237580183b02514548748dbc50a5ddc4fa76",
+      "gold_sql_sha256": "390107b5bb80581f37121cde4e5542dd2be5c205ff622819795c41ba09fd58ad",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "647113aad6216100faca63594df8237580183b02514548748dbc50a5ddc4fa76",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "390107b5bb80581f37121cde4e5542dd2be5c205ff622819795c41ba09fd58ad",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 41,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "b26c3b75f170de3afcfb23b2e775b825c4d472737dc61abed62408d0a13cf76f"
+          },
+          "preview": {
+            "columns": [
+              "attended"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "Yes"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 14,
+            "column_count": 1,
+            "payload_bytes": 182,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "NoneType",
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "ccd3d21632aa141a8123a1faa116a717fd0c567128f8d8f9ac8d4b526fdd2ebf"
+          },
+          "preview": {
+            "columns": [
+              "result"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "YES"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ],
+              [
+                [
+                  "null"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 14
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 0.423
+      },
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 1,
+        "gold_row_count": 14,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 2,
+        "prediction_only_tuple_count": 1,
+        "gold_only_tuple_count": 2,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "Yes"
+              ]
+            ]
+          ],
+          "utf8_bytes": 16,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "YES"
+              ]
+            ],
+            [
+              [
+                "null"
+              ]
+            ]
+          ],
+          "utf8_bytes": 26,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": true,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 41,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "b26c3b75f170de3afcfb23b2e775b825c4d472737dc61abed62408d0a13cf76f"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [
+          "reference_literals_absent_from_prediction",
+          "case_only_literal_difference"
+        ],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "attendance",
+            "event",
+            "member"
+          ],
+          "string_literals": [
+            "Maya",
+            "Mclean",
+            "No",
+            "Women's Soccer",
+            "Yes"
+          ],
+          "where_column_names": [
+            "event_name",
+            "first_name",
+            "last_name"
+          ],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "attendance",
+            "event",
+            "member"
+          ],
+          "string_literals": [
+            "Maya",
+            "Mclean",
+            "Women's Soccer",
+            "YES"
+          ],
+          "where_column_names": [
+            "first_name",
+            "last_name"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [
+          "YES"
+        ],
+        "case_only_literal_pairs": [
+          {
+            "prediction": "Yes",
+            "reference": "YES"
+          }
+        ],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "database_id": "codebase_community",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "codebase_community",
+        "source_id": "bird_mini_dev_postgres_codebase_community",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "9f9da4752911621e3159a107239173112469ab862e90ea007a9cc23a4aed5940",
+        "data_version": "ca3a7af721e8f16536b022f5fa94d2bd744dd8ebef57504070c280cd3b206a20"
+      },
+      "query_role": "askdata_m2_ro_codebase_community",
+      "queries": {
+        "captured_generated": "SELECT DISTINCT u.displayname, p.title\nFROM users u\nJOIN votes v ON u.id = v.userid\nJOIN posts p ON v.postid = p.id\nWHERE v.bountyamount = 50\n  AND p.title ILIKE '%variance%'",
+        "frozen_gold": "SELECT T3.DisplayName, T1.Title FROM posts AS T1 INNER JOIN votes AS T2 ON T1.Id = T2.PostId INNER JOIN users AS T3 ON T3.Id = T2.UserId WHERE T2.BountyAmount = 50 AND T1.Title LIKE '%variance%'"
+      },
+      "generated_sql_sha256": "394d106b261b2de8093280acc487b0cc72f0291ded29f89ca0dde160870475bb",
+      "gold_sql_sha256": "dc26f56eeb2f48e17116febd4fef9e587e22b7858222cbfa0da32ab529358a39",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "394d106b261b2de8093280acc487b0cc72f0291ded29f89ca0dde160870475bb",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "dc26f56eeb2f48e17116febd4fef9e587e22b7858222cbfa0da32ab529358a39",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 2,
+            "column_count": 2,
+            "payload_bytes": 283,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "6a64d2d331d03a05eb0ae66a53ea85468a608a3721e57bf49a215e23d250d703"
+          },
+          "preview": {
+            "columns": [
+              "displayname",
+              "title"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "chl"
+                ],
+                [
+                  "text",
+                  "How to combine confidence intervals for a variance component of a mixed-effects model when using multiple imputation"
+                ]
+              ],
+              [
+                [
+                  "text",
+                  "shabbychef"
+                ],
+                [
+                  "text",
+                  "Unbiased estimation of covariance matrix for multiply censored data"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 2
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 2,
+            "column_count": 2,
+            "payload_bytes": 283,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "6a64d2d331d03a05eb0ae66a53ea85468a608a3721e57bf49a215e23d250d703"
+          },
+          "preview": {
+            "columns": [
+              "displayname",
+              "title"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "chl"
+                ],
+                [
+                  "text",
+                  "How to combine confidence intervals for a variance component of a mixed-effects model when using multiple imputation"
+                ]
+              ],
+              [
+                [
+                  "text",
+                  "shabbychef"
+                ],
+                [
+                  "text",
+                  "Unbiased estimation of covariance matrix for multiply censored data"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 2
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 7.892
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 2,
+        "gold_row_count": 2,
+        "prediction_column_count": 2,
+        "gold_column_count": 2,
+        "prediction_unique_tuple_count": 2,
+        "gold_unique_tuple_count": 2,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 2,
+        "column_count": 2,
+        "payload_bytes": 283,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "6a64d2d331d03a05eb0ae66a53ea85468a608a3721e57bf49a215e23d250d703"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "posts",
+            "users",
+            "votes"
+          ],
+          "string_literals": [
+            "%variance%"
+          ],
+          "where_column_names": [
+            "bountyamount",
+            "title"
+          ],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "posts",
+            "users",
+            "votes"
+          ],
+          "string_literals": [
+            "%variance%"
+          ],
+          "where_column_names": [
+            "bountyamount",
+            "title"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "california_schools",
+        "source_id": "bird_mini_dev_postgres_california_schools",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+        "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+      },
+      "query_role": "askdata_m2_ro_california_schools",
+      "queries": {
+        "captured_generated": "SELECT s.admfname1, s.admlname1, s.admfname2, s.admlname2, s.admfname3, s.admlname3 FROM schools s JOIN satscores sat ON s.cdscode = sat.cds ORDER BY sat.numge1500 DESC NULLS LAST LIMIT 1",
+        "frozen_gold": "SELECT T2.AdmFName1, T2.AdmLName1, T2.AdmFName2, T2.AdmLName2, T2.AdmFName3, T2.AdmLName3 FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode ORDER BY T1.NumGE1500 DESC NULLS LAST LIMIT 1"
+      },
+      "generated_sql_sha256": "5db897fd6cd5b11e49b02306354eaba770f5c9d72d547764fb4d26aa90566497",
+      "gold_sql_sha256": "8538d58c9f812f65603a8d80ad075616f658e32d29e6484923f283a95e9d1351",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "5db897fd6cd5b11e49b02306354eaba770f5c9d72d547764fb4d26aa90566497",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "8538d58c9f812f65603a8d80ad075616f658e32d29e6484923f283a95e9d1351",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 6,
+            "payload_bytes": 159,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "NoneType",
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "baf94c67a375beca9738b88cb408365a1cd647dfa545bf15df669552187786c7"
+          },
+          "preview": {
+            "columns": [
+              "admfname1",
+              "admlname1",
+              "admfname2",
+              "admlname2",
+              "admfname3",
+              "admlname3"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "Michelle"
+                ],
+                [
+                  "text",
+                  "King"
+                ],
+                [
+                  "null"
+                ],
+                [
+                  "null"
+                ],
+                [
+                  "null"
+                ],
+                [
+                  "null"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 6,
+            "payload_bytes": 159,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "NoneType",
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "baf94c67a375beca9738b88cb408365a1cd647dfa545bf15df669552187786c7"
+          },
+          "preview": {
+            "columns": [
+              "admfname1",
+              "admlname1",
+              "admfname2",
+              "admlname2",
+              "admfname3",
+              "admlname3"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "Michelle"
+                ],
+                [
+                  "text",
+                  "King"
+                ],
+                [
+                  "null"
+                ],
+                [
+                  "null"
+                ],
+                [
+                  "null"
+                ],
+                [
+                  "null"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 0.693
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 6,
+        "gold_column_count": 6,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 6,
+        "payload_bytes": 159,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "NoneType",
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "baf94c67a375beca9738b88cb408365a1cd647dfa545bf15df669552187786c7"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 6,
+          "projection_star": false,
+          "physical_tables": [
+            "satscores",
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "sat.numge1500",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 6,
+          "projection_star": false,
+          "physical_tables": [
+            "satscores",
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "t1.numge1500",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "database_id": "california_schools",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "california_schools",
+        "source_id": "bird_mini_dev_postgres_california_schools",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+        "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+      },
+      "query_role": "askdata_m2_ro_california_schools",
+      "queries": {
+        "captured_generated": "SELECT gsoffered FROM schools ORDER BY ABS(longitude) DESC NULLS LAST LIMIT 1",
+        "frozen_gold": "SELECT GSoffered FROM schools ORDER BY ABS(longitude) DESC NULLS LAST LIMIT 1"
+      },
+      "generated_sql_sha256": "faa3d0ef78f35d817c27311f98e9596eb6114dce59a4eb56ad9a42f343291734",
+      "gold_sql_sha256": "619fa82fe4d3adf3437cd0f70a51b3650629c66d661c06f4ee54844e52d1597f",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "faa3d0ef78f35d817c27311f98e9596eb6114dce59a4eb56ad9a42f343291734",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "619fa82fe4d3adf3437cd0f70a51b3650629c66d661c06f4ee54844e52d1597f",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 42,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "3218a6452112bd8ba93920b9dde7cc19062166c4bc8ca36b7501670ed191c423"
+          },
+          "preview": {
+            "columns": [
+              "gsoffered"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "K-8"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 42,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "3218a6452112bd8ba93920b9dde7cc19062166c4bc8ca36b7501670ed191c423"
+          },
+          "preview": {
+            "columns": [
+              "gsoffered"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "K-8"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 0.623
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 42,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "3218a6452112bd8ba93920b9dde7cc19062166c4bc8ca36b7501670ed191c423"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "ABS(longitude)",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "ABS(longitude)",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "debit_card_specializing",
+        "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+        "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+      },
+      "query_role": "askdata_m2_ro_debit_card_specializing",
+      "queries": {
+        "captured_generated": "SELECT (SUM(CASE WHEN currency = 'CZK' THEN 1 ELSE 0 END) - SUM(CASE WHEN currency = 'EUR' THEN 1 ELSE 0 END)) AS difference FROM customers WHERE segment = 'SME'",
+        "frozen_gold": "SELECT SUM(CASE WHEN Currency = 'CZK' THEN 1 ELSE 0 END) - SUM(CASE WHEN Currency = 'EUR' THEN 1 ELSE 0 END) FROM customers WHERE Segment = 'SME'"
+      },
+      "generated_sql_sha256": "55fecb5dbafe0694ca6e548049dca81be68a3c203b53c5039834d0c0ce5cf6a1",
+      "gold_sql_sha256": "c4af24c169aa5b8fa9528f00427856907ca3725364e65b7503f512ffd876111f",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "55fecb5dbafe0694ca6e548049dca81be68a3c203b53c5039834d0c0ce5cf6a1",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "c4af24c169aa5b8fa9528f00427856907ca3725364e65b7503f512ffd876111f",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 44,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "int"
+            ],
+            "ordered_native_diagnostic_sha256": "94bd24d973e2a8a4fd142c7ee53f33a05b25f6259a132d45c5b5531261ade5a5"
+          },
+          "preview": {
+            "columns": [
+              "difference"
+            ],
+            "rows": [
+              [
+                [
+                  "int",
+                  "23505"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 42,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "int"
+            ],
+            "ordered_native_diagnostic_sha256": "94bd24d973e2a8a4fd142c7ee53f33a05b25f6259a132d45c5b5531261ade5a5"
+          },
+          "preview": {
+            "columns": [
+              "?column?"
+            ],
+            "rows": [
+              [
+                [
+                  "int",
+                  "23505"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 2.312
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 44,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "int"
+        ],
+        "ordered_native_diagnostic_sha256": "94bd24d973e2a8a4fd142c7ee53f33a05b25f6259a132d45c5b5531261ade5a5"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "customers"
+          ],
+          "string_literals": [
+            "CZK",
+            "EUR",
+            "SME"
+          ],
+          "where_column_names": [
+            "segment"
+          ],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "customers"
+          ],
+          "string_literals": [
+            "CZK",
+            "EUR",
+            "SME"
+          ],
+          "where_column_names": [
+            "segment"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "financial",
+        "source_id": "bird_mini_dev_postgres_financial",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+        "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+      },
+      "query_role": "askdata_m2_ro_financial",
+      "queries": {
+        "captured_generated": "SELECT t.trans_id FROM trans t JOIN account a ON t.account_id = a.account_id JOIN disp d ON a.account_id = d.account_id WHERE d.client_id = 3356 AND t.operation = 'VYBER'",
+        "frozen_gold": "SELECT T4.trans_id FROM client AS T1 INNER JOIN disp AS T2 ON T1.client_id = T2.client_id INNER JOIN account AS T3 ON T2.account_id = T3.account_id INNER JOIN trans AS T4 ON T3.account_id = T4.account_id WHERE T1.client_id = 3356 AND T4.operation = 'VYBER'"
+      },
+      "generated_sql_sha256": "c34da07488b1fdfe1514049d77f2079f99c406b9cede7a11343373f4ee36966d",
+      "gold_sql_sha256": "ee7eafdc44edb97e440951e8acc4528f8c4abbb8814348ec4725207693e20179",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "c34da07488b1fdfe1514049d77f2079f99c406b9cede7a11343373f4ee36966d",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "ee7eafdc44edb97e440951e8acc4528f8c4abbb8814348ec4725207693e20179",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 140,
+            "column_count": 1,
+            "payload_bytes": 2684,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "int"
+            ],
+            "ordered_native_diagnostic_sha256": "4c88284ca45123b82167ce449830f74d097b7a54feed53988f087e5562e97d5c"
+          },
+          "preview": {
+            "columns": [
+              "trans_id"
+            ],
+            "rows": [
+              [
+                [
+                  "int",
+                  "816173"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816174"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816175"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816181"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816185"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816186"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816187"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816188"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816189"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816190"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816191"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816192"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816193"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816194"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816195"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816196"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816203"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816216"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816217"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816218"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": true,
+            "complete_result_row_count": 140
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 140,
+            "column_count": 1,
+            "payload_bytes": 2684,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "int"
+            ],
+            "ordered_native_diagnostic_sha256": "4c88284ca45123b82167ce449830f74d097b7a54feed53988f087e5562e97d5c"
+          },
+          "preview": {
+            "columns": [
+              "trans_id"
+            ],
+            "rows": [
+              [
+                [
+                  "int",
+                  "816173"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816174"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816175"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816181"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816185"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816186"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816187"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816188"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816189"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816190"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816191"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816192"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816193"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816194"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816195"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816196"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816203"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816216"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816217"
+                ]
+              ],
+              [
+                [
+                  "int",
+                  "816218"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": true,
+            "complete_result_row_count": 140
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 5.644
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 140,
+        "gold_row_count": 140,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 140,
+        "gold_unique_tuple_count": 140,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 140,
+        "column_count": 1,
+        "payload_bytes": 2684,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "int"
+        ],
+        "ordered_native_diagnostic_sha256": "4c88284ca45123b82167ce449830f74d097b7a54feed53988f087e5562e97d5c"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [
+          "referenced_tables_differ"
+        ],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "account",
+            "disp",
+            "trans"
+          ],
+          "string_literals": [
+            "VYBER"
+          ],
+          "where_column_names": [
+            "client_id",
+            "operation"
+          ],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "account",
+            "client",
+            "disp",
+            "trans"
+          ],
+          "string_literals": [
+            "VYBER"
+          ],
+          "where_column_names": [
+            "client_id",
+            "operation"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "database_id": "student_club",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "student_club",
+        "source_id": "bird_mini_dev_postgres_student_club",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+        "data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2"
+      },
+      "query_role": "askdata_m2_ro_student_club",
+      "queries": {
+        "captured_generated": "SELECT b.category, SUM(b.amount) AS amount_budgeted FROM budget b JOIN event e ON b.link_to_event = e.event_id WHERE e.event_name = 'April Speaker' GROUP BY b.category ORDER BY amount_budgeted ASC",
+        "frozen_gold": "SELECT T2.category, SUM(T2.amount) FROM event AS T1 INNER JOIN budget AS T2 ON T1.event_id = T2.link_to_event WHERE T1.event_name = 'April Speaker' GROUP BY T2.category ORDER BY SUM(T2.amount) ASC"
+      },
+      "generated_sql_sha256": "f13958a6d8444c950a637e32a0496586b0fc97941ec35abdcbecd52a30afd777",
+      "gold_sql_sha256": "82bd66178d2a91f1c8ec686ac22f96f1ab019f7c4140115ed937ec7c2803b493",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "f13958a6d8444c950a637e32a0496586b0fc97941ec35abdcbecd52a30afd777",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "82bd66178d2a91f1c8ec686ac22f96f1ab019f7c4140115ed937ec7c2803b493",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 4,
+            "column_count": 2,
+            "payload_bytes": 204,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "Decimal",
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "44a07ecdd0caefb1fbefb992f529f919c0e499d6cad2dfc5afb4c77a17f1cec6"
+          },
+          "preview": {
+            "columns": [
+              "category",
+              "amount_budgeted"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "Parking"
+                ],
+                [
+                  "decimal",
+                  "10"
+                ]
+              ],
+              [
+                [
+                  "text",
+                  "Speaker Gifts"
+                ],
+                [
+                  "decimal",
+                  "25"
+                ]
+              ],
+              [
+                [
+                  "text",
+                  "Advertisement"
+                ],
+                [
+                  "decimal",
+                  "75"
+                ]
+              ],
+              [
+                [
+                  "text",
+                  "Food"
+                ],
+                [
+                  "decimal",
+                  "150"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 4
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 4,
+            "column_count": 2,
+            "payload_bytes": 192,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "Decimal",
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "44a07ecdd0caefb1fbefb992f529f919c0e499d6cad2dfc5afb4c77a17f1cec6"
+          },
+          "preview": {
+            "columns": [
+              "category",
+              "sum"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "Parking"
+                ],
+                [
+                  "decimal",
+                  "10"
+                ]
+              ],
+              [
+                [
+                  "text",
+                  "Speaker Gifts"
+                ],
+                [
+                  "decimal",
+                  "25"
+                ]
+              ],
+              [
+                [
+                  "text",
+                  "Advertisement"
+                ],
+                [
+                  "decimal",
+                  "75"
+                ]
+              ],
+              [
+                [
+                  "text",
+                  "Food"
+                ],
+                [
+                  "decimal",
+                  "150"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 4
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 0.424
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 4,
+        "gold_row_count": 4,
+        "prediction_column_count": 2,
+        "gold_column_count": 2,
+        "prediction_unique_tuple_count": 4,
+        "gold_unique_tuple_count": 4,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 4,
+        "column_count": 2,
+        "payload_bytes": 204,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "Decimal",
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "44a07ecdd0caefb1fbefb992f529f919c0e499d6cad2dfc5afb4c77a17f1cec6"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "budget",
+            "event"
+          ],
+          "string_literals": [
+            "April Speaker"
+          ],
+          "where_column_names": [
+            "event_name"
+          ],
+          "root_order": [
+            {
+              "expression": "amount_budgeted",
+              "descending": false,
+              "nulls_first": false
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "budget",
+            "event"
+          ],
+          "string_literals": [
+            "April Speaker"
+          ],
+          "where_column_names": [
+            "event_name"
+          ],
+          "root_order": [
+            {
+              "expression": "SUM(t2.amount)",
+              "descending": false,
+              "nulls_first": false
+            }
+          ]
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "card_games",
+        "source_id": "bird_mini_dev_postgres_card_games",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+        "data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51"
+      },
+      "query_role": "askdata_m2_ro_card_games",
+      "queries": {
+        "captured_generated": "SELECT CAST(SUM(CASE WHEN bordercolor = 'borderless' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(*), 0) AS percentage FROM cards",
+        "frozen_gold": "SELECT CAST(SUM(CASE WHEN borderColor = 'borderless' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(id), 0) FROM cards"
+      },
+      "generated_sql_sha256": "2dbfd91b7d7eeae2e8f41bc219fd26c9110290450ef46a0e4aeb10db1a2ccd1d",
+      "gold_sql_sha256": "a98925992af065b8fc1288070fb4405d44c0ccef7606743a2c32041617aa33e3",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "2dbfd91b7d7eeae2e8f41bc219fd26c9110290450ef46a0e4aeb10db1a2ccd1d",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "a98925992af065b8fc1288070fb4405d44c0ccef7606743a2c32041617aa33e3",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 61,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "dec4b0737ea6229dc9df0e592bd558a2a4ccd33ca2d2d747d4dc624d2a96bcc7"
+          },
+          "preview": {
+            "columns": [
+              "percentage"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.b24f870ab2114p-2"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 59,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "dec4b0737ea6229dc9df0e592bd558a2a4ccd33ca2d2d747d4dc624d2a96bcc7"
+          },
+          "preview": {
+            "columns": [
+              "?column?"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.b24f870ab2114p-2"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 6.982
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 61,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "float"
+        ],
+        "ordered_native_diagnostic_sha256": "dec4b0737ea6229dc9df0e592bd558a2a4ccd33ca2d2d747d4dc624d2a96bcc7"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "cards"
+          ],
+          "string_literals": [
+            "borderless"
+          ],
+          "where_column_names": [],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "cards"
+          ],
+          "string_literals": [
+            "borderless"
+          ],
+          "where_column_names": [],
+          "root_order": []
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "database_id": "superhero",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "superhero",
+        "source_id": "bird_mini_dev_postgres_superhero",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "da4f545f640fb421a606e4678596999bd6f25759f5071c5830f9fe15ee39d4f1",
+        "data_version": "6683e9c5689d1b66eecc60ea7b28f5066e55730be0e9c26c7f10ac454411e3f6"
+      },
+      "query_role": "askdata_m2_ro_superhero",
+      "queries": {
+        "captured_generated": "SELECT s.full_name FROM superhero s JOIN hero_attribute ha ON s.id = ha.hero_id JOIN attribute a ON ha.attribute_id = a.id WHERE a.attribute_name = 'Strength' ORDER BY ha.attribute_value DESC NULLS LAST LIMIT 1",
+        "frozen_gold": "SELECT T1.full_name FROM superhero AS T1 INNER JOIN hero_attribute AS T2 ON T1.id = T2.hero_id INNER JOIN attribute AS T3 ON T2.attribute_id = T3.id WHERE T3.attribute_name = 'Strength' ORDER BY T2.attribute_value DESC NULLS LAST LIMIT 1"
+      },
+      "generated_sql_sha256": "a4ec0be2d25977c76a33bc4c6c7239165069871abbe26594a3069e3424ec79f3",
+      "gold_sql_sha256": "da6036853d4dc0b1cff97c50a4539a22ac5d6649ec64f170abd7a5b78edfcf34",
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_generated",
+          "sql_sha256": "a4ec0be2d25977c76a33bc4c6c7239165069871abbe26594a3069e3424ec79f3",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "da6036853d4dc0b1cff97c50a4539a22ac5d6649ec64f170abd7a5b78edfcf34",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_generated": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 61,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "44c085d9d77f47e7e1da0f9ca49f2bcedacb08fb59002a1ddafa42ea4add6bf6"
+          },
+          "preview": {
+            "columns": [
+              "full_name"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "Richard Milhouse Jones"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 61,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "44c085d9d77f47e7e1da0f9ca49f2bcedacb08fb59002a1ddafa42ea4add6bf6"
+          },
+          "preview": {
+            "columns": [
+              "full_name"
+            ],
+            "rows": [
+              [
+                [
+                  "text",
+                  "Richard Milhouse Jones"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "new_model_request_count": 0,
+      "replay_sql_call_limit": 2,
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 0.136
+      },
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "recorded_prediction_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 61,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "44c085d9d77f47e7e1da0f9ca49f2bcedacb08fb59002a1ddafa42ea4add6bf6"
+      },
+      "captured_native_diagnostic_preserved": true,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "attribute",
+            "hero_attribute",
+            "superhero"
+          ],
+          "string_literals": [
+            "Strength"
+          ],
+          "where_column_names": [
+            "attribute_name"
+          ],
+          "root_order": [
+            {
+              "expression": "ha.attribute_value",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "attribute",
+            "hero_attribute",
+            "superhero"
+          ],
+          "string_literals": [
+            "Strength"
+          ],
+          "where_column_names": [
+            "attribute_name"
+          ],
+          "root_order": [
+            {
+              "expression": "t2.attribute_value",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    }
+  ],
+  "source_receipts": [
+    {
+      "database_id": "california_schools",
+      "role": "askdata_m2_ro_california_schools",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+      "authorized_data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "financial",
+      "role": "askdata_m2_ro_financial",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+      "authorized_data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "debit_card_specializing",
+      "role": "askdata_m2_ro_debit_card_specializing",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+      "authorized_data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "student_club",
+      "role": "askdata_m2_ro_student_club",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+      "authorized_data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "toxicology",
+      "role": "askdata_m2_ro_toxicology",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+      "authorized_data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "codebase_community",
+      "role": "askdata_m2_ro_codebase_community",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "9f9da4752911621e3159a107239173112469ab862e90ea007a9cc23a4aed5940",
+      "authorized_data_version": "ca3a7af721e8f16536b022f5fa94d2bd744dd8ebef57504070c280cd3b206a20",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "card_games",
+      "role": "askdata_m2_ro_card_games",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+      "authorized_data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "superhero",
+      "role": "askdata_m2_ro_superhero",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "da4f545f640fb421a606e4678596999bd6f25759f5071c5830f9fe15ee39d4f1",
+      "authorized_data_version": "6683e9c5689d1b66eecc60ea7b28f5066e55730be0e9c26c7f10ac454411e3f6",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    }
+  ],
+  "pools_closed": true,
+  "replay_budget_scope": "Independent trusted audit: 2 SELECT executions per selected case, 600 seconds, 0 model attempts. Original Agent budgets unchanged.",
+  "fixed_error_list": [
+    {
+      "case_id": "BIRD-PG-1399",
+      "generated_sql_sha256": "647113aad6216100faca63594df8237580183b02514548748dbc50a5ddc4fa76",
+      "gold_sql_sha256": "390107b5bb80581f37121cde4e5542dd2be5c205ff622819795c41ba09fd58ad",
+      "data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2",
+      "difference_codes": [
+        "prediction_has_nonreference_tuples",
+        "prediction_missing_reference_tuples"
+      ],
+      "reviewer_hypothesis_codes": [
+        "reference_literals_absent_from_prediction",
+        "case_only_literal_difference"
+      ],
+      "captured_native_diagnostic_preserved": true
+    }
+  ],
+  "native_comparisons_complete": true,
+  "summary": {
+    "source_case_count": 14,
+    "replayed_case_count": 14,
+    "excluded_case_count": 0,
+    "native_match_count": 13,
+    "native_mismatch_count": 1,
+    "captured_native_diagnostic_preserved_count": 14,
+    "replay_sql_execution_count": 28,
+    "new_model_request_count": 0,
+    "formal_ex_denominator": null,
+    "meaning": "Native comparisons of saved SQL only; no new live generation or formal EX score.",
+    "development_subset_match_count_including_nonanswers_as_failures": 13,
+    "development_subset_case_count": 14,
+    "development_subset_native_match_rate": 0.9285714285714286
+  },
+  "finished_at": "2026-10-18T07:26:15.874849+00:00"
+}

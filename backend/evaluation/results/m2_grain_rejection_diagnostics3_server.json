@@ -1,0 +1,1401 @@
+{
+  "stage": "M2 three-case captured grain-rejection diagnostics; not a formal benchmark",
+  "run_status": "complete",
+  "started_at": "2026-10-18T13:42:29.031612+00:00",
+  "errors": [],
+  "postgresql_connected": true,
+  "database_created": false,
+  "database_imported": false,
+  "target_data_verified": true,
+  "new_model_request_count": 0,
+  "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+  "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede",
+  "audit_entrypoint_sha256": "a450cc91ec89ee1bf87b0e0937d84c8529ef59be787a1437c25e34546f12a98c",
+  "mode": "trusted_captured_grain_rejection_audit",
+  "policy": "bird_captured_grain_rejection_audit_v1",
+  "formal_benchmark": false,
+  "primary_ex": null,
+  "holdout_live_allowed": false,
+  "source_report_sha256": "8823926748c359d43ae011e94a1bed8fe5cf592599170c831840d51325ad398b",
+  "previous_native_report_sha256": "a6b2cadaff7bf20e47ab210182c05029c98ab61b4adef803a5d9450fd832a551",
+  "producer_code_sha256": "ad9ede65218a065a3b0d2bcecb23a73b50a20502a1f5df884845aa9572d64bc2",
+  "code_binding": {
+    "sha256": "ad9ede65218a065a3b0d2bcecb23a73b50a20502a1f5df884845aa9572d64bc2",
+    "files": {
+      "app/__init__.py": "355b723e052e3e6c211f4cd922a2cccafd16836360ce633afbafdbf32bdd90ad",
+      "app/api/__init__.py": "e13d97d643b76827935fb88232e4012ce4161d82adffe01e040e48090b2887ea",
+      "app/api/routes.py": "3237efe75ad8141ca01d03b08e303c8bc30130f1dbeddd5f01e62e52087f893c",
+      "app/config.py": "7e71979bf12e33bc7636d64c9a608552103c97cf176db64f8d731c73a7fc75b3",
+      "app/database.py": "30ad145862f13262fcc4b6c3881a4823533dda3814fc9e062ba069780f92a863",
+      "app/datasources/__init__.py": "660dc93b3ad4e3454e433dd79bcfd7f2db67274baeac0ebf7d84682296b117b2",
+      "app/datasources/contracts.py": "b9da804d820b1d5f20fb642cf60bf37039a6fb6dd33e6212081b3335dd32c869",
+      "app/datasources/csv_metadata.py": "ef68964f78da54eee5b0cd64b8f0dd3c53adde04adbcfc9cf471494f9e144638",
+      "app/datasources/dialects.py": "27eeb0134a3802e5a71ab013f1b7fd6f375bce3720823a449b762c962c9bc13b",
+      "app/datasources/postgres_config.py": "cc1dc6f6c80dd88f2e3937cd6753f84b02e5ef2b7b0ae9a151524c715e5442d2",
+      "app/datasources/postgres_connections.py": "26b08a853c6f691a21a3f11b615f6caea7eb6eb22ab10a22a3e544ac1146f0a1",
+      "app/datasources/postgres_metadata.py": "1a1f3cd0bac6193231a9403e010a3c482904f851ae433abb1d95bb94183c771e",
+      "app/datasources/row_digest.py": "06cb48c69b2b0d2e05006de64f6555fe8b0ab4460118afb92af8e9c3efc28b06",
+      "app/datasources/runtime.py": "586c9024d8b8dbca5ffa9ea3f04d403190285333e4c04b3a19036e897ddcbe24",
+      "app/datasources/sql_policy.py": "32407706c83ce218440a0d25cc2b07a245463a5cb93a52e21aa0d4514dd6ded9",
+      "app/datasources/values.py": "869fa4ba783aebb71a5a643ede27c1997894e1740e865f205fd935790662e7df",
+      "app/errors.py": "b71518301668603cb4dce07daed44f611bdad0a31b1e0fd9f50ba8b6fdbe4b8d",
+      "app/main.py": "cae83be9b955964b25f17045a742226fae2db7751c8567e5263c88ea0a785c0f",
+      "app/mcp_runtime/__init__.py": "25afe0d37fd99611244cc7ff3e903cfa5c2dade31a15870e15269a609c6a7053",
+      "app/mcp_runtime/client.py": "549774b6d3b0b5d2903e56f538e61299a3c9a69abcb2be6c5c155f82d0d3e51d",
+      "app/mcp_runtime/schemas.py": "d71c055298a5a338f5126235c5604ce0ca96cb719db629d06a91b23a03d3787a",
+      "app/mcp_runtime/server.py": "bc5cd3e3b1be1dfc2e12dc742046c44d0b701fe8893a82f4897471a0e915afdd",
+      "app/mcp_runtime/tools/__init__.py": "b465bdc3de9e8878a59a8bd244b2e42fa03594e886d90ac5a6b218bf3892535f",
+      "app/mcp_runtime/tools/database_tools.py": "4e916e5043d6bad56429f727377415bdac14c025a585fe2ab3865ef0911e83c9",
+      "app/mcp_runtime/tools/presentation_tools.py": "1524ab3baaf0ecca5e8df1b03e5682f6dd8bdfff37e3f2b64b7cf88aa9f19653",
+      "app/mcp_runtime/tools/time_tools.py": "59a95659eafcc50f4c9ef2b2d1f783a04617e29018251fce64fb3af55d500974",
+      "app/model_client.py": "f68cd0ced71c42e6e18464f86310aed22b71386f63f1160e49fad8bd02c92093",
+      "app/models.py": "2fea8f78c9078f6bbf876d18193d4503b42f94daa4ba5c2f31b6fdd8784cf83e",
+      "app/preprocessing.py": "28a9359411a925147457f5514837471e75be910e182540344add5aac21a000a2",
+      "app/querying/__init__.py": "6dc948905075e824c2a2607ef66f9b842d53c013f2644bd78ed7551eac2c652c",
+      "app/querying/constraint_planner.py": "73fc8d4fe47e69285903a80b9e783acbd45bf0bc65575c49380b3f9fec8f5ef0",
+      "app/querying/constraint_validator.py": "d9ebea98ba3dea34f89bf8b2645dcd6a81bcc6b72f2af7df5f334f241db2db7c",
+      "app/querying/data_qa_agent.py": "59a3faf139e9da26e5fd373f20f1e2a85166363eea9b1c8e9888740ec49b6fe3",
+      "app/querying/duckdb_engine.py": "0ad6bd9980b1962dd630519cb9d8256b06f7aabbaa3446fb9009f4a27aa0cc26",
+      "app/querying/metric_planner.py": "28d1d3bc60988779b1e3d845993e73861c15cb6a9511554605eca94aff662e38",
+      "app/querying/models.py": "4472388a7ae0bcf5803b32b02c6290757ffc4ae62c7ea2611a9eac5de7499ad3",
+      "app/querying/postgres_engine.py": "eb533e3bb5a022bcab33a181fc992cf575bdca92debbbdd486a184a09df4c857",
+      "app/querying/response_generator.py": "c99a6d87dd7774a003a076f4ade68b4ba364b497a6a5fc5c3cbe3ea4b524561c",
+      "app/querying/single_database_agent.py": "9115867fb1b964ee1aba0bde5d07364703a8c381814cbe22a91c933c8a37a107",
+      "app/querying/sql_context.py": "893df35a113720a94276b2f3108a38b51f1f8167231ff9b8bc179f078c2c543f",
+      "app/querying/sql_validator.py": "f516de49204f43129383ce4396c1ecbbc732cbc72336507597e82e74b5e18e90",
+      "app/retrieval/__init__.py": "af173889acb98646a899576f7f784db01a799c468e9736c511c500bef1ef5c53",
+      "app/retrieval/graph.py": "60195e45df0671a5c8e273aa5584a11907c87131816da5fac9773b0f6d0bf2ad",
+      "app/retrieval/service.py": "ad490b0ed8154f9237d671507896874f4fd9929e0b8edb13972f905846b2979e",
+      "app/retrieval/store.py": "965e5fd6c774229ece9c82f053e9f2d932e7ad368fde6c1c336422b6b5131656",
+      "app/retrieval/time_field_policy.py": "62178d671b4e3772d98a36833ece3cbf0e6d0beee10d3d9b9386605b2ab0d0a4",
+      "app/security/__init__.py": "f64ea4a1b53332090130642c17e6265aa4df9019634fc075448b25f3ba4e94a6",
+      "app/security/access_control.py": "0165c9bf5d87cbe21da951642bcac8f68055be41ce9eac91ad8892ec3dd6f1ee",
+      "app/security/auth.py": "1aaa891fc7f443bb8a7d678ac4be82a975ae1722dba56f7e228e112435dc76e3",
+      "app/service.py": "3961513ad9e067f749d6bb4aa7bcb5d680219bb564baa06fcfa6b0d5a6516296",
+      "app/services/__init__.py": "020f361755c5bedb3b0b82e4d1458b862c7b8f3d2073d0a87325f2772220de0c",
+      "app/services/askdata_service.py": "f13e3041bd8ca20dfc7af5d7153afa934f6da9411cde8729bc8ca42663b069d5",
+      "app/services/memory_store.py": "d4ed8600af12b383a459aeebf4c40d74ef99209da3fff8d611865a9b36b6cb14",
+      "app/services/session_archive.py": "008336024d456a019341dcebaefbc7527adbcd8aa9d351a49914225d07951b51",
+      "app/services/session_context.py": "b4590ae4410f13e05d678fbcbf8b69c102400ae67986d4ad8d4ef7093ccbbe7c",
+      "app/services/short_term_memory.py": "bfbc81597254e58f8303b81e53ebcd24a244fc4d6cd7053c1d5cabe8ad48299f",
+      "app/skills/__init__.py": "680726c976c87e1e888df0697b232234722401e1d1b02636949f18afab163949",
+      "app/skills/registry.py": "b1578a6829402fd103be8b40920d8fff682694ed4c4fd986935b6c8b6eb37f53",
+      "app/workflows/__init__.py": "3da3f98de22b4df4c01d7082562b1decac29704d80539cc9e7a8e4f9378ae397",
+      "app/workflows/clarification.py": "17314e22bdd5194f41b360cea4a38f22850a6afecc7514ec73bc9be4fb355eb8",
+      "app/workflows/query_graph.py": "9b818c9309a178b049da9edf750354bf2af8ba2781bd7091ea1447bdaafe3461",
+      "app/workflows/result_builder.py": "bfca63b31f0b71f1e823bc59912b58a75317d80f2d34cef1abec5aec46dad72e",
+      "app/workflows/state.py": "7532b4d7d9223b555e22f9bb38810da1c8fa44c9c58bbe5992c42c72094ffeaf",
+      "evaluation/bird/__init__.py": "b9d0c593cf9368540295851f3c4acb9242bc17aaa48f1b779ee7b174f9fc98f3",
+      "evaluation/bird/budgets.py": "688de220e22e28e1fe4366db4348866d61eb946d5345fd918e02e573cc013e39",
+      "evaluation/bird/case_worker.py": "8d6df5e8e44d7cf1548e583c0d0e5f11ee8b370191826044fc06afb529662a4c",
+      "evaluation/bird/coverage.py": "c857134e5bc6909ca476f7c74cfcd184769f6234bbc912be3c9c0759d61c1451",
+      "evaluation/bird/diagnostic_runner.py": "e01532e49e7fa9ee3195dcf8bcb74d44ed599a7fff0df4a7d6a628bb12a01a36",
+      "evaluation/bird/diagnostics.py": "f12dbf459bc15c7f126d27d304da3582b1a42d6f5ff2ec8cf636f8cc797364b7",
+      "evaluation/bird/evidence.py": "131ed1bd820938e7e09c0f530ebede143941fd0b418e27c2a9d802b4208f3fec",
+      "evaluation/bird/first_sql_audit.py": "fc50ac8d1804ed8b88b3dac3bb53b8a6c076fae4a7c97f99a161e10d2946f8e5",
+      "evaluation/bird/intent.py": "b77e6a90cf78fd02d7bb70cb324ce849e8a5d1db2f6834669f4efd69bc0ba469",
+      "evaluation/bird/intent_replay.py": "e53cab7957736840ad65bb3b7e3c17ab4e582bdad4d4396b4b1a22b6eafabab2",
+      "evaluation/bird/isolated_agent.py": "6c0bc159fac5ecc39e1f336a8b4cf0c3656a0fcd5ee465160a02ee33ca2cf8bd",
+      "evaluation/bird/manifest.py": "b32775e26be5eda69e76d19cd987224f187a71a6fcc1ba99866883b8adcbd83f",
+      "evaluation/bird/metrics.py": "83cf7d18559f51a532d2726100eff27353f5c6a5c24a46f5f857081d8b20c7c7",
+      "evaluation/bird/model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+      "evaluation/bird/native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f",
+      "evaluation/bird/relationships.py": "c7154cf3ada71d96d541136a9b679071d19fcbe73aad2246eb0e9f1d8ce3020d",
+      "evaluation/bird/repair.py": "fe8120bbc9bf5e3dc4b6dcd6b2a845cf2aeadfe95851f6438f58d198837d6644",
+      "evaluation/bird/replay.py": "f035e1f678bb77c87044f64b141481b6370f16a0cec04f14e309f42fb1bfde02",
+      "evaluation/bird/retrieval.py": "6b6ef17afb5a3bcbc838e1ef59593bf45a02df47a95bc264c835207c39e10077",
+      "evaluation/bird/runner.py": "fbdbde667433949fe755cbd1680f140d7a2b6e8478816f3beb21c095368402e5",
+      "evaluation/bird/runtime.py": "24644dd5f69959cd46db7e430ec4900c78acebee567720a132ab37563d1d12d2",
+      "evaluation/bird/semantics.py": "8ed2db1ba25f8837780d245d0f5a2dda8af8bfe58d231473aa07349db80a072d",
+      "evaluation/bird/sql.py": "b84ca3e5a2adcb979e65fc995f920910b00583d1ca006c45cbcbe53a3f2e81fd",
+      "evaluation/bird/supervisor.py": "2a13f26b43b26ba756723f883a84d37ab5f2c3968096eb6daecde0e30ec9d082",
+      "evaluation/bird/units_output.py": "481cc1cbdf532c30353b8808f62c4432d14ae1ef8c8f2965f43e235a4df0fcd2",
+      "evaluation/bird_protocol.py": "f1a60f00ae8bd8f757b28f3139e9be83fa196e8c981c0884e41315bb4c5e6b91",
+      "evaluation/run_bird_benchmark.py": "df76b1ad2280f1a1a89f76743890abcd194c0660def407f95113421dae15f48d",
+      "scripts/check_m2_c_bird_runtime.py": "70d54f2a35d8ef37de21eb01055ddd1e8a25d479638ca71eeb536334fd85b87c",
+      "scripts/m2_b_common.py": "47d4696ddd7a61f2a6c60b29ba4785f31eac1929c484d1b69d30d752745affef",
+      "scripts/m2_b_dump.py": "116345a7e0a8f3a6dc49c305b899f47655cc5d6416adcdcc8eb6bce6b0e6944f",
+      "scripts/m2_b_structure.py": "e4a33335815cb511c3e0ee6c173bfdaafd9ba5214f88e8bbd8c3e325a4f9a1a6",
+      "scripts/m2_b_target.py": "6a952d812604e27c1e43335fe82d4e4958c3c07ca37b9af980c034e8ad19f7a9",
+      "scripts/m2_b_typed_rows.py": "805165db8aba54ee61512e40f4dcb216f9a2f6b90f460d41163ca4b66e26b9ac"
+    },
+    "dependencies": {
+      "psycopg": "3.2.13",
+      "psycopg-pool": "3.2.8",
+      "sqlglot": "30.17.0"
+    },
+    "python": "3.11.15",
+    "system": "Linux",
+    "kernel": "6.8.0-59-generic",
+    "machine": "x86_64",
+    "seccomp_library_version": "2.5.3"
+  },
+  "audit_code_sha256": {
+    "m2_grain_diagnostics.py": "96fd26b5cce92e4d111705cd598f9b4a5fb17655dcd6cf92e4d1726cbe865dd8",
+    "check_m2_grain_diagnostics.py": "a450cc91ec89ee1bf87b0e0937d84c8529ef59be787a1437c25e34546f12a98c"
+  },
+  "source_binding": {
+    "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+    "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+    "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+    "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+    "physical_database": "askdata_m2_bird",
+    "physical_schema": "public",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "budgets": {
+      "case_wall_timeout_seconds": 600,
+      "chat_max_output_tokens": 4096,
+      "connect_timeout_seconds": 10,
+      "enforcement_status": "required_in_external_runner_before_live; existing internal runners are not claimed compliant",
+      "lock_timeout_ms": 5000,
+      "max_chat_http_attempts_per_case": 10,
+      "max_prompt_utf8_bytes": 98304,
+      "max_sql_tool_calls": 3,
+      "max_total_model_http_attempts_per_case": 16,
+      "max_transport_retries_per_request": 1,
+      "max_validation_attempts_per_sql_round": 3,
+      "model_request_timeout_seconds": 180,
+      "result_limit_probe": "fetch limit+1; never score preview or partial rows",
+      "result_payload_byte_limit": 67108864,
+      "result_row_limit": 100000,
+      "shared_attempt_counters": "Include generation, preprocessing, embeddings, reranking and transport retries; shared index build reported separately",
+      "sql_statement_timeout_ms": 30000,
+      "usage": "record provider usage when available; missing usage is unknown, never zero",
+      "workers": 1
+    },
+    "scoring_policy": "bird_native_tuple_set_ex_v1",
+    "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1"
+  },
+  "selected_case_ids": [
+    "BIRD-PG-0263",
+    "BIRD-PG-0273",
+    "BIRD-PG-0201"
+  ],
+  "cases": [
+    {
+      "case_id": "BIRD-PG-0263",
+      "database_id": "toxicology",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "toxicology",
+        "source_id": "bird_mini_dev_postgres_toxicology",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+        "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+      },
+      "query_role": "askdata_m2_ro_toxicology",
+      "original_status": "diagnostic_answered",
+      "first_sql_previously_executed": false,
+      "queries": {
+        "captured_first_rejected": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percent FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '-'",
+        "captured_final": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(DISTINCT a.atom_id), 0) AS percent FROM atom a WHERE EXISTS (SELECT 1 FROM bond b WHERE b.molecule_id = a.molecule_id AND b.bond_type = '-')",
+        "frozen_gold": "SELECT CAST(COUNT(CASE WHEN T.element = 'cl' THEN T.atom_id ELSE NULL END) AS REAL) * 100 / NULLIF(COUNT(T.atom_id), 0) FROM (SELECT T1.atom_id, T1.element FROM atom AS T1 INNER JOIN molecule AS T2 ON T1.molecule_id = T2.molecule_id INNER JOIN bond AS T3 ON T2.molecule_id = T3.molecule_id WHERE T3.bond_type = '-') AS T"
+      },
+      "query_sha256": {
+        "captured_first_rejected": "6fcec9046c5f086570367b6a035e534855db26b77f7574e462300202de36cf2a",
+        "captured_final": "d438944d00585e6934a676947043420fe33f757a5cda8b7879e095dd51748b02",
+        "frozen_gold": "638c6c62dce95fd823ddc2b8ac296898146816190139cbb06e8eb696e600ffba"
+      },
+      "captured_first_sql": {
+        "text": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percent FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '-'",
+        "provided": true,
+        "original_utf8_bytes": 198,
+        "truncated": false,
+        "redacted": false,
+        "original_sha256": "6fcec9046c5f086570367b6a035e534855db26b77f7574e462300202de36cf2a"
+      },
+      "recorded_rejection": {
+        "kind": "validate",
+        "sql_round": 1,
+        "sql": {
+          "text": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percent FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '-'",
+          "provided": true,
+          "original_utf8_bytes": 198,
+          "truncated": false,
+          "redacted": false,
+          "original_sha256": "6fcec9046c5f086570367b6a035e534855db26b77f7574e462300202de36cf2a"
+        },
+        "success": false,
+        "error": {
+          "category": "intent_contract_violation",
+          "sqlstate": null
+        },
+        "repair_feedback": {
+          "policy": "bird_authorized_sql_repair_v2",
+          "category": "intent_contract_violation",
+          "sqlstate": null,
+          "condition": "intent_contract_violation",
+          "server_reason": {
+            "text": "",
+            "provided": true,
+            "original_utf8_bytes": 0,
+            "truncated": false,
+            "redacted": false
+          },
+          "failed_sql": {
+            "text": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percent FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '-'",
+            "provided": true,
+            "original_utf8_bytes": 198,
+            "truncated": false,
+            "redacted": false,
+            "original_sha256": "6fcec9046c5f086570367b6a035e534855db26b77f7574e462300202de36cf2a"
+          },
+          "position": {
+            "raw_statement_position": null,
+            "origin": "unknown",
+            "sql_position": null,
+            "line": null,
+            "column": null,
+            "available": false,
+            "unavailable_reason": "statement_context_not_available"
+          },
+          "unresolved_column": null,
+          "authorized_fields": [
+            {
+              "table_id": "toxicology.atom",
+              "table_name": "atom",
+              "table_alias": "a",
+              "field_name": "atom_id",
+              "type": "text",
+              "sql_reference": "\"a\".\"atom_id\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.bond",
+              "table_name": "bond",
+              "table_alias": "b",
+              "field_name": "molecule_id",
+              "type": "text",
+              "sql_reference": "\"b\".\"molecule_id\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.atom",
+              "table_name": "atom",
+              "table_alias": "a",
+              "field_name": "molecule_id",
+              "type": "text",
+              "sql_reference": "\"a\".\"molecule_id\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.bond",
+              "table_name": "bond",
+              "table_alias": "b",
+              "field_name": "bond_type",
+              "type": "text",
+              "sql_reference": "\"b\".\"bond_type\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.atom",
+              "table_name": "atom",
+              "table_alias": "a",
+              "field_name": "element",
+              "type": "text",
+              "sql_reference": "\"a\".\"element\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.bond",
+              "table_name": "bond",
+              "table_alias": "b",
+              "field_name": "bond_id",
+              "type": "text",
+              "sql_reference": "\"b\".\"bond_id\"",
+              "source": "current_authorized_catalog"
+            }
+          ],
+          "catalog_scope": "Bounded subset of referenced physical tables in the current authorized runtime.",
+          "source_identity": {
+            "logical_database_id": "toxicology",
+            "source_id": "bird_mini_dev_postgres_toxicology",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+            "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+          },
+          "guidance": [
+            "Preserve the requested output columns, filters and question meaning. Use only authorized identifiers.",
+            "Repair these public-intent constraints while preserving all other requested conditions and result shape."
+          ],
+          "duplicate_failed_sql": false,
+          "retryable": true,
+          "sql_fingerprint": "df943d73707a9382126fc4850a1b721434ad9990c219f7094bd5f1ffeedb0bb7",
+          "feedback_utf8_byte_limit": 8192,
+          "omitted_authorized_fields": 0,
+          "intent_policy": "bird_public_intent_candidate_v3",
+          "intent_violations": [
+            {
+              "code": "entity_grain_fanout",
+              "reason": "A nonunique joined table may repeat the counted entity. Count distinct qualifying identifiers and distinct total identifiers, or use EXISTS/deduplication before aggregation.",
+              "table_id": "toxicology.atom",
+              "primary_key": "atom_id"
+            }
+          ],
+          "omitted_intent_violations": 0
+        }
+      },
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "new_model_request_count": 0,
+      "sql_call_limit": 3,
+      "case_wall_timeout_seconds": 600,
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_first_rejected",
+          "sql_sha256": "6fcec9046c5f086570367b6a035e534855db26b77f7574e462300202de36cf2a",
+          "status": "complete"
+        },
+        {
+          "name": "captured_final",
+          "sql_sha256": "d438944d00585e6934a676947043420fe33f757a5cda8b7879e095dd51748b02",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "638c6c62dce95fd823ddc2b8ac296898146816190139cbb06e8eb696e600ffba",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_first_rejected": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 58,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "a3444ef0a7d0801b47cf010a87dce745d6a1fc983d9a4c6267f8434f41f8d69d"
+          },
+          "preview": {
+            "columns": [
+              "percent"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.578ecae19bafbp+1"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "captured_final": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 58,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "6afafce7c5e89ef67e786ae4b020f79f538d1893ef234a3bebef02d4b827f11b"
+          },
+          "preview": {
+            "columns": [
+              "percent"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.bdbe3fd69a817p+1"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 59,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "a3444ef0a7d0801b47cf010a87dce745d6a1fc983d9a4c6267f8434f41f8d69d"
+          },
+          "preview": {
+            "columns": [
+              "?column?"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.578ecae19bafbp+1"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "budget_scope": "Trusted reviewer audit only: <=3 SELECTs, 0 models, one 600-second case deadline; Agent budgets unchanged.",
+      "reconstructed_intent_violations": [
+        {
+          "code": "entity_grain_fanout",
+          "reason": "A nonunique joined table may repeat the counted entity. Count distinct qualifying identifiers and distinct total identifiers, or use EXISTS/deduplication before aggregation.",
+          "table_id": "toxicology.atom",
+          "primary_key": "atom_id"
+        }
+      ],
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 3,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 0.542
+      },
+      "previous_final_diagnostic_preserved": true,
+      "previous_gold_diagnostic_preserved": true,
+      "native_comparisons": {
+        "first_vs_gold": {
+          "matches_frozen_gold": true,
+          "difference_codes": [],
+          "prediction_row_count": 1,
+          "gold_row_count": 1,
+          "prediction_column_count": 1,
+          "gold_column_count": 1,
+          "prediction_unique_tuple_count": 1,
+          "gold_unique_tuple_count": 1,
+          "prediction_only_tuple_count": 0,
+          "gold_only_tuple_count": 0,
+          "prediction_only_preview": {
+            "rows": [],
+            "utf8_bytes": 0,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "gold_only_preview": {
+            "rows": [],
+            "utf8_bytes": 0,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "preview_only": true,
+          "difference_preview_row_limit": 5,
+          "difference_preview_utf8_byte_limit": 65536,
+          "native_type_sets_differ": false,
+          "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+        },
+        "final_vs_gold": {
+          "matches_frozen_gold": false,
+          "difference_codes": [
+            "prediction_has_nonreference_tuples",
+            "prediction_missing_reference_tuples"
+          ],
+          "prediction_row_count": 1,
+          "gold_row_count": 1,
+          "prediction_column_count": 1,
+          "gold_column_count": 1,
+          "prediction_unique_tuple_count": 1,
+          "gold_unique_tuple_count": 1,
+          "prediction_only_tuple_count": 1,
+          "gold_only_tuple_count": 1,
+          "prediction_only_preview": {
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.bdbe3fd69a817p+1"
+                ]
+              ]
+            ],
+            "utf8_bytes": 34,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "gold_only_preview": {
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.578ecae19bafbp+1"
+                ]
+              ]
+            ],
+            "utf8_bytes": 34,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "preview_only": true,
+          "difference_preview_row_limit": 5,
+          "difference_preview_utf8_byte_limit": 65536,
+          "native_type_sets_differ": false,
+          "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+        },
+        "first_vs_final": {
+          "matches_frozen_gold": false,
+          "difference_codes": [
+            "prediction_has_nonreference_tuples",
+            "prediction_missing_reference_tuples"
+          ],
+          "prediction_row_count": 1,
+          "gold_row_count": 1,
+          "prediction_column_count": 1,
+          "gold_column_count": 1,
+          "prediction_unique_tuple_count": 1,
+          "gold_unique_tuple_count": 1,
+          "prediction_only_tuple_count": 1,
+          "gold_only_tuple_count": 1,
+          "prediction_only_preview": {
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.578ecae19bafbp+1"
+                ]
+              ]
+            ],
+            "utf8_bytes": 34,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "gold_only_preview": {
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.bdbe3fd69a817p+1"
+                ]
+              ]
+            ],
+            "utf8_bytes": 34,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "preview_only": true,
+          "difference_preview_row_limit": 5,
+          "difference_preview_utf8_byte_limit": 65536,
+          "native_type_sets_differ": false,
+          "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+        }
+      },
+      "interpretation": "First-SQL matches are reviewer evidence about a recorded rejection, not new Agent successes or changes to the development80 score."
+    },
+    {
+      "case_id": "BIRD-PG-0273",
+      "database_id": "toxicology",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "toxicology",
+        "source_id": "bird_mini_dev_postgres_toxicology",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+        "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+      },
+      "query_role": "askdata_m2_ro_toxicology",
+      "original_status": "validation_failed",
+      "first_sql_previously_executed": false,
+      "queries": {
+        "captured_first_rejected": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(*), 0) AS percentage FROM molecule m JOIN atom a ON m.molecule_id = a.molecule_id WHERE m.label = '+'",
+        "frozen_gold": "SELECT CAST(COUNT(CASE WHEN T1.element = 'cl' THEN T1.element ELSE NULL END) AS REAL) * 100 / NULLIF(COUNT(T1.element), 0) FROM atom AS T1 INNER JOIN molecule AS T2 ON T1.molecule_id = T2.molecule_id WHERE T2.label = '+'"
+      },
+      "query_sha256": {
+        "captured_first_rejected": "870ad5ada6442f164706a9b854ba021678eec9b2b4f84e8fbfd448b6d8312a40",
+        "frozen_gold": "20e749f475b938a880c26155fcac0941c35d2d05972d1ef761f432c9f4d37184"
+      },
+      "captured_first_sql": {
+        "text": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(*), 0) AS percentage FROM molecule m JOIN atom a ON m.molecule_id = a.molecule_id WHERE m.label = '+'",
+        "provided": true,
+        "original_utf8_bytes": 193,
+        "truncated": false,
+        "redacted": false,
+        "original_sha256": "870ad5ada6442f164706a9b854ba021678eec9b2b4f84e8fbfd448b6d8312a40"
+      },
+      "recorded_rejection": {
+        "kind": "validate",
+        "sql_round": 1,
+        "sql": {
+          "text": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(*), 0) AS percentage FROM molecule m JOIN atom a ON m.molecule_id = a.molecule_id WHERE m.label = '+'",
+          "provided": true,
+          "original_utf8_bytes": 193,
+          "truncated": false,
+          "redacted": false,
+          "original_sha256": "870ad5ada6442f164706a9b854ba021678eec9b2b4f84e8fbfd448b6d8312a40"
+        },
+        "success": false,
+        "error": {
+          "category": "intent_contract_violation",
+          "sqlstate": null
+        },
+        "repair_feedback": {
+          "policy": "bird_authorized_sql_repair_v2",
+          "category": "intent_contract_violation",
+          "sqlstate": null,
+          "condition": "intent_contract_violation",
+          "server_reason": {
+            "text": "",
+            "provided": true,
+            "original_utf8_bytes": 0,
+            "truncated": false,
+            "redacted": false
+          },
+          "failed_sql": {
+            "text": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(*), 0) AS percentage FROM molecule m JOIN atom a ON m.molecule_id = a.molecule_id WHERE m.label = '+'",
+            "provided": true,
+            "original_utf8_bytes": 193,
+            "truncated": false,
+            "redacted": false,
+            "original_sha256": "870ad5ada6442f164706a9b854ba021678eec9b2b4f84e8fbfd448b6d8312a40"
+          },
+          "position": {
+            "raw_statement_position": null,
+            "origin": "unknown",
+            "sql_position": null,
+            "line": null,
+            "column": null,
+            "available": false,
+            "unavailable_reason": "statement_context_not_available"
+          },
+          "unresolved_column": null,
+          "authorized_fields": [
+            {
+              "table_id": "toxicology.molecule",
+              "table_name": "molecule",
+              "table_alias": "m",
+              "field_name": "molecule_id",
+              "type": "text",
+              "sql_reference": "\"m\".\"molecule_id\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.atom",
+              "table_name": "atom",
+              "table_alias": "a",
+              "field_name": "molecule_id",
+              "type": "text",
+              "sql_reference": "\"a\".\"molecule_id\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.molecule",
+              "table_name": "molecule",
+              "table_alias": "m",
+              "field_name": "label",
+              "type": "text",
+              "sql_reference": "\"m\".\"label\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.atom",
+              "table_name": "atom",
+              "table_alias": "a",
+              "field_name": "element",
+              "type": "text",
+              "sql_reference": "\"a\".\"element\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.atom",
+              "table_name": "atom",
+              "table_alias": "a",
+              "field_name": "atom_id",
+              "type": "text",
+              "sql_reference": "\"a\".\"atom_id\"",
+              "source": "current_authorized_catalog"
+            }
+          ],
+          "catalog_scope": "Bounded subset of referenced physical tables in the current authorized runtime.",
+          "source_identity": {
+            "logical_database_id": "toxicology",
+            "source_id": "bird_mini_dev_postgres_toxicology",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+            "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+          },
+          "guidance": [
+            "Preserve the requested output columns, filters and question meaning. Use only authorized identifiers.",
+            "Repair these public-intent constraints while preserving all other requested conditions and result shape."
+          ],
+          "duplicate_failed_sql": false,
+          "retryable": true,
+          "sql_fingerprint": "c476aab3549a3b1d26e3ad817ecc60f56360b725242aae90e8ca10beae7e8a6e",
+          "feedback_utf8_byte_limit": 8192,
+          "omitted_authorized_fields": 0,
+          "intent_policy": "bird_public_intent_candidate_v3",
+          "intent_violations": [
+            {
+              "code": "missing_population_condition",
+              "reason": "An explicit public field/value condition is absent. Preserve its uniquely bound owning field; samples alone do not require predicates.",
+              "field_id": "toxicology.atom.element",
+              "value": "pb"
+            },
+            {
+              "code": "entity_grain_fanout",
+              "reason": "SUM of per-row indicator after a nonunique join weights repeated entities. Preserve the public counted-identifier grain with conditional DISTINCT identifier counts or a semijoin.",
+              "table_id": "toxicology.molecule",
+              "primary_key": "molecule_id"
+            }
+          ],
+          "omitted_intent_violations": 0
+        }
+      },
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "new_model_request_count": 0,
+      "sql_call_limit": 2,
+      "case_wall_timeout_seconds": 600,
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_first_rejected",
+          "sql_sha256": "870ad5ada6442f164706a9b854ba021678eec9b2b4f84e8fbfd448b6d8312a40",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "20e749f475b938a880c26155fcac0941c35d2d05972d1ef761f432c9f4d37184",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_first_rejected": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 61,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "abcb86041206dbca89e8dd2aa0a6df12846f519aa66e022db8e73e69b255558f"
+          },
+          "preview": {
+            "columns": [
+              "percentage"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.922ab68023807p+1"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 59,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "abcb86041206dbca89e8dd2aa0a6df12846f519aa66e022db8e73e69b255558f"
+          },
+          "preview": {
+            "columns": [
+              "?column?"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.922ab68023807p+1"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "budget_scope": "Trusted reviewer audit only: <=3 SELECTs, 0 models, one 600-second case deadline; Agent budgets unchanged.",
+      "reconstructed_intent_violations": [
+        {
+          "code": "missing_population_condition",
+          "reason": "An explicit public field/value condition is absent. Preserve its uniquely bound owning field; samples alone do not require predicates.",
+          "field_id": "toxicology.atom.element",
+          "value": "pb"
+        },
+        {
+          "code": "entity_grain_fanout",
+          "reason": "SUM of per-row indicator after a nonunique join weights repeated entities. Preserve the public counted-identifier grain with conditional DISTINCT identifier counts or a semijoin.",
+          "table_id": "toxicology.molecule",
+          "primary_key": "molecule_id"
+        }
+      ],
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 2,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 0.293
+      },
+      "previous_final_diagnostic_preserved": null,
+      "previous_gold_diagnostic_preserved": null,
+      "native_comparisons": {
+        "first_vs_gold": {
+          "matches_frozen_gold": true,
+          "difference_codes": [],
+          "prediction_row_count": 1,
+          "gold_row_count": 1,
+          "prediction_column_count": 1,
+          "gold_column_count": 1,
+          "prediction_unique_tuple_count": 1,
+          "gold_unique_tuple_count": 1,
+          "prediction_only_tuple_count": 0,
+          "gold_only_tuple_count": 0,
+          "prediction_only_preview": {
+            "rows": [],
+            "utf8_bytes": 0,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "gold_only_preview": {
+            "rows": [],
+            "utf8_bytes": 0,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "preview_only": true,
+          "difference_preview_row_limit": 5,
+          "difference_preview_utf8_byte_limit": 65536,
+          "native_type_sets_differ": false,
+          "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+        }
+      },
+      "interpretation": "First-SQL matches are reviewer evidence about a recorded rejection, not new Agent successes or changes to the development80 score."
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "status": "complete",
+      "source_identity": {
+        "logical_database_id": "toxicology",
+        "source_id": "bird_mini_dev_postgres_toxicology",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+        "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+      },
+      "query_role": "askdata_m2_ro_toxicology",
+      "original_status": "diagnostic_answered",
+      "first_sql_previously_executed": false,
+      "queries": {
+        "captured_first_rejected": "SELECT CAST(SUM(CASE WHEN a.element = 'c' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percentage FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '=';",
+        "captured_final": "SELECT CAST(SUM(CASE WHEN a.element = 'c' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(DISTINCT a.atom_id), 0) AS percentage FROM atom a WHERE EXISTS (SELECT 1 FROM bond b WHERE b.molecule_id = a.molecule_id AND b.bond_type = '=')",
+        "frozen_gold": "SELECT CAST(COUNT(DISTINCT CASE WHEN T1.element = 'c' THEN T1.atom_id ELSE NULL END) AS REAL) * 100 / NULLIF(COUNT(DISTINCT T1.atom_id), 0) FROM atom AS T1 INNER JOIN bond AS T2 ON T1.molecule_id = T2.molecule_id WHERE T2.bond_type = '='"
+      },
+      "query_sha256": {
+        "captured_first_rejected": "ee1f6ae3964acea89ec6842895f48d6f199405da433ce68c8e37d370c95bd044",
+        "captured_final": "ab2d2abaca4ee9cd2aa8d53de58dafdb99fe6af32f6f9b7e633c75169f8010e2",
+        "frozen_gold": "60c2e02a7c57bf66cef89965f839bccb08e3ee37a9f494e85f6494141a595750"
+      },
+      "captured_first_sql": {
+        "text": "SELECT CAST(SUM(CASE WHEN a.element = 'c' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percentage FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '=';",
+        "provided": true,
+        "original_utf8_bytes": 201,
+        "truncated": false,
+        "redacted": false,
+        "original_sha256": "ee1f6ae3964acea89ec6842895f48d6f199405da433ce68c8e37d370c95bd044"
+      },
+      "recorded_rejection": {
+        "kind": "validate",
+        "sql_round": 1,
+        "sql": {
+          "text": "SELECT CAST(SUM(CASE WHEN a.element = 'c' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percentage FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '=';",
+          "provided": true,
+          "original_utf8_bytes": 201,
+          "truncated": false,
+          "redacted": false,
+          "original_sha256": "ee1f6ae3964acea89ec6842895f48d6f199405da433ce68c8e37d370c95bd044"
+        },
+        "success": false,
+        "error": {
+          "category": "intent_contract_violation",
+          "sqlstate": null
+        },
+        "repair_feedback": {
+          "policy": "bird_authorized_sql_repair_v2",
+          "category": "intent_contract_violation",
+          "sqlstate": null,
+          "condition": "intent_contract_violation",
+          "server_reason": {
+            "text": "",
+            "provided": true,
+            "original_utf8_bytes": 0,
+            "truncated": false,
+            "redacted": false
+          },
+          "failed_sql": {
+            "text": "SELECT CAST(SUM(CASE WHEN a.element = 'c' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percentage FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '=';",
+            "provided": true,
+            "original_utf8_bytes": 201,
+            "truncated": false,
+            "redacted": false,
+            "original_sha256": "ee1f6ae3964acea89ec6842895f48d6f199405da433ce68c8e37d370c95bd044"
+          },
+          "position": {
+            "raw_statement_position": null,
+            "origin": "unknown",
+            "sql_position": null,
+            "line": null,
+            "column": null,
+            "available": false,
+            "unavailable_reason": "statement_context_not_available"
+          },
+          "unresolved_column": null,
+          "authorized_fields": [
+            {
+              "table_id": "toxicology.atom",
+              "table_name": "atom",
+              "table_alias": "a",
+              "field_name": "atom_id",
+              "type": "text",
+              "sql_reference": "\"a\".\"atom_id\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.bond",
+              "table_name": "bond",
+              "table_alias": "b",
+              "field_name": "molecule_id",
+              "type": "text",
+              "sql_reference": "\"b\".\"molecule_id\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.atom",
+              "table_name": "atom",
+              "table_alias": "a",
+              "field_name": "molecule_id",
+              "type": "text",
+              "sql_reference": "\"a\".\"molecule_id\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.bond",
+              "table_name": "bond",
+              "table_alias": "b",
+              "field_name": "bond_type",
+              "type": "text",
+              "sql_reference": "\"b\".\"bond_type\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.atom",
+              "table_name": "atom",
+              "table_alias": "a",
+              "field_name": "element",
+              "type": "text",
+              "sql_reference": "\"a\".\"element\"",
+              "source": "current_authorized_catalog"
+            },
+            {
+              "table_id": "toxicology.bond",
+              "table_name": "bond",
+              "table_alias": "b",
+              "field_name": "bond_id",
+              "type": "text",
+              "sql_reference": "\"b\".\"bond_id\"",
+              "source": "current_authorized_catalog"
+            }
+          ],
+          "catalog_scope": "Bounded subset of referenced physical tables in the current authorized runtime.",
+          "source_identity": {
+            "logical_database_id": "toxicology",
+            "source_id": "bird_mini_dev_postgres_toxicology",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+            "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+          },
+          "guidance": [
+            "Preserve the requested output columns, filters and question meaning. Use only authorized identifiers.",
+            "Repair these public-intent constraints while preserving all other requested conditions and result shape."
+          ],
+          "duplicate_failed_sql": false,
+          "retryable": true,
+          "sql_fingerprint": "56f39946f4d16ad8d765dfa871d1b092c3ec8e6bd5f512f1942119d272be696a",
+          "feedback_utf8_byte_limit": 8192,
+          "omitted_authorized_fields": 0,
+          "intent_policy": "bird_public_intent_candidate_v3",
+          "intent_violations": [
+            {
+              "code": "entity_grain_fanout",
+              "reason": "A nonunique joined table may repeat the counted entity. Count distinct qualifying identifiers and distinct total identifiers, or use EXISTS/deduplication before aggregation.",
+              "table_id": "toxicology.atom",
+              "primary_key": "atom_id"
+            }
+          ],
+          "omitted_intent_violations": 0
+        }
+      },
+      "formal_benchmark": false,
+      "primary_ex": null,
+      "new_model_request_count": 0,
+      "sql_call_limit": 3,
+      "case_wall_timeout_seconds": 600,
+      "gold_execution_attempted": true,
+      "gold_executed": true,
+      "execution_events": [
+        {
+          "name": "captured_first_rejected",
+          "sql_sha256": "ee1f6ae3964acea89ec6842895f48d6f199405da433ce68c8e37d370c95bd044",
+          "status": "complete"
+        },
+        {
+          "name": "captured_final",
+          "sql_sha256": "ab2d2abaca4ee9cd2aa8d53de58dafdb99fe6af32f6f9b7e633c75169f8010e2",
+          "status": "complete"
+        },
+        {
+          "name": "frozen_gold",
+          "sql_sha256": "60c2e02a7c57bf66cef89965f839bccb08e3ee37a9f494e85f6494141a595750",
+          "status": "complete"
+        }
+      ],
+      "results": {
+        "captured_first_rejected": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 61,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "c679cdbf1d8a6e8def982f0863ddec9c875f48c8b2d04af9ffbd43e2c1830564"
+          },
+          "preview": {
+            "columns": [
+              "percentage"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.4991e3c7e22e6p+5"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "captured_final": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 61,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "4703e01855c381676e89944e3289005c214e2c892344f0c94ea4b0f0ebe1573f"
+          },
+          "preview": {
+            "columns": [
+              "percentage"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.367a154b5784ep+5"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        },
+        "frozen_gold": {
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 59,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "4703e01855c381676e89944e3289005c214e2c892344f0c94ea4b0f0ebe1573f"
+          },
+          "preview": {
+            "columns": [
+              "?column?"
+            ],
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.367a154b5784ep+5"
+                ]
+              ]
+            ],
+            "preview_only": true,
+            "preview_truncated": false,
+            "complete_result_row_count": 1
+          },
+          "preview_row_limit": 20
+        }
+      },
+      "budget_scope": "Trusted reviewer audit only: <=3 SELECTs, 0 models, one 600-second case deadline; Agent budgets unchanged.",
+      "reconstructed_intent_violations": [
+        {
+          "code": "entity_grain_fanout",
+          "reason": "A nonunique joined table may repeat the counted entity. Count distinct qualifying identifiers and distinct total identifiers, or use EXISTS/deduplication before aggregation.",
+          "table_id": "toxicology.atom",
+          "primary_key": "atom_id"
+        }
+      ],
+      "budget": {
+        "model_http_attempts": 0,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 3,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [],
+        "elapsed_seconds": 0.469
+      },
+      "previous_final_diagnostic_preserved": true,
+      "previous_gold_diagnostic_preserved": true,
+      "native_comparisons": {
+        "first_vs_gold": {
+          "matches_frozen_gold": false,
+          "difference_codes": [
+            "prediction_has_nonreference_tuples",
+            "prediction_missing_reference_tuples"
+          ],
+          "prediction_row_count": 1,
+          "gold_row_count": 1,
+          "prediction_column_count": 1,
+          "gold_column_count": 1,
+          "prediction_unique_tuple_count": 1,
+          "gold_unique_tuple_count": 1,
+          "prediction_only_tuple_count": 1,
+          "gold_only_tuple_count": 1,
+          "prediction_only_preview": {
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.4991e3c7e22e6p+5"
+                ]
+              ]
+            ],
+            "utf8_bytes": 34,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "gold_only_preview": {
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.367a154b5784ep+5"
+                ]
+              ]
+            ],
+            "utf8_bytes": 34,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "preview_only": true,
+          "difference_preview_row_limit": 5,
+          "difference_preview_utf8_byte_limit": 65536,
+          "native_type_sets_differ": false,
+          "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+        },
+        "final_vs_gold": {
+          "matches_frozen_gold": true,
+          "difference_codes": [],
+          "prediction_row_count": 1,
+          "gold_row_count": 1,
+          "prediction_column_count": 1,
+          "gold_column_count": 1,
+          "prediction_unique_tuple_count": 1,
+          "gold_unique_tuple_count": 1,
+          "prediction_only_tuple_count": 0,
+          "gold_only_tuple_count": 0,
+          "prediction_only_preview": {
+            "rows": [],
+            "utf8_bytes": 0,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "gold_only_preview": {
+            "rows": [],
+            "utf8_bytes": 0,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "preview_only": true,
+          "difference_preview_row_limit": 5,
+          "difference_preview_utf8_byte_limit": 65536,
+          "native_type_sets_differ": false,
+          "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+        },
+        "first_vs_final": {
+          "matches_frozen_gold": false,
+          "difference_codes": [
+            "prediction_has_nonreference_tuples",
+            "prediction_missing_reference_tuples"
+          ],
+          "prediction_row_count": 1,
+          "gold_row_count": 1,
+          "prediction_column_count": 1,
+          "gold_column_count": 1,
+          "prediction_unique_tuple_count": 1,
+          "gold_unique_tuple_count": 1,
+          "prediction_only_tuple_count": 1,
+          "gold_only_tuple_count": 1,
+          "prediction_only_preview": {
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.4991e3c7e22e6p+5"
+                ]
+              ]
+            ],
+            "utf8_bytes": 34,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "gold_only_preview": {
+            "rows": [
+              [
+                [
+                  "float",
+                  "0x1.367a154b5784ep+5"
+                ]
+              ]
+            ],
+            "utf8_bytes": 34,
+            "oversized_rows_omitted": 0,
+            "preview_truncated": false
+          },
+          "preview_only": true,
+          "difference_preview_row_limit": 5,
+          "difference_preview_utf8_byte_limit": 65536,
+          "native_type_sets_differ": false,
+          "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+        }
+      },
+      "interpretation": "First-SQL matches are reviewer evidence about a recorded rejection, not new Agent successes or changes to the development80 score."
+    }
+  ],
+  "source_receipts": [
+    {
+      "database_id": "toxicology",
+      "role": "askdata_m2_ro_toxicology",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+      "authorized_data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    }
+  ],
+  "pools_closed": true,
+  "gold_executed": true,
+  "audit_sql_call_limit": 8,
+  "candidate_score_unchanged": true,
+  "scope": "Immutable rejected first SQL and saved final controls; no SQL variants, model, Agent, retrieval or index build.",
+  "diagnostic_comparisons_complete": true,
+  "summary": {
+    "case_count": 3,
+    "sql_execution_count": 8,
+    "new_model_request_count": 0,
+    "formal_ex_denominator": null,
+    "first_matches_reference_case_ids": [
+      "BIRD-PG-0263",
+      "BIRD-PG-0273"
+    ],
+    "first_and_final_outcomes": {
+      "BIRD-PG-0263": {
+        "first_matches": true,
+        "final_matches": false,
+        "original_status": "diagnostic_answered"
+      },
+      "BIRD-PG-0273": {
+        "first_matches": true,
+        "final_matches": null,
+        "original_status": "validation_failed"
+      },
+      "BIRD-PG-0201": {
+        "first_matches": false,
+        "final_matches": true,
+        "original_status": "diagnostic_answered"
+      }
+    },
+    "meaning": "Complete means the fixed audit finished; observed matches neither alter development80 accuracy nor imply every grain rejection is wrong."
+  },
+  "finished_at": "2026-10-18T13:42:31.016333+00:00"
+}

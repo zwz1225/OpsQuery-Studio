@@ -1,0 +1,202 @@
+{
+  "database": "short_video_ops",
+  "comparison_constraints": [
+    {
+      "name": "activation_rate_target_month",
+      "trigger_terms": ["目标差距", "目标对比", "实际值与目标", "实际比率与目标"],
+      "required_metric": "activation_rate",
+      "target_table": "growth_targets",
+      "target_field": "target_month",
+      "matches_metric_time_month": true
+    }
+  ],
+  "conditional_filter_rules": [
+    {
+      "name": "activation_status_requires_explicit_request",
+      "field": "user_activations.is_activated",
+      "relevance_terms": ["激活规则"],
+      "guard_values": [0, 1],
+      "supported_phrases_by_value": {
+        "1": ["只统计已激活", "仅统计已激活", "已激活的记录", "激活成功的记录"],
+        "0": ["只统计未激活", "仅统计未激活", "未激活的记录"]
+      },
+      "reason": "按激活规则统计全部业务记录时，不得自行筛选激活状态"
+    },
+    {
+      "name": "valid_activity_requires_explicit_request",
+      "field": "user_daily_activity.is_valid_active",
+      "relevance_terms": ["活跃"],
+      "guard_values": [0, 1],
+      "supported_phrases_by_value": {
+        "1": ["有效活跃", "有效的活跃", "有效活跃记录", "有效活跃用户"],
+        "0": ["无效活跃", "无效的活跃", "无效活跃记录"]
+      },
+      "reason": "是否仅统计有效或无效活跃记录会改变统计总体，必须由问题明确提出"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "new_users",
+      "aliases": ["新增用户数", "新用户数", "新增用户人数"],
+      "description": "按指标日期汇总的新用户数量",
+      "kind": "aggregate",
+      "canonical_source": {
+        "table": "growth_daily_metrics",
+        "field": "new_users",
+        "aggregation": "SUM"
+      },
+      "time_field": {
+        "table": "growth_daily_metrics",
+        "field": "metric_date"
+      },
+      "confirmed_alternatives": [
+        {
+          "label": "新增用户数",
+          "description_terms": ["渠道", "注册用户数量"],
+          "description": "按用户确认的渠道注册人数口径统计注册记录数",
+          "source": {
+            "table": "user_registrations",
+            "field": "registration_id",
+            "aggregation": "COUNT"
+          },
+          "time_field": {
+            "table": "user_registrations",
+            "field": "registered_at"
+          }
+        }
+      ]
+    },
+    {
+      "name": "daily_active_users",
+      "aliases": ["日活用户数", "日活人数", "每日活跃用户数"],
+      "description": "按指标日期记录的每日活跃用户数；按较粗时间粒度汇总时遵循查询口径求和",
+      "kind": "aggregate",
+      "canonical_source": {
+        "table": "growth_daily_metrics",
+        "field": "daily_active_users",
+        "aggregation": "SUM"
+      },
+      "time_field": {
+        "table": "growth_daily_metrics",
+        "field": "metric_date"
+      }
+    },
+    {
+      "name": "day1_retained_users",
+      "aliases": ["次日留存用户数", "次日留存人数", "次日留存用户"],
+      "description": "按指标日期记录的次日留存用户数；按较粗时间粒度汇总时遵循查询口径求和",
+      "kind": "aggregate",
+      "canonical_source": {
+        "table": "growth_daily_metrics",
+        "field": "day1_retained_users",
+        "aggregation": "SUM"
+      },
+      "time_field": {
+        "table": "growth_daily_metrics",
+        "field": "metric_date"
+      }
+    },
+    {
+      "name": "activated_users",
+      "aliases": ["激活用户数", "激活人数"],
+      "description": "按运营指标日期汇总的激活用户数量",
+      "kind": "aggregate",
+      "canonical_source": {
+        "table": "growth_daily_metrics",
+        "field": "activated_users",
+        "aggregation": "SUM"
+      },
+      "time_field": {
+        "table": "growth_daily_metrics",
+        "field": "metric_date"
+      },
+      "alternative_sources": [
+        {
+          "table": "user_activations",
+          "description": "用户级激活事件，仅用于明确要求事件记录或用户级行为的查询"
+        }
+      ]
+    },
+    {
+      "name": "activation_rate",
+      "aliases": ["激活率"],
+      "description": "注册用户中已激活用户的比例，以注册 cohort 为统计对象",
+      "kind": "ratio",
+      "formula": "activated_registrations / registrations",
+      "numerator": {
+        "table": "user_activations",
+        "field": "is_activated",
+        "identity_field": "registration_id",
+        "aggregation": "COUNT_IF_TRUE"
+      },
+      "denominator": {
+        "table": "user_registrations",
+        "field": "registration_id",
+        "aggregation": "COUNT_DISTINCT"
+      },
+      "time_field": {
+        "table": "user_registrations",
+        "field": "registered_at"
+      },
+      "joins": [
+        {
+          "left": "user_registrations.registration_id",
+          "right": "user_activations.registration_id"
+        }
+      ]
+    },
+    {
+      "name": "day1_retention_rate",
+      "aliases": ["1日留存率", "次日留存率"],
+      "description": "注册 cohort 的第1日观察用户中已留存用户的比例，不按指标天数取平均",
+      "kind": "ratio",
+      "formula": "retained_day1_users / observed_day1_users",
+      "numerator": {
+        "table": "user_retention",
+        "field": "is_retained",
+        "aggregation": "COUNT_IF_TRUE"
+      },
+      "denominator": {
+        "table": "user_retention",
+        "field": "retention_id",
+        "aggregation": "COUNT"
+      },
+      "time_field": {
+        "table": "user_retention",
+        "field": "registration_date"
+      },
+      "required_filters": [
+        {"table": "user_retention", "field": "retention_day", "value": 1}
+      ],
+      "joins": []
+    },
+    {
+      "name": "plays_per_user_by_registration_platform",
+      "aliases": ["人均播放次数", "播放总次数除以去重用户数"],
+      "description": "按活动发生日期汇总播放次数，再除以去重活动用户数；注册平台来自注册事实表",
+      "kind": "ratio",
+      "formula": "SUM(play_count) / COUNT(DISTINCT activity_user_id)",
+      "numerator": {
+        "table": "user_daily_activity",
+        "field": "play_count",
+        "aggregation": "SUM"
+      },
+      "denominator": {
+        "table": "user_daily_activity",
+        "field": "user_id",
+        "aggregation": "COUNT_DISTINCT",
+        "require_distinct": true
+      },
+      "time_field": {
+        "table": "user_daily_activity",
+        "field": "activity_date"
+      },
+      "joins": [
+        {
+          "left": "user_daily_activity.user_id",
+          "right": "user_registrations.user_id"
+        }
+      ]
+    }
+  ]
+}

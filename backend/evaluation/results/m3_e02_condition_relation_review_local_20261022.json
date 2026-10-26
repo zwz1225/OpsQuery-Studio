@@ -1,0 +1,3553 @@
+{
+  "stage": "M3 E02 public condition and relation offline review",
+  "run_status": "complete",
+  "date": "2026-10-22",
+  "all_checks_passed": true,
+  "checks": {
+    "import_spec_hash": true,
+    "workflow_hash": true,
+    "public_development_inputs_hash": true,
+    "development_only": true,
+    "baseline_capture_hash": true,
+    "baseline_capture_identity": true,
+    "candidate_capture_hash": true,
+    "candidate_capture_identity": true,
+    "coverage.py_hash": true,
+    "intent.py_hash": true,
+    "repair.py_hash": true,
+    "diagnostics.py_hash": true,
+    "budgets.py_hash": true,
+    "description_cards_hash": true,
+    "description_foreign_data_hash": true,
+    "description_customers_hash": true,
+    "description_yearmonth_hash": true,
+    "four_authorized_description_files": true,
+    "baseline_debit_card_specializing_index_hash": true,
+    "baseline_debit_card_specializing_index_identity": true,
+    "baseline_BIRD-PG-1479_coverage_replay": true,
+    "baseline_BIRD-PG-1479_intent_replay": true,
+    "baseline_card_games_index_hash": true,
+    "baseline_card_games_index_identity": true,
+    "baseline_BIRD-PG-0407_coverage_replay": true,
+    "baseline_BIRD-PG-0407_intent_replay": true,
+    "candidate_debit_card_specializing_index_hash": true,
+    "candidate_debit_card_specializing_index_identity": true,
+    "candidate_BIRD-PG-1479_coverage_replay": true,
+    "candidate_BIRD-PG-1479_intent_replay": true,
+    "candidate_card_games_index_hash": true,
+    "candidate_card_games_index_identity": true,
+    "candidate_BIRD-PG-0407_coverage_replay": true,
+    "candidate_BIRD-PG-0407_intent_replay": true,
+    "frozen_dump_hash": true,
+    "frozen_dump_size": true,
+    "cards_copy_boundary": true,
+    "cards_copy_payload": true,
+    "foreign_data_copy_boundary": true,
+    "foreign_data_copy_payload": true,
+    "customers_copy_boundary": true,
+    "customers_copy_payload": true,
+    "yearmonth_copy_boundary": true,
+    "yearmonth_copy_payload": true
+  },
+  "sources": {
+    "import_spec": {
+      "path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cases\\bird_mini_dev\\m2_b_import_spec_v1.json",
+      "sha256": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879",
+      "size_bytes": 398070
+    },
+    "workflow": {
+      "path": "E:\\PythonLearn\\m3_e01_pair24_20261021_v2\\reports\\pair24_server.json",
+      "sha256": "2d9d83639738c43b8284b7f89576ff62d3cefdd1992e3ae24141554ac823dbe1",
+      "size_bytes": 52639
+    },
+    "public_development_inputs": {
+      "path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cases\\bird_mini_dev\\m2_pg_v1\\inputs\\development80.jsonl",
+      "sha256": "6760724e98b6da967ac5ebb2698c4e5cab385875bd150ad36a3b252ffdc52f03",
+      "size_bytes": 26124
+    },
+    "baseline_capture": {
+      "path": "E:\\PythonLearn\\m3_e01_pair24_20261021_v2\\baseline\\backend\\evaluation\\results\\m3_e01_baseline24_capture_server.json",
+      "sha256": "49f0a35c7e9ba2866ad476458f520a68e89d6e13f20376a39a62a5b2ac91ac6e",
+      "size_bytes": 1516640
+    },
+    "candidate_capture": {
+      "path": "E:\\PythonLearn\\m3_e01_pair24_20261021_v2\\candidate\\backend\\evaluation\\results\\m3_e01_candidate24_capture_server.json",
+      "sha256": "1d056034333edfa1287e59cae7452276770981e43acf743cccc09b074fae891a",
+      "size_bytes": 1557113
+    },
+    "coverage.py": {
+      "path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\bird\\coverage.py",
+      "sha256": "c857134e5bc6909ca476f7c74cfcd184769f6234bbc912be3c9c0759d61c1451",
+      "size_bytes": 4863
+    },
+    "intent.py": {
+      "path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\bird\\intent.py",
+      "sha256": "ea26c4cfc4c7abb155ad060b8ab222cfdf6c5b6ff5ba6f96cde23adbde550d59",
+      "size_bytes": 38462
+    },
+    "repair.py": {
+      "path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\bird\\repair.py",
+      "sha256": "fe8120bbc9bf5e3dc4b6dcd6b2a845cf2aeadfe95851f6438f58d198837d6644",
+      "size_bytes": 14191
+    },
+    "diagnostics.py": {
+      "path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\bird\\diagnostics.py",
+      "sha256": "f12dbf459bc15c7f126d27d304da3582b1a42d6f5ff2ec8cf636f8cc797364b7",
+      "size_bytes": 8776
+    },
+    "budgets.py": {
+      "path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\bird\\budgets.py",
+      "sha256": "688de220e22e28e1fe4366db4348866d61eb946d5345fd918e02e573cc013e39",
+      "size_bytes": 3839
+    },
+    "description_cards": {
+      "path": "E:\\PythonLearn\\datasets\\bird_mini_dev\\extracted\\minidev\\MINIDEV\\dev_databases\\card_games\\database_description\\cards.csv",
+      "sha256": "41bc566e91e165f43f7484a1d3d3f17e66094e2c0cc3092829366f6e2f019d23",
+      "size_bytes": 9101
+    },
+    "description_foreign_data": {
+      "path": "E:\\PythonLearn\\datasets\\bird_mini_dev\\extracted\\minidev\\MINIDEV\\dev_databases\\card_games\\database_description\\foreign_data.csv",
+      "sha256": "ac254726eeb2d0fd574ec64bac31617ac233842623f692469b7569febe9f3310",
+      "size_bytes": 514
+    },
+    "description_customers": {
+      "path": "E:\\PythonLearn\\datasets\\bird_mini_dev\\extracted\\minidev\\MINIDEV\\dev_databases\\debit_card_specializing\\database_description\\customers.csv",
+      "sha256": "fd1ff06796da13f6331801dba2a24536fd0aed887cde2a8d08cd03530de88f2d",
+      "size_bytes": 208
+    },
+    "description_yearmonth": {
+      "path": "E:\\PythonLearn\\datasets\\bird_mini_dev\\extracted\\minidev\\MINIDEV\\dev_databases\\debit_card_specializing\\database_description\\yearmonth.csv",
+      "sha256": "7faf48ff08295935610dc07b33596028483f8270dd1ace0c6a512ae65f8a2e16",
+      "size_bytes": 179
+    },
+    "baseline_debit_card_specializing_index": {
+      "path": "E:\\PythonLearn\\m3_e01_pair24_20261021_v2\\baseline\\backend\\data\\m3_indexes\\debit_card_specializing\\80eac11213a46b034e35cc89f2d0f4c2a751f1713ba0b7db2a3f95f66956980c\\schema_index.json",
+      "sha256": "27fa7ab5fad15b31af36a10e601642f4d3b34b6bda686d4ee7a41a56256dc2aa",
+      "size_bytes": 513658
+    },
+    "baseline_card_games_index": {
+      "path": "E:\\PythonLearn\\m3_e01_pair24_20261021_v2\\baseline\\backend\\data\\m3_indexes\\card_games\\836094ecef08b789a7c0ad0ecadaef3b87e99175d124ee63fec074f62eca8a11\\schema_index.json",
+      "sha256": "3ed89b6ca63b9d35f8324fe2bf5eccce6376270c4dbece5b07451b8bed98ece7",
+      "size_bytes": 2832843
+    },
+    "candidate_debit_card_specializing_index": {
+      "path": "E:\\PythonLearn\\m3_e01_pair24_20261021_v2\\candidate\\backend\\data\\m3_indexes\\debit_card_specializing\\80eac11213a46b034e35cc89f2d0f4c2a751f1713ba0b7db2a3f95f66956980c\\schema_index.json",
+      "sha256": "27fa7ab5fad15b31af36a10e601642f4d3b34b6bda686d4ee7a41a56256dc2aa",
+      "size_bytes": 513658
+    },
+    "candidate_card_games_index": {
+      "path": "E:\\PythonLearn\\m3_e01_pair24_20261021_v2\\candidate\\backend\\data\\m3_indexes\\card_games\\836094ecef08b789a7c0ad0ecadaef3b87e99175d124ee63fec074f62eca8a11\\schema_index.json",
+      "sha256": "3ed89b6ca63b9d35f8324fe2bf5eccce6376270c4dbece5b07451b8bed98ece7",
+      "size_bytes": 2832843
+    },
+    "frozen_dump": {
+      "path": "E:\\PythonLearn\\datasets\\bird_mini_dev\\extracted\\minidev\\MINIDEV_postgresql\\BIRD_dev.sql",
+      "sha256": "31b1da211849d24a57c9af7636da46a5b82fc8a3ca1542bb3ebd8775e9a31cec",
+      "size_bytes": 1001882533
+    }
+  },
+  "selector_replays": {
+    "baseline": {
+      "BIRD-PG-1479": {
+        "database_id": "debit_card_specializing",
+        "public": {
+          "case_id": "BIRD-PG-1479",
+          "database_id": "debit_card_specializing",
+          "dialect": "postgres",
+          "evidence": "The first 4 strings of the Date values in the yearmonth table can represent year.",
+          "question": "Which year recorded the most consumption of gas paid in CZK?"
+        },
+        "candidate_count": 21,
+        "rrf_candidates": [
+          {
+            "field_id": "debit_card_specializing.yearmonth.date",
+            "rrf_rank": 1,
+            "rrf_score": 0.032266458495966696,
+            "bm25_rank": 3,
+            "bm25_score": 0.3535280636591053,
+            "dense_rank": 1,
+            "dense_score": 0.585958812663462,
+            "rerank_rank": 2,
+            "rerank_score": 0.5634902325498422,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.yearmonth.consumption",
+            "rrf_rank": 2,
+            "rrf_score": 0.03225806451612903,
+            "bm25_rank": 2,
+            "bm25_score": 0.37772422267780137,
+            "dense_rank": 2,
+            "dense_score": 0.5743434214007067,
+            "rerank_rank": 1,
+            "rerank_score": 0.6694617084551462,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.date",
+            "rrf_rank": 3,
+            "rrf_score": 0.031009615384615385,
+            "bm25_rank": 4,
+            "bm25_score": 0.2740095554758584,
+            "dense_rank": 5,
+            "dense_score": 0.527765337147903,
+            "rerank_rank": 9,
+            "rerank_score": 0.44766611078774693,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [
+              "date"
+            ],
+            "uncovered_intent_terms": [
+              "date"
+            ]
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.gasstationid",
+            "rrf_rank": 4,
+            "rrf_score": 0.030776515151515152,
+            "bm25_rank": 6,
+            "bm25_score": 0.19044042476788609,
+            "dense_rank": 4,
+            "dense_score": 0.5486668656320018,
+            "rerank_rank": 6,
+            "rerank_score": 0.48246369893681573,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [
+              "gas"
+            ],
+            "uncovered_intent_terms": [
+              "gas"
+            ]
+          },
+          {
+            "field_id": "debit_card_specializing.gasstations.gasstationid",
+            "rrf_rank": 5,
+            "rrf_score": 0.030536130536130537,
+            "bm25_rank": 5,
+            "bm25_score": 0.19044042476788609,
+            "dense_rank": 6,
+            "dense_score": 0.5192152514875753,
+            "rerank_rank": 7,
+            "rerank_score": 0.4812240337007718,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [
+              "gas"
+            ],
+            "uncovered_intent_terms": [
+              "gas"
+            ]
+          },
+          {
+            "field_id": "debit_card_specializing.customers.currency",
+            "rrf_rank": 6,
+            "rrf_score": 0.029631255487269532,
+            "bm25_rank": 7,
+            "bm25_score": 0.18789785067026135,
+            "dense_rank": 8,
+            "dense_score": 0.49135698998831534,
+            "rerank_rank": 4,
+            "rerank_score": 0.5033956864425757,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.yearmonth.customerid",
+            "rrf_rank": 7,
+            "rrf_score": 0.029631255487269532,
+            "bm25_rank": 8,
+            "bm25_score": 0.116273123740714,
+            "dense_rank": 7,
+            "dense_score": 0.49967924536332287,
+            "rerank_rank": 3,
+            "rerank_score": 0.5125985259704419,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.customers.customerid",
+            "rrf_rank": 8,
+            "rrf_score": 0.02938045560996381,
+            "bm25_rank": 1,
+            "bm25_score": 1.0,
+            "dense_rank": 17,
+            "dense_score": 0.42172158003453614,
+            "rerank_rank": 15,
+            "rerank_score": 0.33784285326649216,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.gasstations.country",
+            "rrf_rank": 9,
+            "rrf_score": 0.015873015873015872,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 3,
+            "dense_score": 0.5596298051351223,
+            "rerank_rank": 5,
+            "rerank_score": 0.49454424631929095,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.gasstations.chainid",
+            "rrf_rank": 10,
+            "rrf_score": 0.014492753623188406,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 9,
+            "dense_score": 0.4798389006435097,
+            "rerank_rank": 8,
+            "rerank_score": 0.4746966019437571,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.time",
+            "rrf_rank": 11,
+            "rrf_score": 0.014285714285714285,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 10,
+            "dense_score": 0.46955386725382675,
+            "rerank_rank": 12,
+            "rerank_score": 0.3638462680122459,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.cardid",
+            "rrf_rank": 12,
+            "rrf_score": 0.014084507042253521,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 11,
+            "dense_score": 0.454504624279133,
+            "rerank_rank": 19,
+            "rerank_score": 0.31365755821411007,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.productid",
+            "rrf_rank": 13,
+            "rrf_score": 0.013888888888888888,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 12,
+            "dense_score": 0.4307572860046325,
+            "rerank_rank": 18,
+            "rerank_score": 0.32873480419014456,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.gasstations.segment",
+            "rrf_rank": 14,
+            "rrf_score": 0.0136986301369863,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 13,
+            "dense_score": 0.4291495970734469,
+            "rerank_rank": 10,
+            "rerank_score": 0.41422728924126895,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.transactionid",
+            "rrf_rank": 15,
+            "rrf_score": 0.013513513513513514,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 14,
+            "dense_score": 0.4290937142741193,
+            "rerank_rank": 14,
+            "rerank_score": 0.3480078233252065,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.amount",
+            "rrf_rank": 16,
+            "rrf_score": 0.013333333333333334,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 15,
+            "dense_score": 0.42831991507500716,
+            "rerank_rank": 11,
+            "rerank_score": 0.3937729973367386,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.customerid",
+            "rrf_rank": 17,
+            "rrf_score": 0.013157894736842105,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 16,
+            "dense_score": 0.4274241730965958,
+            "rerank_rank": 17,
+            "rerank_score": 0.32992104785753007,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.products.productid",
+            "rrf_rank": 18,
+            "rrf_score": 0.01282051282051282,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 18,
+            "dense_score": 0.3978127254753316,
+            "rerank_rank": 20,
+            "rerank_score": 0.3010413929230081,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.customers.segment",
+            "rrf_rank": 19,
+            "rrf_score": 0.012658227848101266,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 19,
+            "dense_score": 0.392205776758013,
+            "rerank_rank": 16,
+            "rerank_score": 0.33193703486971304,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.price",
+            "rrf_rank": 20,
+            "rrf_score": 0.0125,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 20,
+            "dense_score": 0.36614037001731364,
+            "rerank_rank": 13,
+            "rerank_score": 0.3606920695028988,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.products.description",
+            "rrf_rank": 21,
+            "rrf_score": 0.012345679012345678,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 21,
+            "dense_score": 0.34335383354610555,
+            "rerank_rank": 21,
+            "rerank_score": 0.2911709363317415,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          }
+        ],
+        "baseline_selected": [
+          "debit_card_specializing.yearmonth.consumption",
+          "debit_card_specializing.yearmonth.date"
+        ],
+        "anchors": [
+          "debit_card_specializing.yearmonth"
+        ],
+        "coverage_added": [],
+        "selected_field_ids": [
+          "debit_card_specializing.yearmonth.consumption",
+          "debit_card_specializing.yearmonth.date"
+        ],
+        "recorded_intent": {
+          "policy": {
+            "policy_id": "bird_public_intent_candidate_v4",
+            "development_candidate": true,
+            "formal_protocol_override": false,
+            "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+            "baseline_preserved": true,
+            "max_fields": 20,
+            "max_added_fields": 8,
+            "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+            "max_related_hops": 2,
+            "join_source": "declared_foreign_keys_only",
+            "canonical_lookup_max_pairs": 4,
+            "canonical_lookup_sql_tool_calls": 1,
+            "lookup_consumes_existing_sql_budget": true,
+            "numeric_policy": "floating_count_ratio_order_advisory_v3",
+            "unit_policy": "public_percentage_units_precision_v2",
+            "output_group_policy": "participant_action_target_pair_v1",
+            "predicate_policy": "public_condition_roles_conflicts_v3",
+            "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+            "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+            "grain_policy": "public_explicit_entity_grain_v2",
+            "native_ex_unchanged": true
+          },
+          "baseline_field_ids": [
+            "debit_card_specializing.yearmonth.consumption",
+            "debit_card_specializing.yearmonth.date"
+          ],
+          "added_field_ids": [],
+          "decisions": [],
+          "sample_condition_candidates": []
+        },
+        "declared_relations": [],
+        "reachable": [
+          "debit_card_specializing.yearmonth"
+        ],
+        "mentions": {
+          "debit_card_specializing.customers": [],
+          "debit_card_specializing.gasstations": [],
+          "debit_card_specializing.products": [],
+          "debit_card_specializing.transactions_1k": [
+            "date"
+          ],
+          "debit_card_specializing.yearmonth": [
+            "date",
+            "consumption"
+          ]
+        },
+        "seeded": [
+          "debit_card_specializing.yearmonth"
+        ],
+        "named_tables": [
+          "debit_card_specializing.yearmonth"
+        ],
+        "raw_sample_hints": [
+          {
+            "field_id": "debit_card_specializing.customers.currency",
+            "table_id": "debit_card_specializing.customers",
+            "field": "currency",
+            "value": "CZK",
+            "basis": "unique_category_sample_code_matches_public_token",
+            "authority": "coverage_hint_only",
+            "mandatory": false
+          }
+        ],
+        "sample_hint_gates": [
+          {
+            "field_id": "debit_card_specializing.customers.currency",
+            "table_id": "debit_card_specializing.customers",
+            "field": "currency",
+            "value": "CZK",
+            "basis": "unique_category_sample_code_matches_public_token",
+            "authority": "coverage_hint_only",
+            "mandatory": false,
+            "condition_scope": false,
+            "reachable": false,
+            "retained_in_report": false
+          }
+        ],
+        "explicit_evidence_conditions": {
+          "policy": "public_condition_roles_conflicts_v3",
+          "conditions": [],
+          "conflicts": [],
+          "guidance": "Keep numerator, denominator and population roles separate. Conflicting bindings are advisory; do not require their conjunction or guess which is correct."
+        },
+        "canonical_probe_count": 0,
+        "final_graph_fields": [
+          "debit_card_specializing.yearmonth.consumption",
+          "debit_card_specializing.yearmonth.date"
+        ],
+        "final_graph_joins": [],
+        "graph_field_count": 2,
+        "nonselected_key_candidates": [
+          {
+            "field_id": "debit_card_specializing.customers.currency",
+            "rrf_rank": 6,
+            "rrf_score": 0.029631255487269532,
+            "bm25_rank": 7,
+            "bm25_score": 0.18789785067026135,
+            "dense_rank": 8,
+            "dense_score": 0.49135698998831534,
+            "rerank_rank": 4,
+            "rerank_score": 0.5033956864425757,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.yearmonth.customerid",
+            "rrf_rank": 7,
+            "rrf_score": 0.029631255487269532,
+            "bm25_rank": 8,
+            "bm25_score": 0.116273123740714,
+            "dense_rank": 7,
+            "dense_score": 0.49967924536332287,
+            "rerank_rank": 3,
+            "rerank_score": 0.5125985259704419,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.customers.customerid",
+            "rrf_rank": 8,
+            "rrf_score": 0.02938045560996381,
+            "bm25_rank": 1,
+            "bm25_score": 1.0,
+            "dense_rank": 17,
+            "dense_score": 0.42172158003453614,
+            "rerank_rank": 15,
+            "rerank_score": 0.33784285326649216,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.customerid",
+            "rrf_rank": 17,
+            "rrf_score": 0.013157894736842105,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 16,
+            "dense_score": 0.4274241730965958,
+            "rerank_rank": 17,
+            "rerank_score": 0.32992104785753007,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          }
+        ]
+      },
+      "BIRD-PG-0407": {
+        "database_id": "card_games",
+        "public": {
+          "case_id": "BIRD-PG-0407",
+          "database_id": "card_games",
+          "dialect": "postgres",
+          "evidence": "German refer to language; all types refer to the subtypes, supertypes; subtypes is not null AND supertypes is not null",
+          "question": "Lists all types of cards in German."
+        },
+        "candidate_count": 40,
+        "rrf_candidates": [
+          {
+            "field_id": "card_games.cards.supertypes",
+            "rrf_rank": 1,
+            "rrf_score": 0.032266458495966696,
+            "bm25_rank": 1,
+            "bm25_score": 1.0,
+            "dense_rank": 3,
+            "dense_score": 0.7190359075942336,
+            "rerank_rank": 3,
+            "rerank_score": 0.7412832036246445,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.types",
+            "rrf_rank": 2,
+            "rrf_score": 0.03225806451612903,
+            "bm25_rank": 2,
+            "bm25_score": 0.5918734706726078,
+            "dense_rank": 2,
+            "dense_score": 0.7734113469120185,
+            "rerank_rank": 5,
+            "rerank_score": 0.7107981079655677,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.foreign_data.type",
+            "rrf_rank": 3,
+            "rrf_score": 0.032018442622950824,
+            "bm25_rank": 4,
+            "bm25_score": 0.5267133127358158,
+            "dense_rank": 1,
+            "dense_score": 0.779483470999346,
+            "rerank_rank": 2,
+            "rerank_score": 0.748964518910575,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.colorindicator",
+            "rrf_rank": 4,
+            "rrf_score": 0.03036576949620428,
+            "bm25_rank": 3,
+            "bm25_score": 0.5834925846486917,
+            "dense_rank": 9,
+            "dense_score": 0.6905157563376733,
+            "rerank_rank": 7,
+            "rerank_score": 0.6461365443153277,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.originaltype",
+            "rrf_rank": 5,
+            "rrf_score": 0.030090497737556562,
+            "bm25_rank": 5,
+            "bm25_score": 0.5066509023454019,
+            "dense_rank": 8,
+            "dense_score": 0.6907249359479813,
+            "rerank_rank": 4,
+            "rerank_score": 0.7199945291246056,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.type",
+            "rrf_rank": 6,
+            "rrf_score": 0.02817460317460317,
+            "bm25_rank": 12,
+            "bm25_score": 0.3548665208150813,
+            "dense_rank": 10,
+            "dense_score": 0.6865865757740724,
+            "rerank_rank": 1,
+            "rerank_score": 0.7912463090458175,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.subtypes",
+            "rrf_rank": 7,
+            "rrf_score": 0.027783137179239824,
+            "bm25_rank": 11,
+            "bm25_score": 0.3669869645316725,
+            "dense_rank": 13,
+            "dense_score": 0.6812070274843035,
+            "rerank_rank": 6,
+            "rerank_score": 0.7016521144500939,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.foreign_data.language",
+            "rrf_rank": 8,
+            "rrf_score": 0.02701252236135957,
+            "bm25_rank": 26,
+            "bm25_score": 0.24898653922008548,
+            "dense_rank": 5,
+            "dense_score": 0.7064397532385222,
+            "rerank_rank": 8,
+            "rerank_score": 0.6161531998266087,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.availability",
+            "rrf_rank": 9,
+            "rrf_score": 0.026387470207694927,
+            "bm25_rank": 29,
+            "bm25_score": 0.22256031015962718,
+            "dense_rank": 6,
+            "dense_score": 0.7001747787311199,
+            "rerank_rank": 9,
+            "rerank_score": 0.6023889932128215,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.set_translations.language",
+            "rrf_rank": 10,
+            "rrf_score": 0.025007766387076732,
+            "bm25_rank": 27,
+            "bm25_score": 0.23982612502663697,
+            "dense_rank": 14,
+            "dense_score": 0.6787766320931442,
+            "rerank_rank": 14,
+            "rerank_score": 0.5889325519205161,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.ispromo",
+            "rrf_rank": 11,
+            "rrf_score": 0.02431476569407604,
+            "bm25_rank": 18,
+            "bm25_score": 0.3012868019969937,
+            "dense_rank": 27,
+            "dense_score": 0.6483463994049316,
+            "rerank_rank": 11,
+            "rerank_score": 0.601266177184713,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.loyalty",
+            "rrf_rank": 12,
+            "rrf_score": 0.02353266888150609,
+            "bm25_rank": 24,
+            "bm25_score": 0.26974302524387095,
+            "dense_rank": 26,
+            "dense_score": 0.6489416803246711,
+            "rerank_rank": 13,
+            "rerank_score": 0.5948299124662692,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.side",
+            "rrf_rank": 13,
+            "rrf_score": 0.015625,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 4,
+            "dense_score": 0.7116383110936609,
+            "rerank_rank": 37,
+            "rerank_score": 0.5092441263540648,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isalternative",
+            "rrf_rank": 14,
+            "rrf_score": 0.015151515151515152,
+            "bm25_rank": 6,
+            "bm25_score": 0.4653907493921316,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 12,
+            "rerank_score": 0.6012400654554965,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.power",
+            "rrf_rank": 15,
+            "rrf_score": 0.014925373134328358,
+            "bm25_rank": 7,
+            "bm25_score": 0.43327365706423276,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 31,
+            "rerank_score": 0.5428297215897384,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.foreign_data.name",
+            "rrf_rank": 16,
+            "rrf_score": 0.014925373134328358,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 7,
+            "dense_score": 0.6954220725809795,
+            "rerank_rank": 20,
+            "rerank_score": 0.5708345892243696,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.cardkingdomfoilid",
+            "rrf_rank": 17,
+            "rrf_score": 0.014705882352941176,
+            "bm25_rank": 8,
+            "bm25_score": 0.42002642752960706,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 36,
+            "rerank_score": 0.5163956878960287,
+            "selected": false,
+            "selection_reason": "coverage_total_field_cap",
+            "matched_intent_terms": [
+              "card"
+            ],
+            "uncovered_intent_terms": [
+              "card"
+            ]
+          },
+          {
+            "field_id": "card_games.cards.colors",
+            "rrf_rank": 18,
+            "rrf_score": 0.014492753623188406,
+            "bm25_rank": 9,
+            "bm25_score": 0.41134309094315136,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 22,
+            "rerank_score": 0.5704487048096107,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.dueldeck",
+            "rrf_rank": 19,
+            "rrf_score": 0.014285714285714285,
+            "bm25_rank": 10,
+            "bm25_score": 0.3911969627862548,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 21,
+            "rerank_score": 0.5705829647365547,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.rarity",
+            "rrf_rank": 20,
+            "rrf_score": 0.014084507042253521,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 11,
+            "dense_score": 0.6826136310609092,
+            "rerank_rank": 30,
+            "rerank_score": 0.5443863173797933,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.name",
+            "rrf_rank": 21,
+            "rrf_score": 0.013888888888888888,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 12,
+            "dense_score": 0.6823935118933361,
+            "rerank_rank": 10,
+            "rerank_score": 0.6018716132380659,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isonlineonly",
+            "rrf_rank": 22,
+            "rrf_score": 0.0136986301369863,
+            "bm25_rank": 13,
+            "bm25_score": 0.33664081657828626,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 15,
+            "rerank_score": 0.5847015314462605,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.coloridentity",
+            "rrf_rank": 23,
+            "rrf_score": 0.013513513513513514,
+            "bm25_rank": 14,
+            "bm25_score": 0.334735432292768,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 26,
+            "rerank_score": 0.565745870381658,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isstarter",
+            "rrf_rank": 24,
+            "rrf_score": 0.013333333333333334,
+            "bm25_rank": 15,
+            "bm25_score": 0.3276007558120328,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 19,
+            "rerank_score": 0.5739033188089886,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.layout",
+            "rrf_rank": 25,
+            "rrf_score": 0.013333333333333334,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 15,
+            "dense_score": 0.6771347070902317,
+            "rerank_rank": 29,
+            "rerank_score": 0.5566247248089963,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isoversized",
+            "rrf_rank": 26,
+            "rrf_score": 0.013157894736842105,
+            "bm25_rank": 16,
+            "bm25_score": 0.3069010966443041,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 27,
+            "rerank_score": 0.5597735856264678,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.istimeshifted",
+            "rrf_rank": 27,
+            "rrf_score": 0.013157894736842105,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 16,
+            "dense_score": 0.6766339443683175,
+            "rerank_rank": 40,
+            "rerank_score": 0.4870837819208064,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.leadershipskills",
+            "rrf_rank": 28,
+            "rrf_score": 0.012987012987012988,
+            "bm25_rank": 17,
+            "bm25_score": 0.3022536699381511,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 38,
+            "rerank_score": 0.508512873083338,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.keywords",
+            "rrf_rank": 29,
+            "rrf_score": 0.012987012987012988,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 17,
+            "dense_score": 0.671336170910934,
+            "rerank_rank": 28,
+            "rerank_score": 0.5594368785684014,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.sets.type",
+            "rrf_rank": 30,
+            "rrf_score": 0.01282051282051282,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 18,
+            "dense_score": 0.6693025361834436,
+            "rerank_rank": 34,
+            "rerank_score": 0.5309657979507897,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [
+              "type"
+            ],
+            "uncovered_intent_terms": [
+              "type"
+            ]
+          },
+          {
+            "field_id": "card_games.cards.isstoryspotlight",
+            "rrf_rank": 31,
+            "rrf_score": 0.012658227848101266,
+            "bm25_rank": 19,
+            "bm25_score": 0.29590696692370216,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 24,
+            "rerank_score": 0.5689150157890394,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.sets.name",
+            "rrf_rank": 32,
+            "rrf_score": 0.012658227848101266,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 19,
+            "dense_score": 0.6655551510332919,
+            "rerank_rank": 35,
+            "rerank_score": 0.5184864083857139,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.sets.ispartialpreview",
+            "rrf_rank": 33,
+            "rrf_score": 0.0125,
+            "bm25_rank": 20,
+            "bm25_score": 0.2903482972855212,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 32,
+            "rerank_score": 0.5383711674284897,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.setcode",
+            "rrf_rank": 34,
+            "rrf_score": 0.0125,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 20,
+            "dense_score": 0.6641496821990112,
+            "rerank_rank": 16,
+            "rerank_score": 0.5843316330027564,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.legalities.format",
+            "rrf_rank": 35,
+            "rrf_score": 0.012345679012345678,
+            "bm25_rank": 21,
+            "bm25_score": 0.27934392930526875,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 33,
+            "rerank_score": 0.5380156063726943,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.frameversion",
+            "rrf_rank": 36,
+            "rrf_score": 0.012345679012345678,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 21,
+            "dense_score": 0.6599601466805222,
+            "rerank_rank": 39,
+            "rerank_score": 0.49360126314921526,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.cardkingdomid",
+            "rrf_rank": 37,
+            "rrf_score": 0.012195121951219513,
+            "bm25_rank": 22,
+            "bm25_score": 0.27761750471074387,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 25,
+            "rerank_score": 0.5674200874783,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isfullart",
+            "rrf_rank": 38,
+            "rrf_score": 0.012195121951219513,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 22,
+            "dense_score": 0.6587772022527075,
+            "rerank_rank": 23,
+            "rerank_score": 0.5690998457110744,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isreprint",
+            "rrf_rank": 39,
+            "rrf_score": 0.012048192771084338,
+            "bm25_rank": 23,
+            "bm25_score": 0.2707766734725297,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 18,
+            "rerank_score": 0.5798984302563536,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.facename",
+            "rrf_rank": 40,
+            "rrf_score": 0.012048192771084338,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 23,
+            "dense_score": 0.6571933757361036,
+            "rerank_rank": 17,
+            "rerank_score": 0.5828879731390048,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          }
+        ],
+        "baseline_selected": [
+          "card_games.cards.type",
+          "card_games.foreign_data.type",
+          "card_games.cards.supertypes",
+          "card_games.cards.originaltype",
+          "card_games.cards.types",
+          "card_games.cards.subtypes",
+          "card_games.cards.colorindicator",
+          "card_games.foreign_data.language",
+          "card_games.cards.availability",
+          "card_games.cards.name",
+          "card_games.cards.ispromo",
+          "card_games.cards.isalternative",
+          "card_games.cards.loyalty",
+          "card_games.set_translations.language",
+          "card_games.cards.isonlineonly",
+          "card_games.cards.setcode",
+          "card_games.cards.facename",
+          "card_games.cards.isreprint",
+          "card_games.cards.isstarter",
+          "card_games.foreign_data.name"
+        ],
+        "anchors": [
+          "card_games.cards",
+          "card_games.foreign_data",
+          "card_games.set_translations"
+        ],
+        "coverage_added": [],
+        "selected_field_ids": [
+          "card_games.cards.type",
+          "card_games.foreign_data.type",
+          "card_games.cards.supertypes",
+          "card_games.cards.originaltype",
+          "card_games.cards.types",
+          "card_games.cards.subtypes",
+          "card_games.cards.colorindicator",
+          "card_games.foreign_data.language",
+          "card_games.cards.availability",
+          "card_games.cards.name",
+          "card_games.cards.ispromo",
+          "card_games.cards.isalternative",
+          "card_games.cards.loyalty",
+          "card_games.set_translations.language",
+          "card_games.cards.isonlineonly",
+          "card_games.cards.setcode",
+          "card_games.cards.facename",
+          "card_games.cards.isreprint",
+          "card_games.cards.isstarter",
+          "card_games.foreign_data.name"
+        ],
+        "recorded_intent": {
+          "policy": {
+            "policy_id": "bird_public_intent_candidate_v4",
+            "development_candidate": true,
+            "formal_protocol_override": false,
+            "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+            "baseline_preserved": true,
+            "max_fields": 20,
+            "max_added_fields": 8,
+            "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+            "max_related_hops": 2,
+            "join_source": "declared_foreign_keys_only",
+            "canonical_lookup_max_pairs": 4,
+            "canonical_lookup_sql_tool_calls": 1,
+            "lookup_consumes_existing_sql_budget": true,
+            "numeric_policy": "floating_count_ratio_order_advisory_v3",
+            "unit_policy": "public_percentage_units_precision_v2",
+            "output_group_policy": "participant_action_target_pair_v1",
+            "predicate_policy": "public_condition_roles_conflicts_v3",
+            "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+            "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+            "grain_policy": "public_explicit_entity_grain_v2",
+            "native_ex_unchanged": true
+          },
+          "baseline_field_ids": [
+            "card_games.cards.type",
+            "card_games.foreign_data.type",
+            "card_games.cards.supertypes",
+            "card_games.cards.originaltype",
+            "card_games.cards.types",
+            "card_games.cards.subtypes",
+            "card_games.cards.colorindicator",
+            "card_games.foreign_data.language",
+            "card_games.cards.availability",
+            "card_games.cards.name",
+            "card_games.cards.ispromo",
+            "card_games.cards.isalternative",
+            "card_games.cards.loyalty",
+            "card_games.set_translations.language",
+            "card_games.cards.isonlineonly",
+            "card_games.cards.setcode",
+            "card_games.cards.facename",
+            "card_games.cards.isreprint",
+            "card_games.cards.isstarter",
+            "card_games.foreign_data.name"
+          ],
+          "added_field_ids": [],
+          "decisions": [],
+          "sample_condition_candidates": []
+        },
+        "declared_relations": [
+          {
+            "id": "rulings_uuid_fkey:uuid",
+            "left_table": "card_games.cards",
+            "left_field": "uuid",
+            "right_table": "card_games.rulings",
+            "right_field": "uuid",
+            "relation_type": "foreign_key",
+            "description": "Official database foreign key"
+          },
+          {
+            "id": "set_translations_setcode_fkey:setcode",
+            "left_table": "card_games.sets",
+            "left_field": "code",
+            "right_table": "card_games.set_translations",
+            "right_field": "setcode",
+            "relation_type": "foreign_key",
+            "description": "Official database foreign key"
+          }
+        ],
+        "reachable": [
+          "card_games.cards",
+          "card_games.foreign_data",
+          "card_games.rulings",
+          "card_games.set_translations",
+          "card_games.sets"
+        ],
+        "mentions": {
+          "card_games.cards": [
+            "subtypes",
+            "supertypes",
+            "types"
+          ],
+          "card_games.foreign_data": [
+            "language"
+          ],
+          "card_games.legalities": [],
+          "card_games.rulings": [],
+          "card_games.set_translations": [
+            "language"
+          ],
+          "card_games.sets": []
+        },
+        "seeded": [
+          "card_games.cards"
+        ],
+        "named_tables": [
+          "card_games.cards"
+        ],
+        "raw_sample_hints": [],
+        "sample_hint_gates": [],
+        "explicit_evidence_conditions": {
+          "policy": "public_condition_roles_conflicts_v3",
+          "conditions": [],
+          "conflicts": [],
+          "guidance": "Keep numerator, denominator and population roles separate. Conflicting bindings are advisory; do not require their conjunction or guess which is correct."
+        },
+        "canonical_probe_count": 0,
+        "final_graph_fields": [
+          "card_games.cards.type",
+          "card_games.foreign_data.type",
+          "card_games.cards.supertypes",
+          "card_games.cards.originaltype",
+          "card_games.cards.types",
+          "card_games.cards.subtypes",
+          "card_games.cards.colorindicator",
+          "card_games.foreign_data.language",
+          "card_games.cards.availability",
+          "card_games.cards.name",
+          "card_games.cards.ispromo",
+          "card_games.cards.isalternative",
+          "card_games.cards.loyalty",
+          "card_games.set_translations.language",
+          "card_games.cards.isonlineonly",
+          "card_games.cards.setcode",
+          "card_games.cards.facename",
+          "card_games.cards.isreprint",
+          "card_games.cards.isstarter",
+          "card_games.foreign_data.name"
+        ],
+        "final_graph_joins": [],
+        "graph_field_count": 20,
+        "nonselected_key_candidates": []
+      }
+    },
+    "candidate": {
+      "BIRD-PG-1479": {
+        "database_id": "debit_card_specializing",
+        "public": {
+          "case_id": "BIRD-PG-1479",
+          "database_id": "debit_card_specializing",
+          "dialect": "postgres",
+          "evidence": "The first 4 strings of the Date values in the yearmonth table can represent year.",
+          "question": "Which year recorded the most consumption of gas paid in CZK?"
+        },
+        "candidate_count": 21,
+        "rrf_candidates": [
+          {
+            "field_id": "debit_card_specializing.yearmonth.date",
+            "rrf_rank": 1,
+            "rrf_score": 0.032266458495966696,
+            "bm25_rank": 3,
+            "bm25_score": 0.3535280636591053,
+            "dense_rank": 1,
+            "dense_score": 0.585958812663462,
+            "rerank_rank": 2,
+            "rerank_score": 0.5634902325498422,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.yearmonth.consumption",
+            "rrf_rank": 2,
+            "rrf_score": 0.03225806451612903,
+            "bm25_rank": 2,
+            "bm25_score": 0.37772422267780137,
+            "dense_rank": 2,
+            "dense_score": 0.5743434214007067,
+            "rerank_rank": 1,
+            "rerank_score": 0.6694617084551462,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.date",
+            "rrf_rank": 3,
+            "rrf_score": 0.031009615384615385,
+            "bm25_rank": 4,
+            "bm25_score": 0.2740095554758584,
+            "dense_rank": 5,
+            "dense_score": 0.527765337147903,
+            "rerank_rank": 9,
+            "rerank_score": 0.44766611078774693,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [
+              "date"
+            ],
+            "uncovered_intent_terms": [
+              "date"
+            ]
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.gasstationid",
+            "rrf_rank": 4,
+            "rrf_score": 0.030776515151515152,
+            "bm25_rank": 6,
+            "bm25_score": 0.19044042476788609,
+            "dense_rank": 4,
+            "dense_score": 0.5486668656320018,
+            "rerank_rank": 6,
+            "rerank_score": 0.48246369893681573,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [
+              "gas"
+            ],
+            "uncovered_intent_terms": [
+              "gas"
+            ]
+          },
+          {
+            "field_id": "debit_card_specializing.gasstations.gasstationid",
+            "rrf_rank": 5,
+            "rrf_score": 0.030536130536130537,
+            "bm25_rank": 5,
+            "bm25_score": 0.19044042476788609,
+            "dense_rank": 6,
+            "dense_score": 0.5192152514875753,
+            "rerank_rank": 7,
+            "rerank_score": 0.4812240337007718,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [
+              "gas"
+            ],
+            "uncovered_intent_terms": [
+              "gas"
+            ]
+          },
+          {
+            "field_id": "debit_card_specializing.customers.currency",
+            "rrf_rank": 6,
+            "rrf_score": 0.029631255487269532,
+            "bm25_rank": 7,
+            "bm25_score": 0.18789785067026135,
+            "dense_rank": 8,
+            "dense_score": 0.49135698998831534,
+            "rerank_rank": 4,
+            "rerank_score": 0.5033956864425757,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.yearmonth.customerid",
+            "rrf_rank": 7,
+            "rrf_score": 0.029631255487269532,
+            "bm25_rank": 8,
+            "bm25_score": 0.116273123740714,
+            "dense_rank": 7,
+            "dense_score": 0.49967924536332287,
+            "rerank_rank": 3,
+            "rerank_score": 0.5125985259704419,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.customers.customerid",
+            "rrf_rank": 8,
+            "rrf_score": 0.02938045560996381,
+            "bm25_rank": 1,
+            "bm25_score": 1.0,
+            "dense_rank": 17,
+            "dense_score": 0.42172158003453614,
+            "rerank_rank": 15,
+            "rerank_score": 0.33784285326649216,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.gasstations.country",
+            "rrf_rank": 9,
+            "rrf_score": 0.015873015873015872,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 3,
+            "dense_score": 0.5596298051351223,
+            "rerank_rank": 5,
+            "rerank_score": 0.49454424631929095,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.gasstations.chainid",
+            "rrf_rank": 10,
+            "rrf_score": 0.014492753623188406,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 9,
+            "dense_score": 0.4798389006435097,
+            "rerank_rank": 8,
+            "rerank_score": 0.4746966019437571,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.time",
+            "rrf_rank": 11,
+            "rrf_score": 0.014285714285714285,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 10,
+            "dense_score": 0.46955386725382675,
+            "rerank_rank": 12,
+            "rerank_score": 0.3638462680122459,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.cardid",
+            "rrf_rank": 12,
+            "rrf_score": 0.014084507042253521,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 11,
+            "dense_score": 0.454504624279133,
+            "rerank_rank": 19,
+            "rerank_score": 0.31365755821411007,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.productid",
+            "rrf_rank": 13,
+            "rrf_score": 0.013888888888888888,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 12,
+            "dense_score": 0.4307572860046325,
+            "rerank_rank": 18,
+            "rerank_score": 0.32873480419014456,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.gasstations.segment",
+            "rrf_rank": 14,
+            "rrf_score": 0.0136986301369863,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 13,
+            "dense_score": 0.4291495970734469,
+            "rerank_rank": 10,
+            "rerank_score": 0.41422728924126895,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.transactionid",
+            "rrf_rank": 15,
+            "rrf_score": 0.013513513513513514,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 14,
+            "dense_score": 0.4290937142741193,
+            "rerank_rank": 14,
+            "rerank_score": 0.3480078233252065,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.amount",
+            "rrf_rank": 16,
+            "rrf_score": 0.013333333333333334,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 15,
+            "dense_score": 0.42831991507500716,
+            "rerank_rank": 11,
+            "rerank_score": 0.3937729973367386,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.customerid",
+            "rrf_rank": 17,
+            "rrf_score": 0.013157894736842105,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 16,
+            "dense_score": 0.4274241730965958,
+            "rerank_rank": 17,
+            "rerank_score": 0.32992104785753007,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.products.productid",
+            "rrf_rank": 18,
+            "rrf_score": 0.01282051282051282,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 18,
+            "dense_score": 0.3978127254753316,
+            "rerank_rank": 20,
+            "rerank_score": 0.3010413929230081,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.customers.segment",
+            "rrf_rank": 19,
+            "rrf_score": 0.012658227848101266,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 19,
+            "dense_score": 0.392205776758013,
+            "rerank_rank": 16,
+            "rerank_score": 0.33193703486971304,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.price",
+            "rrf_rank": 20,
+            "rrf_score": 0.0125,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 20,
+            "dense_score": 0.36614037001731364,
+            "rerank_rank": 13,
+            "rerank_score": 0.3606920695028988,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.products.description",
+            "rrf_rank": 21,
+            "rrf_score": 0.012345679012345678,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 21,
+            "dense_score": 0.34335383354610555,
+            "rerank_rank": 21,
+            "rerank_score": 0.2911709363317415,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          }
+        ],
+        "baseline_selected": [
+          "debit_card_specializing.yearmonth.consumption",
+          "debit_card_specializing.yearmonth.date"
+        ],
+        "anchors": [
+          "debit_card_specializing.yearmonth"
+        ],
+        "coverage_added": [],
+        "selected_field_ids": [
+          "debit_card_specializing.yearmonth.consumption",
+          "debit_card_specializing.yearmonth.date"
+        ],
+        "recorded_intent": {
+          "policy": {
+            "policy_id": "bird_public_intent_candidate_v4",
+            "development_candidate": true,
+            "formal_protocol_override": false,
+            "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+            "baseline_preserved": true,
+            "max_fields": 20,
+            "max_added_fields": 8,
+            "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+            "max_related_hops": 2,
+            "join_source": "declared_foreign_keys_only",
+            "canonical_lookup_max_pairs": 4,
+            "canonical_lookup_sql_tool_calls": 1,
+            "lookup_consumes_existing_sql_budget": true,
+            "numeric_policy": "floating_count_ratio_order_advisory_v3",
+            "unit_policy": "public_percentage_units_precision_v2",
+            "output_group_policy": "participant_action_target_pair_v1",
+            "predicate_policy": "public_condition_roles_conflicts_v3",
+            "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+            "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+            "grain_policy": "public_explicit_entity_grain_v2",
+            "native_ex_unchanged": true
+          },
+          "baseline_field_ids": [
+            "debit_card_specializing.yearmonth.consumption",
+            "debit_card_specializing.yearmonth.date"
+          ],
+          "added_field_ids": [],
+          "decisions": [],
+          "sample_condition_candidates": []
+        },
+        "declared_relations": [],
+        "reachable": [
+          "debit_card_specializing.yearmonth"
+        ],
+        "mentions": {
+          "debit_card_specializing.customers": [],
+          "debit_card_specializing.gasstations": [],
+          "debit_card_specializing.products": [],
+          "debit_card_specializing.transactions_1k": [
+            "date"
+          ],
+          "debit_card_specializing.yearmonth": [
+            "date",
+            "consumption"
+          ]
+        },
+        "seeded": [
+          "debit_card_specializing.yearmonth"
+        ],
+        "named_tables": [
+          "debit_card_specializing.yearmonth"
+        ],
+        "raw_sample_hints": [
+          {
+            "field_id": "debit_card_specializing.customers.currency",
+            "table_id": "debit_card_specializing.customers",
+            "field": "currency",
+            "value": "CZK",
+            "basis": "unique_category_sample_code_matches_public_token",
+            "authority": "coverage_hint_only",
+            "mandatory": false
+          }
+        ],
+        "sample_hint_gates": [
+          {
+            "field_id": "debit_card_specializing.customers.currency",
+            "table_id": "debit_card_specializing.customers",
+            "field": "currency",
+            "value": "CZK",
+            "basis": "unique_category_sample_code_matches_public_token",
+            "authority": "coverage_hint_only",
+            "mandatory": false,
+            "condition_scope": false,
+            "reachable": false,
+            "retained_in_report": false
+          }
+        ],
+        "explicit_evidence_conditions": {
+          "policy": "public_condition_roles_conflicts_v3",
+          "conditions": [],
+          "conflicts": [],
+          "guidance": "Keep numerator, denominator and population roles separate. Conflicting bindings are advisory; do not require their conjunction or guess which is correct."
+        },
+        "canonical_probe_count": 0,
+        "final_graph_fields": [
+          "debit_card_specializing.yearmonth.consumption",
+          "debit_card_specializing.yearmonth.date"
+        ],
+        "final_graph_joins": [],
+        "graph_field_count": 2,
+        "nonselected_key_candidates": [
+          {
+            "field_id": "debit_card_specializing.customers.currency",
+            "rrf_rank": 6,
+            "rrf_score": 0.029631255487269532,
+            "bm25_rank": 7,
+            "bm25_score": 0.18789785067026135,
+            "dense_rank": 8,
+            "dense_score": 0.49135698998831534,
+            "rerank_rank": 4,
+            "rerank_score": 0.5033956864425757,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.yearmonth.customerid",
+            "rrf_rank": 7,
+            "rrf_score": 0.029631255487269532,
+            "bm25_rank": 8,
+            "bm25_score": 0.116273123740714,
+            "dense_rank": 7,
+            "dense_score": 0.49967924536332287,
+            "rerank_rank": 3,
+            "rerank_score": 0.5125985259704419,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.customers.customerid",
+            "rrf_rank": 8,
+            "rrf_score": 0.02938045560996381,
+            "bm25_rank": 1,
+            "bm25_score": 1.0,
+            "dense_rank": 17,
+            "dense_score": 0.42172158003453614,
+            "rerank_rank": 15,
+            "rerank_score": 0.33784285326649216,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "debit_card_specializing.transactions_1k.customerid",
+            "rrf_rank": 17,
+            "rrf_score": 0.013157894736842105,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 16,
+            "dense_score": 0.4274241730965958,
+            "rerank_rank": 17,
+            "rerank_score": 0.32992104785753007,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          }
+        ]
+      },
+      "BIRD-PG-0407": {
+        "database_id": "card_games",
+        "public": {
+          "case_id": "BIRD-PG-0407",
+          "database_id": "card_games",
+          "dialect": "postgres",
+          "evidence": "German refer to language; all types refer to the subtypes, supertypes; subtypes is not null AND supertypes is not null",
+          "question": "Lists all types of cards in German."
+        },
+        "candidate_count": 40,
+        "rrf_candidates": [
+          {
+            "field_id": "card_games.cards.supertypes",
+            "rrf_rank": 1,
+            "rrf_score": 0.032266458495966696,
+            "bm25_rank": 1,
+            "bm25_score": 1.0,
+            "dense_rank": 3,
+            "dense_score": 0.7190359075942336,
+            "rerank_rank": 3,
+            "rerank_score": 0.7412832036246445,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.types",
+            "rrf_rank": 2,
+            "rrf_score": 0.03225806451612903,
+            "bm25_rank": 2,
+            "bm25_score": 0.5918734706726078,
+            "dense_rank": 2,
+            "dense_score": 0.7734113469120185,
+            "rerank_rank": 5,
+            "rerank_score": 0.7107981079655677,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.foreign_data.type",
+            "rrf_rank": 3,
+            "rrf_score": 0.032018442622950824,
+            "bm25_rank": 4,
+            "bm25_score": 0.5267133127358158,
+            "dense_rank": 1,
+            "dense_score": 0.779483470999346,
+            "rerank_rank": 2,
+            "rerank_score": 0.748964518910575,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.colorindicator",
+            "rrf_rank": 4,
+            "rrf_score": 0.03036576949620428,
+            "bm25_rank": 3,
+            "bm25_score": 0.5834925846486917,
+            "dense_rank": 9,
+            "dense_score": 0.6905157563376733,
+            "rerank_rank": 7,
+            "rerank_score": 0.6461365443153277,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.originaltype",
+            "rrf_rank": 5,
+            "rrf_score": 0.030090497737556562,
+            "bm25_rank": 5,
+            "bm25_score": 0.5066509023454019,
+            "dense_rank": 8,
+            "dense_score": 0.6907249359479813,
+            "rerank_rank": 4,
+            "rerank_score": 0.7199945291246056,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.type",
+            "rrf_rank": 6,
+            "rrf_score": 0.02817460317460317,
+            "bm25_rank": 12,
+            "bm25_score": 0.3548665208150813,
+            "dense_rank": 10,
+            "dense_score": 0.6865865757740724,
+            "rerank_rank": 1,
+            "rerank_score": 0.7912463090458175,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.subtypes",
+            "rrf_rank": 7,
+            "rrf_score": 0.027783137179239824,
+            "bm25_rank": 11,
+            "bm25_score": 0.3669869645316725,
+            "dense_rank": 13,
+            "dense_score": 0.6812070274843035,
+            "rerank_rank": 6,
+            "rerank_score": 0.7016521144500939,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.foreign_data.language",
+            "rrf_rank": 8,
+            "rrf_score": 0.02701252236135957,
+            "bm25_rank": 26,
+            "bm25_score": 0.24898653922008548,
+            "dense_rank": 5,
+            "dense_score": 0.7064397532385222,
+            "rerank_rank": 8,
+            "rerank_score": 0.6161531998266087,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.availability",
+            "rrf_rank": 9,
+            "rrf_score": 0.026387470207694927,
+            "bm25_rank": 29,
+            "bm25_score": 0.22256031015962718,
+            "dense_rank": 6,
+            "dense_score": 0.7001747787311199,
+            "rerank_rank": 9,
+            "rerank_score": 0.6023889932128215,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.set_translations.language",
+            "rrf_rank": 10,
+            "rrf_score": 0.025007766387076732,
+            "bm25_rank": 27,
+            "bm25_score": 0.23982612502663697,
+            "dense_rank": 14,
+            "dense_score": 0.6787766320931442,
+            "rerank_rank": 14,
+            "rerank_score": 0.5889325519205161,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.ispromo",
+            "rrf_rank": 11,
+            "rrf_score": 0.02431476569407604,
+            "bm25_rank": 18,
+            "bm25_score": 0.3012868019969937,
+            "dense_rank": 27,
+            "dense_score": 0.6483463994049316,
+            "rerank_rank": 11,
+            "rerank_score": 0.601266177184713,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.loyalty",
+            "rrf_rank": 12,
+            "rrf_score": 0.02353266888150609,
+            "bm25_rank": 24,
+            "bm25_score": 0.26974302524387095,
+            "dense_rank": 26,
+            "dense_score": 0.6489416803246711,
+            "rerank_rank": 13,
+            "rerank_score": 0.5948299124662692,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.side",
+            "rrf_rank": 13,
+            "rrf_score": 0.015625,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 4,
+            "dense_score": 0.7116383110936609,
+            "rerank_rank": 37,
+            "rerank_score": 0.5092441263540648,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isalternative",
+            "rrf_rank": 14,
+            "rrf_score": 0.015151515151515152,
+            "bm25_rank": 6,
+            "bm25_score": 0.4653907493921316,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 12,
+            "rerank_score": 0.6012400654554965,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.power",
+            "rrf_rank": 15,
+            "rrf_score": 0.014925373134328358,
+            "bm25_rank": 7,
+            "bm25_score": 0.43327365706423276,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 31,
+            "rerank_score": 0.5428297215897384,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.foreign_data.name",
+            "rrf_rank": 16,
+            "rrf_score": 0.014925373134328358,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 7,
+            "dense_score": 0.6954220725809795,
+            "rerank_rank": 20,
+            "rerank_score": 0.5708345892243696,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.cardkingdomfoilid",
+            "rrf_rank": 17,
+            "rrf_score": 0.014705882352941176,
+            "bm25_rank": 8,
+            "bm25_score": 0.42002642752960706,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 36,
+            "rerank_score": 0.5163956878960287,
+            "selected": false,
+            "selection_reason": "coverage_total_field_cap",
+            "matched_intent_terms": [
+              "card"
+            ],
+            "uncovered_intent_terms": [
+              "card"
+            ]
+          },
+          {
+            "field_id": "card_games.cards.colors",
+            "rrf_rank": 18,
+            "rrf_score": 0.014492753623188406,
+            "bm25_rank": 9,
+            "bm25_score": 0.41134309094315136,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 22,
+            "rerank_score": 0.5704487048096107,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.dueldeck",
+            "rrf_rank": 19,
+            "rrf_score": 0.014285714285714285,
+            "bm25_rank": 10,
+            "bm25_score": 0.3911969627862548,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 21,
+            "rerank_score": 0.5705829647365547,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.rarity",
+            "rrf_rank": 20,
+            "rrf_score": 0.014084507042253521,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 11,
+            "dense_score": 0.6826136310609092,
+            "rerank_rank": 30,
+            "rerank_score": 0.5443863173797933,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.name",
+            "rrf_rank": 21,
+            "rrf_score": 0.013888888888888888,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 12,
+            "dense_score": 0.6823935118933361,
+            "rerank_rank": 10,
+            "rerank_score": 0.6018716132380659,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isonlineonly",
+            "rrf_rank": 22,
+            "rrf_score": 0.0136986301369863,
+            "bm25_rank": 13,
+            "bm25_score": 0.33664081657828626,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 15,
+            "rerank_score": 0.5847015314462605,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.coloridentity",
+            "rrf_rank": 23,
+            "rrf_score": 0.013513513513513514,
+            "bm25_rank": 14,
+            "bm25_score": 0.334735432292768,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 26,
+            "rerank_score": 0.565745870381658,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isstarter",
+            "rrf_rank": 24,
+            "rrf_score": 0.013333333333333334,
+            "bm25_rank": 15,
+            "bm25_score": 0.3276007558120328,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 19,
+            "rerank_score": 0.5739033188089886,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.layout",
+            "rrf_rank": 25,
+            "rrf_score": 0.013333333333333334,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 15,
+            "dense_score": 0.6771347070902317,
+            "rerank_rank": 29,
+            "rerank_score": 0.5566247248089963,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isoversized",
+            "rrf_rank": 26,
+            "rrf_score": 0.013157894736842105,
+            "bm25_rank": 16,
+            "bm25_score": 0.3069010966443041,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 27,
+            "rerank_score": 0.5597735856264678,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.istimeshifted",
+            "rrf_rank": 27,
+            "rrf_score": 0.013157894736842105,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 16,
+            "dense_score": 0.6766339443683175,
+            "rerank_rank": 40,
+            "rerank_score": 0.4870837819208064,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.leadershipskills",
+            "rrf_rank": 28,
+            "rrf_score": 0.012987012987012988,
+            "bm25_rank": 17,
+            "bm25_score": 0.3022536699381511,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 38,
+            "rerank_score": 0.508512873083338,
+            "selected": false,
+            "selection_reason": "coverage_no_intent_match",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.keywords",
+            "rrf_rank": 29,
+            "rrf_score": 0.012987012987012988,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 17,
+            "dense_score": 0.671336170910934,
+            "rerank_rank": 28,
+            "rerank_score": 0.5594368785684014,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.sets.type",
+            "rrf_rank": 30,
+            "rrf_score": 0.01282051282051282,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 18,
+            "dense_score": 0.6693025361834436,
+            "rerank_rank": 34,
+            "rerank_score": 0.5309657979507897,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [
+              "type"
+            ],
+            "uncovered_intent_terms": [
+              "type"
+            ]
+          },
+          {
+            "field_id": "card_games.cards.isstoryspotlight",
+            "rrf_rank": 31,
+            "rrf_score": 0.012658227848101266,
+            "bm25_rank": 19,
+            "bm25_score": 0.29590696692370216,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 24,
+            "rerank_score": 0.5689150157890394,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.sets.name",
+            "rrf_rank": 32,
+            "rrf_score": 0.012658227848101266,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 19,
+            "dense_score": 0.6655551510332919,
+            "rerank_rank": 35,
+            "rerank_score": 0.5184864083857139,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.sets.ispartialpreview",
+            "rrf_rank": 33,
+            "rrf_score": 0.0125,
+            "bm25_rank": 20,
+            "bm25_score": 0.2903482972855212,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 32,
+            "rerank_score": 0.5383711674284897,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.setcode",
+            "rrf_rank": 34,
+            "rrf_score": 0.0125,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 20,
+            "dense_score": 0.6641496821990112,
+            "rerank_rank": 16,
+            "rerank_score": 0.5843316330027564,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.legalities.format",
+            "rrf_rank": 35,
+            "rrf_score": 0.012345679012345678,
+            "bm25_rank": 21,
+            "bm25_score": 0.27934392930526875,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 33,
+            "rerank_score": 0.5380156063726943,
+            "selected": false,
+            "selection_reason": "coverage_table_not_anchored",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.frameversion",
+            "rrf_rank": 36,
+            "rrf_score": 0.012345679012345678,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 21,
+            "dense_score": 0.6599601466805222,
+            "rerank_rank": 39,
+            "rerank_score": 0.49360126314921526,
+            "selected": false,
+            "selection_reason": "below_coverage_floor",
+            "matched_intent_terms": [],
+            "uncovered_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.cardkingdomid",
+            "rrf_rank": 37,
+            "rrf_score": 0.012195121951219513,
+            "bm25_rank": 22,
+            "bm25_score": 0.27761750471074387,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 25,
+            "rerank_score": 0.5674200874783,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isfullart",
+            "rrf_rank": 38,
+            "rrf_score": 0.012195121951219513,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 22,
+            "dense_score": 0.6587772022527075,
+            "rerank_rank": 23,
+            "rerank_score": 0.5690998457110744,
+            "selected": false,
+            "selection_reason": "beyond_top20",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.isreprint",
+            "rrf_rank": 39,
+            "rrf_score": 0.012048192771084338,
+            "bm25_rank": 23,
+            "bm25_score": 0.2707766734725297,
+            "dense_rank": null,
+            "dense_score": null,
+            "rerank_rank": 18,
+            "rerank_score": 0.5798984302563536,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          },
+          {
+            "field_id": "card_games.cards.facename",
+            "rrf_rank": 40,
+            "rrf_score": 0.012048192771084338,
+            "bm25_rank": null,
+            "bm25_score": null,
+            "dense_rank": 23,
+            "dense_score": 0.6571933757361036,
+            "rerank_rank": 17,
+            "rerank_score": 0.5828879731390048,
+            "selected": true,
+            "selection_reason": "selected",
+            "matched_intent_terms": []
+          }
+        ],
+        "baseline_selected": [
+          "card_games.cards.type",
+          "card_games.foreign_data.type",
+          "card_games.cards.supertypes",
+          "card_games.cards.originaltype",
+          "card_games.cards.types",
+          "card_games.cards.subtypes",
+          "card_games.cards.colorindicator",
+          "card_games.foreign_data.language",
+          "card_games.cards.availability",
+          "card_games.cards.name",
+          "card_games.cards.ispromo",
+          "card_games.cards.isalternative",
+          "card_games.cards.loyalty",
+          "card_games.set_translations.language",
+          "card_games.cards.isonlineonly",
+          "card_games.cards.setcode",
+          "card_games.cards.facename",
+          "card_games.cards.isreprint",
+          "card_games.cards.isstarter",
+          "card_games.foreign_data.name"
+        ],
+        "anchors": [
+          "card_games.cards",
+          "card_games.foreign_data",
+          "card_games.set_translations"
+        ],
+        "coverage_added": [],
+        "selected_field_ids": [
+          "card_games.cards.type",
+          "card_games.foreign_data.type",
+          "card_games.cards.supertypes",
+          "card_games.cards.originaltype",
+          "card_games.cards.types",
+          "card_games.cards.subtypes",
+          "card_games.cards.colorindicator",
+          "card_games.foreign_data.language",
+          "card_games.cards.availability",
+          "card_games.cards.name",
+          "card_games.cards.ispromo",
+          "card_games.cards.isalternative",
+          "card_games.cards.loyalty",
+          "card_games.set_translations.language",
+          "card_games.cards.isonlineonly",
+          "card_games.cards.setcode",
+          "card_games.cards.facename",
+          "card_games.cards.isreprint",
+          "card_games.cards.isstarter",
+          "card_games.foreign_data.name"
+        ],
+        "recorded_intent": {
+          "policy": {
+            "policy_id": "bird_public_intent_candidate_v4",
+            "development_candidate": true,
+            "formal_protocol_override": false,
+            "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+            "baseline_preserved": true,
+            "max_fields": 20,
+            "max_added_fields": 8,
+            "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+            "max_related_hops": 2,
+            "join_source": "declared_foreign_keys_only",
+            "canonical_lookup_max_pairs": 4,
+            "canonical_lookup_sql_tool_calls": 1,
+            "lookup_consumes_existing_sql_budget": true,
+            "numeric_policy": "floating_count_ratio_order_advisory_v3",
+            "unit_policy": "public_percentage_units_precision_v2",
+            "output_group_policy": "participant_action_target_pair_v1",
+            "predicate_policy": "public_condition_roles_conflicts_v3",
+            "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+            "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+            "grain_policy": "public_explicit_entity_grain_v2",
+            "native_ex_unchanged": true
+          },
+          "baseline_field_ids": [
+            "card_games.cards.type",
+            "card_games.foreign_data.type",
+            "card_games.cards.supertypes",
+            "card_games.cards.originaltype",
+            "card_games.cards.types",
+            "card_games.cards.subtypes",
+            "card_games.cards.colorindicator",
+            "card_games.foreign_data.language",
+            "card_games.cards.availability",
+            "card_games.cards.name",
+            "card_games.cards.ispromo",
+            "card_games.cards.isalternative",
+            "card_games.cards.loyalty",
+            "card_games.set_translations.language",
+            "card_games.cards.isonlineonly",
+            "card_games.cards.setcode",
+            "card_games.cards.facename",
+            "card_games.cards.isreprint",
+            "card_games.cards.isstarter",
+            "card_games.foreign_data.name"
+          ],
+          "added_field_ids": [],
+          "decisions": [],
+          "sample_condition_candidates": []
+        },
+        "declared_relations": [
+          {
+            "id": "rulings_uuid_fkey:uuid",
+            "left_table": "card_games.cards",
+            "left_field": "uuid",
+            "right_table": "card_games.rulings",
+            "right_field": "uuid",
+            "relation_type": "foreign_key",
+            "description": "Official database foreign key"
+          },
+          {
+            "id": "set_translations_setcode_fkey:setcode",
+            "left_table": "card_games.sets",
+            "left_field": "code",
+            "right_table": "card_games.set_translations",
+            "right_field": "setcode",
+            "relation_type": "foreign_key",
+            "description": "Official database foreign key"
+          }
+        ],
+        "reachable": [
+          "card_games.cards",
+          "card_games.foreign_data",
+          "card_games.rulings",
+          "card_games.set_translations",
+          "card_games.sets"
+        ],
+        "mentions": {
+          "card_games.cards": [
+            "subtypes",
+            "supertypes",
+            "types"
+          ],
+          "card_games.foreign_data": [
+            "language"
+          ],
+          "card_games.legalities": [],
+          "card_games.rulings": [],
+          "card_games.set_translations": [
+            "language"
+          ],
+          "card_games.sets": []
+        },
+        "seeded": [
+          "card_games.cards"
+        ],
+        "named_tables": [
+          "card_games.cards"
+        ],
+        "raw_sample_hints": [],
+        "sample_hint_gates": [],
+        "explicit_evidence_conditions": {
+          "policy": "public_condition_roles_conflicts_v3",
+          "conditions": [],
+          "conflicts": [],
+          "guidance": "Keep numerator, denominator and population roles separate. Conflicting bindings are advisory; do not require their conjunction or guess which is correct."
+        },
+        "canonical_probe_count": 0,
+        "final_graph_fields": [
+          "card_games.cards.type",
+          "card_games.foreign_data.type",
+          "card_games.cards.supertypes",
+          "card_games.cards.originaltype",
+          "card_games.cards.types",
+          "card_games.cards.subtypes",
+          "card_games.cards.colorindicator",
+          "card_games.foreign_data.language",
+          "card_games.cards.availability",
+          "card_games.cards.name",
+          "card_games.cards.ispromo",
+          "card_games.cards.isalternative",
+          "card_games.cards.loyalty",
+          "card_games.set_translations.language",
+          "card_games.cards.isonlineonly",
+          "card_games.cards.setcode",
+          "card_games.cards.facename",
+          "card_games.cards.isreprint",
+          "card_games.cards.isstarter",
+          "card_games.foreign_data.name"
+        ],
+        "final_graph_joins": [],
+        "graph_field_count": 20,
+        "nonselected_key_candidates": []
+      }
+    }
+  },
+  "public_descriptions": {
+    "cards": [
+      {
+        "original_column_name": "id",
+        "column_name": "unique id number identifying the cards",
+        "column_description": "",
+        "data_format": "integer",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "artist",
+        "column_name": "",
+        "column_description": "The name of the artist that illustrated the card art.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "asciiName",
+        "column_name": "ascii Name",
+        "column_description": "The ASCII(opens new window) (Basic/128) code formatted card name with no special unicode characters.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "availability",
+        "column_name": "",
+        "column_description": "A list of the card's available printing types.",
+        "data_format": "text",
+        "value_description": "\"arena\", \"dreamcast\", \"mtgo\", \"paper\", \"shandalar\""
+      },
+      {
+        "original_column_name": "borderColor",
+        "column_name": "border Color",
+        "column_description": "The color of the card border.",
+        "data_format": "text",
+        "value_description": "\"black\", \"borderless\", \"gold\", \"silver\", \"white\""
+      },
+      {
+        "original_column_name": "cardKingdomFoilId",
+        "column_name": "card Kingdom Foil Id",
+        "column_description": "card Kingdom Foil Id",
+        "data_format": "text",
+        "value_description": "commonsense evidence:\ncardKingdomFoilId, when paired with cardKingdomId that is not Null, is incredibly powerful. "
+      },
+      {
+        "original_column_name": "cardKingdomId",
+        "column_name": "card Kingdom Id",
+        "column_description": "card Kingdom Id",
+        "data_format": "text",
+        "value_description": "A list of all the colors in the color indicator"
+      },
+      {
+        "original_column_name": "colorIdentity",
+        "column_name": "color Identity",
+        "column_description": "A list of all the colors found in manaCost, colorIndicator, and text",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "colorIndicator",
+        "column_name": "color Indicator",
+        "column_description": "A list of all the colors in the color indicator (The symbol prefixed to a card's types).",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "colors",
+        "column_name": "",
+        "column_description": "A list of all the colors in manaCost and colorIndicator. ",
+        "data_format": "text",
+        "value_description": "Some cards may not have values, such as cards with \"Devoid\" in its text."
+      },
+      {
+        "original_column_name": "convertedManaCost",
+        "column_name": "converted Mana Cost",
+        "column_description": "The converted mana cost of the card. Use the manaValue property.",
+        "data_format": "real",
+        "value_description": "if value is higher, it means that this card cost more converted mana "
+      },
+      {
+        "original_column_name": "duelDeck",
+        "column_name": "duel Deck",
+        "column_description": "The indicator for which duel deck the card is in.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "edhrecRank",
+        "column_name": "rec Rank in edh",
+        "column_description": "The card rank on EDHRec",
+        "data_format": "integer",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "faceConvertedManaCost",
+        "column_name": "face Converted Mana Cost",
+        "column_description": "The converted mana cost or mana value for the face for either half or part of the card. ",
+        "data_format": "real",
+        "value_description": "if value is higher, it means that this card cost more converted mana for the face"
+      },
+      {
+        "original_column_name": "faceName",
+        "column_name": "face Name",
+        "column_description": "The name on the face of the card.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "flavorName",
+        "column_name": "flavor Name",
+        "column_description": "The promotional card name printed above the true card name on special cards that has no game function.",
+        "data_format": "text",
+        "value_description": "The promotional card name printed above the true card name on special cards that has no game function."
+      },
+      {
+        "original_column_name": "flavorText",
+        "column_name": "flavor Text",
+        "column_description": "The italicized text found below the rules text that has no game function.",
+        "data_format": "text",
+        "value_description": "The italicized text found below the rules text that has no game function."
+      },
+      {
+        "original_column_name": "frameEffects",
+        "column_name": "frame Effects",
+        "column_description": "The visual frame effects.",
+        "data_format": "text",
+        "value_description": "\"colorshifted\", \"companion\", \"compasslanddfc\", \"devoid\", \"draft\", \"etched\", \"extendedart\", \"fullart\", \"inverted\", \"legendary\", \"lesson\", \"miracle\", \"mooneldrazidfc\", \"nyxtouched\", \"originpwdfc\", \"showcase\", \"snow\", \"sunmoondfc\", \"textless\", \"tombstone\", \"waxingandwaningmoondfc\""
+      },
+      {
+        "original_column_name": "frameVersion",
+        "column_name": "frame Version",
+        "column_description": "The version of the card frame style.",
+        "data_format": "text",
+        "value_description": "\"1993\", \"1997\", \"2003\", \"2015\", \"future\""
+      },
+      {
+        "original_column_name": "hand",
+        "column_name": "",
+        "column_description": "The starting maximum hand size total modifier. ",
+        "data_format": "text",
+        "value_description": "A + or - character precedes an integer. \ncommonsense evidence:\npositive maximum hand size: +1, +2, ....\nnegative maximum hand size: -1, ....\nneural maximum hand size: 0...."
+      },
+      {
+        "original_column_name": "hasAlternativeDeckLimit",
+        "column_name": "has Alternative Deck Limit",
+        "column_description": "If the card allows a value other than 4 copies in a deck.",
+        "data_format": "integer",
+        "value_description": "0: disallow 1: allow"
+      },
+      {
+        "original_column_name": "hasContentWarning",
+        "column_name": "has Content Warning",
+        "column_description": "If the card marked by Wizards of the Coast (opens new window) for having sensitive content. See this official article (opens new window) for more information.",
+        "data_format": "integer",
+        "value_description": "0: doesn't have 1: has sensitve content or Wizards of the Coast\ncommonsense evidence:\nCards with this property may have missing or degraded properties and values. "
+      },
+      {
+        "original_column_name": "hasFoil",
+        "column_name": "has Foil",
+        "column_description": "If the card can be found in foil",
+        "data_format": "integer",
+        "value_description": "0: cannot be found 1: can be found"
+      },
+      {
+        "original_column_name": "hasNonFoil",
+        "column_name": "has Non Foil",
+        "column_description": "If the card can be found in non-foil",
+        "data_format": "integer",
+        "value_description": "0: cannot be found 1: can be found"
+      },
+      {
+        "original_column_name": "isAlternative",
+        "column_name": "is Alternative",
+        "column_description": "If the card is an alternate variation to an original printing",
+        "data_format": "integer",
+        "value_description": "0: is not 1: is"
+      },
+      {
+        "original_column_name": "isFullArt",
+        "column_name": "is Full Art",
+        "column_description": "If the card has full artwork.",
+        "data_format": "integer",
+        "value_description": "0: doesn't have, 1: has full artwork"
+      },
+      {
+        "original_column_name": "isOnlineOnly",
+        "column_name": "is Online Only",
+        "column_description": "If the card is only available in online game variations.",
+        "data_format": "integer",
+        "value_description": "0: is not 1: is"
+      },
+      {
+        "original_column_name": "isOversized",
+        "column_name": "is Oversized",
+        "column_description": "If the card is oversized.",
+        "data_format": "integer",
+        "value_description": "0: is not 1: is"
+      },
+      {
+        "original_column_name": "isPromo",
+        "column_name": "is Promotion",
+        "column_description": "If the card is a promotional printing.",
+        "data_format": "integer",
+        "value_description": "0: is not 1: is"
+      },
+      {
+        "original_column_name": "isReprint",
+        "column_name": "is Reprint",
+        "column_description": "If the card has been reprinted.",
+        "data_format": "integer",
+        "value_description": "0: has not 1: has not been"
+      },
+      {
+        "original_column_name": "isReserved",
+        "column_name": "is Reserved",
+        "column_description": "If the card is on the Magic: The Gathering Reserved List (opens new window)",
+        "data_format": "integer",
+        "value_description": "If the card is on the Magic, it will appear in The Gathering Reserved List"
+      },
+      {
+        "original_column_name": "isStarter",
+        "column_name": "is Starter",
+        "column_description": "If the card is found in a starter deck such as Planeswalker/Brawl decks.",
+        "data_format": "integer",
+        "value_description": "0: is not 1: is"
+      },
+      {
+        "original_column_name": "isStorySpotlight",
+        "column_name": "is Story Spotlight",
+        "column_description": "If the card is a Story Spotlight card.",
+        "data_format": "integer",
+        "value_description": "0: is not 1: is"
+      },
+      {
+        "original_column_name": "isTextless",
+        "column_name": "is Text less",
+        "column_description": "If the card does not have a text box.",
+        "data_format": "integer",
+        "value_description": "commonsense evidence:\n0: has a text box;\n1: doesn't have a text box;"
+      },
+      {
+        "original_column_name": "isTimeshifted",
+        "column_name": "is Time shifted",
+        "column_description": "If the card is time shifted",
+        "data_format": "integer",
+        "value_description": "commonsense evidence:\nIf the card is \"timeshifted\", a feature of certain sets where a card will have a different frameVersion."
+      },
+      {
+        "original_column_name": "keywords",
+        "column_name": "",
+        "column_description": "A list of keywords found on the card.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "layout",
+        "column_name": "",
+        "column_description": "The type of card layout. For a token card, this will be \"token\"",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "leadershipSkills",
+        "column_name": "leadership Skills",
+        "column_description": "A list of formats the card is legal to be a commander in",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "life",
+        "column_name": "",
+        "column_description": "The starting life total modifier. A plus or minus character precedes an integer.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "loyalty",
+        "column_name": "",
+        "column_description": "The starting loyalty value of the card.",
+        "data_format": "text",
+        "value_description": "Used only on cards with \"Planeswalker\" in its types. empty means unkown"
+      },
+      {
+        "original_column_name": "manaCost",
+        "column_name": "mana Cost ",
+        "column_description": "The mana cost of the card wrapped in brackets for each value.",
+        "data_format": "text",
+        "value_description": "commonsense evidence:\nmanaCost is unconverted mana cost"
+      },
+      {
+        "original_column_name": "mcmId",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": "NOT USEFUL"
+      },
+      {
+        "original_column_name": "mcmMetaId",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": "NOT USEFUL"
+      },
+      {
+        "original_column_name": "mtgArenaId",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": "NOT USEFUL"
+      },
+      {
+        "original_column_name": "mtgjsonV4Id",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": "NOT USEFUL"
+      },
+      {
+        "original_column_name": "mtgoFoilId",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": "NOT USEFUL"
+      },
+      {
+        "original_column_name": "mtgoId",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": "NOT USEFUL"
+      },
+      {
+        "original_column_name": "multiverseId",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": "NOT USEFUL"
+      },
+      {
+        "original_column_name": "name",
+        "column_name": "",
+        "column_description": "The name of the card.",
+        "data_format": "text",
+        "value_description": "Cards with multiple faces, like \"Split\" and \"Meld\" cards are given a delimiter."
+      },
+      {
+        "original_column_name": "number",
+        "column_name": "",
+        "column_description": "The number of the card",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "originalReleaseDate",
+        "column_name": "",
+        "column_description": "original Release Date",
+        "data_format": "text",
+        "value_description": "The original release date in ISO 8601(opens new window) format for a promotional card printed outside of a cycle window, such as Secret Lair Drop promotions."
+      },
+      {
+        "original_column_name": "originalText",
+        "column_name": "",
+        "column_description": "original Text",
+        "data_format": "text",
+        "value_description": "The text on the card as originally printed."
+      },
+      {
+        "original_column_name": "originalType",
+        "column_name": "",
+        "column_description": "original Type",
+        "data_format": "text",
+        "value_description": "The type of the card as originally printed. Includes any supertypes and subtypes."
+      },
+      {
+        "original_column_name": "otherFaceIds",
+        "column_name": "",
+        "column_description": "other Face Ids",
+        "data_format": "text",
+        "value_description": "A list of card UUID's to this card's counterparts, such as transformed or melded faces."
+      },
+      {
+        "original_column_name": "power",
+        "column_name": "",
+        "column_description": "The power of the card.",
+        "data_format": "text",
+        "value_description": "commonsense evidence:\n∞ means infinite power\nnull or * refers to unknown power"
+      },
+      {
+        "original_column_name": "printings",
+        "column_name": "",
+        "column_description": "A list of set printing codes the card was printed in, formatted in uppercase.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "promoTypes",
+        "column_name": "promo Types",
+        "column_description": "A list of promotional types for a card.",
+        "data_format": "text",
+        "value_description": "\"arenaleague\", \"boosterfun\", \"boxtopper\", \"brawldeck\", \"bundle\", \"buyabox\", \"convention\", \"datestamped\", \"draculaseries\", \"draftweekend\", \"duels\", \"event\", \"fnm\", \"gameday\", \"gateway\", \"giftbox\", \"gilded\", \"godzillaseries\", \"instore\", \"intropack\", \"jpwalker\", \"judgegift\", \"league\", \"mediainsert\", \"neonink\", \"openhouse\", \"planeswalkerstamped\", \"playerrewards\", \"playpromo\", \"premiereshop\", \"prerelease\", \"promopack\", \"release\", \"setpromo\", \"stamped\", \"textured\", \"themepack\", \"thick\", \"tourney\", \"wizardsplaynetwork\""
+      },
+      {
+        "original_column_name": "purchaseUrls",
+        "column_name": "purchase Urls",
+        "column_description": "Links that navigate to websites where the card can be purchased.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "rarity",
+        "column_name": "",
+        "column_description": "The card printing rarity.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "scryfallId",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": "NOT USEFUL"
+      },
+      {
+        "original_column_name": "scryfallIllustrationId",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": "NOT USEFUL"
+      },
+      {
+        "original_column_name": "scryfallOracleId",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": "NOT USEFUL"
+      },
+      {
+        "original_column_name": "setCode",
+        "column_name": "Set Code",
+        "column_description": "The set printing code that the card is from.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "side",
+        "column_name": "",
+        "column_description": "The identifier of the card side. ",
+        "data_format": "text",
+        "value_description": "Used on cards with multiple faces on the same card.\ncommonsense evidence:\nif this value is empty, then it means this card doesn't have multiple faces on the same card."
+      },
+      {
+        "original_column_name": "subtypes",
+        "column_name": "",
+        "column_description": "A list of card subtypes found after em-dash.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "supertypes",
+        "column_name": "super types",
+        "column_description": "A list of card supertypes found before em-dash.",
+        "data_format": "text",
+        "value_description": "commonsense evidence:\nlist of all types should be the union of subtypes and supertypes"
+      },
+      {
+        "original_column_name": "tcgplayerProductId",
+        "column_name": "tcg player ProductId",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "text",
+        "column_name": "",
+        "column_description": "The rules text of the card.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "toughness",
+        "column_name": "",
+        "column_description": "The toughness of the card.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "type",
+        "column_name": "",
+        "column_description": "The type of the card as visible, including any supertypes and subtypes.",
+        "data_format": "text",
+        "value_description": "\"Artifact\", \"Card\", \"Conspiracy\", \"Creature\", \"Dragon\", \"Dungeon\", \"Eaturecray\", \"Elemental\", \"Elite\", \"Emblem\", \"Enchantment\", \"Ever\", \"Goblin\", \"Hero\", \"Instant\", \"Jaguar\", \"Knights\", \"Land\", \"Phenomenon\", \"Plane\", \"Planeswalker\", \"Scariest\", \"Scheme\", \"See\", \"Sorcery\", \"Sticker\", \"Summon\", \"Token\", \"Tribal\", \"Vanguard\", \"Wolf\", \"You’ll\", \"instant\""
+      },
+      {
+        "original_column_name": "types",
+        "column_name": "",
+        "column_description": "A list of all card types of the card, including Un‑sets and gameplay variants.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "uuid",
+        "column_name": "",
+        "column_description": "The universal unique identifier (v5) generated by MTGJSON. Each entry is unique.",
+        "data_format": "text",
+        "value_description": "NOT USEFUL"
+      },
+      {
+        "original_column_name": "variations",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "watermark",
+        "column_name": "",
+        "column_description": "The name of the watermark on the card.",
+        "data_format": "text",
+        "value_description": ""
+      }
+    ],
+    "foreign_data": [
+      {
+        "original_column_name": "id",
+        "column_name": "",
+        "column_description": "unique id number identifying this row of data",
+        "data_format": "integer",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "flavorText",
+        "column_name": "flavor Text",
+        "column_description": "The foreign flavor text of the card.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "language",
+        "column_name": "",
+        "column_description": "The foreign language of card.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "multiverseid",
+        "column_name": "",
+        "column_description": "The foreign multiverse identifier of the card.",
+        "data_format": "integer",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "name",
+        "column_name": "",
+        "column_description": "The foreign name of the card.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "text",
+        "column_name": "",
+        "column_description": "The foreign text ruling of the card.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "type",
+        "column_name": "",
+        "column_description": "The foreign type of the card. Includes any supertypes and subtypes.",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "uuid",
+        "column_name": "",
+        "column_description": "",
+        "data_format": "text",
+        "value_description": ""
+      }
+    ],
+    "customers": [
+      {
+        "original_column_name": "CustomerID",
+        "column_name": "",
+        "column_description": "identification of the customer",
+        "data_format": "integer",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "Segment",
+        "column_name": "client segment",
+        "column_description": "client segment",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "Currency",
+        "column_name": "",
+        "column_description": "Currency",
+        "data_format": "text",
+        "value_description": ""
+      }
+    ],
+    "yearmonth": [
+      {
+        "original_column_name": "CustomerID",
+        "column_name": "Customer ID",
+        "column_description": "Customer ID",
+        "data_format": "integer",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "Date",
+        "column_name": "",
+        "column_description": "Date",
+        "data_format": "text",
+        "value_description": ""
+      },
+      {
+        "original_column_name": "Consumption",
+        "column_name": "",
+        "column_description": "consumption",
+        "data_format": "real",
+        "value_description": ""
+      }
+    ]
+  },
+  "relevant_constraints": [
+    {
+      "import_action": "add_constraint",
+      "kind": "constraint",
+      "sha256": "4883ab06bb7e4540e54d2027eb89daa92d43d93224d466ca078fac683fc66254",
+      "sql": "ALTER TABLE ONLY public.customers\n\n    ADD CONSTRAINT idx_47287_customers_pkey PRIMARY KEY (customerid);"
+    },
+    {
+      "import_action": "add_constraint",
+      "kind": "constraint",
+      "sha256": "29d9822a00ad7ddcbbd641a8912cd49bfb41722a360597f0be505dcc462457b5",
+      "sql": "ALTER TABLE ONLY public.cards\n\n    ADD CONSTRAINT idx_48549_cards_pkey PRIMARY KEY (id);"
+    },
+    {
+      "import_action": "add_constraint",
+      "kind": "constraint",
+      "sha256": "cc7ea0a2b2d486c2cf4eaa1541ead0eb3bb4593831a3b9c19607a0627c0204b6",
+      "sql": "ALTER TABLE ONLY public.foreign_data\n\n    ADD CONSTRAINT idx_48571_foreign_data_pkey PRIMARY KEY (id);"
+    },
+    {
+      "import_action": "create_index",
+      "kind": "index",
+      "sha256": "0900d693e2b80efa3bf5a6c545154b1f45499227e1799af0955a8af8a2a24b17",
+      "sql": "CREATE UNIQUE INDEX idx_47287_sqlite_autoindex_customers_1 ON public.customers USING btree (customerid);"
+    },
+    {
+      "import_action": "create_index",
+      "kind": "index",
+      "sha256": "7443713029a65339f2bad7023d7d341d880a74122ab3c1df9767ac36d5b3452b",
+      "sql": "CREATE UNIQUE INDEX idx_47309_sqlite_autoindex_yearmonth_1 ON public.yearmonth USING btree (date, customerid);"
+    },
+    {
+      "import_action": "create_index",
+      "kind": "index",
+      "sha256": "b65afefbfc5296c891545806b3b99ac1f98f4c46103c4fe8ebdce13d9e64c4eb",
+      "sql": "CREATE UNIQUE INDEX idx_48549_sqlite_autoindex_cards_1 ON public.cards USING btree (uuid);"
+    }
+  ],
+  "declared_domain_relations": {
+    "debit_card_specializing": [],
+    "card_games": [
+      {
+        "id": "rulings_uuid_fkey:uuid",
+        "left_table": "card_games.cards",
+        "left_field": "uuid",
+        "right_table": "card_games.rulings",
+        "right_field": "uuid",
+        "relation_type": "foreign_key",
+        "description": "Official database foreign key"
+      },
+      {
+        "id": "set_translations_setcode_fkey:setcode",
+        "left_table": "card_games.sets",
+        "left_field": "code",
+        "right_table": "card_games.set_translations",
+        "right_field": "setcode",
+        "relation_type": "foreign_key",
+        "description": "Official database foreign key"
+      }
+    ]
+  },
+  "key_statistics": {
+    "cards": {
+      "key": "uuid",
+      "postgres_type": "TEXT",
+      "rows": 56822,
+      "null_key_rows": 0,
+      "nonnull_distinct_keys": 56822,
+      "nonnull_max_multiplicity": 1,
+      "payload_sha256": "65df595c0657a13df6b2864e96ad795b59c8c0963033c25ad0de8a2ffa47a16e"
+    },
+    "foreign_data": {
+      "key": "uuid",
+      "postgres_type": "TEXT",
+      "rows": 229186,
+      "null_key_rows": 0,
+      "nonnull_distinct_keys": 34056,
+      "nonnull_max_multiplicity": 10,
+      "payload_sha256": "7b0a13bdb3333341c23da77b1a354bc22e7f89bfdd7cd8a482269d6286440850"
+    },
+    "customers": {
+      "key": "customerid",
+      "postgres_type": "BIGINT",
+      "rows": 32461,
+      "null_key_rows": 0,
+      "nonnull_distinct_keys": 32461,
+      "nonnull_max_multiplicity": 1,
+      "payload_sha256": "08006a9526618d9320a5a8eb3e9324c14cc632c2b4c09e9ab3ecadbf4db510c0"
+    },
+    "yearmonth": {
+      "key": "customerid",
+      "postgres_type": "BIGINT",
+      "rows": 383282,
+      "null_key_rows": 0,
+      "nonnull_distinct_keys": 30566,
+      "nonnull_max_multiplicity": 20,
+      "payload_sha256": "93a1ea5f8aa26d96da225648253af39ed2187cff08fc7930dbd1e38faaa2d0f7"
+    }
+  },
+  "relation_candidates": [
+    {
+      "parent": "customers",
+      "parent_key": "customerid",
+      "child": "yearmonth",
+      "child_key": "customerid",
+      "parent_definition": {
+        "constraints": [
+          "NOT NULL"
+        ],
+        "name": "customerid",
+        "not_null": true,
+        "postgres_type": "BIGINT"
+      },
+      "child_definition": {
+        "constraints": [],
+        "name": "customerid",
+        "not_null": false,
+        "postgres_type": "BIGINT"
+      },
+      "parent_unique_declarations": [
+        {
+          "table": "customers",
+          "fields": [
+            "customerid"
+          ],
+          "kind": "primary_key",
+          "statement_sha256": "4883ab06bb7e4540e54d2027eb89daa92d43d93224d466ca078fac683fc66254"
+        },
+        {
+          "table": "customers",
+          "fields": [
+            "customerid"
+          ],
+          "kind": "unique_index",
+          "statement_sha256": "0900d693e2b80efa3bf5a6c545154b1f45499227e1799af0955a8af8a2a24b17"
+        }
+      ],
+      "declared_foreign_key": false,
+      "observed_parent_unique": true,
+      "child_nonnull_rows": 383282,
+      "child_distinct_keys": 30566,
+      "matching_child_rows": 383282,
+      "orphan_nonnull_child_rows": 0,
+      "orphan_child_distinct_keys": 0,
+      "null_child_rows": 0,
+      "match_rate": 1.0,
+      "observed_max_children_per_parent": 20,
+      "authority": "review_candidate_from_authorized_metadata_and_frozen_development_key_statistics",
+      "database_constraint_created": false,
+      "runtime_relation_enabled": false,
+      "live_target_verified": false,
+      "semantic_equivalence_proven": false
+    },
+    {
+      "parent": "cards",
+      "parent_key": "uuid",
+      "child": "foreign_data",
+      "child_key": "uuid",
+      "parent_definition": {
+        "constraints": [],
+        "name": "uuid",
+        "not_null": false,
+        "postgres_type": "TEXT"
+      },
+      "child_definition": {
+        "constraints": [],
+        "name": "uuid",
+        "not_null": false,
+        "postgres_type": "TEXT"
+      },
+      "parent_unique_declarations": [
+        {
+          "table": "cards",
+          "fields": [
+            "uuid"
+          ],
+          "kind": "unique_index",
+          "statement_sha256": "b65afefbfc5296c891545806b3b99ac1f98f4c46103c4fe8ebdce13d9e64c4eb"
+        }
+      ],
+      "declared_foreign_key": false,
+      "observed_parent_unique": true,
+      "child_nonnull_rows": 229186,
+      "child_distinct_keys": 34056,
+      "matching_child_rows": 229170,
+      "orphan_nonnull_child_rows": 16,
+      "orphan_child_distinct_keys": 3,
+      "null_child_rows": 0,
+      "match_rate": 0.9999301877078006,
+      "observed_max_children_per_parent": 10,
+      "authority": "review_candidate_from_authorized_metadata_and_frozen_development_key_statistics",
+      "database_constraint_created": false,
+      "runtime_relation_enabled": false,
+      "live_target_verified": false,
+      "semantic_equivalence_proven": false
+    }
+  ],
+  "existing_policy_replayed": true,
+  "candidate_policy_implemented": false,
+  "scorer_or_gold_loaded": false,
+  "raw_answer_sql_executed": false,
+  "raw_keys_exported": false,
+  "parsed_development_tables": [
+    "cards",
+    "customers",
+    "foreign_data",
+    "yearmonth"
+  ],
+  "holdout_tables_parsed": false,
+  "PostgreSQL_connected": false,
+  "new_model_request_count": 0,
+  "source_scope": "Exact frozen local source blocks plus prior accepted live receipts; no new live server verification",
+  "decision": "Proceed to bounded candidate design; undeclared relationships remain review candidates, never pretend FK constraints.",
+  "checklist_path": "evaluation\\m3_e02_minimal_adaptation_review_20261022.json"
+}

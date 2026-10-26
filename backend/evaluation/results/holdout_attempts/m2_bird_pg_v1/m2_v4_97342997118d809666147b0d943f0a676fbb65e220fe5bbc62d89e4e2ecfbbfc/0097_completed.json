@@ -1,0 +1,11 @@
+{
+  "attempt_id": "1218483158c643a085e7b9360dd4a7d7",
+  "case_count": 30,
+  "hash_scope": "root report excluding journal finished_at",
+  "kind": "completed",
+  "previous_event_sha256": "d62ce1cbcbe871d13e43040007fc9b2eb0320ad9daf3e68688e9d99130f58d1c",
+  "primary_ex": 0.6333333333333333,
+  "recorded_at": "2026-10-19T09:05:24.697614+00:00",
+  "report_content_sha256": "01a32bf798ec75b869756a5af46311a9f2b44a22aea2b1682ecb6a641afc261f",
+  "sequence": 97
+}

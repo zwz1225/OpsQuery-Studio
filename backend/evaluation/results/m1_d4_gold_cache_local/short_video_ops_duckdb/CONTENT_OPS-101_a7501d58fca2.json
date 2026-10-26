@@ -1,0 +1,100 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "uses": [
+        "usage_count"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "tag_name",
+      "uses"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": false,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT t.tag_name,COUNT(r.content_id) uses FROM content_tags t JOIN content_tag_relations r ON t.content_tag_id=r.content_tag_id WHERE t.tag_type='content' GROUP BY 1 ORDER BY 2 DESC,1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CONTENT_OPS-101",
+  "question": "content类型内容标签的使用次数；请返回标签名称、使用次数；聚合口径：数量指标按对应业务记录计数。",
+  "gold_sql": "SELECT t.tag_name,COUNT(r.content_id) uses FROM content_tags t JOIN content_tag_relations r ON t.content_tag_id=r.content_tag_id WHERE t.tag_type='content' GROUP BY 1 ORDER BY 2 DESC,1",
+  "database": "short_video_ops",
+  "scenario": "content_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.content_audits",
+      "short_video_ops.content_categories",
+      "short_video_ops.content_daily_metrics",
+      "short_video_ops.content_reports",
+      "short_video_ops.content_tag_relations",
+      "short_video_ops.content_tags",
+      "short_video_ops.contents",
+      "short_video_ops.creator_daily_metrics",
+      "short_video_ops.creator_profiles",
+      "short_video_ops.creators",
+      "short_video_ops.topic_content_relations",
+      "short_video_ops.trending_topics",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users",
+      "short_video_ops.video_exposures",
+      "short_video_ops.video_interactions",
+      "short_video_ops.video_plays"
+    ],
+    "roles": [
+      "content_ops"
+    ],
+    "user_id": "demo_content_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "tag_name",
+    "uses"
+  ],
+  "rows": [
+    {
+      "tag_name": "剧情反转",
+      "uses": 2168
+    },
+    {
+      "tag_name": "实用技巧",
+      "uses": 2135
+    },
+    {
+      "tag_name": "教程",
+      "uses": 2102
+    },
+    {
+      "tag_name": "测评",
+      "uses": 2043
+    }
+  ],
+  "generated_at": "2026-10-10T14:56:47.653788+00:00"
+}

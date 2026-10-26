@@ -1,0 +1,85 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "cpc": [
+        "avg_cpc"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "channel_name",
+      "cpc"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": false,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT c.channel_name,ROUND(SUM(s.spend)/NULLIF(SUM(s.clicks),0),4) cpc FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE c.channel_name='信息流广告' GROUP BY 1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CHANNEL_OPS-050",
+  "question": "请汇总信息流广告的平均点击成本；请返回渠道名称、平均点击成本；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+  "gold_sql": "SELECT c.channel_name,ROUND(SUM(s.spend)/NULLIF(SUM(s.clicks),0),4) cpc FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE c.channel_name='信息流广告' GROUP BY 1",
+  "database": "short_video_ops",
+  "scenario": "channel_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.ad_accounts",
+      "short_video_ops.ad_campaigns",
+      "short_video_ops.ad_creatives",
+      "short_video_ops.ad_daily_stats",
+      "short_video_ops.budget_adjustments",
+      "short_video_ops.channel_attributions",
+      "short_video_ops.channel_conversion_events",
+      "short_video_ops.channel_targets",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "channel_ops"
+    ],
+    "user_id": "demo_channel_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "channel_name",
+    "cpc"
+  ],
+  "rows": [
+    {
+      "channel_name": "信息流广告",
+      "cpc": 1.2711
+    }
+  ],
+  "generated_at": "2026-10-10T14:55:53.327288+00:00"
+}

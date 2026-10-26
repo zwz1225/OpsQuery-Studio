@@ -1,0 +1,10 @@
+{
+  "checked_file_count": 135,
+  "code_file_count": 96,
+  "errors": [],
+  "manifest_sha256": "c203439206572a379e3f923560dac52e4dcb077c3007ab168f00250fa9c2143d",
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "run_status": "complete",
+  "stage": "M2 public intent delivery integrity"
+}

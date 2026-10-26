@@ -1,0 +1,15 @@
+{
+  "stage": "M1 E v5 CONTENT_OPS-001 exact strict policy applied",
+  "run_status": "complete",
+  "recorded_at": "2026-10-14T07:50:21.911056+00:00",
+  "source_cases_sha256": "ff5956e9f4aca878ee63e232bdea1fef3416a28eda72669f91a33546c70f3adc",
+  "updated_cases_sha256": "08cf84a50f43eb2d176d96246e1210c398a13a89beec69a9d0db1b7361b7815a",
+  "source_report_sha256": "bd8d2a5fb01d0a87c34f43656ae228183b7f7e8efa3143519e862060fd8ef37e",
+  "replay_report_sha256": "333a4b6ba7aa9aef2cee4efb90aa389aaf576eb154727b80fa6ff2a3aecbd3e4",
+  "changed_case_ids": [
+    "CONTENT_OPS-001"
+  ],
+  "changed_case_count": 1,
+  "alias_addition_count": 3,
+  "new_model_request_count": 0
+}

@@ -1,0 +1,64 @@
+{
+  "actual_server_address": "127.0.0.1/32",
+  "actual_server_port": 55432,
+  "candidate_check_version": 2,
+  "candidate_checks": [
+    {
+      "name": "maintenance_identity",
+      "passed": true
+    },
+    {
+      "name": "postgresql_16",
+      "passed": true
+    },
+    {
+      "name": "encoding_locale",
+      "passed": true
+    },
+    {
+      "name": "local_endpoint",
+      "passed": true
+    },
+    {
+      "name": "expected_cluster_directory",
+      "passed": true
+    },
+    {
+      "name": "initialization_privileges",
+      "passed": true
+    },
+    {
+      "name": "independent_target_absent",
+      "passed": true
+    },
+    {
+      "name": "m2_roles_absent",
+      "passed": true
+    },
+    {
+      "name": "import_capacity_budget",
+      "passed": true
+    }
+  ],
+  "candidate_pass_count": 9,
+  "cause": "Exact string comparison rejected the equivalent IPv4 /32 host representation",
+  "data_imported": false,
+  "database_created": false,
+  "failed_check": "local_endpoint",
+  "free_bytes_recorded": 98755670016,
+  "free_gib_recorded": 91.97338485717773,
+  "new_model_request_count": 0,
+  "new_postgresql_connection": false,
+  "original_check_count": 9,
+  "original_pass_count": 8,
+  "recorded_at": "2026-10-15T14:38:46.252141+00:00",
+  "run_status": "complete",
+  "scope": "Re-evaluation of recorded raw fields only; not a new server connection, privilege or filesystem check",
+  "server_rerun_required": true,
+  "source_report": "evaluation\\results\\m2_b_server_preflight_server.json",
+  "source_report_preserved": true,
+  "source_run_status": "blocked",
+  "source_sha256": "5d4ee5821e222437a39fe5fedafbf28d93fce39fc24462382146921d9635d74d",
+  "stage": "M2 B first server preflight review and endpoint fix replay",
+  "tests_passed": 26
+}

@@ -1,0 +1,16 @@
+{
+  "stage": "M1 E v6 two-case exact strict policy applied",
+  "run_status": "complete",
+  "recorded_at": "2026-10-14T13:26:03.719078+00:00",
+  "source_cases_sha256": "08cf84a50f43eb2d176d96246e1210c398a13a89beec69a9d0db1b7361b7815a",
+  "updated_cases_sha256": "82761737b873c9d4e9daac852bb3bf30867adc01919d088289dc9ba03972ed33",
+  "source_report_sha256": "7a8c204f2ea28b87917ff3bb93835fe3c72287aef01b20bbc32a49b838939f9e",
+  "replay_report_sha256": "5423ba14dacea7b37be35df90f917d76de172ee3a6a4bb7b2cc898d762c258ad",
+  "changed_case_ids": [
+    "CHANNEL_OPS-066",
+    "CONTENT_OPS-138"
+  ],
+  "changed_case_count": 2,
+  "alias_addition_count": 4,
+  "new_model_request_count": 0
+}

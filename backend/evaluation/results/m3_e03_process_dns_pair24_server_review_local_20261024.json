@@ -1,0 +1,3993 @@
+{
+  "stage": "M3 E03 explicit DNS pair24 server evidence review",
+  "date": "2026-10-24",
+  "run_status": "complete",
+  "source_root": "E:\\PythonLearn\\m3_e03_pair24_process_dns_v1_20261023_r2",
+  "source_files": {
+    "driver": {
+      "relative_path": "reports/e03_pair24_server.json",
+      "sha256": "fd5977878e7009d5d5d0e1f4dbd9722e0b5da9041e251ae9295007d25b9c6f54"
+    },
+    "comparison": {
+      "relative_path": "reports/e03_pair24_comparison_server.json",
+      "sha256": "864223cad8e71e07049cd3cb1fd344f815cdac563117720de7eb0ce9565ab102"
+    },
+    "baseline_capture": {
+      "relative_path": "baseline/backend/evaluation/results/m3_e03_baseline24_capture_server.json",
+      "sha256": "61b970c9e457b84088c12f581c533c87da3dea88a50a239d2030b27c12a4f81f"
+    },
+    "baseline_native": {
+      "relative_path": "baseline/backend/evaluation/results/m3_e03_baseline24_native_server.json",
+      "sha256": "5e153c6558fe44372c8b0a0854863469f4651121ceab471a783c5753a55430b1"
+    },
+    "candidate_capture": {
+      "relative_path": "candidate/backend/evaluation/results/m3_e03_candidate24_capture_server.json",
+      "sha256": "dc5ddd924f3771c3d767a9c02217e5b09334d6b5d9d13b80b1d28608680093fc"
+    },
+    "candidate_native": {
+      "relative_path": "candidate/backend/evaluation/results/m3_e03_candidate24_native_server.json",
+      "sha256": "cb1c19c345529702ad4bea1a60982fd58f406d9efb1fafbe885e364506ffbb35"
+    },
+    "lock": {
+      "relative_path": "transport_dependency_lock.json",
+      "sha256": "b4c7099e4c606365becf85f838fb147a975c8f140c4713afee7c95cc2435be46"
+    }
+  },
+  "check_count": 880,
+  "passed_check_count": 880,
+  "failed_checks": [],
+  "checks": [
+    {
+      "name": "bundle_manifest_digest",
+      "passed": true
+    },
+    {
+      "name": "driver_bundle_identity",
+      "passed": true
+    },
+    {
+      "name": "driver_complete",
+      "passed": true
+    },
+    {
+      "name": "child_exit_codes",
+      "passed": true
+    },
+    {
+      "name": "comparison_bytes",
+      "passed": true
+    },
+    {
+      "name": "comparison_source_report_chain",
+      "passed": true
+    },
+    {
+      "name": "both_captures_before_gold",
+      "passed": true
+    },
+    {
+      "name": "development_only_driver",
+      "passed": true
+    },
+    {
+      "name": "locked_dependency",
+      "passed": true
+    },
+    {
+      "name": "verified_tool_version",
+      "passed": true
+    },
+    {
+      "name": "preflight_readiness",
+      "passed": true
+    },
+    {
+      "name": "baseline_capture_driver_hash",
+      "passed": true
+    },
+    {
+      "name": "candidate_capture_driver_hash",
+      "passed": true
+    },
+    {
+      "name": "baseline_native_driver_hash",
+      "passed": true
+    },
+    {
+      "name": "candidate_native_driver_hash",
+      "passed": true
+    },
+    {
+      "name": "baseline:capture_complete",
+      "passed": true
+    },
+    {
+      "name": "baseline:code_files",
+      "passed": true
+    },
+    {
+      "name": "baseline:code_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:source_protocol_model",
+      "passed": true
+    },
+    {
+      "name": "baseline:dependency_policy",
+      "passed": true
+    },
+    {
+      "name": "baseline:case_order",
+      "passed": true
+    },
+    {
+      "name": "baseline:target_and_preparation",
+      "passed": true
+    },
+    {
+      "name": "baseline:no_generation_gold",
+      "passed": true
+    },
+    {
+      "name": "baseline:isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:timeout_budget_probes",
+      "passed": true
+    },
+    {
+      "name": "baseline:eight_independent_indexes",
+      "passed": true
+    },
+    {
+      "name": "baseline:california_schools:index_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:california_schools:index_code",
+      "passed": true
+    },
+    {
+      "name": "baseline:california_schools:index_path",
+      "passed": true
+    },
+    {
+      "name": "baseline:card_games:index_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:card_games:index_code",
+      "passed": true
+    },
+    {
+      "name": "baseline:card_games:index_path",
+      "passed": true
+    },
+    {
+      "name": "baseline:codebase_community:index_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:codebase_community:index_code",
+      "passed": true
+    },
+    {
+      "name": "baseline:codebase_community:index_path",
+      "passed": true
+    },
+    {
+      "name": "baseline:debit_card_specializing:index_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:debit_card_specializing:index_code",
+      "passed": true
+    },
+    {
+      "name": "baseline:debit_card_specializing:index_path",
+      "passed": true
+    },
+    {
+      "name": "baseline:financial:index_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:financial:index_code",
+      "passed": true
+    },
+    {
+      "name": "baseline:financial:index_path",
+      "passed": true
+    },
+    {
+      "name": "baseline:student_club:index_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:student_club:index_code",
+      "passed": true
+    },
+    {
+      "name": "baseline:student_club:index_path",
+      "passed": true
+    },
+    {
+      "name": "baseline:superhero:index_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:superhero:index_code",
+      "passed": true
+    },
+    {
+      "name": "baseline:superhero:index_path",
+      "passed": true
+    },
+    {
+      "name": "baseline:toxicology:index_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:toxicology:index_code",
+      "passed": true
+    },
+    {
+      "name": "baseline:toxicology:index_path",
+      "passed": true
+    },
+    {
+      "name": "baseline:preparation_attempts",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0036:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0036:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0036:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0036:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0036:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0036:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0036:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0036:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0036:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0050:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0050:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0050:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0050:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0050:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0050:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0050:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0050:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0050:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0082:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0082:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0082:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0082:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0082:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0082:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0082:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0082:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0082:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0085:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0085:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0085:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0085:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0085:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0085:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0085:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0085:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0085:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0368:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0368:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0368:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0368:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0368:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0368:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0368:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0368:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0368:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0379:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0379:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0379:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0379:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0379:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0379:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0379:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0379:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0379:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0407:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0407:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0407:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0407:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0407:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0407:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0407:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0407:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0407:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0480:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0480:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0480:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0480:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0480:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0480:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0480:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0480:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0480:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0586:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0586:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0586:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0586:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0586:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0586:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0586:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0586:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0586:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0637:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0637:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0637:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0637:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0637:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0637:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0637:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0637:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0637:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1473:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1473:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1473:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1473:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1473:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1473:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1473:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1473:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1473:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1479:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1479:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1479:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1479:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1479:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1479:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1479:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1479:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1479:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1486:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1486:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1486:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1486:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1486:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1486:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1486:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1486:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1486:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0095:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0095:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0095:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0095:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0095:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0095:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0095:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0095:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0095:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0159:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0159:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0159:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0159:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0159:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0159:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0159:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0159:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0159:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1405:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1405:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1405:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1405:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1405:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1405:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1405:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1405:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1405:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1457:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1457:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1457:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1457:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1457:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1457:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1457:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1457:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1457:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1460:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1460:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1460:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1460:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1460:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1460:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1460:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1460:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1460:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0766:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0766:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0766:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0766:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0766:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0766:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0766:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0766:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0766:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0773:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0773:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0773:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0773:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0773:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0773:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0773:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0773:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0773:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0206:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0206:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0206:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0206:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0206:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0206:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0206:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0206:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0206:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0226:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0226:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0226:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0226:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0226:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0226:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0226:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0226:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0226:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0263:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0263:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0263:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0263:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0263:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0263:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0263:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0263:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0263:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0273:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0273:public_identity",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0273:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0273:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0273:budgets",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0273:event_counters",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0273:index_digest",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0273:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0273:baseline_no_output_treatment",
+      "passed": true
+    },
+    {
+      "name": "baseline:total_attempt_accounting",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_0:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_1:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_2:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_3:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_4:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_5:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_6:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_7:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_8:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_9:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_10:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_11:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_12:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_13:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_14:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_15:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_16:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_17:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_18:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_19:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_20:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_21:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_22:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_23:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_24:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_25:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_26:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_27:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_28:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_29:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_30:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_31:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_32:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_33:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_34:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_35:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_36:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_37:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_38:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_39:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_40:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_41:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_42:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_43:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_44:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_45:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_46:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_47:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_48:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_49:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_50:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_51:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_52:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_53:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_54:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_55:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_56:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_57:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_58:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_59:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_60:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_61:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_62:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_63:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_64:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_65:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_66:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_67:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_68:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_69:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_70:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_71:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_72:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_73:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_74:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_75:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_76:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_77:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_78:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_79:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_80:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_81:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_82:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_83:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_84:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_85:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_86:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_87:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_88:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_89:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_90:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_91:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_92:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_93:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_94:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_95:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_96:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_97:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_98:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_99:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_100:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_101:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_102:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_103:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_104:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_105:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_106:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_107:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_108:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_109:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_110:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_111:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_112:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_113:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_114:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_115:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_116:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_117:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_118:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_119:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_120:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_121:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_122:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:request_123:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "baseline:native_complete",
+      "passed": true
+    },
+    {
+      "name": "baseline:native_chain",
+      "passed": true
+    },
+    {
+      "name": "baseline:native_denominator",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0036:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0036:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0050:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0050:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0082:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0082:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0085:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0085:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0368:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0368:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0379:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0379:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0407:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0407:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0480:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0480:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0586:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0586:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0637:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0637:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1473:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1473:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1479:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1479:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1486:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1486:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0095:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0095:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0159:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0159:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1405:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1405:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1457:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1457:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1460:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-1460:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0766:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0766:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0773:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0773:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0206:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0206:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0226:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0226:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0263:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0263:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0273:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "baseline:BIRD-PG-0273:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:capture_complete",
+      "passed": true
+    },
+    {
+      "name": "candidate:code_files",
+      "passed": true
+    },
+    {
+      "name": "candidate:code_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:source_protocol_model",
+      "passed": true
+    },
+    {
+      "name": "candidate:dependency_policy",
+      "passed": true
+    },
+    {
+      "name": "candidate:case_order",
+      "passed": true
+    },
+    {
+      "name": "candidate:target_and_preparation",
+      "passed": true
+    },
+    {
+      "name": "candidate:no_generation_gold",
+      "passed": true
+    },
+    {
+      "name": "candidate:isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:timeout_budget_probes",
+      "passed": true
+    },
+    {
+      "name": "candidate:eight_independent_indexes",
+      "passed": true
+    },
+    {
+      "name": "candidate:california_schools:index_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:california_schools:index_code",
+      "passed": true
+    },
+    {
+      "name": "candidate:california_schools:index_path",
+      "passed": true
+    },
+    {
+      "name": "candidate:card_games:index_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:card_games:index_code",
+      "passed": true
+    },
+    {
+      "name": "candidate:card_games:index_path",
+      "passed": true
+    },
+    {
+      "name": "candidate:codebase_community:index_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:codebase_community:index_code",
+      "passed": true
+    },
+    {
+      "name": "candidate:codebase_community:index_path",
+      "passed": true
+    },
+    {
+      "name": "candidate:debit_card_specializing:index_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:debit_card_specializing:index_code",
+      "passed": true
+    },
+    {
+      "name": "candidate:debit_card_specializing:index_path",
+      "passed": true
+    },
+    {
+      "name": "candidate:financial:index_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:financial:index_code",
+      "passed": true
+    },
+    {
+      "name": "candidate:financial:index_path",
+      "passed": true
+    },
+    {
+      "name": "candidate:student_club:index_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:student_club:index_code",
+      "passed": true
+    },
+    {
+      "name": "candidate:student_club:index_path",
+      "passed": true
+    },
+    {
+      "name": "candidate:superhero:index_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:superhero:index_code",
+      "passed": true
+    },
+    {
+      "name": "candidate:superhero:index_path",
+      "passed": true
+    },
+    {
+      "name": "candidate:toxicology:index_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:toxicology:index_code",
+      "passed": true
+    },
+    {
+      "name": "candidate:toxicology:index_path",
+      "passed": true
+    },
+    {
+      "name": "candidate:preparation_attempts",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0036:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0036:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0036:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0036:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0036:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0036:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0036:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0036:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0036:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0050:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0050:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0050:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0050:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0050:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0050:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0050:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0050:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0050:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0082:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0082:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0082:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0082:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0082:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0082:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0082:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0082:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0082:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0085:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0085:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0085:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0085:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0085:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0085:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0085:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0085:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0085:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0368:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0368:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0368:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0368:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0368:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0368:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0368:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0368:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0368:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0379:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0379:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0379:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0379:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0379:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0379:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0379:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0379:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0379:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0407:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0407:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0407:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0407:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0407:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0407:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0407:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0407:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0407:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0480:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0480:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0480:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0480:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0480:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0480:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0480:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0480:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0480:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0586:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0586:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0586:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0586:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0586:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0586:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0586:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0586:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0586:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0637:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0637:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0637:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0637:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0637:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0637:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0637:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0637:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0637:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1473:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1473:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1473:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1473:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1473:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1473:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1473:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1473:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1473:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1479:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1479:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1479:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1479:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1479:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1479:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1479:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1479:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1479:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1486:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1486:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1486:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1486:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1486:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1486:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1486:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1486:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1486:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0095:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0095:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0095:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0095:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0095:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0095:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0095:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0095:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0095:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0159:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0159:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0159:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0159:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0159:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0159:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0159:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0159:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0159:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1405:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1405:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1405:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1405:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1405:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1405:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1405:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1405:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1405:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1457:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1457:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1457:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1457:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1457:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1457:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1457:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1457:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1457:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1460:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1460:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1460:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1460:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1460:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1460:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1460:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1460:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1460:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0766:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0766:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0766:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0766:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0766:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0766:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0766:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0766:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0766:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0773:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0773:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0773:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0773:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0773:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0773:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0773:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0773:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0773:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0206:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0206:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0206:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0206:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0206:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0206:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0206:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0206:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0206:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0226:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0226:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0226:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0226:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0226:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0226:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0226:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0226:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0226:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0263:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0263:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0263:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0263:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0263:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0263:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0263:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0263:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0263:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0273:complete_answer",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0273:public_identity",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0273:graph_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0273:agent_isolation",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0273:budgets",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0273:event_counters",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0273:index_digest",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0273:captured_sql",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0273:treatment_present",
+      "passed": true
+    },
+    {
+      "name": "candidate:total_attempt_accounting",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_0:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_1:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_2:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_3:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_4:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_5:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_6:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_7:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_8:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_9:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_10:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_11:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_12:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_13:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_14:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_15:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_16:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_17:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_18:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_19:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_20:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_21:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_22:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_23:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_24:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_25:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_26:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_27:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_28:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_29:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_30:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_31:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_32:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_33:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_34:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_35:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_36:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_37:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_38:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_39:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_40:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_41:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_42:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_43:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_44:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_45:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_46:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_47:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_48:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_49:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_50:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_51:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_52:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_53:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_54:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_55:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_56:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_57:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_58:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_59:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_60:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_61:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_62:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_63:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_64:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_65:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_66:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_67:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_68:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_69:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_70:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_71:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_72:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_73:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_74:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_75:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_76:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_77:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_78:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_79:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_80:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_81:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_82:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_83:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_84:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_85:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_86:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_87:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_88:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_89:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_90:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_91:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_92:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_93:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_94:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_95:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_96:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_97:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_98:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_99:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_100:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_101:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_102:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_103:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_104:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_105:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_106:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_107:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_108:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_109:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_110:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_111:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_112:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_113:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_114:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_115:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_116:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_117:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_118:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_119:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_120:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_121:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_122:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_123:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_124:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_125:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:request_126:verified_transport",
+      "passed": true
+    },
+    {
+      "name": "candidate:native_complete",
+      "passed": true
+    },
+    {
+      "name": "candidate:native_chain",
+      "passed": true
+    },
+    {
+      "name": "candidate:native_denominator",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0036:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0036:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0050:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0050:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0082:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0082:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0085:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0085:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0368:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0368:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0379:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0379:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0407:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0407:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0480:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0480:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0586:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0586:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0637:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0637:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1473:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1473:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1479:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1479:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1486:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1486:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0095:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0095:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0159:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0159:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1405:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1405:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1457:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1457:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1460:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-1460:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0766:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0766:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0773:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0773:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0206:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0206:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0226:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0226:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0263:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0263:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0273:native_sql_and_source",
+      "passed": true
+    },
+    {
+      "name": "candidate:BIRD-PG-0273:native_evidence",
+      "passed": true
+    },
+    {
+      "name": "comparison_all_recomputed_fields",
+      "passed": true
+    },
+    {
+      "name": "all_20_regressions_preserved",
+      "passed": true
+    },
+    {
+      "name": "all_attempts_complete",
+      "passed": true
+    },
+    {
+      "name": "identical_two_failure_sets",
+      "passed": true
+    },
+    {
+      "name": "0407_public_language_ambiguity_reproduced",
+      "passed": true
+    },
+    {
+      "name": "0407_known_rejection_path",
+      "passed": true
+    }
+  ],
+  "bundle_id": "483c6a685bd96a5b5e495012ff37fc879011d4216b5fd40bb0abed2895759a2c",
+  "locked_dependency": {
+    "executable": "/usr/bin/dig",
+    "version": "9.18.39-0ubuntu0.22.04.7-Ubuntu",
+    "sha256": "421932872b073d8749d56c567319945b7f7bdfd42e705f1e6e2e2f461511c177",
+    "policy": {
+      "policy_id": "bird_process_dns_https_v1",
+      "resolver": "114.114.114.114",
+      "executable": "/usr/bin/dig",
+      "expected_version": "9.18.39-0ubuntu0.22.04.7-Ubuntu",
+      "query_type": "A",
+      "protocol": "UDP",
+      "queries_per_http_attempt": 1,
+      "dig_timeout_seconds": 3,
+      "dig_tries": 1,
+      "process_timeout_seconds": 5,
+      "maximum_address_connections_per_attempt": 1,
+      "maximum_cname_depth": 8,
+      "cache": "none; fresh answer each HTTP attempt",
+      "reject_expired_answers": true,
+      "redirects": false,
+      "environment_proxy": false,
+      "tls_certificate_and_hostname_verification": true,
+      "system_dns_modified": false,
+      "global_socket_patched": false,
+      "workspace_dependency_lock_required": true
+    }
+  },
+  "stats": {
+    "baseline": {
+      "match_count": 22,
+      "failed_case_ids": [
+        "BIRD-PG-0085",
+        "BIRD-PG-0407"
+      ],
+      "http_attempts": 124,
+      "index_http_attempts": 49,
+      "case_http_attempts": 75,
+      "event_status_counts": {
+        "complete": 124
+      },
+      "kind_counts": {
+        "embedding": 73,
+        "rerank": 24,
+        "chat": 27
+      },
+      "validation_failures": [
+        {
+          "case_id": "BIRD-PG-0586",
+          "error": {
+            "category": "intent_contract_violation",
+            "sqlstate": null
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1473",
+          "error": {
+            "category": "undefined_column",
+            "sqlstate": "42703"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0095",
+          "error": {
+            "category": "intent_contract_violation",
+            "sqlstate": null
+          }
+        }
+      ],
+      "executed_sql_failures": 0,
+      "max_case_http_attempts": 4,
+      "max_case_sql_calls": 2
+    },
+    "candidate": {
+      "match_count": 22,
+      "failed_case_ids": [
+        "BIRD-PG-0085",
+        "BIRD-PG-0407"
+      ],
+      "http_attempts": 127,
+      "index_http_attempts": 49,
+      "case_http_attempts": 78,
+      "event_status_counts": {
+        "complete": 127
+      },
+      "kind_counts": {
+        "embedding": 73,
+        "rerank": 24,
+        "chat": 30
+      },
+      "validation_failures": [
+        {
+          "case_id": "BIRD-PG-0036",
+          "error": {
+            "category": "intent_contract_violation",
+            "sqlstate": null
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0586",
+          "error": {
+            "category": "intent_contract_violation",
+            "sqlstate": null
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1473",
+          "error": {
+            "category": "undefined_column",
+            "sqlstate": "42703"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0095",
+          "error": {
+            "category": "sql_error",
+            "sqlstate": "42P10"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0095",
+          "error": {
+            "category": "intent_contract_violation",
+            "sqlstate": null
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0226",
+          "error": {
+            "category": "undefined_function",
+            "sqlstate": "42883"
+          }
+        }
+      ],
+      "executed_sql_failures": 0,
+      "max_case_http_attempts": 5,
+      "max_case_sql_calls": 2
+    }
+  },
+  "costs": {
+    "total_model_tokens_including_index_builds": {
+      "baseline": 324827,
+      "candidate": 357827,
+      "increase_percent": 10.1593
+    },
+    "model_http_attempts_including_index_builds": {
+      "baseline": 124,
+      "candidate": 127,
+      "increase_percent": 2.4194
+    },
+    "case_wall_p95_seconds": {
+      "baseline": 18.654,
+      "candidate": 21.63,
+      "increase_percent": 15.9537
+    }
+  },
+  "focal_0407": {
+    "case_id": "BIRD-PG-0407",
+    "generated_sql": "SELECT DISTINCT fd.type FROM foreign_data fd WHERE fd.language = 'German' AND fd.type IS NOT NULL",
+    "result": {
+      "complete": true,
+      "row_count": 2150,
+      "column_count": 1,
+      "payload_bytes": 92049,
+      "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+      "native_types": [
+        "str"
+      ],
+      "ordered_native_diagnostic_sha256": "72673eacd56679a5bcaf994be427d123f3c1fdc9df3d426b355cedfe5cdd217b"
+    },
+    "declared_output_group": [
+      {
+        "ordinal": 1,
+        "public_request": {
+          "source": "question",
+          "span": [
+            6,
+            15
+          ],
+          "text": "all types"
+        },
+        "kind": "field_group",
+        "field_ids": [
+          "card_games.cards.subtypes",
+          "card_games.cards.supertypes"
+        ],
+        "binding_complete": true,
+        "authority": "explicit_public_definition",
+        "evidence": [
+          {
+            "source": "evidence",
+            "span": [
+              25,
+              69
+            ],
+            "text": " all types refer to the subtypes, supertypes"
+          }
+        ]
+      }
+    ],
+    "output_observation": [
+      {
+        "sql_round": 1,
+        "sql_sha256": "8542b2e5b35601320b7dfd993e54b0b45c957e0e3c571f321eb887e32d79fb8f",
+        "diagnostic": {
+          "policy_id": "bird_public_output_contract_v1",
+          "report_only": true,
+          "status": "observed",
+          "issues": [
+            {
+              "code": "requested_output_not_observed",
+              "ordinal": 1,
+              "expected_field_ids": [
+                "card_games.cards.subtypes",
+                "card_games.cards.supertypes"
+              ],
+              "role": "field_group"
+            }
+          ],
+          "meaning": "Projection hints only; does not establish SQL correctness, filter coverage or native EX."
+        }
+      }
+    ],
+    "relation_decisions": [
+      {
+        "role": "public_output_relation",
+        "selected": false,
+        "output_field_ids": [],
+        "filter_field_ids": [],
+        "added_field_ids": [],
+        "evicted_fields": [],
+        "relation_ids": [],
+        "decision_reason": "unresolved_output_group_or_filter",
+        "field_rerank_scores": {}
+      }
+    ],
+    "selected_language_fields": [
+      "card_games.foreign_data.language",
+      "card_games.set_translations.language"
+    ],
+    "evidence_filter_binding_reproduction": [
+      {
+        "public_literal": "German",
+        "field_name": "language",
+        "matching_selected_fields": [
+          "card_games.foreign_data.language",
+          "card_games.set_translations.language"
+        ]
+      }
+    ],
+    "profile_sample_conditions": [],
+    "missing_relation_keys": [
+      {
+        "relation_id": "card_games:cards:foreign_data",
+        "missing_field_ids": [
+          "card_games.cards.uuid",
+          "card_games.foreign_data.uuid"
+        ],
+        "reason": "incomplete_child_key_coverage",
+        "automatic_completion": false
+      }
+    ],
+    "limited_reviewed_relation_eligible": true,
+    "relation_orphans": 16,
+    "graph_joins": [],
+    "unresolved_roles_exposed_to_model": [],
+    "finding": "Output hints present; German->language resolves to two selected fields; the relation completion guard rejects the unresolved filter. UUID endpoints and reviewed relation were not supplied to the model. Therefore this run does not test a fully admitted relation hint."
+  },
+  "case_outcomes": [
+    {
+      "case_id": "BIRD-PG-0036",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0050",
+      "baseline": true,
+      "candidate": true,
+      "regression": false
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0085",
+      "baseline": false,
+      "candidate": false,
+      "regression": false
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0379",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0407",
+      "baseline": false,
+      "candidate": false,
+      "regression": false
+    },
+    {
+      "case_id": "BIRD-PG-0480",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0637",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-1479",
+      "baseline": true,
+      "candidate": true,
+      "regression": false
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-1457",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-1460",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0773",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0206",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0226",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0263",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    },
+    {
+      "case_id": "BIRD-PG-0273",
+      "baseline": true,
+      "candidate": true,
+      "regression": true
+    }
+  ],
+  "transport_observation": "251 recorded model attempts, all HTTP200, no transport retry; both sides completed real generation and native replay.",
+  "candidate_screen_pass": false,
+  "candidate_accepted": false,
+  "disposition": "Archive this E03 run as not meeting preregistered gates. Preserve E02 semantics as the next full-development candidate; no automatic regeneration.",
+  "manual_semantic_review": {
+    "1479": "passed: both use customer currency CZK, year grouping, consumption SUM descending NULLS LAST, one year only.",
+    "0407": "failed: foreign_data.type projected alone; missing cards.subtypes/cards.supertypes non-null and UUID relation.",
+    "0085": "failed: stored fractional column 0.7015113 instead of explicit formula percentage 70.15113350125945; direct *100 of rounded field would also differ.",
+    "0050": "native match this round; do not attribute improvement to E03 because both sides emit same SQL."
+  },
+  "limitations": [
+    "Offline review does not reexecute SQL or recompute remote table contents.",
+    "Full index files and the separate embedding probe receipt were not among these seven files; their identities/checks are recorded by the controlled server run.",
+    "Do not infer longer-term DNS stability or generalization from one development24 run.",
+    "The 0407 ambiguity reproduction establishes one sufficient rejection cause; it does not assert all full-catalog bindings are unambiguous."
+  ],
+  "new_model_request_count": 0,
+  "postgresql_connected": false
+}

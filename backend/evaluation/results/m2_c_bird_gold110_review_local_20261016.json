@@ -1,0 +1,7641 @@
+{
+  "stage": "M2 C downloaded Gold110 readiness evidence review",
+  "run_status": "complete",
+  "reviewed_at": "2026-10-16T08:19:15.472638+00:00",
+  "source_report": "evaluation/results/m2_c_bird_gold110_server.json",
+  "source_report_sha256": "e87dc6e51833eaa22344c0882ac49109822cbd0bff6526eda05a361c7cf8ea03",
+  "runtime_report_sha256": "ecaf50f6c7a17460dd6260a9dcf198f91fcf33e397e581c16aa82a55d7d63473",
+  "check_count": 1675,
+  "check_pass_count": 1675,
+  "failed_checks": [],
+  "can_proceed_to_smoke8_live": true,
+  "gold110_execution_evidence_accepted": true,
+  "local_postgresql_connected": false,
+  "new_model_request_count": 0,
+  "model_ex_score": null,
+  "summary": {
+    "case_count": 110,
+    "complete_result_count": 110,
+    "status_counts": {
+      "gold_ready": 110
+    },
+    "gold_ready_count": 110,
+    "latency_seconds": {
+      "p50": 2.835,
+      "p95": 8.417,
+      "measured_count": 110
+    },
+    "by_database": {
+      "california_schools": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "gold_ready": 10
+        },
+        "gold_ready_count": 10
+      },
+      "card_games": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "gold_ready": 10
+        },
+        "gold_ready_count": 10
+      },
+      "codebase_community": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "gold_ready": 10
+        },
+        "gold_ready_count": 10
+      },
+      "debit_card_specializing": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "gold_ready": 10
+        },
+        "gold_ready_count": 10
+      },
+      "european_football_2": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "gold_ready": 10
+        },
+        "gold_ready_count": 10
+      },
+      "financial": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "gold_ready": 10
+        },
+        "gold_ready_count": 10
+      },
+      "formula_1": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "gold_ready": 10
+        },
+        "gold_ready_count": 10
+      },
+      "student_club": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "gold_ready": 10
+        },
+        "gold_ready_count": 10
+      },
+      "superhero": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "gold_ready": 10
+        },
+        "gold_ready_count": 10
+      },
+      "thrombosis_prediction": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "gold_ready": 10
+        },
+        "gold_ready_count": 10
+      },
+      "toxicology": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "gold_ready": 10
+        },
+        "gold_ready_count": 10
+      }
+    },
+    "by_difficulty": {
+      "simple": {
+        "case_count": 33,
+        "complete_result_count": 33,
+        "status_counts": {
+          "gold_ready": 33
+        },
+        "gold_ready_count": 33
+      },
+      "moderate": {
+        "case_count": 55,
+        "complete_result_count": 55,
+        "status_counts": {
+          "gold_ready": 55
+        },
+        "gold_ready_count": 55
+      },
+      "challenging": {
+        "case_count": 22,
+        "complete_result_count": 22,
+        "status_counts": {
+          "gold_ready": 22
+        },
+        "gold_ready_count": 22
+      }
+    },
+    "new_model_request_count": 0,
+    "observed_model_http_attempts": 0,
+    "model_attempt_count_incomplete": false,
+    "shared_index_http_attempts": 0,
+    "original_gold_sql_count": 110
+  },
+  "total_wall_seconds": 446.2379,
+  "sum_case_wall_seconds": 390.778,
+  "case_wall_min_seconds": 0.544,
+  "case_wall_max_seconds": 8.614,
+  "snapshot_reference": {
+    "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/evaluation/results/snapshots/bird/m2_bird_pg_v1/a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641/gold110/9ba36b904f6f45be999288153943d462.json",
+    "sha256": "42d7ecdc5b01f8742a7d27e13f1ea2dff8bb931183dc69806a09481f5a9c73f2"
+  },
+  "snapshot_payload_reconstructed_sha256": "42d7ecdc5b01f8742a7d27e13f1ea2dff8bb931183dc69806a09481f5a9c73f2",
+  "snapshot_file_downloaded": false,
+  "scope": "Review of downloaded server evidence against accepted runtime and M2 B chain, frozen public/Gold artifacts, current/delivered source hashes; all 110 cases checked. No local DB or model calls.",
+  "limitations": [
+    "Gold answer tuples/counts/digests are intentionally absent; execution and complete/native/limit flags are server evidence, not an independent local rerun.",
+    "Snapshot reference payload hash was reconstructed successfully if its check passed; the actual server snapshot file was not downloaded or opened.",
+    "Gold readiness is not model EX accuracy; smoke8 and development80 live remain to be executed.",
+    "Holdout30 model live remains closed pending candidate freeze and one-attempt ledger."
+  ],
+  "case_reviews": [
+    {
+      "case_id": "BIRD-PG-0011",
+      "database_id": "california_schools",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 1.121
+    },
+    {
+      "case_id": "BIRD-PG-0025",
+      "database_id": "california_schools",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 1.089
+    },
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 1.028
+    },
+    {
+      "case_id": "BIRD-PG-0048",
+      "database_id": "california_schools",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 1.023
+    },
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 1.023
+    },
+    {
+      "case_id": "BIRD-PG-0072",
+      "database_id": "california_schools",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 1.038
+    },
+    {
+      "case_id": "BIRD-PG-0077",
+      "database_id": "california_schools",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 1.03
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "database_id": "california_schools",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 1.029
+    },
+    {
+      "case_id": "BIRD-PG-0083",
+      "database_id": "california_schools",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 1.024
+    },
+    {
+      "case_id": "BIRD-PG-0085",
+      "database_id": "california_schools",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 1.03
+    },
+    {
+      "case_id": "BIRD-PG-0352",
+      "database_id": "card_games",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.488
+    },
+    {
+      "case_id": "BIRD-PG-0356",
+      "database_id": "card_games",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.408
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.32
+    },
+    {
+      "case_id": "BIRD-PG-0371",
+      "database_id": "card_games",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.368
+    },
+    {
+      "case_id": "BIRD-PG-0379",
+      "database_id": "card_games",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.339
+    },
+    {
+      "case_id": "BIRD-PG-0407",
+      "database_id": "card_games",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.4
+    },
+    {
+      "case_id": "BIRD-PG-0415",
+      "database_id": "card_games",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.363
+    },
+    {
+      "case_id": "BIRD-PG-0459",
+      "database_id": "card_games",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.307
+    },
+    {
+      "case_id": "BIRD-PG-0473",
+      "database_id": "card_games",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.616
+    },
+    {
+      "case_id": "BIRD-PG-0480",
+      "database_id": "card_games",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.39
+    },
+    {
+      "case_id": "BIRD-PG-0537",
+      "database_id": "codebase_community",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 8.614
+    },
+    {
+      "case_id": "BIRD-PG-0557",
+      "database_id": "codebase_community",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 8.487
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "database_id": "codebase_community",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 8.399
+    },
+    {
+      "case_id": "BIRD-PG-0595",
+      "database_id": "codebase_community",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 8.464
+    },
+    {
+      "case_id": "BIRD-PG-0604",
+      "database_id": "codebase_community",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 8.437
+    },
+    {
+      "case_id": "BIRD-PG-0629",
+      "database_id": "codebase_community",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 8.392
+    },
+    {
+      "case_id": "BIRD-PG-0637",
+      "database_id": "codebase_community",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 8.345
+    },
+    {
+      "case_id": "BIRD-PG-0639",
+      "database_id": "codebase_community",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 8.37
+    },
+    {
+      "case_id": "BIRD-PG-0671",
+      "database_id": "codebase_community",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 8.502
+    },
+    {
+      "case_id": "BIRD-PG-0707",
+      "database_id": "codebase_community",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 8.431
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 2.797
+    },
+    {
+      "case_id": "BIRD-PG-1476",
+      "database_id": "debit_card_specializing",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 3.158
+    },
+    {
+      "case_id": "BIRD-PG-1479",
+      "database_id": "debit_card_specializing",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 2.906
+    },
+    {
+      "case_id": "BIRD-PG-1480",
+      "database_id": "debit_card_specializing",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 2.909
+    },
+    {
+      "case_id": "BIRD-PG-1481",
+      "database_id": "debit_card_specializing",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 2.848
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 2.723
+    },
+    {
+      "case_id": "BIRD-PG-1505",
+      "database_id": "debit_card_specializing",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 2.755
+    },
+    {
+      "case_id": "BIRD-PG-1509",
+      "database_id": "debit_card_specializing",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 2.713
+    },
+    {
+      "case_id": "BIRD-PG-1524",
+      "database_id": "debit_card_specializing",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 2.963
+    },
+    {
+      "case_id": "BIRD-PG-1533",
+      "database_id": "debit_card_specializing",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 2.823
+    },
+    {
+      "case_id": "BIRD-PG-0092",
+      "database_id": "financial",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 5.811
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 5.937
+    },
+    {
+      "case_id": "BIRD-PG-0099",
+      "database_id": "financial",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 5.969
+    },
+    {
+      "case_id": "BIRD-PG-0112",
+      "database_id": "financial",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 5.831
+    },
+    {
+      "case_id": "BIRD-PG-0115",
+      "database_id": "financial",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 5.841
+    },
+    {
+      "case_id": "BIRD-PG-0118",
+      "database_id": "financial",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 5.867
+    },
+    {
+      "case_id": "BIRD-PG-0145",
+      "database_id": "financial",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 6.179
+    },
+    {
+      "case_id": "BIRD-PG-0152",
+      "database_id": "financial",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 5.878
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 5.976
+    },
+    {
+      "case_id": "BIRD-PG-0173",
+      "database_id": "financial",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 6.152
+    },
+    {
+      "case_id": "BIRD-PG-1361",
+      "database_id": "student_club",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.785
+    },
+    {
+      "case_id": "BIRD-PG-1398",
+      "database_id": "student_club",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.776
+    },
+    {
+      "case_id": "BIRD-PG-1399",
+      "database_id": "student_club",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.85
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "database_id": "student_club",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.861
+    },
+    {
+      "case_id": "BIRD-PG-1409",
+      "database_id": "student_club",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.912
+    },
+    {
+      "case_id": "BIRD-PG-1411",
+      "database_id": "student_club",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.909
+    },
+    {
+      "case_id": "BIRD-PG-1427",
+      "database_id": "student_club",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.813
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.779
+    },
+    {
+      "case_id": "BIRD-PG-1457",
+      "database_id": "student_club",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.78
+    },
+    {
+      "case_id": "BIRD-PG-1460",
+      "database_id": "student_club",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.852
+    },
+    {
+      "case_id": "BIRD-PG-0717",
+      "database_id": "superhero",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.551
+    },
+    {
+      "case_id": "BIRD-PG-0726",
+      "database_id": "superhero",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.553
+    },
+    {
+      "case_id": "BIRD-PG-0738",
+      "database_id": "superhero",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.546
+    },
+    {
+      "case_id": "BIRD-PG-0760",
+      "database_id": "superhero",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.576
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "database_id": "superhero",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.549
+    },
+    {
+      "case_id": "BIRD-PG-0773",
+      "database_id": "superhero",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.547
+    },
+    {
+      "case_id": "BIRD-PG-0782",
+      "database_id": "superhero",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.544
+    },
+    {
+      "case_id": "BIRD-PG-0790",
+      "database_id": "superhero",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.595
+    },
+    {
+      "case_id": "BIRD-PG-0794",
+      "database_id": "superhero",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.576
+    },
+    {
+      "case_id": "BIRD-PG-0806",
+      "database_id": "superhero",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.548
+    },
+    {
+      "case_id": "BIRD-PG-0195",
+      "database_id": "toxicology",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.669
+    },
+    {
+      "case_id": "BIRD-PG-0200",
+      "database_id": "toxicology",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.663
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.748
+    },
+    {
+      "case_id": "BIRD-PG-0206",
+      "database_id": "toxicology",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.72
+    },
+    {
+      "case_id": "BIRD-PG-0226",
+      "database_id": "toxicology",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.668
+    },
+    {
+      "case_id": "BIRD-PG-0232",
+      "database_id": "toxicology",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.67
+    },
+    {
+      "case_id": "BIRD-PG-0239",
+      "database_id": "toxicology",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.667
+    },
+    {
+      "case_id": "BIRD-PG-0242",
+      "database_id": "toxicology",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.669
+    },
+    {
+      "case_id": "BIRD-PG-0263",
+      "database_id": "toxicology",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.692
+    },
+    {
+      "case_id": "BIRD-PG-0273",
+      "database_id": "toxicology",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.721
+    },
+    {
+      "case_id": "BIRD-PG-1028",
+      "database_id": "european_football_2",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 6.972
+    },
+    {
+      "case_id": "BIRD-PG-1030",
+      "database_id": "european_football_2",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 6.928
+    },
+    {
+      "case_id": "BIRD-PG-1036",
+      "database_id": "european_football_2",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 6.898
+    },
+    {
+      "case_id": "BIRD-PG-1039",
+      "database_id": "european_football_2",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 6.923
+    },
+    {
+      "case_id": "BIRD-PG-1048",
+      "database_id": "european_football_2",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.239
+    },
+    {
+      "case_id": "BIRD-PG-1091",
+      "database_id": "european_football_2",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 6.937
+    },
+    {
+      "case_id": "BIRD-PG-1102",
+      "database_id": "european_football_2",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 7.171
+    },
+    {
+      "case_id": "BIRD-PG-1110",
+      "database_id": "european_football_2",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 6.971
+    },
+    {
+      "case_id": "BIRD-PG-1116",
+      "database_id": "european_football_2",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 6.959
+    },
+    {
+      "case_id": "BIRD-PG-1130",
+      "database_id": "european_football_2",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 6.935
+    },
+    {
+      "case_id": "BIRD-PG-0859",
+      "database_id": "formula_1",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 3.703
+    },
+    {
+      "case_id": "BIRD-PG-0879",
+      "database_id": "formula_1",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 3.577
+    },
+    {
+      "case_id": "BIRD-PG-0897",
+      "database_id": "formula_1",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 3.712
+    },
+    {
+      "case_id": "BIRD-PG-0928",
+      "database_id": "formula_1",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 3.572
+    },
+    {
+      "case_id": "BIRD-PG-0933",
+      "database_id": "formula_1",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 3.572
+    },
+    {
+      "case_id": "BIRD-PG-0962",
+      "database_id": "formula_1",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 3.775
+    },
+    {
+      "case_id": "BIRD-PG-0964",
+      "database_id": "formula_1",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 3.651
+    },
+    {
+      "case_id": "BIRD-PG-0971",
+      "database_id": "formula_1",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 3.574
+    },
+    {
+      "case_id": "BIRD-PG-0981",
+      "database_id": "formula_1",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 3.597
+    },
+    {
+      "case_id": "BIRD-PG-0994",
+      "database_id": "formula_1",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 3.663
+    },
+    {
+      "case_id": "BIRD-PG-1150",
+      "database_id": "thrombosis_prediction",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.697
+    },
+    {
+      "case_id": "BIRD-PG-1153",
+      "database_id": "thrombosis_prediction",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.649
+    },
+    {
+      "case_id": "BIRD-PG-1155",
+      "database_id": "thrombosis_prediction",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.65
+    },
+    {
+      "case_id": "BIRD-PG-1192",
+      "database_id": "thrombosis_prediction",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.651
+    },
+    {
+      "case_id": "BIRD-PG-1205",
+      "database_id": "thrombosis_prediction",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.689
+    },
+    {
+      "case_id": "BIRD-PG-1220",
+      "database_id": "thrombosis_prediction",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.699
+    },
+    {
+      "case_id": "BIRD-PG-1227",
+      "database_id": "thrombosis_prediction",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.656
+    },
+    {
+      "case_id": "BIRD-PG-1242",
+      "database_id": "thrombosis_prediction",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.659
+    },
+    {
+      "case_id": "BIRD-PG-1267",
+      "database_id": "thrombosis_prediction",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.7
+    },
+    {
+      "case_id": "BIRD-PG-1275",
+      "database_id": "thrombosis_prediction",
+      "status": "gold_ready",
+      "checks_passed": true,
+      "case_wall_seconds": 0.699
+    }
+  ],
+  "checks": [
+    {
+      "name": "stage",
+      "passed": true
+    },
+    {
+      "name": "complete_no_errors",
+      "passed": true
+    },
+    {
+      "name": "postgresql_connected",
+      "passed": true
+    },
+    {
+      "name": "target_data_verified",
+      "passed": true
+    },
+    {
+      "name": "gold110_ready",
+      "passed": true
+    },
+    {
+      "name": "no_database_create_or_import",
+      "passed": true
+    },
+    {
+      "name": "protocol_and_spec",
+      "passed": true
+    },
+    {
+      "name": "runtime_previously_accepted",
+      "passed": true
+    },
+    {
+      "name": "runtime_report_sha256",
+      "passed": true
+    },
+    {
+      "name": "source_binding",
+      "passed": true
+    },
+    {
+      "name": "exact_server_code_dependency_environment_binding",
+      "passed": true
+    },
+    {
+      "name": "code_binding_self_digest",
+      "passed": true
+    },
+    {
+      "name": "delivered_file_inventory",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/api/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/api/routes.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/config.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/database.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/contracts.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/csv_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/dialects.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/postgres_config.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/postgres_connections.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/postgres_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/row_digest.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/sql_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/values.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/errors.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/main.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/client.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/schemas.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/server.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/tools/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/tools/database_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/tools/presentation_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/tools/time_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/model_client.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/constraint_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/constraint_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/data_qa_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/duckdb_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/metric_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/postgres_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/response_generator.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/single_database_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/sql_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/sql_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/retrieval/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/retrieval/graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/retrieval/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/retrieval/store.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/retrieval/time_field_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/security/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/security/access_control.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/security/auth.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/askdata_service.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/memory_store.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/session_archive.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/session_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/short_term_memory.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/skills/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/skills/registry.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/workflows/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/workflows/clarification.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/workflows/query_graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/workflows/result_builder.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/workflows/state.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/budgets.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/case_worker.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/evidence.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/isolated_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/manifest.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/metrics.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/model.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/native.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/retrieval.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/sql.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird_protocol.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/run_bird_benchmark.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/check_m2_c_bird_runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/m2_b_common.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/m2_b_dump.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/m2_b_structure.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/m2_b_target.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/m2_b_typed_rows.py",
+      "passed": true
+    },
+    {
+      "name": "mode_split_workers",
+      "passed": true
+    },
+    {
+      "name": "no_model_or_index_build",
+      "passed": true
+    },
+    {
+      "name": "fixed_denominator",
+      "passed": true
+    },
+    {
+      "name": "holdout_live_not_allowed",
+      "passed": true
+    },
+    {
+      "name": "run_id",
+      "passed": true
+    },
+    {
+      "name": "full_selection_in_frozen_order",
+      "passed": true
+    },
+    {
+      "name": "selected_input_digest",
+      "passed": true
+    },
+    {
+      "name": "selected_gold_sql_digest",
+      "passed": true
+    },
+    {
+      "name": "all_110_cases_in_order",
+      "passed": true
+    },
+    {
+      "name": "all_11_unique_source_receipts",
+      "passed": true
+    },
+    {
+      "name": "california_schools:receipt_versions_and_role",
+      "passed": true
+    },
+    {
+      "name": "california_schools:receipt_snapshot",
+      "passed": true
+    },
+    {
+      "name": "card_games:receipt_versions_and_role",
+      "passed": true
+    },
+    {
+      "name": "card_games:receipt_snapshot",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:receipt_versions_and_role",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:receipt_snapshot",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:receipt_versions_and_role",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:receipt_snapshot",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:receipt_versions_and_role",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:receipt_snapshot",
+      "passed": true
+    },
+    {
+      "name": "financial:receipt_versions_and_role",
+      "passed": true
+    },
+    {
+      "name": "financial:receipt_snapshot",
+      "passed": true
+    },
+    {
+      "name": "formula_1:receipt_versions_and_role",
+      "passed": true
+    },
+    {
+      "name": "formula_1:receipt_snapshot",
+      "passed": true
+    },
+    {
+      "name": "student_club:receipt_versions_and_role",
+      "passed": true
+    },
+    {
+      "name": "student_club:receipt_snapshot",
+      "passed": true
+    },
+    {
+      "name": "superhero:receipt_versions_and_role",
+      "passed": true
+    },
+    {
+      "name": "superhero:receipt_snapshot",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:receipt_versions_and_role",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:receipt_snapshot",
+      "passed": true
+    },
+    {
+      "name": "toxicology:receipt_versions_and_role",
+      "passed": true
+    },
+    {
+      "name": "toxicology:receipt_snapshot",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0011:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0025:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0048:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0072:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0077:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0083:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0085:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0352:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0356:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0371:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0379:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0407:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0415:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0459:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0473:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0537:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0557:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0595:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0604:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0629:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0637:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0639:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0671:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1476:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1479:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1480:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1481:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1505:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1509:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1524:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1533:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0092:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0099:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0112:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0115:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0118:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0145:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0152:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0173:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1361:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1398:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1409:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1411:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1427:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1457:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1460:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0717:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0726:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0738:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0760:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0773:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0782:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0790:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0794:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0195:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0200:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0206:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0232:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0239:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0242:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1028:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1030:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1036:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1039:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1048:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1091:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1102:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1110:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1116:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1130:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0859:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0879:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0897:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0928:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0933:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0962:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0964:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0971:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0981:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0994:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1150:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1153:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1155:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1192:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1205:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1220:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1227:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1242:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1267:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:report_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:original_gold_sql_hash",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:database_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:source_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:readonly_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:gold_ready",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:no_error",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:native_complete_supported_bounded_redacted",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:not_a_model_ex_score",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:runtime_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:zero_agent_model_counters",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:budget_field_whitelist",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1275:finite_within_case_budget",
+      "passed": true
+    },
+    {
+      "name": "entire_summary_independently_recomputed",
+      "passed": true
+    },
+    {
+      "name": "gold_visibility",
+      "passed": true
+    },
+    {
+      "name": "timeline",
+      "passed": true
+    },
+    {
+      "name": "snapshot_source_partition",
+      "passed": true
+    },
+    {
+      "name": "snapshot_reference_matches_reconstructed_payload",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "purpose": "Development-only observation run; no Gold execution, no EX score, no holdout",
+  "protocol_id": "m2_bird_pg_v1",
+  "case_ids": [
+    "BIRD-PG-0050", "BIRD-PG-0095", "BIRD-PG-1473",
+    "BIRD-PG-1435", "BIRD-PG-0201", "BIRD-PG-1399", "BIRD-PG-0586",
+    "BIRD-PG-0036", "BIRD-PG-0082", "BIRD-PG-1486", "BIRD-PG-0159",
+    "BIRD-PG-1405", "BIRD-PG-0368", "BIRD-PG-0766"
+  ]
+}

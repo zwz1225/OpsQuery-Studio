@@ -1,0 +1,226 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "plays": [
+        "play_count"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "metric_date",
+      "impressions",
+      "plays"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": "metric_date",
+    "order_sensitive": true,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT metric_date,SUM(impressions) impressions,SUM(play_count) plays FROM content_daily_metrics WHERE strftime(metric_date,'%Y-%m')='2026-02' GROUP BY 1 ORDER BY 1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CONTENT_OPS-002",
+  "question": "2026-02每天的视频曝光量和播放量；请返回指标日期、曝光量、播放量；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+  "gold_sql": "SELECT metric_date,SUM(impressions) impressions,SUM(play_count) plays FROM content_daily_metrics WHERE strftime(metric_date,'%Y-%m')='2026-02' GROUP BY 1 ORDER BY 1",
+  "database": "short_video_ops",
+  "scenario": "content_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.content_audits",
+      "short_video_ops.content_categories",
+      "short_video_ops.content_daily_metrics",
+      "short_video_ops.content_reports",
+      "short_video_ops.content_tag_relations",
+      "short_video_ops.content_tags",
+      "short_video_ops.contents",
+      "short_video_ops.creator_daily_metrics",
+      "short_video_ops.creator_profiles",
+      "short_video_ops.creators",
+      "short_video_ops.topic_content_relations",
+      "short_video_ops.trending_topics",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users",
+      "short_video_ops.video_exposures",
+      "short_video_ops.video_interactions",
+      "short_video_ops.video_plays"
+    ],
+    "roles": [
+      "content_ops"
+    ],
+    "user_id": "demo_content_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "metric_date",
+    "impressions",
+    "plays"
+  ],
+  "rows": [
+    {
+      "metric_date": "2026-02-01",
+      "impressions": 247,
+      "plays": 102
+    },
+    {
+      "metric_date": "2026-02-02",
+      "impressions": 287,
+      "plays": 111
+    },
+    {
+      "metric_date": "2026-02-03",
+      "impressions": 202,
+      "plays": 78
+    },
+    {
+      "metric_date": "2026-02-04",
+      "impressions": 271,
+      "plays": 88
+    },
+    {
+      "metric_date": "2026-02-05",
+      "impressions": 224,
+      "plays": 71
+    },
+    {
+      "metric_date": "2026-02-06",
+      "impressions": 220,
+      "plays": 95
+    },
+    {
+      "metric_date": "2026-02-07",
+      "impressions": 261,
+      "plays": 94
+    },
+    {
+      "metric_date": "2026-02-08",
+      "impressions": 241,
+      "plays": 94
+    },
+    {
+      "metric_date": "2026-02-09",
+      "impressions": 277,
+      "plays": 83
+    },
+    {
+      "metric_date": "2026-02-10",
+      "impressions": 245,
+      "plays": 98
+    },
+    {
+      "metric_date": "2026-02-11",
+      "impressions": 267,
+      "plays": 92
+    },
+    {
+      "metric_date": "2026-02-12",
+      "impressions": 288,
+      "plays": 115
+    },
+    {
+      "metric_date": "2026-02-13",
+      "impressions": 245,
+      "plays": 79
+    },
+    {
+      "metric_date": "2026-02-14",
+      "impressions": 251,
+      "plays": 104
+    },
+    {
+      "metric_date": "2026-02-15",
+      "impressions": 258,
+      "plays": 86
+    },
+    {
+      "metric_date": "2026-02-16",
+      "impressions": 239,
+      "plays": 84
+    },
+    {
+      "metric_date": "2026-02-17",
+      "impressions": 285,
+      "plays": 105
+    },
+    {
+      "metric_date": "2026-02-18",
+      "impressions": 241,
+      "plays": 89
+    },
+    {
+      "metric_date": "2026-02-19",
+      "impressions": 266,
+      "plays": 105
+    },
+    {
+      "metric_date": "2026-02-20",
+      "impressions": 239,
+      "plays": 85
+    },
+    {
+      "metric_date": "2026-02-21",
+      "impressions": 342,
+      "plays": 124
+    },
+    {
+      "metric_date": "2026-02-22",
+      "impressions": 224,
+      "plays": 85
+    },
+    {
+      "metric_date": "2026-02-23",
+      "impressions": 423,
+      "plays": 142
+    },
+    {
+      "metric_date": "2026-02-24",
+      "impressions": 241,
+      "plays": 89
+    },
+    {
+      "metric_date": "2026-02-25",
+      "impressions": 320,
+      "plays": 118
+    },
+    {
+      "metric_date": "2026-02-26",
+      "impressions": 269,
+      "plays": 92
+    },
+    {
+      "metric_date": "2026-02-27",
+      "impressions": 320,
+      "plays": 133
+    },
+    {
+      "metric_date": "2026-02-28",
+      "impressions": 292,
+      "plays": 101
+    }
+  ],
+  "generated_at": "2026-10-10T14:56:20.349153+00:00"
+}

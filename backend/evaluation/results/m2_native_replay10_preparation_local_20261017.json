@@ -1,0 +1,611 @@
+{
+  "stage": "M2 captured SQL10 native replay local preparation",
+  "run_status": "complete",
+  "recorded_at": "2026-10-17T14:26:17.674540+00:00",
+  "policy": "bird_captured_development_native_replay_v1",
+  "source_report_sha256": "4f08270884badfe30d896d5c5ac55c84a7eee1c1060891c2846a452949a4512a",
+  "source_case_count": 14,
+  "selected_case_count": 10,
+  "excluded_cases": [
+    {
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "reason": "clarification_without_executed_sql"
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "reason": "clarification_without_executed_sql"
+    },
+    {
+      "case_id": "BIRD-PG-1399",
+      "database_id": "student_club",
+      "reason": "clarification_without_executed_sql"
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "database_id": "codebase_community",
+      "reason": "clarification_without_executed_sql"
+    }
+  ],
+  "domain_count": 6,
+  "sql_policy_check_count": 20,
+  "sql_policy_pass_count": 20,
+  "cases": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "captured_sql_sha256": "74bdbffd2cff2db841fe6c7e71e3e88d6f62b676f2ee49a74cc8db8a9f050423",
+      "gold_sql_sha256": "84767e6311bf2f6fae4853411b0a6a368bc364d1d8b8ec8e66ed70589fb1bfd9",
+      "query_count": 2,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [
+          "root_order_null_policy_differs"
+        ],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "satscores",
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "sc.avgscrmath",
+              "descending": true,
+              "nulls_first": true
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "satscores",
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "t1.avgscrmath",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "captured_sql_sha256": "03c3ab42bbb2733e9a0c1a3514054b61a083acbe8816f9d81886536469781618",
+      "gold_sql_sha256": "4cb3c502c6a3db5ecb98afd9c5e506a763e5fa64d5dbf48f4ac5e81762f55d68",
+      "query_count": 2,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [
+          "referenced_tables_differ",
+          "reference_where_columns_absent_from_prediction"
+        ],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "client",
+            "disp",
+            "district"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "c.birth_date",
+              "descending": true,
+              "nulls_first": true
+            },
+            {
+              "expression": "dist.a11",
+              "descending": true,
+              "nulls_first": true
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "account",
+            "client",
+            "disp",
+            "district"
+          ],
+          "string_literals": [],
+          "where_column_names": [
+            "birth_date",
+            "client_id"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [
+          "birth_date",
+          "client_id"
+        ],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "captured_sql_sha256": "a6b722ad026e88bcbc1eace70cb36a7a179bba00883578842d8a6c186b89910b",
+      "gold_sql_sha256": "6b0e66dee0ac500d9ae990d2f35f9810e52dee07decc895d6c900ae5de2b3ff6",
+      "query_count": 2,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "customers",
+            "yearmonth"
+          ],
+          "string_literals": [
+            "2013",
+            "SME"
+          ],
+          "where_column_names": [
+            "date",
+            "segment"
+          ],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "customers",
+            "yearmonth"
+          ],
+          "string_literals": [
+            "2013",
+            "SME"
+          ],
+          "where_column_names": [
+            "date",
+            "segment"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "captured_sql_sha256": "5127fe2a73a331a86f3579267db69ff11e3592cef5da7789f82b36651bc7d0ec",
+      "gold_sql_sha256": "8538d58c9f812f65603a8d80ad075616f658e32d29e6484923f283a95e9d1351",
+      "query_count": 2,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [
+          "projection_expression_count_differs",
+          "root_order_null_policy_differs"
+        ],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "satscores",
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "sat.numge1500",
+              "descending": true,
+              "nulls_first": true
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 6,
+          "projection_star": false,
+          "physical_tables": [
+            "satscores",
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "t1.numge1500",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "database_id": "california_schools",
+      "captured_sql_sha256": "419782795778e2ec2540afbd44064928fe82e560ae63753fa928de7a64f7bef9",
+      "gold_sql_sha256": "619fa82fe4d3adf3437cd0f70a51b3650629c66d661c06f4ee54844e52d1597f",
+      "query_count": 2,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [
+          "root_order_null_policy_differs"
+        ],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "ABS(longitude)",
+              "descending": true,
+              "nulls_first": true
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "schools"
+          ],
+          "string_literals": [],
+          "where_column_names": [],
+          "root_order": [
+            {
+              "expression": "ABS(longitude)",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "captured_sql_sha256": "f73f7d5fe11b44f61633a2c26dd5447d5e948b3ac558ab109735a60705008f85",
+      "gold_sql_sha256": "c4af24c169aa5b8fa9528f00427856907ca3725364e65b7503f512ffd876111f",
+      "query_count": 2,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [
+          "projection_expression_count_differs",
+          "reference_where_columns_absent_from_prediction",
+          "reference_literals_absent_from_prediction"
+        ],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "customers"
+          ],
+          "string_literals": [
+            "CZK",
+            "EUR",
+            "No",
+            "Yes"
+          ],
+          "where_column_names": [
+            "currency"
+          ],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "customers"
+          ],
+          "string_literals": [
+            "CZK",
+            "EUR",
+            "SME"
+          ],
+          "where_column_names": [
+            "segment"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [
+          "segment"
+        ],
+        "missing_reference_literals": [
+          "SME"
+        ],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "captured_sql_sha256": "020c431bb2afb4302e4c93778c1561c91839298240c3af71bc87803c3b87ea36",
+      "gold_sql_sha256": "ee7eafdc44edb97e440951e8acc4528f8c4abbb8814348ec4725207693e20179",
+      "query_count": 2,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [
+          "projection_star_vs_reference_projection",
+          "referenced_tables_differ"
+        ],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": true,
+          "physical_tables": [
+            "account",
+            "disp",
+            "trans"
+          ],
+          "string_literals": [
+            "VYBER"
+          ],
+          "where_column_names": [
+            "client_id",
+            "operation"
+          ],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "account",
+            "client",
+            "disp",
+            "trans"
+          ],
+          "string_literals": [
+            "VYBER"
+          ],
+          "where_column_names": [
+            "client_id",
+            "operation"
+          ],
+          "root_order": []
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "database_id": "student_club",
+      "captured_sql_sha256": "af7d7e51cde1fbae7d4f2607581003d8d2a975e1c9bb3efd0158f41a8be4d42c",
+      "gold_sql_sha256": "82bd66178d2a91f1c8ec686ac22f96f1ab019f7c4140115ed937ec7c2803b493",
+      "query_count": 2,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [
+          "referenced_tables_differ",
+          "reference_where_columns_absent_from_prediction"
+        ],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "budget"
+          ],
+          "string_literals": [
+            "April Speaker"
+          ],
+          "where_column_names": [
+            "link_to_event"
+          ],
+          "root_order": [
+            {
+              "expression": "total_amount_budgeted",
+              "descending": false,
+              "nulls_first": false
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 2,
+          "projection_star": false,
+          "physical_tables": [
+            "budget",
+            "event"
+          ],
+          "string_literals": [
+            "April Speaker"
+          ],
+          "where_column_names": [
+            "event_name"
+          ],
+          "root_order": [
+            {
+              "expression": "SUM(t2.amount)",
+              "descending": false,
+              "nulls_first": false
+            }
+          ]
+        },
+        "missing_where_columns": [
+          "event_name"
+        ],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "captured_sql_sha256": "7d4ee4c06423ed2ce120b6a061d1110abbb2167460d33ba830dde97a775d1dad",
+      "gold_sql_sha256": "a98925992af065b8fc1288070fb4405d44c0ccef7606743a2c32041617aa33e3",
+      "query_count": 2,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "cards"
+          ],
+          "string_literals": [
+            "borderless"
+          ],
+          "where_column_names": [],
+          "root_order": []
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "cards"
+          ],
+          "string_literals": [
+            "borderless"
+          ],
+          "where_column_names": [],
+          "root_order": []
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [],
+        "case_only_literal_pairs": [],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "database_id": "superhero",
+      "captured_sql_sha256": "f62c2794e5b2848bcc1caaca861785f8c4eaf31bda3800e7d20f5775dac168b3",
+      "gold_sql_sha256": "da6036853d4dc0b1cff97c50a4539a22ac5d6649ec64f170abd7a5b78edfcf34",
+      "query_count": 2,
+      "reviewer_hypotheses": {
+        "scope": "trusted_reviewer_only_not_model_feedback",
+        "causes_confirmed": false,
+        "codes": [
+          "reference_literals_absent_from_prediction",
+          "case_only_literal_difference",
+          "root_order_null_policy_differs"
+        ],
+        "prediction_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "attribute",
+            "hero_attribute",
+            "superhero"
+          ],
+          "string_literals": [
+            "strength"
+          ],
+          "where_column_names": [
+            "attribute_name"
+          ],
+          "root_order": [
+            {
+              "expression": "ha.attribute_value",
+              "descending": true,
+              "nulls_first": true
+            }
+          ]
+        },
+        "reference_structure": {
+          "available": true,
+          "projection_expression_count": 1,
+          "projection_star": false,
+          "physical_tables": [
+            "attribute",
+            "hero_attribute",
+            "superhero"
+          ],
+          "string_literals": [
+            "Strength"
+          ],
+          "where_column_names": [
+            "attribute_name"
+          ],
+          "root_order": [
+            {
+              "expression": "t2.attribute_value",
+              "descending": true,
+              "nulls_first": false
+            }
+          ]
+        },
+        "missing_where_columns": [],
+        "missing_reference_literals": [
+          "Strength"
+        ],
+        "case_only_literal_pairs": [
+          {
+            "prediction": "strength",
+            "reference": "Strength"
+          }
+        ],
+        "meaning": "Structural differences are hypotheses, not automatic SQL rewrites or scoring overrides."
+      }
+    }
+  ],
+  "postgresql_connected": false,
+  "new_model_request_count": 0,
+  "native_values_verified": false,
+  "gold_executed": false,
+  "scope": "SQL bytes, development selection and readonly policy checked locally; actual native mismatch counts and fixed_error_list require server execution."
+}

@@ -1,0 +1,2629 @@
+{
+  "stage": "M2 C BIRD external benchmark",
+  "run_status": "complete",
+  "started_at": "2026-10-16T08:29:25.251455+00:00",
+  "errors": [],
+  "postgresql_connected": true,
+  "database_created": false,
+  "database_imported": false,
+  "target_data_verified": true,
+  "new_model_request_count": 24,
+  "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+  "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede",
+  "mode": "live",
+  "source_binding": {
+    "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+    "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+    "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+    "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+    "physical_database": "askdata_m2_bird",
+    "physical_schema": "public",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "budgets": {
+      "case_wall_timeout_seconds": 600,
+      "chat_max_output_tokens": 4096,
+      "connect_timeout_seconds": 10,
+      "enforcement_status": "required_in_external_runner_before_live; existing internal runners are not claimed compliant",
+      "lock_timeout_ms": 5000,
+      "max_chat_http_attempts_per_case": 10,
+      "max_prompt_utf8_bytes": 98304,
+      "max_sql_tool_calls": 3,
+      "max_total_model_http_attempts_per_case": 16,
+      "max_transport_retries_per_request": 1,
+      "max_validation_attempts_per_sql_round": 3,
+      "model_request_timeout_seconds": 180,
+      "result_limit_probe": "fetch limit+1; never score preview or partial rows",
+      "result_payload_byte_limit": 67108864,
+      "result_row_limit": 100000,
+      "shared_attempt_counters": "Include generation, preprocessing, embeddings, reranking and transport retries; shared index build reported separately",
+      "sql_statement_timeout_ms": 30000,
+      "usage": "record provider usage when available; missing usage is unknown, never zero",
+      "workers": 1
+    },
+    "scoring_policy": "bird_native_tuple_set_ex_v1",
+    "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1"
+  },
+  "code_binding": {
+    "sha256": "96d0ccff7b6bfd5962c8dc091b36d68238d4068da39f379b0a30156414e7b269",
+    "files": {
+      "app/__init__.py": "355b723e052e3e6c211f4cd922a2cccafd16836360ce633afbafdbf32bdd90ad",
+      "app/api/__init__.py": "e13d97d643b76827935fb88232e4012ce4161d82adffe01e040e48090b2887ea",
+      "app/api/routes.py": "3237efe75ad8141ca01d03b08e303c8bc30130f1dbeddd5f01e62e52087f893c",
+      "app/config.py": "7e71979bf12e33bc7636d64c9a608552103c97cf176db64f8d731c73a7fc75b3",
+      "app/database.py": "30ad145862f13262fcc4b6c3881a4823533dda3814fc9e062ba069780f92a863",
+      "app/datasources/__init__.py": "660dc93b3ad4e3454e433dd79bcfd7f2db67274baeac0ebf7d84682296b117b2",
+      "app/datasources/contracts.py": "b9da804d820b1d5f20fb642cf60bf37039a6fb6dd33e6212081b3335dd32c869",
+      "app/datasources/csv_metadata.py": "ef68964f78da54eee5b0cd64b8f0dd3c53adde04adbcfc9cf471494f9e144638",
+      "app/datasources/dialects.py": "27eeb0134a3802e5a71ab013f1b7fd6f375bce3720823a449b762c962c9bc13b",
+      "app/datasources/postgres_config.py": "cc1dc6f6c80dd88f2e3937cd6753f84b02e5ef2b7b0ae9a151524c715e5442d2",
+      "app/datasources/postgres_connections.py": "26b08a853c6f691a21a3f11b615f6caea7eb6eb22ab10a22a3e544ac1146f0a1",
+      "app/datasources/postgres_metadata.py": "1a1f3cd0bac6193231a9403e010a3c482904f851ae433abb1d95bb94183c771e",
+      "app/datasources/row_digest.py": "06cb48c69b2b0d2e05006de64f6555fe8b0ab4460118afb92af8e9c3efc28b06",
+      "app/datasources/runtime.py": "586c9024d8b8dbca5ffa9ea3f04d403190285333e4c04b3a19036e897ddcbe24",
+      "app/datasources/sql_policy.py": "32407706c83ce218440a0d25cc2b07a245463a5cb93a52e21aa0d4514dd6ded9",
+      "app/datasources/values.py": "869fa4ba783aebb71a5a643ede27c1997894e1740e865f205fd935790662e7df",
+      "app/errors.py": "b71518301668603cb4dce07daed44f611bdad0a31b1e0fd9f50ba8b6fdbe4b8d",
+      "app/main.py": "cae83be9b955964b25f17045a742226fae2db7751c8567e5263c88ea0a785c0f",
+      "app/mcp_runtime/__init__.py": "25afe0d37fd99611244cc7ff3e903cfa5c2dade31a15870e15269a609c6a7053",
+      "app/mcp_runtime/client.py": "549774b6d3b0b5d2903e56f538e61299a3c9a69abcb2be6c5c155f82d0d3e51d",
+      "app/mcp_runtime/schemas.py": "d71c055298a5a338f5126235c5604ce0ca96cb719db629d06a91b23a03d3787a",
+      "app/mcp_runtime/server.py": "bc5cd3e3b1be1dfc2e12dc742046c44d0b701fe8893a82f4897471a0e915afdd",
+      "app/mcp_runtime/tools/__init__.py": "b465bdc3de9e8878a59a8bd244b2e42fa03594e886d90ac5a6b218bf3892535f",
+      "app/mcp_runtime/tools/database_tools.py": "4e916e5043d6bad56429f727377415bdac14c025a585fe2ab3865ef0911e83c9",
+      "app/mcp_runtime/tools/presentation_tools.py": "1524ab3baaf0ecca5e8df1b03e5682f6dd8bdfff37e3f2b64b7cf88aa9f19653",
+      "app/mcp_runtime/tools/time_tools.py": "59a95659eafcc50f4c9ef2b2d1f783a04617e29018251fce64fb3af55d500974",
+      "app/model_client.py": "f68cd0ced71c42e6e18464f86310aed22b71386f63f1160e49fad8bd02c92093",
+      "app/models.py": "2fea8f78c9078f6bbf876d18193d4503b42f94daa4ba5c2f31b6fdd8784cf83e",
+      "app/preprocessing.py": "28a9359411a925147457f5514837471e75be910e182540344add5aac21a000a2",
+      "app/querying/__init__.py": "6dc948905075e824c2a2607ef66f9b842d53c013f2644bd78ed7551eac2c652c",
+      "app/querying/constraint_planner.py": "73fc8d4fe47e69285903a80b9e783acbd45bf0bc65575c49380b3f9fec8f5ef0",
+      "app/querying/constraint_validator.py": "d9ebea98ba3dea34f89bf8b2645dcd6a81bcc6b72f2af7df5f334f241db2db7c",
+      "app/querying/data_qa_agent.py": "59a3faf139e9da26e5fd373f20f1e2a85166363eea9b1c8e9888740ec49b6fe3",
+      "app/querying/duckdb_engine.py": "0ad6bd9980b1962dd630519cb9d8256b06f7aabbaa3446fb9009f4a27aa0cc26",
+      "app/querying/metric_planner.py": "28d1d3bc60988779b1e3d845993e73861c15cb6a9511554605eca94aff662e38",
+      "app/querying/models.py": "4472388a7ae0bcf5803b32b02c6290757ffc4ae62c7ea2611a9eac5de7499ad3",
+      "app/querying/postgres_engine.py": "eb533e3bb5a022bcab33a181fc992cf575bdca92debbbdd486a184a09df4c857",
+      "app/querying/response_generator.py": "c99a6d87dd7774a003a076f4ade68b4ba364b497a6a5fc5c3cbe3ea4b524561c",
+      "app/querying/single_database_agent.py": "9115867fb1b964ee1aba0bde5d07364703a8c381814cbe22a91c933c8a37a107",
+      "app/querying/sql_context.py": "893df35a113720a94276b2f3108a38b51f1f8167231ff9b8bc179f078c2c543f",
+      "app/querying/sql_validator.py": "f516de49204f43129383ce4396c1ecbbc732cbc72336507597e82e74b5e18e90",
+      "app/retrieval/__init__.py": "af173889acb98646a899576f7f784db01a799c468e9736c511c500bef1ef5c53",
+      "app/retrieval/graph.py": "60195e45df0671a5c8e273aa5584a11907c87131816da5fac9773b0f6d0bf2ad",
+      "app/retrieval/service.py": "ad490b0ed8154f9237d671507896874f4fd9929e0b8edb13972f905846b2979e",
+      "app/retrieval/store.py": "965e5fd6c774229ece9c82f053e9f2d932e7ad368fde6c1c336422b6b5131656",
+      "app/retrieval/time_field_policy.py": "62178d671b4e3772d98a36833ece3cbf0e6d0beee10d3d9b9386605b2ab0d0a4",
+      "app/security/__init__.py": "f64ea4a1b53332090130642c17e6265aa4df9019634fc075448b25f3ba4e94a6",
+      "app/security/access_control.py": "0165c9bf5d87cbe21da951642bcac8f68055be41ce9eac91ad8892ec3dd6f1ee",
+      "app/security/auth.py": "1aaa891fc7f443bb8a7d678ac4be82a975ae1722dba56f7e228e112435dc76e3",
+      "app/service.py": "3961513ad9e067f749d6bb4aa7bcb5d680219bb564baa06fcfa6b0d5a6516296",
+      "app/services/__init__.py": "020f361755c5bedb3b0b82e4d1458b862c7b8f3d2073d0a87325f2772220de0c",
+      "app/services/askdata_service.py": "f13e3041bd8ca20dfc7af5d7153afa934f6da9411cde8729bc8ca42663b069d5",
+      "app/services/memory_store.py": "d4ed8600af12b383a459aeebf4c40d74ef99209da3fff8d611865a9b36b6cb14",
+      "app/services/session_archive.py": "008336024d456a019341dcebaefbc7527adbcd8aa9d351a49914225d07951b51",
+      "app/services/session_context.py": "b4590ae4410f13e05d678fbcbf8b69c102400ae67986d4ad8d4ef7093ccbbe7c",
+      "app/services/short_term_memory.py": "bfbc81597254e58f8303b81e53ebcd24a244fc4d6cd7053c1d5cabe8ad48299f",
+      "app/skills/__init__.py": "680726c976c87e1e888df0697b232234722401e1d1b02636949f18afab163949",
+      "app/skills/registry.py": "b1578a6829402fd103be8b40920d8fff682694ed4c4fd986935b6c8b6eb37f53",
+      "app/workflows/__init__.py": "3da3f98de22b4df4c01d7082562b1decac29704d80539cc9e7a8e4f9378ae397",
+      "app/workflows/clarification.py": "17314e22bdd5194f41b360cea4a38f22850a6afecc7514ec73bc9be4fb355eb8",
+      "app/workflows/query_graph.py": "9b818c9309a178b049da9edf750354bf2af8ba2781bd7091ea1447bdaafe3461",
+      "app/workflows/result_builder.py": "bfca63b31f0b71f1e823bc59912b58a75317d80f2d34cef1abec5aec46dad72e",
+      "app/workflows/state.py": "7532b4d7d9223b555e22f9bb38810da1c8fa44c9c58bbe5992c42c72094ffeaf",
+      "evaluation/bird/__init__.py": "b9d0c593cf9368540295851f3c4acb9242bc17aaa48f1b779ee7b174f9fc98f3",
+      "evaluation/bird/budgets.py": "688de220e22e28e1fe4366db4348866d61eb946d5345fd918e02e573cc013e39",
+      "evaluation/bird/case_worker.py": "3de928924e8f353322d5208421e97b68588c68a0f2423bdca6c824d8964e7c9d",
+      "evaluation/bird/evidence.py": "131ed1bd820938e7e09c0f530ebede143941fd0b418e27c2a9d802b4208f3fec",
+      "evaluation/bird/isolated_agent.py": "925d47c59c0d33fee347846b461be105aa326061cc507c6dba0bce8f06c676c0",
+      "evaluation/bird/manifest.py": "b32775e26be5eda69e76d19cd987224f187a71a6fcc1ba99866883b8adcbd83f",
+      "evaluation/bird/metrics.py": "83cf7d18559f51a532d2726100eff27353f5c6a5c24a46f5f857081d8b20c7c7",
+      "evaluation/bird/model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+      "evaluation/bird/native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f",
+      "evaluation/bird/retrieval.py": "075a2b9b9e34e0c0d651a344245d74aca46525d95d8b60ede8f206e770cfabbf",
+      "evaluation/bird/runner.py": "fbdbde667433949fe755cbd1680f140d7a2b6e8478816f3beb21c095368402e5",
+      "evaluation/bird/runtime.py": "e367e93db106bf3d5687f7cec815246e5d64ac920e62642f1d494c19a128a160",
+      "evaluation/bird/sql.py": "b84ca3e5a2adcb979e65fc995f920910b00583d1ca006c45cbcbe53a3f2e81fd",
+      "evaluation/bird/supervisor.py": "2a13f26b43b26ba756723f883a84d37ab5f2c3968096eb6daecde0e30ec9d082",
+      "evaluation/bird_protocol.py": "f1a60f00ae8bd8f757b28f3139e9be83fa196e8c981c0884e41315bb4c5e6b91",
+      "evaluation/run_bird_benchmark.py": "df76b1ad2280f1a1a89f76743890abcd194c0660def407f95113421dae15f48d",
+      "scripts/check_m2_c_bird_runtime.py": "70d54f2a35d8ef37de21eb01055ddd1e8a25d479638ca71eeb536334fd85b87c",
+      "scripts/m2_b_common.py": "47d4696ddd7a61f2a6c60b29ba4785f31eac1929c484d1b69d30d752745affef",
+      "scripts/m2_b_dump.py": "116345a7e0a8f3a6dc49c305b899f47655cc5d6416adcdcc8eb6bce6b0e6944f",
+      "scripts/m2_b_structure.py": "e4a33335815cb511c3e0ee6c173bfdaafd9ba5214f88e8bbd8c3e325a4f9a1a6",
+      "scripts/m2_b_target.py": "6a952d812604e27c1e43335fe82d4e4958c3c07ca37b9af980c034e8ad19f7a9",
+      "scripts/m2_b_typed_rows.py": "805165db8aba54ee61512e40f4dcb216f9a2f6b90f460d41163ca4b66e26b9ac"
+    },
+    "dependencies": {
+      "psycopg": "3.2.13",
+      "psycopg-pool": "3.2.8",
+      "sqlglot": "30.17.0"
+    },
+    "python": "3.11.15",
+    "system": "Linux",
+    "kernel": "6.8.0-59-generic",
+    "machine": "x86_64",
+    "seccomp_library_version": "2.5.3"
+  },
+  "run_id": "2aa8e25fe99f4118ad12ef8b35756d29",
+  "runtime_report_sha256": "ecaf50f6c7a17460dd6260a9dcf198f91fcf33e397e581c16aa82a55d7d63473",
+  "workers": 1,
+  "cases": [
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "mode": "live",
+      "status": "scored",
+      "complete": true,
+      "gold_sql_sha256": "8538d58c9f812f65603a8d80ad075616f658e32d29e6484923f283a95e9d1351",
+      "ex_correct": false,
+      "errors": [],
+      "new_model_request_count": 3,
+      "source_identity": {
+        "logical_database_id": "california_schools",
+        "source_id": "bird_mini_dev_postgres_california_schools",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+        "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+      },
+      "query_role": "askdata_m2_ro_california_schools",
+      "retrieval": {
+        "bm25_count": 30,
+        "dense_count": 30,
+        "rrf_count": 40,
+        "selected_count": 8,
+        "selected_field_ids": [
+          "california_schools.schools.admfname1",
+          "california_schools.satscores.numge1500",
+          "california_schools.schools.admlname1",
+          "california_schools.schools.admlname2",
+          "california_schools.schools.admemail1",
+          "california_schools.satscores.sname",
+          "california_schools.satscores.rtype",
+          "california_schools.satscores.dname"
+        ],
+        "source_identity": {
+          "logical_database_id": "california_schools",
+          "source_id": "bird_mini_dev_postgres_california_schools",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+          "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+        }
+      },
+      "index_sha256": "6b4862fadfc46c1a40a5592d2aed501c559b1df794693902ef145021ada99f7a",
+      "agent_isolation": {
+        "filesystem": "seccomp_deny_all_new_file_opens",
+        "additional_landlock_abi": 4,
+        "network_and_process": "seccomp",
+        "seccomp_library_version": "2.5.3",
+        "kernel": "6.8.0-59-generic",
+        "project_read_access": false,
+        "environment_credentials": false,
+        "direct_database_access": false
+      },
+      "agent_status": "answered",
+      "agent_trace": [
+        {
+          "sql_round": 1,
+          "validation_attempt": 1,
+          "valid": true
+        }
+      ],
+      "executions": [
+        {
+          "success": true,
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 2,
+            "payload_bytes": 57,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "NoneType"
+            ],
+            "ordered_native_diagnostic_sha256": "73e1e6a2f8233fb30ed9057aedaf9953004f35cf54c51ef071b19dc8d4b3ecab"
+          }
+        }
+      ],
+      "validation_events": [
+        {
+          "sql_round": 1,
+          "valid": true
+        }
+      ],
+      "first_sql_execution_success": true,
+      "final_sql_execution_success": true,
+      "result": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 2,
+        "payload_bytes": 57,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "NoneType"
+        ],
+        "ordered_native_diagnostic_sha256": "73e1e6a2f8233fb30ed9057aedaf9953004f35cf54c51ef071b19dc8d4b3ecab"
+      },
+      "generated_sql": "SELECT s.admfname1, s.admlname1 FROM schools s JOIN satscores sat ON s.cdscode = sat.cds ORDER BY sat.numge1500 DESC LIMIT 1",
+      "result_diagnostics": {
+        "ordered_rows_match": false,
+        "row_multiset_match": false,
+        "column_count_match": false
+      },
+      "runtime_closed": true,
+      "budget": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 1,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 1
+        },
+        "generation_attempts": {
+          "1": 1
+        },
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 71,
+              "total_tokens": 71
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "rerank",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 8242
+            },
+            "returned_model": "qwen3-rerank",
+            "endpoint_kind": "rerank",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 2618,
+              "completion_tokens": 50,
+              "prompt_tokens": 2568,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "text_tokens": 2568
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 4.251
+      },
+      "case_wall_seconds": 4.425
+    },
+    {
+      "case_id": "BIRD-PG-0480",
+      "database_id": "card_games",
+      "mode": "live",
+      "status": "scored",
+      "complete": true,
+      "gold_sql_sha256": "b0ca5de632938addc2f03c9eea7354d01b451ebf1551cd3b31c3a40a7a0d30c2",
+      "ex_correct": true,
+      "errors": [],
+      "new_model_request_count": 3,
+      "source_identity": {
+        "logical_database_id": "card_games",
+        "source_id": "bird_mini_dev_postgres_card_games",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+        "data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51"
+      },
+      "query_role": "askdata_m2_ro_card_games",
+      "retrieval": {
+        "bm25_count": 30,
+        "dense_count": 30,
+        "rrf_count": 40,
+        "selected_count": 7,
+        "selected_field_ids": [
+          "card_games.foreign_data.flavortext",
+          "card_games.cards.name",
+          "card_games.foreign_data.name",
+          "card_games.cards.flavortext",
+          "card_games.cards.facename",
+          "card_games.foreign_data.language",
+          "card_games.cards.flavorname"
+        ],
+        "source_identity": {
+          "logical_database_id": "card_games",
+          "source_id": "bird_mini_dev_postgres_card_games",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+          "data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51"
+        }
+      },
+      "index_sha256": "d7bfc4bac72ec72fb6549a4bc655f96f0f7ea07706d608b22c1ec0a84ddf4624",
+      "agent_isolation": {
+        "filesystem": "seccomp_deny_all_new_file_opens",
+        "additional_landlock_abi": 4,
+        "network_and_process": "seccomp",
+        "seccomp_library_version": "2.5.3",
+        "kernel": "6.8.0-59-generic",
+        "project_read_access": false,
+        "environment_credentials": false,
+        "direct_database_access": false
+      },
+      "agent_status": "answered",
+      "agent_trace": [
+        {
+          "sql_round": 1,
+          "validation_attempt": 1,
+          "valid": true
+        }
+      ],
+      "executions": [
+        {
+          "success": true,
+          "diagnostic": {
+            "complete": true,
+            "row_count": 2,
+            "column_count": 1,
+            "payload_bytes": 134,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "2fd91103911e45714b353eb3861ca4de33ff42d1ba9893921075be562417fbe6"
+          }
+        }
+      ],
+      "validation_events": [
+        {
+          "sql_round": 1,
+          "valid": true
+        }
+      ],
+      "first_sql_execution_success": true,
+      "final_sql_execution_success": true,
+      "result": {
+        "complete": true,
+        "row_count": 2,
+        "column_count": 1,
+        "payload_bytes": 134,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "2fd91103911e45714b353eb3861ca4de33ff42d1ba9893921075be562417fbe6"
+      },
+      "generated_sql": "SELECT fd.flavortext FROM foreign_data fd JOIN cards c ON fd.uuid = c.uuid WHERE c.name = 'Ancestor''s Chosen' AND fd.language = 'Italian'",
+      "result_diagnostics": {
+        "ordered_rows_match": true,
+        "row_multiset_match": true,
+        "column_count_match": true
+      },
+      "runtime_closed": true,
+      "budget": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 1,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 1
+        },
+        "generation_attempts": {
+          "1": 1
+        },
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 53,
+              "total_tokens": 53
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "rerank",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 6872
+            },
+            "returned_model": "qwen3-rerank",
+            "endpoint_kind": "rerank",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 1989,
+              "completion_tokens": 46,
+              "prompt_tokens": 1943,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "text_tokens": 1943
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 16.854
+      },
+      "case_wall_seconds": 17.04
+    },
+    {
+      "case_id": "BIRD-PG-0707",
+      "database_id": "codebase_community",
+      "mode": "live",
+      "status": "scored",
+      "complete": true,
+      "gold_sql_sha256": "f58721fed9185449bdcfa309c598da82f620ac2ad39d49d6eea528dd5ee19e84",
+      "ex_correct": true,
+      "errors": [],
+      "new_model_request_count": 3,
+      "source_identity": {
+        "logical_database_id": "codebase_community",
+        "source_id": "bird_mini_dev_postgres_codebase_community",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "9f9da4752911621e3159a107239173112469ab862e90ea007a9cc23a4aed5940",
+        "data_version": "ca3a7af721e8f16536b022f5fa94d2bd744dd8ebef57504070c280cd3b206a20"
+      },
+      "query_role": "askdata_m2_ro_codebase_community",
+      "retrieval": {
+        "bm25_count": 30,
+        "dense_count": 30,
+        "rrf_count": 40,
+        "selected_count": 9,
+        "selected_field_ids": [
+          "codebase_community.posts.viewcount",
+          "codebase_community.comments.score",
+          "codebase_community.posts.score",
+          "codebase_community.posthistory.comment",
+          "codebase_community.posts.body",
+          "codebase_community.comments.postid",
+          "codebase_community.comments.userid",
+          "codebase_community.comments.id",
+          "codebase_community.comments.text"
+        ],
+        "source_identity": {
+          "logical_database_id": "codebase_community",
+          "source_id": "bird_mini_dev_postgres_codebase_community",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "9f9da4752911621e3159a107239173112469ab862e90ea007a9cc23a4aed5940",
+          "data_version": "ca3a7af721e8f16536b022f5fa94d2bd744dd8ebef57504070c280cd3b206a20"
+        }
+      },
+      "index_sha256": "02763990de8f096eb519a6d428b0063bb8c02843fd83ebeda59a492da4b007dc",
+      "agent_isolation": {
+        "filesystem": "seccomp_deny_all_new_file_opens",
+        "additional_landlock_abi": 4,
+        "network_and_process": "seccomp",
+        "seccomp_library_version": "2.5.3",
+        "kernel": "6.8.0-59-generic",
+        "project_read_access": false,
+        "environment_credentials": false,
+        "direct_database_access": false
+      },
+      "agent_status": "answered",
+      "agent_trace": [
+        {
+          "sql_round": 1,
+          "validation_attempt": 1,
+          "valid": true
+        }
+      ],
+      "executions": [
+        {
+          "success": true,
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 519,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "1ee863a027870162e36cc6e80f877ad749a3921e55b23f27281f57c432469378"
+          }
+        }
+      ],
+      "validation_events": [
+        {
+          "sql_round": 1,
+          "valid": true
+        }
+      ],
+      "first_sql_execution_success": true,
+      "final_sql_execution_success": true,
+      "result": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 519,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "1ee863a027870162e36cc6e80f877ad749a3921e55b23f27281f57c432469378"
+      },
+      "generated_sql": "SELECT c.text FROM comments c JOIN posts p ON c.postid = p.id WHERE p.viewcount BETWEEN 100 AND 150 ORDER BY c.score DESC LIMIT 1",
+      "result_diagnostics": {
+        "ordered_rows_match": true,
+        "row_multiset_match": true,
+        "column_count_match": true
+      },
+      "runtime_closed": true,
+      "budget": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 1,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 1
+        },
+        "generation_attempts": {
+          "1": 1
+        },
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 67,
+              "total_tokens": 67
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "rerank",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 7420
+            },
+            "returned_model": "qwen3-rerank",
+            "endpoint_kind": "rerank",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 2887,
+              "completion_tokens": 46,
+              "prompt_tokens": 2841,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "text_tokens": 2841
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 18.654
+      },
+      "case_wall_seconds": 18.824
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "mode": "live",
+      "status": "scored",
+      "complete": true,
+      "gold_sql_sha256": "c4af24c169aa5b8fa9528f00427856907ca3725364e65b7503f512ffd876111f",
+      "ex_correct": false,
+      "errors": [],
+      "new_model_request_count": 3,
+      "source_identity": {
+        "logical_database_id": "debit_card_specializing",
+        "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+        "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+      },
+      "query_role": "askdata_m2_ro_debit_card_specializing",
+      "retrieval": {
+        "bm25_count": 4,
+        "dense_count": 21,
+        "rrf_count": 21,
+        "selected_count": 1,
+        "selected_field_ids": [
+          "debit_card_specializing.customers.currency"
+        ],
+        "source_identity": {
+          "logical_database_id": "debit_card_specializing",
+          "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+          "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+        }
+      },
+      "index_sha256": "6595a483b014a518b3ffa372facf3b30b2a973a6eeacf1762ce151d6aa7a95de",
+      "agent_isolation": {
+        "filesystem": "seccomp_deny_all_new_file_opens",
+        "additional_landlock_abi": 4,
+        "network_and_process": "seccomp",
+        "seccomp_library_version": "2.5.3",
+        "kernel": "6.8.0-59-generic",
+        "project_read_access": false,
+        "environment_credentials": false,
+        "direct_database_access": false
+      },
+      "agent_status": "answered",
+      "agent_trace": [
+        {
+          "sql_round": 1,
+          "validation_attempt": 1,
+          "valid": true
+        }
+      ],
+      "executions": [
+        {
+          "success": true,
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 2,
+            "payload_bytes": 73,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "int",
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "bc5586877fd89e476eabb3abc5f26e64f191fba21664106d85048f5df96417fa"
+          }
+        }
+      ],
+      "validation_events": [
+        {
+          "sql_round": 1,
+          "valid": true
+        }
+      ],
+      "first_sql_execution_success": true,
+      "final_sql_execution_success": true,
+      "result": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 2,
+        "payload_bytes": 73,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "int",
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "bc5586877fd89e476eabb3abc5f26e64f191fba21664106d85048f5df96417fa"
+      },
+      "generated_sql": "SELECT CASE WHEN czk_count > eur_count THEN 'Yes' ELSE 'No' END AS is_more_czk, (czk_count - eur_count) AS difference FROM (SELECT COUNT(*) FILTER (WHERE currency = 'CZK') AS czk_count, COUNT(*) FILTER (WHERE currency = 'EUR') AS eur_count FROM customers) sub",
+      "result_diagnostics": {
+        "ordered_rows_match": false,
+        "row_multiset_match": false,
+        "column_count_match": false
+      },
+      "runtime_closed": true,
+      "budget": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 1,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 1
+        },
+        "generation_attempts": {
+          "1": 1
+        },
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 48,
+              "total_tokens": 48
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "rerank",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 2993
+            },
+            "returned_model": "qwen3-rerank",
+            "endpoint_kind": "rerank",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 1108,
+              "completion_tokens": 79,
+              "prompt_tokens": 1029,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "text_tokens": 1029
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 8.005
+      },
+      "case_wall_seconds": 8.188
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "mode": "live",
+      "status": "scored",
+      "complete": true,
+      "gold_sql_sha256": "ee7eafdc44edb97e440951e8acc4528f8c4abbb8814348ec4725207693e20179",
+      "ex_correct": false,
+      "errors": [],
+      "new_model_request_count": 3,
+      "source_identity": {
+        "logical_database_id": "financial",
+        "source_id": "bird_mini_dev_postgres_financial",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+        "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+      },
+      "query_role": "askdata_m2_ro_financial",
+      "retrieval": {
+        "bm25_count": 30,
+        "dense_count": 30,
+        "rrf_count": 38,
+        "selected_count": 16,
+        "selected_field_ids": [
+          "financial.trans.type",
+          "financial.trans.operation",
+          "financial.disp.client_id",
+          "financial.client.client_id",
+          "financial.trans.account_id",
+          "financial.trans.trans_id",
+          "financial.disp.account_id",
+          "financial.order.account_id",
+          "financial.loan.account_id",
+          "financial.account.account_id",
+          "financial.trans.amount",
+          "financial.disp.disp_id",
+          "financial.trans.account",
+          "financial.client.district_id",
+          "financial.order.amount",
+          "financial.trans.bank"
+        ],
+        "source_identity": {
+          "logical_database_id": "financial",
+          "source_id": "bird_mini_dev_postgres_financial",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+          "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+        }
+      },
+      "index_sha256": "82a8da515dd4320a1a131932fe84e9b357ccb93b2367bab5c83593301beb432d",
+      "agent_isolation": {
+        "filesystem": "seccomp_deny_all_new_file_opens",
+        "additional_landlock_abi": 4,
+        "network_and_process": "seccomp",
+        "seccomp_library_version": "2.5.3",
+        "kernel": "6.8.0-59-generic",
+        "project_read_access": false,
+        "environment_credentials": false,
+        "direct_database_access": false
+      },
+      "agent_status": "answered",
+      "agent_trace": [
+        {
+          "sql_round": 1,
+          "validation_attempt": 1,
+          "valid": true
+        }
+      ],
+      "executions": [
+        {
+          "success": true,
+          "diagnostic": {
+            "complete": true,
+            "row_count": 140,
+            "column_count": 10,
+            "payload_bytes": 21282,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "NoneType",
+              "date",
+              "int",
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "58269badc720f2cf59403f1f8a9602f697b54b50c68d215ca257314c7401b494"
+          }
+        }
+      ],
+      "validation_events": [
+        {
+          "sql_round": 1,
+          "valid": true
+        }
+      ],
+      "first_sql_execution_success": true,
+      "final_sql_execution_success": true,
+      "result": {
+        "complete": true,
+        "row_count": 140,
+        "column_count": 10,
+        "payload_bytes": 21282,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "NoneType",
+          "date",
+          "int",
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "58269badc720f2cf59403f1f8a9602f697b54b50c68d215ca257314c7401b494"
+      },
+      "generated_sql": "SELECT t.* FROM trans t JOIN account a ON t.account_id = a.account_id JOIN disp d ON a.account_id = d.account_id WHERE d.client_id = 3356 AND t.operation = 'VYBER'",
+      "result_diagnostics": {
+        "ordered_rows_match": false,
+        "row_multiset_match": false,
+        "column_count_match": false
+      },
+      "runtime_closed": true,
+      "budget": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 1,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 1
+        },
+        "generation_attempts": {
+          "1": 1
+        },
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 33,
+              "total_tokens": 33
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "rerank",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 5030
+            },
+            "returned_model": "qwen3-rerank",
+            "endpoint_kind": "rerank",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 3955,
+              "completion_tokens": 64,
+              "prompt_tokens": 3891,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "text_tokens": 3891
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 15.353
+      },
+      "case_wall_seconds": 15.535
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "mode": "live",
+      "status": "clarification",
+      "complete": false,
+      "gold_sql_sha256": "274e4d4f1603b56ed6190de41a38f8885eda8124b1ab3bcd33a082e990bc3d36",
+      "ex_correct": false,
+      "errors": [],
+      "new_model_request_count": 3,
+      "source_identity": {
+        "logical_database_id": "student_club",
+        "source_id": "bird_mini_dev_postgres_student_club",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+        "data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2"
+      },
+      "query_role": "askdata_m2_ro_student_club",
+      "retrieval": {
+        "bm25_count": 30,
+        "dense_count": 30,
+        "rrf_count": 39,
+        "selected_count": 0,
+        "selected_field_ids": [],
+        "source_identity": {
+          "logical_database_id": "student_club",
+          "source_id": "bird_mini_dev_postgres_student_club",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+          "data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2"
+        }
+      },
+      "index_sha256": "3a5579beb8fc67ec3293448a4ec639b0354d1eedcaf4a9cf3ceca35dba8350da",
+      "agent_isolation": {
+        "filesystem": "seccomp_deny_all_new_file_opens",
+        "additional_landlock_abi": 4,
+        "network_and_process": "seccomp",
+        "seccomp_library_version": "2.5.3",
+        "kernel": "6.8.0-59-generic",
+        "project_read_access": false,
+        "environment_credentials": false,
+        "direct_database_access": false
+      },
+      "agent_status": "clarification",
+      "agent_trace": [],
+      "executions": [],
+      "validation_events": [],
+      "first_sql_execution_success": false,
+      "final_sql_execution_success": false,
+      "runtime_closed": true,
+      "budget": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 1,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {
+          "1": 1
+        },
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 91,
+              "total_tokens": 91
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "rerank",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 8038
+            },
+            "returned_model": "qwen3-rerank",
+            "endpoint_kind": "rerank",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 880,
+              "completion_tokens": 11,
+              "prompt_tokens": 869,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "text_tokens": 869
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 2.341
+      },
+      "case_wall_seconds": 2.525
+    },
+    {
+      "case_id": "BIRD-PG-0806",
+      "database_id": "superhero",
+      "mode": "live",
+      "status": "scored",
+      "complete": true,
+      "gold_sql_sha256": "a091c10e44df763adfc1fd1e3132d726c58a535c81aa39cf4514d382eee812e8",
+      "ex_correct": true,
+      "errors": [],
+      "new_model_request_count": 3,
+      "source_identity": {
+        "logical_database_id": "superhero",
+        "source_id": "bird_mini_dev_postgres_superhero",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "da4f545f640fb421a606e4678596999bd6f25759f5071c5830f9fe15ee39d4f1",
+        "data_version": "6683e9c5689d1b66eecc60ea7b28f5066e55730be0e9c26c7f10ac454411e3f6"
+      },
+      "query_role": "askdata_m2_ro_superhero",
+      "retrieval": {
+        "bm25_count": 30,
+        "dense_count": 30,
+        "rrf_count": 31,
+        "selected_count": 12,
+        "selected_field_ids": [
+          "superhero.superhero.eye_colour_id",
+          "superhero.colour.colour",
+          "superhero.superhero.full_name",
+          "superhero.colour.id",
+          "superhero.superhero.id",
+          "superhero.hero_attribute.hero_id",
+          "superhero.superhero.hair_colour_id",
+          "superhero.superhero.skin_colour_id",
+          "superhero.hero_power.hero_id",
+          "superhero.hero_attribute.attribute_id",
+          "superhero.attribute.id",
+          "superhero.race.id"
+        ],
+        "source_identity": {
+          "logical_database_id": "superhero",
+          "source_id": "bird_mini_dev_postgres_superhero",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "da4f545f640fb421a606e4678596999bd6f25759f5071c5830f9fe15ee39d4f1",
+          "data_version": "6683e9c5689d1b66eecc60ea7b28f5066e55730be0e9c26c7f10ac454411e3f6"
+        }
+      },
+      "index_sha256": "bdb2b009b8df18c4a5dc323ad089777ee49ea59e535fba4372001ad3a4a5b526",
+      "agent_isolation": {
+        "filesystem": "seccomp_deny_all_new_file_opens",
+        "additional_landlock_abi": 4,
+        "network_and_process": "seccomp",
+        "seccomp_library_version": "2.5.3",
+        "kernel": "6.8.0-59-generic",
+        "project_read_access": false,
+        "environment_credentials": false,
+        "direct_database_access": false
+      },
+      "agent_status": "answered",
+      "agent_trace": [
+        {
+          "sql_round": 1,
+          "validation_attempt": 1,
+          "valid": true
+        }
+      ],
+      "executions": [
+        {
+          "success": true,
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 41,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "62bc4c66081d71a077de57fb33f0a6ec8139fb4364d3d0aced9f6010cfb2aa66"
+          }
+        }
+      ],
+      "validation_events": [
+        {
+          "sql_round": 1,
+          "valid": true
+        }
+      ],
+      "first_sql_execution_success": true,
+      "final_sql_execution_success": true,
+      "result": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 41,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "62bc4c66081d71a077de57fb33f0a6ec8139fb4364d3d0aced9f6010cfb2aa66"
+      },
+      "generated_sql": "SELECT c.colour FROM superhero s JOIN colour c ON s.eye_colour_id = c.id WHERE s.full_name = 'Karen Beecher-Duncan'",
+      "result_diagnostics": {
+        "ordered_rows_match": true,
+        "row_multiset_match": true,
+        "column_count_match": true
+      },
+      "runtime_closed": true,
+      "budget": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 1,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 1
+        },
+        "generation_attempts": {
+          "1": 1
+        },
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 47,
+              "total_tokens": 47
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "rerank",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 4541
+            },
+            "returned_model": "qwen3-rerank",
+            "endpoint_kind": "rerank",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 3496,
+              "completion_tokens": 38,
+              "prompt_tokens": 3458,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "text_tokens": 3458
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 3.245
+      },
+      "case_wall_seconds": 3.43
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "mode": "live",
+      "status": "clarification",
+      "complete": false,
+      "gold_sql_sha256": "60c2e02a7c57bf66cef89965f839bccb08e3ee37a9f494e85f6494141a595750",
+      "ex_correct": false,
+      "errors": [],
+      "new_model_request_count": 3,
+      "source_identity": {
+        "logical_database_id": "toxicology",
+        "source_id": "bird_mini_dev_postgres_toxicology",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+        "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+      },
+      "query_role": "askdata_m2_ro_toxicology",
+      "retrieval": {
+        "bm25_count": 11,
+        "dense_count": 11,
+        "rrf_count": 11,
+        "selected_count": 1,
+        "selected_field_ids": [
+          "toxicology.bond.bond_type"
+        ],
+        "source_identity": {
+          "logical_database_id": "toxicology",
+          "source_id": "bird_mini_dev_postgres_toxicology",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+          "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+        }
+      },
+      "index_sha256": "fb0f6b66fa88dc75a9ef9d20bab150fa601fd3d358fc6516d608381f27cb99d5",
+      "agent_isolation": {
+        "filesystem": "seccomp_deny_all_new_file_opens",
+        "additional_landlock_abi": 4,
+        "network_and_process": "seccomp",
+        "seccomp_library_version": "2.5.3",
+        "kernel": "6.8.0-59-generic",
+        "project_read_access": false,
+        "environment_credentials": false,
+        "direct_database_access": false
+      },
+      "agent_status": "clarification",
+      "agent_trace": [],
+      "executions": [],
+      "validation_events": [],
+      "first_sql_execution_success": false,
+      "final_sql_execution_success": false,
+      "runtime_closed": true,
+      "budget": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 1,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {
+          "1": 1
+        },
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 47,
+              "total_tokens": 47
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "rerank",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 1720
+            },
+            "returned_model": "qwen3-rerank",
+            "endpoint_kind": "rerank",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 1129,
+              "completion_tokens": 97,
+              "prompt_tokens": 1032,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "text_tokens": 1032
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 3.389
+      },
+      "case_wall_seconds": 3.575
+    }
+  ],
+  "index_builds": [
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/bird_indexes/m2_bird_pg_v1/california_schools/41f077af819ce3e794873f667a0be11f5c808f544c3f732f29f22745534a9b56/schema_index.json",
+      "sha256": "6b4862fadfc46c1a40a5592d2aed501c559b1df794693902ef145021ada99f7a",
+      "identity": {
+        "policy": "bird_authorized_fields_profiles_v1",
+        "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+        "source_identity": {
+          "logical_database_id": "california_schools",
+          "source_id": "bird_mini_dev_postgres_california_schools",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+          "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+        },
+        "query_role": "askdata_m2_ro_california_schools",
+        "model": {
+          "chat_model": "qwen3.7-plus",
+          "embedding_model": "text-embedding-v4",
+          "embedding_dimensions": 1024,
+          "rerank_model": "qwen3-rerank",
+          "temperature": 0,
+          "enable_thinking": false,
+          "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+        },
+        "code_sha256": {
+          "retrieval.py": "075a2b9b9e34e0c0d651a344245d74aca46525d95d8b60ede8f206e770cfabbf",
+          "model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+          "runtime.py": "e367e93db106bf3d5687f7cec815246e5d64ac920e62642f1d494c19a128a160",
+          "native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f"
+        },
+        "sample_policy": {
+          "distinct": 3,
+          "text_characters": 64,
+          "order": "native ASC NULLS LAST"
+        }
+      },
+      "cache_hit": false,
+      "model_usage": {
+        "model_http_attempts": 9,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 841,
+              "total_tokens": 841
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 986,
+              "total_tokens": 986
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1444,
+              "total_tokens": 1444
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 930,
+              "total_tokens": 930
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1101,
+              "total_tokens": 1101
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1135,
+              "total_tokens": 1135
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1507,
+              "total_tokens": 1507
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1666,
+              "total_tokens": 1666
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 889,
+              "total_tokens": 889
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 14.345
+      }
+    },
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/bird_indexes/m2_bird_pg_v1/card_games/8b8744e172b0a795792708906cafc482f9420502116eaa11d288a3f62ed23959/schema_index.json",
+      "sha256": "d7bfc4bac72ec72fb6549a4bc655f96f0f7ea07706d608b22c1ec0a84ddf4624",
+      "identity": {
+        "policy": "bird_authorized_fields_profiles_v1",
+        "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+        "source_identity": {
+          "logical_database_id": "card_games",
+          "source_id": "bird_mini_dev_postgres_card_games",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+          "data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51"
+        },
+        "query_role": "askdata_m2_ro_card_games",
+        "model": {
+          "chat_model": "qwen3.7-plus",
+          "embedding_model": "text-embedding-v4",
+          "embedding_dimensions": 1024,
+          "rerank_model": "qwen3-rerank",
+          "temperature": 0,
+          "enable_thinking": false,
+          "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+        },
+        "code_sha256": {
+          "retrieval.py": "075a2b9b9e34e0c0d651a344245d74aca46525d95d8b60ede8f206e770cfabbf",
+          "model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+          "runtime.py": "e367e93db106bf3d5687f7cec815246e5d64ac920e62642f1d494c19a128a160",
+          "native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f"
+        },
+        "sample_policy": {
+          "distinct": 3,
+          "text_characters": 64,
+          "order": "native ASC NULLS LAST"
+        }
+      },
+      "cache_hit": false,
+      "model_usage": {
+        "model_http_attempts": 12,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 972,
+              "total_tokens": 972
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1280,
+              "total_tokens": 1280
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 866,
+              "total_tokens": 866
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 950,
+              "total_tokens": 950
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 987,
+              "total_tokens": 987
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1551,
+              "total_tokens": 1551
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1237,
+              "total_tokens": 1237
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1166,
+              "total_tokens": 1166
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1072,
+              "total_tokens": 1072
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 833,
+              "total_tokens": 833
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 855,
+              "total_tokens": 855
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 543,
+              "total_tokens": 543
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 23.951
+      }
+    },
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/bird_indexes/m2_bird_pg_v1/codebase_community/03985b5261d90a06392289dc66e0759588eeae19a72dc12eaad7d2373685a64f/schema_index.json",
+      "sha256": "02763990de8f096eb519a6d428b0063bb8c02843fd83ebeda59a492da4b007dc",
+      "identity": {
+        "policy": "bird_authorized_fields_profiles_v1",
+        "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+        "source_identity": {
+          "logical_database_id": "codebase_community",
+          "source_id": "bird_mini_dev_postgres_codebase_community",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "9f9da4752911621e3159a107239173112469ab862e90ea007a9cc23a4aed5940",
+          "data_version": "ca3a7af721e8f16536b022f5fa94d2bd744dd8ebef57504070c280cd3b206a20"
+        },
+        "query_role": "askdata_m2_ro_codebase_community",
+        "model": {
+          "chat_model": "qwen3.7-plus",
+          "embedding_model": "text-embedding-v4",
+          "embedding_dimensions": 1024,
+          "rerank_model": "qwen3-rerank",
+          "temperature": 0,
+          "enable_thinking": false,
+          "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+        },
+        "code_sha256": {
+          "retrieval.py": "075a2b9b9e34e0c0d651a344245d74aca46525d95d8b60ede8f206e770cfabbf",
+          "model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+          "runtime.py": "e367e93db106bf3d5687f7cec815246e5d64ac920e62642f1d494c19a128a160",
+          "native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f"
+        },
+        "sample_policy": {
+          "distinct": 3,
+          "text_characters": 64,
+          "order": "native ASC NULLS LAST"
+        }
+      },
+      "cache_hit": false,
+      "model_usage": {
+        "model_http_attempts": 8,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 990,
+              "total_tokens": 990
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1028,
+              "total_tokens": 1028
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 917,
+              "total_tokens": 917
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 989,
+              "total_tokens": 989
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1116,
+              "total_tokens": 1116
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1047,
+              "total_tokens": 1047
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 896,
+              "total_tokens": 896
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 80,
+              "total_tokens": 80
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 4.228
+      }
+    },
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/bird_indexes/m2_bird_pg_v1/debit_card_specializing/9e96af4ffdaeb0a55a2f424701f724278e25a761e232fd3fb44ee19b6f8bc743/schema_index.json",
+      "sha256": "6595a483b014a518b3ffa372facf3b30b2a973a6eeacf1762ce151d6aa7a95de",
+      "identity": {
+        "policy": "bird_authorized_fields_profiles_v1",
+        "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+        "source_identity": {
+          "logical_database_id": "debit_card_specializing",
+          "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+          "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+        },
+        "query_role": "askdata_m2_ro_debit_card_specializing",
+        "model": {
+          "chat_model": "qwen3.7-plus",
+          "embedding_model": "text-embedding-v4",
+          "embedding_dimensions": 1024,
+          "rerank_model": "qwen3-rerank",
+          "temperature": 0,
+          "enable_thinking": false,
+          "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+        },
+        "code_sha256": {
+          "retrieval.py": "075a2b9b9e34e0c0d651a344245d74aca46525d95d8b60ede8f206e770cfabbf",
+          "model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+          "runtime.py": "e367e93db106bf3d5687f7cec815246e5d64ac920e62642f1d494c19a128a160",
+          "native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f"
+        },
+        "sample_policy": {
+          "distinct": 3,
+          "text_characters": 64,
+          "order": "native ASC NULLS LAST"
+        }
+      },
+      "cache_hit": false,
+      "model_usage": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 729,
+              "total_tokens": 729
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 880,
+              "total_tokens": 880
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 124,
+              "total_tokens": 124
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 1.177
+      }
+    },
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/bird_indexes/m2_bird_pg_v1/financial/f0e6d02e313671db392a3d658017a77b03b326992f8b7fe8063c9b7eeebb63d7/schema_index.json",
+      "sha256": "82a8da515dd4320a1a131932fe84e9b357ccb93b2367bab5c83593301beb432d",
+      "identity": {
+        "policy": "bird_authorized_fields_profiles_v1",
+        "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+        "source_identity": {
+          "logical_database_id": "financial",
+          "source_id": "bird_mini_dev_postgres_financial",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+          "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+        },
+        "query_role": "askdata_m2_ro_financial",
+        "model": {
+          "chat_model": "qwen3.7-plus",
+          "embedding_model": "text-embedding-v4",
+          "embedding_dimensions": 1024,
+          "rerank_model": "qwen3-rerank",
+          "temperature": 0,
+          "enable_thinking": false,
+          "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+        },
+        "code_sha256": {
+          "retrieval.py": "075a2b9b9e34e0c0d651a344245d74aca46525d95d8b60ede8f206e770cfabbf",
+          "model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+          "runtime.py": "e367e93db106bf3d5687f7cec815246e5d64ac920e62642f1d494c19a128a160",
+          "native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f"
+        },
+        "sample_policy": {
+          "distinct": 3,
+          "text_characters": 64,
+          "order": "native ASC NULLS LAST"
+        }
+      },
+      "cache_hit": false,
+      "model_usage": {
+        "model_http_attempts": 6,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 811,
+              "total_tokens": 811
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 770,
+              "total_tokens": 770
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 956,
+              "total_tokens": 956
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 903,
+              "total_tokens": 903
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 958,
+              "total_tokens": 958
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 485,
+              "total_tokens": 485
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 2.893
+      }
+    },
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/bird_indexes/m2_bird_pg_v1/student_club/af7a48fcb189773da06579e10c3e6645fabb6ca3da89a3910441de98e49e2c7f/schema_index.json",
+      "sha256": "3a5579beb8fc67ec3293448a4ec639b0354d1eedcaf4a9cf3ceca35dba8350da",
+      "identity": {
+        "policy": "bird_authorized_fields_profiles_v1",
+        "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+        "source_identity": {
+          "logical_database_id": "student_club",
+          "source_id": "bird_mini_dev_postgres_student_club",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+          "data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2"
+        },
+        "query_role": "askdata_m2_ro_student_club",
+        "model": {
+          "chat_model": "qwen3.7-plus",
+          "embedding_model": "text-embedding-v4",
+          "embedding_dimensions": 1024,
+          "rerank_model": "qwen3-rerank",
+          "temperature": 0,
+          "enable_thinking": false,
+          "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+        },
+        "code_sha256": {
+          "retrieval.py": "075a2b9b9e34e0c0d651a344245d74aca46525d95d8b60ede8f206e770cfabbf",
+          "model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+          "runtime.py": "e367e93db106bf3d5687f7cec815246e5d64ac920e62642f1d494c19a128a160",
+          "native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f"
+        },
+        "sample_policy": {
+          "distinct": 3,
+          "text_characters": 64,
+          "order": "native ASC NULLS LAST"
+        }
+      },
+      "cache_hit": false,
+      "model_usage": {
+        "model_http_attempts": 5,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1184,
+              "total_tokens": 1184
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1036,
+              "total_tokens": 1036
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 987,
+              "total_tokens": 987
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 918,
+              "total_tokens": 918
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 735,
+              "total_tokens": 735
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 2.335
+      }
+    },
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/bird_indexes/m2_bird_pg_v1/superhero/e971270d959f5897f0a69205c3bf3480799789ca790c8e48d60c682476f59c51/schema_index.json",
+      "sha256": "bdb2b009b8df18c4a5dc323ad089777ee49ea59e535fba4372001ad3a4a5b526",
+      "identity": {
+        "policy": "bird_authorized_fields_profiles_v1",
+        "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+        "source_identity": {
+          "logical_database_id": "superhero",
+          "source_id": "bird_mini_dev_postgres_superhero",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "da4f545f640fb421a606e4678596999bd6f25759f5071c5830f9fe15ee39d4f1",
+          "data_version": "6683e9c5689d1b66eecc60ea7b28f5066e55730be0e9c26c7f10ac454411e3f6"
+        },
+        "query_role": "askdata_m2_ro_superhero",
+        "model": {
+          "chat_model": "qwen3.7-plus",
+          "embedding_model": "text-embedding-v4",
+          "embedding_dimensions": 1024,
+          "rerank_model": "qwen3-rerank",
+          "temperature": 0,
+          "enable_thinking": false,
+          "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+        },
+        "code_sha256": {
+          "retrieval.py": "075a2b9b9e34e0c0d651a344245d74aca46525d95d8b60ede8f206e770cfabbf",
+          "model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+          "runtime.py": "e367e93db106bf3d5687f7cec815246e5d64ac920e62642f1d494c19a128a160",
+          "native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f"
+        },
+        "sample_policy": {
+          "distinct": 3,
+          "text_characters": 64,
+          "order": "native ASC NULLS LAST"
+        }
+      },
+      "cache_hit": false,
+      "model_usage": {
+        "model_http_attempts": 4,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 934,
+              "total_tokens": 934
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 951,
+              "total_tokens": 951
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 812,
+              "total_tokens": 812
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 77,
+              "total_tokens": 77
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 1.873
+      }
+    },
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/bird_indexes/m2_bird_pg_v1/toxicology/9396a7dd46c743083c3435c48ed26f893d18ef70834d47c966a8a2e0bca93a5a/schema_index.json",
+      "sha256": "fb0f6b66fa88dc75a9ef9d20bab150fa601fd3d358fc6516d608381f27cb99d5",
+      "identity": {
+        "policy": "bird_authorized_fields_profiles_v1",
+        "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+        "source_identity": {
+          "logical_database_id": "toxicology",
+          "source_id": "bird_mini_dev_postgres_toxicology",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+          "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+        },
+        "query_role": "askdata_m2_ro_toxicology",
+        "model": {
+          "chat_model": "qwen3.7-plus",
+          "embedding_model": "text-embedding-v4",
+          "embedding_dimensions": 1024,
+          "rerank_model": "qwen3-rerank",
+          "temperature": 0,
+          "enable_thinking": false,
+          "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+        },
+        "code_sha256": {
+          "retrieval.py": "075a2b9b9e34e0c0d651a344245d74aca46525d95d8b60ede8f206e770cfabbf",
+          "model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+          "runtime.py": "e367e93db106bf3d5687f7cec815246e5d64ac920e62642f1d494c19a128a160",
+          "native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f"
+        },
+        "sample_policy": {
+          "distinct": 3,
+          "text_characters": 64,
+          "order": "native ASC NULLS LAST"
+        }
+      },
+      "cache_hit": false,
+      "model_usage": {
+        "model_http_attempts": 2,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1029,
+              "total_tokens": 1029
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 64,
+              "total_tokens": 64
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 0.69
+      }
+    }
+  ],
+  "gold_readiness_report_sha256": "e87dc6e51833eaa22344c0882ac49109822cbd0bff6526eda05a361c7cf8ea03",
+  "model_configuration": {
+    "chat_model": "qwen3.7-plus",
+    "embedding_model": "text-embedding-v4",
+    "embedding_dimensions": 1024,
+    "rerank_model": "qwen3-rerank",
+    "temperature": 0,
+    "enable_thinking": false,
+    "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+  },
+  "split": "smoke8",
+  "selected_case_ids": [
+    "BIRD-PG-0036",
+    "BIRD-PG-0480",
+    "BIRD-PG-0707",
+    "BIRD-PG-1486",
+    "BIRD-PG-0159",
+    "BIRD-PG-1435",
+    "BIRD-PG-0806",
+    "BIRD-PG-0201"
+  ],
+  "selected_input_sha256": "4ce454cbf4f80c31fe3ff1d5e679647a45324265aa05f6e41e9668cafe196376",
+  "selected_gold_sql_sha256": "207960ae0f1cdd160673e60854304b5b7433cf7d2af123a78cb1b6a9f27dc95d",
+  "primary_denominator": 8,
+  "holdout_live_allowed": false,
+  "holdout_control": "Holdout live requires a subsequent frozen candidate and one-attempt ledger. This entry admits development splits only.",
+  "source_receipts": [
+    {
+      "database_id": "california_schools",
+      "role": "askdata_m2_ro_california_schools",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+      "authorized_data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "card_games",
+      "role": "askdata_m2_ro_card_games",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+      "authorized_data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "codebase_community",
+      "role": "askdata_m2_ro_codebase_community",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "9f9da4752911621e3159a107239173112469ab862e90ea007a9cc23a4aed5940",
+      "authorized_data_version": "ca3a7af721e8f16536b022f5fa94d2bd744dd8ebef57504070c280cd3b206a20",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "debit_card_specializing",
+      "role": "askdata_m2_ro_debit_card_specializing",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+      "authorized_data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "financial",
+      "role": "askdata_m2_ro_financial",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+      "authorized_data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "student_club",
+      "role": "askdata_m2_ro_student_club",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+      "authorized_data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "superhero",
+      "role": "askdata_m2_ro_superhero",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "da4f545f640fb421a606e4678596999bd6f25759f5071c5830f9fe15ee39d4f1",
+      "authorized_data_version": "6683e9c5689d1b66eecc60ea7b28f5066e55730be0e9c26c7f10ac454411e3f6",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "toxicology",
+      "role": "askdata_m2_ro_toxicology",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+      "authorized_data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    }
+  ],
+  "summary": {
+    "case_count": 8,
+    "complete_result_count": 6,
+    "status_counts": {
+      "scored": 6,
+      "clarification": 2
+    },
+    "primary_denominator": 8,
+    "ex_pass_count": 3,
+    "primary_ex": 0.375,
+    "ex_given_complete_results": 0.5,
+    "first_sql_execution_success_count": 6,
+    "final_sql_execution_success_count": 6,
+    "clarification_rate": 0.25,
+    "latency_seconds": {
+      "p50": 6.306,
+      "p95": 18.2,
+      "measured_count": 8
+    },
+    "by_database": {
+      "california_schools": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": 0.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "card_games": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 1,
+        "primary_ex": 1.0,
+        "ex_given_complete_results": 1.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "codebase_community": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 1,
+        "primary_ex": 1.0,
+        "ex_given_complete_results": 1.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "debit_card_specializing": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": 0.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "financial": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": 0.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "student_club": {
+        "case_count": 1,
+        "complete_result_count": 0,
+        "status_counts": {
+          "clarification": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": null,
+        "first_sql_execution_success_count": 0,
+        "final_sql_execution_success_count": 0,
+        "clarification_rate": 1.0
+      },
+      "superhero": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 1,
+        "primary_ex": 1.0,
+        "ex_given_complete_results": 1.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "toxicology": {
+        "case_count": 1,
+        "complete_result_count": 0,
+        "status_counts": {
+          "clarification": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": null,
+        "first_sql_execution_success_count": 0,
+        "final_sql_execution_success_count": 0,
+        "clarification_rate": 1.0
+      }
+    },
+    "by_difficulty": {
+      "simple": {
+        "case_count": 3,
+        "complete_result_count": 3,
+        "status_counts": {
+          "scored": 3
+        },
+        "primary_denominator": 3,
+        "ex_pass_count": 1,
+        "primary_ex": 0.3333333333333333,
+        "ex_given_complete_results": 0.3333333333333333,
+        "first_sql_execution_success_count": 3,
+        "final_sql_execution_success_count": 3,
+        "clarification_rate": 0.0
+      },
+      "moderate": {
+        "case_count": 4,
+        "complete_result_count": 2,
+        "status_counts": {
+          "scored": 2,
+          "clarification": 2
+        },
+        "primary_denominator": 4,
+        "ex_pass_count": 2,
+        "primary_ex": 0.5,
+        "ex_given_complete_results": 1.0,
+        "first_sql_execution_success_count": 2,
+        "final_sql_execution_success_count": 2,
+        "clarification_rate": 0.5
+      },
+      "challenging": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": 0.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      }
+    },
+    "new_model_request_count": 24,
+    "observed_model_http_attempts": 24,
+    "model_attempt_count_incomplete": false,
+    "shared_index_http_attempts": 49
+  },
+  "snapshot": {
+    "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/evaluation/results/snapshots/bird/m2_bird_pg_v1/a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641/smoke8/2aa8e25fe99f4118ad12ef8b35756d29.json",
+    "sha256": "308b63271189575acf82c68554bbfa336ff246db68ba6bc90d831168c69aff9e"
+  },
+  "finished_at": "2026-10-16T08:33:39.690136+00:00"
+}

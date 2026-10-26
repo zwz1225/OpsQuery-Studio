@@ -1,0 +1,45 @@
+__pycache__/
+*.py[cod]
+*.log
+.venv/
+.python311/
+.node/
+.downloads/
+backend/data/*.db
+backend/data/schema_index.json
+backend/.env
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Local environment configuration; keep the example template.
+.env
+.env.*
+!.env.example
+
+# Historical release archives and their checksums.
+*.zip
+*.zip.sha256
+
+# Legacy project kept locally only.
+/AskData项目代码1/
+
+# Personal documents at the project root; retain the repository README.
+/*.md
+!/README.md
+/*.pdf
+/*.doc
+/*.docx
+/项目内容/
+
+# Local tooling, document backups, and TypeScript build cache.
+/.codex/
+/.doc_revisions/
+*.tsbuildinfo
+
+# Runtime databases and user memories.
+*.db
+*.sqlite
+*.sqlite3
+*.duckdb
+/backend/data/saved_memories.json

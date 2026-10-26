@@ -1,0 +1,37 @@
+{
+  "stage": "M2 completed work integrated into architecture and flow guides",
+  "run_status": "complete",
+  "date": "2026-10-20",
+  "documents": [
+    {
+      "file": "AskData Studio 运营场景整体架构.md",
+      "before_sha256": "82f11b867d5deba665c17e0cf4d9740036a12db7f5f501b5e439fe8c703eec88",
+      "after_sha256": "d4e417ffe45ad7b06f30d61e463dc1b866ea919f97451cbc81cff4aae2fb4cc3",
+      "lines_before": 845,
+      "lines_after": 955
+    },
+    {
+      "file": "V2版本主要流程解析.md",
+      "before_sha256": "12c1d416ca40cf72947c7e8dceac3285805bd59f0868913dbdbaf66f3adbc56a",
+      "after_sha256": "d627adc50dc684920c388ec54709d2e7e8a4b43ab79d3ec0d75fd069e1e402c2",
+      "lines_before": 8417,
+      "lines_after": 8523
+    }
+  ],
+  "modified_application_or_evaluation_code": false,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "source_acceptance": "backend/evaluation/M2_FINAL_ACCEPTANCE_20261019.md",
+  "verification": {
+    "markdown_fences_balanced": true,
+    "new_local_link_occurrences_checked": 28,
+    "new_local_links_resolve": true,
+    "replacement_characters_absent": true,
+    "m2_scores_and_acceptance_references_present": true,
+    "m1_qualified_conclusion_preserved": true,
+    "frozen_delivery_file_count": 143,
+    "frozen_delivery_files_changed": [],
+    "application_tests_run": false,
+    "scope": "Documentation consistency and frozen artifact hashes; no model or database calls."
+  }
+}

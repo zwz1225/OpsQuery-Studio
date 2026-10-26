@@ -1,0 +1,141 @@
+{
+  "stage": "M3 E03 server process DNS HTTPS probe local evidence review",
+  "run_status": "complete",
+  "source_report": "E:\\PythonLearn\\m3_e03_pair24_transport_v2_20261023_r3\\reports\\e03_process_dns_https_probe_server.json",
+  "source_report_sha256": "7dc1dbefe0ce7721c56ddcaae57b1d9f6e66fbab61462dcae8a250a7207aa575",
+  "check_count": 24,
+  "check_pass_count": 24,
+  "checks": [
+    {
+      "name": "script_matches_delivered_sha256",
+      "passed": true
+    },
+    {
+      "name": "policy_matches_delivered_code",
+      "passed": true
+    },
+    {
+      "name": "complete_without_errors",
+      "passed": true
+    },
+    {
+      "name": "expected_resolver_and_host",
+      "passed": true
+    },
+    {
+      "name": "exactly_three_rounds",
+      "passed": true
+    },
+    {
+      "name": "declared_dns_attempt_count_matches",
+      "passed": true
+    },
+    {
+      "name": "connection_and_head_counts_match",
+      "passed": true
+    },
+    {
+      "name": "round_1_dns_success",
+      "passed": true
+    },
+    {
+      "name": "round_1_cname_and_ttl",
+      "passed": true
+    },
+    {
+      "name": "round_1_address_from_answer",
+      "passed": true
+    },
+    {
+      "name": "round_1_verified_tls_original_hostname",
+      "passed": true
+    },
+    {
+      "name": "round_1_http_and_scope",
+      "passed": true
+    },
+    {
+      "name": "round_2_dns_success",
+      "passed": true
+    },
+    {
+      "name": "round_2_cname_and_ttl",
+      "passed": true
+    },
+    {
+      "name": "round_2_address_from_answer",
+      "passed": true
+    },
+    {
+      "name": "round_2_verified_tls_original_hostname",
+      "passed": true
+    },
+    {
+      "name": "round_2_http_and_scope",
+      "passed": true
+    },
+    {
+      "name": "round_3_dns_success",
+      "passed": true
+    },
+    {
+      "name": "round_3_cname_and_ttl",
+      "passed": true
+    },
+    {
+      "name": "round_3_address_from_answer",
+      "passed": true
+    },
+    {
+      "name": "round_3_verified_tls_original_hostname",
+      "passed": true
+    },
+    {
+      "name": "round_3_http_and_scope",
+      "passed": true
+    },
+    {
+      "name": "no_model_database_generation_or_production_change",
+      "passed": true
+    },
+    {
+      "name": "wall_time_and_budget",
+      "passed": true
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "dns_ms": 54,
+      "https_ms": 144,
+      "address": "39.96.198.249",
+      "effective_address_ttl_seconds": 33,
+      "http_status": 404
+    },
+    {
+      "round": 2,
+      "dns_ms": 53,
+      "https_ms": 94,
+      "address": "39.96.198.249",
+      "effective_address_ttl_seconds": 33,
+      "http_status": 404
+    },
+    {
+      "round": 3,
+      "dns_ms": 50,
+      "https_ms": 144,
+      "address": "39.96.198.249",
+      "effective_address_ttl_seconds": 33,
+      "http_status": 404
+    }
+  ],
+  "connection_probe_accepted": true,
+  "paired_experiment_accepted": false,
+  "limitations": [
+    "Three rounds span only 4.58 seconds and all use the same first IPv4 address; other returned addresses and long-term availability not established.",
+    "Native TTL expiry refresh not exercised across a 33-second lifetime on the live server.",
+    "HEAD / returned 404; authenticated model POST endpoints and full request-body/response handling remain unverified.",
+    "dig_version is unreported; record and bind dependency identity before paired runtime integration."
+  ],
+  "next_step": "Integrate identical explicit resolver/verified HTTPS into both semantic sides and preflight under a new frozen identity; preserve r3 and this evidence."
+}

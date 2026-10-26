@@ -1,0 +1,14 @@
+{
+  "stage": "M3 process-local DNS/HTTPS standalone probe offline checks",
+  "run_status": "complete",
+  "tests_run": 19,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "live_dns_queries": 0,
+  "live_model_calls": 0,
+  "live_database_connections": 0,
+  "script_sha256": "67305349f11214d77bc2fe99afce755f3446a59cc2220633591774c0915ea86c",
+  "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_m3_process_dns_probe.py -v",
+  "note": "Final run outside Windows sandbox passed all 19 cases. Initial sandbox run hit PermissionError on atomic report replacement."
+}

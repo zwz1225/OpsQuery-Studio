@@ -1,0 +1,130 @@
+{
+  "attempt_id": "1218483158c643a085e7b9360dd4a7d7",
+  "cache_hit": false,
+  "database_id": "formula_1",
+  "index_sha256": "c0d00adb8179352f80878c4a3b43a4e9143901c17382164d8a43286ab1327f9e",
+  "kind": "index_ready",
+  "model_usage": {
+    "chat_http_attempts": 0,
+    "elapsed_seconds": 5.929,
+    "generation_attempts": {},
+    "model_events": [
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 839,
+          "total_tokens": 839
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 822,
+          "total_tokens": 822
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 812,
+          "total_tokens": 812
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 853,
+          "total_tokens": 853
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 802,
+          "total_tokens": 802
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 818,
+          "total_tokens": 818
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 1057,
+          "total_tokens": 1057
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 832,
+          "total_tokens": 832
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 985,
+          "total_tokens": 985
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 346,
+          "total_tokens": 346
+        }
+      }
+    ],
+    "model_http_attempts": 10,
+    "sql_tool_calls": 0,
+    "validation_attempts": {}
+  },
+  "previous_event_sha256": "2f39bb1ebe63ec83f15ac8228d826cdcc2f2823ca1b80469c7cbb23d57f83b5b",
+  "recorded_at": "2026-10-19T08:57:09.286791+00:00",
+  "sequence": 35
+}

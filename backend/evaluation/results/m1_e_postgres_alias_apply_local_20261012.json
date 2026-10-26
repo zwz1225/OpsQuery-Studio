@@ -1,0 +1,27 @@
+{
+  "stage": "M1 E confirmed PostgreSQL aliases applied to formal cases",
+  "run_status": "complete",
+  "recorded_at": "2026-10-12T14:28:17.345354+00:00",
+  "source_cases_sha256": "e1cb760a8ffa4f89e45ca73403c439975c51d2be47cd36800ee4c7c0ee1925f1",
+  "updated_cases_sha256": "2c72c23c00685ea2dca5247e50a9395ba8e3d885f64710059f86004d1f705c15",
+  "replay_report_sha256": "ed5f79c1890128e279aa1a4d5d6dca87657fc60c7b6ef23daa6b02b28bec8ab0",
+  "changed_case_count": 14,
+  "alias_addition_count": 23,
+  "changed_case_ids": [
+    "CHANNEL_OPS-079",
+    "CONTENT_OPS-031",
+    "CONTENT_OPS-032",
+    "CONTENT_OPS-033",
+    "CONTENT_OPS-034",
+    "CONTENT_OPS-036",
+    "CONTENT_OPS-051",
+    "CONTENT_OPS-076",
+    "CONTENT_OPS-138",
+    "GROWTH_OPS-050",
+    "GROWTH_OPS-102",
+    "GROWTH_OPS-126",
+    "CHANNEL_OPS-025",
+    "CHANNEL_OPS-051"
+  ],
+  "new_model_request_count": 0
+}

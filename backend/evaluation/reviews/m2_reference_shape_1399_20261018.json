@@ -1,0 +1,191 @@
+{
+  "stage": "M2 development reference output shape review",
+  "case_id": "BIRD-PG-1399",
+  "source_report_sha256": "a8e5cb6602277ccde09dcaf0bbb3303dd76339995984e3b4d7f4a9598d30610f",
+  "status": "unresolved_reference_shape_difference",
+  "formal_scoring_changed": false,
+  "gold_changed": false,
+  "agent_special_case_added": false,
+  "question": "Did Maya Mclean attend the 'Women's Soccer' event?",
+  "evidence": "Maya Mclean is the full name; full name refers to first_name, last_name; 'Women's Soccer' is an event_name",
+  "generated_sql": "SELECT CASE WHEN COUNT(*) > 0 THEN 'Yes' ELSE 'No' END AS attended FROM attendance a JOIN member m ON a.link_to_member = m.member_id JOIN event e ON a.link_to_event = e.event_id WHERE m.first_name = 'Maya' AND m.last_name = 'Mclean' AND e.event_name = 'Women''s Soccer'",
+  "frozen_gold_sql": "SELECT CASE WHEN T3.event_name = 'Women''s Soccer' THEN 'YES' END AS result FROM member AS T1 INNER JOIN attendance AS T2 ON T1.member_id = T2.link_to_member INNER JOIN event AS T3 ON T2.link_to_event = T3.event_id WHERE T1.first_name = 'Maya' AND T1.last_name = 'Mclean'",
+  "generated_result": {
+    "diagnostic": {
+      "complete": true,
+      "row_count": 1,
+      "column_count": 1,
+      "payload_bytes": 41,
+      "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+      "native_types": [
+        "str"
+      ],
+      "ordered_native_diagnostic_sha256": "b26c3b75f170de3afcfb23b2e775b825c4d472737dc61abed62408d0a13cf76f"
+    },
+    "preview": {
+      "columns": [
+        "attended"
+      ],
+      "rows": [
+        [
+          [
+            "text",
+            "Yes"
+          ]
+        ]
+      ],
+      "preview_only": true,
+      "preview_truncated": false,
+      "complete_result_row_count": 1
+    },
+    "preview_row_limit": 20
+  },
+  "reference_result": {
+    "diagnostic": {
+      "complete": true,
+      "row_count": 14,
+      "column_count": 1,
+      "payload_bytes": 182,
+      "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+      "native_types": [
+        "NoneType",
+        "str"
+      ],
+      "ordered_native_diagnostic_sha256": "ccd3d21632aa141a8123a1faa116a717fd0c567128f8d8f9ac8d4b526fdd2ebf"
+    },
+    "preview": {
+      "columns": [
+        "result"
+      ],
+      "rows": [
+        [
+          [
+            "text",
+            "YES"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ]
+      ],
+      "preview_only": true,
+      "preview_truncated": false,
+      "complete_result_row_count": 14
+    },
+    "preview_row_limit": 20
+  },
+  "native_comparison": {
+    "matches_frozen_gold": false,
+    "difference_codes": [
+      "prediction_has_nonreference_tuples",
+      "prediction_missing_reference_tuples"
+    ],
+    "prediction_row_count": 1,
+    "gold_row_count": 14,
+    "prediction_column_count": 1,
+    "gold_column_count": 1,
+    "prediction_unique_tuple_count": 1,
+    "gold_unique_tuple_count": 2,
+    "prediction_only_tuple_count": 1,
+    "gold_only_tuple_count": 2,
+    "prediction_only_preview": {
+      "rows": [
+        [
+          [
+            "text",
+            "Yes"
+          ]
+        ]
+      ],
+      "utf8_bytes": 16,
+      "oversized_rows_omitted": 0,
+      "preview_truncated": false
+    },
+    "gold_only_preview": {
+      "rows": [
+        [
+          [
+            "text",
+            "YES"
+          ]
+        ],
+        [
+          [
+            "null"
+          ]
+        ]
+      ],
+      "utf8_bytes": 26,
+      "oversized_rows_omitted": 0,
+      "preview_truncated": false
+    },
+    "preview_only": true,
+    "difference_preview_row_limit": 5,
+    "difference_preview_utf8_byte_limit": 65536,
+    "native_type_sets_differ": true,
+    "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+  },
+  "assessment": "The prediction answers a single existence question with Yes. The reference emits YES or NULL per attended event; its tuple set contains both. This is more than case spelling. Preserve native mismatch and review reference semantics separately; do not teach a case-specific YES/NULL template to Agent."
+}

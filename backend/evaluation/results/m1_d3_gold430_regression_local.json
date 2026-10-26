@@ -1,0 +1,14 @@
+{
+  "stage": "M1 D3 Gold430 local code regression",
+  "run_status": "complete",
+  "tests_run": 483,
+  "failure_count": 0,
+  "error_count": 0,
+  "skip_count": 0,
+  "failures": [],
+  "errors": [],
+  "duration_seconds": 156.421,
+  "finished_at": "2026-10-12T03:33:20.573563+00:00",
+  "new_model_request_count": 0,
+  "remote_postgresql_connected": false
+}

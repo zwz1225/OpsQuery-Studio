@@ -1,0 +1,22 @@
+{
+  "stage": "M3 E02 offline review artifact verification",
+  "run_status": "complete",
+  "date": "2026-10-22",
+  "files": {
+    "evaluation/M3_E02_CONDITION_RELATION_REVIEW_20261022.md": "49b4f478312db7c602072ffca91758364e6afa8db8ebdd6c27ac887e33224e9a",
+    "evaluation/m3_e02_minimal_adaptation_review_20261022_v2.json": "94c31f6a3afdac830cfa17f815f4667c4b1b57374109ee579195d0db86cbdd70",
+    "evaluation/results/m3_e02_condition_relation_review_local_20261022.json": "d03bcb1e9c384a3237484a7d1574fce6ce1baa257570791ebad794e24aabf472",
+    "evaluation/results/m3_e02_card_orphan_scope_local_20261022.json": "d07938812906e5231df8d076857b058470d07c567bf97f14f4406f81187a28f7"
+  },
+  "unchanged_producer_file_count": 97,
+  "existing_selector_replays": 4,
+  "review_checks_passed": 44,
+  "planned_positive_cases": 6,
+  "planned_negative_cases": 10,
+  "new_policy_tests_executed": false,
+  "implementation_started": false,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "review_note_updated": "Explicitly record currency lexical-match rejection as well as anchor/reachability gates.",
+  "updated_at": "2026-10-22T08:41:27.247644+00:00"
+}

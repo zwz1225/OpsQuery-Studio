@@ -1,0 +1,27 @@
+{
+  "run_status": "complete",
+  "documents": [
+    {
+      "file": "M3_A_FAILURE_ATTRIBUTION_20261021.md",
+      "lines": 1029
+    },
+    {
+      "file": "M3_A_FIRST_EXPERIMENT_PLAN_20261021.md",
+      "lines": 157
+    }
+  ],
+  "links_checked": 7,
+  "all_local_links_resolve": true,
+  "fences_balanced": true,
+  "source_files_unchanged": 15,
+  "frozen_files_unchanged": 143,
+  "answered_final_sql_successes": 77,
+  "failure_count": 30,
+  "success_count": 50,
+  "pilot_count": 24,
+  "regression_count": 20,
+  "holdout_in_pilot": false,
+  "audit_script_syntax_valid": true,
+  "new_model_request_count": 0,
+  "postgresql_connected": false
+}

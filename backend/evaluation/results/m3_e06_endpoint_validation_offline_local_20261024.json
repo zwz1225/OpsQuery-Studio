@@ -1,0 +1,621 @@
+{
+  "stage": "M3 E06 endpoint validation feedback offline replay",
+  "run_status": "complete",
+  "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+  "formal_benchmark": false,
+  "holdout_run": false,
+  "database_connected": false,
+  "gold_loaded": false,
+  "new_model_request_count": 0,
+  "source_sha256": {
+    "public_development80": "6760724e98b6da967ac5ebb2698c4e5cab385875bd150ad36a3b252ffdc52f03",
+    "authorized_import_manifest": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879",
+    "validation_module": "9a7983726f7176d6e099a9c54e656385e6f2ebe9d99343c6dd1ff64ed67b2c1a",
+    "baseline_capture": "df34944e6ddbfa839d6c4292bc475b53b1fc83dc38f166ca0c953dae0fc6c2e7",
+    "candidate_capture": "c119587d66b557edff8178d3f9d098e2b4a682f0c7c2247e4668fa583ebba783"
+  },
+  "public_case_count": 80,
+  "selected_case_ids": [
+    "BIRD-PG-0239",
+    "BIRD-PG-0072",
+    "BIRD-PG-0092",
+    "BIRD-PG-0356",
+    "BIRD-PG-0036",
+    "BIRD-PG-0082",
+    "BIRD-PG-0368",
+    "BIRD-PG-0379",
+    "BIRD-PG-0480",
+    "BIRD-PG-0586",
+    "BIRD-PG-0637",
+    "BIRD-PG-1473",
+    "BIRD-PG-1486",
+    "BIRD-PG-0095",
+    "BIRD-PG-0159",
+    "BIRD-PG-1405",
+    "BIRD-PG-1457",
+    "BIRD-PG-1460",
+    "BIRD-PG-0766",
+    "BIRD-PG-0773",
+    "BIRD-PG-0206",
+    "BIRD-PG-0226",
+    "BIRD-PG-0263",
+    "BIRD-PG-0273"
+  ],
+  "outcomes": {
+    "baseline": {
+      "case_count": 24,
+      "candidate_repair_ids": [
+        "BIRD-PG-0239"
+      ],
+      "pass_ids": [],
+      "abstain_count": 23,
+      "cases": [
+        {
+          "case_id": "BIRD-PG-0239",
+          "database_id": "toxicology",
+          "sql_sha256": "be9246ddb848411c99dc85b9f58ef21b1a4bdb9b8f0f4120fa96075ec886e241",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "candidate_repair",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "explicit_endpoint_widened_by_or",
+            "feedback": {
+              "code": "explicit_endpoint_widened_by_or",
+              "origin": "public_question_evidence_and_authorized_catalog",
+              "table_id": "toxicology.connected",
+              "named_filter_field_id": "toxicology.connected.atom_id",
+              "additional_filter_field_id": "toxicology.connected.atom_id2",
+              "metric_field_id": "toxicology.connected.bond_id",
+              "operator": "LIKE",
+              "pattern": "TR%_19",
+              "reason": "Public evidence binds the filter to the named endpoint, while the SQL broadens the same pattern to another authorized field with OR.",
+              "repair_guidance": "Keep the named endpoint predicate and requested count; remove the additional endpoint branch. Preserve all other public conditions.",
+              "sql_sha256": "be9246ddb848411c99dc85b9f58ef21b1a4bdb9b8f0f4120fa96075ec886e241"
+            }
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0072",
+          "database_id": "california_schools",
+          "sql_sha256": "67512062f9d42c73b58989c32186f4c1aaf3bc78599c36dbcec6c3e677f02df0",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0092",
+          "database_id": "financial",
+          "sql_sha256": "1768c4792dcb97c000b294e0cf25879cfdcfd2eddfc586b6b001fb914a23abf2",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0356",
+          "database_id": "card_games",
+          "sql_sha256": "e98d2b955fd8894d84f068df971a985bbdb0090d52a21140651c531bf313e6fc",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0036",
+          "database_id": "california_schools",
+          "sql_sha256": "5db897fd6cd5b11e49b02306354eaba770f5c9d72d547764fb4d26aa90566497",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0082",
+          "database_id": "california_schools",
+          "sql_sha256": "faa3d0ef78f35d817c27311f98e9596eb6114dce59a4eb56ad9a42f343291734",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0368",
+          "database_id": "card_games",
+          "sql_sha256": "2dbfd91b7d7eeae2e8f41bc219fd26c9110290450ef46a0e4aeb10db1a2ccd1d",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0379",
+          "database_id": "card_games",
+          "sql_sha256": "c09458e98cb9d13fe045de1940869682b16b2251858ed9304d681848bec09e1c",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0480",
+          "database_id": "card_games",
+          "sql_sha256": "5b1fb72279232eb1ceadfeff95f3cac90b1c86a99d908bc06b33678786c3b578",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0586",
+          "database_id": "codebase_community",
+          "sql_sha256": "098a64638ec3a9e82df2b1fc7158e9754dd7534b8f0beac40c9eb64a140bd7a0",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0637",
+          "database_id": "codebase_community",
+          "sql_sha256": "86fb409f5c651652ab177dd1d25ef62334ca32c17207a8511d05cc54febfdab4",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1473",
+          "database_id": "debit_card_specializing",
+          "sql_sha256": "288630801671f90ef83d9fecd33d906b5247cb9eec5af1f18ac76588709ebbb3",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1486",
+          "database_id": "debit_card_specializing",
+          "sql_sha256": "fb5e0397518b0f9d79bf4c63d2cf422a460fa7c5443bba6feda611144847b905",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0095",
+          "database_id": "financial",
+          "sql_sha256": "addca24f6e62f5fabb71d21cddae7236e7390dcf0cebb4d398cff39cf1b11d59",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0159",
+          "database_id": "financial",
+          "sql_sha256": "c34da07488b1fdfe1514049d77f2079f99c406b9cede7a11343373f4ee36966d",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1405",
+          "database_id": "student_club",
+          "sql_sha256": "f13958a6d8444c950a637e32a0496586b0fc97941ec35abdcbecd52a30afd777",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1457",
+          "database_id": "student_club",
+          "sql_sha256": "467f4dceaa3edd33c5614fd14683f92617c7f614cdffda86a4a42f43c405ee69",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1460",
+          "database_id": "student_club",
+          "sql_sha256": "862400a0c6c60e03e512455b97c8c98ec80fa3dd32a7f6fb67fabc2b32bfcf8d",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0766",
+          "database_id": "superhero",
+          "sql_sha256": "97b4c0530efc73faae6827636a895942d530586b8c3d6859069e9a0ea9d78b00",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0773",
+          "database_id": "superhero",
+          "sql_sha256": "631bc267a4a9fd386fc7a9583b1b92f25b05285e19c0a69503f24aa8e3178f40",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0206",
+          "database_id": "toxicology",
+          "sql_sha256": "ab89852e4fc7a33d4d41cd6f881ba3315c0cdddfaca9ce26946a7223cce44b7b",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0226",
+          "database_id": "toxicology",
+          "sql_sha256": "d57afbbff7aee56c5601e552f33d5a62893dd52b6d32045699c539f31fe215ed",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0263",
+          "database_id": "toxicology",
+          "sql_sha256": "6fcec9046c5f086570367b6a035e534855db26b77f7574e462300202de36cf2a",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0273",
+          "database_id": "toxicology",
+          "sql_sha256": "870ad5ada6442f164706a9b854ba021678eec9b2b4f84e8fbfd448b6d8312a40",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        }
+      ]
+    },
+    "candidate": {
+      "case_count": 24,
+      "candidate_repair_ids": [
+        "BIRD-PG-0239"
+      ],
+      "pass_ids": [],
+      "abstain_count": 23,
+      "cases": [
+        {
+          "case_id": "BIRD-PG-0239",
+          "database_id": "toxicology",
+          "sql_sha256": "be9246ddb848411c99dc85b9f58ef21b1a4bdb9b8f0f4120fa96075ec886e241",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "candidate_repair",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "explicit_endpoint_widened_by_or",
+            "feedback": {
+              "code": "explicit_endpoint_widened_by_or",
+              "origin": "public_question_evidence_and_authorized_catalog",
+              "table_id": "toxicology.connected",
+              "named_filter_field_id": "toxicology.connected.atom_id",
+              "additional_filter_field_id": "toxicology.connected.atom_id2",
+              "metric_field_id": "toxicology.connected.bond_id",
+              "operator": "LIKE",
+              "pattern": "TR%_19",
+              "reason": "Public evidence binds the filter to the named endpoint, while the SQL broadens the same pattern to another authorized field with OR.",
+              "repair_guidance": "Keep the named endpoint predicate and requested count; remove the additional endpoint branch. Preserve all other public conditions.",
+              "sql_sha256": "be9246ddb848411c99dc85b9f58ef21b1a4bdb9b8f0f4120fa96075ec886e241"
+            }
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0072",
+          "database_id": "california_schools",
+          "sql_sha256": "cc17df5633c070626667bb0f23200b442223f15e5c0e19204242eb18a4f1f89f",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0092",
+          "database_id": "financial",
+          "sql_sha256": "1768c4792dcb97c000b294e0cf25879cfdcfd2eddfc586b6b001fb914a23abf2",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0356",
+          "database_id": "card_games",
+          "sql_sha256": "e98d2b955fd8894d84f068df971a985bbdb0090d52a21140651c531bf313e6fc",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0036",
+          "database_id": "california_schools",
+          "sql_sha256": "5db897fd6cd5b11e49b02306354eaba770f5c9d72d547764fb4d26aa90566497",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0082",
+          "database_id": "california_schools",
+          "sql_sha256": "faa3d0ef78f35d817c27311f98e9596eb6114dce59a4eb56ad9a42f343291734",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0368",
+          "database_id": "card_games",
+          "sql_sha256": "2dbfd91b7d7eeae2e8f41bc219fd26c9110290450ef46a0e4aeb10db1a2ccd1d",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0379",
+          "database_id": "card_games",
+          "sql_sha256": "c09458e98cb9d13fe045de1940869682b16b2251858ed9304d681848bec09e1c",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0480",
+          "database_id": "card_games",
+          "sql_sha256": "5b1fb72279232eb1ceadfeff95f3cac90b1c86a99d908bc06b33678786c3b578",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0586",
+          "database_id": "codebase_community",
+          "sql_sha256": "1c0b5647e2074e611515b2ef3f719bf8d7df2b4ce004eda43d18d4367f3fcabc",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0637",
+          "database_id": "codebase_community",
+          "sql_sha256": "86fb409f5c651652ab177dd1d25ef62334ca32c17207a8511d05cc54febfdab4",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1473",
+          "database_id": "debit_card_specializing",
+          "sql_sha256": "288630801671f90ef83d9fecd33d906b5247cb9eec5af1f18ac76588709ebbb3",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1486",
+          "database_id": "debit_card_specializing",
+          "sql_sha256": "fb5e0397518b0f9d79bf4c63d2cf422a460fa7c5443bba6feda611144847b905",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0095",
+          "database_id": "financial",
+          "sql_sha256": "44132f378cf3bf630780303147500ffb3ff35003eefc3a4a0592cbb74e2e991a",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0159",
+          "database_id": "financial",
+          "sql_sha256": "c34da07488b1fdfe1514049d77f2079f99c406b9cede7a11343373f4ee36966d",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1405",
+          "database_id": "student_club",
+          "sql_sha256": "f13958a6d8444c950a637e32a0496586b0fc97941ec35abdcbecd52a30afd777",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1457",
+          "database_id": "student_club",
+          "sql_sha256": "467f4dceaa3edd33c5614fd14683f92617c7f614cdffda86a4a42f43c405ee69",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-1460",
+          "database_id": "student_club",
+          "sql_sha256": "862400a0c6c60e03e512455b97c8c98ec80fa3dd32a7f6fb67fabc2b32bfcf8d",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0766",
+          "database_id": "superhero",
+          "sql_sha256": "97b4c0530efc73faae6827636a895942d530586b8c3d6859069e9a0ea9d78b00",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0773",
+          "database_id": "superhero",
+          "sql_sha256": "1a52733a724090b043fd22ba04b75c9b4bae2f2967c501909833791553c3ebc1",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0206",
+          "database_id": "toxicology",
+          "sql_sha256": "ab89852e4fc7a33d4d41cd6f881ba3315c0cdddfaca9ce26946a7223cce44b7b",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0226",
+          "database_id": "toxicology",
+          "sql_sha256": "7311e480c7f49faa6d6d4309acb6d8ea350f2c1c9a01f929f9213836430666df",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0263",
+          "database_id": "toxicology",
+          "sql_sha256": "6fcec9046c5f086570367b6a035e534855db26b77f7574e462300202de36cf2a",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        },
+        {
+          "case_id": "BIRD-PG-0273",
+          "database_id": "toxicology",
+          "sql_sha256": "870ad5ada6442f164706a9b854ba021678eec9b2b4f84e8fbfd448b6d8312a40",
+          "decision": {
+            "policy": "m3_public_endpoint_validation_feedback_probe_v1",
+            "status": "abstain",
+            "enforcement": "offline_proposal_only",
+            "reason_code": "no_unique_public_endpoint"
+          }
+        }
+      ]
+    }
+  },
+  "meaning": "Static analysis of saved SQL; proposed feedback only, no validator change or new model generation."
+}

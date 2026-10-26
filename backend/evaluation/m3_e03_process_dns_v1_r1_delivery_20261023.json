@@ -1,0 +1,119 @@
+{
+  "stage": "M3 E03 paired process DNS v1 r1 local delivery",
+  "run_status": "complete",
+  "date": "2026-10-23",
+  "bundle_id": "fe68e7c432be3bb0233ca532ce309cf5da805cca23c21ff3c8af66dd24a2e6d8",
+  "zip_name": "M3_E03_pair24_process_dns_v1_20261023_r1.zip",
+  "zip_sha256": "414f2a4fccffd8df982f9fa9fac44785eefdec3c8cfc38d2983100340c7a36ea",
+  "zip_bytes": 1083301,
+  "source_bundle_id": "07e8263e43700091c3c71787d5344648a6b1e9febb145ea25b6ffb24a9c846db",
+  "baseline_code_files": 99,
+  "candidate_code_files": 100,
+  "common_adaptation": {
+    "policy_id": "bird_process_dns_https_v1",
+    "source_bundle_id": "07e8263e43700091c3c71787d5344648a6b1e9febb145ea25b6ffb24a9c846db",
+    "files": [
+      "evaluation/bird/model.py",
+      "evaluation/bird/retrieval.py",
+      "evaluation/bird/diagnostic_runner.py",
+      "evaluation/bird/process_dns.py"
+    ],
+    "added_files": [
+      "evaluation/bird/process_dns.py"
+    ],
+    "baseline_scope": "Frozen E02 semantics plus explicit DNS and verified HTTPS",
+    "candidate_scope": "Frozen E03 semantics plus identical explicit DNS and verified HTTPS"
+  },
+  "transport_policy": {
+    "policy_id": "bird_process_dns_transport_v1",
+    "max_http_attempts": 2,
+    "temporary_dns_retry_delay_seconds": 2,
+    "delay_counts_toward_wall_budget": true,
+    "system_dns_modified": false,
+    "ip_pinning": false,
+    "tls_verification": "stdlib_default",
+    "embedding_batch_size": 10,
+    "extra_dns_probes": false,
+    "process_dns": {
+      "policy_id": "bird_process_dns_https_v1",
+      "resolver": "114.114.114.114",
+      "executable": "/usr/bin/dig",
+      "expected_version": "9.18.39-0ubuntu0.22.04.7-Ubuntu",
+      "query_type": "A",
+      "protocol": "UDP",
+      "queries_per_http_attempt": 1,
+      "dig_timeout_seconds": 3,
+      "dig_tries": 1,
+      "process_timeout_seconds": 5,
+      "maximum_address_connections_per_attempt": 1,
+      "maximum_cname_depth": 8,
+      "cache": "none; fresh answer each HTTP attempt",
+      "reject_expired_answers": true,
+      "redirects": false,
+      "environment_proxy": false,
+      "tls_certificate_and_hostname_verification": true,
+      "system_dns_modified": false,
+      "global_socket_patched": false,
+      "workspace_dependency_lock_required": true
+    }
+  },
+  "preflight_policy": {
+    "policy_id": "bird_process_dns_preflight_v1",
+    "implementation": "producer evaluation.bird.process_dns.readiness",
+    "queries_per_host_per_side": 1,
+    "https_head_per_host_per_side": 1,
+    "timeout_seconds": 20,
+    "before_generation_reservation": true,
+    "model_requests": 0,
+    "system_dns_modified": false
+  },
+  "source_and_scoring_unchanged": true,
+  "shared_module_sha256": {
+    "evaluation/bird/model.py": "f26d84d6624484309dbdf128ea757d398414d6d81ab26e64cb572a3f811d77e1",
+    "evaluation/bird/process_dns.py": "6254ce6c39caec643230e5e1df1034c4611cf4d8f600fc9f66aa832dfcf0dcd9"
+  },
+  "reviewed_probe_sha256": "7dc1dbefe0ce7721c56ddcaae57b1d9f6e66fbab61462dcae8a250a7207aa575",
+  "regression_evidence": "evaluation/results/m3_e03_process_dns_v1_r1_tests_local_20261023.json",
+  "tests": {
+    "stage": "M3 E03 explicit DNS shared transport local verification",
+    "run_status": "complete",
+    "runs": [
+      {
+        "log": "m3_e03_process_dns_v1_m3_tests_local_20261023.log",
+        "tests_run": 146,
+        "passed": 146,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "log": "m3_e03_process_dns_v1_runtime_tests_local_20261023.log",
+        "tests_run": 34,
+        "passed": 31,
+        "skipped": 3,
+        "failures": 0,
+        "errors": 0
+      }
+    ],
+    "tests_run": 180,
+    "passed": 177,
+    "skipped": 3,
+    "failures": 0,
+    "errors": 0,
+    "initial_sandbox_restriction": "Windows denied atomic replacement of test reports; final regression ran with approved sandbox escalation",
+    "live_dns_requests": 0,
+    "live_model_requests": 0,
+    "live_database_connections": 0,
+    "server_isolation_verification_pending": true
+  },
+  "runbook": "evaluation/M3_E03_PROCESS_DNS_PAIR24_SERVER_RUNBOOK_20261023.md",
+  "server_preflight_complete": false,
+  "authenticated_post_verified": false,
+  "e03_experiment_complete": false,
+  "limitations": [
+    "Local regression uses mocked transport. Live Linux isolation and model APIs require server verification.",
+    "The explicit resolver was reachable during the saved probe; long-term reachability is not guaranteed.",
+    "Exact dig version is based on earlier server output; new preflight must verify it and lock actual binary bytes.",
+    "Embedding smoke is separately registered and billed, maximum two HTTP attempts; no question generation."
+  ]
+}

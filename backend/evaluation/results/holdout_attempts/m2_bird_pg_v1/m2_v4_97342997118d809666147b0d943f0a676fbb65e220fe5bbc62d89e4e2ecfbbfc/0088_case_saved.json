@@ -1,0 +1,10 @@
+{
+  "attempt_id": "1218483158c643a085e7b9360dd4a7d7",
+  "case_id": "BIRD-PG-1220",
+  "case_sha256": "45ed1963881772d1a386ff5593e26b2cd2bd2e8b2277b9fddc48d83d05996678",
+  "kind": "case_saved",
+  "previous_event_sha256": "432c1105c5e4c7104c4e1453476105f70585071e057953ecb51e0bd0b966710f",
+  "recorded_at": "2026-10-19T09:05:05.675788+00:00",
+  "sequence": 88,
+  "status": "scored"
+}

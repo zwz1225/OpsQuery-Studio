@@ -1,0 +1,240 @@
+{
+  "attempt_id": "1218483158c643a085e7b9360dd4a7d7",
+  "cache_hit": false,
+  "database_id": "european_football_2",
+  "index_sha256": "c93becff4383a6962ee82142f79a59b20330ab6642f20d36354322931ee61d7b",
+  "kind": "index_ready",
+  "model_usage": {
+    "chat_http_attempts": 0,
+    "elapsed_seconds": 10.623,
+    "generation_attempts": {},
+    "model_events": [
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 805,
+          "total_tokens": 805
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 920,
+          "total_tokens": 920
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 814,
+          "total_tokens": 814
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 811,
+          "total_tokens": 811
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 806,
+          "total_tokens": 806
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 801,
+          "total_tokens": 801
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 902,
+          "total_tokens": 902
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 902,
+          "total_tokens": 902
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 1327,
+          "total_tokens": 1327
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 1276,
+          "total_tokens": 1276
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 1295,
+          "total_tokens": 1295
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 1281,
+          "total_tokens": 1281
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 939,
+          "total_tokens": 939
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 1155,
+          "total_tokens": 1155
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 934,
+          "total_tokens": 934
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 923,
+          "total_tokens": 923
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 930,
+          "total_tokens": 930
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 970,
+          "total_tokens": 970
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 1004,
+          "total_tokens": 1004
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 909,
+          "total_tokens": 909
+        }
+      }
+    ],
+    "model_http_attempts": 20,
+    "sql_tool_calls": 0,
+    "validation_attempts": {}
+  },
+  "previous_event_sha256": "f352c1a0526b3e57cebe70fef4e398bdab80e3421801eb723b58f578f45d1145",
+  "recorded_at": "2026-10-19T08:56:42.222528+00:00",
+  "sequence": 34
+}

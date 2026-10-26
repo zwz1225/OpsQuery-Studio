@@ -1,0 +1,43 @@
+{
+  "stage": "M3 E03 DNS readiness timeout correction r3",
+  "run_status": "complete",
+  "date": "2026-10-23",
+  "bundle_id": "07e8263e43700091c3c71787d5344648a6b1e9febb145ea25b6ffb24a9c846db",
+  "zip_name": "M3_E03_pair24_transport_v2_20261023_r3.zip",
+  "zip_sha256": "42054724dd59c2baa2b6b577652a5bb924514adf788bc5660b556752226aa0bc",
+  "zip_bytes": 1070502,
+  "dns_readiness_policy": {
+    "attempts_per_host": 2,
+    "timeout_seconds": 30,
+    "retry_delay_seconds": 2,
+    "before_generation_reservation": true,
+    "model_requests": 0,
+    "system_dns_modified": false
+  },
+  "transport_policy": {
+    "policy_id": "bird_bounded_dns_recovery_v1",
+    "max_http_attempts": 2,
+    "temporary_dns_retry_delay_seconds": 2,
+    "delay_counts_toward_wall_budget": true,
+    "system_dns_modified": false,
+    "ip_pinning": false,
+    "tls_verification": "stdlib_default",
+    "embedding_batch_size": 10,
+    "extra_dns_probes": false
+  },
+  "both_sides_byte_identical_to_r2": true,
+  "previous_r2_bundle_id": "168e7bb782dd3b57b5e6f1cca01dd6290596bb81c7a362c18f67b2b10ae02224",
+  "previous_r2_zip_preserved": true,
+  "reason": "Server r2 preflight terminated both lookups at 5 seconds; historical successful resolution took about 20 seconds. Preflight allowance increased to 30 seconds only; persistent failures still stop.",
+  "tests": {
+    "run_status": "complete",
+    "tests_run": 19,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "live_model_calls": 0,
+    "live_database_connections": 0,
+    "verification": "19 unittest cases passed outside Windows sandbox; DNS/HTTP mocked; no live server verification"
+  },
+  "server_experiment_complete": false
+}

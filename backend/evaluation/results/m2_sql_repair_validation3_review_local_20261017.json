@@ -1,0 +1,1833 @@
+{
+  "stage": "M2 SQL repair validation3 downloaded report review",
+  "run_status": "complete",
+  "reviewed_at": "2026-10-17T07:11:17.119066+00:00",
+  "source_report_sha256": "aa568886ffbf61c80a0dcae324bb86aa29ca78f86172a677c15a4cac0e3ca853",
+  "check_count": 391,
+  "check_pass_count": 391,
+  "failed_checks": [],
+  "diagnostic_evidence_accepted": true,
+  "formal_ex_score": null,
+  "gold_executed": false,
+  "local_postgresql_connected": false,
+  "new_model_request_count_during_review": 0,
+  "summary": {
+    "case_count": 3,
+    "status_counts": {
+      "diagnostic_answered": 3
+    },
+    "diagnostics_recorded_count": 3,
+    "runtime_closed_count": 3,
+    "repeated_sql_case_count": 0,
+    "database_validation_skipped_count": 0,
+    "case_model_http_attempts": 12,
+    "observed_case_http_attempts": 12,
+    "shared_index_http_attempts": 18,
+    "primary_ex": null,
+    "formal_ex_denominator": null
+  },
+  "total_recorded_http_attempts": 30,
+  "http_kind_counts": {
+    "embedding": 21,
+    "rerank": 3,
+    "chat": 6
+  },
+  "total_wall_seconds": 100.784568,
+  "selection_reason_counts": {
+    "selected": 16,
+    "below_threshold": 84
+  },
+  "case_reviews": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "status": "diagnostic_answered",
+      "checks_passed": true,
+      "candidate_count": 40,
+      "selected_field_count": 4,
+      "graph_field_count": 6,
+      "graph_join_count": 1,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [
+        "california_schools.schools.cdscode",
+        "california_schools.satscores.cds"
+      ],
+      "clarification_reason": null,
+      "generated_sql": "SELECT sch.school, sch.mailstreet AS postal_street_address FROM satscores s JOIN schools sch ON s.cds = sch.cdscode ORDER BY s.avgscrmath DESC LIMIT 1 OFFSET 6",
+      "native_types": [
+        "str"
+      ],
+      "repair_feedback_reconstructed_exactly": true,
+      "initial_sql": "SELECT s.name, sch.mailstreet AS postal_street_address FROM satscores s JOIN schools sch ON s.cds = sch.cdscode ORDER BY s.avgscrmath DESC LIMIT 1 OFFSET 6",
+      "repaired_sql": "SELECT sch.school, sch.mailstreet AS postal_street_address FROM satscores s JOIN schools sch ON s.cds = sch.cdscode ORDER BY s.avgscrmath DESC LIMIT 1 OFFSET 6",
+      "sqlstate": "42703",
+      "error_reason": "column s.name does not exist",
+      "error_position": {
+        "raw_statement_position": 30,
+        "origin": "explain",
+        "sql_position": 8,
+        "line": 1,
+        "column": 8,
+        "available": true
+      },
+      "authorized_hint_count": 16,
+      "repeat_block_exercised": false,
+      "budget_counts": {
+        "model_http_attempts": 4,
+        "chat_http_attempts": 2,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 2
+        },
+        "generation_attempts": {
+          "1": 2
+        },
+        "elapsed_seconds": 5.883
+      },
+      "model_decision_sql_hashes": [
+        "df2e343a5fdc64053e2a91b2eef216f30913acf3eb253c00f546361615246aed",
+        "8098ea1899e3b077649b2b91b4cf86759e3e4807379f1cc13dae541f7be8f228"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "status": "diagnostic_answered",
+      "checks_passed": true,
+      "candidate_count": 39,
+      "selected_field_count": 9,
+      "graph_field_count": 13,
+      "graph_join_count": 6,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [
+        "financial.district.district_id",
+        "financial.account.district_id",
+        "financial.client.district_id",
+        "financial.trans.account_id"
+      ],
+      "clarification_reason": null,
+      "generated_sql": "SELECT d.account_id\nFROM public.disp d\nJOIN public.client c ON d.client_id = c.client_id\nJOIN public.district dist ON c.district_id = dist.district_id\nORDER BY c.birth_date DESC, dist.a11 DESC\nLIMIT 1",
+      "native_types": [
+        "int"
+      ],
+      "repair_feedback_reconstructed_exactly": true,
+      "initial_sql": "SELECT DISTINCT d.account_id\nFROM public.disp d\nJOIN public.client c ON d.client_id = c.client_id\nJOIN public.district dist ON c.district_id = dist.district_id\nORDER BY c.birth_date DESC, dist.a11 DESC\nLIMIT 1",
+      "repaired_sql": "SELECT d.account_id\nFROM public.disp d\nJOIN public.client c ON d.client_id = c.client_id\nJOIN public.district dist ON c.district_id = dist.district_id\nORDER BY c.birth_date DESC, dist.a11 DESC\nLIMIT 1",
+      "sqlstate": "42P10",
+      "error_reason": "for SELECT DISTINCT, ORDER BY expressions must appear in select list",
+      "error_position": {
+        "raw_statement_position": 192,
+        "origin": "explain",
+        "sql_position": 170,
+        "line": 5,
+        "column": 10,
+        "available": true
+      },
+      "authorized_hint_count": 16,
+      "repeat_block_exercised": false,
+      "budget_counts": {
+        "model_http_attempts": 4,
+        "chat_http_attempts": 2,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 2
+        },
+        "generation_attempts": {
+          "1": 2
+        },
+        "elapsed_seconds": 22.113
+      },
+      "model_decision_sql_hashes": [
+        "c31e18acad21d4ba4612d9a813d5168703d45ddaa9c4043742a2141af39c16b9",
+        "d39bc9091492cf8ddde96e26509a409e011b7a621119ad8f42c6063d246ec2b4"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "status": "diagnostic_answered",
+      "checks_passed": true,
+      "candidate_count": 21,
+      "selected_field_count": 3,
+      "graph_field_count": 3,
+      "graph_join_count": 0,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [],
+      "clarification_reason": null,
+      "generated_sql": "SELECT AVG(ym.consumption) / 12 AS average_monthly_consumption FROM yearmonth ym JOIN customers c ON ym.customerid = c.customerid WHERE c.segment = 'SME' AND SUBSTRING(ym.date, 1, 4) = '2013'",
+      "native_types": [
+        "float"
+      ],
+      "repair_feedback_reconstructed_exactly": true,
+      "initial_sql": "SELECT AVG(ym.consumption) / 12 AS average_monthly_consumption FROM yearmonth ym JOIN customers c ON ym.customerid = c.customerid WHERE c.segment = 'SME' AND SUBSTRING(ym.yearmonth::text, 1, 4) = '2013'",
+      "repaired_sql": "SELECT AVG(ym.consumption) / 12 AS average_monthly_consumption FROM yearmonth ym JOIN customers c ON ym.customerid = c.customerid WHERE c.segment = 'SME' AND SUBSTRING(ym.date, 1, 4) = '2013'",
+      "sqlstate": "42703",
+      "error_reason": "column ym.yearmonth does not exist",
+      "error_position": {
+        "raw_statement_position": 191,
+        "origin": "explain",
+        "sql_position": 169,
+        "line": 1,
+        "column": 169,
+        "available": true
+      },
+      "authorized_hint_count": 6,
+      "repeat_block_exercised": false,
+      "budget_counts": {
+        "model_http_attempts": 4,
+        "chat_http_attempts": 2,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 2
+        },
+        "generation_attempts": {
+          "1": 2
+        },
+        "elapsed_seconds": 11.036
+      },
+      "model_decision_sql_hashes": [
+        "a649cecc6908469e9fafd601f7bae54b36b10f289555ab7270cd44f307183688",
+        "137016743b118f7b552ad632a3ddb3cbf6137678469f37dee1685389dc93e67c"
+      ]
+    }
+  ],
+  "validation_details": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "sqlstate": "42703",
+      "message_primary": "column s.name does not exist",
+      "sql_sha256": "df2e343a5fdc64053e2a91b2eef216f30913acf3eb253c00f546361615246aed",
+      "raw_explain_position": 30,
+      "generated_sql_position": 8,
+      "near_generated_sql": "s.name, sch.mailstreet AS postal_str"
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "sqlstate": "42P10",
+      "message_primary": "for SELECT DISTINCT, ORDER BY expressions must appear in select list",
+      "sql_sha256": "c31e18acad21d4ba4612d9a813d5168703d45ddaa9c4043742a2141af39c16b9",
+      "raw_explain_position": 192,
+      "generated_sql_position": 170,
+      "near_generated_sql": "c.birth_date DESC, dist.a11 DESC\nLIM"
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "sqlstate": "42703",
+      "message_primary": "column ym.yearmonth does not exist",
+      "sql_sha256": "a649cecc6908469e9fafd601f7bae54b36b10f289555ab7270cd44f307183688",
+      "raw_explain_position": 191,
+      "generated_sql_position": 169,
+      "near_generated_sql": "ym.yearmonth::text, 1, 4) = '2013'"
+    }
+  ],
+  "declared_fk_relation_counts": {
+    "california_schools": 2,
+    "debit_card_specializing": 0,
+    "financial": 8
+  },
+  "repeat_block_server_exercised": false,
+  "local_regression_evidence": {
+    "stage": "M2 SQL repair feedback local offline regression",
+    "started_at": "2026-10-17T06:13:38.999206+00:00",
+    "finished_at": "2026-10-17T06:14:06.271731+00:00",
+    "run_status": "complete",
+    "tests_run": 119,
+    "passed": 116,
+    "skipped": [
+      {
+        "test": "test_hard_supervisor_timeout (test_m2_c_bird_runtime.LinuxIsolationTest)",
+        "reason": "Linux kernel isolation is verified on the server"
+      },
+      {
+        "test": "test_real_filesystem_network_process_and_env_isolation (test_m2_c_bird_runtime.LinuxIsolationTest)",
+        "reason": "Linux kernel isolation is verified on the server"
+      },
+      {
+        "test": "test_real_indexer_builds_without_project_file_access (test_m2_c_bird_runtime.LinuxIsolationTest)",
+        "reason": "Linux kernel isolation is verified on the server"
+      }
+    ],
+    "failures": [],
+    "errors": [],
+    "elapsed_seconds": 27.281,
+    "postgresql_connected": false,
+    "new_model_request_count": 0,
+    "scope": "Offline/fake models and database operations; actual server behavior still requires a new development diagnostic run."
+  },
+  "limitations": [
+    "This diagnostic run executes generated SQL but never Gold; successful execution is not EX correctness.",
+    "All three cases changed SQL on the second generation; repeat suppression was not exercised by this server run.",
+    "Local regression evidence covers duplicate suppression with fake RPC, not an observed production duplicate in this report.",
+    "Authorization, catalog graphs and feedback were independently reconstructed; actual server index files/vectors were not downloaded.",
+    "Snapshot payload hash was reconstructed; the actual server snapshot file was not downloaded.",
+    "Model event counts, retries and token usage are present; individual request duration and exact prompt UTF-8 bytes are not recorded in these events. Limits rely on the bound runner code and probes.",
+    "Error-free SQL can still contain semantic issues such as NULL ordering or aggregation; native EX must be assessed separately."
+  ],
+  "recommended_next_step": "Preserve this report as SQL-repair diagnostic evidence, then improve authorized Schema coverage on development cases with explicit retrieval-policy versioning; perform a distinct candidate readiness check before formal development EX, keep holdout closed.",
+  "checks": [
+    {
+      "name": "complete_diagnostic_stage",
+      "passed": true
+    },
+    {
+      "name": "diagnostic_not_formal_score",
+      "passed": true
+    },
+    {
+      "name": "existing_verified_target",
+      "passed": true
+    },
+    {
+      "name": "protocol_source_binding",
+      "passed": true
+    },
+    {
+      "name": "recorded_prerequisite_links",
+      "passed": true
+    },
+    {
+      "name": "code_binding_digest",
+      "passed": true
+    },
+    {
+      "name": "delivered_file_inventory",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/routes.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/database.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/contracts.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/csv_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/dialects.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_connections.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/row_digest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/sql_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/values.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/errors.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/main.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/schemas.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/server.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/database_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/presentation_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/time_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/model_client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/data_qa_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/duckdb_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/metric_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/postgres_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/response_generator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/single_database_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/time_field_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/access_control.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/auth.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/askdata_service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/memory_store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_archive.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/short_term_memory.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/registry.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/clarification.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/query_graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/result_builder.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/state.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/budgets.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/case_worker.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/diagnostic_runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/diagnostics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/evidence.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/isolated_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/manifest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/metrics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/model.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/native.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/repair.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/retrieval.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/sql.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird_protocol.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/run_bird_benchmark.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/check_m2_c_bird_runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_common.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_dump.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_structure.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_target.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_typed_rows.py",
+      "passed": true
+    },
+    {
+      "name": "server_environment",
+      "passed": true
+    },
+    {
+      "name": "model_configuration",
+      "passed": true
+    },
+    {
+      "name": "exact_unique_3_development_cases",
+      "passed": true
+    },
+    {
+      "name": "actual_current_isolation",
+      "passed": true
+    },
+    {
+      "name": "mandatory_isolation_policy",
+      "passed": true
+    },
+    {
+      "name": "current_timeout_probe",
+      "passed": true
+    },
+    {
+      "name": "seven_simulated_budget_probes",
+      "passed": true
+    },
+    {
+      "name": "preparation_pools_closed",
+      "passed": true
+    },
+    {
+      "name": "three_unique_receipts",
+      "passed": true
+    },
+    {
+      "name": "california_schools:fresh_source_receipt",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:fresh_source_receipt",
+      "passed": true
+    },
+    {
+      "name": "financial:fresh_source_receipt",
+      "passed": true
+    },
+    {
+      "name": "three_current_indexes",
+      "passed": true
+    },
+    {
+      "name": "california_schools:current_index_identity",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:counter",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:0",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:1",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:2",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:3",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:4",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:5",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:6",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:7",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:8",
+      "passed": true
+    },
+    {
+      "name": "california_schools:new_index_batches",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:current_index_identity",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:counter",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:0",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:1",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:2",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:new_index_batches",
+      "passed": true
+    },
+    {
+      "name": "financial:current_index_identity",
+      "passed": true
+    },
+    {
+      "name": "financial:index:counter",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:0",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:1",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:2",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:3",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:4",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:5",
+      "passed": true
+    },
+    {
+      "name": "financial:new_index_batches",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:36",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:37",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:38",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:39",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:40",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_sql:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_sql:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:structured_pg_reason:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:validation_log:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_authorized_feedback_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:repair_policy",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:precise_attempt_sequence",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:real_first_database_validation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:bounded_feedback",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:authorized_hint:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:changed_sql_after_feedback",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:no_actual_repeat_in_this_run",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_observed_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:successful_native_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:event:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:chat_output:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:36",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:37",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:38",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:39",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_sql:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_sql:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:structured_pg_reason:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:validation_log:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_authorized_feedback_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:repair_policy",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:precise_attempt_sequence",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:real_first_database_validation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:bounded_feedback",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:authorized_hint:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:changed_sql_after_feedback",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:no_actual_repeat_in_this_run",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_observed_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:successful_native_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:event:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:chat_output:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:exact_sql:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:exact_sql:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:structured_pg_reason:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:validation_log:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:exact_authorized_feedback_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:repair_policy",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:precise_attempt_sequence",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:real_first_database_validation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:bounded_feedback",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:authorized_hint:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:authorized_hint:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:authorized_hint:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:authorized_hint:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:authorized_hint:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:authorized_hint:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:changed_sql_after_feedback",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:no_actual_repeat_in_this_run",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:exact_observed_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:successful_native_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:event:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:chat_output:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:case_budget",
+      "passed": true
+    },
+    {
+      "name": "entire_summary_recomputed",
+      "passed": true
+    },
+    {
+      "name": "snapshot_payload_hash",
+      "passed": true
+    },
+    {
+      "name": "snapshot_diagnostic_partition",
+      "passed": true
+    },
+    {
+      "name": "timeline",
+      "passed": true
+    }
+  ]
+}

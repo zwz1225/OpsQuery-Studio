@@ -1,0 +1,43 @@
+{
+  "stage": "M1 C3 local live-metadata/executor/runtime implementation",
+  "run_status": "complete",
+  "recorded_at": "2026-10-10T03:28:13.385602+00:00",
+  "regression": {
+    "command": "python -m unittest discover -s tests -q",
+    "test_count": 379,
+    "new_runtime_test_count": 26,
+    "duration_seconds": 62.64,
+    "errors": 0,
+    "failures": 0,
+    "result": "OK"
+  },
+  "server_acceptance": "pending independent PostgreSQL server report",
+  "expected_server_check_count": 24,
+  "postgresql_connected_by_local_verification": false,
+  "live_target_verified_locally": false,
+  "model_request_count": 0,
+  "frozen_source_data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "accepted_input_report_sha256": {
+    "m1_b_postgres_import_server.json": "215c9ce2e1ae53e140b7c17e4222d8eae29dcce7dd423ab03f74918d13032ce9",
+    "m1_b_postgres_validation_server.json": "1e8e9b757f6391b15766169b631f3c7d287a1fdd95ea933570773989a57851f6",
+    "m1_c2_postgres_connections_server.json": "f8fd6a37aae2c2e8536c51199153e9572156bc7e12489855c05c45604777835e"
+  },
+  "file_sha256": {
+    "backend/app/datasources/row_digest.py": "06cb48c69b2b0d2e05006de64f6555fe8b0ab4460118afb92af8e9c3efc28b06",
+    "backend/scripts/preflight_m1_b_source.py": "e198c5767259140ae275af5eaf91a7c1e8770bd79700d434ad20c553d825fd0d",
+    "backend/app/datasources/postgres_metadata.py": "1a1f3cd0bac6193231a9403e010a3c482904f851ae433abb1d95bb94183c771e",
+    "backend/app/datasources/sql_policy.py": "63794c350b9971a4a9b83ba74e96e7ec051d87ca2cff2b6512d11282bc086c82",
+    "backend/app/querying/postgres_engine.py": "eb533e3bb5a022bcab33a181fc992cf575bdca92debbbdd486a184a09df4c857",
+    "backend/app/datasources/runtime.py": "586c9024d8b8dbca5ffa9ea3f04d403190285333e4c04b3a19036e897ddcbe24",
+    "backend/app/config.py": "7e71979bf12e33bc7636d64c9a608552103c97cf176db64f8d731c73a7fc75b3",
+    "backend/tests/test_postgres_runtime.py": "63feb811cb79b33d0092de33004ff2fdb619a0cfdfbfe44d43540b56a4c6439e",
+    "backend/tests/test_postgres_config.py": "f5d3821e78465c5dd082794caee3c7a906199edbf83e5298315da5223463a5c4",
+    "backend/tests/test_datasource_runtime.py": "45c9bfccf4e3942ecb8f23b2041950663cf8b5a73a56a6f3cc5b0a2b96f0c836",
+    "backend/scripts/check_m1_c3_postgres_runtime.py": "98683740a9e46499c31845125b3823ec2e758d11a56f6db5148101f5d762cd9c",
+    "backend/evaluation/M1_C3_RUNTIME_ACCEPTANCE.md": "5c1fcdfbc7ecbac6807cb0d222c249f22f70e3e500a5c0acd8d11b2f13915b3c",
+    "backend/requirements-postgres.txt": "5ae65fcd02558d3cb1c3e24a2cfebb2cdfd4e9c079f0e508941aebfcb56a3040",
+    "M1_数据源依赖梳理与最小适配方案.md": "45409daf28694f7b3da2be2d5c5d834ec988b922e889e7aad9af762db56168f9"
+  },
+  "runtime_guard": "Initial M1 B typed data verification; each operation rechecks full server-side content SHA256, structure and ACL in the query transaction",
+  "performance_scope": "Server execution timings pending; full source scans are intentional in this isolated acceptance dataset"
+}

@@ -1,0 +1,1559 @@
+{
+  "stage": "M3 local evidence ledger and active-source audit",
+  "review_date": "2026-10-26",
+  "run_status": "complete",
+  "scope": "M3 closeout only; M4 not started",
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "experiments": [
+    {
+      "experiment_id": "E01-24",
+      "family": "output_contract",
+      "directory": "m3_e01_pair24_20261021_v2",
+      "bundle_id": "41ff1ccc6837664ef5a4a9d43e34d7bbd321c2e587d56d82013c6e60721304d8",
+      "case_count": 24,
+      "baseline_match_count": 20,
+      "candidate_match_count": 21,
+      "net_gain": 1,
+      "improved_case_ids": [
+        "BIRD-PG-0050"
+      ],
+      "regressed_case_ids": [],
+      "same_round_field": null,
+      "baseline_reused_field": null,
+      "schema_context_changed_case_ids": [],
+      "automatic_screen_pass": false,
+      "screening": {
+        "primary_at_least_two": false,
+        "net_gain_at_least_one": true,
+        "twenty_successes_retained": true,
+        "baseline_not_already_all_primary_correct": true,
+        "cost_known": true,
+        "cost_within_screen": false,
+        "same_observed_schema_all_cases": true
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "screened_out",
+      "closeout_reason": "One of three primary targets improved; p95 exceeded its frozen limit.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": 165552,
+            "known_lower_bound": 165552,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 335411,
+            "known_lower_bound": 335411,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 30,
+          "event_statuses": {
+            "complete": 127
+          },
+          "recorded_model_http_attempts": 78
+        },
+        "candidate": {
+          "chat": {
+            "total": 168881,
+            "known_lower_bound": 168881,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 293523,
+            "known_lower_bound": 293523,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 29,
+          "event_statuses": {
+            "complete": 77
+          },
+          "recorded_model_http_attempts": 77
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 21.746,
+        "candidate": 27.562
+      },
+      "comparison": {
+        "path": "m3_e01_pair24_20261021_v2/reports/pair24_comparison_server.json",
+        "sha256": "aa9eea6a434640fb4646487ef79c19883cb97298575393cff22980bb58e3b87b",
+        "bytes": 90837
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_e01_pair24_20261021_v2/baseline/backend/evaluation/results/m3_e01_baseline24_capture_server.json",
+          "sha256": "49f0a35c7e9ba2866ad476458f520a68e89d6e13f20376a39a62a5b2ac91ac6e",
+          "bytes": 1516640
+        },
+        "candidate_capture": {
+          "path": "m3_e01_pair24_20261021_v2/candidate/backend/evaluation/results/m3_e01_candidate24_capture_server.json",
+          "sha256": "1d056034333edfa1287e59cae7452276770981e43acf743cccc09b074fae891a",
+          "bytes": 1557113
+        },
+        "baseline_native": {
+          "path": "m3_e01_pair24_20261021_v2/baseline/backend/evaluation/results/m3_e01_baseline24_native_server.json",
+          "sha256": "8d54e8bf7d0f6a2d136659a9c2b97eaceab9aac6c88ff45ff42d83b2389dc4d6",
+          "bytes": 223498
+        },
+        "candidate_native": {
+          "path": "m3_e01_pair24_20261021_v2/candidate/backend/evaluation/results/m3_e01_candidate24_native_server.json",
+          "sha256": "486c6a92afd33a4cc2ad8d294a5092138aa233bdafd266648bcfdc6594c4526c",
+          "bytes": 222673
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_e01_pair24_bundle_20261021_v2/bundle_manifest.json",
+        "sha256": "0e610e7faa245e4707760c032106e7adbbee17e88ef0c4424272eece0d812b6d",
+        "bytes": 110736
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    },
+    {
+      "experiment_id": "E02-24",
+      "family": "condition_relation_coverage",
+      "directory": "m3_e02_pair24_20261022_v5",
+      "bundle_id": "2ff7b2a2b12751bf163d970ce8e688498c5bfc9bfaf325c7e67a1a58fb2a0dd6",
+      "case_count": 24,
+      "baseline_match_count": 20,
+      "candidate_match_count": 21,
+      "net_gain": 1,
+      "improved_case_ids": [
+        "BIRD-PG-1479"
+      ],
+      "regressed_case_ids": [],
+      "same_round_field": null,
+      "baseline_reused_field": null,
+      "schema_context_changed_case_ids": [
+        "BIRD-PG-1479"
+      ],
+      "automatic_screen_pass": true,
+      "screening": {
+        "currency_target_native_correct": true,
+        "net_gain_at_least_one": true,
+        "twenty_successes_retained": true,
+        "cost_known": true,
+        "model_calls_within_screen": true,
+        "cost_within_screen": true,
+        "candidate_schema_changed_on_target": true
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "passed_local_screen_superseded_by_80",
+      "closeout_reason": "1479 currency and authorized relation use confirmed; not product acceptance.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": 160205,
+            "known_lower_bound": 160205,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 330064,
+            "known_lower_bound": 330064,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 29,
+          "event_statuses": {
+            "complete": 126
+          },
+          "recorded_model_http_attempts": 77
+        },
+        "candidate": {
+          "chat": {
+            "total": 167844,
+            "known_lower_bound": 167844,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 337703,
+            "known_lower_bound": 337703,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 29,
+          "event_statuses": {
+            "complete": 126
+          },
+          "recorded_model_http_attempts": 77
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 19.874,
+        "candidate": 19.479
+      },
+      "comparison": {
+        "path": "m3_e02_pair24_20261022_v5/reports/e02_pair24_comparison_server.json",
+        "sha256": "d4e70cdba46cce6ad1b3c13fa81e7edf193d66cba3d92fda0184fe4a17aa3e11",
+        "bytes": 90656
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_e02_pair24_20261022_v5/baseline/backend/evaluation/results/m3_e02_baseline24_capture_server.json",
+          "sha256": "b97756e8a8b6214d56d2b30e25ab87d8b5052ce9c57c2d33bf304b91a70b7590",
+          "bytes": 1497815
+        },
+        "candidate_capture": {
+          "path": "m3_e02_pair24_20261022_v5/candidate/backend/evaluation/results/m3_e02_candidate24_capture_server.json",
+          "sha256": "3bb8bf209b91becc9f19fa467f640e027f18121f1995513e9dd814e3613dc05f",
+          "bytes": 1689235
+        },
+        "baseline_native": {
+          "path": "m3_e02_pair24_20261022_v5/baseline/backend/evaluation/results/m3_e02_baseline24_native_server.json",
+          "sha256": "8bd16d7f8b3380e656b2c7fca7b03859aeb0ceaf3165fc0bcc0d134974838eb4",
+          "bytes": 223558
+        },
+        "candidate_native": {
+          "path": "m3_e02_pair24_20261022_v5/candidate/backend/evaluation/results/m3_e02_candidate24_native_server.json",
+          "sha256": "4475360425936aeafdd33029fd5801eeffb0b1bbdbf37e947fba7b72c4ab75ce",
+          "bytes": 219695
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_e02_pair24_bundle_20261022_v5/bundle_manifest.json",
+        "sha256": "c1b9de6dad4b641f1ab545ff3c3cca7eea96637b6b78b16a17ae6abae56060ed",
+        "bytes": 117279
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    },
+    {
+      "experiment_id": "E02-80",
+      "family": "condition_relation_coverage",
+      "directory": "m3_e02_pair80_process_dns_v1_20261024_r1",
+      "bundle_id": "3288d878d8d466104b57f561e3dc3c344fde21597c998285dd748208ea700797",
+      "case_count": 80,
+      "baseline_match_count": 50,
+      "candidate_match_count": 50,
+      "net_gain": 0,
+      "improved_case_ids": [
+        "BIRD-PG-1479"
+      ],
+      "regressed_case_ids": [
+        "BIRD-PG-0092"
+      ],
+      "same_round_field": null,
+      "baseline_reused_field": null,
+      "schema_context_changed_case_ids": [
+        "BIRD-PG-1479",
+        "BIRD-PG-1481",
+        "BIRD-PG-1505"
+      ],
+      "automatic_screen_pass": false,
+      "screening": {
+        "candidate_at_least_51_of_80": false,
+        "candidate_exceeds_same_round_baseline": false,
+        "historical_success50_retained": false,
+        "regression20_retained": true,
+        "cost_known": true,
+        "chat_tokens_within_20_percent": true,
+        "case_p95_within_20_percent": true
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "not_adopted",
+      "closeout_reason": "1479 improves; 0092 regresses; no full-development net gain.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": 493281,
+            "known_lower_bound": 493281,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 972474,
+            "known_lower_bound": 972474,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 91,
+          "event_statuses": {
+            "complete": 300
+          },
+          "recorded_model_http_attempts": 300
+        },
+        "candidate": {
+          "chat": {
+            "total": 524922,
+            "known_lower_bound": 524922,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 1004115,
+            "known_lower_bound": 1004115,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 91,
+          "event_statuses": {
+            "complete": 300
+          },
+          "recorded_model_http_attempts": 300
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 19.963,
+        "candidate": 19.757
+      },
+      "comparison": {
+        "path": "m3_e02_pair80_process_dns_v1_20261024_r1/reports/e02_pair80_comparison_server.json",
+        "sha256": "bc2556b81b19b2e56e01f4f7b4ab379131971982bf979c0af63453ec39a7fb18",
+        "bytes": 1683571
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_e02_pair80_process_dns_v1_20261024_r1/baseline/backend/evaluation/results/m3_e02_pair80_baseline_capture_server.json",
+          "sha256": "6ff077418d6ab841772f85ec08a0cd7dc85c101091e30d3be71a60d66ec176a0",
+          "bytes": 5857286
+        },
+        "candidate_capture": {
+          "path": "m3_e02_pair80_process_dns_v1_20261024_r1/candidate/backend/evaluation/results/m3_e02_pair80_candidate_capture_server.json",
+          "sha256": "aef227e08d14cb6e903df2a71b2a1b8615901febe3788453af1bd12462068ff8",
+          "bytes": 6438419
+        },
+        "baseline_native": {
+          "path": "m3_e02_pair80_process_dns_v1_20261024_r1/baseline/backend/evaluation/results/m3_e02_pair80_baseline_native_server.json",
+          "sha256": "fbbaea474e3fa3f28e00e1930e04a4ca38ff2d9c3bbd7f2e4541f3e68332aecf",
+          "bytes": 670093
+        },
+        "candidate_native": {
+          "path": "m3_e02_pair80_process_dns_v1_20261024_r1/candidate/backend/evaluation/results/m3_e02_pair80_candidate_native_server.json",
+          "sha256": "0419fe886890d6e0fcc55e04a1cf19204d8e4bb1a0bbe7c7dabe987643f0ba6f",
+          "bytes": 669382
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_e02_pair80_process_dns_v1_20261024_r3/bundle_manifest.json",
+        "sha256": "9c0bcce2ed18fdb80692373eb74904050a0e7b07cc43e0253aad69396c7d1485",
+        "bytes": 122000
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    },
+    {
+      "experiment_id": "E03-24",
+      "family": "incomplete_relation_output",
+      "directory": "m3_e03_pair24_process_dns_v1_20261023_r2",
+      "bundle_id": "483c6a685bd96a5b5e495012ff37fc879011d4216b5fd40bb0abed2895759a2c",
+      "case_count": 24,
+      "baseline_match_count": 22,
+      "candidate_match_count": 22,
+      "net_gain": 0,
+      "improved_case_ids": [],
+      "regressed_case_ids": [],
+      "same_round_field": null,
+      "baseline_reused_field": null,
+      "schema_context_changed_case_ids": [],
+      "automatic_screen_pass": false,
+      "screening": {
+        "relation_output_target_native_correct": false,
+        "net_gain_at_least_one": false,
+        "twenty_successes_retained": true,
+        "cost_known": true,
+        "model_calls_within_screen": true,
+        "cost_within_screen": true,
+        "candidate_schema_changed_on_target": false,
+        "currency_regression_retained": true
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "not_adopted",
+      "closeout_reason": "0407 target context and output not repaired; transport observation retained separately.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": 154968,
+            "known_lower_bound": 154968,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 324827,
+            "known_lower_bound": 324827,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 27,
+          "event_statuses": {
+            "complete": 124
+          },
+          "recorded_model_http_attempts": 124
+        },
+        "candidate": {
+          "chat": {
+            "total": 187968,
+            "known_lower_bound": 187968,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 357827,
+            "known_lower_bound": 357827,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 30,
+          "event_statuses": {
+            "complete": 127
+          },
+          "recorded_model_http_attempts": 127
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 18.654,
+        "candidate": 21.63
+      },
+      "comparison": {
+        "path": "m3_e03_pair24_process_dns_v1_20261023_r2/reports/e03_pair24_comparison_server.json",
+        "sha256": "864223cad8e71e07049cd3cb1fd344f815cdac563117720de7eb0ce9565ab102",
+        "bytes": 513681
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_e03_pair24_process_dns_v1_20261023_r2/baseline/backend/evaluation/results/m3_e03_baseline24_capture_server.json",
+          "sha256": "61b970c9e457b84088c12f581c533c87da3dea88a50a239d2030b27c12a4f81f",
+          "bytes": 2178241
+        },
+        "candidate_capture": {
+          "path": "m3_e03_pair24_process_dns_v1_20261023_r2/candidate/backend/evaluation/results/m3_e03_candidate24_capture_server.json",
+          "sha256": "dc5ddd924f3771c3d767a9c02217e5b09334d6b5d9d13b80b1d28608680093fc",
+          "bytes": 2326585
+        },
+        "baseline_native": {
+          "path": "m3_e03_pair24_process_dns_v1_20261023_r2/baseline/backend/evaluation/results/m3_e03_baseline24_native_server.json",
+          "sha256": "5e153c6558fe44372c8b0a0854863469f4651121ceab471a783c5753a55430b1",
+          "bytes": 218884
+        },
+        "candidate_native": {
+          "path": "m3_e03_pair24_process_dns_v1_20261023_r2/candidate/backend/evaluation/results/m3_e03_candidate24_native_server.json",
+          "sha256": "cb1c19c345529702ad4bea1a60982fd58f406d9efb1fafbe885e364506ffbb35",
+          "bytes": 219032
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_e03_pair24_process_dns_v1_20261023_r2/bundle_manifest.json",
+        "sha256": "c17dbd719724cc008e3d3d0441986f9d92ddda18172345b53702cb079f375190",
+        "bytes": 121196
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    },
+    {
+      "experiment_id": "E04-24",
+      "family": "scalar_count_shape",
+      "directory": "m3_e04_pair24_scalar_count_20261024_r2",
+      "bundle_id": "c57344fe558c72d03eb27da90a84a528987f8e84803205b9bed3d2b7c971019b",
+      "case_count": 24,
+      "baseline_match_count": 22,
+      "candidate_match_count": 22,
+      "net_gain": 0,
+      "improved_case_ids": [],
+      "regressed_case_ids": [],
+      "same_round_field": null,
+      "baseline_reused_field": null,
+      "schema_context_changed_case_ids": [],
+      "automatic_screen_pass": false,
+      "screening": {
+        "target_0092_native_correct": true,
+        "candidate_exceeds_same_round_baseline": false,
+        "regression20_retained": true,
+        "cost_known": true,
+        "chat_tokens_within_20_percent": true,
+        "case_p95_within_20_percent": true
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "not_adopted",
+      "closeout_reason": "0092 already succeeds on both sides; no measured added gain.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": 175246,
+            "known_lower_bound": 175246,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 341026,
+            "known_lower_bound": 341026,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 30,
+          "event_statuses": {
+            "complete": 127
+          },
+          "recorded_model_http_attempts": 127
+        },
+        "candidate": {
+          "chat": {
+            "total": 178309,
+            "known_lower_bound": 178309,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 344089,
+            "known_lower_bound": 344089,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 30,
+          "event_statuses": {
+            "complete": 127
+          },
+          "recorded_model_http_attempts": 127
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 21.929,
+        "candidate": 21.818
+      },
+      "comparison": {
+        "path": "m3_e04_pair24_scalar_count_20261024_r2/reports/e04_pair24_comparison_server.json",
+        "sha256": "ac35c51e33460456ab323685131dfbe1fed6430f3909373008228e281626f64d",
+        "bytes": 523214
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_e04_pair24_scalar_count_20261024_r2/baseline/backend/evaluation/results/m3_e04_pair24_baseline_capture_server.json",
+          "sha256": "47cb12175bd5e0278bae214c417554d274c645918db4b0374f7a749d2987aaf5",
+          "bytes": 2207209
+        },
+        "candidate_capture": {
+          "path": "m3_e04_pair24_scalar_count_20261024_r2/candidate/backend/evaluation/results/m3_e04_pair24_candidate_capture_server.json",
+          "sha256": "a4ede17c434aad8d0e7145f4574e8a8ff812228263841cbb25f207a39a7b4578",
+          "bytes": 2221313
+        },
+        "baseline_native": {
+          "path": "m3_e04_pair24_scalar_count_20261024_r2/baseline/backend/evaluation/results/m3_e04_pair24_baseline_native_server.json",
+          "sha256": "beddc41c3033df335396fdbd6078548019ac755bd34d292245535cedb935c4d4",
+          "bytes": 211318
+        },
+        "candidate_native": {
+          "path": "m3_e04_pair24_scalar_count_20261024_r2/candidate/backend/evaluation/results/m3_e04_pair24_candidate_native_server.json",
+          "sha256": "d2fb7f64222d2b994ae256494edef017121736781c2ab5bd897e14049c1a9438",
+          "bytes": 208822
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_e04_pair24_scalar_count_v2_20261024/bundle_manifest.json",
+        "sha256": "8178a97979575f6b2f8c35ec4f3df2124ed20aaa0800a069abe5523e72c26f6c",
+        "bytes": 123279
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    },
+    {
+      "experiment_id": "E05-24",
+      "family": "explicit_endpoint_prompt",
+      "directory": "m3_e05_pair24_endpoint_scope_20261024_r1",
+      "bundle_id": "456e1aae181956c8e28c2193b71f8a750e50f8bc5a738043e8ec5de11b192a53",
+      "case_count": 24,
+      "baseline_match_count": 22,
+      "candidate_match_count": 22,
+      "net_gain": 0,
+      "improved_case_ids": [],
+      "regressed_case_ids": [],
+      "same_round_field": null,
+      "baseline_reused_field": null,
+      "schema_context_changed_case_ids": [],
+      "automatic_screen_pass": false,
+      "screening": {
+        "target_0239_native_correct": false,
+        "candidate_exceeds_same_round_baseline": false,
+        "regression20_retained": true,
+        "cost_known": true,
+        "chat_tokens_within_20_percent": true,
+        "case_p95_within_20_percent": true
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "not_adopted",
+      "closeout_reason": "0239 still widens to both endpoints; prompt did not cause a repair.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": 166721,
+            "known_lower_bound": 166721,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 332501,
+            "known_lower_bound": 332501,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 29,
+          "event_statuses": {
+            "complete": 126
+          },
+          "recorded_model_http_attempts": 126
+        },
+        "candidate": {
+          "chat": {
+            "total": 163425,
+            "known_lower_bound": 163425,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 329205,
+            "known_lower_bound": 329205,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 28,
+          "event_statuses": {
+            "complete": 125
+          },
+          "recorded_model_http_attempts": 125
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 19.698,
+        "candidate": 19.304
+      },
+      "comparison": {
+        "path": "m3_e05_pair24_endpoint_scope_20261024_r1/reports/e05_pair24_comparison_server.json",
+        "sha256": "08fb16e2d8a95f2f078e79a2ffa303ebb80fea62f54dfca4fe0fd05a59e83247",
+        "bytes": 513457
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_e05_pair24_endpoint_scope_20261024_r1/baseline/backend/evaluation/results/m3_e05_pair24_baseline_capture_server.json",
+          "sha256": "df34944e6ddbfa839d6c4292bc475b53b1fc83dc38f166ca0c953dae0fc6c2e7",
+          "bytes": 2185330
+        },
+        "candidate_capture": {
+          "path": "m3_e05_pair24_endpoint_scope_20261024_r1/candidate/backend/evaluation/results/m3_e05_pair24_candidate_capture_server.json",
+          "sha256": "c119587d66b557edff8178d3f9d098e2b4a682f0c7c2247e4668fa583ebba783",
+          "bytes": 2187716
+        },
+        "baseline_native": {
+          "path": "m3_e05_pair24_endpoint_scope_20261024_r1/baseline/backend/evaluation/results/m3_e05_pair24_baseline_native_server.json",
+          "sha256": "8807af787636b007c9eec49653673cbde7e560d4d7160d41c004084dd7075c34",
+          "bytes": 208691
+        },
+        "candidate_native": {
+          "path": "m3_e05_pair24_endpoint_scope_20261024_r1/candidate/backend/evaluation/results/m3_e05_pair24_candidate_native_server.json",
+          "sha256": "af27d02bfc1f86c2f4095381b4d3c31c318390c22fb8a21259e444f22b006377",
+          "bytes": 208815
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_e05_pair24_endpoint_scope_v1_20261024/bundle_manifest.json",
+        "sha256": "3d5a465eec31f8ec45d58c39e74eb9b84a65e3986d734e29018f214d59ac55cc",
+        "bytes": 123286
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    },
+    {
+      "experiment_id": "E06-24",
+      "family": "explicit_endpoint_feedback",
+      "directory": "m3_e06_pair24_endpoint_feedback_v2_20261024_r1",
+      "bundle_id": "b0d2526fed45f2ad3c54f723afb1390930a826764e029ac0c6283f93a3d5b0bc",
+      "case_count": 24,
+      "baseline_match_count": 22,
+      "candidate_match_count": 23,
+      "net_gain": 1,
+      "improved_case_ids": [
+        "BIRD-PG-0239"
+      ],
+      "regressed_case_ids": [],
+      "same_round_field": null,
+      "baseline_reused_field": null,
+      "schema_context_changed_case_ids": [],
+      "automatic_screen_pass": true,
+      "screening": {
+        "target_0239_native_correct": true,
+        "candidate_exceeds_same_round_baseline": true,
+        "regression20_retained": true,
+        "boundary_0206_native_correct": true,
+        "boundary_0206_not_rejected": true,
+        "cost_known": true,
+        "chat_tokens_within_20_percent": true,
+        "case_p95_within_20_percent": true
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "passed_local_screen_superseded_by_80",
+      "closeout_reason": "0239 repair trace confirmed; legitimate 0206 union preserved.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": 158635,
+            "known_lower_bound": 158635,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 324415,
+            "known_lower_bound": 324415,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 27,
+          "event_statuses": {
+            "complete": 124
+          },
+          "recorded_model_http_attempts": 124
+        },
+        "candidate": {
+          "chat": {
+            "total": 171069,
+            "known_lower_bound": 171069,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 336849,
+            "known_lower_bound": 336849,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 29,
+          "event_statuses": {
+            "complete": 126
+          },
+          "recorded_model_http_attempts": 126
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 22.102,
+        "candidate": 21.665
+      },
+      "comparison": {
+        "path": "m3_e06_pair24_endpoint_feedback_v2_20261024_r1/reports/e06_pair24_comparison_server.json",
+        "sha256": "a66d55d54dc22d5bd0cfbec4ba8415a3f507d8c46a9f589aa1c1e7292a8e0d37",
+        "bytes": 559980
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_e06_pair24_endpoint_feedback_v2_20261024_r1/baseline/backend/evaluation/results/m3_e06_pair24_baseline_capture_server.json",
+          "sha256": "cfa82d667eb05462c03b95179eb3121e0c8e81084e6175e9724a769600c15d27",
+          "bytes": 2171575
+        },
+        "candidate_capture": {
+          "path": "m3_e06_pair24_endpoint_feedback_v2_20261024_r1/candidate/backend/evaluation/results/m3_e06_pair24_candidate_capture_server.json",
+          "sha256": "7daa312a5291eb0e3c76460f5a0c8b528d582c0179c379bbe275c2b004d9131a",
+          "bytes": 2213660
+        },
+        "baseline_native": {
+          "path": "m3_e06_pair24_endpoint_feedback_v2_20261024_r1/baseline/backend/evaluation/results/m3_e06_pair24_baseline_native_server.json",
+          "sha256": "da1f3dd1d843d85f0d30f44b89cce6d0434f02efd22dcf121aed2756fee8e45c",
+          "bytes": 208951
+        },
+        "candidate_native": {
+          "path": "m3_e06_pair24_endpoint_feedback_v2_20261024_r1/candidate/backend/evaluation/results/m3_e06_pair24_candidate_native_server.json",
+          "sha256": "eddbf786b8de05985c9760f75d75ecb7d6ab219a2c898ce3e742f691a245d282",
+          "bytes": 207957
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_e06_pair24_endpoint_feedback_v2_20261024/bundle_manifest.json",
+        "sha256": "d2450672404d0f6f91fb80608476164ecb16a1237d75c2b2240b1019607fa189",
+        "bytes": 125266
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    },
+    {
+      "experiment_id": "E06-80",
+      "family": "explicit_endpoint_feedback",
+      "directory": "m3_e06_pair80_endpoint_feedback_v2_20261024_r1",
+      "bundle_id": "012c86dbc14a03f6d42aeffaf8d217099febcb6ac1c862b1fc72970e9fd7c7f1",
+      "case_count": 80,
+      "baseline_match_count": 52,
+      "candidate_match_count": 52,
+      "net_gain": 0,
+      "improved_case_ids": [
+        "BIRD-PG-1505",
+        "BIRD-PG-0239"
+      ],
+      "regressed_case_ids": [
+        "BIRD-PG-0050",
+        "BIRD-PG-0173"
+      ],
+      "same_round_field": null,
+      "baseline_reused_field": null,
+      "schema_context_changed_case_ids": [],
+      "automatic_screen_pass": false,
+      "screening": {
+        "target_0239_native_correct": true,
+        "candidate_at_least_51_of_80": true,
+        "candidate_exceeds_same_round_baseline": false,
+        "regression20_retained": true,
+        "historical_success50_retained": false,
+        "boundary_0206_native_correct": true,
+        "boundary_0206_not_rejected": true,
+        "cost_known": false,
+        "chat_tokens_within_20_percent": false,
+        "case_p95_within_20_percent": false
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "not_adopted",
+      "closeout_reason": "Net gain zero, historical success regression and unknown baseline usage.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": null,
+            "known_lower_bound": 527802,
+            "missing_usage_events": 1
+          },
+          "all": {
+            "total": null,
+            "known_lower_bound": 1006995,
+            "missing_usage_events": 1
+          },
+          "chat_calls": 91,
+          "event_statuses": {
+            "complete": 299,
+            "transport_error": 1
+          },
+          "recorded_model_http_attempts": 300
+        },
+        "candidate": {
+          "chat": {
+            "total": 540735,
+            "known_lower_bound": 540735,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 1019928,
+            "known_lower_bound": 1019928,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 92,
+          "event_statuses": {
+            "complete": 301
+          },
+          "recorded_model_http_attempts": 301
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 20.745,
+        "candidate": 20.497
+      },
+      "comparison": {
+        "path": "m3_e06_pair80_endpoint_feedback_v2_20261024_r1/reports/e06_pair80_comparison_server.json",
+        "sha256": "ab953d943b69b880061f50ddf4a1078aebbbf16dd0979bd7c6eead25abe324e6",
+        "bytes": 1813396
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_e06_pair80_endpoint_feedback_v2_20261024_r1/baseline/backend/evaluation/results/m3_e06_pair80_baseline_capture_server.json",
+          "sha256": "7bbd12fc94f24582a26cc54e3beced454dd7bffc5628973dad25511453f2d995",
+          "bytes": 6454204
+        },
+        "candidate_capture": {
+          "path": "m3_e06_pair80_endpoint_feedback_v2_20261024_r1/candidate/backend/evaluation/results/m3_e06_pair80_candidate_capture_server.json",
+          "sha256": "2e204fbc10bd9d37bef79caef8bf93a3c45e84b4c9f4def65f37d1960bf0b74c",
+          "bytes": 6517692
+        },
+        "baseline_native": {
+          "path": "m3_e06_pair80_endpoint_feedback_v2_20261024_r1/baseline/backend/evaluation/results/m3_e06_pair80_baseline_native_server.json",
+          "sha256": "c037dfe5be2157af8c1e39573c8b73067e7222e73fc9a28ed546db9ce47aa41c",
+          "bytes": 673297
+        },
+        "candidate_native": {
+          "path": "m3_e06_pair80_endpoint_feedback_v2_20261024_r1/candidate/backend/evaluation/results/m3_e06_pair80_candidate_native_server.json",
+          "sha256": "283bd2a5b0cfae5b7ddeb5b29fdfbe641a7847738cdb934a0ace827157a24dbd",
+          "bytes": 667967
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_e06_pair80_endpoint_feedback_v2_20261024_r2/bundle_manifest.json",
+        "sha256": "de66aa5078a6b1239b9f7338011fd57508df811a27aec13b1d8963252979a17b",
+        "bytes": 128287
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    },
+    {
+      "experiment_id": "E07-r5-24",
+      "family": "categorical_population",
+      "directory": "m3_categorical_population_pair24_20261025_r5",
+      "bundle_id": "f258fb96237e4d1948b7722a23c8469380f8cc613c0e5f8096c422e7062eecfe",
+      "case_count": 24,
+      "baseline_match_count": 22,
+      "candidate_match_count": 22,
+      "net_gain": 0,
+      "improved_case_ids": [
+        "BIRD-PG-1480"
+      ],
+      "regressed_case_ids": [
+        "BIRD-PG-0050"
+      ],
+      "same_round_field": false,
+      "baseline_reused_field": true,
+      "schema_context_changed_case_ids": [
+        "BIRD-PG-1480"
+      ],
+      "automatic_screen_pass": true,
+      "screening": {
+        "target_1480_native_correct": true,
+        "target_1480_authorized_context_added": true,
+        "target_1480_sql_mentions_category_field": true,
+        "observed_controls_recorded": true,
+        "observed_controls_context_unchanged": true,
+        "regression20_retained": true,
+        "cost_known": true,
+        "chat_tokens_within_20_percent": true,
+        "case_p95_within_20_percent": true
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "not_adopted_reused_baseline",
+      "closeout_reason": "1480 native match lacks monthly aggregation; 0050 regresses; baseline was reused.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": 181999,
+            "known_lower_bound": 181999,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 350318,
+            "known_lower_bound": 350318,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 31,
+          "event_statuses": {
+            "complete": 128
+          },
+          "recorded_model_http_attempts": 128
+        },
+        "candidate": {
+          "chat": {
+            "total": 189900,
+            "known_lower_bound": 189900,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 358219,
+            "known_lower_bound": 358219,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 32,
+          "event_statuses": {
+            "complete": 129
+          },
+          "recorded_model_http_attempts": 129
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 19.621,
+        "candidate": 21.876
+      },
+      "comparison": {
+        "path": "m3_categorical_population_pair24_20261025_r5/reports/e07_pair24_comparison_server.json",
+        "sha256": "ed3cba26a1de4c9a0ecf2507f5436416b7eb2cecd486de087101be19d9102077",
+        "bytes": 600808
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_categorical_population_pair24_20261025_r5/baseline/backend/evaluation/results/m3_e07_pair24_baseline_capture_server.json",
+          "sha256": "f4459df7f0759512083905b4a938d8858a1793f66f525af8609f2cc8337b1a73",
+          "bytes": 2241243
+        },
+        "candidate_capture": {
+          "path": "m3_categorical_population_pair24_20261025_r5/candidate/backend/evaluation/results/m3_e07_pair24_candidate_capture_server.json",
+          "sha256": "e859ea49045e8cf22d5ba0f41b549caa797fc4cf81cae5fd1392646c551b5505",
+          "bytes": 2278924
+        },
+        "baseline_native": {
+          "path": "m3_categorical_population_pair24_20261025_r5/baseline/backend/evaluation/results/m3_e07_pair24_baseline_native_server.json",
+          "sha256": "2e5542dfbec06c467596617bbbe9c7ed4bc1a4c6ea896eb9b8848158cc881d6d",
+          "bytes": 203109
+        },
+        "candidate_native": {
+          "path": "m3_categorical_population_pair24_20261025_r5/candidate/backend/evaluation/results/m3_e07_pair24_candidate_native_server.json",
+          "sha256": "4a4793062ef55e52bbf99ba048f4b6799f36058b738d7fe44a257f6e2ce801fb",
+          "bytes": 213704
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_categorical_population_pair24_v1_20261025_r5/bundle_manifest.json",
+        "sha256": "391b14504db5c3de0e4cd55bf12574a19d4253f3aaa0e672c836abd31a479486",
+        "bytes": 128727
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    },
+    {
+      "experiment_id": "E07-r8-24",
+      "family": "categorical_and_semantic_prompt",
+      "directory": "m3_categorical_population_pair24_20261025_r8",
+      "bundle_id": "6f94988a8de89a42ab4e4fc91e7ad402e309e18b917bbccdcba872803f396fbe",
+      "case_count": 24,
+      "baseline_match_count": 22,
+      "candidate_match_count": 22,
+      "net_gain": 0,
+      "improved_case_ids": [
+        "BIRD-PG-1480"
+      ],
+      "regressed_case_ids": [
+        "BIRD-PG-0459"
+      ],
+      "same_round_field": true,
+      "baseline_reused_field": false,
+      "schema_context_changed_case_ids": [
+        "BIRD-PG-1480"
+      ],
+      "automatic_screen_pass": true,
+      "screening": {
+        "target_1480_native_correct": true,
+        "target_1480_authorized_context_added": true,
+        "target_1480_sql_mentions_category_field": true,
+        "observed_controls_recorded": true,
+        "observed_controls_context_unchanged": true,
+        "regression20_retained": true,
+        "cost_known": true,
+        "chat_tokens_within_20_percent": true,
+        "case_p95_within_20_percent": true
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "not_adopted_confounded_treatment",
+      "closeout_reason": "Category context and semantic prompt both changed; 1480 semantic grain fails; 0459 regresses.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": 173243,
+            "known_lower_bound": 173243,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 341562,
+            "known_lower_bound": 341562,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 30,
+          "event_statuses": {
+            "complete": 127
+          },
+          "recorded_model_http_attempts": 127
+        },
+        "candidate": {
+          "chat": {
+            "total": 188045,
+            "known_lower_bound": 188045,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 356364,
+            "known_lower_bound": 356364,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 30,
+          "event_statuses": {
+            "complete": 127
+          },
+          "recorded_model_http_attempts": 127
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 21.445,
+        "candidate": 21.561
+      },
+      "comparison": {
+        "path": "m3_categorical_population_pair24_20261025_r8/reports/e07_pair24_comparison_server.json",
+        "sha256": "178b413a1843d05c3e0ff7449b3a7486d817948e050ef8142658a0328c679f8e",
+        "bytes": 849500
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_categorical_population_pair24_20261025_r8/baseline/backend/evaluation/results/m3_e07_pair24_baseline_capture_server.json",
+          "sha256": "d74199173fa55a68c9306a1c2e42c9e5cd4547e608fc8b9040f2b29d15a73c75",
+          "bytes": 2227658
+        },
+        "candidate_capture": {
+          "path": "m3_categorical_population_pair24_20261025_r8/candidate/backend/evaluation/results/m3_e07_pair24_candidate_capture_server.json",
+          "sha256": "fcb9d0602d7053bdedafc9e47f1aa747b5868e67fecc5f6708c296e705091f04",
+          "bytes": 2277594
+        },
+        "baseline_native": {
+          "path": "m3_categorical_population_pair24_20261025_r8/baseline/backend/evaluation/results/m3_e07_pair24_baseline_native_server.json",
+          "sha256": "a3e78d2494afaaf0cc25fc1ee297d836748fd61f27bbb84598a792da7e8de84d",
+          "bytes": 213663
+        },
+        "candidate_native": {
+          "path": "m3_categorical_population_pair24_20261025_r8/candidate/backend/evaluation/results/m3_e07_pair24_candidate_native_server.json",
+          "sha256": "f99f33e00e7c1b335a3e09732214060873f4e64de6d5d85992ab6bd4a37e449c",
+          "bytes": 213727
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_categorical_population_pair24_v1_20261025_r8/bundle_manifest.json",
+        "sha256": "02a66444284b6a7a873ad2921798033f0f7f1e93d8b27f3d2d73819b83710ea7",
+        "bytes": 129050
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    },
+    {
+      "experiment_id": "E07-r9-24",
+      "family": "semantic_prompt_v1",
+      "directory": "m3_categorical_population_pair24_20261025_r9",
+      "bundle_id": "f64ea94ac694f3b6b9c383f589a80d3a3ff1253f35cd2b29f37d0f3a6ede4f44",
+      "case_count": 24,
+      "baseline_match_count": 22,
+      "candidate_match_count": 23,
+      "net_gain": 1,
+      "improved_case_ids": [
+        "BIRD-PG-0050"
+      ],
+      "regressed_case_ids": [],
+      "same_round_field": true,
+      "baseline_reused_field": false,
+      "schema_context_changed_case_ids": [],
+      "automatic_screen_pass": false,
+      "screening": {
+        "target_1480_native_correct": true,
+        "target_1480_authorized_context_available_both_sides": true,
+        "semantic_treatment_isolated": true,
+        "target_1480_sql_mentions_category_field": true,
+        "observed_controls_recorded": true,
+        "observed_controls_context_unchanged": true,
+        "no_observed_control_regression": true,
+        "regression20_retained": true,
+        "cost_known": true,
+        "chat_tokens_within_20_percent": false,
+        "case_p95_within_20_percent": true
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "not_adopted",
+      "closeout_reason": "0050 improves; 1480 still ranks a row; chat-token cap exceeded.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": 168618,
+            "known_lower_bound": 168618,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 336937,
+            "known_lower_bound": 336937,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 29,
+          "event_statuses": {
+            "complete": 126
+          },
+          "recorded_model_http_attempts": 126
+        },
+        "candidate": {
+          "chat": {
+            "total": 203674,
+            "known_lower_bound": 203674,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 371993,
+            "known_lower_bound": 371993,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 32,
+          "event_statuses": {
+            "complete": 129
+          },
+          "recorded_model_http_attempts": 129
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 19.311,
+        "candidate": 21.59
+      },
+      "comparison": {
+        "path": "m3_categorical_population_pair24_20261025_r9/reports/e07_pair24_comparison_server.json",
+        "sha256": "ee854f78b46b8bc3f8b8651b25e34b6c8712c6a8ec581a94c528b0cba63e2350",
+        "bytes": 895322
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_categorical_population_pair24_20261025_r9/baseline/backend/evaluation/results/m3_e07_pair24_baseline_capture_server.json",
+          "sha256": "1630ee9df402f4fb171497dfa1a94a24ba1fa064dafc1159db4a5f2d8b121238",
+          "bytes": 2214961
+        },
+        "candidate_capture": {
+          "path": "m3_categorical_population_pair24_20261025_r9/candidate/backend/evaluation/results/m3_e07_pair24_candidate_capture_server.json",
+          "sha256": "c67da84731bd3833fa4c4678fb7a8be99c871c12321f4bf3ecc72d8c3107985c",
+          "bytes": 2325200
+        },
+        "baseline_native": {
+          "path": "m3_categorical_population_pair24_20261025_r9/baseline/backend/evaluation/results/m3_e07_pair24_baseline_native_server.json",
+          "sha256": "75c933533931258a6cd5d0719dedae357ac61f4e0cf2d4a85cd1c6c9c5ae38c8",
+          "bytes": 211192
+        },
+        "candidate_native": {
+          "path": "m3_categorical_population_pair24_20261025_r9/candidate/backend/evaluation/results/m3_e07_pair24_candidate_native_server.json",
+          "sha256": "dc731c09534127c325afc3293c6245280de9c7af0eafa327bb71dfdfde32a3b8",
+          "bytes": 210137
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_categorical_population_pair24_v1_20261025_r9/bundle_manifest.json",
+        "sha256": "26cf3a4fed64fbaea82d52a27a3917c978bc0fe1c0e78daa306f77f43a8d7a18",
+        "bytes": 129331
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    },
+    {
+      "experiment_id": "E07-r10-24",
+      "family": "semantic_prompt_v2_compact",
+      "directory": "m3_categorical_population_pair24_20261025_r10",
+      "bundle_id": "cd6d0de51baf078baeb1c6a5035319dcee9ae33c9b496940340e4f6ddf37ecaa",
+      "case_count": 24,
+      "baseline_match_count": 22,
+      "candidate_match_count": 23,
+      "net_gain": 1,
+      "improved_case_ids": [
+        "BIRD-PG-0050"
+      ],
+      "regressed_case_ids": [],
+      "same_round_field": true,
+      "baseline_reused_field": false,
+      "schema_context_changed_case_ids": [],
+      "automatic_screen_pass": false,
+      "screening": {
+        "target_1480_native_correct": true,
+        "target_1480_authorized_context_available_both_sides": true,
+        "semantic_treatment_isolated": true,
+        "target_1480_sql_mentions_category_field": true,
+        "target_1480_group_and_sum_present": true,
+        "observed_controls_recorded": true,
+        "observed_controls_context_unchanged": true,
+        "no_observed_control_regression": true,
+        "regression20_retained": true,
+        "cost_known": true,
+        "chat_tokens_within_20_percent": false,
+        "case_p95_within_20_percent": true
+      },
+      "frozen_acceptance_field": "manual_semantic_review_required",
+      "closeout_disposition": "not_adopted",
+      "closeout_reason": "1480 monthly SUM confirmed and 0050 improves; chat-token cap exceeded; stop this limited experiment.",
+      "promoted_to_product": false,
+      "regression20_retained_count": 20,
+      "cost": {
+        "baseline": {
+          "chat": {
+            "total": 163962,
+            "known_lower_bound": 163962,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 332281,
+            "known_lower_bound": 332281,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 28,
+          "event_statuses": {
+            "complete": 125
+          },
+          "recorded_model_http_attempts": 125
+        },
+        "candidate": {
+          "chat": {
+            "total": 199285,
+            "known_lower_bound": 199285,
+            "missing_usage_events": 0
+          },
+          "all": {
+            "total": 367604,
+            "known_lower_bound": 367604,
+            "missing_usage_events": 0
+          },
+          "chat_calls": 32,
+          "event_statuses": {
+            "complete": 129
+          },
+          "recorded_model_http_attempts": 129
+        }
+      },
+      "case_wall_p95_seconds": {
+        "baseline": 19.447,
+        "candidate": 23.015
+      },
+      "comparison": {
+        "path": "m3_categorical_population_pair24_20261025_r10/reports/e07_pair24_comparison_server.json",
+        "sha256": "33325fa4707109d79590fa4b62162e74f505cf512d947825d2e06da0b31e9dc2",
+        "bytes": 886331
+      },
+      "sources": {
+        "baseline_capture": {
+          "path": "m3_categorical_population_pair24_20261025_r10/baseline/backend/evaluation/results/m3_e07_pair24_baseline_capture_server.json",
+          "sha256": "8bf63991832819ff45ee5391bba57a3271d65fca382e29a7037ad4a001727ab3",
+          "bytes": 2199537
+        },
+        "candidate_capture": {
+          "path": "m3_categorical_population_pair24_20261025_r10/candidate/backend/evaluation/results/m3_e07_pair24_candidate_capture_server.json",
+          "sha256": "a474bbf118a90f973d6a194ce75739689ce122f997b04522c9a87c889fe2f8ee",
+          "bytes": 2318312
+        },
+        "baseline_native": {
+          "path": "m3_categorical_population_pair24_20261025_r10/baseline/backend/evaluation/results/m3_e07_pair24_baseline_native_server.json",
+          "sha256": "767e10f940093ec4e32eaa83553a089d5c1685c1309878fdd13634565781eaff",
+          "bytes": 213818
+        },
+        "candidate_native": {
+          "path": "m3_categorical_population_pair24_20261025_r10/candidate/backend/evaluation/results/m3_e07_pair24_candidate_native_server.json",
+          "sha256": "9be0638f057e03d1a6337ed728ab5fdc1525f9531c8a2107ae845d6550c7fb07",
+          "bytes": 210291
+        }
+      },
+      "bundle_manifest": {
+        "path": "askdata_studio_ops_release/backend/.downloads/m3_categorical_population_pair24_v1_20261025_r10/bundle_manifest.json",
+        "sha256": "b9a239ff1c611c04e76dc7910c2f14f92ebc2990610551c0a96e45ecf1b1ce64",
+        "bytes": 129953
+      },
+      "checks": {
+        "report_hash_chain": true,
+        "native_counts_recomputed": true,
+        "changes_recomputed": true,
+        "saved_sql_hashes": true
+      }
+    }
+  ],
+  "experiment_comparison_count": 12,
+  "full80_comparison_count": 2,
+  "promoted_effect_candidates": [],
+  "failed_non_scored_attempts": [
+    {
+      "directory": "m3_e01_pair24_20261021",
+      "evidence": {
+        "path": "m3_e01_pair24_20261021/reports/pair24_preflight_server.json",
+        "sha256": "57dca21b87c8b606c2ff9e1d1e824c728887531e7de58bdc002b7867d47e37a0",
+        "bytes": 1493
+      },
+      "phase": "baseline_static_preflight",
+      "status": "failed_non_scored_attempt",
+      "counted_as_benchmark": false,
+      "new_model_request_count": 0,
+      "error_types": [
+        "PairError"
+      ]
+    }
+  ],
+  "runtime_source_audit": {
+    "audit_kind": "static_source_only",
+    "local_environment_or_secrets_read": false,
+    "production_app_files_scanned": 63,
+    "production_app_imports_of_m3_or_bird": {},
+    "diagnostic_store_true_flags": {
+      "--save-snapshot": {
+        "default": false,
+        "source_line": 63
+      },
+      "--schema-coverage": {
+        "default": false,
+        "source_line": 64
+      },
+      "--intent-candidate": {
+        "default": false,
+        "source_line": 65
+      },
+      "--semantic-planning": {
+        "default": false,
+        "source_line": 66
+      },
+      "--output-contract": {
+        "default": false,
+        "source_line": 67
+      },
+      "--condition-relations": {
+        "default": false,
+        "source_line": 68
+      },
+      "--relation-output": {
+        "default": false,
+        "source_line": 69
+      },
+      "--categorical-population": {
+        "default": false,
+        "source_line": 70
+      }
+    },
+    "worker_feature_defaults": {
+      "schema_coverage_enabled": {
+        "default": false,
+        "source_line": 30
+      },
+      "intent_candidate_enabled": {
+        "default": false,
+        "source_line": 32
+      },
+      "semantic_planning_enabled": {
+        "default": false,
+        "source_line": 34
+      },
+      "output_contract_enabled": {
+        "default": false,
+        "source_line": 37
+      },
+      "condition_relations_enabled": {
+        "default": false,
+        "source_line": 40
+      },
+      "relation_output_enabled": {
+        "default": false,
+        "source_line": 41
+      },
+      "categorical_population_enabled": {
+        "default": false,
+        "source_line": 42
+      }
+    },
+    "normal_bird_runner_treatment_keys": [],
+    "dormant_in_current_case_worker": {
+      "scalar_count_shape": true,
+      "endpoint_scope": true,
+      "endpoint_validation": true
+    },
+    "bird_transport": {
+      "active": true,
+      "policy_id": "bird_process_dns_transport_v1",
+      "resolver": "114.114.114.114",
+      "executable": "/usr/bin/dig",
+      "expected_version": "9.18.39-0ubuntu0.22.04.7-Ubuntu",
+      "product_app_uses_it": false,
+      "system_dns_modified": false,
+      "paired_lock": "m3_context.json and transport_dependency_lock.json",
+      "nonpaired_behavior": "tool_binding required; no paired execution lock when m3_context.json absent"
+    },
+    "product_declared_defaults": {
+      "data_backend": "duckdb",
+      "data_source_id": "short_video_ops_duckdb"
+    },
+    "frozen_m2_holdout_explicit_features": [
+      "intent_candidate_enabled",
+      "schema_coverage_enabled"
+    ],
+    "remote_deployment_state_verified": false,
+    "source_files": {
+      "app/main.py": {
+        "sha256": "cae83be9b955964b25f17045a742226fae2db7751c8567e5263c88ea0a785c0f"
+      },
+      "app/api/routes.py": {
+        "sha256": "3237efe75ad8141ca01d03b08e303c8bc30130f1dbeddd5f01e62e52087f893c"
+      },
+      "app/config.py": {
+        "sha256": "7e71979bf12e33bc7636d64c9a608552103c97cf176db64f8d731c73a7fc75b3"
+      },
+      "app/model_client.py": {
+        "sha256": "f68cd0ced71c42e6e18464f86310aed22b71386f63f1160e49fad8bd02c92093"
+      },
+      "app/services/askdata_service.py": {
+        "sha256": "f13e3041bd8ca20dfc7af5d7153afa934f6da9411cde8729bc8ca42663b069d5"
+      },
+      "app/workflows/query_graph.py": {
+        "sha256": "9b818c9309a178b049da9edf750354bf2af8ba2781bd7091ea1447bdaafe3461"
+      },
+      "app/querying/single_database_agent.py": {
+        "sha256": "9115867fb1b964ee1aba0bde5d07364703a8c381814cbe22a91c933c8a37a107"
+      },
+      "app/retrieval/graph.py": {
+        "sha256": "60195e45df0671a5c8e273aa5584a11907c87131816da5fac9773b0f6d0bf2ad"
+      },
+      "evaluation/run_bird_benchmark.py": {
+        "sha256": "df76b1ad2280f1a1a89f76743890abcd194c0660def407f95113421dae15f48d"
+      },
+      "evaluation/bird/runner.py": {
+        "sha256": "fbdbde667433949fe755cbd1680f140d7a2b6e8478816f3beb21c095368402e5"
+      },
+      "evaluation/bird/diagnostic_runner.py": {
+        "sha256": "5e0ee58893049f8819404ed7d4d8d58aa970f9c137f863ac727ae47ad1e9cb10"
+      },
+      "evaluation/bird/case_worker.py": {
+        "sha256": "fd11ebb0411f323604680affd7f7714c31e3b1c3f03abd73ef9504c3404f042e"
+      },
+      "evaluation/bird/retrieval.py": {
+        "sha256": "506725c9ca1d36fd819ee1b2c348fe4c8dcc974a0ccd8627366ddd77d71d86de"
+      },
+      "evaluation/bird/model.py": {
+        "sha256": "f26d84d6624484309dbdf128ea757d398414d6d81ab26e64cb572a3f811d77e1"
+      },
+      "evaluation/bird/process_dns.py": {
+        "sha256": "6254ce6c39caec643230e5e1df1034c4611cf4d8f600fc9f66aa832dfcf0dcd9"
+      },
+      "evaluation/bird/intent.py": {
+        "sha256": "ae66dabd3bffb13b17066a31706180cd91934f06d5dfb1d408c41a5fe5363349"
+      },
+      "evaluation/bird/isolated_agent.py": {
+        "sha256": "20215fc77f3fd33bfcaa11e3fff7dbf8c7b106b68387e863e88085c6009667d9"
+      },
+      "evaluation/bird/demand_relations.py": {
+        "sha256": "7e9ca03e9e60dc96cb0d764e7859fc7ca35f40905fe6f3cb1a3e79b770518863"
+      },
+      "evaluation/bird/endpoint_scope.py": {
+        "sha256": "f3c6674579f60d86e8eeb526d9f9fbabba10de94b689c067acdf38dfa686a905"
+      },
+      "evaluation/bird/endpoint_validation.py": {
+        "sha256": "72cf71e0e44a1e7ff42f405810de314faeb4ca6bbcc261972a28b86a187e6430"
+      },
+      "evaluation/bird/scalar_count_shape.py": {
+        "sha256": "57c0b91294e6f763163fffd1195d9e07df6bcd98f95ada616a5e25eceff4ec01"
+      },
+      "scripts/run_m2_holdout30.py": {
+        "sha256": "ea45973ebe23e6c73c964d0a9401b068e6f168c4ce0502be492bcdb381d30d4f"
+      },
+      "scripts/m2_holdout_control.py": {
+        "sha256": "d64b3e1c318599d2abe1c8bc489dc9bbeecd0a1ea35179c8a41d2c553c004313"
+      },
+      "scripts/m2_holdout_worker.py": {
+        "sha256": "e16a8cfa089e6de77143184c33c28a372009a7b88b7f1e4831f87c123ae6b744"
+      }
+    }
+  },
+  "decision": "Limited M3 research closed; broad-effect promotion acceptance not met.",
+  "score_scope": "M2 development50/80 and formal observed holdout19/30 remain historical frozen results; do not aggregate repeated M3 subsets.",
+  "limitations": [
+    "Local source and downloaded reports only; no remote deployment or live runtime inspected.",
+    "Native matches are not universal semantic equivalence.",
+    "Old failed attempts listed only when downloaded records are available; not an exhaustive remote attempt inventory.",
+    "Unknown model usage remains null with a known lower bound."
+  ]
+}

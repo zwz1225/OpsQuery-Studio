@@ -1,0 +1,1263 @@
+{
+  "stage": "M1 A final archive review",
+  "status": "passed",
+  "reviewed_at": "2026-10-07T08:02:50.931759+00:00",
+  "report_sha256": {
+    "m1_a_live_classic_alias_rescore_server.json": "d1fa760ada563a6fffaa72d9c8f844717fd5e2fd54f64e09f42156506ab73845",
+    "m1_a_duckdb_gold_server.json": "1d36e5bc5939991408d250e83d312a47c32c1478a44fbe631b1c6d99726e1598",
+    "m1_a_live_classic_alias_rescore_local.json": "61f211a2fc40f773ff9526fdd6a7918a4d834f476f0ec3c58708a97fb4ec775b",
+    "m1_a_live_classic_server.json": "219d182d48314ee41eccedc6915db8dd1c8ac57565407b859226f1796785f2a2",
+    "m1_a_duckdb_gold_local.json": "7488e4b077814f2693a436645b701b981b4b117bf6b9bdd119612e3f06c9e3ad",
+    "m1_a_e2e_behavior_server.json": "5ca11905581ea279d898af744cdf9116aca210ef93ac88164e2cb2b5bac64056"
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "verified_versions": {
+    "data": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+    "schema": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede",
+    "application": "dc51bad3c8be8b61bb345a26c407acb2cb8635859608e5dbed5ede7fedee5231",
+    "evaluator": "1d7179a2f70dab9fc52d7ab9a1cec74489106aae2868dd9b26227f8703c0b758",
+    "evaluation_code": "5a7f7df1efb307611648f81cec5887de1774c7dae4ff40c1229221309817e87f"
+  },
+  "server_run_ids": {
+    "classic_rescore": "95f399b7508742aaa03f039d00223fce",
+    "gold": "adfbef3a6c594249b1c2564f73e38692",
+    "e2e": "6f84aa1ac88d44479b08f62160402b2a"
+  },
+  "summary": {
+    "server_rescore_case_count": 49,
+    "server_original_strict_pass_count": 41,
+    "server_formal_strict_pass_count": 49,
+    "local_server_raw_identical_case_count": 49,
+    "server_gold_case_count": 79,
+    "server_gold_strict_pass_count": 79,
+    "changed_cases": 8,
+    "explicit_alias_additions": 13,
+    "new_model_requests": 0
+  },
+  "dataset_versions": {
+    "classic_before": "1969cf734968afeea2f70d9e4133fed2067c0e24b3723209c357069d215c4fe5",
+    "classic_after": "d78b471742d40d925c555227e77c2dfea403909f7922a91e058c7238a6aef4b7",
+    "gold_before_alias_closure": "ca6d148c3e54b6306a9759242d0bca81199b0ff949932ce447592e75f7c0f756",
+    "current_79_case_definition_version": "715855558de02ca9aa84b76c6418ed4080feaf066bbad9edc68bc78d09b2e0f0"
+  },
+  "gold_dataset_difference_explained": "Gold executed before alias closure. Its original dataset matches the preserved backup; current definitions only append 13 approved aliases. Gold SQL/questions/results/scoring rules unchanged.",
+  "classic_case_checks": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 8,
+      "gold_row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-002",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 8,
+      "gold_row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-003",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 8,
+      "gold_row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-004",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 8,
+      "gold_row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-005",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 8,
+      "gold_row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-006",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 31,
+      "gold_row_count": 31
+    },
+    {
+      "case_id": "GROWTH_OPS-026",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 10,
+      "gold_row_count": 10
+    },
+    {
+      "case_id": "GROWTH_OPS-061",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-062",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-063",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-064",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-066",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 4,
+      "gold_row_count": 4
+    },
+    {
+      "case_id": "GROWTH_OPS-086",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-101",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 5,
+      "gold_row_count": 5
+    },
+    {
+      "case_id": "GROWTH_OPS-131",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 8,
+      "gold_row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-149",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 10,
+      "gold_row_count": 10
+    },
+    {
+      "case_id": "GROWTH_OPS-150",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 10,
+      "gold_row_count": 10
+    },
+    {
+      "case_id": "CHANNEL_OPS-001",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 30,
+      "gold_row_count": 30
+    },
+    {
+      "case_id": "CHANNEL_OPS-002",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 28,
+      "gold_row_count": 28
+    },
+    {
+      "case_id": "CHANNEL_OPS-003",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 31,
+      "gold_row_count": 31
+    },
+    {
+      "case_id": "CHANNEL_OPS-004",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 30,
+      "gold_row_count": 30
+    },
+    {
+      "case_id": "CHANNEL_OPS-005",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 31,
+      "gold_row_count": 31
+    },
+    {
+      "case_id": "CHANNEL_OPS-066",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-067",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-068",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-069",
+      "original_strict_correct": false,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-070",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-076",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-077",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-078",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-079",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-101",
+      "original_strict_correct": false,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 2,
+      "gold_row_count": 2
+    },
+    {
+      "case_id": "CHANNEL_OPS-141",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 4,
+      "gold_row_count": 4
+    },
+    {
+      "case_id": "CONTENT_OPS-001",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 31,
+      "gold_row_count": 31
+    },
+    {
+      "case_id": "CONTENT_OPS-029",
+      "original_strict_correct": false,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-030",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-031",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 12,
+      "gold_row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-032",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 12,
+      "gold_row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-033",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 12,
+      "gold_row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-034",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 12,
+      "gold_row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-035",
+      "original_strict_correct": false,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 12,
+      "gold_row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-036",
+      "original_strict_correct": false,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 17,
+      "gold_row_count": 17
+    },
+    {
+      "case_id": "CONTENT_OPS-051",
+      "original_strict_correct": false,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-076",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 3,
+      "gold_row_count": 3
+    },
+    {
+      "case_id": "CONTENT_OPS-121",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 1,
+      "gold_row_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-126",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 4,
+      "gold_row_count": 4
+    },
+    {
+      "case_id": "CONTENT_OPS-136",
+      "original_strict_correct": false,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 12,
+      "gold_row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-137",
+      "original_strict_correct": false,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 12,
+      "gold_row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-138",
+      "original_strict_correct": true,
+      "formal_strict_correct": true,
+      "against_local_gold_correct": true,
+      "raw_local_server_rows_identical": true,
+      "strict_reason": "严格结果一致",
+      "actual_row_count": 12,
+      "gold_row_count": 12
+    }
+  ],
+  "gold_case_checks": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-002",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-003",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-004",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-005",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-006",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 31
+    },
+    {
+      "case_id": "GROWTH_OPS-026",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 10
+    },
+    {
+      "case_id": "GROWTH_OPS-061",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-062",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-063",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-064",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-066",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 4
+    },
+    {
+      "case_id": "GROWTH_OPS-086",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-101",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 5
+    },
+    {
+      "case_id": "GROWTH_OPS-131",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 8
+    },
+    {
+      "case_id": "GROWTH_OPS-149",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 10
+    },
+    {
+      "case_id": "GROWTH_OPS-150",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 10
+    },
+    {
+      "case_id": "CHANNEL_OPS-001",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 30
+    },
+    {
+      "case_id": "CHANNEL_OPS-002",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 28
+    },
+    {
+      "case_id": "CHANNEL_OPS-003",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 31
+    },
+    {
+      "case_id": "CHANNEL_OPS-004",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 30
+    },
+    {
+      "case_id": "CHANNEL_OPS-005",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 31
+    },
+    {
+      "case_id": "CHANNEL_OPS-066",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-067",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-068",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-069",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-070",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-076",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-077",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-078",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-079",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-101",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 2
+    },
+    {
+      "case_id": "CHANNEL_OPS-141",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 4
+    },
+    {
+      "case_id": "CONTENT_OPS-001",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 31
+    },
+    {
+      "case_id": "CONTENT_OPS-029",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-030",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-031",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-032",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-033",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-034",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-035",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-036",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 17
+    },
+    {
+      "case_id": "CONTENT_OPS-051",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-076",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 3
+    },
+    {
+      "case_id": "CONTENT_OPS-121",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-126",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 4
+    },
+    {
+      "case_id": "CONTENT_OPS-136",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-137",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 12
+    },
+    {
+      "case_id": "CONTENT_OPS-138",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 12
+    },
+    {
+      "case_id": "GROWTH_OPS-007",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 31
+    },
+    {
+      "case_id": "GROWTH_OPS-050",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 10
+    },
+    {
+      "case_id": "GROWTH_OPS-051",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 10
+    },
+    {
+      "case_id": "GROWTH_OPS-075",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-076",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 10
+    },
+    {
+      "case_id": "GROWTH_OPS-100",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-102",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 6
+    },
+    {
+      "case_id": "GROWTH_OPS-125",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 10
+    },
+    {
+      "case_id": "GROWTH_OPS-126",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-148",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 10
+    },
+    {
+      "case_id": "CHANNEL_OPS-006",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 8
+    },
+    {
+      "case_id": "CHANNEL_OPS-025",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 5
+    },
+    {
+      "case_id": "CHANNEL_OPS-026",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 4
+    },
+    {
+      "case_id": "CHANNEL_OPS-050",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-051",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 4
+    },
+    {
+      "case_id": "CHANNEL_OPS-080",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-100",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-102",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 2
+    },
+    {
+      "case_id": "CHANNEL_OPS-126",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 4
+    },
+    {
+      "case_id": "CHANNEL_OPS-136",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 4
+    },
+    {
+      "case_id": "CONTENT_OPS-002",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 28
+    },
+    {
+      "case_id": "CONTENT_OPS-025",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 10
+    },
+    {
+      "case_id": "CONTENT_OPS-026",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-050",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 10
+    },
+    {
+      "case_id": "CONTENT_OPS-052",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-077",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 3
+    },
+    {
+      "case_id": "CONTENT_OPS-100",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 10
+    },
+    {
+      "case_id": "CONTENT_OPS-101",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 4
+    },
+    {
+      "case_id": "CONTENT_OPS-125",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-150",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "local_server_row_count_equal": true,
+      "gold_result_source": "execution",
+      "row_count": 1
+    }
+  ],
+  "limits": [
+    "Gold report stores scoring flags and row counts, not full rows; no new 79-case SQL replay was performed.",
+    "Gold validates fixed SQL/data material; it does not measure live model accuracy.",
+    "Known E2E/month-resolution/schema-prefix/response-quality followups remain recorded."
+  ]
+}

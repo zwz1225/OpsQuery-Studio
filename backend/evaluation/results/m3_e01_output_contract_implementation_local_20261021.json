@@ -1,0 +1,35 @@
+{
+  "stage": "M3 E01 output contract implementation ready for controlled comparison preparation",
+  "date": "2026-10-21",
+  "run_status": "complete",
+  "local_implementation_verified": true,
+  "files": {
+    "evaluation/bird/output_contract.py": "f71dd45cbcbf776efbd48d021169b749eefe2b8570d51725478bc2620b504920",
+    "evaluation/bird/case_worker.py": "1e8a59962b2f72323934396122b9bef514e1d8d21f9589f16733b0aeab73a631",
+    "evaluation/bird/diagnostic_runner.py": "4398e705f7c82ecb5870782d9cdfc9d50ecc1782f06c7685c8c39cbe0650d1db",
+    "tests/test_m3_output_contract.py": "497d94cff7f78fc04e78a7b8f5de6065d35892d27bdb28aa61b95169b15d61c7",
+    "scripts/check_m3_output_contract.py": "30dc72ee7162d6fec98cd1cb5b421ee76e7ecad7dfd48c361f7485f81e1bfb60"
+  },
+  "document_sha256": "c9effede29fe2ff43720b3d278d609069d4efd6dd1635eeb206d0008ebc5a7ff",
+  "new_specialist_tests_passed": 31,
+  "current_code_tests_run": 309,
+  "current_code_tests_passed": 306,
+  "linux_tests_skipped": 3,
+  "historical_v4_provenance_tests_passed": 6,
+  "tests_report_sha256": "295902a3a6415fe6a7ee1e520180d4b6cf571183859f79e1f6a16ee7d1f7f2b3",
+  "passive24_report_sha256": "f924a13ff3db01ed2cd4ba2f82de815ee5b01ddcf045505d9b57402945bd31aa",
+  "baseline_file_count": 143,
+  "baseline_copy_verified": true,
+  "changed_baseline_paths_in_candidate": [
+    "evaluation/bird/case_worker.py",
+    "evaluation/bird/diagnostic_runner.py"
+  ],
+  "original_source_materials_unchanged": true,
+  "formal_scoring_and_controllers_unchanged": true,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "sql_executed": false,
+  "live_accuracy_improvement_verified": false,
+  "paired_server_comparison_started": false,
+  "next_step": "Prepare isolated baseline/candidate contexts and version-bound development24 paired workflow."
+}

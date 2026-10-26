@@ -1,0 +1,730 @@
+{
+  "stage": "M1 E PostgreSQL first-run report review",
+  "reviewed_at": "2026-10-12T07:59:37.367586+00:00",
+  "review_status": "complete",
+  "acceptance_status": "needs_fixes",
+  "report_files": {
+    "m1_e_postgres_live_classic_server.json": {
+      "sha256": "6676a38ec3cd823d4030214088e13c37a2d5c2c37c93ce86de09bb1793efb6d4",
+      "run_id": "95c65d26c28a45feb6bada7a74fa6025",
+      "created_at": "2026-10-12T06:35:13.183555Z",
+      "run_status": "complete",
+      "manifest_version": 4,
+      "mode": "live",
+      "scope": "classic",
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "source_verification": {
+        "kind": "live_postgresql_verification",
+        "live_target_verified": true,
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+        "table_count": 41,
+        "field_count": 276,
+        "row_count": 722732,
+        "full_typed_row_match_count": 41,
+        "readonly_table_acl_match_count": 41,
+        "readonly_column_acl_match_count": 41
+      },
+      "dataset_version": "840f2f4981ecc9d0123de519fe2ec2b65d99657cdf42001cda0e758bff3512b9",
+      "versions": {
+        "data": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+        "schema": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "application": "b08e0b723f1d3f6c293a3fa79d9e76836d1b93642f5e23e80e1a1ff59fbed33e",
+        "evaluator": "c1d6c46cb989ed412449a3a8ce645c33c5ed26dbe6a793ebe820c2909ac78483",
+        "evaluation_code": "6565cdd5feccbcf882c871978f8dfee0d6f9b3fa04909daff331904c61b0a0b3",
+        "gold_selection": "434c1c2570fcb81f0df146fcb53431fcfe3eb93f0187348cf8136f938105c6cf",
+        "result_policy": "6834c500006f7f1d42c6ce3effedbdaba06d1d89cccb17bea31be175628efec9",
+        "physical_schema": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817"
+      },
+      "summary": {
+        "mode": "live",
+        "case_count": 49,
+        "schema_recall": 0.929932,
+        "schema_precision": 0.166049,
+        "sql_execution_success_rate": 0.979592,
+        "average_execution_ms": 2666.444,
+        "p95_execution_ms": 2790.207,
+        "result_accuracy": 0.959184,
+        "result_scored_count": 49,
+        "strict_result_accuracy": 0.77551,
+        "strict_scored_count": 49,
+        "unscored_count": 0,
+        "column_name_match_rate": 0.142857,
+        "clarification_count": 0,
+        "error_count": 0,
+        "timeout_count": 0,
+        "connection_error_count": 0,
+        "model_request_attempt_count": 160,
+        "model_retry_count": 0,
+        "model_timeout_event_count": 0,
+        "model_connection_error_event_count": 0,
+        "result_accuracy_given_executed_sql": 0.979167
+      },
+      "checks": {
+        "complete": true,
+        "case_ids_match_selected_cases": true,
+        "dataset_digest_matches": true,
+        "selected_gold_digest_matches": true,
+        "result_policy_digest_matches": true,
+        "summary_recomputed_matches": true,
+        "source_id_matches": true,
+        "versions_match_accepted_target": true,
+        "live_verification_41_tables": true,
+        "application_digest_matches_local": true,
+        "evaluator_digest_matches_local": true,
+        "evaluation_code_digest_matches_local": true,
+        "time_field_supplement_disabled": true,
+        "executed_case_gold_is_selected_postgres_sql": true
+      }
+    },
+    "m1_e_postgres_live_phase83_server.json": {
+      "sha256": "db5b1b2305c4bd2aae2e12afa72e026259319301c7587306348a0a9e02c1e801",
+      "run_id": "fdbb8f5cf9c548c5a6b79c8071c8bf7c",
+      "created_at": "2026-10-12T06:58:04.350764Z",
+      "run_status": "complete",
+      "manifest_version": 4,
+      "mode": "live",
+      "scope": "all",
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "source_verification": {
+        "kind": "live_postgresql_verification",
+        "live_target_verified": true,
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+        "table_count": 41,
+        "field_count": 276,
+        "row_count": 722732,
+        "full_typed_row_match_count": 41,
+        "readonly_table_acl_match_count": 41,
+        "readonly_column_acl_match_count": 41
+      },
+      "dataset_version": "1a6422190a3714aa56127119c28ad8f0eca03235bf043206cd0d36bb00703a34",
+      "versions": {
+        "data": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+        "schema": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "application": "b08e0b723f1d3f6c293a3fa79d9e76836d1b93642f5e23e80e1a1ff59fbed33e",
+        "evaluator": "c1d6c46cb989ed412449a3a8ce645c33c5ed26dbe6a793ebe820c2909ac78483",
+        "evaluation_code": "6565cdd5feccbcf882c871978f8dfee0d6f9b3fa04909daff331904c61b0a0b3",
+        "gold_selection": "4d5c7296f6c60a0b5caecbe85b1da945c15ce9638af209a222f7343aa4b3a4f8",
+        "result_policy": "3d3223a5c49dbc029e442fdf2fe1344caa148d9536fa58aff5cf9416dd318d7e",
+        "physical_schema": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817"
+      },
+      "summary": {
+        "mode": "live",
+        "case_count": 30,
+        "schema_recall": 0.974713,
+        "schema_precision": 0.232516,
+        "sql_execution_success_rate": 0.9,
+        "average_execution_ms": 2667.31,
+        "p95_execution_ms": 2745.056,
+        "result_accuracy": 0.833333,
+        "result_scored_count": 30,
+        "strict_result_accuracy": 0.689655,
+        "strict_scored_count": 29,
+        "unscored_count": 0,
+        "column_name_match_rate": 0.066667,
+        "clarification_count": 0,
+        "error_count": 1,
+        "timeout_count": 0,
+        "connection_error_count": 0,
+        "model_request_attempt_count": 104,
+        "model_retry_count": 0,
+        "model_timeout_event_count": 0,
+        "model_connection_error_event_count": 0,
+        "result_accuracy_given_executed_sql": 0.925926
+      },
+      "checks": {
+        "complete": true,
+        "case_ids_match_selected_cases": true,
+        "dataset_digest_matches": true,
+        "selected_gold_digest_matches": true,
+        "result_policy_digest_matches": true,
+        "summary_recomputed_matches": true,
+        "source_id_matches": true,
+        "versions_match_accepted_target": true,
+        "live_verification_41_tables": true,
+        "application_digest_matches_local": true,
+        "evaluator_digest_matches_local": true,
+        "evaluation_code_digest_matches_local": true,
+        "time_field_supplement_disabled": true,
+        "executed_case_gold_is_selected_postgres_sql": true
+      }
+    },
+    "m1_e_postgres_e2e_behavior_server.json": {
+      "sha256": "7c4a7993c2cd9414b3438e7c2f3e39e5b431a1b7e2c08d25643c1ae29b60825d",
+      "run_id": "0a4f591587224b1989151dbfaab9e5ac",
+      "created_at": "2026-10-12T07:11:10.102678Z",
+      "run_status": "complete",
+      "manifest_version": 4,
+      "mode": "e2e",
+      "scope": "behavior",
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "source_verification": {
+        "kind": "live_postgresql_verification",
+        "live_target_verified": true,
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+        "table_count": 41,
+        "field_count": 276,
+        "row_count": 722732,
+        "full_typed_row_match_count": 41,
+        "readonly_table_acl_match_count": 41,
+        "readonly_column_acl_match_count": 41
+      },
+      "dataset_version": "34637f9ac4b70213c747820c6a25c269485190588d7c360f02b92ee8ea224648",
+      "versions": {
+        "data": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+        "schema": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "application": "b08e0b723f1d3f6c293a3fa79d9e76836d1b93642f5e23e80e1a1ff59fbed33e",
+        "evaluator": "c1d6c46cb989ed412449a3a8ce645c33c5ed26dbe6a793ebe820c2909ac78483",
+        "evaluation_code": "6565cdd5feccbcf882c871978f8dfee0d6f9b3fa04909daff331904c61b0a0b3",
+        "gold_selection": "bb6808ff1912f1eb19dae72e2e71f23ddefb666c6dae63f053ae9dd3d9f52079",
+        "result_policy": "12f9108e569f1e2c7da47b1d0e9bbb1a11dfe422c0541317cb9f75a6921d3d86",
+        "physical_schema": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817"
+      },
+      "summary": {
+        "case_count": 8,
+        "behavior_pass_count": 8,
+        "behavior_success_rate": 1.0,
+        "behavior_by_type": {
+          "database_query": {
+            "count": 1,
+            "passed": 1
+          },
+          "direct_response": {
+            "count": 1,
+            "passed": 1
+          },
+          "data_qa": {
+            "count": 1,
+            "passed": 1
+          },
+          "permission_denial": {
+            "count": 1,
+            "passed": 1
+          },
+          "clarification_start": {
+            "count": 1,
+            "passed": 1
+          },
+          "clarification_recovery": {
+            "count": 1,
+            "passed": 1
+          },
+          "empty_result": {
+            "count": 1,
+            "passed": 1
+          },
+          "controlled_failure": {
+            "count": 1,
+            "passed": 1
+          }
+        },
+        "sql_case_count": 5,
+        "result_scored_count": 2,
+        "result_accuracy": 1.0,
+        "strict_scored_count": 2,
+        "strict_result_accuracy": 1.0,
+        "unscored_count": 6
+      },
+      "checks": {
+        "complete": true,
+        "case_ids_match_selected_cases": true,
+        "dataset_digest_matches": true,
+        "selected_gold_digest_matches": true,
+        "result_policy_digest_matches": true,
+        "summary_recomputed_matches": true,
+        "source_id_matches": true,
+        "versions_match_accepted_target": true,
+        "live_verification_41_tables": true,
+        "application_digest_matches_local": true,
+        "evaluator_digest_matches_local": true,
+        "evaluation_code_digest_matches_local": true,
+        "time_field_supplement_disabled": true
+      }
+    }
+  },
+  "combined_live": {
+    "case_count": 79,
+    "sql_execution_success_count": 75,
+    "result_correct_count": 72,
+    "strict_scored_count": 78,
+    "strict_pass_count": 58,
+    "strict_unscored_case_ids": [
+      "GROWTH_OPS-051"
+    ],
+    "strict_not_passed_case_ids": [
+      "CHANNEL_OPS-025",
+      "CHANNEL_OPS-051",
+      "CHANNEL_OPS-079",
+      "CHANNEL_OPS-136",
+      "CONTENT_OPS-031",
+      "CONTENT_OPS-032",
+      "CONTENT_OPS-033",
+      "CONTENT_OPS-034",
+      "CONTENT_OPS-036",
+      "CONTENT_OPS-051",
+      "CONTENT_OPS-076",
+      "CONTENT_OPS-138",
+      "GROWTH_OPS-050",
+      "GROWTH_OPS-051",
+      "GROWTH_OPS-066",
+      "GROWTH_OPS-076",
+      "GROWTH_OPS-100",
+      "GROWTH_OPS-102",
+      "GROWTH_OPS-126",
+      "GROWTH_OPS-148",
+      "GROWTH_OPS-150"
+    ],
+    "alias_candidate_case_count": 14,
+    "alias_candidate_missing_mapping_count": 23
+  },
+  "issues": {
+    "postgres_round_inferred": [
+      "GROWTH_OPS-150",
+      "GROWTH_OPS-148",
+      "CHANNEL_OPS-136"
+    ],
+    "metric_guard_blocked": [
+      "GROWTH_OPS-051"
+    ],
+    "population_or_metric_mismatch": [
+      "GROWTH_OPS-066",
+      "GROWTH_OPS-076",
+      "GROWTH_OPS-100"
+    ]
+  },
+  "candidate_aliases": [
+    {
+      "case_id": "CHANNEL_OPS-079",
+      "cohort": "classic49",
+      "missing_explicit_aliases": [
+        {
+          "expected": "status",
+          "actual": "状态"
+        },
+        {
+          "expected": "campaigns",
+          "actual": "广告计划数"
+        },
+        {
+          "expected": "budget",
+          "actual": "预算"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "CONTENT_OPS-031",
+      "cohort": "classic49",
+      "missing_explicit_aliases": [
+        {
+          "expected": "interactions",
+          "actual": "interaction_count"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "CONTENT_OPS-032",
+      "cohort": "classic49",
+      "missing_explicit_aliases": [
+        {
+          "expected": "interactions",
+          "actual": "interaction_count"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "CONTENT_OPS-033",
+      "cohort": "classic49",
+      "missing_explicit_aliases": [
+        {
+          "expected": "interactions",
+          "actual": "interaction_count"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "CONTENT_OPS-034",
+      "cohort": "classic49",
+      "missing_explicit_aliases": [
+        {
+          "expected": "interactions",
+          "actual": "interaction_count"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "CONTENT_OPS-036",
+      "cohort": "classic49",
+      "missing_explicit_aliases": [
+        {
+          "expected": "interaction_date",
+          "actual": "interact_date"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "CONTENT_OPS-051",
+      "cohort": "classic49",
+      "missing_explicit_aliases": [
+        {
+          "expected": "avg_duration_seconds",
+          "actual": "avg_duration"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "CONTENT_OPS-076",
+      "cohort": "classic49",
+      "missing_explicit_aliases": [
+        {
+          "expected": "creator_status",
+          "actual": "创作者状态"
+        },
+        {
+          "expected": "creators",
+          "actual": "创作者数量"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "CONTENT_OPS-138",
+      "cohort": "classic49",
+      "missing_explicit_aliases": [
+        {
+          "expected": "reports",
+          "actual": "report_count"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "GROWTH_OPS-050",
+      "cohort": "phase83_30",
+      "missing_explicit_aliases": [
+        {
+          "expected": "registrations",
+          "actual": "register_user_count"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "GROWTH_OPS-102",
+      "cohort": "phase83_30",
+      "missing_explicit_aliases": [
+        {
+          "expected": "users",
+          "actual": "user_count"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "GROWTH_OPS-126",
+      "cohort": "phase83_30",
+      "missing_explicit_aliases": [
+        {
+          "expected": "touch_channel",
+          "actual": "触达方式"
+        },
+        {
+          "expected": "touches",
+          "actual": "触达数量"
+        },
+        {
+          "expected": "delivery_rate",
+          "actual": "送达率"
+        },
+        {
+          "expected": "click_rate",
+          "actual": "点击率"
+        },
+        {
+          "expected": "recall_rate",
+          "actual": "召回率"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "CHANNEL_OPS-025",
+      "cohort": "phase83_30",
+      "missing_explicit_aliases": [
+        {
+          "expected": "month",
+          "actual": "月份"
+        },
+        {
+          "expected": "spend",
+          "actual": "广告消耗"
+        },
+        {
+          "expected": "mom",
+          "actual": "环比变化率"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    },
+    {
+      "case_id": "CHANNEL_OPS-051",
+      "cohort": "phase83_30",
+      "missing_explicit_aliases": [
+        {
+          "expected": "conversions",
+          "actual": "conversion_count"
+        }
+      ],
+      "loose_result_correct": true,
+      "strict_result_correct": false,
+      "review_status": "candidate_only_not_added_to_cases"
+    }
+  ],
+  "e2e_cases": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "behavior_type": "database_query",
+      "route": "database_query",
+      "status": "completed",
+      "behavior_correct": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "tool_call_count": 1,
+      "executed_sql_count": 1,
+      "executed_sql_source_ids": [
+        "short_video_ops_postgres"
+      ],
+      "constraint_statuses": [
+        "PASS"
+      ],
+      "constraint_warnings": [
+        []
+      ],
+      "metric_warnings": [
+        []
+      ],
+      "row_counts": [
+        8
+      ]
+    },
+    {
+      "case_id": "E2E-ROUTE-DIRECT",
+      "behavior_type": "direct_response",
+      "route": "direct_response",
+      "status": "completed",
+      "behavior_correct": true,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "tool_call_count": 0,
+      "executed_sql_count": 0,
+      "executed_sql_source_ids": [],
+      "constraint_statuses": [],
+      "constraint_warnings": [],
+      "metric_warnings": [],
+      "row_counts": []
+    },
+    {
+      "case_id": "E2E-ROUTE-QA",
+      "behavior_type": "data_qa",
+      "route": "data_qa",
+      "status": "completed",
+      "behavior_correct": true,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "tool_call_count": 0,
+      "executed_sql_count": 0,
+      "executed_sql_source_ids": [],
+      "constraint_statuses": [],
+      "constraint_warnings": [],
+      "metric_warnings": [],
+      "row_counts": []
+    },
+    {
+      "case_id": "E2E-PERMISSION-READ",
+      "behavior_type": "permission_denial",
+      "route": "task_access",
+      "status": "denied",
+      "behavior_correct": true,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "tool_call_count": 0,
+      "executed_sql_count": 0,
+      "executed_sql_source_ids": [],
+      "constraint_statuses": [],
+      "constraint_warnings": [],
+      "metric_warnings": [],
+      "row_counts": []
+    },
+    {
+      "case_id": "E2E-CLARIFY-START",
+      "behavior_type": "clarification_start",
+      "route": "database_query",
+      "status": "waiting_clarification",
+      "behavior_correct": true,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "tool_call_count": 0,
+      "executed_sql_count": 0,
+      "executed_sql_source_ids": [],
+      "constraint_statuses": [],
+      "constraint_warnings": [],
+      "metric_warnings": [],
+      "row_counts": []
+    },
+    {
+      "case_id": "E2E-CLARIFY-RESUME",
+      "behavior_type": "clarification_recovery",
+      "route": "database_query",
+      "status": "completed",
+      "behavior_correct": true,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "tool_call_count": 1,
+      "executed_sql_count": 1,
+      "executed_sql_source_ids": [
+        "short_video_ops_postgres"
+      ],
+      "constraint_statuses": [
+        "WARN"
+      ],
+      "constraint_warnings": [
+        [
+          "问题包含月份 2026-05，但没有可用指标时间字段可用于确定过滤列"
+        ]
+      ],
+      "metric_warnings": [
+        [
+          "指标 new_users 在当前权限范围不可用"
+        ]
+      ],
+      "row_counts": [
+        1
+      ]
+    },
+    {
+      "case_id": "E2E-EMPTY-RESULT",
+      "behavior_type": "empty_result",
+      "route": "database_query",
+      "status": "completed",
+      "behavior_correct": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "tool_call_count": 1,
+      "executed_sql_count": 1,
+      "executed_sql_source_ids": [
+        "short_video_ops_postgres"
+      ],
+      "constraint_statuses": [
+        "PASS"
+      ],
+      "constraint_warnings": [
+        []
+      ],
+      "metric_warnings": [
+        []
+      ],
+      "row_counts": [
+        0
+      ]
+    },
+    {
+      "case_id": "E2E-FAILURE-PREPROCESS",
+      "behavior_type": "controlled_failure",
+      "route": "database_query",
+      "status": "failed",
+      "behavior_correct": true,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "tool_call_count": 0,
+      "executed_sql_count": 0,
+      "executed_sql_source_ids": [],
+      "constraint_statuses": [],
+      "constraint_warnings": [],
+      "metric_warnings": [],
+      "row_counts": []
+    }
+  ],
+  "e2e_findings": {
+    "clarification_selected_option": "option_1",
+    "clarification_selected_metric": "new_users_registration_count",
+    "clarification_month_range": "[2026-05-01, 2026-06-01)",
+    "clarification_actual_top_channel": "natural_recommendation",
+    "clarification_actual_top_count": 275,
+    "clarification_warning": "date-field planner says no available metric time field despite executed SQL filtering user_registrations.registered_at correctly",
+    "empty_result_row_count": 0,
+    "empty_reply_explains_no_match": true,
+    "permission_denial_observed": true,
+    "direct_answer_internal_preprocessor_terms": true,
+    "qa_conflates_new_users_and_activated_users": true
+  },
+  "evidence_limits": [
+    "The live benchmark reports do not embed actual SQL result rows, so individual live values cannot be independently replayed from those files.",
+    "PostgreSQL query errors are redacted to SQLSTATE 42883; exact server error text is unavailable. ROUND/type cause is an inference from SQL and verified PostgreSQL field types.",
+    "The guard failure has no generated SQL in the saved case; false-positive versus incorrect generated SQL cannot be decided.",
+    "Alias mappings are candidates only; no formal case file or original report is modified."
+  ]
+}

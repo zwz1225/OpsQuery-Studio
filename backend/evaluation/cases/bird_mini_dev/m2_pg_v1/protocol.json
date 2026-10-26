@@ -1,0 +1,189 @@
+{
+  "agent": {
+    "clarification": "record_as_no_answer; no Gold-derived automatic answer or option selection",
+    "cross_case_memory": false,
+    "gold_access": "scorer_only; agent and indexer must not load scorer directory or full question bank",
+    "input_keys": [
+      "case_id",
+      "database_id",
+      "dialect",
+      "evidence",
+      "question"
+    ],
+    "official_evidence": "provided_verbatim",
+    "question": "original_English_verbatim",
+    "retrieval": {
+      "bm25_top_k": 30,
+      "dense_top_k": 30,
+      "gold_retrieval_terms": false,
+      "max_schema_fields": 20,
+      "rrf_top_k": 40,
+      "schema_recall_threshold": 0.55,
+      "source": "natural_question_and_allowed_evidence_only",
+      "time_field_supplement_enabled": false
+    },
+    "schema": "authorized_live_metadata_and_official_descriptions_for_database_id",
+    "short_video_metric_catalog": false,
+    "value_samples": {
+      "max_distinct_values_per_column": 3,
+      "max_text_characters": 64,
+      "order": "database_type_order_ascending_nulls_last",
+      "truncation_must_be_recorded": true
+    }
+  },
+  "artifact_sha256": {
+    "development80.json": "237b6f09f8b7ee9965f9e18b3ab2195a79b5ad949e55e6d56868a3266df29b10",
+    "holdout30.json": "d0bfb5d7fe63555fd00632c875ed3970e7282e754a4d03030a0af9f507f3141c",
+    "inputs/development80.jsonl": "6760724e98b6da967ac5ebb2698c4e5cab385875bd150ad36a3b252ffdc52f03",
+    "inputs/holdout30.jsonl": "1719472c9e7ab1b5f5c6aafa24f2625b40f1a3b6d7bf9f6a5dbeed6bb60edf41",
+    "inputs/smoke8.jsonl": "795fde65943e229ae96676d657cf05be26440cce62c66c078175e934a1323fa7",
+    "reference/official_calculate_ex.py.txt": "4a777188f2924dd194dd84d84dc85a5b9ec5631de0c8514dddb7990347528b92",
+    "reference/official_execute_sql.py.txt": "6f15188e26408a8d2642a7434a2c7998b274d66cb68f9dc32a0fbd478b329068",
+    "scorer/gold110.jsonl": "5189d2fa4700cb2f9e1ccbe5b80d0b374cd24d162a68f11fb909346e02dc349f",
+    "smoke8.json": "fc3983b66f9cee0b7ab24c08cf9ca0c69e6c48c2cdd0b7e6bf7206a74e542a91",
+    "source_lineage.json": "90f041a22fa37e687d8ca6da82ae375c3a6285eac3cfa16e671494cd762223c3"
+  },
+  "budgets": {
+    "case_wall_timeout_seconds": 600,
+    "chat_max_output_tokens": 4096,
+    "connect_timeout_seconds": 10,
+    "enforcement_status": "required_in_external_runner_before_live; existing internal runners are not claimed compliant",
+    "lock_timeout_ms": 5000,
+    "max_chat_http_attempts_per_case": 10,
+    "max_prompt_utf8_bytes": 98304,
+    "max_sql_tool_calls": 3,
+    "max_total_model_http_attempts_per_case": 16,
+    "max_transport_retries_per_request": 1,
+    "max_validation_attempts_per_sql_round": 3,
+    "model_request_timeout_seconds": 180,
+    "result_limit_probe": "fetch limit+1; never score preview or partial rows",
+    "result_payload_byte_limit": 67108864,
+    "result_row_limit": 100000,
+    "shared_attempt_counters": "Include generation, preprocessing, embeddings, reranking and transport retries; shared index build reported separately",
+    "sql_statement_timeout_ms": 30000,
+    "usage": "record provider usage when available; missing usage is unknown, never zero",
+    "workers": 1
+  },
+  "dataset": {
+    "archive_sha256": "aeb211c0e39010bbdae3838bb5e8bd27dc446ed77495b1709f85ccc9bf67f2be",
+    "language": "en",
+    "license_declared_by_dataset_card": "cc-by-sa-4.0",
+    "postgres_dump_sha256": "31b1da211849d24a57c9af7636da46a5b82fc8a3ca1542bb3ebd8775e9a31cec",
+    "questions_sha256": "7fa740ef9225389cff6c34432120e8325d0ca3008d73db1ae38731234bc10da7",
+    "repository": "birdsql/bird_mini_dev",
+    "revision": "f65faf4ae3b638c1fa6df1d3370c8d92c8366301",
+    "translation": false
+  },
+  "holdout_control": {
+    "after_observing_holdout": "no longer untouched for tuning; subsequent tuned runs must disclose reuse and version changes",
+    "attempt_policy": "one formal run per frozen candidate; all attempts preserved",
+    "first_live_after": "freeze successful development run code, prompts, dependencies, source versions and budgets",
+    "gold_preflight_visibility": "scorer verifies environment; no Gold hints or correctness feedback to Agent/tuning",
+    "limitations": "Public benchmark may be in model training data; this is not a private unseen test",
+    "tuning": "development80 only"
+  },
+  "model": {
+    "alias_mutability": "Record provider returned model identifier and run date; alias is not a fixed weight snapshot",
+    "embedding_dimensions": 1024,
+    "embedding_model": "text-embedding-v4",
+    "enable_thinking": false,
+    "llm_model": "qwen3.7-plus",
+    "rerank_model": "qwen3-rerank",
+    "selection_basis": "M1 v7 baseline model names",
+    "temperature": 0
+  },
+  "protocol_id": "m2_bird_pg_v1",
+  "protocol_version": 1,
+  "runtime_gate": {
+    "refuse": [
+      "cross-source resume",
+      "short_video_ops runtime fallback",
+      "unknown db_id",
+      "unverified target versions"
+    ],
+    "required_before_live": [
+      "generic external datasource adapter",
+      "db_id to verified authorized table mapping",
+      "isolated PostgreSQL target and read-only role",
+      "verified target data and catalog versions",
+      "source-scoped index/cache/snapshot identities",
+      "agent/scorer input boundary",
+      "tuple-preserving complete-result scorer",
+      "enforced shared budgets",
+      "110-case Gold preflight"
+    ],
+    "required_execution_binding": [
+      "protocol and split hashes",
+      "code and prompt versions",
+      "dependency versions",
+      "model and endpoint configuration excluding secrets",
+      "retrieval configuration",
+      "permissions",
+      "verified target identity/data/catalog versions",
+      "scoring policy and reference hashes"
+    ]
+  },
+  "scope": "Self-selected original Mini-Dev PostgreSQL subset; not an official leaderboard score",
+  "scoring": {
+    "bad_gold_policy": "stop readiness; preserve IDs and evidence; any correction creates a new protocol version",
+    "column_names": "ignored",
+    "column_value_positions": "preserved",
+    "comparison_before_json_serialization": true,
+    "compatibility_limit": "Native EX predicate retained; subset, English+evidence Agent task, independent read-only transactions and bounded resources are project conditions, not the full official execution harness",
+    "duplicate_row_multiplicity": "ignored",
+    "explicit_per_case_alias_rules": false,
+    "gold_preflight": "all selected 110 Gold SQLs must execute with complete supported results before formal live",
+    "numeric_tolerance": "none beyond native Python equality",
+    "policy_id": "bird_native_tuple_set_ex_v1",
+    "predicate": "set(predicted_native_row_tuples) == set(gold_native_row_tuples)",
+    "preview_scoring": false,
+    "primary_denominator": "all frozen cases, including failures, refusals, clarification and resource-limit failures",
+    "primary_metric": "end_to_end_ex_pass_count / frozen_split_case_count",
+    "row_order": "ignored",
+    "secondary_metrics": [
+      "first_sql_execution_success",
+      "final_sql_execution_success",
+      "ex_given_complete_results",
+      "per_database_and_difficulty",
+      "row_multiset_diagnostic",
+      "ordered_result_diagnostic",
+      "clarification_rate",
+      "failure_categories",
+      "latency_p50_p95",
+      "model_attempts_and_usage"
+    ],
+    "soft_f1_and_rves": "deferred; do not mix with primary EX",
+    "timeout_or_truncation": "correctness unknown, primary contribution zero; record distinct failure category",
+    "upstream_reference": {
+      "calculate_ex_function_sha256": "4a777188f2924dd194dd84d84dc85a5b9ec5631de0c8514dddb7990347528b92",
+      "commit": "abd11b6db92a1c9f809b32f7564c7c71b34d67f0",
+      "ex_file_sha256": "da1bbcd4530be83692d7c650c814ea9704bb710d0c953eb75d02ccb38233cf89",
+      "ex_source_url": "https://github.com/bird-bench/mini_dev/blob/abd11b6db92a1c9f809b32f7564c7c71b34d67f0/evaluation/evaluation_ex.py#L18",
+      "execute_sql_function_sha256": "6f15188e26408a8d2642a7434a2c7998b274d66cb68f9dc32a0fbd478b329068",
+      "repository": "https://github.com/bird-bench/mini_dev",
+      "review_note": "Retain comparator semantics only; official connection helpers and fallback db_id behavior are not used",
+      "snapshot_method": "git show pinned_commit:path (raw Git bytes, independent of checkout line endings)",
+      "utils_file_sha256": "f6943d249caac5aeaef9bce21d43dbf29dcef85a0c965a76df032a9542f308bf"
+    }
+  },
+  "splits": {
+    "database_rank": "sha256(seed|database|db_id)",
+    "development": "development80.json",
+    "development_database_count": 8,
+    "holdout": "holdout30.json",
+    "holdout_database_count": 3,
+    "per_database_quota": {
+      "challenging": 2,
+      "moderate": 5,
+      "simple": 3
+    },
+    "question_rank": "sha256(seed|question|question_id)",
+    "rank_inputs_exclude_question_evidence_and_gold": true,
+    "seed": "askdata-m2-bird-pg-v1",
+    "smoke": "smoke8.json",
+    "smoke_is_subset_of_development": true,
+    "unit": "database_id",
+    "unused_case_count": 390
+  },
+  "stage_status": "protocol_frozen_runtime_integration_pending"
+}

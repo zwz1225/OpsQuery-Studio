@@ -1,0 +1,100 @@
+{
+  "name": "e2e_behavior_v1",
+  "purpose": "Service-entry behavior coverage with natural questions, ordered session steps, and a controlled failure",
+  "cases": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "session_group": "growth_context",
+      "behavior_type": "database_query",
+      "expected_route": "database_query",
+      "expected_status": "completed",
+      "expected_sql_present": true
+    },
+    {
+      "case_id": "E2E-ROUTE-DIRECT",
+      "scenario": "growth_ops",
+      "query": "你好，请简单介绍你能做什么。",
+      "behavior_type": "direct_response",
+      "expected_route": "direct_response",
+      "expected_status": "completed",
+      "expected_sql_present": false,
+      "expected_analysis_present": true,
+      "score_result": false
+    },
+    {
+      "case_id": "E2E-ROUTE-QA",
+      "scenario": "growth_ops",
+      "query": "请解释刚才查询结果的业务含义，不要重新查询数据库。",
+      "session_group": "growth_context",
+      "behavior_type": "data_qa",
+      "expected_route": "data_qa",
+      "expected_status": "completed",
+      "expected_sql_present": false,
+      "expected_analysis_present": true,
+      "score_result": false
+    },
+    {
+      "case_id": "E2E-PERMISSION-READ",
+      "scenario": "content_ops",
+      "query": "以内容运营身份读取增长运营的上一条查询任务。",
+      "operation": "get_task_denied",
+      "source_case_id": "GROWTH_OPS-001",
+      "user_id": "demo_content_ops",
+      "behavior_type": "permission_denial",
+      "score_result": false
+    },
+    {
+      "case_id": "E2E-CLARIFY-START",
+      "scenario": "channel_ops",
+      "query": "请找出2026年5月表现最好的渠道；如果“表现”没有明确指标，请先让我选择指标。",
+      "behavior_type": "clarification_start",
+      "expected_route": "database_query",
+      "expected_status": "waiting_clarification",
+      "expected_sql_present": false,
+      "expected_clarification_options_min": 2,
+      "score_result": false
+    },
+    {
+      "case_id": "E2E-CLARIFY-RESUME",
+      "scenario": "channel_ops",
+      "query": "选择上一步澄清的第一个指标选项并继续查询。",
+      "operation": "clarify",
+      "source_case_id": "E2E-CLARIFY-START",
+      "clarification_option_index": 0,
+      "behavior_type": "clarification_recovery",
+      "expected_route": "database_query",
+      "expected_status": "completed",
+      "expected_sql_present": true,
+      "expected_tool_success": true,
+      "score_result": false
+    },
+    {
+      "case_id": "E2E-EMPTY-RESULT",
+      "scenario": "growth_ops",
+      "query": "请列出1900年1月1日注册的用户ID和注册时间，最多20行。",
+      "gold_sql": "SELECT user_id, registered_at FROM user_registrations WHERE registered_at >= DATE '1900-01-01' AND registered_at < DATE '1900-01-02' ORDER BY user_id LIMIT 20",
+      "behavior_type": "empty_result",
+      "expected_route": "database_query",
+      "expected_status": "completed",
+      "expected_sql_present": true,
+      "expected_tool_success": true,
+      "expected_sql_contains": ["user_registrations", "1900"],
+      "expected_empty_rows": true,
+      "order_sensitive": true
+    },
+    {
+      "case_id": "E2E-FAILURE-PREPROCESS",
+      "scenario": "growth_ops",
+      "query": "受控故障：在工作流预处理阶段注入失败，检查服务入口返回。",
+      "operation": "submit_with_injected_workflow_error",
+      "injected_stage": "preprocess",
+      "behavior_type": "controlled_failure",
+      "expected_route": "database_query",
+      "expected_status": "failed",
+      "expected_sql_present": false,
+      "expected_failure_stage": "preprocess",
+      "expected_workflow_mode": "failed_explicitly",
+      "score_result": false
+    }
+  ]
+}

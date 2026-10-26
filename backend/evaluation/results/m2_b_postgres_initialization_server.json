@@ -1,0 +1,561 @@
+{
+  "stage": "M2 B independent initialization",
+  "run_status": "complete",
+  "started_at": "2026-10-16T03:47:36.114628+00:00",
+  "errors": [],
+  "postgresql_connected": true,
+  "database_created": true,
+  "database_imported": false,
+  "target_data_verified": false,
+  "new_model_request_count": 0,
+  "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+  "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede",
+  "target": {
+    "database": "askdata_m2_bird",
+    "import_role": "askdata_m2_import",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "schema": "public"
+  },
+  "source_evidence_sha256": {
+    "source_preflight.json": "f33ed1e7c190205ab595966073e9cb4a4a51d57653f958cb2f1fb40bdb6a215d",
+    "import_manifest.json": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879",
+    "preparation_review.json": "35d54773a698b120c6836744b990f7c8559237f4ab43e5b0d7540d810c8cd864"
+  },
+  "disk": [
+    {
+      "path": "/home/zhangwenzong_25/.local/share/askdata/pg16-data",
+      "free_bytes": 97729040384
+    },
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/external/bird_mini_dev",
+      "free_bytes": 97729040384
+    },
+    {
+      "path": "evaluation/results",
+      "free_bytes": 97729040384
+    },
+    {
+      "path": "/home/zhangwenzong_25/.local/share/askdata",
+      "free_bytes": 97729040384
+    }
+  ],
+  "server_preflight_sha256": "b3e71673dee329a06f3e1f02b4d80385a98798eb0b2fe0a63ded2ef13de59a88",
+  "fresh_server_state": {
+    "maintenance_database": "postgres",
+    "current_user": "askdata_admin",
+    "server_version_num": 160015,
+    "encoding": "UTF8",
+    "timezone": "UTC",
+    "data_directory": "/home/zhangwenzong_25/.local/share/askdata/pg16-data",
+    "server_address": "127.0.0.1/32",
+    "server_port": 55432,
+    "superuser": true,
+    "can_create_database": true,
+    "can_create_role": true,
+    "maintenance_collation": "C",
+    "maintenance_ctype": "C",
+    "maintenance_locale_provider": "c",
+    "target_exists": false,
+    "existing_m2_roles": []
+  },
+  "checks": [
+    {
+      "name": "maintenance_identity",
+      "passed": true
+    },
+    {
+      "name": "postgresql_16",
+      "passed": true
+    },
+    {
+      "name": "encoding_locale",
+      "passed": true
+    },
+    {
+      "name": "local_endpoint",
+      "passed": true
+    },
+    {
+      "name": "expected_cluster_directory",
+      "passed": true
+    },
+    {
+      "name": "initialization_privileges",
+      "passed": true
+    },
+    {
+      "name": "independent_target_absent",
+      "passed": true
+    },
+    {
+      "name": "m2_roles_absent",
+      "passed": true
+    },
+    {
+      "name": "import_capacity_budget",
+      "passed": true
+    }
+  ],
+  "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+  "credentials_file_created": true,
+  "credential_storage": "Private 0600 file outside project; passwords never included in reports",
+  "recovery": "No automatic DROP/role deletion. On partial failure preserve report and private credentials for review.",
+  "phase": "initialized_empty",
+  "roles_creation_outcome": "committed",
+  "roles_created": [
+    "askdata_m2_import",
+    "askdata_m2_ro_california_schools",
+    "askdata_m2_ro_card_games",
+    "askdata_m2_ro_codebase_community",
+    "askdata_m2_ro_debit_card_specializing",
+    "askdata_m2_ro_european_football_2",
+    "askdata_m2_ro_financial",
+    "askdata_m2_ro_formula_1",
+    "askdata_m2_ro_student_club",
+    "askdata_m2_ro_superhero",
+    "askdata_m2_ro_thrombosis_prediction",
+    "askdata_m2_ro_toxicology"
+  ],
+  "database_creation_outcome": "created",
+  "login_checks": [
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_import",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "off",
+      "create_temp_schema_create": [
+        true,
+        true,
+        true
+      ],
+      "empty": true
+    },
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_ro_california_schools",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "on",
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "empty": true
+    },
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_ro_card_games",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "on",
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "empty": true
+    },
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_ro_codebase_community",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "on",
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "empty": true
+    },
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_ro_debit_card_specializing",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "on",
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "empty": true
+    },
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_ro_european_football_2",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "on",
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "empty": true
+    },
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_ro_financial",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "on",
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "empty": true
+    },
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_ro_formula_1",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "on",
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "empty": true
+    },
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_ro_student_club",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "on",
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "empty": true
+    },
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_ro_superhero",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "on",
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "empty": true
+    },
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_ro_thrombosis_prediction",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "on",
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "empty": true
+    },
+    {
+      "identity": {
+        "database": "askdata_m2_bird",
+        "role": "askdata_m2_ro_toxicology",
+        "server_version_num": 160015,
+        "encoding": "UTF8",
+        "timezone": "UTC",
+        "collation": "C",
+        "ctype": "C",
+        "locale_provider": "c",
+        "database_owner": "askdata_m2_import",
+        "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+        "logical_domains": [
+          "california_schools",
+          "card_games",
+          "codebase_community",
+          "debit_card_specializing",
+          "european_football_2",
+          "financial",
+          "formula_1",
+          "student_club",
+          "superhero",
+          "thrombosis_prediction",
+          "toxicology"
+        ],
+        "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede"
+      },
+      "default_read_only": "on",
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "empty": true
+    }
+  ],
+  "initialization_verified": true,
+  "summary": {
+    "role_login_count": 12,
+    "database_count": 1,
+    "table_count": 0
+  },
+  "finished_at": "2026-10-16T03:47:42.176704+00:00"
+}

@@ -1,0 +1,90 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "platform": [
+        "register_platform"
+      ],
+      "plays_per_user": [
+        "avg_play_per_user"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "platform",
+      "plays_per_user"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": false,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT 'iOS' AS platform, ROUND(SUM(a.play_count)*1.0/COUNT(DISTINCT a.user_id),2) AS plays_per_user FROM user_daily_activity a JOIN user_registrations r ON a.user_id=r.user_id WHERE r.platform='iOS' AND strftime(a.activity_date,'%Y-%m')='2026-05'",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "GROWTH_OPS-100",
+  "question": "统计2026-05期间注册平台为iOS的用户产生的播放总次数除以去重用户数；请返回注册平台、人均播放次数；聚合口径：去重数量按对应实体唯一标识计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+  "gold_sql": "SELECT 'iOS' AS platform, ROUND(SUM(a.play_count)*1.0/COUNT(DISTINCT a.user_id),2) AS plays_per_user FROM user_daily_activity a JOIN user_registrations r ON a.user_id=r.user_id WHERE r.platform='iOS' AND strftime(a.activity_date,'%Y-%m')='2026-05'",
+  "database": "short_video_ops",
+  "scenario": "growth_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.growth_daily_metrics",
+      "short_video_ops.growth_targets",
+      "short_video_ops.recall_campaigns",
+      "short_video_ops.recall_results",
+      "short_video_ops.recall_touches",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_churn_events",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_lifecycle_snapshots",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.user_sessions",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "growth_ops"
+    ],
+    "user_id": "demo_growth_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "platform",
+    "plays_per_user"
+  ],
+  "rows": [
+    {
+      "platform": "iOS",
+      "plays_per_user": 124.14
+    }
+  ],
+  "generated_at": "2026-10-10T14:55:20.860250+00:00"
+}

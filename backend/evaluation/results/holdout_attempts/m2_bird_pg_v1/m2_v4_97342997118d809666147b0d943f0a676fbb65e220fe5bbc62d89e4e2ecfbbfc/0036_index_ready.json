@@ -1,0 +1,97 @@
+{
+  "attempt_id": "1218483158c643a085e7b9360dd4a7d7",
+  "cache_hit": false,
+  "database_id": "thrombosis_prediction",
+  "index_sha256": "2a340fe146cdd604a2b761a722bff9581e66ddb8f96733e6b988c427649ec8bd",
+  "kind": "index_ready",
+  "model_usage": {
+    "chat_http_attempts": 0,
+    "elapsed_seconds": 3.6,
+    "generation_attempts": {},
+    "model_events": [
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 980,
+          "total_tokens": 980
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 993,
+          "total_tokens": 993
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 1191,
+          "total_tokens": 1191
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 1165,
+          "total_tokens": 1165
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 956,
+          "total_tokens": 956
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 886,
+          "total_tokens": 886
+        }
+      },
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 389,
+          "total_tokens": 389
+        }
+      }
+    ],
+    "model_http_attempts": 7,
+    "sql_tool_calls": 0,
+    "validation_attempts": {}
+  },
+  "previous_event_sha256": "bcdd04a74cfd967408b9dc359daa3373a779eb463e1a3b2e621159701917aaca",
+  "recorded_at": "2026-10-19T08:57:13.546275+00:00",
+  "sequence": 36
+}

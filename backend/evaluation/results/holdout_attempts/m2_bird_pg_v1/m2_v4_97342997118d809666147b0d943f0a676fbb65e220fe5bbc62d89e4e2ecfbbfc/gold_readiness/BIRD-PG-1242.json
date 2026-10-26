@@ -1,0 +1,53 @@
+{
+  "budget": {
+    "chat_http_attempts": 0,
+    "elapsed_seconds": 0.564,
+    "generation_attempts": {},
+    "model_events": [],
+    "model_http_attempts": 0,
+    "sql_tool_calls": 0,
+    "validation_attempts": {}
+  },
+  "case_id": "BIRD-PG-1242",
+  "complete": true,
+  "database_id": "thrombosis_prediction",
+  "errors": [],
+  "ex_correct": null,
+  "gold_sql_sha256": "086ac494b5a3816137f2b808f0ecf007f795df3d5873c85c846e56cb5cd1bf4e",
+  "mode": "gold",
+  "new_model_request_count": 0,
+  "query_role": "askdata_m2_ro_thrombosis_prediction",
+  "result": {
+    "answer_details": "scorer-only; no answer rows, counts or digests exposed",
+    "complete": true,
+    "native_hashable": true,
+    "within_payload_limit": true,
+    "within_row_limit": true
+  },
+  "runtime_closed": true,
+  "schema_selection_policy": {
+    "coverage_enabled": false,
+    "coverage_floor": null,
+    "coverage_gain": null,
+    "coverage_scope": null,
+    "development_candidate": false,
+    "formal_protocol_override": false,
+    "intent_source": null,
+    "max_coverage_fields": 0,
+    "max_fields": 20,
+    "metadata_match": null,
+    "policy_id": "bird_rerank_055_top20_v1",
+    "threshold": 0.55
+  },
+  "source_identity": {
+    "backend": "postgresql",
+    "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+    "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c",
+    "dialect": "postgres",
+    "logical_database_id": "thrombosis_prediction",
+    "physical_schema": "public",
+    "prompt_dialect": "PostgreSQL",
+    "source_id": "bird_mini_dev_postgres_thrombosis_prediction"
+  },
+  "status": "gold_ready"
+}

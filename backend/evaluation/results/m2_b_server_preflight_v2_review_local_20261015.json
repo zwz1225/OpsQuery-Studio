@@ -1,0 +1,82 @@
+{
+  "accepted_for_source_transfer": true,
+  "check_count": 9,
+  "checks_recomputed_from_recorded_fields": [
+    {
+      "name": "maintenance_identity",
+      "passed": true
+    },
+    {
+      "name": "postgresql_16",
+      "passed": true
+    },
+    {
+      "name": "encoding_locale",
+      "passed": true
+    },
+    {
+      "name": "local_endpoint",
+      "passed": true
+    },
+    {
+      "name": "expected_cluster_directory",
+      "passed": true
+    },
+    {
+      "name": "initialization_privileges",
+      "passed": true
+    },
+    {
+      "name": "independent_target_absent",
+      "passed": true
+    },
+    {
+      "name": "m2_roles_absent",
+      "passed": true
+    },
+    {
+      "name": "import_capacity_budget",
+      "passed": true
+    }
+  ],
+  "data_imported": false,
+  "database_created": false,
+  "database_identity_unchanged_from_first_report": true,
+  "dependencies": {
+    "psycopg": "3.2.13",
+    "psycopg-pool": "3.2.8"
+  },
+  "free_bytes_recorded": 98755608576,
+  "free_gib_recorded": 91.97332763671875,
+  "new_model_request_count": 0,
+  "next": "Transfer the prepared source-only package, verify hash, extract and run offline source preflight; no initialization/import yet",
+  "pass_count": 9,
+  "preflight_check_version": 2,
+  "recorded_at": "2026-10-15T14:47:13.093013+00:00",
+  "run_status": "complete",
+  "scope": "Independent review of downloaded server evidence; no additional connection or live filesystem inspection from local machine",
+  "server_check_duration_seconds": 3.528013,
+  "server_report_status": "complete",
+  "server_target_data_verified": false,
+  "source_report": "m2_b_server_preflight_server_v2.json",
+  "source_sha256": "b3e71673dee329a06f3e1f02b4d80385a98798eb0b2fe0a63ded2ef13de59a88",
+  "stage": "M2 B v2 server preflight acceptance review",
+  "target": {
+    "database": "askdata_m2_bird",
+    "import_role": "askdata_m2_import",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "schema": "public"
+  }
+}

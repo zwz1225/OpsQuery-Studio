@@ -1,0 +1,104 @@
+{
+  "stage": "M2 B offline full typed source audit",
+  "run_status": "failed",
+  "started_at": "2026-10-16T03:19:54.968678+00:00",
+  "errors": [
+    {
+      "type": "ValueError",
+      "sqlstate": null,
+      "message": "Preparation failed; raw driver, SQL values and credential details omitted"
+    }
+  ],
+  "postgresql_connected": false,
+  "database_created": false,
+  "database_imported": false,
+  "target_data_verified": false,
+  "new_model_request_count": 0,
+  "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+  "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede",
+  "target": {
+    "database": "askdata_m2_bird",
+    "import_role": "askdata_m2_import",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "schema": "public"
+  },
+  "source_evidence_sha256": {
+    "source_preflight.json": "f33ed1e7c190205ab595966073e9cb4a4a51d57653f958cb2f1fb40bdb6a215d",
+    "import_manifest.json": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879",
+    "preparation_review.json": "35d54773a698b120c6836744b990f7c8559237f4ab43e5b0d7540d810c8cd864"
+  },
+  "typed_digest_policy": "m2_copy_native_typed_multiset_v1",
+  "tables": [
+    {
+      "name": "account",
+      "database_id": "financial",
+      "row_count": 4500,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "b9f4fb1b49a2c09f82040d5d4187a22cd1ceead296b6f41894ab9abfe21142d9",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "alignment",
+      "database_id": "superhero",
+      "row_count": 4,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "7ea29e4889ddd24ed8b156c1816bd8d83c88a531fcc099b3a20b4dd19d464672",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "atom",
+      "database_id": "toxicology",
+      "row_count": 9111,
+      "null_counts": [
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "b72484f220fc8027ef817b819e6f4c9fec343cc98d6e95fee225fdca1b316296",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "attendance",
+      "database_id": "student_club",
+      "row_count": 326,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "a2ec95788ade10860e2ab4f727c63d0d1681939ab619586844fa889f5188705a",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "attribute",
+      "database_id": "superhero",
+      "row_count": 6,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "5693953c17ddc4c9cc23e32e154d0a682e9b32c07e60a2ec7f7d4b0f53abd50f",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    }
+  ],
+  "finished_at": "2026-10-16T03:20:15.719748+00:00"
+}

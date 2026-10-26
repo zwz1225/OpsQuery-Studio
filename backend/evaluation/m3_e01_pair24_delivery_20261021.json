@@ -1,0 +1,42 @@
+{
+  "stage": "M3 E01 paired development24 local delivery",
+  "run_status": "complete",
+  "recorded_at": "2026-10-21T10:10:23.228590+00:00",
+  "bundle_id": "f24a2863ab1d90c747d387350198cd70dda44f91561e1f6fce0eaee57fbd8bcf",
+  "archive": "M3_E01_pair24_sync_20261021.zip",
+  "archive_sha256": "dfa3758dfd593d8ded4386a53bfbfca09f3ce3c626e4912e959896890bdf11b2",
+  "archive_bytes": 712864,
+  "zip_member_count": 221,
+  "inventoried_file_count": 220,
+  "controllers": {
+    "m3_pair_common.py": "e9c08c851b0957f61a01e7c6f8455ffc0f4e96da092bc6442ce830fb9795c3c6",
+    "m3_pair_side.py": "a2c960c5ef2aaa0ba1108ba5be024815d1a383d5b51ef5c2409637176a4059e6",
+    "prepare_m3_e01_pair24.py": "ff5d2635107499a3be1e572082105d6245d9aac283d5ad306a8be8be2cfbd6c2",
+    "run_m3_e01_pair24.py": "82845165b68a2cafb895a354eac3d91a47013d25fdf6baa4e6c46cbb25938acd"
+  },
+  "baseline_producer_file_count": 96,
+  "candidate_producer_file_count": 97,
+  "original_v4_snapshot_verified_files": 143,
+  "unchanged_original_frozen_assets": 141,
+  "original_changed_producers": [
+    "evaluation/bird/case_worker.py",
+    "evaluation/bird/diagnostic_runner.py"
+  ],
+  "tests_run": 56,
+  "test_report_sha256": "a9d221d9a49abf841fc6a5e9c55caa9bf2a3154e370d6091248925db630d5d57",
+  "standalone_preparation_cli_verified": true,
+  "isolated_side_entrypoint_help_verified": true,
+  "zip_byte_inventory_verified": true,
+  "secrets_included": false,
+  "database_dump_included": false,
+  "postgresql_connected": false,
+  "new_model_request_count": 0,
+  "live_target_verified": false,
+  "server_evaluation_completed": false,
+  "maximum_generated_cases": 48,
+  "automatic_generation_resume": false,
+  "automatic_development80": false,
+  "holdout_run": false,
+  "runbook": "evaluation/M3_E01_PAIR24_SERVER_RUNBOOK_20261021.md",
+  "next_step": "Upload ZIP and checksum; prepare a new workspace; run check-only before live pair execution"
+}

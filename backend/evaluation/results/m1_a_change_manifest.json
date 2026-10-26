@@ -1,0 +1,139 @@
+{
+  "stage": "M1 A",
+  "date": "2026-10-07",
+  "file_count": 31,
+  "files": [
+    {
+      "path": "M1_数据源依赖梳理与最小适配方案.md",
+      "sha256": "0573b4a0c79144ff867f8fc9bc2c6f0a038e663aaa3e8da009c7a6dce5c25e60"
+    },
+    {
+      "path": "backend/.env.example",
+      "sha256": "8cc83ae7ef32be0b4677d7b44feee5b1ec1caf94647e2a38aaabe12287c00af6"
+    },
+    {
+      "path": "backend/app/config.py",
+      "sha256": "53c4b03545e0bcc90157fd6d3c67f5694ab6d569c00a8b7a8d05289433d7fc51"
+    },
+    {
+      "path": "backend/app/datasources/__init__.py",
+      "sha256": "660dc93b3ad4e3454e433dd79bcfd7f2db67274baeac0ebf7d84682296b117b2"
+    },
+    {
+      "path": "backend/app/datasources/contracts.py",
+      "sha256": "b9da804d820b1d5f20fb642cf60bf37039a6fb6dd33e6212081b3335dd32c869"
+    },
+    {
+      "path": "backend/app/datasources/csv_metadata.py",
+      "sha256": "ef68964f78da54eee5b0cd64b8f0dd3c53adde04adbcfc9cf471494f9e144638"
+    },
+    {
+      "path": "backend/app/datasources/runtime.py",
+      "sha256": "14b4db95fdfbac1e1e026bd63ab789a138d33716adde73e201987d7b93ff436f"
+    },
+    {
+      "path": "backend/app/datasources/sql_policy.py",
+      "sha256": "f76ba902978aba54efc56c5f81042f45e178a1840e0620b0a250da1bc1aef2c9"
+    },
+    {
+      "path": "backend/app/datasources/values.py",
+      "sha256": "869fa4ba783aebb71a5a643ede27c1997894e1740e865f205fd935790662e7df"
+    },
+    {
+      "path": "backend/app/main.py",
+      "sha256": "cae83be9b955964b25f17045a742226fae2db7751c8567e5263c88ea0a785c0f"
+    },
+    {
+      "path": "backend/app/mcp_runtime/server.py",
+      "sha256": "67627c0583ef09b4818165d717bf202adcb51f545b037fd5de2d0c754187bbbb"
+    },
+    {
+      "path": "backend/app/mcp_runtime/tools/database_tools.py",
+      "sha256": "35940ffb279c4c5275be362a46ed59cb26c8ae1284a694768d353fa52d1267bc"
+    },
+    {
+      "path": "backend/app/querying/duckdb_engine.py",
+      "sha256": "0ad6bd9980b1962dd630519cb9d8256b06f7aabbaa3446fb9009f4a27aa0cc26"
+    },
+    {
+      "path": "backend/app/querying/single_database_agent.py",
+      "sha256": "8d66d4f50b450416fa3f60a2ffe368e2a350037dd0a71044c4feb20005bb6728"
+    },
+    {
+      "path": "backend/app/retrieval/graph.py",
+      "sha256": "72097a64f7ab055f6d0066ec35d87ca012a870d1d567e7ea3fe66e78c2d867d9"
+    },
+    {
+      "path": "backend/app/retrieval/service.py",
+      "sha256": "4e148f3efb1c640d71e65c21a7ce70bfaf9d86c92c8550e6218bdffd8f5c5b07"
+    },
+    {
+      "path": "backend/app/retrieval/store.py",
+      "sha256": "2418b4fd041ef06c8efce0f16eb0fcdbdf8dda8db527f922dad4a26e8b833bb6"
+    },
+    {
+      "path": "backend/app/retrieval/time_field_policy.py",
+      "sha256": "62178d671b4e3772d98a36833ece3cbf0e6d0beee10d3d9b9386605b2ab0d0a4"
+    },
+    {
+      "path": "backend/app/services/askdata_service.py",
+      "sha256": "f13e3041bd8ca20dfc7af5d7153afa934f6da9411cde8729bc8ca42663b069d5"
+    },
+    {
+      "path": "backend/app/workflows/query_graph.py",
+      "sha256": "b117ddfff19d23583324bca85411aceb60a500c9599d439956e798f3017d1027"
+    },
+    {
+      "path": "backend/app/workflows/state.py",
+      "sha256": "7532b4d7d9223b555e22f9bb38810da1c8fa44c9c58bbe5992c42c72094ffeaf"
+    },
+    {
+      "path": "backend/evaluation/M1_A_ACCEPTANCE.md",
+      "sha256": "2a97c46ca53d583917d53ca8bb40ad39c14554bd9cd77d175e912e8f7daa9aaf"
+    },
+    {
+      "path": "backend/evaluation/cases/m1_a_duckdb_regression.json",
+      "sha256": "f6abe04640bfe86e3a377b467ebf4df61758e9bf66ab555f9297495a2acf864d"
+    },
+    {
+      "path": "backend/evaluation/gold_result.py",
+      "sha256": "5fe580a924cc05918c78cb0ebffc0369c6ff5bf637f4bb043b6f3ed173349b64"
+    },
+    {
+      "path": "backend/evaluation/retrieval_diagnosis.py",
+      "sha256": "7ebb64a7ebb18a7d420357fe566462d54c187469459c53e6ffd0d61d2287106f"
+    },
+    {
+      "path": "backend/evaluation/run_benchmark.py",
+      "sha256": "fced2ca8189dd41fdd06ef33194a3f558140a3d072bbfa5d6ef090c9df43292f"
+    },
+    {
+      "path": "backend/evaluation/run_e2e.py",
+      "sha256": "f0f38f6b519dd67a4146580f42dbe9e5df8dba1a1eff6be4816a089a954deed4"
+    },
+    {
+      "path": "backend/evaluation/run_manifest.py",
+      "sha256": "4d009130b2a0897d5e81eadbd185b1300fc6c53e609e5fa6a75c978e935c9ab5"
+    },
+    {
+      "path": "backend/evaluation/time_field_ablation.py",
+      "sha256": "1acc0c68f05942b71580b05e9296a8cb61e3a200a91746560698b5cd55a70f51"
+    },
+    {
+      "path": "backend/tests/test_clarification_recovery.py",
+      "sha256": "5191024163fdfd56a99679667096605814617f806fa071aafccfeea577210ad2"
+    },
+    {
+      "path": "backend/tests/test_datasource_runtime.py",
+      "sha256": "2daef1248d1b7b43e3b18eb0536018d3bdb685fcb37f67dff481ece8661bfae5"
+    }
+  ],
+  "excluded": [
+    "backend/.env",
+    "backend/.venv",
+    "original CSV and cases",
+    "M0 reports and caches"
+  ],
+  "source_backup": ".codex/m1_a_before_20261006.zip",
+  "sync_instructions": "Extract into the project root after stopping the old service; restart after synchronization. Keep server .env and original data/reports."
+}

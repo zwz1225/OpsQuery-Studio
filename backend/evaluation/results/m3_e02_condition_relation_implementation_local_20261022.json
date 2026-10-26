@@ -1,0 +1,69 @@
+{
+  "stage": "M3 E02 local candidate implementation",
+  "run_status": "complete",
+  "prior_producer_file_count": 97,
+  "changed_prior_files": [
+    "evaluation/bird/case_worker.py",
+    "evaluation/bird/diagnostic_runner.py",
+    "evaluation/bird/intent.py",
+    "evaluation/bird/retrieval.py"
+  ],
+  "new_modules": [
+    "evaluation/bird/demand_relations.py",
+    "evaluation/bird/reviewed_relations.py"
+  ],
+  "prior_files_unchanged": 93,
+  "local_tests": {
+    "test_m3_condition_relations": {
+      "count": 11,
+      "sha256": "8650bb660232546e277a18165d96413052b026aeb7a0ef72ad19529e8d25ac2a"
+    },
+    "test_m2_schema_coverage": {
+      "count": 12,
+      "sha256": "786cf7563e87a0abc305a0eedc45a5f1c59eede2af237a934d4ec0f33c056fa3"
+    },
+    "test_m2_intent_candidate": {
+      "count": 39,
+      "sha256": "3f136c7e05ca0c3cce02bdc1df375c1e66b72717d061d47daeddd7cb22ef04c5"
+    },
+    "test_m2_intent_v3": {
+      "count": 25,
+      "sha256": "171b55ef0e0015630f4c8b13f5424a63f325083548068320bbd191267df56455"
+    },
+    "test_m2_intent_v4": {
+      "count": 33,
+      "sha256": "e7f7884c7e86ebf80d09aee0447d6ba17e068a9b52db30713a5d1761107bf5de"
+    },
+    "test_m3_output_contract": {
+      "count": 31,
+      "sha256": "36448c6d8e41df130869103a057b8dd56f37f00897f6134df3c86ffe246f6a66"
+    },
+    "pair_workflow_tests": {
+      "count": 28,
+      "sha256": "0ac4bed29f21f3b01110c35f101ff6df4afea4b5a70cb9062ddd07750fa67f20"
+    }
+  },
+  "local_test_count": 179,
+  "offline_replay_sha256": "521b6f9ad8ab28e6ff418b790711f9fb0175584132aa31c1a39a095b571c1d10",
+  "offline_replay_changed_case_ids": [
+    "BIRD-PG-1479"
+  ],
+  "sync_package": "E:\\PythonLearn\\askdata_studio_ops_release\\M3_E02_condition_relation_local_sync_20261022.zip",
+  "sync_package_sha256": "97b58358466173c419063d9756f94229334e231ffca5a8d3843945a6d885c8b7",
+  "sync_file_inventory": {
+    "evaluation/M3_E02_CONDITION_RELATION_LOCAL_IMPLEMENTATION_20261022.md": "a5568a946b98a3c42b42de081375a30e418544f5517571ad42f6936eca9a2dbf",
+    "evaluation/bird/case_worker.py": "1beb6259f5eccf89244992284771617e400402b457103314d55565c5192b41a5",
+    "evaluation/bird/demand_relations.py": "df95bc9113cad9ae6d5ce087017eb51b1b85998f8e73e05a9d79f07dc0085094",
+    "evaluation/bird/diagnostic_runner.py": "76140742a374544b42b5579ca3576f5d55bbec26ced0643013d7cfd5331c57a6",
+    "evaluation/bird/intent.py": "9201b45789a7be7b49881d038a967ef10fefd5058be51caee558c6cba39682cf",
+    "evaluation/bird/retrieval.py": "8f2eec12d183527d397552f533af58b5a5efff2e161c884ac97ed168fb567a6c",
+    "evaluation/bird/reviewed_relations.py": "a18c23ab644ae5317ffcd5c010e523655b0c73d8d98fd10fee5fc0a783a98eff",
+    "tests/test_m3_condition_relations.py": "abb118ebde9f693cc1898c5168f8bc6ad549fd8ebba9cc62e542a3dfb798a57e"
+  },
+  "postgresql_connected": false,
+  "new_model_request_count": 0,
+  "live_experiment_complete": false,
+  "holdout_used_for_tuning": false,
+  "prior_e01_gate_changed": false,
+  "errors": []
+}

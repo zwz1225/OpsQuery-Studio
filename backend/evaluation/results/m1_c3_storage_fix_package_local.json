@@ -1,0 +1,10 @@
+{
+  "run_status": "complete",
+  "archive": "M1_C3_报告写入修复同步包_20261010.zip",
+  "entry_count": 5,
+  "archive_sha256": "8d4d0e03b7c5ca2a0c1b38f78b8910a39750056336668be06a5b75ae11912b91",
+  "entries_match_workspace": true,
+  "original_archive_unchanged": true,
+  "credentials_included": false,
+  "historical_reports_included": false
+}

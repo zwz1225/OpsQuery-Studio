@@ -1,0 +1,63 @@
+{
+  "stage": "M1 D1 dialect, Gold selection and evaluation identity implementation",
+  "run_status": "complete",
+  "recorded_at": "2026-10-10T07:53:51.996696+00:00",
+  "new_model_request_count": 0,
+  "remote_postgresql_connected": false,
+  "unit_test_count": 17,
+  "full_regression_test_count": 404,
+  "full_regression_elapsed_seconds": 54.246,
+  "all_duckdb_original_gold_unchanged_count": 430,
+  "case_count": 430,
+  "postgres_missing_variant_count": 430,
+  "postgres_missing_variants_are_rejected": true,
+  "actual_duckdb_gold_smoke_checks": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "gold_dialect": "duckdb",
+      "actual_sql_recorded": true
+    },
+    {
+      "case_id": "CHANNEL_OPS-069",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "gold_dialect": "duckdb",
+      "actual_sql_recorded": true
+    },
+    {
+      "case_id": "CONTENT_OPS-029",
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "gold_dialect": "duckdb",
+      "actual_sql_recorded": true
+    }
+  ],
+  "actual_duckdb_source": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "actual_79_case_manifest_versions": {
+    "data": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+    "schema": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "application": "a5270ab3fdbd1dd8ab801bf0b7aa01af31f33298465c24b6d9154edf1bf66579",
+    "evaluator": "efa4891a454073cbb130f9901d8be1c09745709716fa7f842766a2b1bb48cac9",
+    "evaluation_code": "7c4c5696f6156106988181942db154ac893c327e509fa8cf9a05f1115978569a",
+    "gold_selection": "ded878a06d065b5762c9addaa6487c03af2430550a4d0c66266b01025a48ceb3"
+  },
+  "original_cases_sha256": "0eb11d55d07cbcc8926b4c5de6657c1f897e7559387cfb5f5c884ef20ec9e6ec",
+  "source_data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "c3_raw_report_sha256": "2cd9a7b9ad94300b36a9494b22a76e28db2d64a91c8d23835c96e982e6ea7166",
+  "raw_case_and_source_files_preserved": true,
+  "scope": "D1 only; PostgreSQL behavior tests use test doubles. Live PostgreSQL dialect Gold equality and model generation remain future gates."
+}

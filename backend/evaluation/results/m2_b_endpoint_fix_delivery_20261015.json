@@ -1,0 +1,21 @@
+{
+  "stage": "M2 B exact endpoint representation fix delivery",
+  "run_status": "complete",
+  "recorded_at": "2026-10-15T14:39:56.213656+00:00",
+  "package": {
+    "filename": "M2_B_endpoint_fix_20261015.zip",
+    "size_bytes": 11749,
+    "sha256": "f70944cce43375113d2a1a6dbd0649329d25868f219153c975ccf0806eb243cb",
+    "zip_crc_verified": true
+  },
+  "files": {
+    "backend/scripts/preflight_m2_b_server.py": "c8757f2036bff7d36447fea3731cb59d055db62406d187bf7ad1a0e0d3a15da2",
+    "backend/tests/test_m2_b_preparation.py": "581d2aff71dc00ec7f0c7292f41e193928e458b0d12d907c4e19b378bd44f4df",
+    "backend/evaluation/M2_B_SERVER_PREFLIGHT_REVIEW.md": "47d3d50c7ee1197adba2361380b21b5a6429819f49fbe089599eff640e3e3b15",
+    "backend/evaluation/M2_B_PREPARATION_ACCEPTANCE.md": "063e1ce12af4e0dc5a9b226f09e78b307a1d2e982f7790f9a3566f80f65a9bfb"
+  },
+  "tests_passed": 26,
+  "server_rerun_required": true,
+  "new_model_request_count": 0,
+  "source_report_sha256": "5d4ee5821e222437a39fe5fedafbf28d93fce39fc24462382146921d9635d74d"
+}

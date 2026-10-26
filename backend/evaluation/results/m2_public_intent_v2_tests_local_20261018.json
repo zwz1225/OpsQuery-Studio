@@ -1,0 +1,14 @@
+{
+  "stage": "M2 public intent v2 offline regression",
+  "run_status": "complete",
+  "tests_run": 225,
+  "passed": 222,
+  "skipped": 3,
+  "errors": 0,
+  "failures": 0,
+  "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p 'test_m2_*.py' -q",
+  "postgresql_connected": false,
+  "new_model_request_count": 0,
+  "scope": "Offline tests include mocked model/database operations. Linux isolation tests require server.",
+  "raw_output": "diagnostic runtime/index ready: california_schools\r\n[1/1] BIRD-PG-0050 diagnostic_status=clarification\r\n{\r\n  \"output\": \"C:\\\\Users\\\\zhang\\\\AppData\\\\Local\\\\Temp\\\\tmpcwpmu79c\\\\diagnostic.json\",\r\n  \"stage\": \"M2 development diagnostics; not a formal EX benchmark\",\r\n  \"run_status\": \"complete\",\r\n  \"summary\": {\r\n    \"case_count\": 1,\r\n    \"status_counts\": {\r\n      \"clarification\": 1\r\n    },\r\n    \"diagnostics_recorded_count\": 1,\r\n    \"runtime_closed_count\": 1,\r\n    \"repeated_sql_case_count\": 0,\r\n    \"database_validation_skipped_count\": 0,\r\n    \"case_model_http_attempts\": 3,\r\n    \"observed_case_http_attempts\": 3,\r\n    \"shared_index_http_attempts\": 0,\r\n    \"primary_ex\": null,\r\n    \"formal_ex_denominator\": null\r\n  },\r\n  \"errors\": []\r\n}\r\ndiagnostic runtime/index ready: california_schools\r\n[1/1] BIRD-PG-0050 diagnostic_status=clarification\r\n{\r\n  \"output\": \"C:\\\\Users\\\\zhang\\\\AppData\\\\Local\\\\Temp\\\\tmp6yfnd3bj\\\\diagnostic.json\",\r\n  \"stage\": \"M2 development diagnostics; not a formal EX benchmark\",\r\n  \"run_status\": \"complete\",\r\n  \"summary\": {\r\n    \"case_count\": 1,\r\n    \"status_counts\": {\r\n      \"clarification\": 1\r\n    },\r\n    \"diagnostics_recorded_count\": 1,\r\n    \"runtime_closed_count\": 1,\r\n    \"repeated_sql_case_count\": 0,\r\n    \"database_validation_skipped_count\": 0,\r\n    \"case_model_http_attempts\": 3,\r\n    \"observed_case_http_attempts\": 3,\r\n    \"shared_index_http_attempts\": 0,\r\n    \"primary_ex\": null,\r\n    \"formal_ex_denominator\": null\r\n  },\r\n  \"errors\": []\r\n}\r\nBIRD-PG-0036 first_sql_native_match=True\r\nBIRD-PG-0159 first_sql_native_match=True\r\nBIRD-PG-1405 first_sql_native_match=True\r\nBIRD-PG-0368 first_sql_native_match=True\r\n----------------------------------------------------------------------\r\nRan 225 tests in 40.305s\r\n\r\nOK (skipped=3)\r\n"
+}

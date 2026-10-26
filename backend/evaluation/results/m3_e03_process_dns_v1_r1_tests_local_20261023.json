@@ -1,0 +1,32 @@
+{
+  "stage": "M3 E03 explicit DNS shared transport local verification",
+  "run_status": "complete",
+  "runs": [
+    {
+      "log": "m3_e03_process_dns_v1_m3_tests_local_20261023.log",
+      "tests_run": 146,
+      "passed": 146,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "log": "m3_e03_process_dns_v1_runtime_tests_local_20261023.log",
+      "tests_run": 34,
+      "passed": 31,
+      "skipped": 3,
+      "failures": 0,
+      "errors": 0
+    }
+  ],
+  "tests_run": 180,
+  "passed": 177,
+  "skipped": 3,
+  "failures": 0,
+  "errors": 0,
+  "initial_sandbox_restriction": "Windows denied atomic replacement of test reports; final regression ran with approved sandbox escalation",
+  "live_dns_requests": 0,
+  "live_model_requests": 0,
+  "live_database_connections": 0,
+  "server_isolation_verification_pending": true
+}

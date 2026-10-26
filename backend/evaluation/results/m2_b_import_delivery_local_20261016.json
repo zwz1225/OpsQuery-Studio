@@ -1,0 +1,154 @@
+{
+  "database_created": false,
+  "database_imported": false,
+  "files": [
+    {
+      "path": "backend/evaluation/M2_B_CONTROLLED_IMPORT_PLAN.md",
+      "sha256": "1da6f3afdc7f4070d6e3ffeef086aa1805a0e6522a4b268be220f5ec80328206"
+    },
+    {
+      "path": "backend/evaluation/M2_B_IMPORT_ACCEPTANCE.md",
+      "sha256": "e84587a06237f15aea1c00ee878ad0544f32e0f14d62c1c8d4d10283cbdea412"
+    },
+    {
+      "path": "backend/evaluation/bird_protocol.py",
+      "sha256": "f1a60f00ae8bd8f757b28f3139e9be83fa196e8c981c0884e41315bb4c5e6b91"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_b_import_spec_v1.json",
+      "sha256": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/development80.json",
+      "sha256": "237b6f09f8b7ee9965f9e18b3ab2195a79b5ad949e55e6d56868a3266df29b10"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/holdout30.json",
+      "sha256": "d0bfb5d7fe63555fd00632c875ed3970e7282e754a4d03030a0af9f507f3141c"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/inputs/development80.jsonl",
+      "sha256": "6760724e98b6da967ac5ebb2698c4e5cab385875bd150ad36a3b252ffdc52f03"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/inputs/holdout30.jsonl",
+      "sha256": "1719472c9e7ab1b5f5c6aafa24f2625b40f1a3b6d7bf9f6a5dbeed6bb60edf41"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/inputs/smoke8.jsonl",
+      "sha256": "795fde65943e229ae96676d657cf05be26440cce62c66c078175e934a1323fa7"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/protocol.json",
+      "sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/reference/official_calculate_ex.py.txt",
+      "sha256": "4a777188f2924dd194dd84d84dc85a5b9ec5631de0c8514dddb7990347528b92"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/reference/official_execute_sql.py.txt",
+      "sha256": "6f15188e26408a8d2642a7434a2c7998b274d66cb68f9dc32a0fbd478b329068"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/scorer/gold110.jsonl",
+      "sha256": "5189d2fa4700cb2f9e1ccbe5b80d0b374cd24d162a68f11fb909346e02dc349f"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/smoke8.json",
+      "sha256": "fc3983b66f9cee0b7ab24c08cf9ca0c69e6c48c2cdd0b7e6bf7206a74e542a91"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/source_lineage.json",
+      "sha256": "90f041a22fa37e687d8ca6da82ae375c3a6285eac3cfa16e671494cd762223c3"
+    },
+    {
+      "path": "backend/scripts/audit_m2_b_import_plan.py",
+      "sha256": "44c325531647628be7eb10c14b596d54accf0a69892e97c3b2c8b04f0eb37f4d"
+    },
+    {
+      "path": "backend/scripts/import_m2_b_postgres.py",
+      "sha256": "7fb69fb8352cb8b775685fd9ae81bf3936fc323867f4c740f2ad5231c966c056"
+    },
+    {
+      "path": "backend/scripts/initialize_m2_b_postgres.py",
+      "sha256": "80f8843cdb89146a101fbde19fccb662b088f878742e141e6334e2700a33a9d7"
+    },
+    {
+      "path": "backend/scripts/m2_b_common.py",
+      "sha256": "47d4696ddd7a61f2a6c60b29ba4785f31eac1929c484d1b69d30d752745affef"
+    },
+    {
+      "path": "backend/scripts/m2_b_dump.py",
+      "sha256": "116345a7e0a8f3a6dc49c305b899f47655cc5d6416adcdcc8eb6bce6b0e6944f"
+    },
+    {
+      "path": "backend/scripts/m2_b_structure.py",
+      "sha256": "e4a33335815cb511c3e0ee6c173bfdaafd9ba5214f88e8bbd8c3e325a4f9a1a6"
+    },
+    {
+      "path": "backend/scripts/m2_b_target.py",
+      "sha256": "6a952d812604e27c1e43335fe82d4e4958c3c07ca37b9af980c034e8ad19f7a9"
+    },
+    {
+      "path": "backend/scripts/m2_b_typed_rows.py",
+      "sha256": "805165db8aba54ee61512e40f4dcb216f9a2f6b90f460d41163ca4b66e26b9ac"
+    },
+    {
+      "path": "backend/scripts/preflight_m2_b_server.py",
+      "sha256": "c8757f2036bff7d36447fea3731cb59d055db62406d187bf7ad1a0e0d3a15da2"
+    },
+    {
+      "path": "backend/scripts/preflight_m2_b_source.py",
+      "sha256": "1ea6fdb1618b71c54e43923694cfbb6d33b43017eaedac6c55e616ab69fc446f"
+    },
+    {
+      "path": "backend/scripts/validate_m2_b_postgres.py",
+      "sha256": "5b5cabee5d8973f7f353ca1d6e234fe35b98721512d76c856100799e852fa564"
+    },
+    {
+      "path": "backend/tests/test_m2_b_import.py",
+      "sha256": "8ed3fcdb756f746492c9913986ab495c52fcf9f1f64113d12f221f5e661334e4"
+    },
+    {
+      "path": "backend/tests/test_m2_b_preparation.py",
+      "sha256": "581d2aff71dc00ec7f0c7292f41e193928e458b0d12d907c4e19b378bd44f4df"
+    },
+    {
+      "path": "backend/tests/test_m2_bird_protocol.py",
+      "sha256": "58e3e571453cdce245648adb612a5f2de4a51194bf407068b7a57c0ff2c1e068"
+    }
+  ],
+  "local_verification": {
+    "initialization_inputs": {
+      "path": "evaluation/results/m2_b_initialization_inputs_local_20261016.json",
+      "run_status": "checked_only",
+      "sha256": "7c72e4e8aa30da52f630f1649a95839c5678749a9af9b848fc237102f1243d48"
+    },
+    "m2_unittest_count": 45,
+    "m2_unittest_pass_count": 45,
+    "source_audit": {
+      "column_count": 798,
+      "path": "evaluation/results/m2_b_import_plan_offline_local_20261016_v2.json",
+      "row_count": 3898114,
+      "sha256": "fc20565bc10393c081483f8655865b593641cb19ccd5acd4ca42d90633389b79",
+      "table_count": 75
+    }
+  },
+  "new_model_request_count": 0,
+  "package": {
+    "name": "M2_B_init_import_sync_20261016.zip",
+    "sha256": "64cf6ec48877f1b38fdce54ded1e08480e93f1b3fca804ad6ddd05963156fc79",
+    "size_bytes": 149490
+  },
+  "pending_server_reports": [
+    "m2_b_postgres_initialization_server.json",
+    "m2_b_postgres_import_server.json",
+    "m2_b_postgres_validation_server.json"
+  ],
+  "postgresql_connected": false,
+  "recorded_at": "2026-10-16T03:33:54.547219+00:00",
+  "run_status": "complete",
+  "stage": "M2 B independent initialization/import/verification code delivery",
+  "target_data_verified": false
+}

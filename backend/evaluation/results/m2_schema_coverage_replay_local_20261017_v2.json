@@ -1,0 +1,321 @@
+{
+  "stage": "M2 authorized Schema coverage offline candidate replay",
+  "run_status": "complete",
+  "reviewed_at": "2026-10-17T07:31:30.233165+00:00",
+  "policy": {
+    "policy_id": "bird_authorized_schema_coverage_v1",
+    "threshold": 0.55,
+    "max_fields": 20,
+    "coverage_enabled": true,
+    "coverage_floor": 0.5,
+    "max_coverage_fields": 4,
+    "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+    "intent_source": "original_question_and_official_evidence",
+    "metadata_match": "native_field_name_or_official_field_label",
+    "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+    "formal_protocol_override": false,
+    "development_candidate": true
+  },
+  "source_reports": {
+    "m2_development_diagnostics14_server.json": "b9be464b9ac890509784df5523d998c18112d2209e76e35de686ede9dd6b12e5",
+    "m2_sql_repair_validation3_server.json": "aa568886ffbf61c80a0dcae324bb86aa29ca78f86172a677c15a4cac0e3ca853"
+  },
+  "replayed_case_record_count": 17,
+  "baseline_preserved_count": 17,
+  "records_with_additions": 6,
+  "reviews": [
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "baseline_preserved": true,
+      "baseline_field_count": 4,
+      "candidate_field_count": 5,
+      "coverage_field_ids": [
+        "california_schools.satscores.sname"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "california_schools.satscores.sname",
+          "rerank_score": 0.5479438051904237,
+          "selection_reason": "selected_coverage",
+          "matched_intent_terms": [
+            "school"
+          ],
+          "uncovered_intent_terms": [
+            "school"
+          ]
+        }
+      ],
+      "graph_field_count": 7,
+      "graph_sha256": "601878ec6ffad4e16d1bb600ee1c668b9522bdc18a2dd68878a3e6e55673faad"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "baseline_preserved": true,
+      "baseline_field_count": 9,
+      "candidate_field_count": 9,
+      "coverage_field_ids": [],
+      "coverage_decisions": [],
+      "graph_field_count": 13,
+      "graph_sha256": "ccde2992d4953e1989e62b54a9b6bef7340a613fdb5d0c5e0e7f89bd482f78a8"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "baseline_preserved": true,
+      "baseline_field_count": 3,
+      "candidate_field_count": 4,
+      "coverage_field_ids": [
+        "debit_card_specializing.yearmonth.date"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "debit_card_specializing.yearmonth.date",
+          "rerank_score": 0.513904057769749,
+          "selection_reason": "selected_coverage",
+          "matched_intent_terms": [
+            "date"
+          ],
+          "uncovered_intent_terms": [
+            "date"
+          ]
+        }
+      ],
+      "graph_field_count": 4,
+      "graph_sha256": "ddcaa5edb349d6ec8b716d3a54d96559a2c4e1381d4e242fa5f6982ee4327ce9"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "baseline_preserved": true,
+      "baseline_field_count": 0,
+      "candidate_field_count": 0,
+      "coverage_field_ids": [],
+      "coverage_decisions": [],
+      "graph_field_count": 0,
+      "graph_sha256": "615ca5f4f2f383f2904b44b90057351b0babb90d65382fa3f9c455f556d467c6"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "baseline_preserved": true,
+      "baseline_field_count": 1,
+      "candidate_field_count": 1,
+      "coverage_field_ids": [],
+      "coverage_decisions": [],
+      "graph_field_count": 1,
+      "graph_sha256": "640fa7dee18ecc2422f33c8ea2b07b9ee73c29958fe33d3cc692734a7c00b38a"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-1399",
+      "database_id": "student_club",
+      "baseline_preserved": true,
+      "baseline_field_count": 9,
+      "candidate_field_count": 9,
+      "coverage_field_ids": [],
+      "coverage_decisions": [],
+      "graph_field_count": 9,
+      "graph_sha256": "ca68f3c3024cb7021365729095e06aa5cd6532a584ab85fe7cfbdae1ff84ba28"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-0586",
+      "database_id": "codebase_community",
+      "baseline_preserved": true,
+      "baseline_field_count": 1,
+      "candidate_field_count": 1,
+      "coverage_field_ids": [],
+      "coverage_decisions": [],
+      "graph_field_count": 1,
+      "graph_sha256": "475b134335a1f7b3e8dad60bf4fa84c6ac76198dc23758320c7c96a8d69ed256"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "baseline_preserved": true,
+      "baseline_field_count": 8,
+      "candidate_field_count": 8,
+      "coverage_field_ids": [],
+      "coverage_decisions": [],
+      "graph_field_count": 10,
+      "graph_sha256": "a007c933b3e4fd664ec81f3c804a4fcdf44614757095868cb4d0edb74ef16979"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-0082",
+      "database_id": "california_schools",
+      "baseline_preserved": true,
+      "baseline_field_count": 3,
+      "candidate_field_count": 3,
+      "coverage_field_ids": [],
+      "coverage_decisions": [],
+      "graph_field_count": 3,
+      "graph_sha256": "5db51e152ab92c6fa5ce89e73e718018b782a512836c190d40a51d11d2f2db99"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "baseline_preserved": true,
+      "baseline_field_count": 1,
+      "candidate_field_count": 1,
+      "coverage_field_ids": [],
+      "coverage_decisions": [],
+      "graph_field_count": 1,
+      "graph_sha256": "603e54bc59d51018e22a0bd625d6e56d64e934a7fd5d5166c23c3dbd1911d75a"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "baseline_preserved": true,
+      "baseline_field_count": 16,
+      "candidate_field_count": 16,
+      "coverage_field_ids": [],
+      "coverage_decisions": [],
+      "graph_field_count": 18,
+      "graph_sha256": "0f843cc7fb3c7f14770f1164c6af33ad7be75aa303614b37b5573a1cac4f1ef6"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-1405",
+      "database_id": "student_club",
+      "baseline_preserved": true,
+      "baseline_field_count": 6,
+      "candidate_field_count": 7,
+      "coverage_field_ids": [
+        "student_club.budget.budget_id"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "student_club.budget.budget_id",
+          "rerank_score": 0.5198952383710908,
+          "selection_reason": "selected_coverage",
+          "matched_intent_terms": [
+            "budget"
+          ],
+          "uncovered_intent_terms": [
+            "budget"
+          ]
+        }
+      ],
+      "graph_field_count": 7,
+      "graph_sha256": "93ff1488cd090b519ee93c46df5a85414db79020c0e6f2c45fbdb387500153d6"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "baseline_preserved": true,
+      "baseline_field_count": 7,
+      "candidate_field_count": 7,
+      "coverage_field_ids": [],
+      "coverage_decisions": [],
+      "graph_field_count": 7,
+      "graph_sha256": "a054c7eded11ee13970fd7275d234fd3616a3b326dd955d1f352a70e43615e35"
+    },
+    {
+      "source_report": "m2_development_diagnostics14_server.json",
+      "case_id": "BIRD-PG-0766",
+      "database_id": "superhero",
+      "baseline_preserved": true,
+      "baseline_field_count": 5,
+      "candidate_field_count": 6,
+      "coverage_field_ids": [
+        "superhero.attribute.attribute_name"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "superhero.attribute.attribute_name",
+          "rerank_score": 0.5093593945740751,
+          "selection_reason": "selected_coverage",
+          "matched_intent_terms": [
+            "attribute"
+          ],
+          "uncovered_intent_terms": [
+            "attribute"
+          ]
+        }
+      ],
+      "graph_field_count": 7,
+      "graph_sha256": "e61a67e8b9d80bd62b52e02a7ac166db0eab136cb9943984a8f8ae0b5b71fa6f"
+    },
+    {
+      "source_report": "m2_sql_repair_validation3_server.json",
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "baseline_preserved": true,
+      "baseline_field_count": 4,
+      "candidate_field_count": 5,
+      "coverage_field_ids": [
+        "california_schools.satscores.sname"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "california_schools.satscores.sname",
+          "rerank_score": 0.5479438051904237,
+          "selection_reason": "selected_coverage",
+          "matched_intent_terms": [
+            "school"
+          ],
+          "uncovered_intent_terms": [
+            "school"
+          ]
+        }
+      ],
+      "graph_field_count": 7,
+      "graph_sha256": "601878ec6ffad4e16d1bb600ee1c668b9522bdc18a2dd68878a3e6e55673faad"
+    },
+    {
+      "source_report": "m2_sql_repair_validation3_server.json",
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "baseline_preserved": true,
+      "baseline_field_count": 9,
+      "candidate_field_count": 9,
+      "coverage_field_ids": [],
+      "coverage_decisions": [],
+      "graph_field_count": 13,
+      "graph_sha256": "ccde2992d4953e1989e62b54a9b6bef7340a613fdb5d0c5e0e7f89bd482f78a8"
+    },
+    {
+      "source_report": "m2_sql_repair_validation3_server.json",
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "baseline_preserved": true,
+      "baseline_field_count": 3,
+      "candidate_field_count": 4,
+      "coverage_field_ids": [
+        "debit_card_specializing.yearmonth.date"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "debit_card_specializing.yearmonth.date",
+          "rerank_score": 0.513904057769749,
+          "selection_reason": "selected_coverage",
+          "matched_intent_terms": [
+            "date"
+          ],
+          "uncovered_intent_terms": [
+            "date"
+          ]
+        }
+      ],
+      "graph_field_count": 4,
+      "graph_sha256": "2d3e5e76c25bc52048bf9438a5c77aad5b4f33132d94ea2f01d7c97253e478c2"
+    }
+  ],
+  "postgresql_connected": false,
+  "new_model_request_count": 0,
+  "gold_executed": false,
+  "primary_ex": null,
+  "scope": "Reuses preserved rerank scores and authorized metadata; no claim about new model behavior, EX or vector/index execution."
+}

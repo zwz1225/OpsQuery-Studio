@@ -1,0 +1,25 @@
+{
+  "stage": "M2 units/context trusted probe offline regression",
+  "run_status": "complete",
+  "tested_at": "2026-10-18T06:03:58.076262+00:00",
+  "tests_run": 241,
+  "passed": 238,
+  "skipped": 3,
+  "added_tests": 16,
+  "command": [
+    "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\.venv\\Scripts\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_m2_*.py",
+    "-q"
+  ],
+  "exit_code": 0,
+  "postgresql_connected": false,
+  "new_model_request_count": 0,
+  "scope": "Database/model execution is mocked in offline unit tests. Actual 15-query probe plan requires server execution.",
+  "raw_output": "diagnostic runtime/index ready: california_schools\n[1/1] BIRD-PG-0050 diagnostic_status=clarification\n{\n  \"output\": \"C:\\\\Users\\\\zhang\\\\AppData\\\\Local\\\\Temp\\\\tmpnwk6ejka\\\\diagnostic.json\",\n  \"stage\": \"M2 development diagnostics; not a formal EX benchmark\",\n  \"run_status\": \"complete\",\n  \"summary\": {\n    \"case_count\": 1,\n    \"status_counts\": {\n      \"clarification\": 1\n    },\n    \"diagnostics_recorded_count\": 1,\n    \"runtime_closed_count\": 1,\n    \"repeated_sql_case_count\": 0,\n    \"database_validation_skipped_count\": 0,\n    \"case_model_http_attempts\": 3,\n    \"observed_case_http_attempts\": 3,\n    \"shared_index_http_attempts\": 0,\n    \"primary_ex\": null,\n    \"formal_ex_denominator\": null\n  },\n  \"errors\": []\n}\ndiagnostic runtime/index ready: california_schools\n[1/1] BIRD-PG-0050 diagnostic_status=clarification\n{\n  \"output\": \"C:\\\\Users\\\\zhang\\\\AppData\\\\Local\\\\Temp\\\\tmp3wlou25q\\\\diagnostic.json\",\n  \"stage\": \"M2 development diagnostics; not a formal EX benchmark\",\n  \"run_status\": \"complete\",\n  \"summary\": {\n    \"case_count\": 1,\n    \"status_counts\": {\n      \"clarification\": 1\n    },\n    \"diagnostics_recorded_count\": 1,\n    \"runtime_closed_count\": 1,\n    \"repeated_sql_case_count\": 0,\n    \"database_validation_skipped_count\": 0,\n    \"case_model_http_attempts\": 3,\n    \"observed_case_http_attempts\": 3,\n    \"shared_index_http_attempts\": 0,\n    \"primary_ex\": null,\n    \"formal_ex_denominator\": null\n  },\n  \"errors\": []\n}\nBIRD-PG-0036 first_sql_native_match=True\nBIRD-PG-0159 first_sql_native_match=True\nBIRD-PG-1405 first_sql_native_match=True\nBIRD-PG-0368 first_sql_native_match=True\nBIRD-PG-0201 probe_queries=9\nBIRD-PG-0586 probe_queries=6\n----------------------------------------------------------------------\nRan 241 tests in 43.351s\n\nOK (skipped=3)\n"
+}

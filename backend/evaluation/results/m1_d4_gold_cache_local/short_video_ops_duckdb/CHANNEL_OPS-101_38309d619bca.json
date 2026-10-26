@@ -1,0 +1,93 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "creative_status": [
+        "创意状态"
+      ],
+      "creatives": [
+        "创意数量",
+        "creative_count"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "creative_status",
+      "creatives"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": false,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT creative_status,COUNT(creative_id) creatives FROM ad_creatives WHERE creative_type='短视频' GROUP BY 1 ORDER BY 2 DESC,1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CHANNEL_OPS-101",
+  "question": "短视频创意的状态分布；请返回创意状态、创意数量；聚合口径：数量指标按对应业务记录计数。",
+  "gold_sql": "SELECT creative_status,COUNT(creative_id) creatives FROM ad_creatives WHERE creative_type='短视频' GROUP BY 1 ORDER BY 2 DESC,1",
+  "database": "short_video_ops",
+  "scenario": "channel_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.ad_accounts",
+      "short_video_ops.ad_campaigns",
+      "short_video_ops.ad_creatives",
+      "short_video_ops.ad_daily_stats",
+      "short_video_ops.budget_adjustments",
+      "short_video_ops.channel_attributions",
+      "short_video_ops.channel_conversion_events",
+      "short_video_ops.channel_targets",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "channel_ops"
+    ],
+    "user_id": "demo_channel_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "creative_status",
+    "creatives"
+  ],
+  "rows": [
+    {
+      "creative_status": "active",
+      "creatives": 255
+    },
+    {
+      "creative_status": "paused",
+      "creatives": 41
+    }
+  ],
+  "generated_at": "2026-10-10T14:53:38.175057+00:00"
+}

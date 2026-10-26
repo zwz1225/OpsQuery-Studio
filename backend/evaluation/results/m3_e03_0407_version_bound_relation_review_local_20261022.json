@@ -1,0 +1,41 @@
+{
+  "stage": "M3 E03 0407 frozen source version and relation evidence audit",
+  "run_status": "complete",
+  "source_scope": "Frozen BIRD Mini-Dev package and previously verified M2 PostgreSQL source",
+  "source_identity": {
+    "source_id": "bird_mini_dev_postgres_card_games",
+    "logical_database_id": "card_games",
+    "backend": "postgresql",
+    "catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+    "data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51"
+  },
+  "frozen_sources": {
+    "archive_sha256": "aeb211c0e39010bbdae3838bb5e8bd27dc446ed77495b1709f85ccc9bf67f2be",
+    "dev_tables_sha256": "48aa9febe7282d1690f3ed1f222dc040c182df83812ba4e9bee956084d99c8ff",
+    "sqlite_sha256": "c98bdb57fe7474da798b407785544b9af0daaad5d61fd21e2a73309493bc1227",
+    "postgres_dump_sha256_from_m2_manifest": "31b1da211849d24a57c9af7636da46a5b82fc8a3ca1542bb3ebd8775e9a31cec"
+  },
+  "relation": {
+    "child": "foreign_data.uuid",
+    "parent": "cards.uuid",
+    "dev_tables_foreign_key_indices": [82, 72],
+    "sqlite_foreign_key_declared": true,
+    "postgres_foreign_key_declared": false,
+    "sqlite_cards_rows": 56822,
+    "sqlite_foreign_data_rows": 229186,
+    "sqlite_foreign_data_orphan_rows": 16,
+    "sqlite_german_orphan_rows": 3,
+    "sqlite_foreign_data_foreign_key_violations": 16,
+    "postgres_candidate_status": "reviewed_incomplete_candidate_pending_implementation",
+    "referential_completeness_proven": false,
+    "join_type_preselected": false
+  },
+  "mtgjson_upstream_version": null,
+  "mtgjson_upstream_version_status": "not_recorded_in_frozen_package",
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "gold_sql_loaded": false,
+  "holdout_accessed": false,
+  "generation_chain_changed": false,
+  "notes": "SQLite DDL and dev_tables.json establish the design relation independently of Gold. Existing orphan rows and the absent PostgreSQL constraint prevent treating it as a complete or declared PostgreSQL foreign key."
+}

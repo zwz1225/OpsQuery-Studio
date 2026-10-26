@@ -1,0 +1,727 @@
+{
+  "stage": "M2 rejected first4 native downloaded evidence review",
+  "run_status": "complete",
+  "reviewed_at": "2026-10-18T04:09:01.084152+00:00",
+  "report_sha256": "481c54c9fbf3a4ceab76c8f231b3bd6bb740b3368a108d981091e4d954ffb587",
+  "check_count": 159,
+  "check_pass_count": 159,
+  "failed_checks": [],
+  "evidence_accepted": true,
+  "summary": {
+    "case_count": 4,
+    "native_match_count": 4,
+    "native_mismatch_count": 0,
+    "sql_execution_count": 8,
+    "new_model_request_count": 0,
+    "formal_ex_denominator": null
+  },
+  "case_reviews": [
+    {
+      "case_id": "BIRD-PG-0036",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "row_count": 1,
+      "column_count": 6,
+      "full_comparison_reconstructed_locally": true,
+      "first_sql": "SELECT s.admfname1, s.admlname1, s.admfname2, s.admlname2, s.admfname3, s.admlname3 FROM schools s JOIN satscores sat ON s.cdscode = sat.cds ORDER BY sat.numge1500 DESC NULLS LAST LIMIT 1",
+      "previous_rejection_codes": [
+        "missing_population_condition"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "row_count": 140,
+      "column_count": 1,
+      "full_comparison_reconstructed_locally": false,
+      "first_sql": "SELECT t.trans_id FROM trans t JOIN account a ON t.account_id = a.account_id JOIN disp d ON a.account_id = d.account_id WHERE d.client_id = 3356 AND t.operation = 'VYBER'",
+      "previous_rejection_codes": [
+        "missing_population_condition"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "row_count": 4,
+      "column_count": 2,
+      "full_comparison_reconstructed_locally": true,
+      "first_sql": "SELECT b.category, SUM(b.amount) AS amount_budgeted FROM budget b JOIN event e ON b.link_to_event = e.event_id WHERE e.event_name = 'April Speaker' GROUP BY b.category ORDER BY amount_budgeted ASC",
+      "previous_rejection_codes": [
+        "missing_population_condition"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "row_count": 1,
+      "column_count": 1,
+      "full_comparison_reconstructed_locally": true,
+      "first_sql": "SELECT (COUNT(*) FILTER (WHERE bordercolor = 'borderless')::REAL / NULLIF(COUNT(*), 0)) * 100 AS percentage FROM cards",
+      "previous_rejection_codes": [
+        "missing_population_condition",
+        "missing_population_condition",
+        "missing_population_condition",
+        "missing_population_condition"
+      ]
+    }
+  ],
+  "full_native_objects_reconstructed": 6,
+  "partial_native_previews": 2,
+  "numeric_0368": {
+    "prediction": "0.42413149836331",
+    "reference": "0.42413149836331",
+    "prediction_hex": "0x1.b24f870ab2114p-2",
+    "reference_hex": "0x1.b24f870ab2114p-2",
+    "native_equal": true
+  },
+  "causal_conclusion": "All four saved first SQLs match frozen native Gold on the same verified data. Prior false population constraints turned those first SQLs into mismatching final predictions.",
+  "next_step": "Remove unconditional multiply-before-divide rejection; it would reject an observed native-matching query. Keep an advisory about numeric path, unchanged native scoring, and rerun the versioned 14-case candidate.",
+  "local_postgresql_connected": false,
+  "new_model_request_count_during_review": 0,
+  "limitations": [
+    "Both 0159 results contain 140 rows, with only 20-row previews. Their full result digests and native set comparison are server evidence; local review reconstructs six other complete native objects.",
+    "Observed floating equality for 0368 is specific to this query and dataset, not a proof that all floating multiplication/division orders are equivalent.",
+    "A first-SQL counterfactual audit is not a new model run or acceptance of the whole 14-case candidate."
+  ],
+  "checks": [
+    {
+      "name": "complete_source_verified_read_only",
+      "passed": true
+    },
+    {
+      "name": "nonformal_trusted_scope",
+      "passed": true
+    },
+    {
+      "name": "immutable_source_chain",
+      "passed": true
+    },
+    {
+      "name": "code_binding_digest",
+      "passed": true
+    },
+    {
+      "name": "delivered_candidate_files",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/routes.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/database.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/contracts.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/csv_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/dialects.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_connections.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/row_digest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/sql_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/values.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/errors.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/main.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/schemas.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/server.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/database_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/presentation_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/time_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/model_client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/data_qa_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/duckdb_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/metric_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/postgres_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/response_generator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/single_database_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/time_field_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/access_control.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/auth.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/askdata_service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/memory_store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_archive.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/short_term_memory.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/registry.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/clarification.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/query_graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/result_builder.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/state.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/budgets.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/case_worker.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/coverage.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/diagnostic_runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/diagnostics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/evidence.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/first_sql_audit.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/intent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/intent_replay.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/isolated_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/manifest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/metrics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/model.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/native.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/relationships.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/repair.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/replay.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/retrieval.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/semantics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/sql.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird_protocol.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/run_bird_benchmark.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/check_m2_c_bird_runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_common.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_dump.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_structure.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_target.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_typed_rows.py",
+      "passed": true
+    },
+    {
+      "name": "same_server_environment",
+      "passed": true
+    },
+    {
+      "name": "entrypoint_hash",
+      "passed": true
+    },
+    {
+      "name": "exact_four_first_captures",
+      "passed": true
+    },
+    {
+      "name": "four_unique_receipts",
+      "passed": true
+    },
+    {
+      "name": "receipt:california_schools",
+      "passed": true
+    },
+    {
+      "name": "receipt:financial",
+      "passed": true
+    },
+    {
+      "name": "receipt:student_club",
+      "passed": true
+    },
+    {
+      "name": "receipt:card_games",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:actual_sql_and_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:rejection_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:execution_events",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:full_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:full_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:recompute_comparison",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:previous_final_wrong_same_source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:actual_sql_and_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:rejection_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:execution_events",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:partial_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:partial_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:server_full_result_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:previous_final_wrong_same_source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:actual_sql_and_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:rejection_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:execution_events",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:full_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:full_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:recompute_comparison",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:previous_final_wrong_same_source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:actual_sql_and_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:rejection_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:execution_events",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:full_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:full_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:recompute_comparison",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:previous_final_wrong_same_source",
+      "passed": true
+    },
+    {
+      "name": "0368_exact_float_equality",
+      "passed": true
+    },
+    {
+      "name": "summary_recomputed",
+      "passed": true
+    },
+    {
+      "name": "six_full_two_partial_native_objects",
+      "passed": true
+    }
+  ]
+}

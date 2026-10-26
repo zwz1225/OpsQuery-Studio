@@ -1,0 +1,100 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "audits": [
+        "audit_count"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "risk_type",
+      "audits"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": false,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT risk_type,COUNT(audit_id) audits FROM content_audits WHERE audit_status='approved' GROUP BY 1 ORDER BY 2 DESC,1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CONTENT_OPS-126",
+  "question": "approved审核状态按风险类型分布；请返回风险类型、审核数量；聚合口径：数量指标按对应业务记录计数。",
+  "gold_sql": "SELECT risk_type,COUNT(audit_id) audits FROM content_audits WHERE audit_status='approved' GROUP BY 1 ORDER BY 2 DESC,1",
+  "database": "short_video_ops",
+  "scenario": "content_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.content_audits",
+      "short_video_ops.content_categories",
+      "short_video_ops.content_daily_metrics",
+      "short_video_ops.content_reports",
+      "short_video_ops.content_tag_relations",
+      "short_video_ops.content_tags",
+      "short_video_ops.contents",
+      "short_video_ops.creator_daily_metrics",
+      "short_video_ops.creator_profiles",
+      "short_video_ops.creators",
+      "short_video_ops.topic_content_relations",
+      "short_video_ops.trending_topics",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users",
+      "short_video_ops.video_exposures",
+      "short_video_ops.video_interactions",
+      "short_video_ops.video_plays"
+    ],
+    "roles": [
+      "content_ops"
+    ],
+    "user_id": "demo_content_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "risk_type",
+    "audits"
+  ],
+  "rows": [
+    {
+      "risk_type": "无风险",
+      "audits": 7087
+    },
+    {
+      "risk_type": "虚假信息",
+      "audits": 150
+    },
+    {
+      "risk_type": "侵权",
+      "audits": 142
+    },
+    {
+      "risk_type": "低俗",
+      "audits": 129
+    }
+  ],
+  "generated_at": "2026-10-10T14:54:46.525829+00:00"
+}

@@ -1,0 +1,166 @@
+{
+  "stage": "M2 v4 development80 outcome review and remaining issues",
+  "recorded_at": "2026-10-18T16:12:52.607123+00:00",
+  "run_status": "complete",
+  "review_report_sha256": "5b53cd6e21c2b45b08bfafaad25f21a597e0049d0ea0eba97d03c9501dc9b289",
+  "evidence_accepted": true,
+  "candidate_recommendation": "Freeze v4 next; do not start another development tuning round.",
+  "candidate_actually_frozen": false,
+  "m2_complete": false,
+  "holdout_opened": false,
+  "comparison": {
+    "previous_matches": 49,
+    "current_matches": 50,
+    "retained": 47,
+    "gained": [
+      "BIRD-PG-0226",
+      "BIRD-PG-0263",
+      "BIRD-PG-0273"
+    ],
+    "regressed": [
+      "BIRD-PG-0050",
+      "BIRD-PG-0201"
+    ],
+    "net_gain": 1
+  },
+  "summary": {
+    "case_count": 80,
+    "answered_count": 77,
+    "native_matches": 50,
+    "native_mismatches": 27,
+    "excluded_count": 3,
+    "native_rate": 0.625,
+    "conditional_native_rate": 0.6493506493506493,
+    "baseline_matches": 34,
+    "retained_baseline_successes": 31,
+    "new_successes": 19,
+    "baseline_regressions": 3,
+    "net_gain": 16,
+    "previous6_successes": 5,
+    "previous6_successes_retained": 5,
+    "generation_http_attempts": 255,
+    "baseline_http_attempts": 245,
+    "chat_http_attempts": 95,
+    "shared_index_http_attempts": 27,
+    "total_generation_and_index_http_attempts": 282,
+    "diagnostic_sql_tool_calls": 110,
+    "canonical_lookup_sql_calls": 32,
+    "canonical_lookup_pairs": 36,
+    "replay_sql_calls": 154,
+    "replay_model_calls": 0,
+    "status_counts": {
+      "diagnostic_answered": 77,
+      "repeated_sql": 1,
+      "clarification": 2
+    },
+    "rejected_validation_attempts": 15,
+    "rejected_case_count": 14,
+    "rejection_categories": {
+      "intent_contract_violation": 4,
+      "undefined_table": 1,
+      "undefined_column": 5,
+      "undefined_function": 2,
+      "sql_source_denied": 1,
+      "repeated_invalid_sql": 1,
+      "sql_function_denied": 1
+    },
+    "intent_rejection_codes": {
+      "incomplete_output_name_group": 1,
+      "nullable_order_nulls_first": 3,
+      "incomplete_participant_context_output": 1
+    },
+    "generation_count_distribution": {
+      "1": 65,
+      "2": 15
+    },
+    "regenerated_case_count": 15,
+    "single_generation_answered_count": 63,
+    "single_generation_native_match_count": 43,
+    "latency_seconds": {
+      "p50": 11.907,
+      "p95": 25.001,
+      "max": 32.883
+    },
+    "baseline_latency_seconds": {
+      "p50": 8.992,
+      "p95": 19.628,
+      "measured_count": 80
+    }
+  },
+  "notes": {
+    "BIRD-PG-0050": "v3通过、v4失败。首次SQL误用未声明的sc别名，反馈准确定位后修正为s.street；最终结果为(NULL, 地址)，参考为(地址, NULL)，列位置相反。mailstreet、sname已在初始Schema中，不能归因于关键字段被过滤。名称来源也有变化，但当前行均为NULL，不能据此证明名称字段普遍等价。没有触发本地意图硬拒绝。",
+    "BIRD-PG-0201": "v3通过、v4失败。v4沿用关联后的行数作为COUNT分母，结果41.196235238637925，参考38.80961092816197。公开COUNT(atom_id)没有明确去重，v4按既定策略仅作粒度提示；保留此歧义和失败，不依据参考添加特例。",
+    "BIRD-PG-0226": "v3失败、v4通过。首次已使用ROUND(...,5)，但ROUND(double precision, integer)不受PostgreSQL支持；模型收到42883函数错误后改用NUMERIC计算，最终Decimal 3.84615与参考完全一致。此次不是精度缺失被本地拒绝后修复。",
+    "BIRD-PG-0263": "v3失败、v4通过。首次SQL保留按关联行统计的公开公式，未被主键/一对多关联强制改成DISTINCT，最终2.6840451814272206与参考完全一致。",
+    "BIRD-PG-0273": "v3校验失败、v4通过。只以label=+筛选，未将冲突的元素定义同时转成必选过滤；首次SQL通过，最终3.1419284940411703与参考完全一致。",
+    "BIRD-PG-0173": "原始基线通过，本轮仍失败。将3539解释为account_to，未按参考的支付金额条件处理。属于公开问题语义解释与筛选字段问题。",
+    "BIRD-PG-0239": "原始基线通过，本轮仍失败。atom_id与atom_id2两端用OR计数，参考只使用atom_id端点；保留关系角色差异。",
+    "BIRD-PG-1479": "原始基线通过，本轮仍失败。当前SQL未筛选CZK，并额外输出total_consumption；属于业务条件及输出形态差异。原基线单次通过不证明原SQL业务条件完整。",
+    "BIRD-PG-0639": "引用未授权的posttags/tags后原样重复SQL，被来源约束与重复阻断终止；没有执行越权SQL，仍在80题分母计失败。",
+    "BIRD-PG-1524": "检索Schema只有transactions_1k部分字段，模型明确缺少客户国籍字段及客户信息关联路径后澄清。授权上下文覆盖仍不足，计失败。",
+    "BIRD-PG-0152": "检索Schema只有district部分字段，模型明确缺少account及开户日期关联路径后澄清。授权上下文覆盖仍不足，计失败。",
+    "BIRD-PG-1533": "首次执行出现division_by_zero，生成下一条SQL后执行成功，但原生结果仍不匹配。区分执行恢复与业务答案正确，不能当作成功修复答案。",
+    "BIRD-PG-1399": "继续保留原生失败。预测为一行Yes；原参考14行去重后为YES与NULL两种元组。大小写与参考形态均有差异，不增加答案归一化、不排除分母。"
+  },
+  "local_intent_rejected_cases": [
+    "BIRD-PG-0036",
+    "BIRD-PG-0459",
+    "BIRD-PG-0586",
+    "BIRD-PG-0095"
+  ],
+  "local_intent_rejected_cases_final_matches": 4,
+  "rejected_first_sql_native_replayed_in_this_review": false,
+  "execution_errors": [
+    {
+      "case_id": "BIRD-PG-1533",
+      "error": {
+        "category": "division_by_zero",
+        "sqlstate": "22012"
+      },
+      "final_native_match": false
+    }
+  ],
+  "remaining_failure_count": 30,
+  "remaining_mismatched_case_ids": [
+    "BIRD-PG-0011",
+    "BIRD-PG-0025",
+    "BIRD-PG-0050",
+    "BIRD-PG-0072",
+    "BIRD-PG-0077",
+    "BIRD-PG-0083",
+    "BIRD-PG-0085",
+    "BIRD-PG-0352",
+    "BIRD-PG-0371",
+    "BIRD-PG-0407",
+    "BIRD-PG-0415",
+    "BIRD-PG-0473",
+    "BIRD-PG-0595",
+    "BIRD-PG-0604",
+    "BIRD-PG-1479",
+    "BIRD-PG-1480",
+    "BIRD-PG-1481",
+    "BIRD-PG-1505",
+    "BIRD-PG-1533",
+    "BIRD-PG-0115",
+    "BIRD-PG-0145",
+    "BIRD-PG-0173",
+    "BIRD-PG-1399",
+    "BIRD-PG-1427",
+    "BIRD-PG-0726",
+    "BIRD-PG-0201",
+    "BIRD-PG-0239"
+  ],
+  "remaining_nonanswer_case_ids": [
+    "BIRD-PG-0639",
+    "BIRD-PG-1524",
+    "BIRD-PG-0152"
+  ],
+  "source_reports_preserved": true,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "next_steps": [
+    "Freeze execution/config/source/protocol and record candidate identity.",
+    "Implement controlled holdout30 entry and attempt ledger without changing frozen candidate behavior.",
+    "Run the one formal holdout30 attempt, preserve every attempt, then archive M2 baseline and remaining failures."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "stage": "M1 B PostgreSQL import_check_only",
+  "run_status": "complete",
+  "mode": "import_check_only",
+  "started_at": "2026-10-08T11:55:59.729314+00:00",
+  "target": {
+    "source_id": "short_video_ops_postgres",
+    "logical_database_id": "short_video_ops",
+    "backend": "postgresql",
+    "dialect": "postgres",
+    "physical_database": "askdata_m1_test",
+    "physical_schema": "askdata_ops",
+    "import_role": "askdata_import",
+    "query_role": "askdata_readonly"
+  },
+  "commit_state": "not_started",
+  "postgresql_connected": false,
+  "target_data_verified": false,
+  "verified_target_data_version": null,
+  "new_model_request_count": 0,
+  "errors": [],
+  "phase": "source_plan_checked",
+  "source_preparation": {
+    "canonical_import_spec_sha256": "8f936c3089614a38b17194b76e0c073c20cfe5b194ecb8f9f1e27b8f4d2ca7fd",
+    "source_data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+    "preparation_artifact_sha256": {
+      "source_preflight.json": "32b3bbff54e327e4ada230395fd82909f538bddafc0481e59f190f72f0f95929",
+      "import_manifest.json": "4b8952e8d8c29965a1fa79d544e913772a9d12a9b3f36d09b433daaf47561ef7",
+      "preparation_review.json": "ae6f34b0452f4602f4e33caa67c33a8119761a4d584c45c143b6e3b6d24bcf5b"
+    },
+    "source_file_count": 43
+  },
+  "source_files_unchanged": true,
+  "summary": {
+    "planned_table_count": 41,
+    "planned_field_count": 276,
+    "planned_row_count": 722732
+  },
+  "finished_at": "2026-10-08T11:56:00.099149+00:00"
+}

@@ -1,0 +1,25 @@
+{
+  "run_status": "complete",
+  "archive": "M1_D1_方言与Gold接口同步包_20261010.zip",
+  "entry_count": 12,
+  "archive_sha256": "b2858ba60f54a859590b7f9faac7a2ee603dd061efe7a9f0c792c49547893b58",
+  "entry_sha256": {
+    "backend/app/datasources/dialects.py": "27eeb0134a3802e5a71ab013f1b7fd6f375bce3720823a449b762c962c9bc13b",
+    "backend/evaluation/gold_sql.py": "b386787189b8cef8b6e5e91b0c9f20242dad48ac39cf068a3664858006401701",
+    "backend/evaluation/gold_result.py": "77a4857b90aba853d83cca0bc7a6c808c7035070be03164ff4d02ec15ca9a489",
+    "backend/evaluation/run_manifest.py": "567a6e771072e02f58838d2c923d5d190c4a4d7f997dd453dc809ee2d358a3bd",
+    "backend/evaluation/run_benchmark.py": "d07d574de3c6d6760aeb2227bc2369e54da62e2fd2cfccee76155990e2e47bb6",
+    "backend/evaluation/run_e2e.py": "71bec390d30359a1614640066d0e41e519241ecd351f3b406d39da5ca6c9284a",
+    "backend/evaluation/models.py": "172eb1f1ed0556e7cb82b9aabb50ce76297155272261cab39504824730596435",
+    "backend/tests/test_m0_evaluation.py": "9e3aee41670a1d4454e68912a0427e8853d5aedcdfbd2d5c5b462ed893cd6088",
+    "backend/tests/test_m1_d1_contracts.py": "577114340761cad6aa5a9ded6788ace353226a458648d90a24febb99a5a2332a",
+    "backend/evaluation/M1_D1_CONTRACT_ACCEPTANCE.md": "3f5e419324b702fa87a298555c7305d1bc5c890c2df0e374b8c902d7160b09de",
+    "backend/evaluation/results/m1_d1_implementation_local.json": "b5a95e4596d47e2809e9e4737c972ed9b251f8bd2027dac86d5dfc10909338ed",
+    "M1_数据源依赖梳理与最小适配方案.md": "14fe0b225212ad85c2e5ea5615c23ba30b26fea5b3b8e379dff11f79e00c8508"
+  },
+  "entries_match_workspace": true,
+  "real_credentials_included": false,
+  "formal_cases_included": false,
+  "historical_server_reports_included": false,
+  "original_cases_and_c3_report_unchanged": true
+}

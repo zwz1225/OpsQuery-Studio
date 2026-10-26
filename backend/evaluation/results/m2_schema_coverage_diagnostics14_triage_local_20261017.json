@@ -1,0 +1,853 @@
+{
+  "stage": "M2 reviewed diagnostic14 non-scoring triage",
+  "run_status": "complete",
+  "reviewed_at": "2026-10-17T08:37:25.185380+00:00",
+  "source_report_sha256": "4f08270884badfe30d896d5c5ac55c84a7eee1c1060891c2846a452949a4512a",
+  "cases": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "status": "diagnostic_answered",
+      "category": "ordering_regression",
+      "finding": "Current SQL omits NULLS LAST. It returns one tuple containing only strings, while the independently audited Gold tuple contains an address and NULL. The audited older SQL had explicit NULLS LAST; that successful audit does not certify this different SQL.",
+      "public_question": "What is the postal street address for the school with the 7th highest Math average? Indicate the school's name.",
+      "public_evidence": "Postal street and mailing street are synonyms.",
+      "generated_sql": "SELECT s.mailstreet, sc.sname FROM schools s JOIN satscores sc ON s.cdscode = sc.cds ORDER BY sc.avgscrmath DESC LIMIT 1 OFFSET 6",
+      "reference_sql_sha256": "84767e6311bf2f6fae4853411b0a6a368bc364d1d8b8ec8e66ed70589fb1bfd9",
+      "result_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 2,
+        "payload_bytes": 111,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "93e83966a756a2ad044a2853023fda936d81ef03f80119f00c71d4d65af9fbc1"
+      },
+      "coverage_field_ids": [
+        "california_schools.satscores.sname"
+      ],
+      "clarification_reason": null,
+      "relevant_excluded_fields": [
+        {
+          "field_id": "california_schools.schools.admlname1",
+          "rrf_rank": 13,
+          "rrf_score": 0.02548701298701299,
+          "bm25_rank": 17,
+          "bm25_score": 0.44574345464297804,
+          "dense_rank": 20,
+          "dense_score": 0.410428243622611,
+          "rerank_rank": 35,
+          "rerank_score": 0.4086965416533421,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        },
+        {
+          "field_id": "california_schools.schools.admfname1",
+          "rrf_rank": 28,
+          "rrf_score": 0.013157894736842105,
+          "bm25_rank": 16,
+          "bm25_score": 0.44574345464297804,
+          "dense_rank": null,
+          "dense_score": null,
+          "rerank_rank": 27,
+          "rerank_score": 0.4265754165035486,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        },
+        {
+          "field_id": "california_schools.schools.admlname3",
+          "rrf_rank": 31,
+          "rrf_score": 0.01282051282051282,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 18,
+          "dense_score": 0.4123350287682147,
+          "rerank_rank": 20,
+          "rerank_score": 0.4468078227323294,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        },
+        {
+          "field_id": "california_schools.schools.admfname3",
+          "rrf_rank": 32,
+          "rrf_score": 0.012658227848101266,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 19,
+          "dense_score": 0.41133423828275667,
+          "rerank_rank": 22,
+          "rerank_score": 0.4345078134993081,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        },
+        {
+          "field_id": "california_schools.schools.admlname2",
+          "rrf_rank": 39,
+          "rrf_score": 0.011363636363636364,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 28,
+          "dense_score": 0.4021334742072004,
+          "rerank_rank": 25,
+          "rerank_score": 0.4320458738194609,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        },
+        {
+          "field_id": "california_schools.schools.admfname2",
+          "rrf_rank": 40,
+          "rrf_score": 0.011235955056179775,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 29,
+          "dense_score": 0.4019434080047772,
+          "rerank_rank": 36,
+          "rerank_score": 0.4048282716938465,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        }
+      ],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "status": "diagnostic_answered",
+      "category": "current_native_digest_matches_audited_gold",
+      "finding": "Old captured MAX-salary query is proven wrong; current query is different and its complete one-row/one-column native diagnostic matches the audited Gold diagnostic. Its client-district join and LIMIT still differ structurally from Gold; no formal EX is published.",
+      "public_question": "List out the account numbers of clients who are youngest and have highest average salary?",
+      "public_evidence": "If the person A's birthdate < B's birthdate, it means that person B is younger than person A; A11 refers to average salary",
+      "generated_sql": "SELECT d.account_id\nFROM disp d\nJOIN client c ON d.client_id = c.client_id\nJOIN district dist ON c.district_id = dist.district_id\nORDER BY c.birth_date DESC, dist.a11 DESC\nLIMIT 1;",
+      "reference_sql_sha256": "4cb3c502c6a3db5ecb98afd9c5e506a763e5fa64d5dbf48f4ac5e81762f55d68",
+      "result_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 43,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "int"
+        ],
+        "ordered_native_diagnostic_sha256": "9829421c931e384807f4b646e0bb1970e6072cb42949a17d1148d09465562a93"
+      },
+      "coverage_field_ids": [],
+      "clarification_reason": null,
+      "relevant_excluded_fields": [],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "status": "diagnostic_answered",
+      "category": "covered_field_used_native_gold_not_run",
+      "finding": "Date is present in the initial graph and first SQL uses the real date field. The diagnostic has not executed Gold, so no new correctness score is assigned.",
+      "public_question": "What was the average monthly consumption of customers in SME for the year 2013?",
+      "public_evidence": "Average Monthly consumption = AVG(Consumption) / 12; Year 2013 can be presented as Between 201301 And 201312; The first 4 strings of the Date values in the yearmonth table can represent year.",
+      "generated_sql": "SELECT AVG(ym.consumption) / 12 AS average_monthly_consumption FROM yearmonth ym JOIN customers c ON ym.customerid = c.customerid WHERE c.segment = 'SME' AND SUBSTRING(ym.date FROM 1 FOR 4) = '2013'",
+      "reference_sql_sha256": "6b0e66dee0ac500d9ae990d2f35f9810e52dee07decc895d6c900ae5de2b3ff6",
+      "result_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 78,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "float"
+        ],
+        "ordered_native_diagnostic_sha256": "b6836bcbfe86173cf99cf6594a5e708852d1b82c0f7910a7cf33568cc2974e20"
+      },
+      "coverage_field_ids": [
+        "debit_card_specializing.yearmonth.date"
+      ],
+      "clarification_reason": null,
+      "relevant_excluded_fields": [
+        {
+          "field_id": "debit_card_specializing.gasstations.segment",
+          "rrf_rank": 19,
+          "rrf_score": 0.012658227848101266,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 19,
+          "dense_score": 0.29213983663093557,
+          "rerank_rank": 8,
+          "rerank_score": 0.4439972281406652,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        }
+      ],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "status": "clarification",
+      "category": "empty_schema_baseline",
+      "finding": "No field reaches the baseline threshold, leaving no anchored table. Event name/date candidates are below the coverage floor. Model supplies only the generic reason missing information.",
+      "public_question": "List the names of closed event as \"game\" that was closed from 3/15/2019 to 3/20/2020.",
+      "public_evidence": "name of events refers event_name; game event that was closed refers to type = 'Game' where status = 'Closed'; event_date BETWEEN '2019-03-15' and '2020-03-20'; ",
+      "generated_sql": null,
+      "reference_sql_sha256": "274e4d4f1603b56ed6190de41a38f8885eda8124b1ab3bcd33a082e990bc3d36",
+      "result_diagnostic": null,
+      "coverage_field_ids": [],
+      "clarification_reason": {
+        "text": "missing information",
+        "provided": true,
+        "original_utf8_bytes": 19,
+        "truncated": false,
+        "redacted": false
+      },
+      "relevant_excluded_fields": [
+        {
+          "field_id": "student_club.event.event_date",
+          "rrf_rank": 3,
+          "rrf_score": 0.03149801587301587,
+          "bm25_rank": 3,
+          "bm25_score": 0.8945742230738661,
+          "dense_rank": 4,
+          "dense_score": 0.5455072372614108,
+          "rerank_rank": 5,
+          "rerank_score": 0.437911951455916,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [
+            "date",
+            "event"
+          ],
+          "uncovered_intent_terms": [
+            "date",
+            "event"
+          ]
+        },
+        {
+          "field_id": "student_club.event.event_name",
+          "rrf_rank": 4,
+          "rrf_score": 0.031024531024531024,
+          "bm25_rank": 6,
+          "bm25_score": 0.6563909291277161,
+          "dense_rank": 3,
+          "dense_score": 0.5755232171061779,
+          "rerank_rank": 3,
+          "rerank_score": 0.45814886560450785,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [
+            "event"
+          ],
+          "uncovered_intent_terms": [
+            "event"
+          ]
+        },
+        {
+          "field_id": "student_club.member.last_name",
+          "rrf_rank": 21,
+          "rrf_score": 0.022857889237199582,
+          "bm25_rank": 27,
+          "bm25_score": 0.15997306332401495,
+          "dense_rank": 28,
+          "dense_score": 0.3719831050879086,
+          "rerank_rank": 36,
+          "rerank_score": 0.23786545850046353,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        },
+        {
+          "field_id": "student_club.member.first_name",
+          "rrf_rank": 32,
+          "rrf_score": 0.012048192771084338,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 23,
+          "dense_score": 0.3911101374115404,
+          "rerank_rank": 31,
+          "rerank_score": 0.2694977562612766,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        }
+      ],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "status": "clarification",
+      "category": "missing_authorized_related_table",
+      "finding": "Only bond_type reaches the graph. atom.element has score about 0.421 and cannot be added by the bounded policy. Computing the percentage needs the authorized atom table and its identity/link fields.",
+      "public_question": "What is the percentage of carbon in double-bond molecules?",
+      "public_evidence": "carbon refers to element = 'c'; double-bond molecules refers to bond_type = '='; percentage = DIVIDE(SUM(element = 'c'), COUNT(atom_id))",
+      "generated_sql": null,
+      "reference_sql_sha256": "60c2e02a7c57bf66cef89965f839bccb08e3ee37a9f494e85f6494141a595750",
+      "result_diagnostic": null,
+      "coverage_field_ids": [],
+      "clarification_reason": {
+        "text": "The provided schema only contains the 'bond' table with a 'bond_type' column. The question asks for the percentage of carbon (an element) in double-bond molecules, which implies the existence of tables containing atom/element information (e.g., an 'atom' table with 'element' and 'molecule_id' or similar links). Without these tables, it is impossible to calculate the percentage of carbon atoms.",
+        "provided": true,
+        "original_utf8_bytes": 396,
+        "truncated": false,
+        "redacted": false
+      },
+      "relevant_excluded_fields": [
+        {
+          "field_id": "toxicology.atom.element",
+          "rrf_rank": 6,
+          "rrf_score": 0.03047794966520434,
+          "bm25_rank": 1,
+          "bm25_score": 1.0,
+          "dense_rank": 11,
+          "dense_score": 0.3659612848308092,
+          "rerank_rank": 5,
+          "rerank_score": 0.4210868780118047,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [
+            "element"
+          ],
+          "uncovered_intent_terms": [
+            "element"
+          ]
+        },
+        {
+          "field_id": "toxicology.atom.atom_id",
+          "rrf_rank": 9,
+          "rrf_score": 0.029211087420042643,
+          "bm25_rank": 7,
+          "bm25_score": 0.1858116867872325,
+          "dense_rank": 10,
+          "dense_score": 0.4137726742303845,
+          "rerank_rank": 9,
+          "rerank_score": 0.37909465149539157,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [
+            "atom"
+          ],
+          "uncovered_intent_terms": [
+            "atom"
+          ]
+        },
+        {
+          "field_id": "toxicology.connected.atom_id",
+          "rrf_rank": 10,
+          "rrf_score": 0.02919863597612958,
+          "bm25_rank": 8,
+          "bm25_score": 0.1858116867872325,
+          "dense_rank": 9,
+          "dense_score": 0.4303096476458524,
+          "rerank_rank": 7,
+          "rerank_score": 0.4134095080948267,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [
+            "atom"
+          ],
+          "uncovered_intent_terms": [
+            "atom"
+          ]
+        },
+        {
+          "field_id": "toxicology.connected.atom_id2",
+          "rrf_rank": 11,
+          "rrf_score": 0.028790389395194696,
+          "bm25_rank": 11,
+          "bm25_score": 0.06857241628929077,
+          "dense_rank": 8,
+          "dense_score": 0.44980156445741304,
+          "rerank_rank": 8,
+          "rerank_score": 0.38906833223178056,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [
+            "atom"
+          ],
+          "uncovered_intent_terms": [
+            "atom"
+          ]
+        }
+      ],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-1399",
+      "database_id": "student_club",
+      "status": "clarification",
+      "category": "missing_name_field_group_and_table",
+      "finding": "member.last_name is about 0.502 but its table is unanchored; first_name is about 0.475 and below the floor. The model lacks the pair of name fields required by the original question.",
+      "public_question": "Did Maya Mclean attend the 'Women's Soccer' event?",
+      "public_evidence": "Maya Mclean is the full name; full name refers to first_name, last_name; 'Women's Soccer' is an event_name",
+      "generated_sql": null,
+      "reference_sql_sha256": "390107b5bb80581f37121cde4e5542dd2be5c205ff622819795c41ba09fd58ad",
+      "result_diagnostic": null,
+      "coverage_field_ids": [],
+      "clarification_reason": {
+        "text": "The schema provided does not include a 'member' or 'student' table with first_name and last_name columns, which are required to identify 'Maya Mclean'. The attendance table only has link_to_member (text ID) without name information.",
+        "provided": true,
+        "original_utf8_bytes": 232,
+        "truncated": false,
+        "redacted": false
+      },
+      "relevant_excluded_fields": [
+        {
+          "field_id": "student_club.member.last_name",
+          "rrf_rank": 2,
+          "rrf_score": 0.032266458495966696,
+          "bm25_rank": 1,
+          "bm25_score": 1.0,
+          "dense_rank": 3,
+          "dense_score": 0.45856913645353686,
+          "rerank_rank": 13,
+          "rerank_score": 0.502265769287566,
+          "selected": false,
+          "selection_reason": "coverage_table_not_anchored",
+          "matched_intent_terms": [
+            "last"
+          ],
+          "uncovered_intent_terms": [
+            "last"
+          ]
+        },
+        {
+          "field_id": "student_club.member.first_name",
+          "rrf_rank": 4,
+          "rrf_score": 0.03036576949620428,
+          "bm25_rank": 3,
+          "bm25_score": 0.4328889965641551,
+          "dense_rank": 9,
+          "dense_score": 0.40737042363620457,
+          "rerank_rank": 23,
+          "rerank_score": 0.47516421509003426,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [
+            "first"
+          ],
+          "uncovered_intent_terms": [
+            "first"
+          ]
+        }
+      ],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "database_id": "codebase_community",
+      "status": "clarification",
+      "category": "missing_two_related_tables",
+      "finding": "Graph contains bountyamount only. posts.title and users.displayname are below the floor; original question/evidence explicitly requires these roles and their authorized join scope.",
+      "public_question": "Which user added a bounty amount of 50 to the post title mentioning variance?",
+      "public_evidence": "bounty amount of 50 refers to BountyAmount = 50; user refers to DisplayName; title mentioning variance refers to Title include 'variance'",
+      "generated_sql": null,
+      "reference_sql_sha256": "dc26f56eeb2f48e17116febd4fef9e587e22b7858222cbfa0da32ab529358a39",
+      "result_diagnostic": null,
+      "coverage_field_ids": [],
+      "clarification_reason": {
+        "text": "The provided schema only contains the 'votes' table with a 'bountyamount' field. The question requires information about 'user' (DisplayName) and 'post title' (Title), which are not present in the available schema. There is no way to join votes to users or posts, nor to filter by post title content.",
+        "provided": true,
+        "original_utf8_bytes": 300,
+        "truncated": false,
+        "redacted": false
+      },
+      "relevant_excluded_fields": [
+        {
+          "field_id": "codebase_community.posts.title",
+          "rrf_rank": 4,
+          "rrf_score": 0.028629032258064516,
+          "bm25_rank": 2,
+          "bm25_score": 0.7198371473336048,
+          "dense_rank": 20,
+          "dense_score": 0.4660251281255079,
+          "rerank_rank": 18,
+          "rerank_score": 0.4308641232598005,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [
+            "title"
+          ],
+          "uncovered_intent_terms": [
+            "title"
+          ]
+        },
+        {
+          "field_id": "codebase_community.users.displayname",
+          "rrf_rank": 7,
+          "rrf_score": 0.026333907056798625,
+          "bm25_rank": 10,
+          "bm25_score": 0.18605434845066313,
+          "dense_rank": 23,
+          "dense_score": 0.4634137593355997,
+          "rerank_rank": 29,
+          "rerank_score": 0.3898052551472832,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [
+            "display"
+          ],
+          "uncovered_intent_terms": [
+            "display"
+          ]
+        }
+      ],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "status": "diagnostic_answered",
+      "category": "incomplete_output_and_nullable_ordering",
+      "finding": "Generated query selects only the first administrator first/last names (2 columns). Frozen Gold selects all three administrator pairs (6 columns), consistent with public evidence mentioning up to three administrators. SQL also omits NULLS LAST and current output is all NULL.",
+      "public_question": "Under whose administration is the school with the highest number of students scoring 1500 or more on the SAT? Indicate their full names.",
+      "public_evidence": "full name means first name, last name; There are at most 3 administrators for each school; SAT Scores are greater or equal to 1500 refers to NumGE1500",
+      "generated_sql": "SELECT s.admfname1, s.admlname1 FROM schools s JOIN satscores sat ON s.cdscode = sat.cds ORDER BY sat.numge1500 DESC LIMIT 1",
+      "reference_sql_sha256": "8538d58c9f812f65603a8d80ad075616f658e32d29e6484923f283a95e9d1351",
+      "result_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 2,
+        "payload_bytes": 57,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "NoneType"
+        ],
+        "ordered_native_diagnostic_sha256": "73e1e6a2f8233fb30ed9057aedaf9953004f35cf54c51ef071b19dc8d4b3ecab"
+      },
+      "coverage_field_ids": [],
+      "clarification_reason": null,
+      "relevant_excluded_fields": [
+        {
+          "field_id": "california_schools.schools.admfname2",
+          "rrf_rank": 23,
+          "rrf_score": 0.014492753623188406,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 9,
+          "dense_score": 0.47756641015215995,
+          "rerank_rank": 10,
+          "rerank_score": 0.5479170796298193,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        },
+        {
+          "field_id": "california_schools.schools.admfname3",
+          "rrf_rank": 25,
+          "rrf_score": 0.014285714285714285,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 10,
+          "dense_score": 0.4758516964499049,
+          "rerank_rank": 9,
+          "rerank_score": 0.5483662035673151,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        },
+        {
+          "field_id": "california_schools.schools.admlname3",
+          "rrf_rank": 31,
+          "rrf_score": 0.013157894736842105,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 16,
+          "dense_score": 0.4506196109382503,
+          "rerank_rank": 14,
+          "rerank_score": 0.5347186284049897,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        }
+      ],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "database_id": "california_schools",
+      "status": "diagnostic_answered",
+      "category": "nullable_ordering_risk",
+      "finding": "SQL orders ABS(longitude) DESC without explicit NULLS LAST. Current result is NULL; frozen Gold orders NULLS LAST. Native Gold comparison is pending.",
+      "public_question": "What is the grade span offered in the school with the highest longitude?",
+      "public_evidence": "the highest longitude refers to the school with the maximum absolute longitude value.",
+      "generated_sql": "SELECT gsoffered FROM schools ORDER BY ABS(longitude) DESC LIMIT 1",
+      "reference_sql_sha256": "619fa82fe4d3adf3437cd0f70a51b3650629c66d661c06f4ee54844e52d1597f",
+      "result_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 36,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "NoneType"
+        ],
+        "ordered_native_diagnostic_sha256": "cdcee79e9e26011af8dccca259991c1f4a56e222ccaf8d1425042dd04721e59d"
+      },
+      "coverage_field_ids": [],
+      "clarification_reason": null,
+      "relevant_excluded_fields": [
+        {
+          "field_id": "california_schools.schools.admlname1",
+          "rrf_rank": 40,
+          "rrf_score": 0.011627906976744186,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 26,
+          "dense_score": 0.42675293443530493,
+          "rerank_rank": 33,
+          "rerank_score": 0.39699085260004024,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        }
+      ],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "status": "diagnostic_answered",
+      "category": "missing_business_filter_and_output_shape",
+      "finding": "Generated SQL never filters segment=SME, counts all customers and outputs a Yes/No plus absolute difference. Frozen Gold filters SME and outputs the signed difference as one column; the public question also refers to SMEs.",
+      "public_question": "Is it true that more SMEs pay in Czech koruna than in euros? If so, how many more?",
+      "public_evidence": "Amount of more SMEs = Total of SMEs pay using Currency CZK - Total of SMEs pay using Currency EUR",
+      "generated_sql": "SELECT CASE WHEN czk_count > eur_count THEN 'Yes' ELSE 'No' END AS more_smes_in_czk, ABS(czk_count - eur_count) AS difference FROM (SELECT COUNT(*) FILTER (WHERE currency = 'CZK') AS czk_count, COUNT(*) FILTER (WHERE currency = 'EUR') AS eur_count FROM customers) sub",
+      "reference_sql_sha256": "c4af24c169aa5b8fa9528f00427856907ca3725364e65b7503f512ffd876111f",
+      "result_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 2,
+        "payload_bytes": 78,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "int",
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "bc5586877fd89e476eabb3abc5f26e64f191fba21664106d85048f5df96417fa"
+      },
+      "coverage_field_ids": [],
+      "clarification_reason": null,
+      "relevant_excluded_fields": [
+        {
+          "field_id": "debit_card_specializing.customers.segment",
+          "rrf_rank": 6,
+          "rrf_score": 0.015873015873015872,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 3,
+          "dense_score": 0.36043626254723954,
+          "rerank_rank": 2,
+          "rerank_score": 0.5201072701520163,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        },
+        {
+          "field_id": "debit_card_specializing.gasstations.segment",
+          "rrf_rank": 12,
+          "rrf_score": 0.013888888888888888,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 12,
+          "dense_score": 0.2585795734876631,
+          "rerank_rank": 20,
+          "rerank_score": 0.3677620808590666,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        }
+      ],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "status": "diagnostic_answered",
+      "category": "projection_contract_difference",
+      "finding": "Generated t.* returns 10 columns and 140 rows; Gold projects trans_id only. SQL executes but the required native tuple shape is different. No alias or column-dropping scoring relaxation is allowed.",
+      "public_question": "List all the withdrawals in cash transactions that the client with the id 3356 makes.",
+      "public_evidence": "operation = 'VYBER' refers to withdrawal in cash",
+      "generated_sql": "SELECT t.* FROM trans t JOIN account a ON t.account_id = a.account_id JOIN disp d ON a.account_id = d.account_id WHERE d.client_id = 3356 AND t.operation = 'VYBER'",
+      "reference_sql_sha256": "ee7eafdc44edb97e440951e8acc4528f8c4abbb8814348ec4725207693e20179",
+      "result_diagnostic": {
+        "complete": true,
+        "row_count": 140,
+        "column_count": 10,
+        "payload_bytes": 21282,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "NoneType",
+          "date",
+          "int",
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "58269badc720f2cf59403f1f8a9602f697b54b50c68d215ca257314c7401b494"
+      },
+      "coverage_field_ids": [],
+      "clarification_reason": null,
+      "relevant_excluded_fields": [],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "database_id": "student_club",
+      "status": "diagnostic_answered",
+      "category": "event_name_used_as_foreign_key_value",
+      "finding": "Generated query compares budget.link_to_event directly with April Speaker, returns no rows. The original evidence identifies that text as an event name; Gold resolves it through event.event_name and joins event_id. Adding budget_id did not supply this role.",
+      "public_question": "Calculate the amount budgeted for 'April Speaker' event. List all the budgeted categories for said event in an ascending order based on their amount budgeted.",
+      "public_evidence": "'April Speaker' is an event name; amount budgeted refers to SUM(amount); budget categories refers to category",
+      "generated_sql": "SELECT category, SUM(amount) AS total_amount_budgeted FROM budget WHERE link_to_event = 'April Speaker' GROUP BY category ORDER BY total_amount_budgeted ASC",
+      "reference_sql_sha256": "82bd66178d2a91f1c8ec686ac22f96f1ab019f7c4140115ed937ec7c2803b493",
+      "result_diagnostic": {
+        "complete": true,
+        "row_count": 0,
+        "column_count": 2,
+        "payload_bytes": 48,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [],
+        "ordered_native_diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "coverage_field_ids": [
+        "student_club.budget.budget_id"
+      ],
+      "clarification_reason": null,
+      "relevant_excluded_fields": [
+        {
+          "field_id": "student_club.event.event_name",
+          "rrf_rank": 5,
+          "rrf_score": 0.03055037313432836,
+          "bm25_rank": 4,
+          "bm25_score": 0.7597896498480173,
+          "dense_rank": 7,
+          "dense_score": 0.6117364488483832,
+          "rerank_rank": 7,
+          "rerank_score": 0.5446316948444445,
+          "selected": false,
+          "selection_reason": "coverage_table_not_anchored",
+          "matched_intent_terms": [
+            "event"
+          ],
+          "uncovered_intent_terms": [
+            "event"
+          ]
+        },
+        {
+          "field_id": "student_club.event.event_date",
+          "rrf_rank": 20,
+          "rrf_score": 0.0251821349382325,
+          "bm25_rank": 17,
+          "bm25_score": 0.2567768621634723,
+          "dense_rank": 22,
+          "dense_score": 0.46685750862637027,
+          "rerank_rank": 28,
+          "rerank_score": 0.39649096496658753,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [
+            "event"
+          ],
+          "uncovered_intent_terms": [
+            "event"
+          ]
+        },
+        {
+          "field_id": "student_club.member.last_name",
+          "rrf_rank": 29,
+          "rrf_score": 0.012345679012345678,
+          "bm25_rank": 21,
+          "bm25_score": 0.15869609634961596,
+          "dense_rank": null,
+          "dense_score": null,
+          "rerank_rank": 35,
+          "rerank_score": 0.3200517504223538,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "matched_intent_terms": [],
+          "uncovered_intent_terms": []
+        }
+      ],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "status": "diagnostic_answered",
+      "category": "numeric_execution_path_pending",
+      "finding": "Generated percentage returns Decimal using numeric 100.0, whereas frozen Gold explicitly starts with REAL. This can affect strict native equality; no rounding, tolerance or error conclusion is justified without native comparison.",
+      "public_question": "What is the percentage of borderless cards?",
+      "public_evidence": "borderless card refers to borderColor = 'borderless'; percentage = Divide(Count (id) where borderColor = 'borderless', Count(id)) *100",
+      "generated_sql": "SELECT COUNT(CASE WHEN bordercolor = 'borderless' THEN 1 END) * 100.0 / COUNT(id) AS percentage FROM cards",
+      "reference_sql_sha256": "a98925992af065b8fc1288070fb4405d44c0ccef7606743a2c32041617aa33e3",
+      "result_diagnostic": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 65,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "Decimal"
+        ],
+        "ordered_native_diagnostic_sha256": "e8d03b78cea5c643e24bda5e6499e975e1ab5539b9e2bed24848d655460f4702"
+      },
+      "coverage_field_ids": [],
+      "clarification_reason": null,
+      "relevant_excluded_fields": [],
+      "formal_ex_correct": null
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "database_id": "superhero",
+      "status": "diagnostic_answered",
+      "category": "literal_resolution_pending",
+      "finding": "attribute_name is now in the graph. Generated SQL uses strength, while the frozen reference uses Strength; current query returns no rows. Resolve canonical literal values from authorized data rather than transferring Gold literals into the model.",
+      "public_question": "What is the hero's full name with the highest attribute in strength?",
+      "public_evidence": "highest attribute in strength refers to MAX(attribute_value) WHERE attribute_name = 'strength';",
+      "generated_sql": "SELECT s.full_name FROM superhero s JOIN hero_attribute ha ON s.id = ha.hero_id JOIN attribute a ON ha.attribute_id = a.id WHERE a.attribute_name = 'strength' ORDER BY ha.attribute_value DESC LIMIT 1",
+      "reference_sql_sha256": "da6036853d4dc0b1cff97c50a4539a22ac5d6649ec64f170abd7a5b78edfcf34",
+      "result_diagnostic": {
+        "complete": true,
+        "row_count": 0,
+        "column_count": 1,
+        "payload_bytes": 25,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [],
+        "ordered_native_diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "coverage_field_ids": [
+        "superhero.attribute.attribute_name"
+      ],
+      "clarification_reason": null,
+      "relevant_excluded_fields": [],
+      "formal_ex_correct": null
+    }
+  ],
+  "case_count": 14,
+  "formal_ex": null,
+  "scope": "Trusted local review of public development inputs, generated SQL, recorded diagnostics and frozen scorer references. No model, database, new Gold execution or scoring policy changes.",
+  "next_priorities": [
+    "Reuse captured SQL for native scoring before another live generation round; preserve evidence.",
+    "Develop generic nullable-ranking, output-role and required-filter checks from public input/catalog, keeping existing budgets.",
+    "Design separately versioned, bounded related-table/field-group coverage for the four clarifications; preserve source authorization and do not use Gold as Agent context.",
+    "Keep holdout closed and freeze the candidate/protocol before formal EX."
+  ]
+}

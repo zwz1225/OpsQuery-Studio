@@ -1,0 +1,584 @@
+{
+  "case_count": 80,
+  "case_ids": [
+    "BIRD-PG-0011",
+    "BIRD-PG-0025",
+    "BIRD-PG-0036",
+    "BIRD-PG-0048",
+    "BIRD-PG-0050",
+    "BIRD-PG-0072",
+    "BIRD-PG-0077",
+    "BIRD-PG-0082",
+    "BIRD-PG-0083",
+    "BIRD-PG-0085",
+    "BIRD-PG-0352",
+    "BIRD-PG-0356",
+    "BIRD-PG-0368",
+    "BIRD-PG-0371",
+    "BIRD-PG-0379",
+    "BIRD-PG-0407",
+    "BIRD-PG-0415",
+    "BIRD-PG-0459",
+    "BIRD-PG-0473",
+    "BIRD-PG-0480",
+    "BIRD-PG-0537",
+    "BIRD-PG-0557",
+    "BIRD-PG-0586",
+    "BIRD-PG-0595",
+    "BIRD-PG-0604",
+    "BIRD-PG-0629",
+    "BIRD-PG-0637",
+    "BIRD-PG-0639",
+    "BIRD-PG-0671",
+    "BIRD-PG-0707",
+    "BIRD-PG-1473",
+    "BIRD-PG-1476",
+    "BIRD-PG-1479",
+    "BIRD-PG-1480",
+    "BIRD-PG-1481",
+    "BIRD-PG-1486",
+    "BIRD-PG-1505",
+    "BIRD-PG-1509",
+    "BIRD-PG-1524",
+    "BIRD-PG-1533",
+    "BIRD-PG-0092",
+    "BIRD-PG-0095",
+    "BIRD-PG-0099",
+    "BIRD-PG-0112",
+    "BIRD-PG-0115",
+    "BIRD-PG-0118",
+    "BIRD-PG-0145",
+    "BIRD-PG-0152",
+    "BIRD-PG-0159",
+    "BIRD-PG-0173",
+    "BIRD-PG-1361",
+    "BIRD-PG-1398",
+    "BIRD-PG-1399",
+    "BIRD-PG-1405",
+    "BIRD-PG-1409",
+    "BIRD-PG-1411",
+    "BIRD-PG-1427",
+    "BIRD-PG-1435",
+    "BIRD-PG-1457",
+    "BIRD-PG-1460",
+    "BIRD-PG-0717",
+    "BIRD-PG-0726",
+    "BIRD-PG-0738",
+    "BIRD-PG-0760",
+    "BIRD-PG-0766",
+    "BIRD-PG-0773",
+    "BIRD-PG-0782",
+    "BIRD-PG-0790",
+    "BIRD-PG-0794",
+    "BIRD-PG-0806",
+    "BIRD-PG-0195",
+    "BIRD-PG-0200",
+    "BIRD-PG-0201",
+    "BIRD-PG-0206",
+    "BIRD-PG-0226",
+    "BIRD-PG-0232",
+    "BIRD-PG-0239",
+    "BIRD-PG-0242",
+    "BIRD-PG-0263",
+    "BIRD-PG-0273"
+  ],
+  "database_ids": [
+    "california_schools",
+    "card_games",
+    "codebase_community",
+    "debit_card_specializing",
+    "financial",
+    "student_club",
+    "superhero",
+    "toxicology"
+  ],
+  "difficulty_counts": {
+    "challenging": 16,
+    "moderate": 40,
+    "simple": 24
+  },
+  "protocol_id": "m2_bird_pg_v1",
+  "selection_metadata": [
+    {
+      "case_id": "BIRD-PG-0011",
+      "database_id": "california_schools",
+      "difficulty": "simple",
+      "question_id": 11
+    },
+    {
+      "case_id": "BIRD-PG-0025",
+      "database_id": "california_schools",
+      "difficulty": "moderate",
+      "question_id": 25
+    },
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "difficulty": "challenging",
+      "question_id": 36
+    },
+    {
+      "case_id": "BIRD-PG-0048",
+      "database_id": "california_schools",
+      "difficulty": "moderate",
+      "question_id": 48
+    },
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "difficulty": "simple",
+      "question_id": 50
+    },
+    {
+      "case_id": "BIRD-PG-0072",
+      "database_id": "california_schools",
+      "difficulty": "moderate",
+      "question_id": 72
+    },
+    {
+      "case_id": "BIRD-PG-0077",
+      "database_id": "california_schools",
+      "difficulty": "moderate",
+      "question_id": 77
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "database_id": "california_schools",
+      "difficulty": "simple",
+      "question_id": 82
+    },
+    {
+      "case_id": "BIRD-PG-0083",
+      "database_id": "california_schools",
+      "difficulty": "challenging",
+      "question_id": 83
+    },
+    {
+      "case_id": "BIRD-PG-0085",
+      "database_id": "california_schools",
+      "difficulty": "moderate",
+      "question_id": 85
+    },
+    {
+      "case_id": "BIRD-PG-0352",
+      "database_id": "card_games",
+      "difficulty": "moderate",
+      "question_id": 352
+    },
+    {
+      "case_id": "BIRD-PG-0356",
+      "database_id": "card_games",
+      "difficulty": "simple",
+      "question_id": 356
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "difficulty": "simple",
+      "question_id": 368
+    },
+    {
+      "case_id": "BIRD-PG-0371",
+      "database_id": "card_games",
+      "difficulty": "challenging",
+      "question_id": 371
+    },
+    {
+      "case_id": "BIRD-PG-0379",
+      "database_id": "card_games",
+      "difficulty": "simple",
+      "question_id": 379
+    },
+    {
+      "case_id": "BIRD-PG-0407",
+      "database_id": "card_games",
+      "difficulty": "moderate",
+      "question_id": 407
+    },
+    {
+      "case_id": "BIRD-PG-0415",
+      "database_id": "card_games",
+      "difficulty": "challenging",
+      "question_id": 415
+    },
+    {
+      "case_id": "BIRD-PG-0459",
+      "database_id": "card_games",
+      "difficulty": "moderate",
+      "question_id": 459
+    },
+    {
+      "case_id": "BIRD-PG-0473",
+      "database_id": "card_games",
+      "difficulty": "moderate",
+      "question_id": 473
+    },
+    {
+      "case_id": "BIRD-PG-0480",
+      "database_id": "card_games",
+      "difficulty": "moderate",
+      "question_id": 480
+    },
+    {
+      "case_id": "BIRD-PG-0537",
+      "database_id": "codebase_community",
+      "difficulty": "simple",
+      "question_id": 537
+    },
+    {
+      "case_id": "BIRD-PG-0557",
+      "database_id": "codebase_community",
+      "difficulty": "moderate",
+      "question_id": 557
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "database_id": "codebase_community",
+      "difficulty": "challenging",
+      "question_id": 586
+    },
+    {
+      "case_id": "BIRD-PG-0595",
+      "database_id": "codebase_community",
+      "difficulty": "moderate",
+      "question_id": 595
+    },
+    {
+      "case_id": "BIRD-PG-0604",
+      "database_id": "codebase_community",
+      "difficulty": "moderate",
+      "question_id": 604
+    },
+    {
+      "case_id": "BIRD-PG-0629",
+      "database_id": "codebase_community",
+      "difficulty": "simple",
+      "question_id": 629
+    },
+    {
+      "case_id": "BIRD-PG-0637",
+      "database_id": "codebase_community",
+      "difficulty": "moderate",
+      "question_id": 637
+    },
+    {
+      "case_id": "BIRD-PG-0639",
+      "database_id": "codebase_community",
+      "difficulty": "challenging",
+      "question_id": 639
+    },
+    {
+      "case_id": "BIRD-PG-0671",
+      "database_id": "codebase_community",
+      "difficulty": "simple",
+      "question_id": 671
+    },
+    {
+      "case_id": "BIRD-PG-0707",
+      "database_id": "codebase_community",
+      "difficulty": "moderate",
+      "question_id": 707
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "difficulty": "moderate",
+      "question_id": 1473
+    },
+    {
+      "case_id": "BIRD-PG-1476",
+      "database_id": "debit_card_specializing",
+      "difficulty": "challenging",
+      "question_id": 1476
+    },
+    {
+      "case_id": "BIRD-PG-1479",
+      "database_id": "debit_card_specializing",
+      "difficulty": "moderate",
+      "question_id": 1479
+    },
+    {
+      "case_id": "BIRD-PG-1480",
+      "database_id": "debit_card_specializing",
+      "difficulty": "moderate",
+      "question_id": 1480
+    },
+    {
+      "case_id": "BIRD-PG-1481",
+      "database_id": "debit_card_specializing",
+      "difficulty": "challenging",
+      "question_id": 1481
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "difficulty": "simple",
+      "question_id": 1486
+    },
+    {
+      "case_id": "BIRD-PG-1505",
+      "database_id": "debit_card_specializing",
+      "difficulty": "simple",
+      "question_id": 1505
+    },
+    {
+      "case_id": "BIRD-PG-1509",
+      "database_id": "debit_card_specializing",
+      "difficulty": "moderate",
+      "question_id": 1509
+    },
+    {
+      "case_id": "BIRD-PG-1524",
+      "database_id": "debit_card_specializing",
+      "difficulty": "simple",
+      "question_id": 1524
+    },
+    {
+      "case_id": "BIRD-PG-1533",
+      "database_id": "debit_card_specializing",
+      "difficulty": "moderate",
+      "question_id": 1533
+    },
+    {
+      "case_id": "BIRD-PG-0092",
+      "database_id": "financial",
+      "difficulty": "simple",
+      "question_id": 92
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "difficulty": "moderate",
+      "question_id": 95
+    },
+    {
+      "case_id": "BIRD-PG-0099",
+      "database_id": "financial",
+      "difficulty": "moderate",
+      "question_id": 99
+    },
+    {
+      "case_id": "BIRD-PG-0112",
+      "database_id": "financial",
+      "difficulty": "simple",
+      "question_id": 112
+    },
+    {
+      "case_id": "BIRD-PG-0115",
+      "database_id": "financial",
+      "difficulty": "challenging",
+      "question_id": 115
+    },
+    {
+      "case_id": "BIRD-PG-0118",
+      "database_id": "financial",
+      "difficulty": "moderate",
+      "question_id": 118
+    },
+    {
+      "case_id": "BIRD-PG-0145",
+      "database_id": "financial",
+      "difficulty": "moderate",
+      "question_id": 145
+    },
+    {
+      "case_id": "BIRD-PG-0152",
+      "database_id": "financial",
+      "difficulty": "moderate",
+      "question_id": 152
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "difficulty": "simple",
+      "question_id": 159
+    },
+    {
+      "case_id": "BIRD-PG-0173",
+      "database_id": "financial",
+      "difficulty": "challenging",
+      "question_id": 173
+    },
+    {
+      "case_id": "BIRD-PG-1361",
+      "database_id": "student_club",
+      "difficulty": "simple",
+      "question_id": 1361
+    },
+    {
+      "case_id": "BIRD-PG-1398",
+      "database_id": "student_club",
+      "difficulty": "moderate",
+      "question_id": 1398
+    },
+    {
+      "case_id": "BIRD-PG-1399",
+      "database_id": "student_club",
+      "difficulty": "moderate",
+      "question_id": 1399
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "database_id": "student_club",
+      "difficulty": "moderate",
+      "question_id": 1405
+    },
+    {
+      "case_id": "BIRD-PG-1409",
+      "database_id": "student_club",
+      "difficulty": "simple",
+      "question_id": 1409
+    },
+    {
+      "case_id": "BIRD-PG-1411",
+      "database_id": "student_club",
+      "difficulty": "simple",
+      "question_id": 1411
+    },
+    {
+      "case_id": "BIRD-PG-1427",
+      "database_id": "student_club",
+      "difficulty": "moderate",
+      "question_id": 1427
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "difficulty": "moderate",
+      "question_id": 1435
+    },
+    {
+      "case_id": "BIRD-PG-1457",
+      "database_id": "student_club",
+      "difficulty": "challenging",
+      "question_id": 1457
+    },
+    {
+      "case_id": "BIRD-PG-1460",
+      "database_id": "student_club",
+      "difficulty": "challenging",
+      "question_id": 1460
+    },
+    {
+      "case_id": "BIRD-PG-0717",
+      "database_id": "superhero",
+      "difficulty": "simple",
+      "question_id": 717
+    },
+    {
+      "case_id": "BIRD-PG-0726",
+      "database_id": "superhero",
+      "difficulty": "moderate",
+      "question_id": 726
+    },
+    {
+      "case_id": "BIRD-PG-0738",
+      "database_id": "superhero",
+      "difficulty": "simple",
+      "question_id": 738
+    },
+    {
+      "case_id": "BIRD-PG-0760",
+      "database_id": "superhero",
+      "difficulty": "challenging",
+      "question_id": 760
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "database_id": "superhero",
+      "difficulty": "moderate",
+      "question_id": 766
+    },
+    {
+      "case_id": "BIRD-PG-0773",
+      "database_id": "superhero",
+      "difficulty": "challenging",
+      "question_id": 773
+    },
+    {
+      "case_id": "BIRD-PG-0782",
+      "database_id": "superhero",
+      "difficulty": "moderate",
+      "question_id": 782
+    },
+    {
+      "case_id": "BIRD-PG-0790",
+      "database_id": "superhero",
+      "difficulty": "moderate",
+      "question_id": 790
+    },
+    {
+      "case_id": "BIRD-PG-0794",
+      "database_id": "superhero",
+      "difficulty": "moderate",
+      "question_id": 794
+    },
+    {
+      "case_id": "BIRD-PG-0806",
+      "database_id": "superhero",
+      "difficulty": "simple",
+      "question_id": 806
+    },
+    {
+      "case_id": "BIRD-PG-0195",
+      "database_id": "toxicology",
+      "difficulty": "simple",
+      "question_id": 195
+    },
+    {
+      "case_id": "BIRD-PG-0200",
+      "database_id": "toxicology",
+      "difficulty": "simple",
+      "question_id": 200
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "difficulty": "moderate",
+      "question_id": 201
+    },
+    {
+      "case_id": "BIRD-PG-0206",
+      "database_id": "toxicology",
+      "difficulty": "challenging",
+      "question_id": 206
+    },
+    {
+      "case_id": "BIRD-PG-0226",
+      "database_id": "toxicology",
+      "difficulty": "moderate",
+      "question_id": 226
+    },
+    {
+      "case_id": "BIRD-PG-0232",
+      "database_id": "toxicology",
+      "difficulty": "moderate",
+      "question_id": 232
+    },
+    {
+      "case_id": "BIRD-PG-0239",
+      "database_id": "toxicology",
+      "difficulty": "simple",
+      "question_id": 239
+    },
+    {
+      "case_id": "BIRD-PG-0242",
+      "database_id": "toxicology",
+      "difficulty": "moderate",
+      "question_id": 242
+    },
+    {
+      "case_id": "BIRD-PG-0263",
+      "database_id": "toxicology",
+      "difficulty": "challenging",
+      "question_id": 263
+    },
+    {
+      "case_id": "BIRD-PG-0273",
+      "database_id": "toxicology",
+      "difficulty": "moderate",
+      "question_id": 273
+    }
+  ],
+  "split": "development80"
+}

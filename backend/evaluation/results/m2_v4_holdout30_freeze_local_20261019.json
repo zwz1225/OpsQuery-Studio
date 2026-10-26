@@ -1,0 +1,41 @@
+{
+  "accepted_development_evidence": {
+    "m2_public_intent_v4_development80_native_server.json": "1bbb278d0a5ffb99b3049faff6e1da2c482230284188e71e8d4fb44504c38774",
+    "m2_public_intent_v4_development80_server.json": "e19e9eb40db7bc72c9bbf88ecbb31eb126aa28432c183669f4ff08ff4d8c25ef"
+  },
+  "candidate_file": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\candidates\\m2_v4_holdout30_candidate_20261019.json",
+  "candidate_file_sha256": "a14e30b6bcc0b51075f0f5da5607a56ba781a4ce0557444b69c14337a149d077",
+  "candidate_id": "m2_v4_97342997118d809666147b0d943f0a676fbb65e220fe5bbc62d89e4e2ecfbbfc",
+  "candidate_sha256": "97342997118d809666147b0d943f0a676fbb65e220fe5bbc62d89e4e2ecfbbfc",
+  "checked_delivery_file_count": 143,
+  "controller_files": {
+    "scripts/m2_holdout_control.py": "d64b3e1c318599d2abe1c8bc489dc9bbeecd0a1ea35179c8a41d2c553c004313",
+    "scripts/m2_holdout_worker.py": "e16a8cfa089e6de77143184c33c28a372009a7b88b7f1e4831f87c123ae6b744",
+    "scripts/rescore_m2_intent_candidate.py": "3a97911ac03a0d6f73345f36d990fc5ffa7e2258cd31360c1c4d466ea3458b1c",
+    "scripts/run_m2_holdout30.py": "ea45973ebe23e6c73c964d0a9401b068e6f168c4ce0502be492bcdb381d30d4f",
+    "scripts/run_m2_v4_development80.py": "6a307401471d919b7aadb0fe1dec7426c4eb278323ee199f94b595cbbba886aa"
+  },
+  "formal_holdout_attempt_registered": false,
+  "formal_holdout_executed": false,
+  "holdout_result": null,
+  "m2_final_acceptance": "Pending one controlled server holdout30 attempt and complete evidence review",
+  "m2_regression_tests": 373,
+  "m2_regression_tests_passed": 370,
+  "m2_regression_tests_skipped": 3,
+  "new_model_request_count": 0,
+  "offline_host_verification": "Reviewed server identity retained; local platform differs; current server check pending.",
+  "offline_static_preflight_passed": true,
+  "package": "E:\\PythonLearn\\askdata_studio_ops_release\\M2_v4_holdout30_frozen_sync_20261019.zip",
+  "package_bytes": 42531,
+  "package_file_count": 8,
+  "package_sha256": "a05b04eef5647423b96a9a3bc9e38579c7f90981330747a58ce31adc2ccbcb60",
+  "postgresql_connected": false,
+  "producer_files_unchanged": 96,
+  "protocol_artifacts_unchanged": 11,
+  "recorded_at": "2026-10-19T08:02:49.775040+00:00",
+  "run_status": "complete",
+  "skipped_scope": "Existing Linux-only isolation checks on Windows; live server probes still required.",
+  "stage": "M2 v4 candidate frozen; controlled holdout30 prepared",
+  "targeted_tests": 27,
+  "targeted_tests_passed": 27
+}

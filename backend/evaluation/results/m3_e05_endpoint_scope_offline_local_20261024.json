@@ -1,0 +1,47 @@
+{
+  "stage": "M3 E05 explicit public endpoint offline probe",
+  "run_status": "complete",
+  "formal_benchmark": false,
+  "holdout_run": false,
+  "database_connected": false,
+  "new_model_request_count": 0,
+  "development_public_case_count": 80,
+  "captured_case_count": 24,
+  "bound_case_count": 1,
+  "bound_cases": [
+    {
+      "case_id": "BIRD-PG-0239",
+      "database_id": "toxicology",
+      "contract": {
+        "policy": "m3_public_explicit_endpoint_scope_candidate_v1",
+        "enforcement": "advisory_only",
+        "basis": "public_evidence_explicit_like_endpoint_and_metric",
+        "table_id": "toxicology.connected",
+        "predicate_field_id": "toxicology.connected.atom_id",
+        "metric_field_id": "toxicology.connected.bond_id",
+        "operator": "LIKE",
+        "pattern": "TR%_19",
+        "guidance": "The public evidence names the filter endpoint. Preserve that field's role; include another endpoint only when the question or evidence requests it."
+      },
+      "saved_sql_observations": [
+        {
+          "code": "explicit_endpoint_widened_by_or",
+          "severity": "advisory",
+          "field_id": "toxicology.connected.atom_id",
+          "other_fields": [
+            "atom_id2"
+          ],
+          "reason": "The public evidence names the filter endpoint. Preserve that field's role; include another endpoint only when the question or evidence requests it."
+        }
+      ],
+      "saved_sql_available": true
+    }
+  ],
+  "source_sha256": {
+    "public_development80": "6760724e98b6da967ac5ebb2698c4e5cab385875bd150ad36a3b252ffdc52f03",
+    "authorized_import_manifest": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879",
+    "e04_candidate_capture": "a4ede17c434aad8d0e7145f4574e8a8ff812228263841cbb25f207a39a7b4578",
+    "endpoint_scope_module": "f3c6674579f60d86e8eeb526d9f9fbabba10de94b689c067acdf38dfa686a905"
+  },
+  "meaning": "Public-only applicability and saved SQL observations; no fresh generation, SQL execution or EX scoring."
+}

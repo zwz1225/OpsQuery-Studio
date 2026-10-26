@@ -1,0 +1,1513 @@
+{
+  "stage": "M2 C downloaded runtime report local evidence review",
+  "run_status": "complete",
+  "reviewed_at": "2026-10-16T08:03:35.300657+00:00",
+  "source_report": "evaluation/results/m2_c_bird_runtime_server.json",
+  "source_report_sha256": "ecaf50f6c7a17460dd6260a9dcf198f91fcf33e397e581c16aa82a55d7d63473",
+  "check_count": 339,
+  "check_pass_count": 339,
+  "failed_checks": [],
+  "can_proceed_to_gold110": true,
+  "gold110_execution_verified": false,
+  "local_postgresql_connected": false,
+  "new_model_request_count": 0,
+  "scope": "Downloaded server evidence crosschecked against accepted M2 B reports, fresh local catalog/CSV assembly and delivered/current file hashes. No new database or model calls.",
+  "limitations": [
+    "Budget probes are simulated counters; no model HTTP calls were exercised.",
+    "Actual process timeout probe is 1 second; formal 600-second timeout is configured, not measured for 600 seconds.",
+    "Profiles exercise 22 fields; the authorized catalogs cover all 798 fields.",
+    "Live verification snapshots are per domain; this is not one global atomic snapshot.",
+    "This runtime report does not execute Gold110 and is not a model EX score."
+  ],
+  "server_environment": {
+    "sha256": "96d0ccff7b6bfd5962c8dc091b36d68238d4068da39f379b0a30156414e7b269",
+    "dependencies": {
+      "psycopg": "3.2.13",
+      "psycopg-pool": "3.2.8",
+      "sqlglot": "30.17.0"
+    },
+    "python": "3.11.15",
+    "system": "Linux",
+    "kernel": "6.8.0-59-generic",
+    "machine": "x86_64",
+    "seccomp_library_version": "2.5.3"
+  },
+  "summary": {
+    "logical_database_count": 11,
+    "table_count": 75,
+    "field_count": 798,
+    "profile_field_count": 22,
+    "isolation_path_denials": 4,
+    "simulated_budget_checks": 7
+  },
+  "domains": [
+    {
+      "database_id": "california_schools",
+      "query_role": "askdata_m2_ro_california_schools",
+      "table_count": 3,
+      "field_count": 89,
+      "row_count": 29941,
+      "profile_field_count": 2,
+      "authorized_catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+      "authorized_data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+    },
+    {
+      "database_id": "card_games",
+      "query_role": "askdata_m2_ro_card_games",
+      "table_count": 6,
+      "field_count": 115,
+      "row_count": 803445,
+      "profile_field_count": 2,
+      "authorized_catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+      "authorized_data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51"
+    },
+    {
+      "database_id": "codebase_community",
+      "query_role": "askdata_m2_ro_codebase_community",
+      "table_count": 8,
+      "field_count": 71,
+      "row_count": 740646,
+      "profile_field_count": 2,
+      "authorized_catalog_version": "9f9da4752911621e3159a107239173112469ab862e90ea007a9cc23a4aed5940",
+      "authorized_data_version": "ca3a7af721e8f16536b022f5fa94d2bd744dd8ebef57504070c280cd3b206a20"
+    },
+    {
+      "database_id": "debit_card_specializing",
+      "query_role": "askdata_m2_ro_debit_card_specializing",
+      "table_count": 5,
+      "field_count": 21,
+      "row_count": 423050,
+      "profile_field_count": 2,
+      "authorized_catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+      "authorized_data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+    },
+    {
+      "database_id": "european_football_2",
+      "query_role": "askdata_m2_ro_european_football_2",
+      "table_count": 7,
+      "field_count": 199,
+      "row_count": 222796,
+      "profile_field_count": 2,
+      "authorized_catalog_version": "7e65c485d64772c03edab6c13baa65eae104a933b2b115be747fe0c733cdfd8b",
+      "authorized_data_version": "cc4a4cfeed56bc10bb114cb58229c32cdcd5e270020dce63b21b931931562c16"
+    },
+    {
+      "database_id": "financial",
+      "query_role": "askdata_m2_ro_financial",
+      "table_count": 8,
+      "field_count": 55,
+      "row_count": 1079680,
+      "profile_field_count": 2,
+      "authorized_catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+      "authorized_data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+    },
+    {
+      "database_id": "formula_1",
+      "query_role": "askdata_m2_ro_formula_1",
+      "table_count": 13,
+      "field_count": 94,
+      "row_count": 493257,
+      "profile_field_count": 2,
+      "authorized_catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+      "authorized_data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918"
+    },
+    {
+      "database_id": "student_club",
+      "query_role": "askdata_m2_ro_student_club",
+      "table_count": 8,
+      "field_count": 48,
+      "row_count": 42511,
+      "profile_field_count": 2,
+      "authorized_catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+      "authorized_data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2"
+    },
+    {
+      "database_id": "superhero",
+      "query_role": "askdata_m2_ro_superhero",
+      "table_count": 10,
+      "field_count": 31,
+      "row_count": 10614,
+      "profile_field_count": 2,
+      "authorized_catalog_version": "da4f545f640fb421a606e4678596999bd6f25759f5071c5830f9fe15ee39d4f1",
+      "authorized_data_version": "6683e9c5689d1b66eecc60ea7b28f5066e55730be0e9c26c7f10ac454411e3f6"
+    },
+    {
+      "database_id": "thrombosis_prediction",
+      "query_role": "askdata_m2_ro_thrombosis_prediction",
+      "table_count": 3,
+      "field_count": 64,
+      "row_count": 15252,
+      "profile_field_count": 2,
+      "authorized_catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+      "authorized_data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c"
+    },
+    {
+      "database_id": "toxicology",
+      "query_role": "askdata_m2_ro_toxicology",
+      "table_count": 4,
+      "field_count": 11,
+      "row_count": 36922,
+      "profile_field_count": 2,
+      "authorized_catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+      "authorized_data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+    }
+  ],
+  "checks": [
+    {
+      "name": "stage",
+      "passed": true
+    },
+    {
+      "name": "complete_without_errors",
+      "passed": true
+    },
+    {
+      "name": "postgresql_connected",
+      "passed": true
+    },
+    {
+      "name": "target_data_verified",
+      "passed": true
+    },
+    {
+      "name": "unknown_database_rejected",
+      "passed": true
+    },
+    {
+      "name": "sql_failure_recovery_verified",
+      "passed": true
+    },
+    {
+      "name": "pools_closed",
+      "passed": true
+    },
+    {
+      "name": "runtime_verified",
+      "passed": true
+    },
+    {
+      "name": "runtime_available",
+      "passed": true
+    },
+    {
+      "name": "agent_isolation_verified",
+      "passed": true
+    },
+    {
+      "name": "budget_enforcement_verified",
+      "passed": true
+    },
+    {
+      "name": "no_creation_import_or_model_calls",
+      "passed": true
+    },
+    {
+      "name": "protocol_and_import_spec",
+      "passed": true
+    },
+    {
+      "name": "full_source_binding",
+      "passed": true
+    },
+    {
+      "name": "code_binding_self_digest",
+      "passed": true
+    },
+    {
+      "name": "delivered_code_inventory",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/routes.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/database.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/contracts.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/csv_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/dialects.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_connections.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/row_digest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/sql_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/values.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/errors.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/main.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/schemas.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/server.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/database_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/presentation_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/time_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/model_client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/data_qa_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/duckdb_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/metric_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/postgres_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/response_generator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/single_database_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/time_field_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/access_control.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/auth.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/askdata_service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/memory_store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_archive.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/short_term_memory.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/registry.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/clarification.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/query_graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/result_builder.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/state.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/budgets.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/case_worker.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/evidence.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/isolated_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/manifest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/metrics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/model.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/native.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/retrieval.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/sql.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird_protocol.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/run_bird_benchmark.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/check_m2_c_bird_runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_common.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_dump.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_structure.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_target.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_typed_rows.py",
+      "passed": true
+    },
+    {
+      "name": "pinned_dependencies",
+      "passed": true
+    },
+    {
+      "name": "server_platform",
+      "passed": true
+    },
+    {
+      "name": "isolation_passed",
+      "passed": true
+    },
+    {
+      "name": "seccomp_library_and_kernel",
+      "passed": true
+    },
+    {
+      "name": "mandatory_seccomp",
+      "passed": true
+    },
+    {
+      "name": "additional_landlock",
+      "passed": true
+    },
+    {
+      "name": "isolation_policy:project_read_access",
+      "passed": true
+    },
+    {
+      "name": "isolation_policy:environment_credentials",
+      "passed": true
+    },
+    {
+      "name": "isolation_policy:direct_database_access",
+      "passed": true
+    },
+    {
+      "name": "four_existing_file_denials",
+      "passed": true
+    },
+    {
+      "name": "actual_probe:network_socket_denied",
+      "passed": true
+    },
+    {
+      "name": "actual_probe:process_creation_denied",
+      "passed": true
+    },
+    {
+      "name": "actual_probe:secret_environment_absent",
+      "passed": true
+    },
+    {
+      "name": "hard_process_timeout",
+      "passed": true
+    },
+    {
+      "name": "seven_simulated_budget_checks",
+      "passed": true
+    },
+    {
+      "name": "eleven_unique_domains",
+      "passed": true
+    },
+    {
+      "name": "california_schools:role",
+      "passed": true
+    },
+    {
+      "name": "california_schools:source_identity",
+      "passed": true
+    },
+    {
+      "name": "california_schools:offline_versions",
+      "passed": true
+    },
+    {
+      "name": "california_schools:fresh_verification",
+      "passed": true
+    },
+    {
+      "name": "california_schools:table_field_counts",
+      "passed": true
+    },
+    {
+      "name": "california_schools:native_duplicate_names_preserved",
+      "passed": true
+    },
+    {
+      "name": "california_schools:cross_domain_sql_denied",
+      "passed": true
+    },
+    {
+      "name": "california_schools:cross_domain_profile_denied",
+      "passed": true
+    },
+    {
+      "name": "california_schools:official_descriptions",
+      "passed": true
+    },
+    {
+      "name": "california_schools:profile_field_selection",
+      "passed": true
+    },
+    {
+      "name": "california_schools:profile:cdscode:counts",
+      "passed": true
+    },
+    {
+      "name": "california_schools:profile:cdscode:identity",
+      "passed": true
+    },
+    {
+      "name": "california_schools:profile:cdscode:policy",
+      "passed": true
+    },
+    {
+      "name": "california_schools:profile:cdscode:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "california_schools:profile:cdscode:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "california_schools:profile:Academic Year:counts",
+      "passed": true
+    },
+    {
+      "name": "california_schools:profile:Academic Year:identity",
+      "passed": true
+    },
+    {
+      "name": "california_schools:profile:Academic Year:policy",
+      "passed": true
+    },
+    {
+      "name": "california_schools:profile:Academic Year:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "california_schools:profile:Academic Year:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "card_games:role",
+      "passed": true
+    },
+    {
+      "name": "card_games:source_identity",
+      "passed": true
+    },
+    {
+      "name": "card_games:offline_versions",
+      "passed": true
+    },
+    {
+      "name": "card_games:fresh_verification",
+      "passed": true
+    },
+    {
+      "name": "card_games:table_field_counts",
+      "passed": true
+    },
+    {
+      "name": "card_games:native_duplicate_names_preserved",
+      "passed": true
+    },
+    {
+      "name": "card_games:cross_domain_sql_denied",
+      "passed": true
+    },
+    {
+      "name": "card_games:cross_domain_profile_denied",
+      "passed": true
+    },
+    {
+      "name": "card_games:official_descriptions",
+      "passed": true
+    },
+    {
+      "name": "card_games:profile_field_selection",
+      "passed": true
+    },
+    {
+      "name": "card_games:profile:id:counts",
+      "passed": true
+    },
+    {
+      "name": "card_games:profile:id:identity",
+      "passed": true
+    },
+    {
+      "name": "card_games:profile:id:policy",
+      "passed": true
+    },
+    {
+      "name": "card_games:profile:id:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "card_games:profile:id:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "card_games:profile:artist:counts",
+      "passed": true
+    },
+    {
+      "name": "card_games:profile:artist:identity",
+      "passed": true
+    },
+    {
+      "name": "card_games:profile:artist:policy",
+      "passed": true
+    },
+    {
+      "name": "card_games:profile:artist:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "card_games:profile:artist:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:role",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:source_identity",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:offline_versions",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:fresh_verification",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:table_field_counts",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:native_duplicate_names_preserved",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:cross_domain_sql_denied",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:cross_domain_profile_denied",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:official_descriptions",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:profile_field_selection",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:profile:id:counts",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:profile:id:identity",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:profile:id:policy",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:profile:id:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:profile:id:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:profile:userid:counts",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:profile:userid:identity",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:profile:userid:policy",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:profile:userid:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:profile:userid:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:role",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:source_identity",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:offline_versions",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:fresh_verification",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:table_field_counts",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:native_duplicate_names_preserved",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:cross_domain_sql_denied",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:cross_domain_profile_denied",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:official_descriptions",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:profile_field_selection",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:profile:customerid:counts",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:profile:customerid:identity",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:profile:customerid:policy",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:profile:customerid:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:profile:customerid:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:profile:segment:counts",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:profile:segment:identity",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:profile:segment:policy",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:profile:segment:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:profile:segment:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:role",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:source_identity",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:offline_versions",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:fresh_verification",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:table_field_counts",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:native_duplicate_names_preserved",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:cross_domain_sql_denied",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:cross_domain_profile_denied",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:official_descriptions",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:profile_field_selection",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:profile:id:counts",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:profile:id:identity",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:profile:id:policy",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:profile:id:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:profile:id:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:profile:name:counts",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:profile:name:identity",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:profile:name:policy",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:profile:name:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "european_football_2:profile:name:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "financial:role",
+      "passed": true
+    },
+    {
+      "name": "financial:source_identity",
+      "passed": true
+    },
+    {
+      "name": "financial:offline_versions",
+      "passed": true
+    },
+    {
+      "name": "financial:fresh_verification",
+      "passed": true
+    },
+    {
+      "name": "financial:table_field_counts",
+      "passed": true
+    },
+    {
+      "name": "financial:native_duplicate_names_preserved",
+      "passed": true
+    },
+    {
+      "name": "financial:cross_domain_sql_denied",
+      "passed": true
+    },
+    {
+      "name": "financial:cross_domain_profile_denied",
+      "passed": true
+    },
+    {
+      "name": "financial:official_descriptions",
+      "passed": true
+    },
+    {
+      "name": "financial:profile_field_selection",
+      "passed": true
+    },
+    {
+      "name": "financial:profile:account_id:counts",
+      "passed": true
+    },
+    {
+      "name": "financial:profile:account_id:identity",
+      "passed": true
+    },
+    {
+      "name": "financial:profile:account_id:policy",
+      "passed": true
+    },
+    {
+      "name": "financial:profile:account_id:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "financial:profile:account_id:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "financial:profile:district_id:counts",
+      "passed": true
+    },
+    {
+      "name": "financial:profile:district_id:identity",
+      "passed": true
+    },
+    {
+      "name": "financial:profile:district_id:policy",
+      "passed": true
+    },
+    {
+      "name": "financial:profile:district_id:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "financial:profile:district_id:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "formula_1:role",
+      "passed": true
+    },
+    {
+      "name": "formula_1:source_identity",
+      "passed": true
+    },
+    {
+      "name": "formula_1:offline_versions",
+      "passed": true
+    },
+    {
+      "name": "formula_1:fresh_verification",
+      "passed": true
+    },
+    {
+      "name": "formula_1:table_field_counts",
+      "passed": true
+    },
+    {
+      "name": "formula_1:native_duplicate_names_preserved",
+      "passed": true
+    },
+    {
+      "name": "formula_1:cross_domain_sql_denied",
+      "passed": true
+    },
+    {
+      "name": "formula_1:cross_domain_profile_denied",
+      "passed": true
+    },
+    {
+      "name": "formula_1:official_descriptions",
+      "passed": true
+    },
+    {
+      "name": "formula_1:profile_field_selection",
+      "passed": true
+    },
+    {
+      "name": "formula_1:profile:circuitid:counts",
+      "passed": true
+    },
+    {
+      "name": "formula_1:profile:circuitid:identity",
+      "passed": true
+    },
+    {
+      "name": "formula_1:profile:circuitid:policy",
+      "passed": true
+    },
+    {
+      "name": "formula_1:profile:circuitid:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "formula_1:profile:circuitid:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "formula_1:profile:circuitref:counts",
+      "passed": true
+    },
+    {
+      "name": "formula_1:profile:circuitref:identity",
+      "passed": true
+    },
+    {
+      "name": "formula_1:profile:circuitref:policy",
+      "passed": true
+    },
+    {
+      "name": "formula_1:profile:circuitref:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "formula_1:profile:circuitref:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "student_club:role",
+      "passed": true
+    },
+    {
+      "name": "student_club:source_identity",
+      "passed": true
+    },
+    {
+      "name": "student_club:offline_versions",
+      "passed": true
+    },
+    {
+      "name": "student_club:fresh_verification",
+      "passed": true
+    },
+    {
+      "name": "student_club:table_field_counts",
+      "passed": true
+    },
+    {
+      "name": "student_club:native_duplicate_names_preserved",
+      "passed": true
+    },
+    {
+      "name": "student_club:cross_domain_sql_denied",
+      "passed": true
+    },
+    {
+      "name": "student_club:cross_domain_profile_denied",
+      "passed": true
+    },
+    {
+      "name": "student_club:official_descriptions",
+      "passed": true
+    },
+    {
+      "name": "student_club:profile_field_selection",
+      "passed": true
+    },
+    {
+      "name": "student_club:profile:link_to_event:counts",
+      "passed": true
+    },
+    {
+      "name": "student_club:profile:link_to_event:identity",
+      "passed": true
+    },
+    {
+      "name": "student_club:profile:link_to_event:policy",
+      "passed": true
+    },
+    {
+      "name": "student_club:profile:link_to_event:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "student_club:profile:link_to_event:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "student_club:profile:link_to_member:counts",
+      "passed": true
+    },
+    {
+      "name": "student_club:profile:link_to_member:identity",
+      "passed": true
+    },
+    {
+      "name": "student_club:profile:link_to_member:policy",
+      "passed": true
+    },
+    {
+      "name": "student_club:profile:link_to_member:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "student_club:profile:link_to_member:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "superhero:role",
+      "passed": true
+    },
+    {
+      "name": "superhero:source_identity",
+      "passed": true
+    },
+    {
+      "name": "superhero:offline_versions",
+      "passed": true
+    },
+    {
+      "name": "superhero:fresh_verification",
+      "passed": true
+    },
+    {
+      "name": "superhero:table_field_counts",
+      "passed": true
+    },
+    {
+      "name": "superhero:native_duplicate_names_preserved",
+      "passed": true
+    },
+    {
+      "name": "superhero:cross_domain_sql_denied",
+      "passed": true
+    },
+    {
+      "name": "superhero:cross_domain_profile_denied",
+      "passed": true
+    },
+    {
+      "name": "superhero:official_descriptions",
+      "passed": true
+    },
+    {
+      "name": "superhero:profile_field_selection",
+      "passed": true
+    },
+    {
+      "name": "superhero:profile:id:counts",
+      "passed": true
+    },
+    {
+      "name": "superhero:profile:id:identity",
+      "passed": true
+    },
+    {
+      "name": "superhero:profile:id:policy",
+      "passed": true
+    },
+    {
+      "name": "superhero:profile:id:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "superhero:profile:id:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "superhero:profile:alignment:counts",
+      "passed": true
+    },
+    {
+      "name": "superhero:profile:alignment:identity",
+      "passed": true
+    },
+    {
+      "name": "superhero:profile:alignment:policy",
+      "passed": true
+    },
+    {
+      "name": "superhero:profile:alignment:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "superhero:profile:alignment:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:role",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:source_identity",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:offline_versions",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:fresh_verification",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:table_field_counts",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:native_duplicate_names_preserved",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:cross_domain_sql_denied",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:cross_domain_profile_denied",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:official_descriptions",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:profile_field_selection",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:profile:id:counts",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:profile:id:identity",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:profile:id:policy",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:profile:id:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:profile:id:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:profile:Examination Date:counts",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:profile:Examination Date:identity",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:profile:Examination Date:policy",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:profile:Examination Date:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "thrombosis_prediction:profile:Examination Date:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "toxicology:role",
+      "passed": true
+    },
+    {
+      "name": "toxicology:source_identity",
+      "passed": true
+    },
+    {
+      "name": "toxicology:offline_versions",
+      "passed": true
+    },
+    {
+      "name": "toxicology:fresh_verification",
+      "passed": true
+    },
+    {
+      "name": "toxicology:table_field_counts",
+      "passed": true
+    },
+    {
+      "name": "toxicology:native_duplicate_names_preserved",
+      "passed": true
+    },
+    {
+      "name": "toxicology:cross_domain_sql_denied",
+      "passed": true
+    },
+    {
+      "name": "toxicology:cross_domain_profile_denied",
+      "passed": true
+    },
+    {
+      "name": "toxicology:official_descriptions",
+      "passed": true
+    },
+    {
+      "name": "toxicology:profile_field_selection",
+      "passed": true
+    },
+    {
+      "name": "toxicology:profile:atom_id:counts",
+      "passed": true
+    },
+    {
+      "name": "toxicology:profile:atom_id:identity",
+      "passed": true
+    },
+    {
+      "name": "toxicology:profile:atom_id:policy",
+      "passed": true
+    },
+    {
+      "name": "toxicology:profile:atom_id:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "toxicology:profile:atom_id:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "toxicology:profile:molecule_id:counts",
+      "passed": true
+    },
+    {
+      "name": "toxicology:profile:molecule_id:identity",
+      "passed": true
+    },
+    {
+      "name": "toxicology:profile:molecule_id:policy",
+      "passed": true
+    },
+    {
+      "name": "toxicology:profile:molecule_id:sample_bound",
+      "passed": true
+    },
+    {
+      "name": "toxicology:profile:molecule_id:typed_ascending_distinct_samples",
+      "passed": true
+    },
+    {
+      "name": "summary",
+      "passed": true
+    },
+    {
+      "name": "total_rows",
+      "passed": true
+    }
+  ]
+}

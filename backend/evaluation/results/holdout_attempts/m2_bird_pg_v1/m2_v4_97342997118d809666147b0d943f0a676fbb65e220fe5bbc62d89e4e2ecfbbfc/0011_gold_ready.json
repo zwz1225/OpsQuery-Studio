@@ -1,0 +1,9 @@
+{
+  "artifact_sha256": "2ad4b60649b9a8e2bf55b9c2b3f696c77cd2c87a2e861e4787f731be2639b36b",
+  "attempt_id": "1218483158c643a085e7b9360dd4a7d7",
+  "case_id": "BIRD-PG-1116",
+  "kind": "gold_ready",
+  "previous_event_sha256": "3890005af9f3ae24b6712f52899cac891ea141615c4a0c28462710222fcc23a1",
+  "recorded_at": "2026-10-19T08:55:13.412870+00:00",
+  "sequence": 11
+}

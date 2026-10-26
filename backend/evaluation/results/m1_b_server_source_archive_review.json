@@ -1,0 +1,610 @@
+{
+  "stage": "M1 B server source preparation archive review",
+  "status": "passed",
+  "reviewed_at": "2026-10-08T08:30:23.022719+00:00",
+  "errors": [],
+  "source_data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "source_catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+  "canonical_import_spec_sha256": "8f936c3089614a38b17194b76e0c073c20cfe5b194ecb8f9f1e27b8f4d2ca7fd",
+  "server_input_sha256": {
+    "source_preflight.json": "32b3bbff54e327e4ada230395fd82909f538bddafc0481e59f190f72f0f95929",
+    "import_manifest.json": "4b8952e8d8c29965a1fa79d544e913772a9d12a9b3f36d09b433daaf47561ef7",
+    "preparation_review.json": "ae6f34b0452f4602f4e33caa67c33a8119761a4d584c45c143b6e3b6d24bcf5b"
+  },
+  "local_input_sha256": {
+    "source_preflight.json": "a38c1342e303183598dd78653570b7ece4d000278dc5d0ab7d2def2e711b6f30",
+    "import_manifest.json": "1867a550931d67b507a22ef36dd03761bc8dd2f7733350cb845715aa2abd4111",
+    "preparation_review.json": "3f332d06dd8a4d379a9e5fcab7b643d56d6a1b1aa9f23ba7ea3743adbbc04506"
+  },
+  "summary": {
+    "source_file_count": 43,
+    "table_count": 41,
+    "field_count": 276,
+    "row_count": 722732,
+    "relation_count": 53,
+    "error_count": 0,
+    "columns_with_null": [
+      {
+        "table": "channel_attributions",
+        "column": "ad_campaign_id",
+        "null_count": 177
+      },
+      {
+        "table": "channel_conversion_events",
+        "column": "ad_campaign_id",
+        "null_count": 306
+      },
+      {
+        "table": "recall_results",
+        "column": "returned_at",
+        "null_count": 8255
+      },
+      {
+        "table": "user_activations",
+        "column": "activated_at",
+        "null_count": 3022
+      },
+      {
+        "table": "user_activations",
+        "column": "activation_seconds",
+        "null_count": 3022
+      }
+    ]
+  },
+  "canonical_manifests_identical": true,
+  "manifest_bytes_identical_after_newline_normalization": true,
+  "server_recorded_ddl_hash_matches_local_linux_newlines": true,
+  "source_file_checks": [
+    {
+      "name": "acquisition_channels.csv",
+      "sha256": "e1dd8578aa5b173e28060d1c8c731234fcb97657b96cde58e6d0c71758a10151",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "ad_accounts.csv",
+      "sha256": "717f5850e1b810566d45a237cae630dcd1bd5d880daed71bc7064d87230a73d5",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "ad_campaigns.csv",
+      "sha256": "2cbe6f55d8bb36d2c8db41e2a3602a6e0beebac1b369a2c2708bc047e02b928f",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "ad_creatives.csv",
+      "sha256": "ff1b906c7b471042014835b24cba1e5a719ac23ac8fee596fc4259cbdaedf489",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "ad_daily_stats.csv",
+      "sha256": "d26bad3fa663b8e0abeb1ff056e9f65df55aa163aebe298b179e90e9b2de90fc",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "budget_adjustments.csv",
+      "sha256": "41fe7fa82dc10f97e551a7e891a9f40d02a5baac40c480e2135dc9ee488e1359",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "channel_attributions.csv",
+      "sha256": "46a4d8305627dff300d4a6e4a6f9ab9012e61c1e9ca5609360ac39b76d94297b",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "channel_conversion_events.csv",
+      "sha256": "d99dea3ef61ee18d1a72ce5d98b00d4e35502e20d5217810170d31157c7ac078",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "channel_targets.csv",
+      "sha256": "bbfe0316b3baf48b853c9cc5ea23f7cea44ad57d8e329108afca1f3a3a3dd849",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "content_audits.csv",
+      "sha256": "0d5b76eed09bda3e547b02a2d80d466889b6f364ae0cbf5493965fd3499b831b",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "content_categories.csv",
+      "sha256": "62f0d6c0cc83ab02333bbef6e8274442a9b82a0f04b7ae7f82af62393a0fb671",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "content_daily_metrics.csv",
+      "sha256": "0d1828e22aa17bebc60c96f773b114c7e94a794eab1114f6f2f6688871a50638",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "content_reports.csv",
+      "sha256": "6ec50eae5acd580276dbc9cb02920ad042bde09d264d5f736ad981054af9aeed",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "content_tag_relations.csv",
+      "sha256": "50177097cd0112a90f3c38a033a54b26cd6d63df13fafbe63707f8ca4da4d2d7",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "content_tags.csv",
+      "sha256": "ef29886b383f1d4adcd38110780ebc454eef85ae455174ca8780641165f09d33",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "contents.csv",
+      "sha256": "6e1c0c5f93d3fc1fad07ef2110fad51fe02c4ed104f55312d5e5783d8fd44809",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "creator_daily_metrics.csv",
+      "sha256": "3cbea3463c7f351573b4cf1aeda4f25aed0d33c53b032f4ad1cb099ed124b6e3",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "creator_profiles.csv",
+      "sha256": "851cd2499e82fcc184193d671f877d3ff5cd114acdef862c1d40ae0d207bed1b",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "creators.csv",
+      "sha256": "9ab2bd4e79acffee5698b5f6ee8068329681c344354c1ea52672941e611d63c6",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "growth_daily_metrics.csv",
+      "sha256": "85b9dc9f0cabf8811638b9b000a58648cd71cf878c4725d4778172dddce87b0d",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "growth_targets.csv",
+      "sha256": "4f74ae9a926d3abc5e4261e6bb36601ac9ec487d2b400d4a545a03abae6ac37d",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "recall_campaigns.csv",
+      "sha256": "61707dd98bbf9067ddec9a233bbe27244bda329b99363c18344cbe99c7f4f50c",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "recall_results.csv",
+      "sha256": "e61336d55d61b3fe51c749b8430f27386a2ee8ee1e5f6c2af80bb32307c80432",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "recall_touches.csv",
+      "sha256": "0ab215862d5c87168d347a948d3e4e709b8cc4a69183b0dd039efd9ac4a4a0c9",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "topic_content_relations.csv",
+      "sha256": "cbf2fe499c9f345bc77391a3c6f3528f4b31f9573bd7c12bd71adb647d8bc020",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "trending_topics.csv",
+      "sha256": "13ee49abc019baacbaa57c25f347942d97f833383224df85ea94b35788ad6d65",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "user_activations.csv",
+      "sha256": "9df08d95f6c3b752fc46469ba30ae882773efaa2a9b8816e6bda0235f0be3de1",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "user_churn_events.csv",
+      "sha256": "f70a6b76bada1595b5fa81aa4334efc210e485a39be77c4f1882f94904c23756",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "user_daily_activity.csv",
+      "sha256": "842f79936acc9f1266df981e9b2e5b43bbd67832080860a86e35d5c86cefdb29",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "user_devices.csv",
+      "sha256": "593055b894885f46ae61084f9e12da260393f7eab5060631d035a84ed4ad563d",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "user_lifecycle_snapshots.csv",
+      "sha256": "c98a5f0ed9f1f278a2a54fef3da1ffd239cffe01440fcf93e15921eba097a0a7",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "user_profiles.csv",
+      "sha256": "eb484a79dc1cfa6e3dfaf192040c22c66079378c13e0010ade6b99141714e57b",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "user_registrations.csv",
+      "sha256": "2f7e1cb1381f1e67ec09c3464f6fffec67a25efe5db9552da0503ec611e25cdd",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "user_retention.csv",
+      "sha256": "7d756b767b11e88f89ab7caa9cf45c6087bf3b8045d8556c09614def8f99838a",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "user_sessions.csv",
+      "sha256": "3eec7cd61d7350da3279c9955973a6299d2f42bb10909696f0a1022c9f1454c5",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "user_tag_relations.csv",
+      "sha256": "6953b6e8f4964821f7ca038c7c490555c140f5da5abc4615047702684a74fcd2",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "user_tags.csv",
+      "sha256": "481d3df2867088458b6a1637ff39ae55c59608cebe3b3ccb4d72e743f32b12dd",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "users.csv",
+      "sha256": "bb7efa5fd0a5d17fdf1845d297baae7a38c2214795b0e23e03aed0b9c8d6e7ca",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "video_exposures.csv",
+      "sha256": "2136288a9eb1d7f55197adebe5d490ca44f85dc4164b82ecca70f6afa283b468",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "video_interactions.csv",
+      "sha256": "2b2940c9e24ea793fcf068c267f96634e55672fc9554ef7dfa4ad3d8179d4e42",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "video_plays.csv",
+      "sha256": "f8addafc233c45eb04e1393f203003efb6aff334de5cc619c464e8068a7a15bf",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "_schema.json",
+      "sha256": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede",
+      "current_local_server_equal": true
+    },
+    {
+      "name": "_database_manifest.json",
+      "sha256": "f82006fdde9113ac97674788c533898fe410e91c81ddfdc60ad23fe6ebd8d2b1",
+      "current_local_server_equal": true
+    }
+  ],
+  "table_checks": [
+    {
+      "name": "acquisition_channels",
+      "row_count": 10,
+      "field_count": 5,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "ad_accounts",
+      "row_count": 8,
+      "field_count": 5,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "ad_campaigns",
+      "row_count": 100,
+      "field_count": 9,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "ad_creatives",
+      "row_count": 408,
+      "field_count": 6,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "ad_daily_stats",
+      "row_count": 5978,
+      "field_count": 9,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "budget_adjustments",
+      "row_count": 700,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "channel_attributions",
+      "row_count": 5816,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "channel_conversion_events",
+      "row_count": 9920,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "channel_targets",
+      "row_count": 32,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "content_audits",
+      "row_count": 8000,
+      "field_count": 6,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "content_categories",
+      "row_count": 12,
+      "field_count": 4,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "content_daily_metrics",
+      "row_count": 9000,
+      "field_count": 9,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "content_reports",
+      "row_count": 5000,
+      "field_count": 6,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "content_tag_relations",
+      "row_count": 37475,
+      "field_count": 5,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "content_tags",
+      "row_count": 18,
+      "field_count": 4,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "contents",
+      "row_count": 15000,
+      "field_count": 9,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "creator_daily_metrics",
+      "row_count": 1800,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "creator_profiles",
+      "row_count": 1800,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "creators",
+      "row_count": 1800,
+      "field_count": 5,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "growth_daily_metrics",
+      "row_count": 2400,
+      "field_count": 8,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "growth_targets",
+      "row_count": 80,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "recall_campaigns",
+      "row_count": 24,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "recall_results",
+      "row_count": 9000,
+      "field_count": 6,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "recall_touches",
+      "row_count": 9000,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "topic_content_relations",
+      "row_count": 4500,
+      "field_count": 6,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "trending_topics",
+      "row_count": 120,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "user_activations",
+      "row_count": 12000,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "user_churn_events",
+      "row_count": 7149,
+      "field_count": 6,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "user_daily_activity",
+      "row_count": 86017,
+      "field_count": 8,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "user_devices",
+      "row_count": 13985,
+      "field_count": 6,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "user_lifecycle_snapshots",
+      "row_count": 12000,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "user_profiles",
+      "row_count": 12000,
+      "field_count": 9,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "user_registrations",
+      "row_count": 12000,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "user_retention",
+      "row_count": 57334,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "user_sessions",
+      "row_count": 151094,
+      "field_count": 8,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "user_tag_relations",
+      "row_count": 24000,
+      "field_count": 6,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "user_tags",
+      "row_count": 12,
+      "field_count": 4,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "users",
+      "row_count": 12000,
+      "field_count": 6,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "video_exposures",
+      "row_count": 140000,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "video_interactions",
+      "row_count": 6443,
+      "field_count": 7,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    },
+    {
+      "name": "video_plays",
+      "row_count": 48697,
+      "field_count": 9,
+      "all_column_statistics_equal": true,
+      "typed_row_multiset_equal": true,
+      "csv_sha256_equal": true
+    }
+  ],
+  "downloaded_reports_unchanged": true,
+  "postgresql_connected": false,
+  "limits": [
+    "Server create_tables.sql was not downloaded; checked its recorded hash against equivalent local DDL.",
+    "Source preparation is verified. PostgreSQL import, target values and table read/write permissions remain unverified."
+  ]
+}

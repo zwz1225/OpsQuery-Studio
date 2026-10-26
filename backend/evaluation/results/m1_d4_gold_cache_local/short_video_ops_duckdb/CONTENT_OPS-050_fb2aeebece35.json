@@ -1,0 +1,124 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "completion_rate": [
+        "avg_completion_rate"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "content_title",
+      "completion_rate"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": "completion_rate",
+    "order_sensitive": true,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT c.content_title,ROUND(AVG(m.completion_rate),4) completion_rate FROM content_daily_metrics m JOIN contents c ON m.content_id=c.content_id WHERE strftime(m.metric_date,'%Y-%m')='2026-05' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CONTENT_OPS-050",
+  "question": "2026-05平均完播率最高的前10条内容；请返回内容标题、完播率；聚合口径：平均指标取算术平均；按核心指标从高到低展示；最多返回10行。",
+  "gold_sql": "SELECT c.content_title,ROUND(AVG(m.completion_rate),4) completion_rate FROM content_daily_metrics m JOIN contents c ON m.content_id=c.content_id WHERE strftime(m.metric_date,'%Y-%m')='2026-05' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+  "database": "short_video_ops",
+  "scenario": "content_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.content_audits",
+      "short_video_ops.content_categories",
+      "short_video_ops.content_daily_metrics",
+      "short_video_ops.content_reports",
+      "short_video_ops.content_tag_relations",
+      "short_video_ops.content_tags",
+      "short_video_ops.contents",
+      "short_video_ops.creator_daily_metrics",
+      "short_video_ops.creator_profiles",
+      "short_video_ops.creators",
+      "short_video_ops.topic_content_relations",
+      "short_video_ops.trending_topics",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users",
+      "short_video_ops.video_exposures",
+      "short_video_ops.video_interactions",
+      "short_video_ops.video_plays"
+    ],
+    "roles": [
+      "content_ops"
+    ],
+    "user_id": "demo_content_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "content_title",
+    "completion_rate"
+  ],
+  "rows": [
+    {
+      "content_title": "体育内容011426",
+      "completion_rate": 1.0
+    },
+    {
+      "content_title": "搞笑内容007652",
+      "completion_rate": 1.0
+    },
+    {
+      "content_title": "旅行内容008763",
+      "completion_rate": 1.0
+    },
+    {
+      "content_title": "时尚内容004311",
+      "completion_rate": 1.0
+    },
+    {
+      "content_title": "科技内容001331",
+      "completion_rate": 1.0
+    },
+    {
+      "content_title": "音乐内容007296",
+      "completion_rate": 1.0
+    },
+    {
+      "content_title": "旅行内容004971",
+      "completion_rate": 0.9922
+    },
+    {
+      "content_title": "搞笑内容003030",
+      "completion_rate": 0.9904
+    },
+    {
+      "content_title": "生活内容008409",
+      "completion_rate": 0.9896
+    },
+    {
+      "content_title": "搞笑内容009547",
+      "completion_rate": 0.9869
+    }
+  ],
+  "generated_at": "2026-10-10T14:56:32.492610+00:00"
+}

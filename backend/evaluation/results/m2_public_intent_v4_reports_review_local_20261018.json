@@ -1,0 +1,2034 @@
+{
+  "stage": "M2 v4 six-case diagnostic/native downloaded report review",
+  "run_status": "complete",
+  "reviewed_at": "2026-10-18T14:49:39.921648+00:00",
+  "diagnostic_report_sha256": "20ab65e3b05fb59767a67478ea9d8b5ed426ec9001bb660df9390c2b3023e712",
+  "native_report_sha256": "1f7e9f974d678ae118007591b0d2c78d8d8495e4043321077e10627a6895c90a",
+  "check_count": 449,
+  "check_pass_count": 449,
+  "failed_checks": [],
+  "evidence_chain_accepted": true,
+  "all_six_correct": false,
+  "formal_ex": null,
+  "holdout_opened": false,
+  "new_model_request_count_during_review": 0,
+  "local_postgresql_connected": false,
+  "full_native_result_objects_reconstructed": 12,
+  "full_native_comparisons_reconstructed": 6,
+  "summary": {
+    "case_count": 6,
+    "native_matches": 5,
+    "native_mismatches": 1,
+    "native_rate": 0.8333333333333334,
+    "previous_same_six_matches": 3,
+    "newly_matching": [
+      "BIRD-PG-0226",
+      "BIRD-PG-0263",
+      "BIRD-PG-0273"
+    ],
+    "regressed": [
+      "BIRD-PG-0201"
+    ],
+    "previous_same_six_usage": {
+      "case_http_attempts": 25,
+      "chat_http_attempts": 13,
+      "chat_prompt_tokens": 68558,
+      "chat_completion_tokens": 1016,
+      "chat_total_tokens": 69574,
+      "sql_tool_calls": 10
+    },
+    "current_usage": {
+      "case_http_attempts": 19,
+      "chat_http_attempts": 7,
+      "chat_prompt_tokens": 37160,
+      "chat_completion_tokens": 498,
+      "chat_total_tokens": 37658,
+      "sql_tool_calls": 11
+    },
+    "new_index_http": 22,
+    "total_model_http_including_new_indexes": 41,
+    "replay_sql_calls": 12,
+    "replay_model_calls": 0,
+    "canonical_lookup_sql_calls": 5,
+    "canonical_lookup_pairs": 7,
+    "first_generation_validation_pass_count": 5,
+    "first_generation_native_match_count": 4
+  },
+  "case_reviews": [
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "status": "diagnostic_answered",
+      "baseline_status": "clarification",
+      "baseline_match": false,
+      "native_match": false,
+      "checks_passed": true,
+      "generation_count": 1,
+      "model_http": 3,
+      "sql_tool_calls": 2,
+      "case_wall_seconds": 4.072,
+      "first_sql": "SELECT CAST(SUM(CASE WHEN a.element = 'c' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percentage FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '=';",
+      "final_sql": "SELECT CAST(SUM(CASE WHEN a.element = 'c' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percentage FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '=';",
+      "rejections": [],
+      "clarification_reason": null,
+      "locally_reconstructed_native_comparison": true,
+      "difference_codes": [
+        "prediction_has_nonreference_tuples",
+        "prediction_missing_reference_tuples"
+      ],
+      "reviewer_hypotheses": [],
+      "original_question": "What is the percentage of carbon in double-bond molecules?",
+      "official_evidence": "carbon refers to element = 'c'; double-bond molecules refers to bond_type = '='; percentage = DIVIDE(SUM(element = 'c'), COUNT(atom_id))"
+    },
+    {
+      "case_id": "BIRD-PG-0263",
+      "database_id": "toxicology",
+      "status": "diagnostic_answered",
+      "baseline_status": "scored",
+      "baseline_match": true,
+      "native_match": true,
+      "checks_passed": true,
+      "generation_count": 1,
+      "model_http": 3,
+      "sql_tool_calls": 2,
+      "case_wall_seconds": 12.248,
+      "first_sql": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percent FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '-'",
+      "final_sql": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(a.atom_id), 0) AS percent FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '-'",
+      "rejections": [],
+      "clarification_reason": null,
+      "locally_reconstructed_native_comparison": true,
+      "difference_codes": [],
+      "reviewer_hypotheses": [
+        "referenced_tables_differ"
+      ],
+      "original_question": "What is the composition of element chlorine in percentage among the single bond molecules?",
+      "official_evidence": "element chlorine refers to element = 'cl'; single bond refers to bond_type = '-'; percentage = DIVIDE(SUM(element = 'cl'), COUNT(atom_id)) as percent where bond_type = '-'"
+    },
+    {
+      "case_id": "BIRD-PG-0273",
+      "database_id": "toxicology",
+      "status": "diagnostic_answered",
+      "baseline_status": "scored",
+      "baseline_match": true,
+      "native_match": true,
+      "checks_passed": true,
+      "generation_count": 1,
+      "model_http": 3,
+      "sql_tool_calls": 2,
+      "case_wall_seconds": 3.83,
+      "first_sql": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(*), 0) AS percentage FROM molecule m JOIN atom a ON m.molecule_id = a.molecule_id WHERE m.label = '+'",
+      "final_sql": "SELECT CAST(SUM(CASE WHEN a.element = 'cl' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(*), 0) AS percentage FROM molecule m JOIN atom a ON m.molecule_id = a.molecule_id WHERE m.label = '+'",
+      "rejections": [],
+      "clarification_reason": null,
+      "locally_reconstructed_native_comparison": true,
+      "difference_codes": [],
+      "reviewer_hypotheses": [],
+      "original_question": "What is the percentage of element chlorine in carcinogenic molecules?",
+      "official_evidence": "chlorine refers to element = 'cl'; label = '+' mean molecules are carcinogenic; percentage = DIVIDE(SUM(element = 'pb'); COUNT(molecule_id)) as percentage where label = '+'"
+    },
+    {
+      "case_id": "BIRD-PG-0226",
+      "database_id": "toxicology",
+      "status": "diagnostic_answered",
+      "baseline_status": "scored",
+      "baseline_match": true,
+      "native_match": true,
+      "checks_passed": true,
+      "generation_count": 1,
+      "model_http": 3,
+      "sql_tool_calls": 2,
+      "case_wall_seconds": 8.694,
+      "first_sql": "SELECT ROUND(CAST(SUM(CASE WHEN bond_type = '=' THEN 1 ELSE 0 END) AS NUMERIC) * 100 / NULLIF(COUNT(bond_id), 0), 5) AS percentage FROM bond WHERE molecule_id = 'TR008'",
+      "final_sql": "SELECT ROUND(CAST(SUM(CASE WHEN bond_type = '=' THEN 1 ELSE 0 END) AS NUMERIC) * 100 / NULLIF(COUNT(bond_id), 0), 5) AS percentage FROM bond WHERE molecule_id = 'TR008'",
+      "rejections": [],
+      "clarification_reason": null,
+      "locally_reconstructed_native_comparison": true,
+      "difference_codes": [],
+      "reviewer_hypotheses": [],
+      "original_question": "What is the percentage of double bonds in the molecule TR008? Please provide your answer as a percentage with five decimal places.",
+      "official_evidence": "double bond refers to bond_type = '='; TR008 is the molecule id; percentage = DIVIDE(SUM(bond_type = '='), COUNT(bond_id)) as percent where molecule_id = 'TR008'"
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "status": "diagnostic_answered",
+      "baseline_status": "scored",
+      "baseline_match": false,
+      "native_match": true,
+      "checks_passed": true,
+      "generation_count": 1,
+      "model_http": 3,
+      "sql_tool_calls": 2,
+      "case_wall_seconds": 23.228,
+      "first_sql": "SELECT CAST(SUM(CASE WHEN bordercolor = 'borderless' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(*), 0) AS percentage FROM cards",
+      "final_sql": "SELECT CAST(SUM(CASE WHEN bordercolor = 'borderless' THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(*), 0) AS percentage FROM cards",
+      "rejections": [],
+      "clarification_reason": null,
+      "locally_reconstructed_native_comparison": true,
+      "difference_codes": [],
+      "reviewer_hypotheses": [],
+      "original_question": "What is the percentage of borderless cards?",
+      "official_evidence": "borderless card refers to borderColor = 'borderless'; percentage = Divide(Count (id) where borderColor = 'borderless', Count(id)) *100"
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "database_id": "codebase_community",
+      "status": "diagnostic_answered",
+      "baseline_status": "clarification",
+      "baseline_match": false,
+      "native_match": true,
+      "checks_passed": true,
+      "generation_count": 2,
+      "model_http": 4,
+      "sql_tool_calls": 1,
+      "case_wall_seconds": 28.245,
+      "first_sql": "SELECT DISTINCT u.displayname\nFROM users u\nJOIN votes v ON u.id = v.userid\nJOIN posts p ON v.postid = p.id\nWHERE v.bountyamount = 50\n  AND p.title ILIKE '%variance%'",
+      "final_sql": "SELECT DISTINCT u.displayname, p.title\nFROM users u\nJOIN votes v ON u.id = v.userid\nJOIN posts p ON v.postid = p.id\nWHERE v.bountyamount = 50\n  AND p.title ILIKE '%variance%'",
+      "rejections": [
+        {
+          "case_id": "BIRD-PG-0586",
+          "sql_round": 1,
+          "category": "intent_contract_violation",
+          "sqlstate": null,
+          "intent_codes": [
+            "incomplete_participant_context_output"
+          ],
+          "sql": "SELECT DISTINCT u.displayname\nFROM users u\nJOIN votes v ON u.id = v.userid\nJOIN posts p ON v.postid = p.id\nWHERE v.bountyamount = 50\n  AND p.title ILIKE '%variance%'",
+          "next_decision_sql_differs": true
+        }
+      ],
+      "clarification_reason": null,
+      "locally_reconstructed_native_comparison": true,
+      "difference_codes": [],
+      "reviewer_hypotheses": [],
+      "original_question": "Which user added a bounty amount of 50 to the post title mentioning variance?",
+      "official_evidence": "bounty amount of 50 refers to BountyAmount = 50; user refers to DisplayName; title mentioning variance refers to Title include 'variance'"
+    }
+  ],
+  "feedback_reviews": [
+    {
+      "case_id": "BIRD-PG-0586",
+      "sql_round": 1,
+      "category": "intent_contract_violation",
+      "sqlstate": null,
+      "intent_codes": [
+        "incomplete_participant_context_output"
+      ],
+      "sql": "SELECT DISTINCT u.displayname\nFROM users u\nJOIN votes v ON u.id = v.userid\nJOIN posts p ON v.postid = p.id\nWHERE v.bountyamount = 50\n  AND p.title ILIKE '%variance%'",
+      "next_decision_sql_differs": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "diagnostic:binding_digest",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:complete_readonly",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:source_scope",
+      "passed": true
+    },
+    {
+      "name": "native:binding_digest",
+      "passed": true
+    },
+    {
+      "name": "native:complete_readonly",
+      "passed": true
+    },
+    {
+      "name": "native:source_scope",
+      "passed": true
+    },
+    {
+      "name": "same_v4_producer",
+      "passed": true
+    },
+    {
+      "name": "delivered96files",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/routes.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/database.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/contracts.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/csv_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/dialects.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_connections.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/row_digest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/sql_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/values.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/errors.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/main.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/schemas.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/server.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/database_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/presentation_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/time_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/model_client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/data_qa_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/duckdb_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/metric_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/postgres_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/response_generator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/single_database_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/time_field_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/access_control.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/auth.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/askdata_service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/memory_store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_archive.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/short_term_memory.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/registry.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/clarification.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/query_graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/result_builder.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/state.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/budgets.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/case_worker.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/coverage.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/diagnostic_runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/diagnostics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/evidence.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/first_sql_audit.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/intent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/intent_replay.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/isolated_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/manifest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/metrics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/model.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/native.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/relationships.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/repair.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/replay.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/retrieval.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/semantics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/sql.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/units_output.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird_protocol.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/run_bird_benchmark.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/check_m2_c_bird_runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_common.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_dump.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_structure.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_target.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_typed_rows.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/api/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/api/routes.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/config.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/database.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/datasources/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/datasources/contracts.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/datasources/csv_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/datasources/dialects.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/datasources/postgres_config.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/datasources/postgres_connections.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/datasources/postgres_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/datasources/row_digest.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/datasources/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/datasources/sql_policy.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/datasources/values.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/errors.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/main.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/mcp_runtime/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/mcp_runtime/client.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/mcp_runtime/schemas.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/mcp_runtime/server.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/mcp_runtime/tools/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/mcp_runtime/tools/database_tools.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/mcp_runtime/tools/presentation_tools.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/mcp_runtime/tools/time_tools.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/model_client.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/models.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/constraint_planner.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/constraint_validator.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/data_qa_agent.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/duckdb_engine.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/metric_planner.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/models.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/postgres_engine.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/response_generator.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/single_database_agent.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/sql_context.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/querying/sql_validator.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/retrieval/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/retrieval/graph.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/retrieval/service.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/retrieval/store.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/retrieval/time_field_policy.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/security/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/security/access_control.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/security/auth.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/service.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/services/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/services/askdata_service.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/services/memory_store.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/services/session_archive.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/services/session_context.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/services/short_term_memory.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/skills/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/skills/registry.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/workflows/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/workflows/clarification.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/workflows/query_graph.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/workflows/result_builder.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:app/workflows/state.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/budgets.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/case_worker.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/coverage.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/diagnostic_runner.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/diagnostics.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/evidence.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/first_sql_audit.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/intent.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/intent_replay.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/isolated_agent.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/manifest.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/metrics.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/model.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/native.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/relationships.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/repair.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/replay.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/retrieval.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/runner.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/semantics.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/sql.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird_protocol.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/run_bird_benchmark.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/check_m2_c_bird_runtime.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/m2_b_common.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/m2_b_dump.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/m2_b_structure.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/m2_b_target.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/m2_b_typed_rows.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/M2_PUBLIC_INTENT_V2_ACCEPTANCE.md",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/reviews/m2_reference_shape_1399_20261018.json",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/check_m2_public_intent_delivery.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/rescore_m2_rejected_first4.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:tests/test_m2_intent_candidate.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:tests/test_m2_intent_v2.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/rescore_m2_intent_candidate.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_development_diagnostics14.json",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_pg_v1/development80.json",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_pg_v1/holdout30.json",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_pg_v1/protocol.json",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_pg_v1/smoke8.json",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_pg_v1/source_lineage.json",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_pg_v1/inputs/development80.jsonl",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_pg_v1/inputs/holdout30.jsonl",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_pg_v1/inputs/smoke8.jsonl",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_pg_v1/reference/official_calculate_ex.py.txt",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_pg_v1/reference/official_execute_sql.py.txt",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_pg_v1/scorer/gold110.jsonl",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/M2_FIRST4_NATIVE_REVIEW_NEXT.md",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/m2_units_context.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/check_m2_units_context.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:tests/test_m2_units_context.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/M2_UNITS_CONTEXT_PROBE_ACCEPTANCE.md",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/M2_PUBLIC_INTENT_V3_ACCEPTANCE.md",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/bird/units_output.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:tests/test_m2_intent_v3.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/m2_grain_diagnostics.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:scripts/check_m2_grain_diagnostics.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:tests/test_m2_grain_diagnostics.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/M2_GRAIN_DIAGNOSTICS_ACCEPTANCE.md",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/m2_public_intent_v3_delivery_files_20261018.json",
+      "passed": true
+    },
+    {
+      "name": "delivery:tests/test_m2_intent_v4.py",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/cases/bird_mini_dev/m2_limited_fix6.json",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/M2_PUBLIC_INTENT_V4_ACCEPTANCE.md",
+      "passed": true
+    },
+    {
+      "name": "delivery:evaluation/m2_grain_diagnostics_delivery_files_20261018.json",
+      "passed": true
+    },
+    {
+      "name": "only_three_changed_modules",
+      "passed": true
+    },
+    {
+      "name": "server_environment_unchanged",
+      "passed": true
+    },
+    {
+      "name": "actual_source_hash",
+      "passed": true
+    },
+    {
+      "name": "historical_prerequisite:baseline_report_sha256",
+      "passed": true
+    },
+    {
+      "name": "historical_prerequisite:recorded_runtime_sha256",
+      "passed": true
+    },
+    {
+      "name": "historical_prerequisite:recorded_gold_readiness_sha256",
+      "passed": true
+    },
+    {
+      "name": "same_model",
+      "passed": true
+    },
+    {
+      "name": "v4_policy",
+      "passed": true
+    },
+    {
+      "name": "frozen_six",
+      "passed": true
+    },
+    {
+      "name": "case_list_hash",
+      "passed": true
+    },
+    {
+      "name": "generation_no_gold",
+      "passed": true
+    },
+    {
+      "name": "replay_no_models",
+      "passed": true
+    },
+    {
+      "name": "current_isolation",
+      "passed": true
+    },
+    {
+      "name": "budget_watchdog_probes",
+      "passed": true
+    },
+    {
+      "name": "snapshot_bytes",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:eight_receipts",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt:card_games",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt:codebase_community",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt:toxicology",
+      "passed": true
+    },
+    {
+      "name": "native:eight_receipts",
+      "passed": true
+    },
+    {
+      "name": "native:receipt:toxicology",
+      "passed": true
+    },
+    {
+      "name": "native:receipt:card_games",
+      "passed": true
+    },
+    {
+      "name": "native:receipt:codebase_community",
+      "passed": true
+    },
+    {
+      "name": "three_source_indexes",
+      "passed": true
+    },
+    {
+      "name": "card_games:index_identity",
+      "passed": true
+    },
+    {
+      "name": "card_games:index_code",
+      "passed": true
+    },
+    {
+      "name": "card_games:fresh_index_cost",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index_identity",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index_code",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:fresh_index_cost",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index_identity",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index_code",
+      "passed": true
+    },
+    {
+      "name": "toxicology:fresh_index_cost",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:generation_limits",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:lookup_and_sql_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:graph_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:index_and_retrieval",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:bounded_selection",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:declared_fk_endpoints",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:baseline_selection_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:contract_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:diagnostic_bounds",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:sql_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:validation_alignment",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:complete_final_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:native_source_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:native_budget_lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:preview_bounds:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:full_native_reconstruction:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:preview_bounds:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:full_native_reconstruction:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:full_comparison_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:reviewer_hints",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:generation_limits",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:lookup_and_sql_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:graph_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:index_and_retrieval",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:bounded_selection",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:declared_fk_endpoints",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:baseline_selection_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:contract_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:diagnostic_bounds",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:sql_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:validation_alignment",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:complete_final_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:native_source_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:native_budget_lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:preview_bounds:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:full_native_reconstruction:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:preview_bounds:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:full_native_reconstruction:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:full_comparison_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:reviewer_hints",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:generation_limits",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:lookup_and_sql_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:graph_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:index_and_retrieval",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:bounded_selection",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:declared_fk_endpoints",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:baseline_selection_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:contract_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:diagnostic_bounds",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:sql_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:validation_alignment",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:complete_final_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:native_source_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:native_budget_lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:preview_bounds:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:full_native_reconstruction:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:preview_bounds:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:full_native_reconstruction:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:full_comparison_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:reviewer_hints",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:generation_limits",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:lookup_and_sql_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:graph_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:index_and_retrieval",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:bounded_selection",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:declared_fk_endpoints",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:baseline_selection_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:contract_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:diagnostic_bounds",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:sql_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:validation_alignment",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:complete_final_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:native_source_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:native_budget_lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:preview_bounds:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:full_native_reconstruction:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:preview_bounds:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:full_native_reconstruction:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:full_comparison_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0226:reviewer_hints",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:generation_limits",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:lookup_and_sql_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:graph_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:index_and_retrieval",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:bounded_selection",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:declared_fk_endpoints",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:baseline_selection_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:contract_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:diagnostic_bounds",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:sql_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:validation_alignment",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:complete_final_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:native_source_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:native_budget_lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:preview_bounds:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:full_native_reconstruction:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:preview_bounds:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:full_native_reconstruction:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:full_comparison_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:reviewer_hints",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:source",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:generation_limits",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:lookup_and_sql_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:graph_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:index_and_retrieval",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:bounded_selection",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:declared_fk_endpoints",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:baseline_selection_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:contract_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:diagnostic_bounds",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:sql_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:validation_alignment",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:feedback_rebuilt:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:intent_rejection_rebuilt:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:feedback_bounds:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:complete_final_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:native_source_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:native_budget_lifecycle",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:preview_bounds:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:full_native_reconstruction:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:preview_bounds:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:full_native_reconstruction:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:full_comparison_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:reviewer_hints",
+      "passed": true
+    },
+    {
+      "name": "fixed_error_list_exact",
+      "passed": true
+    },
+    {
+      "name": "all_complete_native_rebuilt",
+      "passed": true
+    },
+    {
+      "name": "summary_recomputed",
+      "passed": true
+    },
+    {
+      "name": "diagnostic_totals",
+      "passed": true
+    },
+    {
+      "name": "0273_conflict_passed_to_model",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:advisory_not_case_exception",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0263:advisory_not_case_exception",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0273:advisory_not_case_exception",
+      "passed": true
+    },
+    {
+      "name": "0226_first_generation_numeric_round",
+      "passed": true
+    },
+    {
+      "name": "only_one_output_group_repair",
+      "passed": true
+    },
+    {
+      "name": "v3_delta",
+      "passed": true
+    }
+  ],
+  "original_v3_development80_score_unchanged": "49/80",
+  "findings": [
+    "0263/0273 recover as new model-produced SQL, not transplanted counterfactual scores.",
+    "0226 produces NUMERIC ROUND(...,5) on its first generation; no online precision rejection/repair occurred in this run.",
+    "0201 regresses exactly to its recorded weighted first SQL after ambiguous grain became advisory.",
+    "0368 stays native-exact; 0586 still needs one output-group repair and then matches.",
+    "Public evidence for 0201/0263 does not explicitly distinguish DISTINCT. Do not create case-ID, element or bond-type exceptions from Gold."
+  ],
+  "next_step": "Keep this bounded v4 candidate and known 0201 ambiguity record; perform one full development80 run and independent native replay before choosing/finally freezing a candidate. Keep holdout closed.",
+  "limitations": [
+    "Six selected development cases do not establish the v4 score on all 80 cases or on holdout30.",
+    "All twelve result objects and six comparisons reconstruct locally; server live data/ACL checks and remote index file contents remain recorded server evidence.",
+    "Shared index rebuild costs differ from warm-cache v3; compare case cost and index cost separately.",
+    "Same model/configuration does not prove immutable remote weights or deterministic generations."
+  ]
+}

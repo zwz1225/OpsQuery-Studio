@@ -1,0 +1,1290 @@
+{
+  "source_run_id": "e9386862501a48f896e22e568e98cce7",
+  "cases": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "scenario": "growth_ops",
+      "query": "查询2026年每个月的新增用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "month",
+        "value"
+      ],
+      "actual_columns": [
+        "month",
+        "new_users"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 value 缺失或映射不唯一",
+      "row_count": 8,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "month",
+          "new_users"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-002",
+      "scenario": "growth_ops",
+      "query": "查询2026年每个月的激活用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "month",
+        "value"
+      ],
+      "actual_columns": [
+        "month",
+        "activated_users"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 value 缺失或映射不唯一",
+      "row_count": 8,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "month",
+          "activated_users"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-003",
+      "scenario": "growth_ops",
+      "query": "查询2026年每个月的次日留存用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "month",
+        "value"
+      ],
+      "actual_columns": [
+        "month",
+        "day1_retained_users"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 value 缺失或映射不唯一",
+      "row_count": 8,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "month",
+          "day1_retained_users"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-004",
+      "scenario": "growth_ops",
+      "query": "查询2026年每个月的七日留存用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "month",
+        "value"
+      ],
+      "actual_columns": [
+        "month",
+        "day7_retained_users"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 value 缺失或映射不唯一",
+      "row_count": 8,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "month",
+          "day7_retained_users"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-005",
+      "scenario": "growth_ops",
+      "query": "查询2026年每个月的日活用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "month",
+        "value"
+      ],
+      "actual_columns": [
+        "month",
+        "daily_active_users"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 value 缺失或映射不唯一",
+      "row_count": 8,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "month",
+          "daily_active_users"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-006",
+      "scenario": "growth_ops",
+      "query": "查看2026-01每天的新增用户数变化；请返回指标日期、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "metric_date",
+        "value"
+      ],
+      "actual_columns": [
+        "metric_date",
+        "new_users"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 value 缺失或映射不唯一",
+      "row_count": 31,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "metric_date",
+          "new_users"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-026",
+      "scenario": "growth_ops",
+      "query": "2026-01各获客渠道新增用户数排名；请返回渠道名称、新增用户数；聚合口径：可加总指标按当前查询粒度求和；按核心指标从高到低展示。",
+      "expected_columns": [
+        "channel_name",
+        "new_users"
+      ],
+      "actual_columns": [
+        "channel_name",
+        "new_users"
+      ],
+      "strict_correct": true,
+      "strict_reason": "严格结果一致",
+      "row_count": 10,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "channel_name",
+          "new_users"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-061",
+      "scenario": "growth_ops",
+      "query": "自然推荐渠道激活用户的平均激活耗时；请返回渠道名称、平均激活耗时；聚合口径：平均指标取算术平均。",
+      "expected_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "actual_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "strict_correct": true,
+      "strict_reason": "严格结果一致",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "channel_name",
+          "avg_activation_seconds"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-062",
+      "scenario": "growth_ops",
+      "query": "应用商店渠道激活用户的平均激活耗时；请返回渠道名称、平均激活耗时；聚合口径：平均指标取算术平均。",
+      "expected_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "actual_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "strict_correct": true,
+      "strict_reason": "严格结果一致",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "channel_name",
+          "avg_activation_seconds"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-063",
+      "scenario": "growth_ops",
+      "query": "信息流广告渠道激活用户的平均激活耗时；请返回渠道名称、平均激活耗时；聚合口径：平均指标取算术平均。",
+      "expected_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "actual_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "strict_correct": true,
+      "strict_reason": "严格结果一致",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "channel_name",
+          "avg_activation_seconds"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-064",
+      "scenario": "growth_ops",
+      "query": "搜索广告渠道激活用户的平均激活耗时；请返回渠道名称、平均激活耗时；聚合口径：平均指标取算术平均。",
+      "expected_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "actual_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "strict_correct": true,
+      "strict_reason": "严格结果一致",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "channel_name",
+          "avg_activation_seconds"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-066",
+      "scenario": "growth_ops",
+      "query": "按激活规则统计用户数，重点查看观看3条视频；请返回激活规则、用户数；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "activation_rule",
+        "users"
+      ],
+      "actual_columns": [
+        "activation_rule",
+        "user_count"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 users 缺失或映射不唯一",
+      "row_count": 4,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "activation_rule",
+          "user_count"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-086",
+      "scenario": "growth_ops",
+      "query": "华东用户平均活跃时长和会话次数；请返回地区、平均活跃时长、平均会话次数；聚合口径：平均指标取算术平均。",
+      "expected_columns": [
+        "region",
+        "avg_active_minutes",
+        "avg_session_count"
+      ],
+      "actual_columns": [
+        "region",
+        "avg_active_minutes",
+        "avg_session_count"
+      ],
+      "strict_correct": true,
+      "strict_reason": "严格结果一致",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "region",
+          "avg_active_minutes",
+          "avg_session_count"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-101",
+      "scenario": "growth_ops",
+      "query": "用户按地区的分布；请返回地区、用户数；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "region",
+        "users"
+      ],
+      "actual_columns": [
+        "region",
+        "user_count"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 users 缺失或映射不唯一",
+      "row_count": 5,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "region",
+          "user_count"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-131",
+      "scenario": "growth_ops",
+      "query": "面向沉默7天的召回活动效果排名；请返回活动名称、触达数量、召回率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按核心指标从高到低展示。",
+      "expected_columns": [
+        "campaign_name",
+        "touches",
+        "recall_rate"
+      ],
+      "actual_columns": [
+        "campaign_name",
+        "touch_count",
+        "recall_rate"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 touches 缺失或映射不唯一",
+      "row_count": 8,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "campaign_name",
+          "touch_count",
+          "recall_rate"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-149",
+      "scenario": "growth_ops",
+      "query": "2026-04各渠道激活率实际值与目标差距；请返回渠道名称、实际比率、激活率目标、目标差距；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "expected_columns": [
+        "channel_name",
+        "actual_rate",
+        "activation_rate_target",
+        "gap"
+      ],
+      "actual_columns": [
+        "channel_name",
+        "actual_activation_rate",
+        "activation_rate_target",
+        "target_gap"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 actual_rate 缺失或映射不唯一",
+      "row_count": 10,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "channel_name",
+          "actual_activation_rate",
+          "activation_rate_target",
+          "target_gap"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "GROWTH_OPS-150",
+      "scenario": "growth_ops",
+      "query": "2026-05各渠道激活率实际值与目标差距；请返回渠道名称、实际比率、激活率目标、目标差距；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "expected_columns": [
+        "channel_name",
+        "actual_rate",
+        "activation_rate_target",
+        "gap"
+      ],
+      "actual_columns": [
+        "channel_name",
+        "actual_activation_rate",
+        "activation_rate_target",
+        "target_gap"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 actual_rate 缺失或映射不唯一",
+      "row_count": 10,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "channel_name",
+          "actual_activation_rate",
+          "activation_rate_target",
+          "target_gap"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-001",
+      "scenario": "channel_ops",
+      "query": "2026-01每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "actual_columns": [
+        "stat_date",
+        "ad_spend"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 spend 缺失或映射不唯一",
+      "row_count": 30,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "stat_date",
+          "ad_spend"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-002",
+      "scenario": "channel_ops",
+      "query": "2026-02每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "actual_columns": [
+        "stat_date",
+        "ad_spend"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 spend 缺失或映射不唯一",
+      "row_count": 28,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "stat_date",
+          "ad_spend"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-003",
+      "scenario": "channel_ops",
+      "query": "2026-03每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "actual_columns": [
+        "stat_date",
+        "ad_spend"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 spend 缺失或映射不唯一",
+      "row_count": 31,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "stat_date",
+          "ad_spend"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-004",
+      "scenario": "channel_ops",
+      "query": "2026-04每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "actual_columns": [
+        "stat_date",
+        "ad_spend"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 spend 缺失或映射不唯一",
+      "row_count": 30,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "stat_date",
+          "ad_spend"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-005",
+      "scenario": "channel_ops",
+      "query": "2026-05每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "actual_columns": [
+        "stat_date",
+        "ad_spend"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 spend 缺失或映射不唯一",
+      "row_count": 31,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "stat_date",
+          "ad_spend"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-066",
+      "scenario": "channel_ops",
+      "query": "registration转化事件的数量和平均价值；请返回转化类型、转化数、平均价值；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "expected_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "actual_columns": [
+        "conversion_type",
+        "conversion_count",
+        "avg_conversion_value"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 conversions 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "conversion_type",
+          "conversion_count",
+          "avg_conversion_value"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-067",
+      "scenario": "channel_ops",
+      "query": "activation转化事件的数量和平均价值；请返回转化类型、转化数、平均价值；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "expected_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "actual_columns": [
+        "conversion_type",
+        "conversion_count",
+        "avg_conversion_value"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 conversions 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "conversion_type",
+          "conversion_count",
+          "avg_conversion_value"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-068",
+      "scenario": "channel_ops",
+      "query": "请汇总registration转化事件的数量和平均价值；请返回转化类型、转化数、平均价值；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "expected_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "actual_columns": [
+        "conversion_type",
+        "conversion_count",
+        "avg_conversion_value"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 conversions 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "conversion_type",
+          "conversion_count",
+          "avg_conversion_value"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-069",
+      "scenario": "channel_ops",
+      "query": "请汇总activation转化事件的数量和平均价值；请返回转化类型、转化数、平均价值；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "expected_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "actual_columns": [
+        "conversion_type",
+        "conversion_count",
+        "avg_value"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 conversions 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "conversion_type",
+          "conversion_count",
+          "avg_value"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-070",
+      "scenario": "channel_ops",
+      "query": "请分析registration转化事件的数量和平均价值；请返回转化类型、转化数、平均价值；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "expected_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "actual_columns": [
+        "conversion_type",
+        "conversion_count",
+        "avg_conversion_value"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 conversions 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "conversion_type",
+          "conversion_count",
+          "avg_conversion_value"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-076",
+      "scenario": "channel_ops",
+      "query": "统计active状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+      "expected_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "actual_columns": [
+        "status",
+        "ad_campaign_count",
+        "total_budget"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 campaigns 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "status",
+          "ad_campaign_count",
+          "total_budget"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-077",
+      "scenario": "channel_ops",
+      "query": "统计completed状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+      "expected_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "actual_columns": [
+        "status",
+        "ad_campaign_count",
+        "total_budget"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 campaigns 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "status",
+          "ad_campaign_count",
+          "total_budget"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-078",
+      "scenario": "channel_ops",
+      "query": "请汇总统计active状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+      "expected_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "actual_columns": [
+        "status",
+        "ad_campaign_count",
+        "total_budget"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 campaigns 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "status",
+          "ad_campaign_count",
+          "total_budget"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-079",
+      "scenario": "channel_ops",
+      "query": "请汇总统计completed状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+      "expected_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "actual_columns": [
+        "status",
+        "ad_campaign_count",
+        "total_budget"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 campaigns 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "status",
+          "ad_campaign_count",
+          "total_budget"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-101",
+      "scenario": "channel_ops",
+      "query": "短视频创意的状态分布；请返回创意状态、创意数量；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "creative_status",
+        "creatives"
+      ],
+      "actual_columns": [
+        "创意状态",
+        "创意数量"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 creative_status 缺失或映射不唯一",
+      "row_count": 2,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "创意状态",
+          "创意数量"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CHANNEL_OPS-141",
+      "scenario": "channel_ops",
+      "query": "registration转化按渠道分布；请返回渠道名称、转化数；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "channel_name",
+        "conversions"
+      ],
+      "actual_columns": [
+        "channel_name",
+        "conversion_count"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 conversions 缺失或映射不唯一",
+      "row_count": 4,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "channel_name",
+          "conversion_count"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-001",
+      "scenario": "content_ops",
+      "query": "2026-01每天的视频曝光量和播放量；请返回指标日期、曝光量、播放量；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "expected_columns": [
+        "metric_date",
+        "impressions",
+        "plays"
+      ],
+      "actual_columns": [
+        "metric_date",
+        "impressions",
+        "play_count"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 plays 缺失或映射不唯一",
+      "row_count": 31,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "metric_date",
+          "impressions",
+          "play_count"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-029",
+      "scenario": "content_ops",
+      "query": "基于播放明细，计算知识类内容每次播放的平均观看时长和平均完播率；请返回内容分类、平均观看时长、平均完播率；聚合口径：平均指标取算术平均。",
+      "expected_columns": [
+        "category_name",
+        "avg_watch_seconds",
+        "avg_completion_rate"
+      ],
+      "actual_columns": [
+        "category_name",
+        "avg_watch_seconds",
+        "avg_completion_rate"
+      ],
+      "strict_correct": true,
+      "strict_reason": "严格结果一致",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "category_name",
+          "avg_watch_seconds",
+          "avg_completion_rate"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-030",
+      "scenario": "content_ops",
+      "query": "基于播放明细，计算体育类内容每次播放的平均观看时长和平均完播率；请返回内容分类、平均观看时长、平均完播率；聚合口径：平均指标取算术平均。",
+      "expected_columns": [
+        "category_name",
+        "avg_watch_seconds",
+        "avg_completion_rate"
+      ],
+      "actual_columns": [
+        "内容分类",
+        "平均观看时长",
+        "平均完播率"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 category_name 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "内容分类",
+          "平均观看时长",
+          "平均完播率"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-031",
+      "scenario": "content_ops",
+      "query": "like互动按内容分类分布；请返回内容分类、互动数；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "actual_columns": [
+        "内容分类",
+        "互动数"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 category_name 缺失或映射不唯一",
+      "row_count": 12,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "内容分类",
+          "互动数"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-032",
+      "scenario": "content_ops",
+      "query": "comment互动按内容分类分布；请返回内容分类、互动数；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "actual_columns": [
+        "内容分类",
+        "互动数"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 category_name 缺失或映射不唯一",
+      "row_count": 12,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "内容分类",
+          "互动数"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-033",
+      "scenario": "content_ops",
+      "query": "share互动按内容分类分布；请返回内容分类、互动数；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "actual_columns": [
+        "内容分类",
+        "互动数"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 category_name 缺失或映射不唯一",
+      "row_count": 12,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "内容分类",
+          "互动数"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-034",
+      "scenario": "content_ops",
+      "query": "favorite互动按内容分类分布；请返回内容分类、互动数；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "actual_columns": [
+        "内容分类",
+        "互动数"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 category_name 缺失或映射不唯一",
+      "row_count": 12,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "内容分类",
+          "互动数"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-035",
+      "scenario": "content_ops",
+      "query": "follow互动按内容分类分布；请返回内容分类、互动数；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "actual_columns": [
+        "content_category",
+        "interaction_count"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 category_name 缺失或映射不唯一",
+      "row_count": 12,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "content_category",
+          "interaction_count"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-036",
+      "scenario": "content_ops",
+      "query": "2026-01每天的有效互动数；请返回互动日期、互动数；聚合口径：数量指标按对应业务记录计数；按时间升序展示。",
+      "expected_columns": [
+        "interaction_date",
+        "interactions"
+      ],
+      "actual_columns": [
+        "interaction_date",
+        "interaction_count"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 interactions 缺失或映射不唯一",
+      "row_count": 17,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "interaction_date",
+          "interaction_count"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-051",
+      "scenario": "content_ops",
+      "query": "搞笑类内容数量和平均视频时长；请返回内容分类、内容数量、平均视频时长；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "expected_columns": [
+        "category_name",
+        "contents",
+        "avg_duration_seconds"
+      ],
+      "actual_columns": [
+        "内容分类",
+        "内容数量",
+        "平均视频时长"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 category_name 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "内容分类",
+          "内容数量",
+          "平均视频时长"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-076",
+      "scenario": "content_ops",
+      "query": "新星级创作者数量和状态分布；请返回创作者状态、创作者数量；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "creator_status",
+        "creators"
+      ],
+      "actual_columns": [
+        "creator_status",
+        "creator_count"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 creators 缺失或映射不唯一",
+      "row_count": 3,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "creator_status",
+          "creator_count"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-121",
+      "scenario": "content_ops",
+      "query": "流量加热系数至少1.0的热点内容数量和平均排名；请返回最低流量加热系数、内容数量、平均排名；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均；按核心指标从高到低展示。",
+      "expected_columns": [
+        "min_traffic_boost",
+        "contents",
+        "avg_ranking"
+      ],
+      "actual_columns": [
+        "min_traffic_boost",
+        "content_count",
+        "avg_ranking"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 contents 缺失或映射不唯一",
+      "row_count": 1,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "min_traffic_boost",
+          "content_count",
+          "avg_ranking"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-126",
+      "scenario": "content_ops",
+      "query": "approved审核状态按风险类型分布；请返回风险类型、审核数量；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "risk_type",
+        "audits"
+      ],
+      "actual_columns": [
+        "risk_type",
+        "audit_count"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 audits 缺失或映射不唯一",
+      "row_count": 4,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "risk_type",
+          "audit_count"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-136",
+      "scenario": "content_ops",
+      "query": "不感兴趣举报按内容分类分布；请返回内容分类、举报数量；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "category_name",
+        "reports"
+      ],
+      "actual_columns": [
+        "content_category",
+        "report_count"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 category_name 缺失或映射不唯一",
+      "row_count": 12,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "content_category",
+          "report_count"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-137",
+      "scenario": "content_ops",
+      "query": "低俗内容举报按内容分类分布；请返回内容分类、举报数量；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "category_name",
+        "reports"
+      ],
+      "actual_columns": [
+        "content_category",
+        "report_count"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 category_name 缺失或映射不唯一",
+      "row_count": 12,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "content_category",
+          "report_count"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    },
+    {
+      "case_id": "CONTENT_OPS-138",
+      "scenario": "content_ops",
+      "query": "侵权搬运举报按内容分类分布；请返回内容分类、举报数量；聚合口径：数量指标按对应业务记录计数。",
+      "expected_columns": [
+        "category_name",
+        "reports"
+      ],
+      "actual_columns": [
+        "内容分类",
+        "举报数量"
+      ],
+      "strict_correct": false,
+      "strict_reason": "列 category_name 缺失或映射不唯一",
+      "row_count": 12,
+      "execution_success": true,
+      "truncated": false,
+      "mapping_candidates": [
+        [
+          "内容分类",
+          "举报数量"
+        ]
+      ],
+      "mapping_candidate_count": 1
+    }
+  ]
+}

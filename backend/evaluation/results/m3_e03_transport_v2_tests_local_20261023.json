@@ -1,0 +1,33 @@
+{
+  "run_status": "complete",
+  "tests_run": 185,
+  "failures": 0,
+  "errors": 0,
+  "skipped": [
+    {
+      "test": "test_hard_supervisor_timeout (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    },
+    {
+      "test": "test_real_filesystem_network_process_and_env_isolation (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    },
+    {
+      "test": "test_real_indexer_builds_without_project_file_access (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    }
+  ],
+  "modules": [
+    "test_m3_transport_recovery",
+    "test_m2_c_bird_runtime",
+    "test_m2_development_diagnostics",
+    "test_m3_condition_relations",
+    "test_m3_e03_0407_evidence",
+    "test_m3_output_contract",
+    "test_m2_intent_candidate",
+    "test_m2_native_replay"
+  ],
+  "live_model_calls": 0,
+  "live_database_connections": 0,
+  "meaning": "Mocked deterministic tests; Linux-only real isolation gates run on server"
+}

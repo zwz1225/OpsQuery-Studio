@@ -1,0 +1,1522 @@
+{
+  "stage": "M2 B offline full typed source audit",
+  "run_status": "complete",
+  "started_at": "2026-10-16T03:21:40.397241+00:00",
+  "errors": [],
+  "postgresql_connected": false,
+  "database_created": false,
+  "database_imported": false,
+  "target_data_verified": false,
+  "new_model_request_count": 0,
+  "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+  "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede",
+  "target": {
+    "database": "askdata_m2_bird",
+    "import_role": "askdata_m2_import",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "schema": "public"
+  },
+  "source_evidence_sha256": {
+    "source_preflight.json": "f33ed1e7c190205ab595966073e9cb4a4a51d57653f958cb2f1fb40bdb6a215d",
+    "import_manifest.json": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879",
+    "preparation_review.json": "35d54773a698b120c6836744b990f7c8559237f4ab43e5b0d7540d810c8cd864"
+  },
+  "typed_digest_policy": "m2_copy_native_typed_multiset_v1",
+  "tables": [
+    {
+      "name": "account",
+      "database_id": "financial",
+      "row_count": 4500,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "b9f4fb1b49a2c09f82040d5d4187a22cd1ceead296b6f41894ab9abfe21142d9",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "alignment",
+      "database_id": "superhero",
+      "row_count": 4,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "7ea29e4889ddd24ed8b156c1816bd8d83c88a531fcc099b3a20b4dd19d464672",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "atom",
+      "database_id": "toxicology",
+      "row_count": 9111,
+      "null_counts": [
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "b72484f220fc8027ef817b819e6f4c9fec343cc98d6e95fee225fdca1b316296",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "attendance",
+      "database_id": "student_club",
+      "row_count": 326,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "a2ec95788ade10860e2ab4f727c63d0d1681939ab619586844fa889f5188705a",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "attribute",
+      "database_id": "superhero",
+      "row_count": 6,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "5693953c17ddc4c9cc23e32e154d0a682e9b32c07e60a2ec7f7d4b0f53abd50f",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "badges",
+      "database_id": "codebase_community",
+      "row_count": 79851,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "fcb43d519386897e5e6a7be2f4720a4f0f55bf98d099c945b7e8901eec36b77d",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "bond",
+      "database_id": "toxicology",
+      "row_count": 9156,
+      "null_counts": [
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "bb0831f0eb5a1e29522f7a7a678f0a0e63ee6cd0d072b694b86ec21ab105e114",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "budget",
+      "database_id": "student_club",
+      "row_count": 52,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "c6a7c3f6add0d75d4529b121d1cf43bc8ea58c0f9e27bc1c93a14287ca2b00ea",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "card",
+      "database_id": "financial",
+      "row_count": 892,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "8f678252abbfa5d577763ccc3a9fdd449bb133f09b9d5c0d42dc666294b17acb",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "cards",
+      "database_id": "card_games",
+      "row_count": 56822,
+      "null_counts": [
+        0,
+        3,
+        56755,
+        1,
+        0,
+        27910,
+        13622,
+        6224,
+        56655,
+        12540,
+        0,
+        55228,
+        4761,
+        55867,
+        55455,
+        56801,
+        26020,
+        53864,
+        0,
+        56704,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        36183,
+        0,
+        53072,
+        56704,
+        55992,
+        7323,
+        8024,
+        17906,
+        50975,
+        0,
+        32462,
+        24684,
+        14753,
+        0,
+        0,
+        54757,
+        15616,
+        14766,
+        55455,
+        30624,
+        0,
+        50685,
+        6371,
+        0,
+        0,
+        2,
+        0,
+        0,
+        55455,
+        22228,
+        48982,
+        6600,
+        955,
+        30624,
+        0,
+        0,
+        0,
+        48186,
+        52373
+      ],
+      "typed_row_multiset_sha256": "452e9c0450b0d07024e364cee6e2d5c73064eff145e3a4b7ebbb57b14fb2990d",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "circuits",
+      "database_id": "formula_1",
+      "row_count": 72,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        72,
+        0
+      ],
+      "typed_row_multiset_sha256": "0475e111d166e52737ee0415f3ab270f6091a625c789a5f73d107cfb61232d02",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "client",
+      "database_id": "financial",
+      "row_count": 5369,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "54df09416159faa9ff22600121b4aa6f72c9c204abd55948e19b4144338b04d4",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "colour",
+      "database_id": "superhero",
+      "row_count": 35,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "3001f7b477bd42b89d1e53bdb800d4bccc9481056392b2bb8af8aa1c2f61a623",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "comments",
+      "database_id": "codebase_community",
+      "row_count": 174285,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2835,
+        171454
+      ],
+      "typed_row_multiset_sha256": "2986daee9c1f1d964cde1f92ba12ef277c070baf008b34211cfd0b7adc3dd68a",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "connected",
+      "database_id": "toxicology",
+      "row_count": 18312,
+      "null_counts": [
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "7cfdf264d76306b69f8564348a0ef48c82ab01fede8e5ffbb81d361a5b4ee41e",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "constructorresults",
+      "database_id": "formula_1",
+      "row_count": 11082,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        11065
+      ],
+      "typed_row_multiset_sha256": "cdfdf4731196e21bc4716dd2caee78ac6b16a0464bb82432488b6dbaaa3283e9",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "constructors",
+      "database_id": "formula_1",
+      "row_count": 208,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "a3c05ce8880238c38fdb475c9ae46d316ec8c975f5d5ccd38f1b8af6031115ba",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "constructorstandings",
+      "database_id": "formula_1",
+      "row_count": 11836,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "adb63d466444df7b57e9a5f9391a6e98986d068605aca18de9c23f57e3e045da",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "country",
+      "database_id": "european_football_2",
+      "row_count": 11,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "5c5f65a92697f51b9b9c65a43aceae9f1a70ab08910191753e1cb87d1fa26474",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "customers",
+      "database_id": "debit_card_specializing",
+      "row_count": 32461,
+      "null_counts": [
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "d69cb6d1ae6b7cf2268e5681c73984d09a79f478d1fc113fe53a2d3f54116157",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "disp",
+      "database_id": "financial",
+      "row_count": 5369,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "7de9c329e39ddf9faddc2b7e5d77d6d593a56a141a86811427909106632e6c51",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "district",
+      "database_id": "financial",
+      "row_count": 77,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "typed_row_multiset_sha256": "86f490bda9da91ba64fa36051ada35720eac325465d1aa1fcfbb6e3ce289b0fb",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "drivers",
+      "database_id": "formula_1",
+      "row_count": 840,
+      "null_counts": [
+        0,
+        0,
+        804,
+        757,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "66d838c226fb4903747993c0e6fd41a957e4be3d9043c07b57ac200d9cbb009b",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "driverstandings",
+      "database_id": "formula_1",
+      "row_count": 31578,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "48fc335d7979b249a8ee5092aa83a3f4c2467067926d81ee702a67790cd1dd4e",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "event",
+      "database_id": "student_club",
+      "row_count": 42,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        22,
+        6,
+        0
+      ],
+      "typed_row_multiset_sha256": "e722eded587fdfe972e1701140d2cb180083338f38778b2fe1bd3b5a1c8f61f7",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "examination",
+      "database_id": "thrombosis_prediction",
+      "row_count": 106,
+      "null_counts": [
+        36,
+        4,
+        0,
+        0,
+        19,
+        41,
+        0,
+        24,
+        85,
+        85,
+        81,
+        94,
+        0
+      ],
+      "typed_row_multiset_sha256": "c866a5de2534fdd17a59220e50e26f8ea2d4ff79449e4ce5befab252ae60cb6c",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "expense",
+      "database_id": "student_club",
+      "row_count": 32,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "213580902ecbb347f46ea147f2bb5c18f861e10faed565e5e0455924293a1cb1",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "foreign_data",
+      "database_id": "card_games",
+      "row_count": 229186,
+      "null_counts": [
+        0,
+        0,
+        0,
+        38418,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "689f6c80643c452d79fb225d3d7b4f853758dc048a698f491d889e3a4b8c2bd8",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "frpm",
+      "database_id": "california_schools",
+      "row_count": 9986,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        45,
+        45,
+        8139,
+        45,
+        8819,
+        8819,
+        45,
+        0,
+        0,
+        0,
+        56,
+        56,
+        50,
+        50,
+        14,
+        78,
+        78,
+        72,
+        72,
+        0
+      ],
+      "typed_row_multiset_sha256": "45d637cdef73fcabcf1119e915d20c633db5adea598db79a00c9fca87d4b43a4",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "gasstations",
+      "database_id": "debit_card_specializing",
+      "row_count": 5716,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "72a080e47973a9a0bd1c79155dd6dc3a7db6907a98cd409884e38391f6efe601",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "gender",
+      "database_id": "superhero",
+      "row_count": 3,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "9500b972731052ce7fced19b81fe2bc310d17c22f10bdf7e0145ab86df5fbd7b",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "hero_attribute",
+      "database_id": "superhero",
+      "row_count": 3738,
+      "null_counts": [
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "088129f52dcda2d2f1c0349f2fbafceeb305e9092121a72aecefb867bc0dcf9f",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "hero_power",
+      "database_id": "superhero",
+      "row_count": 5825,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "8292a97d911782ab68b23918d95bd6a6f13c58606f8246df20a1e632fa4daa40",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "income",
+      "database_id": "student_club",
+      "row_count": 36,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        33,
+        3
+      ],
+      "typed_row_multiset_sha256": "df36a3d7b1a1426468a423df3b7d868e5f48a04ec6e55857e0f2343c2ec20b40",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "laboratory",
+      "database_id": "thrombosis_prediction",
+      "row_count": 13908,
+      "null_counts": [
+        0,
+        0,
+        2630,
+        2634,
+        2603,
+        2757,
+        2790,
+        2840,
+        2805,
+        2670,
+        2655,
+        4287,
+        3244,
+        7471,
+        8892,
+        12203,
+        1827,
+        1827,
+        1827,
+        1827,
+        2621,
+        13287,
+        13857,
+        13453,
+        13832,
+        13766,
+        13789,
+        4241,
+        11228,
+        11228,
+        11230,
+        2453,
+        11053,
+        10571,
+        8447,
+        8447,
+        13765,
+        13780,
+        13880,
+        13809,
+        13815,
+        13893,
+        13839,
+        13908
+      ],
+      "typed_row_multiset_sha256": "d5cc1826b230e188e9de3ac43d4af125bd40a960c7ae9ed6a4c2c5e32196db07",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "laptimes",
+      "database_id": "formula_1",
+      "row_count": 400524,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "8a77ce25a909ec6d9a1b5282f2c2607223cc38c442c24310a2a9359bb0dfb17f",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "league",
+      "database_id": "european_football_2",
+      "row_count": 11,
+      "null_counts": [
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "45ab301c68bf0c3cc17b31be374fb58efd6a20e5bcba328944dceab80742eff1",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "legalities",
+      "database_id": "card_games",
+      "row_count": 427907,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "3eb028a2aa386462649785379ee23683adaafa97fe60f3c82caf9a1fb73fad40",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "loan",
+      "database_id": "financial",
+      "row_count": 682,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "98412205c92cf53a18065e9e7427948496ab2e46bfeba1ad758e2eba4f4aefcb",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "major",
+      "database_id": "student_club",
+      "row_count": 113,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "2646e25b3086baa5692d078422dca3a8fe65a081ae22afac069744c6a865b59f",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "match",
+      "database_id": "european_football_2",
+      "row_count": 25979,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1821,
+        1821,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1833,
+        1833,
+        1839,
+        1821,
+        1821,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1832,
+        1833,
+        1833,
+        1839,
+        1224,
+        1315,
+        1281,
+        1323,
+        1316,
+        1325,
+        1227,
+        1309,
+        1273,
+        1436,
+        1555,
+        1234,
+        1278,
+        1293,
+        1321,
+        1335,
+        1313,
+        1235,
+        1341,
+        1328,
+        1441,
+        1554,
+        11762,
+        11762,
+        11762,
+        11762,
+        11762,
+        11762,
+        11762,
+        11762,
+        3387,
+        3387,
+        3387,
+        3404,
+        3404,
+        3404,
+        3459,
+        3459,
+        3459,
+        3423,
+        3423,
+        3423,
+        14811,
+        14811,
+        14811,
+        3408,
+        3408,
+        3408,
+        8882,
+        8882,
+        8882,
+        3411,
+        3411,
+        3411,
+        11817,
+        11817,
+        11817,
+        11818,
+        11818,
+        11818
+      ],
+      "typed_row_multiset_sha256": "d7c5a36a6443c511e16496f86de55f28669caef301af640f1b2f630859170c56",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "member",
+      "database_id": "student_club",
+      "row_count": 33,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "typed_row_multiset_sha256": "ecccb0f152c74a37c7e40b83e7161fab82b36561c9731b7d53e2c7b751a6356f",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "molecule",
+      "database_id": "toxicology",
+      "row_count": 343,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "dab5aed32f2b50465424ba0f660b2d3d83aafd375ac7decdfa6593d31e3ed7f3",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "order",
+      "database_id": "financial",
+      "row_count": 6471,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "7c5f47bae5eb210a9fc3c5366cec38a91e0c07349e48945b13be7e242b6ab1b6",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "patient",
+      "database_id": "thrombosis_prediction",
+      "row_count": 1238,
+      "null_counts": [
+        0,
+        0,
+        1,
+        216,
+        251,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "f6f516d77dcd3bee2fc8082b0ab8053ea4ba925c6c8feac163d98c2d14aaf264",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "pitstops",
+      "database_id": "formula_1",
+      "row_count": 5815,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "c678c1f2877668248fbf3e1c6135d7e58d93d8ebf25ea0c20dbf32e79e8bfd77",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "player",
+      "database_id": "european_football_2",
+      "row_count": 11060,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "ed83e33ac374bb649b50ca0191e7179ac5a1ed241cb79efad224cd7e4defdf79",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "player_attributes",
+      "database_id": "european_football_2",
+      "row_count": 183978,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        836,
+        836,
+        836,
+        3230,
+        836,
+        836,
+        836,
+        836,
+        836,
+        2713,
+        836,
+        2713,
+        836,
+        836,
+        836,
+        836,
+        836,
+        2713,
+        836,
+        2713,
+        836,
+        2713,
+        836,
+        836,
+        836,
+        836,
+        836,
+        836,
+        2713,
+        836,
+        836,
+        836,
+        2713,
+        836,
+        836,
+        836,
+        836,
+        836
+      ],
+      "typed_row_multiset_sha256": "b6c5d2e9ea5e7211f7f206c935a2f0e109242878c3cebd32fedcd2157e41ab55",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "posthistory",
+      "database_id": "codebase_community",
+      "row_count": 303155,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        21326,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "c5444edd4b63d870b4b81c0ef8763d923dc6523ee238bd73104d475463d45ae5",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "postlinks",
+      "database_id": "codebase_community",
+      "row_count": 11102,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "548c68d777d2b9049fdb7767b5f70ca1f35bd9f907f9ad4cfab339f004d2e8c2",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "posts",
+      "database_id": "codebase_community",
+      "row_count": 91966,
+      "null_counts": [
+        0,
+        0,
+        77269,
+        0,
+        0,
+        49054,
+        220,
+        1392,
+        0,
+        49054,
+        49054,
+        49054,
+        0,
+        78723,
+        47361,
+        46934,
+        89499,
+        44211,
+        90356,
+        89457,
+        91501
+      ],
+      "typed_row_multiset_sha256": "c235085787eab03d70db8fccbaa8c1b6c71872345bf9ad85406c70e220b7555e",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "products",
+      "database_id": "debit_card_specializing",
+      "row_count": 591,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "db312782577306138174e9c26a771f191f279364f3e4cc019c90bc8963f74211",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "publisher",
+      "database_id": "superhero",
+      "row_count": 25,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "b8ba532c1c5db7920d47594a90f84850a0803b576909b5e41aa55d9ba45e8d3b",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "qualifying",
+      "database_id": "formula_1",
+      "row_count": 6967,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        109,
+        3577,
+        4935
+      ],
+      "typed_row_multiset_sha256": "55a82ce608d79a069c8b1d65db9764e0ab314a99bacd3a0882c4942fc61d6d52",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "race",
+      "database_id": "superhero",
+      "row_count": 61,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "49ee5ee9a969db876a51bdd8ad8468e53e637196de4b991594a4d5f1abe59ee0",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "races",
+      "database_id": "formula_1",
+      "row_count": 954,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        722,
+        0
+      ],
+      "typed_row_multiset_sha256": "3d8402a618e9b3e1547728eed99f5912571c94fb77e6b0d9970d74ba1a3e1f1e",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "results",
+      "database_id": "formula_1",
+      "row_count": 23179,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        10326,
+        0,
+        0,
+        0,
+        0,
+        17390,
+        17391,
+        18185,
+        18057,
+        18185,
+        18185,
+        0
+      ],
+      "typed_row_multiset_sha256": "61c50c41e394547780b77e2c9f988fccae879c6f0cd2ce1da0e2cc76066cb330",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "rulings",
+      "database_id": "card_games",
+      "row_count": 87769,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "75099f447ceda760d8e94a10020402a03477d97620ad87332461e1027b157d9e",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "satscores",
+      "database_id": "california_schools",
+      "row_count": 2269,
+      "null_counts": [
+        0,
+        0,
+        520,
+        0,
+        0,
+        0,
+        0,
+        596,
+        596,
+        596,
+        596
+      ],
+      "typed_row_multiset_sha256": "f16f17ee82bd7aa45aa3c956041e366298f3c9667333cfbb20f988afd18c2646",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "schools",
+      "database_id": "california_schools",
+      "row_count": 17686,
+      "null_counts": [
+        0,
+        1030,
+        5040,
+        0,
+        0,
+        0,
+        1369,
+        294,
+        294,
+        293,
+        293,
+        293,
+        292,
+        292,
+        292,
+        292,
+        292,
+        5969,
+        17146,
+        10722,
+        1369,
+        11992,
+        1369,
+        15885,
+        16044,
+        0,
+        0,
+        1369,
+        1369,
+        5711,
+        5711,
+        1369,
+        1369,
+        3882,
+        5743,
+        6868,
+        7076,
+        4823,
+        4823,
+        5986,
+        5986,
+        6012,
+        17255,
+        17255,
+        17262,
+        17644,
+        17644,
+        17644,
+        0
+      ],
+      "typed_row_multiset_sha256": "1681be0270774870b9cdd831d09a87cef57f9604dd7946519b96cb5e65f36079",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "seasons",
+      "database_id": "formula_1",
+      "row_count": 68,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "ebcd23cacca238dd08b61fe41a07e014287e618b97c553ec18bd09e165798d57",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "set_translations",
+      "database_id": "card_games",
+      "row_count": 1210,
+      "null_counts": [
+        0,
+        0,
+        0,
+        231
+      ],
+      "typed_row_multiset_sha256": "bd1a90424f6f9b1d7a3795bd943ec7ac612406591fc8fb0a87ca56d73d01e37c",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "sets",
+      "database_id": "card_games",
+      "row_count": 551,
+      "null_counts": [
+        0,
+        0,
+        279,
+        413,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        350,
+        541,
+        350,
+        391,
+        0,
+        397,
+        0,
+        291,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "5df3d7a9376a52e0cadcb382b7fd45883a50e938e865e6f0acf9376656d1b6df",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "status",
+      "database_id": "formula_1",
+      "row_count": 134,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "c10c15291fa17aacbe974252cbf1ebeb6f996c73755887d201931490798861d7",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "superhero",
+      "database_id": "superhero",
+      "row_count": 750,
+      "null_counts": [
+        0,
+        0,
+        122,
+        0,
+        0,
+        0,
+        0,
+        4,
+        3,
+        6,
+        58,
+        64
+      ],
+      "typed_row_multiset_sha256": "7593f93b3c4c432cac8dcbd596d1a4423fd325f8dc56c875873441776f4200d8",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "superpower",
+      "database_id": "superhero",
+      "row_count": 167,
+      "null_counts": [
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "a06e49cd876c78e5ea2b72cb702ad300b2fae1b52cc2f1b8107354b19a9f116e",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "tags",
+      "database_id": "codebase_community",
+      "row_count": 1032,
+      "null_counts": [
+        0,
+        0,
+        0,
+        436,
+        436
+      ],
+      "typed_row_multiset_sha256": "c36ce6e92b1e1f669e798a2b461008c323f2afc93511435b2c348905e4977b1c",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "team",
+      "database_id": "european_football_2",
+      "row_count": 299,
+      "null_counts": [
+        0,
+        0,
+        11,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "2c035162e9e03ea79162629fb252d2cba29b1a9c8b00d6e19272399a08f4a585",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "team_attributes",
+      "database_id": "european_football_2",
+      "row_count": 1458,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        969,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "81c0874df59858dd5cb6b65aaa4414dfce81e0e138fec614ccfdbe06cf0f791f",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "trans",
+      "database_id": "financial",
+      "row_count": 1056320,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        183114,
+        0,
+        0,
+        481881,
+        782812,
+        760931
+      ],
+      "typed_row_multiset_sha256": "4026edfe3b367ca37d427bfb06347614a2ed1b2222af55d9a254593c15d1e6d2",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "transactions_1k",
+      "database_id": "debit_card_specializing",
+      "row_count": 1000,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "e6658e3732ef246595b97f26b4300f24cbc9926f3ee30d02537a40c9f6160e61",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "users",
+      "database_id": "codebase_community",
+      "row_count": 40325,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        32204,
+        28634,
+        30946,
+        0,
+        0,
+        0,
+        0,
+        32007,
+        23846
+      ],
+      "typed_row_multiset_sha256": "6f7e2e5b651b2776343becddc1dbdcb695cd2a51672391de8517d4127cdc37dc",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "votes",
+      "database_id": "codebase_community",
+      "row_count": 38930,
+      "null_counts": [
+        0,
+        0,
+        0,
+        0,
+        35505,
+        38829
+      ],
+      "typed_row_multiset_sha256": "6f700e896e59bc29f8e8f9c7b12cc92010f203e0cf394e2366ca1ff7e1f6f9f9",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "yearmonth",
+      "database_id": "debit_card_specializing",
+      "row_count": 383282,
+      "null_counts": [
+        0,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "f3d7f6767ce492e82eebb55346d8cbc2445161e764a69384c88048b9c1252b15",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    },
+    {
+      "name": "zip_code",
+      "database_id": "student_club",
+      "row_count": 41877,
+      "null_counts": [
+        0,
+        0,
+        0,
+        88,
+        0,
+        0
+      ],
+      "typed_row_multiset_sha256": "bf2ed7ba2185efb907cda62e1d451272fa654d20a9b385dc0bf36eba1cbc3964",
+      "typed_digest_policy": "m2_copy_native_typed_multiset_v1"
+    }
+  ],
+  "summary": {
+    "source_table_count": 75,
+    "source_row_count": 3898114,
+    "source_column_count": 798,
+    "expected_constraint_count": 155,
+    "expected_index_count": 93,
+    "expected_sequence_count": 24
+  },
+  "verification_scope": "Real source bytes and typed parsing only; no target, role, import or Gold verification",
+  "finished_at": "2026-10-16T03:27:13.340738+00:00"
+}

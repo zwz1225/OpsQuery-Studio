@@ -1,0 +1,72 @@
+{
+  "stage": "M1 C1 PostgreSQL settings and recorded source",
+  "run_status": "complete",
+  "started_at": "2026-10-09T06:28:15.856550+00:00",
+  "password_required": true,
+  "application_backend": "duckdb",
+  "application_source_id": "short_video_ops_duckdb",
+  "postgresql_connected": false,
+  "live_target_verified": false,
+  "runtime_available": false,
+  "new_model_request_count": 0,
+  "errors": [],
+  "configuration": {
+    "source_id": "short_video_ops_postgres",
+    "logical_database_id": "short_video_ops",
+    "backend": "postgresql",
+    "dialect": "postgres",
+    "prompt_dialect": "PostgreSQL",
+    "physical_database": "askdata_m1_test",
+    "physical_schema": "askdata_ops",
+    "query_role": "askdata_readonly",
+    "password_configured": true,
+    "recorded_data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+    "limits": {
+      "connect_timeout_seconds": 10,
+      "statement_timeout_ms": 120000,
+      "lock_timeout_ms": 5000,
+      "pool_min_size": 1,
+      "pool_max_size": 4,
+      "pool_wait_timeout_seconds": 10,
+      "pool_max_waiting": 16
+    }
+  },
+  "recorded_source": {
+    "source_id": "short_video_ops_postgres",
+    "logical_database_id": "short_video_ops",
+    "backend": "postgresql",
+    "dialect": "postgres",
+    "prompt_dialect": "PostgreSQL",
+    "physical_database": "askdata_m1_test",
+    "physical_schema": "askdata_ops",
+    "query_role": "askdata_readonly",
+    "password_configured": true,
+    "recorded_data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+    "limits": {
+      "connect_timeout_seconds": 10,
+      "statement_timeout_ms": 120000,
+      "lock_timeout_ms": 5000,
+      "pool_min_size": 1,
+      "pool_max_size": 4,
+      "pool_wait_timeout_seconds": 10,
+      "pool_max_waiting": 16
+    },
+    "recorded_physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+    "evidence_sha256": {
+      "import": "215c9ce2e1ae53e140b7c17e4222d8eae29dcce7dd423ab03f74918d13032ce9",
+      "validation": "1e8e9b757f6391b15766169b631f3c7d287a1fdd95ea933570773989a57851f6"
+    },
+    "recorded_evidence_verified": true,
+    "live_target_verified": false,
+    "catalog_version": null,
+    "runtime_available": false,
+    "scope": "Recorded M1 B snapshot only. Live metadata/data verification precedes runtime assembly."
+  },
+  "credentials_configured": true,
+  "pending_steps": [
+    "Connection lifecycle/pool",
+    "Live metadata/data verification",
+    "PostgreSQL executor and catalog assembly"
+  ],
+  "finished_at": "2026-10-09T06:28:15.868075+00:00"
+}

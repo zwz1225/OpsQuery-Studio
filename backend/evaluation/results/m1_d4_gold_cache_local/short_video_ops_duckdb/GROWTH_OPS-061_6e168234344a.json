@@ -1,0 +1,83 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {},
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "channel_name",
+      "avg_activation_seconds"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": false,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT c.channel_name, ROUND(AVG(a.activation_seconds),2) AS avg_activation_seconds FROM user_activations a JOIN user_registrations r ON a.registration_id=r.registration_id JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE a.is_activated AND c.channel_name='自然推荐' GROUP BY 1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "GROWTH_OPS-061",
+  "question": "自然推荐渠道激活用户的平均激活耗时；请返回渠道名称、平均激活耗时；聚合口径：平均指标取算术平均。",
+  "gold_sql": "SELECT c.channel_name, ROUND(AVG(a.activation_seconds),2) AS avg_activation_seconds FROM user_activations a JOIN user_registrations r ON a.registration_id=r.registration_id JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE a.is_activated AND c.channel_name='自然推荐' GROUP BY 1",
+  "database": "short_video_ops",
+  "scenario": "growth_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.growth_daily_metrics",
+      "short_video_ops.growth_targets",
+      "short_video_ops.recall_campaigns",
+      "short_video_ops.recall_results",
+      "short_video_ops.recall_touches",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_churn_events",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_lifecycle_snapshots",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.user_sessions",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "growth_ops"
+    ],
+    "user_id": "demo_growth_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "channel_name",
+    "avg_activation_seconds"
+  ],
+  "rows": [
+    {
+      "channel_name": "自然推荐",
+      "avg_activation_seconds": 21167.64
+    }
+  ],
+  "generated_at": "2026-10-10T14:51:58.272106+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "case_ids": [
+    "BIRD-PG-0201",
+    "BIRD-PG-0263",
+    "BIRD-PG-0273",
+    "BIRD-PG-0226",
+    "BIRD-PG-0368",
+    "BIRD-PG-0586"
+  ],
+  "scope": "Fixed development-only six-case validation of the v4 limited change; not a formal or holdout benchmark."
+}

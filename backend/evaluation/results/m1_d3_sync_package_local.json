@@ -1,0 +1,118 @@
+{
+  "stage": "M1 D3 sync package byte verification",
+  "run_status": "complete",
+  "package_name": "M1_D3_PostgreSQL_Gold79同步包_20261010.zip",
+  "package_sha256": "555d0c22921b92fdbc4425b331364af2dbbe4ae63d36d908941a5f1fdd934e91",
+  "package_bytes": 193613,
+  "entry_count": 21,
+  "crc_verified": true,
+  "all_entries_match_local_bytes": true,
+  "files": [
+    {
+      "path": "AskData_Studio_后续项目改进方案.md",
+      "sha256": "7d8bae9a51c03d0d978d28ee95fca8960d18ce07550bb7f7d3cd4b6854339070",
+      "bytes": 27653
+    },
+    {
+      "path": "后续参考路线.md",
+      "sha256": "93f7a73b11e10f8a19f660cc21511bdf0b3f9f8ec4abf4901c6ebd4b7ddc1123",
+      "bytes": 12235
+    },
+    {
+      "path": "backend/app/datasources/sql_policy.py",
+      "sha256": "32407706c83ce218440a0d25cc2b07a245463a5cb93a52e21aa0d4514dd6ded9",
+      "bytes": 5302
+    },
+    {
+      "path": "backend/scripts/audit_m1_d3_gold79.py",
+      "sha256": "4dc91ab210576045fbf6b03bd3aba6478dc061f5d8175c4f3299880049cf7fc8",
+      "bytes": 12976
+    },
+    {
+      "path": "backend/scripts/check_m1_d3_duckdb_compatibility.py",
+      "sha256": "f7085d9349b8374e063e37a7b19a3abb03c4fe94b833658250df91a4245d2886",
+      "bytes": 6499
+    },
+    {
+      "path": "backend/tests/test_m1_d3_gold79.py",
+      "sha256": "4c6dea34805a513ddeedec938abcb338651d92e33ce6b68be4b7c1db67b5bbb0",
+      "bytes": 7208
+    },
+    {
+      "path": "backend/evaluation/cases/all_cases.jsonl",
+      "sha256": "16fe651be76e5eacde7eb30ac6b1880eb4fcb0d22eebb7b347142f26e488a34f",
+      "bytes": 610185
+    },
+    {
+      "path": "backend/evaluation/cases/m1_a_duckdb_regression.json",
+      "sha256": "f6abe04640bfe86e3a377b467ebf4df61758e9bf66ab555f9297495a2acf864d",
+      "bytes": 2012
+    },
+    {
+      "path": "backend/evaluation/cases/phase83_validation.json",
+      "sha256": "b0284d5af385fbdf03909e4297ce33d0a8f57f14f1cf537ab2c76cf46d78906c",
+      "bytes": 853
+    },
+    {
+      "path": "backend/evaluation/cases/m1_d3_postgres_gold79.json",
+      "sha256": "3028f12d2850fce7612edf77015af9dc0011fe4085f349b0232e78cf515f2c64",
+      "bytes": 2008
+    },
+    {
+      "path": "backend/evaluation/cases/m1_d3_postgres_gold79_review.json",
+      "sha256": "fb0ba5949b9e0d68a124dc5d92c533372a423b031a613c9bc8026a153d2b8daf",
+      "bytes": 132466
+    },
+    {
+      "path": "backend/evaluation/results/m1_all_cases_before_postgres_gold79_20261010.jsonl",
+      "sha256": "0eb11d55d07cbcc8926b4c5de6657c1f897e7559387cfb5f5c884ef20ec9e6ec",
+      "bytes": 583743
+    },
+    {
+      "path": "backend/evaluation/results/m1_c3_postgres_runtime_server_v2.json",
+      "sha256": "2cd9a7b9ad94300b36a9494b22a76e28db2d64a91c8d23835c96e982e6ea7166",
+      "bytes": 81217
+    },
+    {
+      "path": "backend/evaluation/results/m1_d3_gold79_audit_local.json",
+      "sha256": "64474c4ea5b866cf003d09204f25291ff9d64a909dce4d4b998a1646d762ebe4",
+      "bytes": 40326
+    },
+    {
+      "path": "backend/evaluation/results/m1_d3_gold79_audit_local_v2.json",
+      "sha256": "69413f9a3a5d4e1b5c4247cd085e63e57d963e0ef02653fdaf02413980046b87",
+      "bytes": 44012
+    },
+    {
+      "path": "backend/evaluation/results/m1_d3_regression_local.json",
+      "sha256": "2b268095036494f230bf14f4b9fa009f247efda9c28e36ae285d4d72f749161e",
+      "bytes": 329
+    },
+    {
+      "path": "backend/evaluation/results/m1_d3_duckdb_compatibility_local.json",
+      "sha256": "5894b9952289c3f470ab1899ff30d8d3a1fe601d51c32b7997934cc6b34413ac",
+      "bytes": 62630
+    },
+    {
+      "path": "backend/evaluation/results/m1_d3_implementation_local.json",
+      "sha256": "ef386152e59273e0a86c309647709a28199c53badc7905ab66d4ac4c668994da",
+      "bytes": 3022
+    },
+    {
+      "path": "backend/evaluation/M1_D3_POSTGRES_GOLD79_ACCEPTANCE.md",
+      "sha256": "cd857ea009f03638f1e469ec4ee6e31de5e210a967132c31af81dbbb281d1a9e",
+      "bytes": 5857
+    },
+    {
+      "path": "backend/evaluation/M1_D3_POSTGRES_GOLD79_REVIEW.md",
+      "sha256": "c8e18407971f4837eeae8cda4bc94ff197ac30869a95195dd4b01889abd80dcb",
+      "bytes": 142669
+    },
+    {
+      "path": "backend/evaluation/M1_D2_SQL_RUNTIME_ACCEPTANCE.md",
+      "sha256": "f3d511ade98c53d9a10682593007d97d8add6d521902230fc5c3b0f108275ca2",
+      "bytes": 5762
+    }
+  ],
+  "contains_env_or_credentials": false
+}

@@ -1,0 +1,937 @@
+{
+  "run_manifest": {
+    "manifest_version": 1,
+    "mode": "e2e",
+    "scope": "smoke",
+    "dataset": {
+      "source": "evaluation/cases/all_cases.jsonl",
+      "case_list": "evaluation/cases/e2e_smoke.json",
+      "case_ids": [
+        "GROWTH_OPS-001",
+        "CHANNEL_OPS-001",
+        "CONTENT_OPS-001"
+      ],
+      "version": "85aa360fa956e2b763c77bb7fc5334f3a900db8d4cc0785d8ac3d010db8ba612"
+    },
+    "versions": {
+      "data": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+      "schema": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede",
+      "application": "df84a6e587ab0ecc565092fa596c3bdd5298fd1250c59102a1f055e7cc8b2496",
+      "evaluator": "658828ce736b51b8b678864df31eeddb01ffadf63207a8713bd26e6068ad42da",
+      "evaluation_code": "d72330ccb5e8809d9e0c0309190404d2fcb6c3bf0506e6676c4ff94606d2033d"
+    },
+    "config": {
+      "api_key_configured": true,
+      "llm_model": "qwen3.7-plus",
+      "llm_enable_thinking": false,
+      "embedding_model": "text-embedding-v4",
+      "embedding_dimensions": 1024,
+      "rerank_model": "qwen3-rerank",
+      "semantic_fallbacks": false,
+      "route_availability_fallback": "direct_response_no_database",
+      "schema_recall_threshold": 0.55,
+      "bm25_top_k": 30,
+      "dense_top_k": 30,
+      "rrf_top_k": 40,
+      "max_schema_fields": 20,
+      "time_field_supplement": {
+        "enabled": false,
+        "max_extra_fields": 2,
+        "max_total_fields": 22
+      },
+      "max_saved_memories": 20,
+      "mcp_max_tool_calls": 3,
+      "short_term_memory": {
+        "summary_enabled": true,
+        "summary_trigger_tokens": 12000,
+        "summary_batch_tokens": 6000,
+        "min_recent_turns": 5,
+        "archive_enabled": false,
+        "table_row_limit": 50
+      },
+      "route_context_turns": 6,
+      "llm_temperature": 0.0,
+      "user_roles": [
+        "demo_channel_ops",
+        "demo_content_ops",
+        "demo_growth_ops"
+      ],
+      "evaluation_date": "2026-09-29"
+    },
+    "run_id": "e77a01d281df485ca5058b61acb4791e",
+    "created_at": "2026-09-29T10:04:19.155303Z",
+    "fingerprint": "41142ef7229eeb9752992d97a3bb38db7016972ea55df17b898be27cede037b7"
+  },
+  "run_status": "complete",
+  "summary": {
+    "case_count": 3,
+    "behavior_success_rate": 1.0,
+    "sql_case_count": 3,
+    "result_scored_count": 3,
+    "result_accuracy": 1.0,
+    "strict_scored_count": 3,
+    "strict_result_accuracy": 1.0,
+    "unscored_count": 0
+  },
+  "cases": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "run_id": "e77a01d281df485ca5058b61acb4791e",
+      "trace_id": "e77a01d281df485ca5058b61acb4791e:GROWTH_OPS-001",
+      "task_id": "4f9d345cb6dc",
+      "query": "查询2026年每个月的新增用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "scenario": "growth_ops",
+      "route": "database_query",
+      "status": "completed",
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_correct": true,
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "duration_ms": 18948.513,
+      "trace": {
+        "execution_log": [
+          {
+            "stage": "mcp_tool_call",
+            "success": true,
+            "call_index": 1,
+            "tool": "query_short_video_ops",
+            "arguments": {
+              "sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(new_users) AS new_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC"
+            },
+            "query_contract": {
+              "grain": "时间趋势",
+              "source_tables": [
+                "growth_daily_metrics"
+              ],
+              "filters": [
+                {
+                  "phrase": "2026年",
+                  "field": "metric_date",
+                  "operator": "范围",
+                  "value": "['2026-01-01', '2027-01-01')"
+                }
+              ],
+              "metrics": [
+                "SUM(new_users)"
+              ],
+              "output_columns": [
+                "month",
+                "new_users"
+              ],
+              "metric_plan": {
+                "metrics": [
+                  {
+                    "name": "new_users",
+                    "kind": "aggregate",
+                    "description": "按指标日期汇总的新用户数量",
+                    "source_table": "growth_daily_metrics",
+                    "source_field": "new_users",
+                    "aggregation": "SUM",
+                    "time_field": {
+                      "table": "growth_daily_metrics",
+                      "field": "metric_date"
+                    },
+                    "available": true
+                  }
+                ],
+                "formulas": [],
+                "joins": [],
+                "selected_sources": [
+                  "growth_daily_metrics.new_users"
+                ],
+                "warnings": []
+              },
+              "constraint_plan": {
+                "filter_constraints": [],
+                "time_constraints": [],
+                "group_constraints": [],
+                "join_constraints": [],
+                "conditional_filter_rules": [],
+                "warnings": []
+              },
+              "constraint_validation": {
+                "status": "PASS",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": []
+              }
+            },
+            "result": {
+              "database": "short_video_ops",
+              "sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(new_users) AS new_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC",
+              "success": true,
+              "columns": [
+                "month",
+                "new_users"
+              ],
+              "rows": [
+                {
+                  "month": "2026-01",
+                  "new_users": 1520
+                },
+                {
+                  "month": "2026-02",
+                  "new_users": 1440
+                },
+                {
+                  "month": "2026-03",
+                  "new_users": 1538
+                },
+                {
+                  "month": "2026-04",
+                  "new_users": 1525
+                },
+                {
+                  "month": "2026-05",
+                  "new_users": 1603
+                },
+                {
+                  "month": "2026-06",
+                  "new_users": 1475
+                },
+                {
+                  "month": "2026-07",
+                  "new_users": 1555
+                },
+                {
+                  "month": "2026-08",
+                  "new_users": 1344
+                }
+              ],
+              "row_count": 8,
+              "truncated": false,
+              "execution_ms": 1639.751,
+              "error": null
+            },
+            "reason": "根据查询契约生成并执行只读SQL",
+            "sql_validation": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "invalid_columns": []
+            },
+            "sql_validation_attempts": [
+              {
+                "status": "PASS",
+                "errors": [],
+                "warnings": [],
+                "invalid_columns": []
+              }
+            ],
+            "metric_planning": {
+              "metrics": [
+                {
+                  "name": "new_users",
+                  "kind": "aggregate",
+                  "description": "按指标日期汇总的新用户数量",
+                  "source_table": "growth_daily_metrics",
+                  "source_field": "new_users",
+                  "aggregation": "SUM",
+                  "time_field": {
+                    "table": "growth_daily_metrics",
+                    "field": "metric_date"
+                  },
+                  "available": true
+                }
+              ],
+              "formulas": [],
+              "joins": [],
+              "selected_sources": [
+                "growth_daily_metrics.new_users"
+              ],
+              "warnings": []
+            },
+            "metric_validation": {
+              "errors": []
+            },
+            "metric_validation_attempts": [
+              {
+                "errors": []
+              }
+            ],
+            "constraint_validation": {
+              "status": "PASS",
+              "missing_constraints": [],
+              "missing_group_constraints": [],
+              "unsupported_constraints": [],
+              "join_violations": [],
+              "warnings": []
+            },
+            "constraint_validation_attempts": [
+              {
+                "status": "PASS",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": []
+              }
+            ]
+          },
+          {
+            "stage": "execute_duckdb",
+            "success": true,
+            "error": null,
+            "via": "mcp"
+          }
+        ],
+        "tool_calls": [
+          {
+            "call_index": 1,
+            "database": "short_video_ops",
+            "arguments": {
+              "mode": "single_database_agent",
+              "transport": "mcp_in_process",
+              "tool_name": "query_short_video_ops",
+              "schema_graph_version": "42b1017f2be6",
+              "sql_source": "model_mcp"
+            },
+            "sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(new_users) AS new_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC",
+            "success": true,
+            "row_count": 8,
+            "truncated": false,
+            "error": null
+          }
+        ],
+        "clarification": null
+      },
+      "generated_sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(new_users) AS new_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC",
+      "strict_comparison_reason": "严格结果一致",
+      "gold_result_source": "cache",
+      "generated_result_rows": 8
+    },
+    {
+      "case_id": "CHANNEL_OPS-001",
+      "run_id": "e77a01d281df485ca5058b61acb4791e",
+      "trace_id": "e77a01d281df485ca5058b61acb4791e:CHANNEL_OPS-001",
+      "task_id": "5b1c2fb8c1f9",
+      "query": "2026-01每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "scenario": "channel_ops",
+      "route": "database_query",
+      "status": "completed",
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_correct": true,
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "duration_ms": 37927.254,
+      "trace": {
+        "execution_log": [
+          {
+            "stage": "mcp_tool_call",
+            "success": true,
+            "call_index": 1,
+            "tool": "query_short_video_ops",
+            "arguments": {
+              "sql": "SELECT stat_date, SUM(spend) AS ad_spend FROM ad_daily_stats WHERE stat_date >= '2026-01-01' AND stat_date < '2026-02-01' GROUP BY stat_date ORDER BY stat_date ASC"
+            },
+            "query_contract": {
+              "grain": "时间趋势",
+              "source_tables": [
+                "ad_daily_stats"
+              ],
+              "filters": [
+                {
+                  "phrase": "2026年1月",
+                  "field": "ad_daily_stats.stat_date",
+                  "operator": "范围",
+                  "value": ">= '2026-01-01' AND < '2026-02-01'"
+                }
+              ],
+              "metrics": [
+                "SUM(ad_daily_stats.spend)"
+              ],
+              "output_columns": [
+                "stat_date",
+                "ad_spend"
+              ],
+              "metric_plan": {
+                "metrics": [],
+                "formulas": [],
+                "joins": [],
+                "selected_sources": [],
+                "warnings": []
+              },
+              "constraint_plan": {
+                "filter_constraints": [],
+                "time_constraints": [],
+                "group_constraints": [],
+                "join_constraints": [],
+                "conditional_filter_rules": [],
+                "warnings": [
+                  "问题包含月份 2026-01，但没有可用指标时间字段可用于确定过滤列"
+                ]
+              },
+              "constraint_validation": {
+                "status": "WARN",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": [
+                  "问题包含月份 2026-01，但没有可用指标时间字段可用于确定过滤列"
+                ]
+              }
+            },
+            "result": {
+              "database": "short_video_ops",
+              "sql": "SELECT stat_date, SUM(spend) AS ad_spend FROM ad_daily_stats WHERE stat_date >= '2026-01-01' AND stat_date < '2026-02-01' GROUP BY stat_date ORDER BY stat_date ASC",
+              "success": true,
+              "columns": [
+                "stat_date",
+                "ad_spend"
+              ],
+              "rows": [
+                {
+                  "stat_date": "2026-01-02",
+                  "ad_spend": 547.01
+                },
+                {
+                  "stat_date": "2026-01-03",
+                  "ad_spend": 4092.0
+                },
+                {
+                  "stat_date": "2026-01-04",
+                  "ad_spend": 1326.62
+                },
+                {
+                  "stat_date": "2026-01-05",
+                  "ad_spend": 2622.66
+                },
+                {
+                  "stat_date": "2026-01-06",
+                  "ad_spend": 1151.76
+                },
+                {
+                  "stat_date": "2026-01-07",
+                  "ad_spend": 7150.09
+                },
+                {
+                  "stat_date": "2026-01-08",
+                  "ad_spend": 7481.139999999999
+                },
+                {
+                  "stat_date": "2026-01-09",
+                  "ad_spend": 8729.2
+                },
+                {
+                  "stat_date": "2026-01-10",
+                  "ad_spend": 6831.43
+                },
+                {
+                  "stat_date": "2026-01-11",
+                  "ad_spend": 12802.42
+                },
+                {
+                  "stat_date": "2026-01-12",
+                  "ad_spend": 10972.35
+                },
+                {
+                  "stat_date": "2026-01-13",
+                  "ad_spend": 9370.02
+                },
+                {
+                  "stat_date": "2026-01-14",
+                  "ad_spend": 12486.720000000001
+                },
+                {
+                  "stat_date": "2026-01-15",
+                  "ad_spend": 19280.280000000002
+                },
+                {
+                  "stat_date": "2026-01-16",
+                  "ad_spend": 14618.85
+                },
+                {
+                  "stat_date": "2026-01-17",
+                  "ad_spend": 16386.99
+                },
+                {
+                  "stat_date": "2026-01-18",
+                  "ad_spend": 17622.83
+                },
+                {
+                  "stat_date": "2026-01-19",
+                  "ad_spend": 17616.269999999997
+                },
+                {
+                  "stat_date": "2026-01-20",
+                  "ad_spend": 22490.450000000004
+                },
+                {
+                  "stat_date": "2026-01-21",
+                  "ad_spend": 24398.57
+                },
+                {
+                  "stat_date": "2026-01-22",
+                  "ad_spend": 20489.449999999997
+                },
+                {
+                  "stat_date": "2026-01-23",
+                  "ad_spend": 28875.65
+                },
+                {
+                  "stat_date": "2026-01-24",
+                  "ad_spend": 25586.03
+                },
+                {
+                  "stat_date": "2026-01-25",
+                  "ad_spend": 22621.799999999996
+                },
+                {
+                  "stat_date": "2026-01-26",
+                  "ad_spend": 28105.800000000003
+                },
+                {
+                  "stat_date": "2026-01-27",
+                  "ad_spend": 29406.479999999996
+                },
+                {
+                  "stat_date": "2026-01-28",
+                  "ad_spend": 26343.91
+                },
+                {
+                  "stat_date": "2026-01-29",
+                  "ad_spend": 23721.29
+                },
+                {
+                  "stat_date": "2026-01-30",
+                  "ad_spend": 32152.190000000006
+                },
+                {
+                  "stat_date": "2026-01-31",
+                  "ad_spend": 26532.57
+                }
+              ],
+              "row_count": 30,
+              "truncated": false,
+              "execution_ms": 1661.437,
+              "error": null
+            },
+            "reason": "根据查询契约生成并执行只读SQL",
+            "sql_validation": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "invalid_columns": []
+            },
+            "sql_validation_attempts": [
+              {
+                "status": "PASS",
+                "errors": [],
+                "warnings": [],
+                "invalid_columns": []
+              }
+            ],
+            "metric_planning": {
+              "metrics": [],
+              "formulas": [],
+              "joins": [],
+              "selected_sources": [],
+              "warnings": []
+            },
+            "metric_validation": {
+              "errors": []
+            },
+            "metric_validation_attempts": [
+              {
+                "errors": []
+              }
+            ],
+            "constraint_validation": {
+              "status": "WARN",
+              "missing_constraints": [],
+              "missing_group_constraints": [],
+              "unsupported_constraints": [],
+              "join_violations": [],
+              "warnings": [
+                "问题包含月份 2026-01，但没有可用指标时间字段可用于确定过滤列"
+              ]
+            },
+            "constraint_validation_attempts": [
+              {
+                "status": "WARN",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": [
+                  "问题包含月份 2026-01，但没有可用指标时间字段可用于确定过滤列"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "execute_duckdb",
+            "success": true,
+            "error": null,
+            "via": "mcp"
+          }
+        ],
+        "tool_calls": [
+          {
+            "call_index": 1,
+            "database": "short_video_ops",
+            "arguments": {
+              "mode": "single_database_agent",
+              "transport": "mcp_in_process",
+              "tool_name": "query_short_video_ops",
+              "schema_graph_version": "7631af7e1e6c",
+              "sql_source": "model_mcp"
+            },
+            "sql": "SELECT stat_date, SUM(spend) AS ad_spend FROM ad_daily_stats WHERE stat_date >= '2026-01-01' AND stat_date < '2026-02-01' GROUP BY stat_date ORDER BY stat_date ASC",
+            "success": true,
+            "row_count": 30,
+            "truncated": false,
+            "error": null
+          }
+        ],
+        "clarification": null
+      },
+      "generated_sql": "SELECT stat_date, SUM(spend) AS ad_spend FROM ad_daily_stats WHERE stat_date >= '2026-01-01' AND stat_date < '2026-02-01' GROUP BY stat_date ORDER BY stat_date ASC",
+      "strict_comparison_reason": "严格结果一致",
+      "gold_result_source": "cache",
+      "generated_result_rows": 30
+    },
+    {
+      "case_id": "CONTENT_OPS-001",
+      "run_id": "e77a01d281df485ca5058b61acb4791e",
+      "trace_id": "e77a01d281df485ca5058b61acb4791e:CONTENT_OPS-001",
+      "task_id": "ab5bc91a558e",
+      "query": "2026-01每天的视频曝光量和播放量；请返回指标日期、曝光量、播放量；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "scenario": "content_ops",
+      "route": "database_query",
+      "status": "completed",
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_correct": true,
+      "sql_execution_success": true,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "duration_ms": 30290.856,
+      "trace": {
+        "execution_log": [
+          {
+            "stage": "mcp_tool_call",
+            "success": true,
+            "call_index": 1,
+            "tool": "query_short_video_ops",
+            "arguments": {
+              "sql": "SELECT metric_date, SUM(impressions) AS impressions, SUM(play_count) AS play_count FROM content_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2026-02-01' GROUP BY metric_date ORDER BY metric_date ASC"
+            },
+            "query_contract": {
+              "grain": "时间趋势",
+              "source_tables": [
+                "content_daily_metrics"
+              ],
+              "filters": [
+                {
+                  "phrase": "2026年1月",
+                  "field": "content_daily_metrics.metric_date",
+                  "operator": "范围",
+                  "value": "['2026-01-01', '2026-02-01')"
+                }
+              ],
+              "metrics": [
+                "曝光量",
+                "播放量"
+              ],
+              "output_columns": [
+                "metric_date",
+                "impressions",
+                "play_count"
+              ],
+              "metric_plan": {
+                "metrics": [],
+                "formulas": [],
+                "joins": [],
+                "selected_sources": [],
+                "warnings": []
+              },
+              "constraint_plan": {
+                "filter_constraints": [],
+                "time_constraints": [],
+                "group_constraints": [],
+                "join_constraints": [],
+                "conditional_filter_rules": [],
+                "warnings": [
+                  "问题包含月份 2026-01，但没有可用指标时间字段可用于确定过滤列"
+                ]
+              },
+              "constraint_validation": {
+                "status": "WARN",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": [
+                  "问题包含月份 2026-01，但没有可用指标时间字段可用于确定过滤列"
+                ]
+              }
+            },
+            "result": {
+              "database": "short_video_ops",
+              "sql": "SELECT metric_date, SUM(impressions) AS impressions, SUM(play_count) AS play_count FROM content_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2026-02-01' GROUP BY metric_date ORDER BY metric_date ASC",
+              "success": true,
+              "columns": [
+                "metric_date",
+                "impressions",
+                "play_count"
+              ],
+              "rows": [
+                {
+                  "metric_date": "2026-01-01",
+                  "impressions": 343,
+                  "play_count": 97
+                },
+                {
+                  "metric_date": "2026-01-02",
+                  "impressions": 187,
+                  "play_count": 55
+                },
+                {
+                  "metric_date": "2026-01-03",
+                  "impressions": 202,
+                  "play_count": 77
+                },
+                {
+                  "metric_date": "2026-01-04",
+                  "impressions": 224,
+                  "play_count": 87
+                },
+                {
+                  "metric_date": "2026-01-05",
+                  "impressions": 224,
+                  "play_count": 65
+                },
+                {
+                  "metric_date": "2026-01-06",
+                  "impressions": 214,
+                  "play_count": 71
+                },
+                {
+                  "metric_date": "2026-01-07",
+                  "impressions": 227,
+                  "play_count": 91
+                },
+                {
+                  "metric_date": "2026-01-08",
+                  "impressions": 235,
+                  "play_count": 88
+                },
+                {
+                  "metric_date": "2026-01-09",
+                  "impressions": 310,
+                  "play_count": 110
+                },
+                {
+                  "metric_date": "2026-01-10",
+                  "impressions": 262,
+                  "play_count": 79
+                },
+                {
+                  "metric_date": "2026-01-11",
+                  "impressions": 281,
+                  "play_count": 93
+                },
+                {
+                  "metric_date": "2026-01-12",
+                  "impressions": 212,
+                  "play_count": 68
+                },
+                {
+                  "metric_date": "2026-01-13",
+                  "impressions": 232,
+                  "play_count": 73
+                },
+                {
+                  "metric_date": "2026-01-14",
+                  "impressions": 415,
+                  "play_count": 156
+                },
+                {
+                  "metric_date": "2026-01-15",
+                  "impressions": 299,
+                  "play_count": 113
+                },
+                {
+                  "metric_date": "2026-01-16",
+                  "impressions": 273,
+                  "play_count": 92
+                },
+                {
+                  "metric_date": "2026-01-17",
+                  "impressions": 141,
+                  "play_count": 46
+                },
+                {
+                  "metric_date": "2026-01-18",
+                  "impressions": 366,
+                  "play_count": 131
+                },
+                {
+                  "metric_date": "2026-01-19",
+                  "impressions": 225,
+                  "play_count": 71
+                },
+                {
+                  "metric_date": "2026-01-20",
+                  "impressions": 322,
+                  "play_count": 97
+                },
+                {
+                  "metric_date": "2026-01-21",
+                  "impressions": 246,
+                  "play_count": 77
+                },
+                {
+                  "metric_date": "2026-01-22",
+                  "impressions": 187,
+                  "play_count": 70
+                },
+                {
+                  "metric_date": "2026-01-23",
+                  "impressions": 179,
+                  "play_count": 61
+                },
+                {
+                  "metric_date": "2026-01-24",
+                  "impressions": 303,
+                  "play_count": 106
+                },
+                {
+                  "metric_date": "2026-01-25",
+                  "impressions": 232,
+                  "play_count": 106
+                },
+                {
+                  "metric_date": "2026-01-26",
+                  "impressions": 237,
+                  "play_count": 72
+                },
+                {
+                  "metric_date": "2026-01-27",
+                  "impressions": 278,
+                  "play_count": 90
+                },
+                {
+                  "metric_date": "2026-01-28",
+                  "impressions": 227,
+                  "play_count": 86
+                },
+                {
+                  "metric_date": "2026-01-29",
+                  "impressions": 297,
+                  "play_count": 108
+                },
+                {
+                  "metric_date": "2026-01-30",
+                  "impressions": 201,
+                  "play_count": 64
+                },
+                {
+                  "metric_date": "2026-01-31",
+                  "impressions": 289,
+                  "play_count": 115
+                }
+              ],
+              "row_count": 31,
+              "truncated": false,
+              "execution_ms": 1638.556,
+              "error": null
+            },
+            "reason": "根据查询契约生成并执行只读SQL",
+            "sql_validation": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "invalid_columns": []
+            },
+            "sql_validation_attempts": [
+              {
+                "status": "PASS",
+                "errors": [],
+                "warnings": [],
+                "invalid_columns": []
+              }
+            ],
+            "metric_planning": {
+              "metrics": [],
+              "formulas": [],
+              "joins": [],
+              "selected_sources": [],
+              "warnings": []
+            },
+            "metric_validation": {
+              "errors": []
+            },
+            "metric_validation_attempts": [
+              {
+                "errors": []
+              }
+            ],
+            "constraint_validation": {
+              "status": "WARN",
+              "missing_constraints": [],
+              "missing_group_constraints": [],
+              "unsupported_constraints": [],
+              "join_violations": [],
+              "warnings": [
+                "问题包含月份 2026-01，但没有可用指标时间字段可用于确定过滤列"
+              ]
+            },
+            "constraint_validation_attempts": [
+              {
+                "status": "WARN",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": [
+                  "问题包含月份 2026-01，但没有可用指标时间字段可用于确定过滤列"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "execute_duckdb",
+            "success": true,
+            "error": null,
+            "via": "mcp"
+          }
+        ],
+        "tool_calls": [
+          {
+            "call_index": 1,
+            "database": "short_video_ops",
+            "arguments": {
+              "mode": "single_database_agent",
+              "transport": "mcp_in_process",
+              "tool_name": "query_short_video_ops",
+              "schema_graph_version": "6860945eadd0",
+              "sql_source": "model_mcp"
+            },
+            "sql": "SELECT metric_date, SUM(impressions) AS impressions, SUM(play_count) AS play_count FROM content_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2026-02-01' GROUP BY metric_date ORDER BY metric_date ASC",
+            "success": true,
+            "row_count": 31,
+            "truncated": false,
+            "error": null
+          }
+        ],
+        "clarification": null
+      },
+      "generated_sql": "SELECT metric_date, SUM(impressions) AS impressions, SUM(play_count) AS play_count FROM content_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2026-02-01' GROUP BY metric_date ORDER BY metric_date ASC",
+      "strict_comparison_reason": "严格结果一致",
+      "gold_result_source": "cache",
+      "generated_result_rows": 31
+    }
+  ]
+}

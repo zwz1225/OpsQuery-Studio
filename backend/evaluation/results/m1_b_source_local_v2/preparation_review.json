@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "reviewed_at": "2026-10-08T07:03:11.868804+00:00",
+  "input_artifact_sha256": {
+    "source_preflight.json": "a38c1342e303183598dd78653570b7ece4d000278dc5d0ab7d2def2e711b6f30",
+    "import_manifest.json": "1867a550931d67b507a22ef36dd03761bc8dd2f7733350cb845715aa2abd4111",
+    "create_tables.sql": "494786b17d6a39a6dbc01afac0f412860b5084414861df848c632c54df5760e1"
+  },
+  "summary": {
+    "table_count": 41,
+    "field_count": 276,
+    "row_count": 722732,
+    "relation_count": 53,
+    "type_counts": {
+      "VARCHAR": 168,
+      "BIGINT": 54,
+      "DATE": 16,
+      "DOUBLE": 17,
+      "TIMESTAMP": 21
+    },
+    "error_count": 0,
+    "warning_count": 0,
+    "columns_with_null": [
+      {
+        "table": "channel_attributions",
+        "column": "ad_campaign_id",
+        "null_count": 177
+      },
+      {
+        "table": "channel_conversion_events",
+        "column": "ad_campaign_id",
+        "null_count": 306
+      },
+      {
+        "table": "recall_results",
+        "column": "returned_at",
+        "null_count": 8255
+      },
+      {
+        "table": "user_activations",
+        "column": "activated_at",
+        "null_count": 3022
+      },
+      {
+        "table": "user_activations",
+        "column": "activation_seconds",
+        "null_count": 3022
+      }
+    ]
+  },
+  "csv_with_utf8_bom": 41,
+  "all_typed_row_digests_match": true,
+  "format_precision_probe_passed": true,
+  "postgresql_ddl_parsed_table_count": 41,
+  "source_files_unchanged": true,
+  "limits": [
+    "SQLGlot parse checks preparation syntax, not PostgreSQL execution.",
+    "No target database data, table permissions or import transaction has been verified."
+  ]
+}

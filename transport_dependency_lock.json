@@ -1,0 +1,31 @@
+{
+  "bundle_id": "b0d2526fed45f2ad3c54f723afb1390930a826764e029ac0c6283f93a3d5b0bc",
+  "binding": {
+    "executable": "/usr/bin/dig",
+    "version": "9.18.39-0ubuntu0.22.04.7-Ubuntu",
+    "sha256": "421932872b073d8749d56c567319945b7f7bdfd42e705f1e6e2e2f461511c177",
+    "policy": {
+      "policy_id": "bird_process_dns_https_v1",
+      "resolver": "114.114.114.114",
+      "executable": "/usr/bin/dig",
+      "expected_version": "9.18.39-0ubuntu0.22.04.7-Ubuntu",
+      "query_type": "A",
+      "protocol": "UDP",
+      "queries_per_http_attempt": 1,
+      "dig_timeout_seconds": 3,
+      "dig_tries": 1,
+      "process_timeout_seconds": 5,
+      "maximum_address_connections_per_attempt": 1,
+      "maximum_cname_depth": 8,
+      "cache": "none; fresh answer each HTTP attempt",
+      "reject_expired_answers": true,
+      "redirects": false,
+      "environment_proxy": false,
+      "tls_certificate_and_hostname_verification": true,
+      "system_dns_modified": false,
+      "global_socket_patched": false,
+      "workspace_dependency_lock_required": true
+    }
+  },
+  "recorded_at": "2026-10-24T10:17:07.108222+00:00"
+}

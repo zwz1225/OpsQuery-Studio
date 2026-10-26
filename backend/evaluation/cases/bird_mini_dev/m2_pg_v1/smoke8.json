@@ -1,0 +1,80 @@
+{
+  "case_count": 8,
+  "case_ids": [
+    "BIRD-PG-0036",
+    "BIRD-PG-0480",
+    "BIRD-PG-0707",
+    "BIRD-PG-1486",
+    "BIRD-PG-0159",
+    "BIRD-PG-1435",
+    "BIRD-PG-0806",
+    "BIRD-PG-0201"
+  ],
+  "database_ids": [
+    "california_schools",
+    "card_games",
+    "codebase_community",
+    "debit_card_specializing",
+    "financial",
+    "student_club",
+    "superhero",
+    "toxicology"
+  ],
+  "difficulty_counts": {
+    "challenging": 1,
+    "moderate": 4,
+    "simple": 3
+  },
+  "protocol_id": "m2_bird_pg_v1",
+  "selection_metadata": [
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "difficulty": "challenging",
+      "question_id": 36
+    },
+    {
+      "case_id": "BIRD-PG-0480",
+      "database_id": "card_games",
+      "difficulty": "moderate",
+      "question_id": 480
+    },
+    {
+      "case_id": "BIRD-PG-0707",
+      "database_id": "codebase_community",
+      "difficulty": "moderate",
+      "question_id": 707
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "difficulty": "simple",
+      "question_id": 1486
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "difficulty": "simple",
+      "question_id": 159
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "difficulty": "moderate",
+      "question_id": 1435
+    },
+    {
+      "case_id": "BIRD-PG-0806",
+      "database_id": "superhero",
+      "difficulty": "simple",
+      "question_id": 806
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "difficulty": "moderate",
+      "question_id": 201
+    }
+  ],
+  "split": "smoke8"
+}

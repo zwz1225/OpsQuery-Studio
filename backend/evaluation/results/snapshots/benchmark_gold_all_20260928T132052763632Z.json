@@ -1,0 +1,249 @@
+{
+  "snapshot_id": "benchmark_gold_all_20260928T132052763632Z",
+  "created_at": "2026-09-28T13:20:52.763632Z",
+  "dataset": {
+    "path": "evaluation/cases/all_cases.jsonl",
+    "scope": "all",
+    "case_ids": [
+      "GROWTH_OPS-001"
+    ]
+  },
+  "mode": "gold",
+  "metadata": {
+    "llm_model": "qwen-plus",
+    "embedding_model": "text-embedding-v4",
+    "rerank_model": "qwen3-rerank"
+  },
+  "summary": {
+    "mode": "gold",
+    "case_count": 1,
+    "schema_recall": null,
+    "schema_precision": null,
+    "sql_execution_success_rate": 1.0,
+    "average_execution_ms": 4250.663,
+    "p95_execution_ms": 4250.663,
+    "result_accuracy": 1.0,
+    "strict_result_accuracy": 1.0,
+    "strict_scored_count": 1,
+    "unscored_count": 0,
+    "column_name_match_rate": 1.0,
+    "clarification_count": 0,
+    "error_count": 0,
+    "timeout_count": 0,
+    "connection_error_count": 0,
+    "model_request_attempt_count": 0,
+    "model_retry_count": 0,
+    "model_timeout_event_count": 0,
+    "model_connection_error_event_count": 0,
+    "result_accuracy_given_executed_sql": 1.0
+  },
+  "cases": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "scenario": "growth_ops",
+      "category": "趋势汇总",
+      "query_type": "时间趋势",
+      "difficulty": "简单",
+      "classic": true,
+      "query": "查询2026年每个月的新增用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": null,
+        "precision": null,
+        "retrieved_fields": [],
+        "gold_fields": [
+          "short_video_ops.growth_daily_metrics.metric_date",
+          "short_video_ops.growth_daily_metrics.new_users"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT strftime(metric_date, '%Y-%m') AS month, SUM(new_users) AS value FROM growth_daily_metrics WHERE metric_date >= DATE '2026-01-01' AND metric_date < DATE '2026-08-29' GROUP BY 1 ORDER BY 1",
+        "execution_success": true,
+        "execution_ms": 4250.663
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": true,
+        "reason": "结果一致",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "expected_rows",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "E:\\PythonLearn\\askdata_studio_ops_release\\backend\\evaluation\\cache\\gold_results\\GROWTH_OPS-001_f3e5c599fb2c.json",
+        "generated_result_rows": 8,
+        "gold_result_rows": 8
+      },
+      "agent_metrics": {
+        "tool_call_count": 0,
+        "tool_success_rate": null,
+        "tool_failure_rate": null,
+        "average_tool_latency_ms": null,
+        "p95_tool_latency_ms": null,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {},
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 0,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "gold_sql"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-001",
+          "question": "查询2026年每个月的新增用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+          "query_type": "时间趋势"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": false,
+          "schema_before_filter_count": 0,
+          "schema_after_filter_count": 0,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": null
+        },
+        "schema_retrieval": {},
+        "agent_decision": {
+          "action": "gold_sql",
+          "clarification_required": false
+        },
+        "tool_calls": [],
+        "sql_execution": {
+          "generated_sql": "SELECT strftime(metric_date, '%Y-%m') AS month, SUM(new_users) AS value FROM growth_daily_metrics WHERE metric_date >= DATE '2026-01-01' AND metric_date < DATE '2026-08-29' GROUP BY 1 ORDER BY 1",
+          "success": true,
+          "execution_ms": 4250.663,
+          "result_rows": 8,
+          "gold_result_source": "execution"
+        },
+        "result_comparison": {
+          "comparison_target": "expected_rows",
+          "correct": true,
+          "reason": "结果一致"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {},
+      "schema_recall": null,
+      "schema_precision": null,
+      "schema_true_positive": null,
+      "retrieval_ms": null,
+      "retrieved_fields": [],
+      "gold_fields": [
+        "short_video_ops.growth_daily_metrics.metric_date",
+        "short_video_ops.growth_daily_metrics.new_users"
+      ],
+      "generated_sql": "SELECT strftime(metric_date, '%Y-%m') AS month, SUM(new_users) AS value FROM growth_daily_metrics WHERE metric_date >= DATE '2026-01-01' AND metric_date < DATE '2026-08-29' GROUP BY 1 ORDER BY 1",
+      "sql_execution_success": true,
+      "execution_ms": 4250.663,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": true,
+      "comparison_reason": "结果一致",
+      "gold_result_source": "execution",
+      "comparison_target": "expected_rows",
+      "agent_action": "gold_sql",
+      "query_contract": {},
+      "agent_reason": "",
+      "error_stage": null,
+      "benchmark_error": "",
+      "run_id": "99619b252f6e4d74b422b0472e577e75",
+      "trace_id": "99619b252f6e4d74b422b0472e577e75:GROWTH_OPS-001"
+    }
+  ],
+  "run_manifest": {
+    "manifest_version": 1,
+    "mode": "gold",
+    "scope": "all",
+    "dataset": {
+      "source": "evaluation/cases/all_cases.jsonl",
+      "case_list": null,
+      "case_ids": [
+        "GROWTH_OPS-001"
+      ],
+      "version": "0284ef73191f902de17312c27bf82702096999a83f6b4d9a94659e02b0f19662"
+    },
+    "versions": {
+      "data": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+      "schema": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede",
+      "application": "acab3d48e36a94de6fb776ee498b1d37906dbe152b3add0389b3c729185e5e70",
+      "evaluator": "579689bbb294cc6daf0b05c9068878ab4e4fcdf070ad677b8a5ab08072029ea5",
+      "evaluation_code": "dfabcf29670f258ed3a9a0e7b77dcabcea980bfee279803d6f6438a4149118f3"
+    },
+    "config": {
+      "api_key_configured": false,
+      "llm_model": "qwen-plus",
+      "llm_enable_thinking": false,
+      "embedding_model": "text-embedding-v4",
+      "embedding_dimensions": 1024,
+      "rerank_model": "qwen3-rerank",
+      "semantic_fallbacks": false,
+      "route_availability_fallback": "direct_response_no_database",
+      "schema_recall_threshold": 0.55,
+      "bm25_top_k": 30,
+      "dense_top_k": 30,
+      "rrf_top_k": 40,
+      "max_schema_fields": 20,
+      "time_field_supplement": {
+        "enabled": false,
+        "max_extra_fields": 2,
+        "max_total_fields": 22
+      },
+      "max_saved_memories": 20,
+      "mcp_max_tool_calls": 3,
+      "short_term_memory": {
+        "summary_enabled": true,
+        "summary_trigger_tokens": 12000,
+        "summary_batch_tokens": 6000,
+        "min_recent_turns": 5,
+        "archive_enabled": false,
+        "table_row_limit": 50
+      },
+      "route_context_turns": 6,
+      "llm_temperature": 0.0,
+      "llm_timeout": 60,
+      "llm_max_retries": 2,
+      "workers": 1,
+      "user_roles": [
+        "demo_growth_ops"
+      ],
+      "evaluation_date": "2026-09-28"
+    },
+    "run_id": "99619b252f6e4d74b422b0472e577e75",
+    "created_at": "2026-09-28T13:20:48.494145Z",
+    "fingerprint": "98f1f1a5b475674dabc586d491f45f4034e212546be9efdf27fda4679a2905d8"
+  }
+}

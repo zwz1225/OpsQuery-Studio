@@ -1,0 +1,283 @@
+{
+  "stage": "M2 v3 development80 reviewer analysis",
+  "recorded_at": "2026-10-18T12:24:00.589658+00:00",
+  "audit_report_sha256": "428ede2a7d230e1cda3aa9773b5a4404f2e1c0ee31324ee9e3d4651ce7f394af",
+  "raw_report_hashes": {
+    "diagnostic": "8823926748c359d43ae011e94a1bed8fe5cf592599170c831840d51325ad398b",
+    "native": "a6b2cadaff7bf20e47ab210182c05029c98ab61b4adef803a5d9450fd832a551"
+  },
+  "evidence_chain_accepted": true,
+  "recommendation": "Preserve evidence; do not freeze candidate yet; triage six regressions before another full live run.",
+  "formal_benchmark": false,
+  "holdout_opened": false,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "reported_token_usage": {
+    "baseline": {
+      "embedding": {
+        "http_attempts": 80,
+        "prompt_tokens": 4303,
+        "completion_tokens": 0,
+        "total_tokens": 4303
+      },
+      "rerank": {
+        "http_attempts": 80,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 429673
+      },
+      "chat": {
+        "http_attempts": 85,
+        "prompt_tokens": 183724,
+        "completion_tokens": 5275,
+        "total_tokens": 188999
+      }
+    },
+    "candidate": {
+      "embedding": {
+        "http_attempts": 80,
+        "prompt_tokens": 4303,
+        "completion_tokens": 0,
+        "total_tokens": 4303
+      },
+      "rerank": {
+        "http_attempts": 80,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 429673
+      },
+      "chat": {
+        "http_attempts": 96,
+        "prompt_tokens": 496272,
+        "completion_tokens": 7422,
+        "total_tokens": 503694
+      }
+    }
+  },
+  "issues": {
+    "BIRD-PG-0011": {
+      "priority": "P2",
+      "category": "标识字段角色",
+      "analysis": "预测返回7位 School Code，参考返回14位 CDSCode；同为7806行也不相等。需区分局部编号与完整业务标识。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0025": {
+      "priority": "P2",
+      "category": "位置条件与字段所属表",
+      "analysis": "预测把 Riverside 绑定为 schools.soctype，输出 schools.fundingtype；参考筛选 frpm.District Name 并输出 Charter Funding Type。预测0行、参考6行。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0072": {
+      "priority": "P2",
+      "category": "地名角色与聚合形态",
+      "analysis": "把 Fremont 绑定为 school 而不是 city，并将明细人数 SUM 为单值；预测NULL，参考两行人数。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0077": {
+      "priority": "P2",
+      "category": "已有比率列与显式百分数公式",
+      "analysis": "预测直接读取现有比率列，参考按公开 evidence 的计数/人数*100 计算。两行结果呈0–1与0–100尺度差异，不能在评分时乘100放宽。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0083": {
+      "priority": "P2",
+      "category": "输出组与业务筛选",
+      "analysis": "预测3列、21行，参考2列、1行；把 Provision Status 放入条件计数而非同样的总体筛选，并放宽 GSserved/GSoffered。题目较复杂，修复不能仅照抄参考列数。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0085": {
+      "priority": "P2",
+      "category": "漏输出百分数",
+      "analysis": "仅返回 District Code，遗漏题目明确要求的 Eligible Free 百分数。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0352": {
+      "priority": "P2",
+      "category": "总体关系范围",
+      "analysis": "预测只对 foreign_data 计数；参考先关联 cards。均为单值，但原生数值不同；需核实关联保留的总体，不能归为单纯浮点误差。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0371": {
+      "priority": "P2",
+      "category": "关联表与键角色",
+      "analysis": "SQL修复把不存在的 st.card_id 改成 st.id，但仍将 cards.id 与 set_translations.id 关联；参考使用 cards.uuid=foreign_data.uuid。语法修好后业务关联仍错。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0407": {
+      "priority": "P2",
+      "category": "输出字段组",
+      "analysis": "预测输出 foreign_data.type 单列，参考为 cards.subtypes、supertypes 两列；evidence已明确两类字段，且要求各自非NULL。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0415": {
+      "priority": "P2",
+      "category": "规范字面值",
+      "analysis": "预测保留 status=legal，参考为 Legal；本轮单值分别为NULL与非NULL百分数。应验证授权库的真实大小写及规范值查询覆盖，不应在评分端忽略大小写。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0473": {
+      "priority": "P2",
+      "category": "输出编码与参考形态",
+      "analysis": "预测为 isforeignonly 原始数字单列，参考映射为YES/NO。原生集合编码不同；重复行数本身被EX忽略，不能据1行与5行直接认定失败原因。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0595": {
+      "priority": "P2",
+      "category": "统计粒度与关系角色",
+      "analysis": "预测按 user、post 分组并计历史记录行数；参考按用户分组、统计不同 PostHistoryTypeId。题目 per post 与参考统计范围还需独立审查。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0604": {
+      "priority": "P2",
+      "category": "参与者动作角色",
+      "analysis": "把 creating posts 理解成 votes.userid 的投票次数；参考按 posts.owneruserid 统计发帖数后平均用户属性。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-1479": {
+      "priority": "P1",
+      "category": "遗漏条件与多余输出",
+      "analysis": "原基线通过；当前图只有 yearmonth.consumption/date，未覆盖 customers.currency，SQL漏CZK且多输出 total_consumption。年份恰同为2013仍因额外列原生不匹配。基线SQL也漏CZK但在当前数据碰巧匹配，不能回退到该不完整写法。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-1480": {
+      "priority": "P2",
+      "category": "遗漏分群条件",
+      "analysis": "保留2013，但漏掉 customers.segment=SME，转而增加 consumption>0 子查询。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-1481": {
+      "priority": "P2",
+      "category": "最低值选择与平均范围",
+      "analysis": "预测按分群选最低消费再平均；参考按全局最低消费过滤，采用全体结果分母。题目本身包含 each segment，存在参考口径审查需求；先固定差异，不据参考自动改变业务解释。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-1505": {
+      "priority": "P2",
+      "category": "去重实体与记录数",
+      "analysis": "预测 COUNT(DISTINCT customerid)，参考 COUNT(*)；题目客户数量与参考月度记录数量有口径差异，需要单列调查，不能无条件要求DISTINCT或禁止DISTINCT。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-1533": {
+      "priority": "P2",
+      "category": "关联键错误",
+      "analysis": "预测按交易年月与 yearmonth.date 关联，缺 customerid 关联；结果17010行对10行，明显扩大关联总体。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0115": {
+      "priority": "P2",
+      "category": "文本数值与分组范围",
+      "analysis": "预测把 A4 转INTEGER后挑单个 district；参考按文本A4分组排序并取首组。需确认字段原生类型及题意，再说明参考形态差异；当前不能通过类型转换评分。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0145": {
+      "priority": "P2",
+      "category": "日期归属与输出实体",
+      "analysis": "修复移除受限 TO_TIMESTAMP 后改用 card.issued 年份，偏离交易日期；同时输出 client_id 而参考 account_id。语法修复不应改变日期所属实体。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0173": {
+      "priority": "P1",
+      "category": "金额与账号角色混淆",
+      "analysis": "原基线通过；当前把总扣款3539解释成 order.account_to=3539，并拆成互不关联的子查询；第二列为NULL而参考为POJISTNE。应保留account_id=3与金额总和的关系。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-1399": {
+      "priority": "P3",
+      "category": "已知参考答案形态",
+      "analysis": "仍为标量Yes，对参考YES/NULL集合；参考有14行、集合有2种值。保持既有已知问题记录，不改标签、NULL或EX。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-1427": {
+      "priority": "P2",
+      "category": "参考上下文输出列",
+      "analysis": "预测只有 budget.category，参考另含 event.type；题目问类别、type同时作为筛选条件，是否必须输出上下文应公开约定，不能为过分而普遍强加所有筛选字段。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0726": {
+      "priority": "P2",
+      "category": "排名输出形态",
+      "analysis": "预测只返回姓名并排序；参考额外输出 height_cm、RANK()。行数同为387不能替代列组一致性；需要区分有序列表与显式名次列。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0226": {
+      "priority": "P1",
+      "category": "显式小数精度未落实",
+      "analysis": "原基线通过；题目明确 five decimal places，contract已标记explicit_rounding，但SQL仍输出未舍入DOUBLE。预测约3.8461538461538463，参考Decimal 3.84615；应落实公开精度请求，不应新增数值容差。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0239": {
+      "priority": "P1",
+      "category": "关系端点扩张",
+      "analysis": "原基线通过；当前同时匹配 atom_id 与 atom_id2，结果754，参考为377。需核实有向/双向连接记录语义与公开 evidence 指定端点，不能用OR自动扩展两端。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0263": {
+      "priority": "P1",
+      "category": "粒度硬约束改变口径",
+      "analysis": "原基线通过；首次SQL被entity_grain_fanout拒绝，随后先加DISTINCT再改EXISTS。最终是原子去重总体，参考保留atom-bond关联权重。需先复用被拒绝首次SQL做无模型原生验证，判断是否误拒绝；不可把0201的半连接策略无条件推广。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0273": {
+      "priority": "P1",
+      "category": "公开evidence冲突及粒度误判风险",
+      "analysis": "原基线通过，本次3次校验均失败且未执行结果SQL。公开文本同时有chlorine=cl及公式SUM(element=pb)，当前把cl、pb都设为强制条件，并从COUNT(molecule_id)推定分子去重粒度。冻结参考统计致癌分子中的cl原子，不要求pb。需冲突检测及粒度适用范围审查；先原生复评首次被拒SQL，不能把参考注入模型。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0639": {
+      "priority": "P2",
+      "category": "不存在表与重复阻断",
+      "analysis": "模型两次使用不在授权catalog中的posttags；首次被本地来源策略拒绝，第二次因重复SQL阻断，未提交PG分析。来源拒绝及重复保护有效；后续需核实公开关系路径，不能放开posttags。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-1524": {
+      "priority": "P2",
+      "category": "澄清与参考实体歧义",
+      "analysis": "最终图只有transactions_1k.price/date/customerid，模型说明缺客户国籍。授权customers确实只有customerid/segment/currency；冻结参考却经gasstationid取gasstations.country（加油站国家）。同时存在图覆盖不足及客户国籍/加油站国家语义差异，不能简单强制该JOIN并宣称语义修复。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    },
+    "BIRD-PG-0152": {
+      "priority": "P2",
+      "category": "授权关联表未进图",
+      "analysis": "最终图只有district.a15/a3；模型说明缺1997年起开户信息。授权catalog存在account及日期字段，但未进入最终图，应按公开问题补齐日期与关联键路径。",
+      "scope": "reviewer_only_not_model_input",
+      "live_probe_performed": false
+    }
+  },
+  "proposed_next_steps": [
+    "Trusted no-model native replay of exact first rejected 0263/0273 SQL, with 0201 as a grain control; bind immutable source hashes and keep existing scores.",
+    "Review general grain scope, explicit rounding and contradictory public evidence; add positive and negative regression tests before changing code.",
+    "Review 0173 amount/entity role, 0239 relationship endpoint, 1479 missing condition/output shape; distinguish actual semantic fixes from baseline coincidental matches.",
+    "Address source-bound schema paths and annotate 1524/1399 and other reference-shape ambiguities without changing frozen scoring.",
+    "Then run a targeted development diagnostic and independent native replay; only expand to development80 after targeted evidence is accepted."
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "stage": "M1 E PostgreSQL live alias candidate diagnostic",
+  "run_status": "complete",
+  "actual_execution_backend": "duckdb",
+  "postgres_execution_verified": false,
+  "new_model_request_count": 0,
+  "source_report_sha256": {
+    "m1_e_postgres_live_classic_server.json": "6676a38ec3cd823d4030214088e13c37a2d5c2c37c93ce86de09bb1793efb6d4",
+    "m1_e_postgres_live_phase83_server.json": "db5b1b2305c4bd2aae2e12afa72e026259319301c7587306348a0a9e02c1e801"
+  },
+  "accepted_postgres_gold430_sha256": "d95d1acac357ec0403908fcb5d5e59ce017332e4e03168ba786ed4572da68790",
+  "case_count": 14,
+  "candidate_strict_pass_count": 14,
+  "limits": [
+    "PG SQL rendered for DuckDB using DECIMAL(38,15); this is a local diagnostic, not PostgreSQL replay.",
+    "Original live reports do not contain actual result rows."
+  ],
+  "cases": [
+    {
+      "case_id": "CHANNEL_OPS-079",
+      "rows": 1,
+      "before": [
+        false,
+        "列 status 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "状态",
+        "广告计划数",
+        "预算"
+      ],
+      "expected_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ]
+    },
+    {
+      "case_id": "CONTENT_OPS-031",
+      "rows": 12,
+      "before": [
+        false,
+        "列 interactions 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "category_name",
+        "interaction_count"
+      ],
+      "expected_columns": [
+        "category_name",
+        "interactions"
+      ]
+    },
+    {
+      "case_id": "CONTENT_OPS-032",
+      "rows": 12,
+      "before": [
+        false,
+        "列 interactions 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "category_name",
+        "interaction_count"
+      ],
+      "expected_columns": [
+        "category_name",
+        "interactions"
+      ]
+    },
+    {
+      "case_id": "CONTENT_OPS-033",
+      "rows": 12,
+      "before": [
+        false,
+        "列 interactions 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "category_name",
+        "interaction_count"
+      ],
+      "expected_columns": [
+        "category_name",
+        "interactions"
+      ]
+    },
+    {
+      "case_id": "CONTENT_OPS-034",
+      "rows": 12,
+      "before": [
+        false,
+        "列 interactions 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "category_name",
+        "interaction_count"
+      ],
+      "expected_columns": [
+        "category_name",
+        "interactions"
+      ]
+    },
+    {
+      "case_id": "CONTENT_OPS-036",
+      "rows": 17,
+      "before": [
+        false,
+        "列 interaction_date 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "interact_date",
+        "interaction_count"
+      ],
+      "expected_columns": [
+        "interaction_date",
+        "interactions"
+      ]
+    },
+    {
+      "case_id": "CONTENT_OPS-051",
+      "rows": 1,
+      "before": [
+        false,
+        "列 avg_duration_seconds 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "content_category",
+        "content_count",
+        "avg_duration"
+      ],
+      "expected_columns": [
+        "category_name",
+        "contents",
+        "avg_duration_seconds"
+      ]
+    },
+    {
+      "case_id": "CONTENT_OPS-076",
+      "rows": 3,
+      "before": [
+        false,
+        "列 creator_status 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "创作者状态",
+        "创作者数量"
+      ],
+      "expected_columns": [
+        "creator_status",
+        "creators"
+      ]
+    },
+    {
+      "case_id": "CONTENT_OPS-138",
+      "rows": 12,
+      "before": [
+        false,
+        "列 reports 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "category_name",
+        "report_count"
+      ],
+      "expected_columns": [
+        "category_name",
+        "reports"
+      ]
+    },
+    {
+      "case_id": "GROWTH_OPS-050",
+      "rows": 10,
+      "before": [
+        false,
+        "列 registrations 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "channel_name",
+        "register_user_count"
+      ],
+      "expected_columns": [
+        "channel_name",
+        "registrations"
+      ]
+    },
+    {
+      "case_id": "GROWTH_OPS-102",
+      "rows": 6,
+      "before": [
+        false,
+        "列 users 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "age_group",
+        "user_count"
+      ],
+      "expected_columns": [
+        "age_group",
+        "users"
+      ]
+    },
+    {
+      "case_id": "GROWTH_OPS-126",
+      "rows": 1,
+      "before": [
+        false,
+        "列 touch_channel 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "触达方式",
+        "触达数量",
+        "送达率",
+        "点击率",
+        "召回率"
+      ],
+      "expected_columns": [
+        "touch_channel",
+        "touches",
+        "delivery_rate",
+        "click_rate",
+        "recall_rate"
+      ]
+    },
+    {
+      "case_id": "CHANNEL_OPS-025",
+      "rows": 5,
+      "before": [
+        false,
+        "列 month 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "月份",
+        "广告消耗",
+        "环比变化率"
+      ],
+      "expected_columns": [
+        "month",
+        "spend",
+        "mom"
+      ]
+    },
+    {
+      "case_id": "CHANNEL_OPS-051",
+      "rows": 4,
+      "before": [
+        false,
+        "列 conversions 缺失或映射不唯一"
+      ],
+      "after": [
+        true,
+        "严格结果一致"
+      ],
+      "loose": true,
+      "columns": [
+        "channel_name",
+        "conversion_count",
+        "conversion_rate",
+        "cpa"
+      ],
+      "expected_columns": [
+        "channel_name",
+        "conversions",
+        "conversion_rate",
+        "cpa"
+      ]
+    }
+  ]
+}

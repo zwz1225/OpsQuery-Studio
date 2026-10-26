@@ -1,0 +1,119 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {},
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "user_id",
+      "engagement_score"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": "engagement_score",
+    "order_sensitive": true,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT l.user_id, l.engagement_score FROM user_lifecycle_snapshots l JOIN user_profiles p ON l.user_id=p.user_id WHERE p.region='华中' ORDER BY l.engagement_score DESC,l.user_id LIMIT 10",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "GROWTH_OPS-125",
+  "question": "按生命周期快照中的参与度评分，查询华中评分最高的前10名用户；请返回用户ID、参与度评分；按核心指标从高到低展示；最多返回10行。",
+  "gold_sql": "SELECT l.user_id, l.engagement_score FROM user_lifecycle_snapshots l JOIN user_profiles p ON l.user_id=p.user_id WHERE p.region='华中' ORDER BY l.engagement_score DESC,l.user_id LIMIT 10",
+  "database": "short_video_ops",
+  "scenario": "growth_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.growth_daily_metrics",
+      "short_video_ops.growth_targets",
+      "short_video_ops.recall_campaigns",
+      "short_video_ops.recall_results",
+      "short_video_ops.recall_touches",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_churn_events",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_lifecycle_snapshots",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.user_sessions",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "growth_ops"
+    ],
+    "user_id": "demo_growth_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "user_id",
+    "engagement_score"
+  ],
+  "rows": [
+    {
+      "user_id": "U0011986",
+      "engagement_score": 0.8307
+    },
+    {
+      "user_id": "U0008148",
+      "engagement_score": 0.7015
+    },
+    {
+      "user_id": "U0004159",
+      "engagement_score": 0.6966
+    },
+    {
+      "user_id": "U0010282",
+      "engagement_score": 0.6675
+    },
+    {
+      "user_id": "U0006186",
+      "engagement_score": 0.6636
+    },
+    {
+      "user_id": "U0000185",
+      "engagement_score": 0.6617
+    },
+    {
+      "user_id": "U0010767",
+      "engagement_score": 0.6512
+    },
+    {
+      "user_id": "U0006788",
+      "engagement_score": 0.6488
+    },
+    {
+      "user_id": "U0001549",
+      "engagement_score": 0.647
+    },
+    {
+      "user_id": "U0001475",
+      "engagement_score": 0.6376
+    }
+  ],
+  "generated_at": "2026-10-10T14:55:28.624281+00:00"
+}

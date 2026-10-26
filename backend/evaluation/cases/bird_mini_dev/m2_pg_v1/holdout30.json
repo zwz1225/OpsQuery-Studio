@@ -1,0 +1,229 @@
+{
+  "case_count": 30,
+  "case_ids": [
+    "BIRD-PG-1028",
+    "BIRD-PG-1030",
+    "BIRD-PG-1036",
+    "BIRD-PG-1039",
+    "BIRD-PG-1048",
+    "BIRD-PG-1091",
+    "BIRD-PG-1102",
+    "BIRD-PG-1110",
+    "BIRD-PG-1116",
+    "BIRD-PG-1130",
+    "BIRD-PG-0859",
+    "BIRD-PG-0879",
+    "BIRD-PG-0897",
+    "BIRD-PG-0928",
+    "BIRD-PG-0933",
+    "BIRD-PG-0962",
+    "BIRD-PG-0964",
+    "BIRD-PG-0971",
+    "BIRD-PG-0981",
+    "BIRD-PG-0994",
+    "BIRD-PG-1150",
+    "BIRD-PG-1153",
+    "BIRD-PG-1155",
+    "BIRD-PG-1192",
+    "BIRD-PG-1205",
+    "BIRD-PG-1220",
+    "BIRD-PG-1227",
+    "BIRD-PG-1242",
+    "BIRD-PG-1267",
+    "BIRD-PG-1275"
+  ],
+  "database_ids": [
+    "european_football_2",
+    "formula_1",
+    "thrombosis_prediction"
+  ],
+  "difficulty_counts": {
+    "challenging": 6,
+    "moderate": 15,
+    "simple": 9
+  },
+  "protocol_id": "m2_bird_pg_v1",
+  "selection_metadata": [
+    {
+      "case_id": "BIRD-PG-1028",
+      "database_id": "european_football_2",
+      "difficulty": "challenging",
+      "question_id": 1028
+    },
+    {
+      "case_id": "BIRD-PG-1030",
+      "database_id": "european_football_2",
+      "difficulty": "moderate",
+      "question_id": 1030
+    },
+    {
+      "case_id": "BIRD-PG-1036",
+      "database_id": "european_football_2",
+      "difficulty": "challenging",
+      "question_id": 1036
+    },
+    {
+      "case_id": "BIRD-PG-1039",
+      "database_id": "european_football_2",
+      "difficulty": "simple",
+      "question_id": 1039
+    },
+    {
+      "case_id": "BIRD-PG-1048",
+      "database_id": "european_football_2",
+      "difficulty": "simple",
+      "question_id": 1048
+    },
+    {
+      "case_id": "BIRD-PG-1091",
+      "database_id": "european_football_2",
+      "difficulty": "moderate",
+      "question_id": 1091
+    },
+    {
+      "case_id": "BIRD-PG-1102",
+      "database_id": "european_football_2",
+      "difficulty": "moderate",
+      "question_id": 1102
+    },
+    {
+      "case_id": "BIRD-PG-1110",
+      "database_id": "european_football_2",
+      "difficulty": "moderate",
+      "question_id": 1110
+    },
+    {
+      "case_id": "BIRD-PG-1116",
+      "database_id": "european_football_2",
+      "difficulty": "simple",
+      "question_id": 1116
+    },
+    {
+      "case_id": "BIRD-PG-1130",
+      "database_id": "european_football_2",
+      "difficulty": "moderate",
+      "question_id": 1130
+    },
+    {
+      "case_id": "BIRD-PG-0859",
+      "database_id": "formula_1",
+      "difficulty": "simple",
+      "question_id": 859
+    },
+    {
+      "case_id": "BIRD-PG-0879",
+      "database_id": "formula_1",
+      "difficulty": "moderate",
+      "question_id": 879
+    },
+    {
+      "case_id": "BIRD-PG-0897",
+      "database_id": "formula_1",
+      "difficulty": "moderate",
+      "question_id": 897
+    },
+    {
+      "case_id": "BIRD-PG-0928",
+      "database_id": "formula_1",
+      "difficulty": "moderate",
+      "question_id": 928
+    },
+    {
+      "case_id": "BIRD-PG-0933",
+      "database_id": "formula_1",
+      "difficulty": "moderate",
+      "question_id": 933
+    },
+    {
+      "case_id": "BIRD-PG-0962",
+      "database_id": "formula_1",
+      "difficulty": "challenging",
+      "question_id": 962
+    },
+    {
+      "case_id": "BIRD-PG-0964",
+      "database_id": "formula_1",
+      "difficulty": "simple",
+      "question_id": 964
+    },
+    {
+      "case_id": "BIRD-PG-0971",
+      "database_id": "formula_1",
+      "difficulty": "simple",
+      "question_id": 971
+    },
+    {
+      "case_id": "BIRD-PG-0981",
+      "database_id": "formula_1",
+      "difficulty": "moderate",
+      "question_id": 981
+    },
+    {
+      "case_id": "BIRD-PG-0994",
+      "database_id": "formula_1",
+      "difficulty": "challenging",
+      "question_id": 994
+    },
+    {
+      "case_id": "BIRD-PG-1150",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "question_id": 1150
+    },
+    {
+      "case_id": "BIRD-PG-1153",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "simple",
+      "question_id": 1153
+    },
+    {
+      "case_id": "BIRD-PG-1155",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "simple",
+      "question_id": 1155
+    },
+    {
+      "case_id": "BIRD-PG-1192",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "challenging",
+      "question_id": 1192
+    },
+    {
+      "case_id": "BIRD-PG-1205",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "question_id": 1205
+    },
+    {
+      "case_id": "BIRD-PG-1220",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "simple",
+      "question_id": 1220
+    },
+    {
+      "case_id": "BIRD-PG-1227",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "question_id": 1227
+    },
+    {
+      "case_id": "BIRD-PG-1242",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "challenging",
+      "question_id": 1242
+    },
+    {
+      "case_id": "BIRD-PG-1267",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "question_id": 1267
+    },
+    {
+      "case_id": "BIRD-PG-1275",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "question_id": 1275
+    }
+  ],
+  "split": "holdout30"
+}

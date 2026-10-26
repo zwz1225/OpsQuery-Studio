@@ -1,0 +1,67 @@
+{
+  "stage": "M1 B local import implementation",
+  "created_at": "2026-10-08T12:39:33.297334+00:00",
+  "status": "passed",
+  "python_version": "3.10.9",
+  "psycopg_version": "3.2.13",
+  "source_preparation": {
+    "canonical_import_spec_sha256": "8f936c3089614a38b17194b76e0c073c20cfe5b194ecb8f9f1e27b8f4d2ca7fd",
+    "source_data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+    "preparation_artifact_sha256": {
+      "source_preflight.json": "32b3bbff54e327e4ada230395fd82909f538bddafc0481e59f190f72f0f95929",
+      "import_manifest.json": "4b8952e8d8c29965a1fa79d544e913772a9d12a9b3f36d09b433daaf47561ef7",
+      "preparation_review.json": "ae6f34b0452f4602f4e33caa67c33a8119761a4d584c45c143b6e3b6d24bcf5b"
+    },
+    "source_file_count": 43
+  },
+  "source_files_unchanged": true,
+  "source_summary": {
+    "table_count": 41,
+    "row_count": 722732
+  },
+  "unit_tests": {
+    "executed": 25,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "scope": "Injected transactions/permissions; actual DuckDB row/statistic oracle with PostgreSQL catalog stubs."
+  },
+  "input_only_entry_checks": {
+    "import_check_only": {
+      "file": "evaluation/results/m1_b_import_check_local_final.json",
+      "sha256": "63a61b20a5526c6bcb625b600eee66e6054f270e0aa382c5d8d726410a69bc3f",
+      "status": "passed"
+    },
+    "validation_check_only": {
+      "file": "evaluation/results/m1_b_validation_check_local_final.json",
+      "sha256": "1329bcd8e6fdb3abf4b2aa1bc846ad3741014d80c82d4b1f6551949d0db7d759",
+      "status": "passed"
+    }
+  },
+  "implementation_artifact_sha256": {
+    "backend/requirements-postgres.txt": "99fd0d662eeeb466caa529b7824fecdcf6f96f4d2a11ffebc703c6bcf2f79843",
+    "backend/scripts/preflight_m1_b_source.py": "af52a5a4214b2e636f3aa5e2fd5c61255f7adf81d5e3c96bd62e329c7e7a9a32",
+    "backend/scripts/m1_b_postgres_common.py": "cdaa62c8bba85cac902ae48d216c8fc52566dfde96e997655b0ad5d614cbbd41",
+    "backend/scripts/import_m1_b_postgres.py": "69a0d12de01966624263129da85661478ee3674a6fc1cea3f021e621d711ba3d",
+    "backend/scripts/validate_m1_b_postgres.py": "54b4e574f404cdf5eeab4f6107233c5eb668a76589a970bafa8c550123dab7ff",
+    "backend/scripts/audit_m1_b_import_implementation.py": "e2b2cc475692039d667d98e4ba7257399ef7756758561e85be6ef9b24afd924f",
+    "backend/tests/test_m1_b_postgres.py": "7be4bb370cafb5012c0a676742e2083a4b29389fbcf124f327ff4830d63bc10e",
+    "backend/evaluation/M1_B_IMPORT_ACCEPTANCE.md": "c43359a060513439f51530ef44493132b83c0f3ead9ca1b02e1d6a91612d446a",
+    "backend/evaluation/M1_B_PREPARATION.md": "90bc74514823b3eb31166cf78c18a9af325555a715fc9824738c554409be0221",
+    "M1_数据源依赖梳理与最小适配方案.md": "d7a7c2c7ff3c9facfb9cd7ffb2c1ccad7772d398d562ae664f4cfb6c8a9bfca8"
+  },
+  "postgresql_integration_executed": false,
+  "target_data_verified": false,
+  "verified_target_data_version": null,
+  "new_model_request_count": 0,
+  "pending_gates": [
+    "Server atomic import and commit",
+    "Committed data verification with readonly role",
+    "Actual ACL write denial"
+  ],
+  "sync_package": {
+    "filename": "M1_B_导入校验同步包_20261008.zip",
+    "sha256": "6d0f4a77fea22c160c282473194a6a90f7d3a985df0e8e2418a395d296411408",
+    "file_count": 10
+  }
+}

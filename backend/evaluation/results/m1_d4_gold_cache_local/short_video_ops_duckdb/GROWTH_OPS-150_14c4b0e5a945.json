@@ -1,0 +1,150 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "actual_rate": [
+        "actual_activation_rate"
+      ],
+      "gap": [
+        "target_gap"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "channel_name",
+      "actual_rate",
+      "activation_rate_target",
+      "gap"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": false,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "WITH actual AS (SELECT r.channel_id, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(*) AS actual_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-05' GROUP BY 1) SELECT c.channel_name,ROUND(a.actual_rate,4) AS actual_rate,t.activation_rate_target, ROUND(a.actual_rate-t.activation_rate_target,4) AS gap FROM growth_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-05' ORDER BY gap DESC,1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "GROWTH_OPS-150",
+  "question": "2026-05各渠道激活率实际值与目标差距；请返回渠道名称、实际比率、激活率目标、目标差距；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+  "gold_sql": "WITH actual AS (SELECT r.channel_id, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(*) AS actual_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-05' GROUP BY 1) SELECT c.channel_name,ROUND(a.actual_rate,4) AS actual_rate,t.activation_rate_target, ROUND(a.actual_rate-t.activation_rate_target,4) AS gap FROM growth_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-05' ORDER BY gap DESC,1",
+  "database": "short_video_ops",
+  "scenario": "growth_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.growth_daily_metrics",
+      "short_video_ops.growth_targets",
+      "short_video_ops.recall_campaigns",
+      "short_video_ops.recall_results",
+      "short_video_ops.recall_touches",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_churn_events",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_lifecycle_snapshots",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.user_sessions",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "growth_ops"
+    ],
+    "user_id": "demo_growth_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "channel_name",
+    "actual_rate",
+    "activation_rate_target",
+    "gap"
+  ],
+  "rows": [
+    {
+      "channel_name": "好友邀请",
+      "actual_rate": 0.9191,
+      "activation_rate_target": 0.6785,
+      "gap": 0.2406
+    },
+    {
+      "channel_name": "社交分享",
+      "actual_rate": 0.7818,
+      "activation_rate_target": 0.6441,
+      "gap": 0.1377
+    },
+    {
+      "channel_name": "应用商店",
+      "actual_rate": 0.7857,
+      "activation_rate_target": 0.7175,
+      "gap": 0.0682
+    },
+    {
+      "channel_name": "搜索广告",
+      "actual_rate": 0.7824,
+      "activation_rate_target": 0.7176,
+      "gap": 0.0648
+    },
+    {
+      "channel_name": "自然推荐",
+      "actual_rate": 0.8473,
+      "activation_rate_target": 0.8107,
+      "gap": 0.0366
+    },
+    {
+      "channel_name": "达人推广",
+      "actual_rate": 0.776,
+      "activation_rate_target": 0.7835,
+      "gap": -0.0075
+    },
+    {
+      "channel_name": "线下活动",
+      "actual_rate": 0.6119,
+      "activation_rate_target": 0.6237,
+      "gap": -0.0118
+    },
+    {
+      "channel_name": "信息流广告",
+      "actual_rate": 0.6667,
+      "activation_rate_target": 0.7082,
+      "gap": -0.0415
+    },
+    {
+      "channel_name": "其他渠道",
+      "actual_rate": 0.5814,
+      "activation_rate_target": 0.7158,
+      "gap": -0.1344
+    },
+    {
+      "channel_name": "品牌广告",
+      "actual_rate": 0.5308,
+      "activation_rate_target": 0.756,
+      "gap": -0.2252
+    }
+  ],
+  "generated_at": "2026-10-10T14:52:34.583107+00:00"
+}

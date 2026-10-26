@@ -1,0 +1,305 @@
+{
+  "stage": "M3 A trusted offline failure attribution and first experiment definition",
+  "date": "2026-10-21",
+  "reviewer_only": true,
+  "not_agent_input": true,
+  "category_labels": {
+    "retrieval_relation_coverage": "检索／关联上下文缺口",
+    "explicit_output_contract": "明确输出项／顺序未落实",
+    "entity_identifier_role": "实体标识角色选择",
+    "numeric_and_entity_role": "数值路径与名称来源并存差异",
+    "condition_time_relation_role": "条件／时间／关系角色解释",
+    "canonical_literal_binding": "规范字面值绑定",
+    "source_rejection_repeat": "来源拒绝后的重复失败",
+    "reference_or_public_ambiguity": "参考形态／公开口径待澄清"
+  },
+  "failures": [
+    {
+      "id": "0011", "primary": "entity_identifier_role", "secondary": ["output_field_identity"],
+      "observed": "输出frpm.School Code，而参考输出frpm.cdscode；均7806行，但学校短码与完整CDS码的原生元组不同。",
+      "attribution": "cdscode虽未作为检索字段入选，已作为关联键进入最终图；不能把失败直接归因于字段完全未提供。模型选择了不同语义的标识。",
+      "uncertainty": "题面仅说codes，具体标识约定仍需官方字段说明支持；不依据Gold强制所有学校编号都使用CDS码。",
+      "next": "核对授权标识说明与主键角色，建立标识歧义提示。",
+      "fields": ["frpm.School Code", "frpm.cdscode"]
+    },
+    {
+      "id": "0025", "primary": "retrieval_relation_coverage", "secondary": ["location_binding", "funding_field_role", "null_aggregate_semantics"],
+      "observed": "把Riverside绑定到satscores.rtype并使用schools.fundingtype，预测0行、参考6行；参考使用frpm.District Name及Charter Funding Type。",
+      "attribution": "Charter Funding Type已在图中，但District Name未进入最终图；同时存在地点覆盖缺口与同名业务字段角色选择问题。",
+      "uncertainty": "需授权字段说明／数据探测确认Riverside的地点层级和两种资金字段区别；AVG与SUM/COUNT的空值差异尚未单独验证。",
+      "next": "优先补公开地点角色与授权字段覆盖，随后独立验证聚合口径。",
+      "fields": ["frpm.District Name", "frpm.Charter Funding Type", "schools.fundingtype", "satscores.rtype"]
+    },
+    {
+      "id": "0050", "primary": "explicit_output_contract", "secondary": ["postal_address_role", "repaired_alias_error"],
+      "observed": "最终一行是(NULL,地址)，参考为(地址,NULL)，列顺序相反；首次sc别名错误已修复。",
+      "attribution": "mailstreet、street、school和sname均在最终图中。问题先问postal street address，再要求school name；输出顺序没有落实公开请求。",
+      "uncertainty": "最终用了street而非公开同义指向的mailstreet，本次两地址相同；不能由这一行证明两字段普遍等价。",
+      "next": "首轮主目标：按公开请求生成有序输出清单，保留邮寄地址角色。",
+      "fields": ["schools.mailstreet", "schools.street", "schools.school", "satscores.sname"]
+    },
+    {
+      "id": "0072", "primary": "retrieval_relation_coverage", "secondary": ["literal_preservation", "aggregation_shape"],
+      "observed": "将Fremont作为学校名、把2014-2015改写为2014-15并SUM；预测一个NULL，参考两行人数。",
+      "attribution": "schools.city未进入最终图，模型把地点绑定到school；学年字面值改写及求和是另外的已观察差异。",
+      "uncertainty": "how many与逐校行输出之间存在形态解释空间；不把参考的两行形式直接推广为规则。",
+      "next": "补城市角色并保留公开学年原值；再分离检查是否应聚合。",
+      "fields": ["schools.city", "schools.school", "frpm.Academic Year"]
+    },
+    {
+      "id": "0077", "primary": "numeric_and_entity_role", "secondary": ["field_coverage", "same_name_not_equivalent"],
+      "observed": "两行均存在，但School Name与School产生Accelerated/The Accelerated差异，REAL中间转换和运算顺序也产生原生浮点差异。",
+      "attribution": "输出来源和算术路径各自足以造成失败；模型修复了字段归属错误，却未保证名称来源与公开公式一致。",
+      "uncertainty": "最终图未提供两种名称和county字段；不能仅增加浮点容差或仅改列别名。运算路径与字段来源需要分别验证。",
+      "next": "分开验证实体名称来源和原生数值路径，暂不纳入首轮输出顺序主目标。",
+      "fields": ["schools.school", "frpm.School Name", "schools.county", "frpm.County Name", "frpm.FRPM Count (Ages 5-17)"]
+    },
+    {
+      "id": "0083", "primary": "condition_time_relation_role", "secondary": ["output_shape", "offered_versus_served", "question_reference_ambiguity"],
+      "observed": "Multiple Provision Types仅用于条件计数，未限制总体；使用gsserved并输出3列18行，参考使用gsoffered、总体过滤后输出2列1行。",
+      "attribution": "相关条件字段、gsoffered与gsserved均已入图。主要是条件作用范围与offered/served角色解释，不是简单漏字段。",
+      "uncertainty": "多句题面涉及城市数量和各城学校数，参考只输出部分形态；需先明确公开业务契约，不强制照抄参考。",
+      "next": "记录总体过滤与条件指标的不同角色，先做无模型条件范围诊断。",
+      "fields": ["schools.gsoffered", "schools.gsserved", "frpm.NSLP Provision Status", "schools.city"]
+    },
+    {
+      "id": "0085", "primary": "explicit_output_contract", "secondary": ["computed_projection_missing"],
+      "observed": "只输出District Code一列，漏掉第一句明确要求的免费餐百分数；参考为百分数、District Code两列。",
+      "attribution": "分子、分母、姓名条件与District Code均已进入图，遗漏发生在SQL投影阶段。",
+      "uncertainty": "补回百分数后仍需原生验证算术路径；本次不承诺仅补列即可通过。",
+      "next": "首轮主目标：把跨句的计算输出及补充标识一起列入输出清单。",
+      "fields": ["frpm.Free Meal Count (K-12)", "frpm.Enrollment (K-12)", "frpm.District Code"]
+    },
+    {
+      "id": "0352", "primary": "retrieval_relation_coverage", "secondary": ["population_grain", "undeclared_join_candidate"],
+      "observed": "仅在foreign_data统计语言比例，参考在cards与foreign_data的uuid关联总体上统计；两边都是一个浮点数但不同。",
+      "attribution": "两表uuid均未进入最终图，且图无这条关联；存在关联总体覆盖缺口。",
+      "uncertainty": "不能把缺少声明外键的同名uuid直接视为可靠关联；需授权唯一性、类型、取值及关联基数证据。",
+      "next": "单独设计受控关联候选验证，避免全局按同名字段猜JOIN。",
+      "fields": ["cards.uuid", "foreign_data.uuid", "foreign_data.language"]
+    },
+    {
+      "id": "0371", "primary": "retrieval_relation_coverage", "secondary": ["wrong_language_entity", "repair_only_made_sql_executable"],
+      "observed": "选择set_translations.language并以cards.id=set_translations.id连接；修复不存在的card_id后可执行，结果NULL，参考10%。",
+      "attribution": "卡牌语言foreign_data.language及uuid路径均未进入图；局部字段修复没有恢复正确关系语义。",
+      "uncertainty": "正确关联需授权证据，不通过向模型提供Gold的表名来补齐。",
+      "next": "按卡牌／卡组语言实体区分检索候选，再审查合法关系路径。",
+      "fields": ["foreign_data.language", "foreign_data.uuid", "cards.uuid", "set_translations.language"]
+    },
+    {
+      "id": "0407", "primary": "explicit_output_contract", "secondary": ["explicit_null_filters_omitted"],
+      "observed": "输出foreign_data.type一列，遗漏evidence明确展开的subtypes、supertypes及两者非NULL条件；参考两列。",
+      "attribution": "subtypes、supertypes和language均已入图，模型没有落实公开字段组；无需先扩大候选数量。",
+      "uncertainty": "首次实验只改输出契约，非NULL条件作为伴随观察，不能通过隐藏添加参考WHERE条件补分。",
+      "next": "首轮主目标：依据公开定义展开有序字段组，报告条件覆盖。",
+      "fields": ["cards.subtypes", "cards.supertypes", "foreign_data.language"]
+    },
+    {
+      "id": "0415", "primary": "canonical_literal_binding", "secondary": ["public_reference_case_conflict", "repair_join_key"],
+      "observed": "最终JOIN键已修复，仍按公开evidence的status='legal'筛选，返回NULL；参考使用'Legal'返回100%。规范值探测次数为0。",
+      "attribution": "已确认大小写字面值差异；当前规范值绑定没有覆盖该条件。",
+      "uncertainty": "公开evidence与参考字面值存在大小写冲突，不能直接把Gold的Legal注入模型。需授权原生取值查找确认唯一拼写。",
+      "next": "后续规范值查找实验候选，保留本次原生失败。",
+      "fields": ["legalities.status", "legalities.format", "cards.uuid", "legalities.uuid"]
+    },
+    {
+      "id": "0473", "primary": "reference_or_public_ambiguity", "secondary": ["boolean_text_case", "existential_aggregation"],
+      "observed": "预测一行No；参考5行均NO，原生集合比较主要体现文本大小写差异，重复行本身被忽略。",
+      "attribution": "题面没有规定YES/NO大小写；MAX聚合与逐条判断也不是普遍等价。",
+      "uncertainty": "本次不能归因于缺字段，也不能制定所有布尔文本都大写的Gold特例。",
+      "next": "先建立并披露公开布尔输出约定；另验证多行真假混合时的语义。",
+      "fields": ["sets.isforeignonly", "cards.name"]
+    },
+    {
+      "id": "0595", "primary": "reference_or_public_ambiguity", "secondary": ["aggregation_grain", "count_distinct_history_type"],
+      "observed": "预测按用户和帖子分组COUNT(*)=1，271行；参考按用户COUNT(DISTINCT PostHistoryTypeId)=1，94行。",
+      "attribution": "关键字段均在图中，但post history per post与全用户唯一历史类型不是同一个统计定义。",
+      "uncertainty": "原题不足以唯一支持参考的历史类型去重口径；差异确认，业务正确性待澄清。",
+      "next": "作为粒度约束反例，禁止仅凭Gold反推DISTINCT。",
+      "fields": ["posthistory.userid", "posthistory.postid", "posthistory.posthistorytypeid"]
+    },
+    {
+      "id": "0604", "primary": "retrieval_relation_coverage", "secondary": ["action_entity_role"],
+      "observed": "按votes.userid计数>10选用户，而参考按posts.owneruserid统计发帖；两项平均值均不同。",
+      "attribution": "posts.owneruserid已在候选，分数0.509714，但因表未锚定被过滤；最终图仅users/votes。",
+      "uncertainty": "候选覆盖与动作角色解释都可能影响生成，尚无单变量反事实验证。",
+      "next": "检索分支优先验证creating posts的动作实体覆盖，保持投票和发帖角色分离。",
+      "fields": ["posts.owneruserid", "votes.userid", "users.upvotes", "users.age"]
+    },
+    {
+      "id": "0639", "primary": "source_rejection_repeat", "secondary": ["unknown_relation_hallucination", "public_reference_join_ambiguity"],
+      "observed": "两次生成完全相同SQL，引用posttags并在tags使用id；来源拒绝后重复阻断，未执行预测SQL。",
+      "attribution": "tags表已在授权图中，不能说tags整体未授权；核心是虚构posttags关系及无效字段，来源拒绝和重复终止按设计生效。",
+      "uncertainty": "公开posts/tag问题与参考posthistory/ExcerptPostId路径是否同义仍需说明；缺口不能靠放开权限解决。",
+      "next": "修复分支检查来源拒绝后的可用关系反馈，不增加重试预算。",
+      "fields": ["tags.tagname", "tags.excerptpostid", "posts.id", "posthistory.postid"]
+    },
+    {
+      "id": "1479", "primary": "retrieval_relation_coverage", "secondary": ["extra_output_aggregate", "business_filter_missing"],
+      "observed": "未筛选CZK且额外输出total_consumption；预测(year,total)，参考仅year。当前year都为2013不证明总体正确。",
+      "attribution": "customers.currency候选分数0.503396但表未锚定，最终图只有yearmonth；另有明确输出形态差异。",
+      "uncertainty": "去掉额外输出可能使本次EX通过，但仍不得将缺失CZK条件的SQL判为业务修复成功。",
+      "next": "首轮混合观察题，分别检查输出及缺失筛选，后续检索补币种角色。",
+      "fields": ["customers.currency", "yearmonth.date", "yearmonth.consumption"]
+    },
+    {
+      "id": "1480", "primary": "retrieval_relation_coverage", "secondary": ["business_population_missing", "invented_condition"],
+      "observed": "缺少SME条件，另加消费>0客户子查询；预测月份10，参考04。",
+      "attribution": "customers.segment已在候选，分数0.548829但因表未锚定被过滤，最终图无customers。",
+      "uncertainty": "补字段后能否正确使用总体尚未验证；不能以额外查询改写题目总体。",
+      "next": "检索分支验证公开客户群体字段跨表覆盖。",
+      "fields": ["customers.segment", "customers.customerid", "yearmonth.customerid"]
+    },
+    {
+      "id": "1481", "primary": "reference_or_public_ambiguity", "secondary": ["minimum_scope", "join_keys_not_provided", "numeric_denominator"],
+      "observed": "预测先逐客户年度求和，再取各segment最低客户；参考使用yearmonth全表单行MIN(consumption)和共享COUNT分母，三项差值不同。",
+      "attribution": "每组年度最低客户与全表最低月消费不是同一定义；同时图没有客户连接键，首次猜测字段失败后修复。",
+      "uncertainty": "公开题目/evidence与参考最小值范围、分母存在明显解释差异；未做全量反事实验证，不能单标模型SQL错误。",
+      "next": "先澄清最低值范围与统计单位，另补授权连接键；暂缓硬约束。",
+      "fields": ["customers.customerid", "yearmonth.customerid", "customers.segment", "yearmonth.consumption"]
+    },
+    {
+      "id": "1505", "primary": "reference_or_public_ambiguity", "secondary": ["distinct_customer_versus_month_rows"],
+      "observed": "预测COUNT(DISTINCT customerid)=391，参考COUNT(*)=2730；EUR和消费阈值均保留。",
+      "attribution": "问题说多少客户，参考计客户月记录，存在实体与记录粒度歧义，不能把去重直接视为误修复。",
+      "uncertainty": "需业务协议明确统计单位；本次两条SQL的计数差异已确认，未改变原分数。",
+      "next": "作为粒度硬约束不适用反例，避免全局删除或增加DISTINCT。",
+      "fields": ["customers.customerid", "yearmonth.customerid", "yearmonth.consumption"]
+    },
+    {
+      "id": "1524", "primary": "reference_or_public_ambiguity", "secondary": ["retrieval_coverage", "nationality_versus_station_country"],
+      "observed": "只有transactions_1k的price/date/customerid，模型澄清缺少客户国籍；Gold实际取gasstations.country并按gasstationid连接。",
+      "attribution": "授权上下文缺口确实存在，但客户国籍与加油站所在国是不同实体角色，不能直接建议添加customers.nationality来追赶Gold。",
+      "uncertainty": "必须先核实官方字段说明与题面角色冲突。gasstations.country候选0.468436、低于覆盖下限，不证明它就是正确的客户国籍来源。",
+      "next": "单列参考实体角色问题；检索补齐仍需明确公开依据。",
+      "fields": ["gasstations.country", "gasstations.gasstationid", "transactions_1k.gasstationid", "transactions_1k.customerid"]
+    },
+    {
+      "id": "1533", "primary": "retrieval_relation_coverage", "secondary": ["execution_recovery_not_answer_repair", "unsafe_population_change"],
+      "observed": "按年月而非customerid关联，预测17010行、参考10行；首次除零后加amount>0恢复执行但答案仍错。",
+      "attribution": "最终图没有customerid关联键和JOIN；修复只消除除零，未修复实体关联，还改变了amount非零的过滤语义。",
+      "uncertainty": "amount>0与NULLIF(amount,0)非普遍等价，未证明负值是否存在；不能把执行恢复报告为答案修复。",
+      "next": "补有证据的实体关联，并约束修复保持原条件，不因非空/执行成功改分。",
+      "fields": ["transactions_1k.customerid", "yearmonth.customerid", "transactions_1k.amount"]
+    },
+    {
+      "id": "0115", "primary": "reference_or_public_ambiguity", "secondary": ["text_numeric_order", "group_population"],
+      "observed": "A4实际类型text；预测CAST(a4 AS INTEGER)后选最大地区，参考GROUP BY A4并按原text排序，两边百分数不同。",
+      "attribution": "人口数字排序与文本字典序不同，且参考按人口值分组；字段均已提供，不能认定缺检索。",
+      "uncertainty": "题目要求最大人口数，预测数值转换可能更符合题义；需全量人口/地区对照确认贡献，不按参考强制文本排序。",
+      "next": "先做无模型排序与分组诊断，单列参考类型路径问题。",
+      "fields": ["district.a4", "district.district_id", "client.gender"]
+    },
+    {
+      "id": "0145", "primary": "condition_time_relation_role", "secondary": ["repair_changed_time_anchor", "retrieval_date_coverage", "account_client_identity"],
+      "observed": "首次对trans.date调用TO_DATE出错，修复改为card.issued年份；最终返回client_id并按卡发行年筛选，参考为account_id及交易年。",
+      "attribution": "修复改变了公开1998交易时间锚点，且混淆账户与客户标识；trans.date未进入图是伴随覆盖缺口。",
+      "uncertainty": "平均金额的总体和account holder措辞另有解释空间；先确认时间与输出角色，不依Gold整体替换SQL。",
+      "next": "修复约束保留原时间所属事件，提供授权字段类型和角色提示。",
+      "fields": ["trans.date", "card.issued", "trans.account_id", "disp.client_id"]
+    },
+    {
+      "id": "0152", "primary": "retrieval_relation_coverage", "secondary": ["clarification_due_to_missing_account_date"],
+      "observed": "最终图只有district.a15/a3，模型明确缺少account及开户日期后澄清，未生成SQL。",
+      "attribution": "account.date候选0.472824、account.district_id候选0.426，未进入最终图；公开开户年条件无法在当前上下文完成。",
+      "uncertainty": "补齐上下文后的平均犯罪率权重仍需独立结果检查，不把澄清改成盲猜关联。",
+      "next": "检索分支验证开户动作与日期字段组和声明关联覆盖。",
+      "fields": ["account.date", "account.district_id", "district.district_id"]
+    },
+    {
+      "id": "0173", "primary": "condition_time_relation_role", "secondary": ["numeric_literal_role", "aggregate_total_missing"],
+      "observed": "把3539绑定为order.account_to，返回付款目的NULL；参考按account_id=3、聚合SUM(amount)=3539取得目的。",
+      "attribution": "amount、account_id和k_symbol已在图中；数值被错误分配为账号角色，缺少debiting in total的金额总和关系。",
+      "uncertainty": "总金额分组口径需要公开业务依据，不把参考分组SQL作为模型反馈。",
+      "next": "根据公开动词和单位区分金额常量与标识常量。",
+      "fields": ["order.amount", "order.account_to", "order.account_id", "order.k_symbol"]
+    },
+    {
+      "id": "1399", "primary": "reference_or_public_ambiguity", "secondary": ["yes_no_case", "conditional_null_rows"],
+      "observed": "预测一行Yes；参考14行去重为YES与NULL两种元组。",
+      "attribution": "existential yes/no回答与保留其他事件NULL行的参考形态不同，另有大小写差异。",
+      "uncertainty": "不能为通过EX而要求所有是否题保留无关NULL行；原生失分保留。",
+      "next": "独立记录参考输出形态，排除出首轮强制输出规则目标。",
+      "fields": ["member.first_name", "member.last_name", "event.event_name"]
+    },
+    {
+      "id": "1427", "primary": "reference_or_public_ambiguity", "secondary": ["extra_reference_context_column"],
+      "observed": "所有业务筛选均保留，预测4行category，参考相同类别另加恒定Guest Speaker的type列。",
+      "attribution": "问题问预算类别，type是筛选上下文；额外投影是否必须没有明确公开要求。",
+      "uncertainty": "不可仅因参考有两列就把所有过滤字段强制输出。",
+      "next": "首轮规则的反例边界：纯筛选上下文不自动成为投影。",
+      "fields": ["budget.category", "event.type"]
+    },
+    {
+      "id": "0726", "primary": "reference_or_public_ambiguity", "secondary": ["rank_column_versus_sorted_list"],
+      "observed": "预测英雄名、身高并排序；参考另输出RANK列，387行但列数2对3。",
+      "attribution": "Rank可以表示排序，也可要求显式名次列，公开输出约定需说明；字段覆盖不是主要问题。",
+      "uncertainty": "本次不按Gold自动增加排名列；未来明确排名指令时仍需保留并列语义。",
+      "next": "先作为排名输出约定待澄清项，使用合成正反例定义适用范围。",
+      "fields": ["superhero.superhero_name", "superhero.height_cm"]
+    },
+    {
+      "id": "0201", "primary": "reference_or_public_ambiguity", "secondary": ["joined_row_weighting", "distinct_entity_grain"],
+      "observed": "按原关联行统计得到41.196235238637925，参考去重atom_id得到38.80961092816197。",
+      "attribution": "关联重复权重与唯一原子比例不同；公开evidence写COUNT(atom_id)，未明确DISTINCT。",
+      "uncertainty": "不能仅凭一对多关联要求去重，0263是保留原行权重的成功反例。",
+      "next": "先明确公开粒度约定，保持v4的歧义提示，不重新全局强制去重。",
+      "fields": ["atom.atom_id", "atom.element", "atom.molecule_id", "bond.molecule_id"]
+    },
+    {
+      "id": "0239", "primary": "condition_time_relation_role", "secondary": ["relationship_endpoint_direction"],
+      "observed": "公开指定atom_id模式，预测额外OR atom_id2，COUNT=754；参考单侧端点COUNT=377。",
+      "attribution": "模型扩展了公开字段限定的关系端点，双侧统计并非请求中明确授权的角色范围。",
+      "uncertainty": "参考RIGHT与公开LIKE的模式差异尚未单独量化；不能把所有连接一律单向化，0206需要两侧端点。",
+      "next": "关系角色改进时保留公开指定端点，并加入双向查询正例。",
+      "fields": ["connected.atom_id", "connected.atom_id2", "connected.bond_id"]
+    }
+  ],
+  "success_regression": [
+    {"id": "0036", "protects": "多组完整姓名与NULL排序，已发生输出组修复"},
+    {"id": "0082", "protects": "仅请求单字段，ABS排序表达式不变成额外投影"},
+    {"id": "0368", "protects": "百分数原生数值路径，不因输出清单改变算术"},
+    {"id": "0379", "protects": "显式只列ID，不能附加名称"},
+    {"id": "0480", "protects": "卡牌名与语言只是筛选，最终只输出flavor text"},
+    {"id": "0586", "protects": "已有参与者／标题输出组及角色关联"},
+    {"id": "0637", "protects": "用户名称和零评论条件，不附加上下文字段"},
+    {"id": "1473", "protects": "跨表客户群与月份条件，既有计算不变"},
+    {"id": "1486", "protects": "公开差值标量，禁止额外Yes/No或两个计数"},
+    {"id": "0095", "protects": "复合排序及ID投影，修复预算保持"},
+    {"id": "0159", "protects": "实体列表ID输出与条件覆盖"},
+    {"id": "1405", "protects": "类别＋计算金额的输出顺序和名称到ID关联"},
+    {"id": "1457", "protects": "完整姓名＋明确要求的联系电话"},
+    {"id": "1460", "protects": "完整姓名＋明确要求的成本字段组"},
+    {"id": "0766", "protects": "full_name不能替换为superhero_name或额外输出属性值"},
+    {"id": "0773", "protects": "英雄名和发布者两项公开输出"},
+    {"id": "0226", "protects": "五位小数及NUMERIC函数修复，原生结果不后处理"},
+    {"id": "0263", "protects": "一对多行权重的成功反例，禁止全局去重"},
+    {"id": "0273", "protects": "冲突evidence不强制合取，保留既定条件角色"},
+    {"id": "0206", "protects": "明确双端点关系语义，不能全局禁止OR或UNION"}
+  ],
+  "experiment": {
+    "id": "m3_e01_public_output_contract",
+    "selected_branch": "sql_generation_semantics",
+    "single_active_variable": "从原问题/evidence及原授权Schema派生有序输出需求，作为生成提示；检查器先仅记录诊断，不增加硬拒绝或重试",
+    "primary_target_ids": ["0050", "0085", "0407"],
+    "mixed_observation_ids": ["1479"],
+    "not_primary_target_boundary_ids": ["0473", "0595", "1481", "1505", "1524", "0115", "1399", "1427", "0726", "0201"],
+    "pilot_size": 24,
+    "success_regression_size": 20,
+    "generation_started": false,
+    "implementation_started": false
+  },
+  "holdout_observed_supplement": [
+    {"id": "1039", "category": "numeric_path", "note": "Decimal AVG与REAL SUM/COUNT原生路径不同，空值分母也非普遍等价。"},
+    {"id": "0897", "category": "output_and_aggregation", "note": "姓名合并导致列数不同，另有SUM wins与COUNT wins条件口径差异。"},
+    {"id": "0928", "category": "relation_role_and_reference_shape", "note": "standings.position与results.rank角色不同，参考额外姓名列单列。"},
+    {"id": "0962", "category": "numerator_denominator_grain", "note": "分子比赛行与分母唯一车手混用。"},
+    {"id": "0964", "category": "evidence_reference_conflict", "note": "公开America与参考American冲突，不能提供Gold字面值。"},
+    {"id": "1153", "category": "entity_table_role", "note": "examination.diagnosis与patient.diagnosis来源不同。"},
+    {"id": "1205", "category": "native_output_type", "note": "Yes/No字符串与原生布尔不同，不回溯转型。"},
+    {"id": "1227", "category": "public_age_formula", "note": "公开年份差与AGE完整周岁不同。"},
+    {"id": "1242", "category": "evidence_reference_conflict", "note": "公开当前年与参考1984检验日期年冲突。"},
+    {"id": "1267", "category": "enum_storage_mapping", "note": "显示符号到存储值映射缺失，涉及IN列表。"},
+    {"id": "1275", "category": "enum_storage_mapping", "note": "多字段IN列表映射缺失，原DISTINCT已保留。"}
+  ]
+}

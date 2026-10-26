@@ -1,0 +1,95 @@
+{
+  "stage": "M1 A",
+  "status": "local implementation and regression passed; server live/e2e pending",
+  "verified_date": "2026-10-07",
+  "python": "3.10.9",
+  "dependencies": {
+    "langgraph": "1.2.11",
+    "duckdb": "1.5.5",
+    "sqlglot": "30.17.0",
+    "mcp": "2.2.0",
+    "fastapi": "0.116.1"
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "application_version": "dc51bad3c8be8b61bb345a26c407acb2cb8635859608e5dbed5ede7fedee5231",
+  "evaluation_code_version": "5a7f7df1efb307611648f81cec5887de1774c7dae4ff40c1229221309817e87f",
+  "unit_tests": {
+    "run": 272,
+    "passed": 272,
+    "skipped": 0,
+    "added": 17,
+    "log": "m1_a_unittest_local.log",
+    "log_sha256": "b441be39ad2fc7c17fffe5e460594699eade78b300bbff45a544839e4d5ba671"
+  },
+  "index_content": {
+    "verification": "raw field documents unchanged from pre-M1 A source backup",
+    "document_count": 276,
+    "before_digest": "3ce60abaa0903cc1395e2012c9ed264b06eeabd8a5a2cdc2a383f1380a2e04ec",
+    "after_digest": "3ce60abaa0903cc1395e2012c9ed264b06eeabd8a5a2cdc2a383f1380a2e04ec",
+    "equal": true,
+    "source_identity": {
+      "logical_database_id": "short_video_ops",
+      "source_id": "short_video_ops_duckdb",
+      "backend": "duckdb",
+      "dialect": "duckdb",
+      "prompt_dialect": "DuckDB",
+      "physical_schema": "main",
+      "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+      "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+    },
+    "model_requests": 0
+  },
+  "unchanged_original_input_files": 44,
+  "audit_checks": {
+    "unique_logical_table_ids": true,
+    "manifest_table_count_matches": true,
+    "manifest_rows_match_schema": true,
+    "csv_names_match_catalog": true,
+    "relation_fields_exist": true
+  },
+  "gold": {
+    "report": "m1_a_duckdb_gold_local.json",
+    "report_sha256": "7488e4b077814f2693a436645b701b981b4b117bf6b9bdd119612e3f06c9e3ad",
+    "run_id": "b5f6816ae763445086ede895339c5a24",
+    "summary": {
+      "mode": "gold",
+      "case_count": 79,
+      "schema_recall": null,
+      "schema_precision": null,
+      "sql_execution_success_rate": 1.0,
+      "average_execution_ms": 5523.739,
+      "p95_execution_ms": 8969.727,
+      "result_accuracy": 1.0,
+      "result_scored_count": 79,
+      "strict_result_accuracy": 1.0,
+      "strict_scored_count": 79,
+      "unscored_count": 0,
+      "column_name_match_rate": 1.0,
+      "clarification_count": 0,
+      "error_count": 0,
+      "timeout_count": 0,
+      "connection_error_count": 0,
+      "model_request_attempt_count": 0,
+      "model_retry_count": 0,
+      "model_timeout_event_count": 0,
+      "model_connection_error_event_count": 0,
+      "result_accuracy_given_executed_sql": 1.0
+    }
+  },
+  "model_requests": 0,
+  "postgresql_implemented": false,
+  "limitations": [
+    "Local Gold and scripted/unit integration checks do not replace a fresh server live/E2E run.",
+    "CSV inputs must stay fixed for a runtime; data/config changes require a new runtime/run.",
+    "PostgreSQL physical catalog, adapter, complete validator dialect propagation and Gold variants remain stages B/C/D."
+  ]
+}

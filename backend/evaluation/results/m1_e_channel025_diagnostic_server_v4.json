@@ -1,0 +1,564 @@
+{
+  "summary": {
+    "mode": "live",
+    "case_count": 1,
+    "schema_recall": 1.0,
+    "schema_precision": 0.105263,
+    "sql_execution_success_rate": 1.0,
+    "average_execution_ms": 2664.831,
+    "p95_execution_ms": 2664.831,
+    "result_accuracy": 1.0,
+    "result_scored_count": 1,
+    "strict_result_accuracy": 1.0,
+    "strict_scored_count": 1,
+    "unscored_count": 0,
+    "column_name_match_rate": 0.0,
+    "clarification_count": 0,
+    "error_count": 0,
+    "timeout_count": 0,
+    "connection_error_count": 0,
+    "model_request_attempt_count": 3,
+    "model_retry_count": 0,
+    "model_timeout_event_count": 0,
+    "model_connection_error_event_count": 0,
+    "result_accuracy_given_executed_sql": 1.0
+  },
+  "cases": [
+    {
+      "case_id": "CHANNEL_OPS-025",
+      "scenario": "channel_ops",
+      "category": "消耗趋势",
+      "query_type": "环比",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "截至2026-05各月广告消耗及环比变化；请返回月份、广告消耗、环比变化率；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按时间升序展示。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": 1.0,
+        "precision": 0.10526315789473684,
+        "true_positive": 2,
+        "retrieval_ms": 568.114,
+        "retrieved_fields": [
+          "short_video_ops.ad_daily_stats.spend",
+          "short_video_ops.ad_daily_stats.stat_date",
+          "short_video_ops.ad_campaigns.start_date",
+          "short_video_ops.ad_campaigns.end_date",
+          "short_video_ops.ad_daily_stats.conversions",
+          "short_video_ops.ad_daily_stats.impressions",
+          "short_video_ops.ad_daily_stats.ad_stat_id",
+          "short_video_ops.ad_accounts.ad_account_id",
+          "short_video_ops.channel_targets.target_month",
+          "short_video_ops.ad_daily_stats.clicks",
+          "short_video_ops.ad_daily_stats.click_through_rate",
+          "short_video_ops.ad_daily_stats.ad_campaign_id",
+          "short_video_ops.ad_campaigns.budget",
+          "short_video_ops.ad_daily_stats.cost_per_conversion",
+          "short_video_ops.ad_campaigns.ad_account_id",
+          "short_video_ops.ad_campaigns.ad_campaign_name",
+          "short_video_ops.channel_attributions.attributed_at",
+          "short_video_ops.ad_campaigns.objective",
+          "short_video_ops.channel_targets.spend_target"
+        ],
+        "gold_fields": [
+          "short_video_ops.ad_daily_stats.stat_date",
+          "short_video_ops.ad_daily_stats.spend"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "WITH monthly_spend AS (\n  SELECT\n    DATE_TRUNC('month', s.stat_date) AS month_start,\n    SUM(s.spend) AS total_spend\n  FROM askdata_ops.ad_daily_stats s\n  WHERE s.stat_date < '2026-06-01'\n  GROUP BY DATE_TRUNC('month', s.stat_date)\n),\nspend_with_lag AS (\n  SELECT\n    month_start,\n    total_spend,\n    LAG(total_spend) OVER (ORDER BY month_start) AS prev_month_spend\n  FROM monthly_spend\n)\nSELECT\n  TO_CHAR(month_start, 'YYYY-MM') AS \"月份\",\n  ROUND(CAST(total_spend AS numeric), 2) AS \"广告消耗\",\n  ROUND(CAST(\n    CASE \n      WHEN prev_month_spend IS NULL OR prev_month_spend = 0 THEN NULL\n      ELSE (total_spend - prev_month_spend) / prev_month_spend\n    END AS numeric\n  ), 4) AS \"环比变化率\"\nFROM spend_with_lag\nORDER BY month_start ASC",
+        "execution_success": true,
+        "execution_ms": 2664.831
+      },
+      "result_metrics": {
+        "correct": true,
+        "column_match": false,
+        "reason": "结果一致（忽略列顺序和辅助列）",
+        "strict_correct": true,
+        "strict_reason": "严格结果一致",
+        "comparison_target": "gold_result",
+        "gold_result_source": "execution",
+        "gold_result_generated": true,
+        "gold_result_cache_path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/evaluation/cache/gold_results/short_video_ops_postgres/CHANNEL_OPS-025_82400a4777e1.json",
+        "generated_result_rows": 5,
+        "gold_result_rows": 5,
+        "gold_sql": "WITH m AS (\n  SELECT\n    TO_CHAR(stat_date, 'YYYY-MM') AS month,\n    SUM(spend) AS spend\n  FROM ad_daily_stats\n  WHERE\n    TO_CHAR(stat_date, 'YYYY-MM') <= '2026-05'\n  GROUP BY\n    1\n)\nSELECT\n  month,\n  ROUND(CAST(spend AS DECIMAL), 2) AS spend,\n  ROUND(\n    CAST(CAST((\n      spend - LAG(spend) OVER (ORDER BY month)\n    ) AS DOUBLE PRECISION) / NULLIF(LAG(spend) OVER (ORDER BY month), 0) AS DECIMAL),\n    4\n  ) AS mom\nFROM m\nORDER BY\n  month",
+        "gold_dialect": "postgres",
+        "gold_selection_key": "gold_sql_by_dialect.postgres",
+        "gold_selection_version": 1,
+        "scoring_reexecuted": false
+      },
+      "agent_metrics": {
+        "tool_call_count": 1,
+        "tool_success_rate": 1.0,
+        "tool_failure_rate": 0.0,
+        "average_tool_latency_ms": 2664.831,
+        "p95_tool_latency_ms": 2664.831,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {
+          "query_short_video_ops": 1
+        },
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 164,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "channel_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "executed",
+        "query_contract": {
+          "grain": "时间趋势",
+          "source_tables": [
+            "ad_daily_stats"
+          ],
+          "filters": [
+            {
+              "phrase": "截至2026-05",
+              "field": "ad_daily_stats.stat_date",
+              "operator": "<",
+              "value": "2026-06-01"
+            }
+          ],
+          "metrics": [
+            "SUM(spend)",
+            "环比变化率"
+          ],
+          "output_columns": [
+            "月份",
+            "广告消耗",
+            "环比变化率"
+          ],
+          "constraint_plan": {
+            "filter_constraints": [],
+            "time_constraints": [
+              {
+                "field": "ad_daily_stats.stat_date",
+                "operator": "month_on_or_before",
+                "value": "2026-05",
+                "source": "validated_sql_sources_and_schema",
+                "confidence": 1.0
+              }
+            ],
+            "group_constraints": [],
+            "join_constraints": [],
+            "conditional_filter_rules": [],
+            "warnings": [],
+            "time_field_resolution": {
+              "month": "2026-05",
+              "source": "validated_sql_sources_and_schema",
+              "status": "resolved",
+              "candidates": [
+                "ad_daily_stats.stat_date"
+              ],
+              "selected_fields": [
+                "ad_daily_stats.stat_date"
+              ],
+              "sql_source_tables": [
+                "ad_daily_stats"
+              ]
+            }
+          },
+          "metric_plan": {
+            "metrics": [],
+            "formulas": [],
+            "joins": [],
+            "selected_sources": [],
+            "warnings": []
+          },
+          "constraint_validation": {
+            "status": "PASS",
+            "missing_constraints": [],
+            "missing_group_constraints": [],
+            "unsupported_constraints": [],
+            "join_violations": [],
+            "warnings": []
+          }
+        },
+        "reason": "根据查询契约生成并执行只读SQL"
+      },
+      "trace": {
+        "request": {
+          "case_id": "CHANNEL_OPS-025",
+          "question": "截至2026-05各月广告消耗及环比变化；请返回月份、广告消耗、环比变化率；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按时间升序展示。",
+          "query_type": "环比"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_channel_ops",
+          "roles": [
+            "channel_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 16,
+          "schema_filter_applied": true,
+          "schema_before_filter_count": 276,
+          "schema_after_filter_count": 112,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": "completed"
+        },
+        "schema_retrieval": {
+          "retrieved_fields": [
+            "short_video_ops.ad_daily_stats.spend",
+            "short_video_ops.ad_daily_stats.stat_date",
+            "short_video_ops.ad_campaigns.start_date",
+            "short_video_ops.ad_campaigns.end_date",
+            "short_video_ops.ad_daily_stats.conversions",
+            "short_video_ops.ad_daily_stats.impressions",
+            "short_video_ops.ad_daily_stats.ad_stat_id",
+            "short_video_ops.ad_accounts.ad_account_id",
+            "short_video_ops.channel_targets.target_month",
+            "short_video_ops.ad_daily_stats.clicks",
+            "short_video_ops.ad_daily_stats.click_through_rate",
+            "short_video_ops.ad_daily_stats.ad_campaign_id",
+            "short_video_ops.ad_campaigns.budget",
+            "short_video_ops.ad_daily_stats.cost_per_conversion",
+            "short_video_ops.ad_campaigns.ad_account_id",
+            "short_video_ops.ad_campaigns.ad_campaign_name",
+            "short_video_ops.channel_attributions.attributed_at",
+            "short_video_ops.ad_campaigns.objective",
+            "short_video_ops.channel_targets.spend_target"
+          ],
+          "recall": 1.0,
+          "precision": 0.10526315789473684,
+          "latency_ms": 568.114
+        },
+        "agent_decision": {
+          "action": "executed",
+          "clarification_required": false,
+          "reason": "根据查询契约生成并执行只读SQL"
+        },
+        "tool_calls": [
+          {
+            "tool_name": "query_short_video_ops",
+            "success": true,
+            "latency_ms": 2664.831,
+            "retry_count": 0,
+            "call_index": 1
+          }
+        ],
+        "sql_execution": {
+          "source_identity": {
+            "logical_database_id": "short_video_ops",
+            "source_id": "short_video_ops_postgres",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "askdata_ops",
+            "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+            "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+          },
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "generated_sql": "WITH monthly_spend AS (\n  SELECT\n    DATE_TRUNC('month', s.stat_date) AS month_start,\n    SUM(s.spend) AS total_spend\n  FROM askdata_ops.ad_daily_stats s\n  WHERE s.stat_date < '2026-06-01'\n  GROUP BY DATE_TRUNC('month', s.stat_date)\n),\nspend_with_lag AS (\n  SELECT\n    month_start,\n    total_spend,\n    LAG(total_spend) OVER (ORDER BY month_start) AS prev_month_spend\n  FROM monthly_spend\n)\nSELECT\n  TO_CHAR(month_start, 'YYYY-MM') AS \"月份\",\n  ROUND(CAST(total_spend AS numeric), 2) AS \"广告消耗\",\n  ROUND(CAST(\n    CASE \n      WHEN prev_month_spend IS NULL OR prev_month_spend = 0 THEN NULL\n      ELSE (total_spend - prev_month_spend) / prev_month_spend\n    END AS numeric\n  ), 4) AS \"环比变化率\"\nFROM spend_with_lag\nORDER BY month_start ASC",
+          "success": true,
+          "execution_ms": 2664.831
+        },
+        "result_comparison": {
+          "comparison_target": "gold_result",
+          "gold_result_source": "execution",
+          "correct": true,
+          "strict_correct": true,
+          "reason": "结果一致（忽略列顺序和辅助列）"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {
+        "model_request_attempt_count": 3,
+        "model_retry_count": 0,
+        "model_timeout_event_count": 0,
+        "model_connection_error_event_count": 0
+      },
+      "schema_recall": 1.0,
+      "schema_precision": 0.10526315789473684,
+      "schema_true_positive": 2,
+      "retrieval_ms": 568.114,
+      "retrieved_fields": [
+        "short_video_ops.ad_daily_stats.spend",
+        "short_video_ops.ad_daily_stats.stat_date",
+        "short_video_ops.ad_campaigns.start_date",
+        "short_video_ops.ad_campaigns.end_date",
+        "short_video_ops.ad_daily_stats.conversions",
+        "short_video_ops.ad_daily_stats.impressions",
+        "short_video_ops.ad_daily_stats.ad_stat_id",
+        "short_video_ops.ad_accounts.ad_account_id",
+        "short_video_ops.channel_targets.target_month",
+        "short_video_ops.ad_daily_stats.clicks",
+        "short_video_ops.ad_daily_stats.click_through_rate",
+        "short_video_ops.ad_daily_stats.ad_campaign_id",
+        "short_video_ops.ad_campaigns.budget",
+        "short_video_ops.ad_daily_stats.cost_per_conversion",
+        "short_video_ops.ad_campaigns.ad_account_id",
+        "short_video_ops.ad_campaigns.ad_campaign_name",
+        "short_video_ops.channel_attributions.attributed_at",
+        "short_video_ops.ad_campaigns.objective",
+        "short_video_ops.channel_targets.spend_target"
+      ],
+      "gold_fields": [
+        "short_video_ops.ad_daily_stats.stat_date",
+        "short_video_ops.ad_daily_stats.spend"
+      ],
+      "generated_sql": "WITH monthly_spend AS (\n  SELECT\n    DATE_TRUNC('month', s.stat_date) AS month_start,\n    SUM(s.spend) AS total_spend\n  FROM askdata_ops.ad_daily_stats s\n  WHERE s.stat_date < '2026-06-01'\n  GROUP BY DATE_TRUNC('month', s.stat_date)\n),\nspend_with_lag AS (\n  SELECT\n    month_start,\n    total_spend,\n    LAG(total_spend) OVER (ORDER BY month_start) AS prev_month_spend\n  FROM monthly_spend\n)\nSELECT\n  TO_CHAR(month_start, 'YYYY-MM') AS \"月份\",\n  ROUND(CAST(total_spend AS numeric), 2) AS \"广告消耗\",\n  ROUND(CAST(\n    CASE \n      WHEN prev_month_spend IS NULL OR prev_month_spend = 0 THEN NULL\n      ELSE (total_spend - prev_month_spend) / prev_month_spend\n    END AS numeric\n  ), 4) AS \"环比变化率\"\nFROM spend_with_lag\nORDER BY month_start ASC",
+      "sql_execution_success": true,
+      "execution_ms": 2664.831,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "column_match": false,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "gold_result_source": "execution",
+      "gold_sql": "WITH m AS (\n  SELECT\n    TO_CHAR(stat_date, 'YYYY-MM') AS month,\n    SUM(spend) AS spend\n  FROM ad_daily_stats\n  WHERE\n    TO_CHAR(stat_date, 'YYYY-MM') <= '2026-05'\n  GROUP BY\n    1\n)\nSELECT\n  month,\n  ROUND(CAST(spend AS DECIMAL), 2) AS spend,\n  ROUND(\n    CAST(CAST((\n      spend - LAG(spend) OVER (ORDER BY month)\n    ) AS DOUBLE PRECISION) / NULLIF(LAG(spend) OVER (ORDER BY month), 0) AS DECIMAL),\n    4\n  ) AS mom\nFROM m\nORDER BY\n  month",
+      "gold_dialect": "postgres",
+      "gold_selection_key": "gold_sql_by_dialect.postgres",
+      "gold_selection_version": 1,
+      "comparison_target": "gold_result",
+      "agent_action": "executed",
+      "query_contract": {
+        "grain": "时间趋势",
+        "source_tables": [
+          "ad_daily_stats"
+        ],
+        "filters": [
+          {
+            "phrase": "截至2026-05",
+            "field": "ad_daily_stats.stat_date",
+            "operator": "<",
+            "value": "2026-06-01"
+          }
+        ],
+        "metrics": [
+          "SUM(spend)",
+          "环比变化率"
+        ],
+        "output_columns": [
+          "月份",
+          "广告消耗",
+          "环比变化率"
+        ],
+        "constraint_plan": {
+          "filter_constraints": [],
+          "time_constraints": [
+            {
+              "field": "ad_daily_stats.stat_date",
+              "operator": "month_on_or_before",
+              "value": "2026-05",
+              "source": "validated_sql_sources_and_schema",
+              "confidence": 1.0
+            }
+          ],
+          "group_constraints": [],
+          "join_constraints": [],
+          "conditional_filter_rules": [],
+          "warnings": [],
+          "time_field_resolution": {
+            "month": "2026-05",
+            "source": "validated_sql_sources_and_schema",
+            "status": "resolved",
+            "candidates": [
+              "ad_daily_stats.stat_date"
+            ],
+            "selected_fields": [
+              "ad_daily_stats.stat_date"
+            ],
+            "sql_source_tables": [
+              "ad_daily_stats"
+            ]
+          }
+        },
+        "metric_plan": {
+          "metrics": [],
+          "formulas": [],
+          "joins": [],
+          "selected_sources": [],
+          "warnings": []
+        },
+        "constraint_validation": {
+          "status": "PASS",
+          "missing_constraints": [],
+          "missing_group_constraints": [],
+          "unsupported_constraints": [],
+          "join_violations": [],
+          "warnings": []
+        }
+      },
+      "agent_reason": "根据查询契约生成并执行只读SQL",
+      "error_stage": null,
+      "benchmark_error": "",
+      "model_request_attempt_count": 3,
+      "model_retry_count": 0,
+      "model_timeout_event_count": 0,
+      "model_connection_error_event_count": 0,
+      "run_id": "c5128d8784ec4164ab1d3e39a894dcbe",
+      "trace_id": "c5128d8784ec4164ab1d3e39a894dcbe:CHANNEL_OPS-025"
+    }
+  ],
+  "run_manifest": {
+    "source_identity": {
+      "logical_database_id": "short_video_ops",
+      "source_id": "short_video_ops_postgres",
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "prompt_dialect": "PostgreSQL",
+      "physical_schema": "askdata_ops",
+      "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+    },
+    "manifest_version": 4,
+    "mode": "live",
+    "scope": "all",
+    "dataset": {
+      "source": "evaluation/cases/all_cases.jsonl",
+      "case_list": "evaluation/cases/m1_e_channel025_diagnostic.json",
+      "case_ids": [
+        "CHANNEL_OPS-025"
+      ],
+      "version": "c10cc968683c995138011c598274c81fbfa1d186c4799a4ff89086b0fc29bd32"
+    },
+    "gold_selection": {
+      "selection_version": 1,
+      "cases": [
+        {
+          "case_id": "CHANNEL_OPS-025",
+          "gold": {
+            "sql": "WITH m AS (\n  SELECT\n    TO_CHAR(stat_date, 'YYYY-MM') AS month,\n    SUM(spend) AS spend\n  FROM ad_daily_stats\n  WHERE\n    TO_CHAR(stat_date, 'YYYY-MM') <= '2026-05'\n  GROUP BY\n    1\n)\nSELECT\n  month,\n  ROUND(CAST(spend AS DECIMAL), 2) AS spend,\n  ROUND(\n    CAST(CAST((\n      spend - LAG(spend) OVER (ORDER BY month)\n    ) AS DOUBLE PRECISION) / NULLIF(LAG(spend) OVER (ORDER BY month), 0) AS DECIMAL),\n    4\n  ) AS mom\nFROM m\nORDER BY\n  month",
+            "dialect": "postgres",
+            "selection_key": "gold_sql_by_dialect.postgres",
+            "selection_version": 1
+          }
+        }
+      ]
+    },
+    "result_policy": {
+      "version": 1,
+      "cases": [
+        {
+          "case_id": "CHANNEL_OPS-025",
+          "policy": {
+            "allowed_auxiliary_columns": [],
+            "column_aliases": {
+              "mom": [
+                "mom_change_rate",
+                "环比变化率"
+              ],
+              "month": [
+                "月份"
+              ],
+              "spend": [
+                "ad_spend",
+                "广告消耗"
+              ]
+            },
+            "column_mapping": "explicit_per_case_aliases_v1",
+            "expected_columns": [
+              "month",
+              "spend",
+              "mom"
+            ],
+            "normalization_version": 1,
+            "numeric_comparison": "existing_business_tolerance_v1",
+            "order_by_column": "month",
+            "order_sensitive": true,
+            "reject_truncation": true,
+            "row_limit": 10000,
+            "top_n_tie_policy": null,
+            "version": 1
+          }
+        }
+      ]
+    },
+    "source_verification": {
+      "kind": "live_postgresql_verification",
+      "live_target_verified": true,
+      "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+      "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+      "table_count": 41,
+      "field_count": 276,
+      "row_count": 722732,
+      "full_typed_row_match_count": 41,
+      "readonly_table_acl_match_count": 41,
+      "readonly_column_acl_match_count": 41
+    },
+    "versions": {
+      "data": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+      "schema": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "application": "8ccba8fb9a0f66cfcafd13c9d7c68e5cb359f4e76b87e5a7318cd250d9c7301c",
+      "evaluator": "2410abbbcb30ddd2df48e8ff9ecc314c917cc95f477b2ed547b3e7767bf741a9",
+      "evaluation_code": "9192bcafc5a0957ab8173e9225d932041c288b9bebc4830bf9ce04def785fcf8",
+      "gold_selection": "634ed28059f253f5b12068d466beb1c0e4edab215c68ed743fa2ea76a090762a",
+      "result_policy": "48546ffd5334a5917a61dbdbd237f27e1ae179314c4adb8b63e0d353589b72fe",
+      "physical_schema": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817"
+    },
+    "config": {
+      "data_backend": "postgresql",
+      "data_source_id": "short_video_ops_postgres",
+      "postgresql": {
+        "password_configured": true,
+        "implementation_stage": "verified_runtime_implemented"
+      },
+      "api_key_configured": true,
+      "llm_model": "qwen3.7-plus",
+      "llm_enable_thinking": false,
+      "embedding_model": "text-embedding-v4",
+      "embedding_dimensions": 1024,
+      "rerank_model": "qwen3-rerank",
+      "semantic_fallbacks": false,
+      "route_availability_fallback": "direct_response_no_database",
+      "schema_recall_threshold": 0.55,
+      "bm25_top_k": 30,
+      "dense_top_k": 30,
+      "rrf_top_k": 40,
+      "max_schema_fields": 20,
+      "time_field_supplement": {
+        "enabled": false,
+        "max_extra_fields": 2,
+        "max_total_fields": 22
+      },
+      "max_saved_memories": 20,
+      "mcp_max_tool_calls": 3,
+      "short_term_memory": {
+        "summary_enabled": true,
+        "summary_trigger_tokens": 12000,
+        "summary_batch_tokens": 6000,
+        "min_recent_turns": 5,
+        "archive_enabled": false,
+        "table_row_limit": 50
+      },
+      "route_context_turns": 6,
+      "llm_temperature": 0.0,
+      "llm_timeout": 180,
+      "llm_max_retries": 3,
+      "workers": 1,
+      "user_roles": [
+        "demo_channel_ops"
+      ],
+      "evaluation_date": "2026-10-13"
+    },
+    "run_id": "c5128d8784ec4164ab1d3e39a894dcbe",
+    "created_at": "2026-10-13T09:11:42.755389Z",
+    "fingerprint": "7b8ab0cd3cb3922845f6c7c0a52876ed17d49a292018b0b71adb7413ee8853b8"
+  },
+  "run_status": "complete"
+}

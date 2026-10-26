@@ -1,0 +1,78 @@
+{
+  "stage": "M1 D3 explicit PostgreSQL Gold79 local implementation",
+  "recorded_at": "2026-10-10T13:27:09.165072+00:00",
+  "run_status": "complete",
+  "scope": {
+    "classic": 49,
+    "extension": 30,
+    "growth": 27,
+    "channel": 26,
+    "content": 26
+  },
+  "formal_case_count": 430,
+  "explicit_postgres_variant_count": 79,
+  "untouched_case_count": 351,
+  "original_scoring_fields_changed_count": 0,
+  "original_duckdb_sql_changed_count": 0,
+  "dataset_sha256": "16fe651be76e5eacde7eb30ac6b1880eb4fcb0d22eebb7b347142f26e488a34f",
+  "baseline_sha256": "0eb11d55d07cbcc8926b4c5de6657c1f897e7559387cfb5f5c884ef20ec9e6ec",
+  "accepted_c3_evidence_sha256": "2cd9a7b9ad94300b36a9494b22a76e28db2d64a91c8d23835c96e982e6ea7166",
+  "recorded_pg_source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_postgres",
+    "backend": "postgresql",
+    "dialect": "postgres",
+    "prompt_dialect": "PostgreSQL",
+    "physical_schema": "askdata_ops",
+    "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+    "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+  },
+  "specialized_test_count": 14,
+  "specialized_failure_count": 0,
+  "specialized_error_count": 0,
+  "regression": {
+    "stage": "M1 D3 full local code regression",
+    "recorded_at": "2026-10-10T13:18:01.481232+00:00",
+    "run_status": "complete",
+    "test_count": 441,
+    "failure_count": 0,
+    "error_count": 0,
+    "skipped_count": 0,
+    "elapsed_seconds": 79.624,
+    "new_model_request_count": 0,
+    "remote_postgresql_connected": false
+  },
+  "local_duckdb_diagnostic": {
+    "original_strict_pass_count": 79,
+    "rendered_variant_strict_pass_count": 79,
+    "pair_strict_pass_count": 79,
+    "execution_backend": "duckdb",
+    "numeric_emulation": "Diagnostic DECIMAL(38,15); does not emulate all PostgreSQL numeric rounding rules"
+  },
+  "changes": {
+    "numeric_truth_tests": 17,
+    "numeric_truth_test_cases": 13,
+    "month_formats": 31,
+    "round_numeric_casts": 60,
+    "floating_divisions": 19,
+    "substring": 4,
+    "preserved_nullif": 7,
+    "nulls_last_order_nodes": 88,
+    "existing_top10_tie_policy_changed": false
+  },
+  "code_sha256": {
+    "app/datasources/sql_policy.py": "32407706c83ce218440a0d25cc2b07a245463a5cb93a52e21aa0d4514dd6ded9",
+    "scripts/audit_m1_d3_gold79.py": "4dc91ab210576045fbf6b03bd3aba6478dc061f5d8175c4f3299880049cf7fc8",
+    "scripts/check_m1_d3_duckdb_compatibility.py": "f7085d9349b8374e063e37a7b19a3abb03c4fe94b833658250df91a4245d2886",
+    "tests/test_m1_d3_gold79.py": "4c6dea34805a513ddeedec938abcb338651d92e33ce6b68be4b7c1db67b5bbb0"
+  },
+  "postgresql_connected": false,
+  "live_target_verified": false,
+  "postgres_execution_verified": false,
+  "new_model_request_count": 0,
+  "pending": [
+    "Server code regression",
+    "Live PostgreSQL Gold79 execution and per-case acceptance"
+  ],
+  "errors": []
+}

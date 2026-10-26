@@ -1,0 +1,3872 @@
+{
+  "stage": "M2 development diagnostics; not a formal EX benchmark",
+  "run_status": "complete",
+  "started_at": "2026-10-17T07:40:49.968735+00:00",
+  "errors": [],
+  "postgresql_connected": true,
+  "database_created": false,
+  "database_imported": false,
+  "target_data_verified": true,
+  "new_model_request_count": 10,
+  "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+  "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede",
+  "mode": "diagnostic",
+  "split": "development_diagnostic_subset",
+  "formal_benchmark": false,
+  "primary_ex": null,
+  "gold_executed": false,
+  "holdout_live_allowed": false,
+  "source_binding": {
+    "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+    "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+    "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+    "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+    "physical_database": "askdata_m2_bird",
+    "physical_schema": "public",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "budgets": {
+      "case_wall_timeout_seconds": 600,
+      "chat_max_output_tokens": 4096,
+      "connect_timeout_seconds": 10,
+      "enforcement_status": "required_in_external_runner_before_live; existing internal runners are not claimed compliant",
+      "lock_timeout_ms": 5000,
+      "max_chat_http_attempts_per_case": 10,
+      "max_prompt_utf8_bytes": 98304,
+      "max_sql_tool_calls": 3,
+      "max_total_model_http_attempts_per_case": 16,
+      "max_transport_retries_per_request": 1,
+      "max_validation_attempts_per_sql_round": 3,
+      "model_request_timeout_seconds": 180,
+      "result_limit_probe": "fetch limit+1; never score preview or partial rows",
+      "result_payload_byte_limit": 67108864,
+      "result_row_limit": 100000,
+      "shared_attempt_counters": "Include generation, preprocessing, embeddings, reranking and transport retries; shared index build reported separately",
+      "sql_statement_timeout_ms": 30000,
+      "usage": "record provider usage when available; missing usage is unknown, never zero",
+      "workers": 1
+    },
+    "scoring_policy": "bird_native_tuple_set_ex_v1",
+    "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1"
+  },
+  "code_binding": {
+    "sha256": "64f837cc0ef9a19ea691f471d545ab9fdc5c5eb1d0e879d364a96a8acb847464",
+    "files": {
+      "app/__init__.py": "355b723e052e3e6c211f4cd922a2cccafd16836360ce633afbafdbf32bdd90ad",
+      "app/api/__init__.py": "e13d97d643b76827935fb88232e4012ce4161d82adffe01e040e48090b2887ea",
+      "app/api/routes.py": "3237efe75ad8141ca01d03b08e303c8bc30130f1dbeddd5f01e62e52087f893c",
+      "app/config.py": "7e71979bf12e33bc7636d64c9a608552103c97cf176db64f8d731c73a7fc75b3",
+      "app/database.py": "30ad145862f13262fcc4b6c3881a4823533dda3814fc9e062ba069780f92a863",
+      "app/datasources/__init__.py": "660dc93b3ad4e3454e433dd79bcfd7f2db67274baeac0ebf7d84682296b117b2",
+      "app/datasources/contracts.py": "b9da804d820b1d5f20fb642cf60bf37039a6fb6dd33e6212081b3335dd32c869",
+      "app/datasources/csv_metadata.py": "ef68964f78da54eee5b0cd64b8f0dd3c53adde04adbcfc9cf471494f9e144638",
+      "app/datasources/dialects.py": "27eeb0134a3802e5a71ab013f1b7fd6f375bce3720823a449b762c962c9bc13b",
+      "app/datasources/postgres_config.py": "cc1dc6f6c80dd88f2e3937cd6753f84b02e5ef2b7b0ae9a151524c715e5442d2",
+      "app/datasources/postgres_connections.py": "26b08a853c6f691a21a3f11b615f6caea7eb6eb22ab10a22a3e544ac1146f0a1",
+      "app/datasources/postgres_metadata.py": "1a1f3cd0bac6193231a9403e010a3c482904f851ae433abb1d95bb94183c771e",
+      "app/datasources/row_digest.py": "06cb48c69b2b0d2e05006de64f6555fe8b0ab4460118afb92af8e9c3efc28b06",
+      "app/datasources/runtime.py": "586c9024d8b8dbca5ffa9ea3f04d403190285333e4c04b3a19036e897ddcbe24",
+      "app/datasources/sql_policy.py": "32407706c83ce218440a0d25cc2b07a245463a5cb93a52e21aa0d4514dd6ded9",
+      "app/datasources/values.py": "869fa4ba783aebb71a5a643ede27c1997894e1740e865f205fd935790662e7df",
+      "app/errors.py": "b71518301668603cb4dce07daed44f611bdad0a31b1e0fd9f50ba8b6fdbe4b8d",
+      "app/main.py": "cae83be9b955964b25f17045a742226fae2db7751c8567e5263c88ea0a785c0f",
+      "app/mcp_runtime/__init__.py": "25afe0d37fd99611244cc7ff3e903cfa5c2dade31a15870e15269a609c6a7053",
+      "app/mcp_runtime/client.py": "549774b6d3b0b5d2903e56f538e61299a3c9a69abcb2be6c5c155f82d0d3e51d",
+      "app/mcp_runtime/schemas.py": "d71c055298a5a338f5126235c5604ce0ca96cb719db629d06a91b23a03d3787a",
+      "app/mcp_runtime/server.py": "bc5cd3e3b1be1dfc2e12dc742046c44d0b701fe8893a82f4897471a0e915afdd",
+      "app/mcp_runtime/tools/__init__.py": "b465bdc3de9e8878a59a8bd244b2e42fa03594e886d90ac5a6b218bf3892535f",
+      "app/mcp_runtime/tools/database_tools.py": "4e916e5043d6bad56429f727377415bdac14c025a585fe2ab3865ef0911e83c9",
+      "app/mcp_runtime/tools/presentation_tools.py": "1524ab3baaf0ecca5e8df1b03e5682f6dd8bdfff37e3f2b64b7cf88aa9f19653",
+      "app/mcp_runtime/tools/time_tools.py": "59a95659eafcc50f4c9ef2b2d1f783a04617e29018251fce64fb3af55d500974",
+      "app/model_client.py": "f68cd0ced71c42e6e18464f86310aed22b71386f63f1160e49fad8bd02c92093",
+      "app/models.py": "2fea8f78c9078f6bbf876d18193d4503b42f94daa4ba5c2f31b6fdd8784cf83e",
+      "app/preprocessing.py": "28a9359411a925147457f5514837471e75be910e182540344add5aac21a000a2",
+      "app/querying/__init__.py": "6dc948905075e824c2a2607ef66f9b842d53c013f2644bd78ed7551eac2c652c",
+      "app/querying/constraint_planner.py": "73fc8d4fe47e69285903a80b9e783acbd45bf0bc65575c49380b3f9fec8f5ef0",
+      "app/querying/constraint_validator.py": "d9ebea98ba3dea34f89bf8b2645dcd6a81bcc6b72f2af7df5f334f241db2db7c",
+      "app/querying/data_qa_agent.py": "59a3faf139e9da26e5fd373f20f1e2a85166363eea9b1c8e9888740ec49b6fe3",
+      "app/querying/duckdb_engine.py": "0ad6bd9980b1962dd630519cb9d8256b06f7aabbaa3446fb9009f4a27aa0cc26",
+      "app/querying/metric_planner.py": "28d1d3bc60988779b1e3d845993e73861c15cb6a9511554605eca94aff662e38",
+      "app/querying/models.py": "4472388a7ae0bcf5803b32b02c6290757ffc4ae62c7ea2611a9eac5de7499ad3",
+      "app/querying/postgres_engine.py": "eb533e3bb5a022bcab33a181fc992cf575bdca92debbbdd486a184a09df4c857",
+      "app/querying/response_generator.py": "c99a6d87dd7774a003a076f4ade68b4ba364b497a6a5fc5c3cbe3ea4b524561c",
+      "app/querying/single_database_agent.py": "9115867fb1b964ee1aba0bde5d07364703a8c381814cbe22a91c933c8a37a107",
+      "app/querying/sql_context.py": "893df35a113720a94276b2f3108a38b51f1f8167231ff9b8bc179f078c2c543f",
+      "app/querying/sql_validator.py": "f516de49204f43129383ce4396c1ecbbc732cbc72336507597e82e74b5e18e90",
+      "app/retrieval/__init__.py": "af173889acb98646a899576f7f784db01a799c468e9736c511c500bef1ef5c53",
+      "app/retrieval/graph.py": "60195e45df0671a5c8e273aa5584a11907c87131816da5fac9773b0f6d0bf2ad",
+      "app/retrieval/service.py": "ad490b0ed8154f9237d671507896874f4fd9929e0b8edb13972f905846b2979e",
+      "app/retrieval/store.py": "965e5fd6c774229ece9c82f053e9f2d932e7ad368fde6c1c336422b6b5131656",
+      "app/retrieval/time_field_policy.py": "62178d671b4e3772d98a36833ece3cbf0e6d0beee10d3d9b9386605b2ab0d0a4",
+      "app/security/__init__.py": "f64ea4a1b53332090130642c17e6265aa4df9019634fc075448b25f3ba4e94a6",
+      "app/security/access_control.py": "0165c9bf5d87cbe21da951642bcac8f68055be41ce9eac91ad8892ec3dd6f1ee",
+      "app/security/auth.py": "1aaa891fc7f443bb8a7d678ac4be82a975ae1722dba56f7e228e112435dc76e3",
+      "app/service.py": "3961513ad9e067f749d6bb4aa7bcb5d680219bb564baa06fcfa6b0d5a6516296",
+      "app/services/__init__.py": "020f361755c5bedb3b0b82e4d1458b862c7b8f3d2073d0a87325f2772220de0c",
+      "app/services/askdata_service.py": "f13e3041bd8ca20dfc7af5d7153afa934f6da9411cde8729bc8ca42663b069d5",
+      "app/services/memory_store.py": "d4ed8600af12b383a459aeebf4c40d74ef99209da3fff8d611865a9b36b6cb14",
+      "app/services/session_archive.py": "008336024d456a019341dcebaefbc7527adbcd8aa9d351a49914225d07951b51",
+      "app/services/session_context.py": "b4590ae4410f13e05d678fbcbf8b69c102400ae67986d4ad8d4ef7093ccbbe7c",
+      "app/services/short_term_memory.py": "bfbc81597254e58f8303b81e53ebcd24a244fc4d6cd7053c1d5cabe8ad48299f",
+      "app/skills/__init__.py": "680726c976c87e1e888df0697b232234722401e1d1b02636949f18afab163949",
+      "app/skills/registry.py": "b1578a6829402fd103be8b40920d8fff682694ed4c4fd986935b6c8b6eb37f53",
+      "app/workflows/__init__.py": "3da3f98de22b4df4c01d7082562b1decac29704d80539cc9e7a8e4f9378ae397",
+      "app/workflows/clarification.py": "17314e22bdd5194f41b360cea4a38f22850a6afecc7514ec73bc9be4fb355eb8",
+      "app/workflows/query_graph.py": "9b818c9309a178b049da9edf750354bf2af8ba2781bd7091ea1447bdaafe3461",
+      "app/workflows/result_builder.py": "bfca63b31f0b71f1e823bc59912b58a75317d80f2d34cef1abec5aec46dad72e",
+      "app/workflows/state.py": "7532b4d7d9223b555e22f9bb38810da1c8fa44c9c58bbe5992c42c72094ffeaf",
+      "evaluation/bird/__init__.py": "b9d0c593cf9368540295851f3c4acb9242bc17aaa48f1b779ee7b174f9fc98f3",
+      "evaluation/bird/budgets.py": "688de220e22e28e1fe4366db4348866d61eb946d5345fd918e02e573cc013e39",
+      "evaluation/bird/case_worker.py": "3af30bf1a7e7cf065da28c2a5beaa70ebe939e18de424400c0f8bf2a03e8e45e",
+      "evaluation/bird/coverage.py": "c857134e5bc6909ca476f7c74cfcd184769f6234bbc912be3c9c0759d61c1451",
+      "evaluation/bird/diagnostic_runner.py": "02ba3a2e26d4a45b4dcd74469cd3368e738ed21ffead9ee2a7c241da6893dd8c",
+      "evaluation/bird/diagnostics.py": "f12dbf459bc15c7f126d27d304da3582b1a42d6f5ff2ec8cf636f8cc797364b7",
+      "evaluation/bird/evidence.py": "131ed1bd820938e7e09c0f530ebede143941fd0b418e27c2a9d802b4208f3fec",
+      "evaluation/bird/isolated_agent.py": "6b05b9de43f736eb40b2f91db69502a657a3ab38d049e863fed9f4be2efb04e9",
+      "evaluation/bird/manifest.py": "b32775e26be5eda69e76d19cd987224f187a71a6fcc1ba99866883b8adcbd83f",
+      "evaluation/bird/metrics.py": "83cf7d18559f51a532d2726100eff27353f5c6a5c24a46f5f857081d8b20c7c7",
+      "evaluation/bird/model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+      "evaluation/bird/native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f",
+      "evaluation/bird/repair.py": "2e47e152dd1ef5672844479a5b897662f17e92dd3987efeabe3390b4156aff57",
+      "evaluation/bird/retrieval.py": "564d6185d57df0cddbb3515a33811108a8ce12d5e9d077a277d25fc5e0b813d8",
+      "evaluation/bird/runner.py": "fbdbde667433949fe755cbd1680f140d7a2b6e8478816f3beb21c095368402e5",
+      "evaluation/bird/runtime.py": "24644dd5f69959cd46db7e430ec4900c78acebee567720a132ab37563d1d12d2",
+      "evaluation/bird/sql.py": "b84ca3e5a2adcb979e65fc995f920910b00583d1ca006c45cbcbe53a3f2e81fd",
+      "evaluation/bird/supervisor.py": "2a13f26b43b26ba756723f883a84d37ab5f2c3968096eb6daecde0e30ec9d082",
+      "evaluation/bird_protocol.py": "f1a60f00ae8bd8f757b28f3139e9be83fa196e8c981c0884e41315bb4c5e6b91",
+      "evaluation/run_bird_benchmark.py": "df76b1ad2280f1a1a89f76743890abcd194c0660def407f95113421dae15f48d",
+      "scripts/check_m2_c_bird_runtime.py": "70d54f2a35d8ef37de21eb01055ddd1e8a25d479638ca71eeb536334fd85b87c",
+      "scripts/m2_b_common.py": "47d4696ddd7a61f2a6c60b29ba4785f31eac1929c484d1b69d30d752745affef",
+      "scripts/m2_b_dump.py": "116345a7e0a8f3a6dc49c305b899f47655cc5d6416adcdcc8eb6bce6b0e6944f",
+      "scripts/m2_b_structure.py": "e4a33335815cb511c3e0ee6c173bfdaafd9ba5214f88e8bbd8c3e325a4f9a1a6",
+      "scripts/m2_b_target.py": "6a952d812604e27c1e43335fe82d4e4958c3c07ca37b9af980c034e8ad19f7a9",
+      "scripts/m2_b_typed_rows.py": "805165db8aba54ee61512e40f4dcb216f9a2f6b90f460d41163ca4b66e26b9ac"
+    },
+    "dependencies": {
+      "psycopg": "3.2.13",
+      "psycopg-pool": "3.2.8",
+      "sqlglot": "30.17.0"
+    },
+    "python": "3.11.15",
+    "system": "Linux",
+    "kernel": "6.8.0-59-generic",
+    "machine": "x86_64",
+    "seccomp_library_version": "2.5.3"
+  },
+  "baseline_report_sha256": "7f59478b5d589a49d85027e965e8b3596416ac998df4618c655984841fc8c01d",
+  "recorded_runtime_sha256": "ecaf50f6c7a17460dd6260a9dcf198f91fcf33e397e581c16aa82a55d7d63473",
+  "recorded_gold_readiness_sha256": "e87dc6e51833eaa22344c0882ac49109822cbd0bff6526eda05a361c7cf8ea03",
+  "recorded_prerequisite_code_sha256": "96d0ccff7b6bfd5962c8dc091b36d68238d4068da39f379b0a30156414e7b269",
+  "prerequisite_scope": "Accepted historical source evidence; not readiness for current code. Fresh checks below cover selected domains.",
+  "run_id": "7323ecd0582544ec81576f3d4e0df1e9",
+  "selected_case_ids": [
+    "BIRD-PG-0050",
+    "BIRD-PG-0095",
+    "BIRD-PG-1473"
+  ],
+  "case_list_sha256": "db465b645bafdd64dc2d7a8927652aa4393b77a56947bc119a168e69acaf9e56",
+  "model_configuration": {
+    "chat_model": "qwen3.7-plus",
+    "embedding_model": "text-embedding-v4",
+    "embedding_dimensions": 1024,
+    "rerank_model": "qwen3-rerank",
+    "temperature": 0,
+    "enable_thinking": false,
+    "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+  },
+  "workers": 1,
+  "cases": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "mode": "diagnostic",
+      "status": "diagnostic_answered",
+      "complete": true,
+      "gold_sql_sha256": null,
+      "ex_correct": null,
+      "errors": [],
+      "new_model_request_count": 3,
+      "schema_selection_policy": {
+        "policy_id": "bird_authorized_schema_coverage_v1",
+        "threshold": 0.55,
+        "max_fields": 20,
+        "coverage_enabled": true,
+        "coverage_floor": 0.5,
+        "max_coverage_fields": 4,
+        "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+        "intent_source": "original_question_and_official_evidence",
+        "metadata_match": "native_field_name_or_official_field_label",
+        "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+        "formal_protocol_override": false,
+        "development_candidate": true
+      },
+      "source_identity": {
+        "logical_database_id": "california_schools",
+        "source_id": "bird_mini_dev_postgres_california_schools",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+        "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+      },
+      "query_role": "askdata_m2_ro_california_schools",
+      "sql_repair_policy": "bird_authorized_sql_repair_v1",
+      "retrieval": {
+        "bm25_count": 30,
+        "dense_count": 30,
+        "rrf_count": 40,
+        "selected_count": 5,
+        "selected_field_ids": [
+          "california_schools.schools.mailstrabr",
+          "california_schools.schools.mailstreet",
+          "california_schools.satscores.avgscrmath",
+          "california_schools.schools.streetabr",
+          "california_schools.satscores.sname"
+        ],
+        "source_identity": {
+          "logical_database_id": "california_schools",
+          "source_id": "bird_mini_dev_postgres_california_schools",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+          "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+        },
+        "schema_selection_policy": {
+          "policy_id": "bird_authorized_schema_coverage_v1",
+          "threshold": 0.55,
+          "max_fields": 20,
+          "coverage_enabled": true,
+          "coverage_floor": 0.5,
+          "max_coverage_fields": 4,
+          "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+          "intent_source": "original_question_and_official_evidence",
+          "metadata_match": "native_field_name_or_official_field_label",
+          "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+          "formal_protocol_override": false,
+          "development_candidate": true
+        },
+        "baseline_field_ids": [
+          "california_schools.schools.mailstrabr",
+          "california_schools.schools.mailstreet",
+          "california_schools.satscores.avgscrmath",
+          "california_schools.schools.streetabr"
+        ],
+        "coverage_field_ids": [
+          "california_schools.satscores.sname"
+        ]
+      },
+      "index_sha256": "5c93205481d173318930cba96516fd5fe7175caf12bccb2329b8945050c7f81b",
+      "agent_isolation": {
+        "filesystem": "seccomp_deny_all_new_file_opens",
+        "additional_landlock_abi": 4,
+        "network_and_process": "seccomp",
+        "seccomp_library_version": "2.5.3",
+        "kernel": "6.8.0-59-generic",
+        "project_read_access": false,
+        "environment_credentials": false,
+        "direct_database_access": false
+      },
+      "agent_status": "answered",
+      "agent_trace": [
+        {
+          "sql_round": 1,
+          "validation_attempt": 1,
+          "valid": true
+        }
+      ],
+      "executions": [
+        {
+          "success": true,
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 2,
+            "payload_bytes": 76,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "NoneType",
+              "str"
+            ],
+            "ordered_native_diagnostic_sha256": "13bfb78fd7110a9632aca464f68c493592dd849553610e5cd4bf913a0ab0de97"
+          }
+        }
+      ],
+      "validation_events": [
+        {
+          "sql_round": 1,
+          "valid": true
+        }
+      ],
+      "first_sql_execution_success": true,
+      "final_sql_execution_success": true,
+      "result": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 2,
+        "payload_bytes": 76,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "NoneType",
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "13bfb78fd7110a9632aca464f68c493592dd849553610e5cd4bf913a0ab0de97"
+      },
+      "generated_sql": "SELECT s.mailstreet, sc.sname FROM schools s JOIN satscores sc ON s.cdscode = sc.cds ORDER BY sc.avgscrmath DESC NULLS LAST LIMIT 1 OFFSET 6",
+      "development_diagnostics": {
+        "policy": "bird_development_observation_v1",
+        "report_only": true,
+        "limits": {
+          "sql_text_utf8_bytes": 8192,
+          "reason_utf8_bytes": 2048,
+          "schema_graph_utf8_bytes": 98304,
+          "total_utf8_bytes": 393216,
+          "max_events": 21
+        },
+        "retrieval": {
+          "candidate_count": 40,
+          "candidates": [
+            {
+              "field_id": "california_schools.schools.mailstrabr",
+              "rrf_rank": 1,
+              "rrf_score": 0.03252247488101534,
+              "bm25_rank": 1,
+              "bm25_score": 1.0,
+              "dense_rank": 2,
+              "dense_score": 0.5219846471840635,
+              "rerank_rank": 1,
+              "rerank_score": 0.6649301084339468,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.mailstreet",
+              "rrf_rank": 2,
+              "rrf_score": 0.032266458495966696,
+              "bm25_rank": 3,
+              "bm25_score": 0.8143578227930102,
+              "dense_rank": 1,
+              "dense_score": 0.5248902639144566,
+              "rerank_rank": 2,
+              "rerank_score": 0.6420235791801416,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.mailcity",
+              "rrf_rank": 3,
+              "rrf_score": 0.03125,
+              "bm25_rank": 4,
+              "bm25_score": 0.6508901548865292,
+              "dense_rank": 4,
+              "dense_score": 0.4864713147069114,
+              "rerank_rank": 6,
+              "rerank_score": 0.5203342073680505,
+              "selected": false,
+              "selection_reason": "coverage_intent_already_covered",
+              "matched_intent_terms": [
+                "mailing"
+              ],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.streetabr",
+              "rrf_rank": 4,
+              "rrf_score": 0.0304147465437788,
+              "bm25_rank": 2,
+              "bm25_score": 0.8781360856230664,
+              "dense_rank": 10,
+              "dense_score": 0.44414231731293247,
+              "rerank_rank": 4,
+              "rerank_score": 0.5858477616303507,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.street",
+              "rrf_rank": 5,
+              "rrf_score": 0.03036576949620428,
+              "bm25_rank": 9,
+              "bm25_score": 0.52754408532314,
+              "dense_rank": 3,
+              "dense_score": 0.48702678184009474,
+              "rerank_rank": 10,
+              "rerank_score": 0.4941792450701704,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [
+                "street"
+              ],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.mailzip",
+              "rrf_rank": 6,
+              "rrf_score": 0.029877369007803793,
+              "bm25_rank": 5,
+              "bm25_score": 0.643124393697502,
+              "dense_rank": 9,
+              "dense_score": 0.45286937828515295,
+              "rerank_rank": 7,
+              "rerank_score": 0.5153808878825596,
+              "selected": false,
+              "selection_reason": "coverage_intent_already_covered",
+              "matched_intent_terms": [
+                "mailing"
+              ],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.mailstate",
+              "rrf_rank": 7,
+              "rrf_score": 0.029850746268656716,
+              "bm25_rank": 7,
+              "bm25_score": 0.5853714529289281,
+              "dense_rank": 7,
+              "dense_score": 0.4720709248732729,
+              "rerank_rank": 9,
+              "rerank_score": 0.49680912442027386,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [
+                "mailing"
+              ],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.satscores.avgscrmath",
+              "rrf_rank": 8,
+              "rrf_score": 0.027884615384615386,
+              "bm25_rank": 20,
+              "bm25_score": 0.420292748758852,
+              "dense_rank": 5,
+              "dense_score": 0.47319039688786235,
+              "rerank_rank": 3,
+              "rerank_score": 0.6287119415709713,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.eilname",
+              "rrf_rank": 9,
+              "rrf_score": 0.027443609022556388,
+              "bm25_rank": 10,
+              "bm25_score": 0.5031305500087042,
+              "dense_rank": 16,
+              "dense_score": 0.4189259720560586,
+              "rerank_rank": 19,
+              "rerank_score": 0.4481795173820273,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.admemail1",
+              "rrf_rank": 10,
+              "rrf_score": 0.026547116736990152,
+              "bm25_rank": 19,
+              "bm25_score": 0.4278607800173637,
+              "dense_rank": 12,
+              "dense_score": 0.4343604202538132,
+              "rerank_rank": 39,
+              "rerank_score": 0.3754228520776744,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [
+                "address"
+              ],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.edopsname",
+              "rrf_rank": 11,
+              "rrf_score": 0.025937081659973226,
+              "bm25_rank": 12,
+              "bm25_score": 0.458144157657578,
+              "dense_rank": 23,
+              "dense_score": 0.4065593423019981,
+              "rerank_rank": 34,
+              "rerank_score": 0.4098838159963322,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.website",
+              "rrf_rank": 12,
+              "rrf_score": 0.025708635464733027,
+              "bm25_rank": 22,
+              "bm25_score": 0.41098680024326684,
+              "dense_rank": 14,
+              "dense_score": 0.4211521542502646,
+              "rerank_rank": 24,
+              "rerank_score": 0.4324987763785663,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.admlname1",
+              "rrf_rank": 13,
+              "rrf_score": 0.02548701298701299,
+              "bm25_rank": 17,
+              "bm25_score": 0.44574345464297804,
+              "dense_rank": 20,
+              "dense_score": 0.410428243622611,
+              "rerank_rank": 35,
+              "rerank_score": 0.4086965416533421,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.ext",
+              "rrf_rank": 14,
+              "rrf_score": 0.025320462098433298,
+              "bm25_rank": 29,
+              "bm25_score": 0.309640581450148,
+              "dense_rank": 11,
+              "dense_score": 0.442091765782156,
+              "rerank_rank": 32,
+              "rerank_score": 0.41441527185258364,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.magnet",
+              "rrf_rank": 15,
+              "rrf_score": 0.02523809523809524,
+              "bm25_rank": 15,
+              "bm25_score": 0.4490378894058672,
+              "dense_rank": 24,
+              "dense_score": 0.4040997257510183,
+              "rerank_rank": 14,
+              "rerank_score": 0.475180903791768,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.charter",
+              "rrf_rank": 16,
+              "rrf_score": 0.024393871783430016,
+              "bm25_rank": 23,
+              "bm25_score": 0.39507979249443154,
+              "dense_rank": 21,
+              "dense_score": 0.4081354101755282,
+              "rerank_rank": 12,
+              "rerank_score": 0.4762918102952584,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.soctype",
+              "rrf_rank": 17,
+              "rrf_score": 0.02411038489469862,
+              "bm25_rank": 21,
+              "bm25_score": 0.41318679473064246,
+              "dense_rank": 25,
+              "dense_score": 0.4038500956113998,
+              "rerank_rank": 37,
+              "rerank_score": 0.40294428675605165,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [
+                "school"
+              ],
+              "uncovered_intent_terms": [
+                "school"
+              ]
+            },
+            {
+              "field_id": "california_schools.schools.eilcode",
+              "rrf_rank": 18,
+              "rrf_score": 0.023122159850307404,
+              "bm25_rank": 26,
+              "bm25_score": 0.34317678825179576,
+              "dense_rank": 27,
+              "dense_score": 0.4027386916468401,
+              "rerank_rank": 16,
+              "rerank_score": 0.46353952651795727,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.virtual",
+              "rrf_rank": 19,
+              "rrf_score": 0.015151515151515152,
+              "bm25_rank": 6,
+              "bm25_score": 0.586902710845313,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 40,
+              "rerank_score": 0.36887918282160603,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.admemail2",
+              "rrf_rank": 20,
+              "rrf_score": 0.015151515151515152,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 6,
+              "dense_score": 0.47302892856381984,
+              "rerank_rank": 23,
+              "rerank_score": 0.4325250287548533,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.statustype",
+              "rrf_rank": 21,
+              "rrf_score": 0.014705882352941176,
+              "bm25_rank": 8,
+              "bm25_score": 0.5281234760307264,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 21,
+              "rerank_score": 0.43788633614479044,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.admemail3",
+              "rrf_rank": 22,
+              "rrf_score": 0.014705882352941176,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 8,
+              "dense_score": 0.45893962852059134,
+              "rerank_rank": 29,
+              "rerank_score": 0.42304765347777074,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.gsoffered",
+              "rrf_rank": 23,
+              "rrf_score": 0.014084507042253521,
+              "bm25_rank": 11,
+              "bm25_score": 0.49743324337601885,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 26,
+              "rerank_score": 0.43135050867905106,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.ncesdist",
+              "rrf_rank": 24,
+              "rrf_score": 0.0136986301369863,
+              "bm25_rank": 13,
+              "bm25_score": 0.4532177513256219,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 11,
+              "rerank_score": 0.48351501706670946,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [
+                "school"
+              ],
+              "uncovered_intent_terms": [
+                "school"
+              ]
+            },
+            {
+              "field_id": "california_schools.schools.zip",
+              "rrf_rank": 25,
+              "rrf_score": 0.0136986301369863,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 13,
+              "dense_score": 0.4342001509189364,
+              "rerank_rank": 15,
+              "rerank_score": 0.4671965741889855,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.ncesschool",
+              "rrf_rank": 26,
+              "rrf_score": 0.013513513513513514,
+              "bm25_rank": 14,
+              "bm25_score": 0.4500124300013125,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 18,
+              "rerank_score": 0.4569761166985314,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [
+                "school"
+              ],
+              "uncovered_intent_terms": [
+                "school"
+              ]
+            },
+            {
+              "field_id": "california_schools.satscores.avgscrwrite",
+              "rrf_rank": 27,
+              "rrf_score": 0.013333333333333334,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 15,
+              "dense_score": 0.41897233221825114,
+              "rerank_rank": 8,
+              "rerank_score": 0.5038187794338517,
+              "selected": false,
+              "selection_reason": "coverage_intent_already_covered",
+              "matched_intent_terms": [
+                "average"
+              ],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.admfname1",
+              "rrf_rank": 28,
+              "rrf_score": 0.013157894736842105,
+              "bm25_rank": 16,
+              "bm25_score": 0.44574345464297804,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 27,
+              "rerank_score": 0.4265754165035486,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.satscores.sname",
+              "rrf_rank": 29,
+              "rrf_score": 0.012987012987012988,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 17,
+              "dense_score": 0.41372857723894074,
+              "rerank_rank": 5,
+              "rerank_score": 0.5479438051904237,
+              "selected": true,
+              "selection_reason": "selected_coverage",
+              "matched_intent_terms": [
+                "school"
+              ],
+              "uncovered_intent_terms": [
+                "school"
+              ]
+            },
+            {
+              "field_id": "california_schools.schools.gsserved",
+              "rrf_rank": 30,
+              "rrf_score": 0.01282051282051282,
+              "bm25_rank": 18,
+              "bm25_score": 0.4397205386143844,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 17,
+              "rerank_score": 0.4607018619535378,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.admlname3",
+              "rrf_rank": 31,
+              "rrf_score": 0.01282051282051282,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 18,
+              "dense_score": 0.4123350287682147,
+              "rerank_rank": 20,
+              "rerank_score": 0.4468078227323294,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.admfname3",
+              "rrf_rank": 32,
+              "rrf_score": 0.012658227848101266,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 19,
+              "dense_score": 0.41133423828275667,
+              "rerank_rank": 22,
+              "rerank_score": 0.4345078134993081,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.satscores.numtsttakr",
+              "rrf_rank": 33,
+              "rrf_score": 0.012195121951219513,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 22,
+              "dense_score": 0.4075458543182762,
+              "rerank_rank": 13,
+              "rerank_score": 0.4761849366852285,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.latitude",
+              "rrf_rank": 34,
+              "rrf_score": 0.011904761904761904,
+              "bm25_rank": 24,
+              "bm25_score": 0.3832844998727949,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 31,
+              "rerank_score": 0.41643300758590507,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.longitude",
+              "rrf_rank": 35,
+              "rrf_score": 0.011764705882352941,
+              "bm25_rank": 25,
+              "bm25_score": 0.37185521724275244,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 33,
+              "rerank_score": 0.41395304266610056,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.charternum",
+              "rrf_rank": 36,
+              "rrf_score": 0.011627906976744186,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 26,
+              "dense_score": 0.40370176854702633,
+              "rerank_rank": 38,
+              "rerank_score": 0.40209544420069765,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.doc",
+              "rrf_rank": 37,
+              "rrf_score": 0.011494252873563218,
+              "bm25_rank": 27,
+              "bm25_score": 0.3333825127418075,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 30,
+              "rerank_score": 0.4217467061698182,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.edopscode",
+              "rrf_rank": 38,
+              "rrf_score": 0.011363636363636364,
+              "bm25_rank": 28,
+              "bm25_score": 0.3304362493694466,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 28,
+              "rerank_score": 0.4256727814404134,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.admlname2",
+              "rrf_rank": 39,
+              "rrf_score": 0.011363636363636364,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 28,
+              "dense_score": 0.4021334742072004,
+              "rerank_rank": 25,
+              "rerank_score": 0.4320458738194609,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "california_schools.schools.admfname2",
+              "rrf_rank": 40,
+              "rrf_score": 0.011235955056179775,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 29,
+              "dense_score": 0.4019434080047772,
+              "rerank_rank": 36,
+              "rerank_score": 0.4048282716938465,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            }
+          ],
+          "selection_policy": {
+            "threshold": 0.55,
+            "max_fields": 20,
+            "score_representation": "provider score clamped to [0,1] by existing broker",
+            "policy_id": "bird_authorized_schema_coverage_v1",
+            "coverage_enabled": true,
+            "coverage_floor": 0.5,
+            "max_coverage_fields": 4,
+            "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+            "intent_source": "original_question_and_official_evidence",
+            "metadata_match": "native_field_name_or_official_field_label",
+            "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+            "formal_protocol_override": false,
+            "development_candidate": true
+          },
+          "selected_field_ids": [
+            "california_schools.schools.mailstrabr",
+            "california_schools.schools.mailstreet",
+            "california_schools.satscores.avgscrmath",
+            "california_schools.schools.streetabr",
+            "california_schools.satscores.sname"
+          ],
+          "relation_key_field_ids": [
+            "california_schools.schools.cdscode",
+            "california_schools.satscores.cds"
+          ],
+          "added_relation_key_field_ids": [
+            "california_schools.schools.cdscode",
+            "california_schools.satscores.cds"
+          ],
+          "baseline_field_ids": [
+            "california_schools.schools.mailstrabr",
+            "california_schools.schools.mailstreet",
+            "california_schools.satscores.avgscrmath",
+            "california_schools.schools.streetabr"
+          ],
+          "coverage_field_ids": [
+            "california_schools.satscores.sname"
+          ],
+          "anchored_table_ids": [
+            "california_schools.satscores",
+            "california_schools.schools"
+          ],
+          "schema_graph": {
+            "value": {
+              "source_identity": {
+                "logical_database_id": "california_schools",
+                "source_id": "bird_mini_dev_postgres_california_schools",
+                "backend": "postgresql",
+                "dialect": "postgres",
+                "prompt_dialect": "PostgreSQL",
+                "physical_schema": "public",
+                "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+                "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+              },
+              "database": "california_schools",
+              "databases": [
+                "california_schools"
+              ],
+              "graph_version": "453cd9f6a87f",
+              "tables": [
+                {
+                  "id": "california_schools.satscores",
+                  "name": "satscores",
+                  "label": "satscores",
+                  "description": "Official BIRD Mini-Dev table",
+                  "domain": "california_schools",
+                  "database": "california_schools"
+                },
+                {
+                  "id": "california_schools.schools",
+                  "name": "schools",
+                  "label": "schools",
+                  "description": "Official BIRD Mini-Dev table",
+                  "domain": "california_schools",
+                  "database": "california_schools"
+                }
+              ],
+              "fields": [
+                {
+                  "id": "california_schools.schools.mailstrabr",
+                  "table_id": "california_schools.schools",
+                  "table_name": "schools",
+                  "sql_name": "schools.mailstrabr",
+                  "name": "mailstrabr",
+                  "label": "mailing street address",
+                  "type": "text",
+                  "description": "",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.6649301084339468
+                },
+                {
+                  "id": "california_schools.schools.mailstreet",
+                  "table_id": "california_schools.schools",
+                  "table_name": "schools",
+                  "sql_name": "schools.mailstreet",
+                  "name": "mailstreet",
+                  "label": "mailstreet",
+                  "type": "text",
+                  "description": "MailStreet",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.6420235791801416
+                },
+                {
+                  "id": "california_schools.satscores.avgscrmath",
+                  "table_id": "california_schools.satscores",
+                  "table_name": "satscores",
+                  "sql_name": "satscores.avgscrmath",
+                  "name": "avgscrmath",
+                  "label": "average scores in Math",
+                  "type": "bigint",
+                  "description": "average scores in Math",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.6287119415709713
+                },
+                {
+                  "id": "california_schools.schools.streetabr",
+                  "table_id": "california_schools.schools",
+                  "table_name": "schools",
+                  "sql_name": "schools.streetabr",
+                  "name": "streetabr",
+                  "label": "street address",
+                  "type": "text",
+                  "description": "The abbreviated street address of the school, district, or administrative authority’s physical location.",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.5858477616303507
+                },
+                {
+                  "id": "california_schools.satscores.sname",
+                  "table_id": "california_schools.satscores",
+                  "table_name": "satscores",
+                  "sql_name": "satscores.sname",
+                  "name": "sname",
+                  "label": "school name",
+                  "type": "text",
+                  "description": "school name",
+                  "role": "field",
+                  "source": "schema_coverage",
+                  "score": 0.5479438051904237
+                },
+                {
+                  "id": "california_schools.schools.cdscode",
+                  "table_id": "california_schools.schools",
+                  "table_name": "schools",
+                  "sql_name": "schools.cdscode",
+                  "name": "cdscode",
+                  "label": "CDSCode",
+                  "type": "text",
+                  "description": "CDSCode",
+                  "role": "field",
+                  "source": "relation_key",
+                  "score": 1.0
+                },
+                {
+                  "id": "california_schools.satscores.cds",
+                  "table_id": "california_schools.satscores",
+                  "table_name": "satscores",
+                  "sql_name": "satscores.cds",
+                  "name": "cds",
+                  "label": "cds",
+                  "type": "text",
+                  "description": "California Department Schools",
+                  "role": "primary_key",
+                  "source": "relation_key",
+                  "score": 1.0
+                }
+              ],
+              "joins": [
+                {
+                  "description": "Official database foreign key",
+                  "id": "satscores_cds_fkey:cds",
+                  "left_field": "cdscode",
+                  "left_table": "california_schools.schools",
+                  "relation_type": "foreign_key",
+                  "right_field": "cds",
+                  "right_table": "california_schools.satscores",
+                  "left_table_name": "schools",
+                  "right_table_name": "satscores"
+                }
+              ]
+            },
+            "complete": true,
+            "utf8_bytes": 3286,
+            "sha256": "31c88721b3b68c41da1b6a9c4c13aaff39ef251395d88e2054693a1395d9ea91",
+            "omission_reason": null
+          }
+        },
+        "attempts": [
+          {
+            "kind": "model_decision",
+            "sql_round": 1,
+            "action": "query",
+            "sql": {
+              "text": "SELECT s.mailstreet, sc.sname FROM schools s JOIN satscores sc ON s.cdscode = sc.cds ORDER BY sc.avgscrmath DESC NULLS LAST LIMIT 1 OFFSET 6",
+              "provided": true,
+              "original_utf8_bytes": 140,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "844e4cf44146b7a0fb357855d799fe343cd8f765a2a795111c9d502e6742e65e"
+            },
+            "clarification_reason": {
+              "text": null,
+              "provided": false,
+              "truncated": false,
+              "redacted": false
+            }
+          },
+          {
+            "kind": "validate",
+            "sql_round": 1,
+            "sql": {
+              "text": "SELECT s.mailstreet, sc.sname FROM schools s JOIN satscores sc ON s.cdscode = sc.cds ORDER BY sc.avgscrmath DESC NULLS LAST LIMIT 1 OFFSET 6",
+              "provided": true,
+              "original_utf8_bytes": 140,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "844e4cf44146b7a0fb357855d799fe343cd8f765a2a795111c9d502e6742e65e"
+            },
+            "success": true
+          },
+          {
+            "kind": "execute",
+            "sql_round": 1,
+            "sql": {
+              "text": "SELECT s.mailstreet, sc.sname FROM schools s JOIN satscores sc ON s.cdscode = sc.cds ORDER BY sc.avgscrmath DESC NULLS LAST LIMIT 1 OFFSET 6",
+              "provided": true,
+              "original_utf8_bytes": 140,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "844e4cf44146b7a0fb357855d799fe343cd8f765a2a795111c9d502e6742e65e"
+            },
+            "success": true
+          }
+        ],
+        "clarification_reason": null,
+        "omitted_events": 0
+      },
+      "runtime_closed": true,
+      "budget": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 1,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 1
+        },
+        "generation_attempts": {
+          "1": 1
+        },
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 34,
+              "total_tokens": 34
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "rerank",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 6953
+            },
+            "returned_model": "qwen3-rerank",
+            "endpoint_kind": "rerank",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 2270,
+              "completion_tokens": 50,
+              "prompt_tokens": 2220,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "text_tokens": 2220
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 3.766
+      },
+      "case_wall_seconds": 3.953,
+      "historical_baseline": {
+        "status": "validation_failed",
+        "ex_correct": false
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "mode": "diagnostic",
+      "status": "diagnostic_answered",
+      "complete": true,
+      "gold_sql_sha256": null,
+      "ex_correct": null,
+      "errors": [],
+      "new_model_request_count": 4,
+      "schema_selection_policy": {
+        "policy_id": "bird_authorized_schema_coverage_v1",
+        "threshold": 0.55,
+        "max_fields": 20,
+        "coverage_enabled": true,
+        "coverage_floor": 0.5,
+        "max_coverage_fields": 4,
+        "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+        "intent_source": "original_question_and_official_evidence",
+        "metadata_match": "native_field_name_or_official_field_label",
+        "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+        "formal_protocol_override": false,
+        "development_candidate": true
+      },
+      "source_identity": {
+        "logical_database_id": "financial",
+        "source_id": "bird_mini_dev_postgres_financial",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+        "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+      },
+      "query_role": "askdata_m2_ro_financial",
+      "sql_repair_policy": "bird_authorized_sql_repair_v1",
+      "retrieval": {
+        "bm25_count": 30,
+        "dense_count": 30,
+        "rrf_count": 39,
+        "selected_count": 9,
+        "selected_field_ids": [
+          "financial.district.a11",
+          "financial.disp.client_id",
+          "financial.loan.account_id",
+          "financial.client.birth_date",
+          "financial.client.client_id",
+          "financial.disp.account_id",
+          "financial.trans.account",
+          "financial.order.account_id",
+          "financial.account.account_id"
+        ],
+        "source_identity": {
+          "logical_database_id": "financial",
+          "source_id": "bird_mini_dev_postgres_financial",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+          "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+        },
+        "schema_selection_policy": {
+          "policy_id": "bird_authorized_schema_coverage_v1",
+          "threshold": 0.55,
+          "max_fields": 20,
+          "coverage_enabled": true,
+          "coverage_floor": 0.5,
+          "max_coverage_fields": 4,
+          "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+          "intent_source": "original_question_and_official_evidence",
+          "metadata_match": "native_field_name_or_official_field_label",
+          "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+          "formal_protocol_override": false,
+          "development_candidate": true
+        },
+        "baseline_field_ids": [
+          "financial.district.a11",
+          "financial.disp.client_id",
+          "financial.loan.account_id",
+          "financial.client.birth_date",
+          "financial.client.client_id",
+          "financial.disp.account_id",
+          "financial.trans.account",
+          "financial.order.account_id",
+          "financial.account.account_id"
+        ],
+        "coverage_field_ids": []
+      },
+      "index_sha256": "c2dbb3b31b95aab2e3ce2ae64f2d8deaafa0be7e064c61f68ed38516c56b38fe",
+      "agent_isolation": {
+        "filesystem": "seccomp_deny_all_new_file_opens",
+        "additional_landlock_abi": 4,
+        "network_and_process": "seccomp",
+        "seccomp_library_version": "2.5.3",
+        "kernel": "6.8.0-59-generic",
+        "project_read_access": false,
+        "environment_credentials": false,
+        "direct_database_access": false
+      },
+      "agent_status": "answered",
+      "agent_trace": [
+        {
+          "sql_round": 1,
+          "validation_attempt": 1,
+          "valid": false
+        },
+        {
+          "sql_round": 1,
+          "validation_attempt": 2,
+          "valid": true
+        }
+      ],
+      "executions": [
+        {
+          "success": true,
+          "diagnostic": {
+            "complete": true,
+            "row_count": 0,
+            "column_count": 1,
+            "payload_bytes": 26,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [],
+            "ordered_native_diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      ],
+      "validation_events": [
+        {
+          "sql_round": 1,
+          "valid": false,
+          "error": {
+            "category": "sql_source_denied",
+            "sqlstate": null
+          },
+          "repair_feedback": {
+            "policy": "bird_authorized_sql_repair_v1",
+            "category": "sql_source_denied",
+            "sqlstate": null,
+            "condition": "sql_source_denied",
+            "server_reason": {
+              "text": "",
+              "provided": true,
+              "original_utf8_bytes": 0,
+              "truncated": false,
+              "redacted": false
+            },
+            "failed_sql": {
+              "text": "SELECT DISTINCT d.account_id\nFROM financial.disp d\nJOIN financial.client c ON d.client_id = c.client_id\nJOIN financial.district dist ON c.district_id = dist.district_id\nWHERE c.birth_date = (\n    SELECT MAX(birth_date)\n    FROM financial.client\n) AND dist.a11 = (\n    SELECT MAX(a11)\n    FROM financial.district\n)",
+              "provided": true,
+              "original_utf8_bytes": 313,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "49e795e9d58c0a36b0cacf914ddfee1b83258f54bd794a2fede799641e5e5f4a"
+            },
+            "position": {
+              "raw_statement_position": null,
+              "origin": "unknown",
+              "sql_position": null,
+              "line": null,
+              "column": null,
+              "available": false,
+              "unavailable_reason": "statement_context_not_available"
+            },
+            "unresolved_column": null,
+            "authorized_fields": [],
+            "catalog_scope": "Bounded subset of referenced physical tables in the current authorized runtime.",
+            "source_identity": {
+              "logical_database_id": "financial",
+              "source_id": "bird_mini_dev_postgres_financial",
+              "backend": "postgresql",
+              "dialect": "postgres",
+              "prompt_dialect": "PostgreSQL",
+              "physical_schema": "public",
+              "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+              "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+            },
+            "guidance": [
+              "Preserve the requested output columns, filters and question meaning. Use only authorized identifiers."
+            ],
+            "duplicate_failed_sql": false,
+            "retryable": true,
+            "sql_fingerprint": "8caa29b678c440f895101aec2a6f4507d4e4a2bf4e00d27278d3931426880be4",
+            "feedback_utf8_byte_limit": 8192,
+            "omitted_authorized_fields": 0
+          },
+          "runtime_validation_performed": true,
+          "database_validation_performed": false
+        },
+        {
+          "sql_round": 1,
+          "valid": true
+        }
+      ],
+      "first_sql_execution_success": true,
+      "final_sql_execution_success": true,
+      "result": {
+        "complete": true,
+        "row_count": 0,
+        "column_count": 1,
+        "payload_bytes": 26,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [],
+        "ordered_native_diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "generated_sql": "SELECT DISTINCT d.account_id\nFROM disp d\nJOIN client c ON d.client_id = c.client_id\nJOIN district dist ON c.district_id = dist.district_id\nWHERE c.birth_date = (\n    SELECT MAX(birth_date)\n    FROM client\n) AND dist.a11 = (\n    SELECT MAX(a11)\n    FROM district\n)",
+      "development_diagnostics": {
+        "policy": "bird_development_observation_v1",
+        "report_only": true,
+        "limits": {
+          "sql_text_utf8_bytes": 8192,
+          "reason_utf8_bytes": 2048,
+          "schema_graph_utf8_bytes": 98304,
+          "total_utf8_bytes": 393216,
+          "max_events": 21
+        },
+        "retrieval": {
+          "candidate_count": 39,
+          "candidates": [
+            {
+              "field_id": "financial.account.date",
+              "rrf_rank": 1,
+              "rrf_score": 0.03128054740957967,
+              "bm25_rank": 6,
+              "bm25_score": 0.25177705318970417,
+              "dense_rank": 2,
+              "dense_score": 0.506043163432566,
+              "rerank_rank": 14,
+              "rerank_score": 0.5246267019206218,
+              "selected": false,
+              "selection_reason": "coverage_no_intent_match",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.district.a11",
+              "rrf_rank": 2,
+              "rrf_score": 0.030679156908665108,
+              "bm25_rank": 1,
+              "bm25_score": 1.0,
+              "dense_rank": 10,
+              "dense_score": 0.4391994253151631,
+              "rerank_rank": 1,
+              "rerank_score": 0.667240041218841,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "financial.loan.status",
+              "rrf_rank": 3,
+              "rrf_score": 0.030621785881252923,
+              "bm25_rank": 2,
+              "bm25_score": 0.6264147279607037,
+              "dense_rank": 9,
+              "dense_score": 0.45528770736671026,
+              "rerank_rank": 19,
+              "rerank_score": 0.4528959541018782,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.account.account_id",
+              "rrf_rank": 4,
+              "rrf_score": 0.030330882352941176,
+              "bm25_rank": 4,
+              "bm25_score": 0.27066350243756443,
+              "dense_rank": 8,
+              "dense_score": 0.45759440858675865,
+              "rerank_rank": 9,
+              "rerank_score": 0.5567221744584603,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "financial.loan.account_id",
+              "rrf_rank": 5,
+              "rrf_score": 0.030117753623188408,
+              "bm25_rank": 9,
+              "bm25_score": 0.20539054210685379,
+              "dense_rank": 4,
+              "dense_score": 0.4655164719267835,
+              "rerank_rank": 3,
+              "rerank_score": 0.5928913691707914,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "financial.account.frequency",
+              "rrf_rank": 6,
+              "rrf_score": 0.02967032967032967,
+              "bm25_rank": 10,
+              "bm25_score": 0.18271218008347556,
+              "dense_rank": 5,
+              "dense_score": 0.4647456284638693,
+              "rerank_rank": 22,
+              "rerank_score": 0.43518098950959433,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.loan.date",
+              "rrf_rank": 7,
+              "rrf_score": 0.029273504273504274,
+              "bm25_rank": 5,
+              "bm25_score": 0.25866535445606276,
+              "dense_rank": 12,
+              "dense_score": 0.42624790996758,
+              "rerank_rank": 17,
+              "rerank_score": 0.45531800207634354,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.client.client_id",
+              "rrf_rank": 8,
+              "rrf_score": 0.028693528693528692,
+              "bm25_rank": 18,
+              "bm25_score": 0.10321097881812051,
+              "dense_rank": 3,
+              "dense_score": 0.48472478949573367,
+              "rerank_rank": 5,
+              "rerank_score": 0.5717144976088806,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "financial.disp.type",
+              "rrf_rank": 9,
+              "rrf_score": 0.028531243721117136,
+              "bm25_rank": 3,
+              "bm25_score": 0.4135106394905236,
+              "dense_rank": 19,
+              "dense_score": 0.39897528349567046,
+              "rerank_rank": 23,
+              "rerank_score": 0.4338956446235517,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.order.account_to",
+              "rrf_rank": 10,
+              "rrf_score": 0.028438886647841874,
+              "bm25_rank": 7,
+              "bm25_score": 0.2431683314518958,
+              "dense_rank": 14,
+              "dense_score": 0.420995307772862,
+              "rerank_rank": 13,
+              "rerank_score": 0.5361317732625782,
+              "selected": false,
+              "selection_reason": "coverage_intent_already_covered",
+              "matched_intent_terms": [
+                "account"
+              ],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.trans.account",
+              "rrf_rank": 11,
+              "rrf_score": 0.027205882352941177,
+              "bm25_rank": 8,
+              "bm25_score": 0.22544543212739837,
+              "dense_rank": 20,
+              "dense_score": 0.396560765219351,
+              "rerank_rank": 7,
+              "rerank_score": 0.5678807134258285,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "financial.trans.k_symbol",
+              "rrf_rank": 12,
+              "rrf_score": 0.02690501986276634,
+              "bm25_rank": 11,
+              "bm25_score": 0.17229133299279317,
+              "dense_rank": 18,
+              "dense_score": 0.4000170065356531,
+              "rerank_rank": 38,
+              "rerank_score": 0.3603717245382616,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.loan.loan_id",
+              "rrf_rank": 13,
+              "rrf_score": 0.02666666666666667,
+              "bm25_rank": 15,
+              "bm25_score": 0.13656988241019852,
+              "dense_rank": 15,
+              "dense_score": 0.41456935919211996,
+              "rerank_rank": 29,
+              "rerank_score": 0.41604418424543677,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.disp.account_id",
+              "rrf_rank": 14,
+              "rrf_score": 0.0264301860545992,
+              "bm25_rank": 21,
+              "bm25_score": 0.09340734667544805,
+              "dense_rank": 11,
+              "dense_score": 0.43059265608769803,
+              "rerank_rank": 6,
+              "rerank_score": 0.5710669014723531,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "financial.card.issued",
+              "rrf_rank": 15,
+              "rrf_score": 0.025893752088205813,
+              "bm25_rank": 13,
+              "bm25_score": 0.14573134627665943,
+              "dense_rank": 22,
+              "dense_score": 0.39175994809388043,
+              "rerank_rank": 28,
+              "rerank_score": 0.4168597605079002,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.order.account_id",
+              "rrf_rank": 16,
+              "rrf_score": 0.025893752088205813,
+              "bm25_rank": 22,
+              "bm25_score": 0.09340734667544805,
+              "dense_rank": 13,
+              "dense_score": 0.4246838319041089,
+              "rerank_rank": 8,
+              "rerank_score": 0.5647626358098381,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "financial.order.k_symbol",
+              "rrf_rank": 17,
+              "rrf_score": 0.02541827541827542,
+              "bm25_rank": 14,
+              "bm25_score": 0.14037624292173526,
+              "dense_rank": 24,
+              "dense_score": 0.39002351439794963,
+              "rerank_rank": 39,
+              "rerank_score": 0.35803528393098477,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.order.bank_to",
+              "rrf_rank": 18,
+              "rrf_score": 0.025383141762452106,
+              "bm25_rank": 12,
+              "bm25_score": 0.16872126228520942,
+              "dense_rank": 27,
+              "dense_score": 0.3855384622584203,
+              "rerank_rank": 30,
+              "rerank_score": 0.40314903034231947,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.client.district_id",
+              "rrf_rank": 19,
+              "rrf_score": 0.02506265664160401,
+              "bm25_rank": 24,
+              "bm25_score": 0.032889275509197215,
+              "dense_rank": 16,
+              "dense_score": 0.41438829201281796,
+              "rerank_rank": 12,
+              "rerank_score": 0.5389688008869241,
+              "selected": false,
+              "selection_reason": "coverage_no_intent_match",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.account.district_id",
+              "rrf_rank": 20,
+              "rrf_score": 0.02484567901234568,
+              "bm25_rank": 20,
+              "bm25_score": 0.10126373950552013,
+              "dense_rank": 21,
+              "dense_score": 0.39270169827726037,
+              "rerank_rank": 15,
+              "rerank_score": 0.5208940342528484,
+              "selected": false,
+              "selection_reason": "coverage_no_intent_match",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.district.a14",
+              "rrf_rank": 21,
+              "rrf_score": 0.022875816993464054,
+              "bm25_rank": 30,
+              "bm25_score": 0.03077065432622069,
+              "dense_rank": 25,
+              "dense_score": 0.38865847730204134,
+              "rerank_rank": 33,
+              "rerank_score": 0.3862392958711156,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.client.birth_date",
+              "rrf_rank": 22,
+              "rrf_score": 0.01639344262295082,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 1,
+              "dense_score": 0.5898805399671126,
+              "rerank_rank": 4,
+              "rerank_score": 0.5845080201945353,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "financial.disp.client_id",
+              "rrf_rank": 23,
+              "rrf_score": 0.015151515151515152,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 6,
+              "dense_score": 0.46164328841378705,
+              "rerank_rank": 2,
+              "rerank_score": 0.6090216457961678,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "financial.client.gender",
+              "rrf_rank": 24,
+              "rrf_score": 0.014925373134328358,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 7,
+              "dense_score": 0.458261631864353,
+              "rerank_rank": 10,
+              "rerank_score": 0.5471886131457636,
+              "selected": false,
+              "selection_reason": "coverage_no_intent_match",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.trans.bank",
+              "rrf_rank": 25,
+              "rrf_score": 0.013157894736842105,
+              "bm25_rank": 16,
+              "bm25_score": 0.1139807468017568,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 21,
+              "rerank_score": 0.4386178272316955,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.trans.operation",
+              "rrf_rank": 26,
+              "rrf_score": 0.012987012987012988,
+              "bm25_rank": 17,
+              "bm25_score": 0.10844975106881528,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 35,
+              "rerank_score": 0.3737640500053351,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.loan.duration",
+              "rrf_rank": 27,
+              "rrf_score": 0.012987012987012988,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 17,
+              "dense_score": 0.40690715767635105,
+              "rerank_rank": 25,
+              "rerank_score": 0.42822846050611774,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.order.order_id",
+              "rrf_rank": 28,
+              "rrf_score": 0.012658227848101266,
+              "bm25_rank": 19,
+              "bm25_score": 0.10149015849695882,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 34,
+              "rerank_score": 0.3839152105260915,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.card.type",
+              "rrf_rank": 29,
+              "rrf_score": 0.012048192771084338,
+              "bm25_rank": 23,
+              "bm25_score": 0.033246901677088755,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 18,
+              "rerank_score": 0.4531099876309006,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.trans.account_id",
+              "rrf_rank": 30,
+              "rrf_score": 0.012048192771084338,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 23,
+              "dense_score": 0.3907303396574764,
+              "rerank_rank": 11,
+              "rerank_score": 0.542544477153618,
+              "selected": false,
+              "selection_reason": "coverage_intent_already_covered",
+              "matched_intent_terms": [
+                "account"
+              ],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.district.district_id",
+              "rrf_rank": 31,
+              "rrf_score": 0.011764705882352941,
+              "bm25_rank": 25,
+              "bm25_score": 0.032889275509197215,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 26,
+              "rerank_score": 0.41958463276458063,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.trans.amount",
+              "rrf_rank": 32,
+              "rrf_score": 0.011627906976744186,
+              "bm25_rank": 26,
+              "bm25_score": 0.032151379875010905,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 27,
+              "rerank_score": 0.4186682913252567,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.trans.type",
+              "rrf_rank": 33,
+              "rrf_score": 0.011627906976744186,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 26,
+              "dense_score": 0.38764450344561574,
+              "rerank_rank": 24,
+              "rerank_score": 0.4301411932250415,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.disp.disp_id",
+              "rrf_rank": 34,
+              "rrf_score": 0.011494252873563218,
+              "bm25_rank": 27,
+              "bm25_score": 0.031445868170155405,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 20,
+              "rerank_score": 0.4422676330868771,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.district.a15",
+              "rrf_rank": 35,
+              "rrf_score": 0.011363636363636364,
+              "bm25_rank": 28,
+              "bm25_score": 0.031445868170155405,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 36,
+              "rerank_score": 0.36503901702971275,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.district.a12",
+              "rrf_rank": 36,
+              "rrf_score": 0.011363636363636364,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 28,
+              "dense_score": 0.38142889222000775,
+              "rerank_rank": 31,
+              "rerank_score": 0.3940935852716666,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.district.a16",
+              "rrf_rank": 37,
+              "rrf_score": 0.011235955056179775,
+              "bm25_rank": 29,
+              "bm25_score": 0.031445868170155405,
+              "dense_rank": null,
+              "dense_score": null,
+              "rerank_rank": 37,
+              "rerank_score": 0.3616533259970375,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.trans.date",
+              "rrf_rank": 38,
+              "rrf_score": 0.011235955056179775,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 29,
+              "dense_score": 0.38006427767595935,
+              "rerank_rank": 16,
+              "rerank_score": 0.46335409165944713,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "financial.loan.payments",
+              "rrf_rank": 39,
+              "rrf_score": 0.011111111111111112,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 30,
+              "dense_score": 0.37875858429776516,
+              "rerank_rank": 32,
+              "rerank_score": 0.3868693133810998,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            }
+          ],
+          "selection_policy": {
+            "threshold": 0.55,
+            "max_fields": 20,
+            "score_representation": "provider score clamped to [0,1] by existing broker",
+            "policy_id": "bird_authorized_schema_coverage_v1",
+            "coverage_enabled": true,
+            "coverage_floor": 0.5,
+            "max_coverage_fields": 4,
+            "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+            "intent_source": "original_question_and_official_evidence",
+            "metadata_match": "native_field_name_or_official_field_label",
+            "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+            "formal_protocol_override": false,
+            "development_candidate": true
+          },
+          "selected_field_ids": [
+            "financial.district.a11",
+            "financial.disp.client_id",
+            "financial.loan.account_id",
+            "financial.client.birth_date",
+            "financial.client.client_id",
+            "financial.disp.account_id",
+            "financial.trans.account",
+            "financial.order.account_id",
+            "financial.account.account_id"
+          ],
+          "relation_key_field_ids": [
+            "financial.district.district_id",
+            "financial.account.district_id",
+            "financial.client.district_id",
+            "financial.trans.account_id"
+          ],
+          "added_relation_key_field_ids": [
+            "financial.district.district_id",
+            "financial.account.district_id",
+            "financial.client.district_id",
+            "financial.trans.account_id"
+          ],
+          "baseline_field_ids": [
+            "financial.district.a11",
+            "financial.disp.client_id",
+            "financial.loan.account_id",
+            "financial.client.birth_date",
+            "financial.client.client_id",
+            "financial.disp.account_id",
+            "financial.trans.account",
+            "financial.order.account_id",
+            "financial.account.account_id"
+          ],
+          "coverage_field_ids": [],
+          "anchored_table_ids": [
+            "financial.account",
+            "financial.client",
+            "financial.disp",
+            "financial.district",
+            "financial.loan",
+            "financial.order",
+            "financial.trans"
+          ],
+          "schema_graph": {
+            "value": {
+              "source_identity": {
+                "logical_database_id": "financial",
+                "source_id": "bird_mini_dev_postgres_financial",
+                "backend": "postgresql",
+                "dialect": "postgres",
+                "prompt_dialect": "PostgreSQL",
+                "physical_schema": "public",
+                "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+                "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+              },
+              "database": "financial",
+              "databases": [
+                "financial"
+              ],
+              "graph_version": "64240e1c7684",
+              "tables": [
+                {
+                  "id": "financial.account",
+                  "name": "account",
+                  "label": "account",
+                  "description": "Official BIRD Mini-Dev table",
+                  "domain": "financial",
+                  "database": "financial"
+                },
+                {
+                  "id": "financial.client",
+                  "name": "client",
+                  "label": "client",
+                  "description": "Official BIRD Mini-Dev table",
+                  "domain": "financial",
+                  "database": "financial"
+                },
+                {
+                  "id": "financial.disp",
+                  "name": "disp",
+                  "label": "disp",
+                  "description": "Official BIRD Mini-Dev table",
+                  "domain": "financial",
+                  "database": "financial"
+                },
+                {
+                  "id": "financial.district",
+                  "name": "district",
+                  "label": "district",
+                  "description": "Official BIRD Mini-Dev table",
+                  "domain": "financial",
+                  "database": "financial"
+                },
+                {
+                  "id": "financial.loan",
+                  "name": "loan",
+                  "label": "loan",
+                  "description": "Official BIRD Mini-Dev table",
+                  "domain": "financial",
+                  "database": "financial"
+                },
+                {
+                  "id": "financial.order",
+                  "name": "order",
+                  "label": "order",
+                  "description": "Official BIRD Mini-Dev table",
+                  "domain": "financial",
+                  "database": "financial"
+                },
+                {
+                  "id": "financial.trans",
+                  "name": "trans",
+                  "label": "trans",
+                  "description": "Official BIRD Mini-Dev table",
+                  "domain": "financial",
+                  "database": "financial"
+                }
+              ],
+              "fields": [
+                {
+                  "id": "financial.district.a11",
+                  "table_id": "financial.district",
+                  "table_name": "district",
+                  "sql_name": "district.a11",
+                  "name": "a11",
+                  "label": "average salary",
+                  "type": "bigint",
+                  "description": "average salary",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.667240041218841
+                },
+                {
+                  "id": "financial.disp.client_id",
+                  "table_id": "financial.disp",
+                  "table_name": "disp",
+                  "sql_name": "disp.client_id",
+                  "name": "client_id",
+                  "label": "client_id",
+                  "type": "bigint",
+                  "description": "id number of client",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.6090216457961678
+                },
+                {
+                  "id": "financial.loan.account_id",
+                  "table_id": "financial.loan",
+                  "table_name": "loan",
+                  "sql_name": "loan.account_id",
+                  "name": "account_id",
+                  "label": "account_id",
+                  "type": "bigint",
+                  "description": "the id number identifying the account",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.5928913691707914
+                },
+                {
+                  "id": "financial.client.birth_date",
+                  "table_id": "financial.client",
+                  "table_name": "client",
+                  "sql_name": "client.birth_date",
+                  "name": "birth_date",
+                  "label": "birth_date",
+                  "type": "date",
+                  "description": "birth date",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.5845080201945353
+                },
+                {
+                  "id": "financial.client.client_id",
+                  "table_id": "financial.client",
+                  "table_name": "client",
+                  "sql_name": "client.client_id",
+                  "name": "client_id",
+                  "label": "client_id",
+                  "type": "bigint",
+                  "description": "the unique number",
+                  "role": "primary_key",
+                  "source": "retrieval",
+                  "score": 0.5717144976088806
+                },
+                {
+                  "id": "financial.disp.account_id",
+                  "table_id": "financial.disp",
+                  "table_name": "disp",
+                  "sql_name": "disp.account_id",
+                  "name": "account_id",
+                  "label": "account_id",
+                  "type": "bigint",
+                  "description": "id number of account",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.5710669014723531
+                },
+                {
+                  "id": "financial.trans.account",
+                  "table_id": "financial.trans",
+                  "table_name": "trans",
+                  "sql_name": "trans.account",
+                  "name": "account",
+                  "label": "account of the partner",
+                  "type": "bigint",
+                  "description": "",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.5678807134258285
+                },
+                {
+                  "id": "financial.order.account_id",
+                  "table_id": "financial.order",
+                  "table_name": "order",
+                  "sql_name": "order.account_id",
+                  "name": "account_id",
+                  "label": "account_id",
+                  "type": "bigint",
+                  "description": "id number of account",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.5647626358098381
+                },
+                {
+                  "id": "financial.account.account_id",
+                  "table_id": "financial.account",
+                  "table_name": "account",
+                  "sql_name": "account.account_id",
+                  "name": "account_id",
+                  "label": "account id",
+                  "type": "bigint",
+                  "description": "the id of the account",
+                  "role": "primary_key",
+                  "source": "retrieval",
+                  "score": 0.5567221744584603
+                },
+                {
+                  "id": "financial.district.district_id",
+                  "table_id": "financial.district",
+                  "table_name": "district",
+                  "sql_name": "district.district_id",
+                  "name": "district_id",
+                  "label": "location of branch",
+                  "type": "bigint",
+                  "description": "location of branch",
+                  "role": "primary_key",
+                  "source": "relation_key",
+                  "score": 1.0
+                },
+                {
+                  "id": "financial.account.district_id",
+                  "table_id": "financial.account",
+                  "table_name": "account",
+                  "sql_name": "account.district_id",
+                  "name": "district_id",
+                  "label": "location of branch",
+                  "type": "bigint",
+                  "description": "location of branch",
+                  "role": "field",
+                  "source": "relation_key",
+                  "score": 1.0
+                },
+                {
+                  "id": "financial.client.district_id",
+                  "table_id": "financial.client",
+                  "table_name": "client",
+                  "sql_name": "client.district_id",
+                  "name": "district_id",
+                  "label": "location of branch",
+                  "type": "bigint",
+                  "description": "location of branch",
+                  "role": "field",
+                  "source": "relation_key",
+                  "score": 1.0
+                },
+                {
+                  "id": "financial.trans.account_id",
+                  "table_id": "financial.trans",
+                  "table_name": "trans",
+                  "sql_name": "trans.account_id",
+                  "name": "account_id",
+                  "label": "account_id",
+                  "type": "bigint",
+                  "description": "",
+                  "role": "field",
+                  "source": "relation_key",
+                  "score": 1.0
+                }
+              ],
+              "joins": [
+                {
+                  "description": "Official database foreign key",
+                  "id": "account_district_id_fkey:district_id",
+                  "left_field": "district_id",
+                  "left_table": "financial.district",
+                  "relation_type": "foreign_key",
+                  "right_field": "district_id",
+                  "right_table": "financial.account",
+                  "left_table_name": "district",
+                  "right_table_name": "account"
+                },
+                {
+                  "description": "Official database foreign key",
+                  "id": "client_district_id_fkey:district_id",
+                  "left_field": "district_id",
+                  "left_table": "financial.district",
+                  "relation_type": "foreign_key",
+                  "right_field": "district_id",
+                  "right_table": "financial.client",
+                  "left_table_name": "district",
+                  "right_table_name": "client"
+                },
+                {
+                  "description": "Official database foreign key",
+                  "id": "disp_account_id_fkey:account_id",
+                  "left_field": "account_id",
+                  "left_table": "financial.account",
+                  "relation_type": "foreign_key",
+                  "right_field": "account_id",
+                  "right_table": "financial.disp",
+                  "left_table_name": "account",
+                  "right_table_name": "disp"
+                },
+                {
+                  "description": "Official database foreign key",
+                  "id": "loan_account_id_fkey:account_id",
+                  "left_field": "account_id",
+                  "left_table": "financial.account",
+                  "relation_type": "foreign_key",
+                  "right_field": "account_id",
+                  "right_table": "financial.loan",
+                  "left_table_name": "account",
+                  "right_table_name": "loan"
+                },
+                {
+                  "description": "Official database foreign key",
+                  "id": "order_account_id_fkey:account_id",
+                  "left_field": "account_id",
+                  "left_table": "financial.account",
+                  "relation_type": "foreign_key",
+                  "right_field": "account_id",
+                  "right_table": "financial.order",
+                  "left_table_name": "account",
+                  "right_table_name": "order"
+                },
+                {
+                  "description": "Official database foreign key",
+                  "id": "trans_account_id_fkey:account_id",
+                  "left_field": "account_id",
+                  "left_table": "financial.account",
+                  "relation_type": "foreign_key",
+                  "right_field": "account_id",
+                  "right_table": "financial.trans",
+                  "left_table_name": "account",
+                  "right_table_name": "trans"
+                }
+              ]
+            },
+            "complete": true,
+            "utf8_bytes": 6789,
+            "sha256": "8493a7f481b02d18fd6ade1ec99049390869e00e1823e7627c3b5ece1071fece",
+            "omission_reason": null
+          }
+        },
+        "attempts": [
+          {
+            "kind": "model_decision",
+            "sql_round": 1,
+            "action": "query",
+            "sql": {
+              "text": "SELECT DISTINCT d.account_id\nFROM financial.disp d\nJOIN financial.client c ON d.client_id = c.client_id\nJOIN financial.district dist ON c.district_id = dist.district_id\nWHERE c.birth_date = (\n    SELECT MAX(birth_date)\n    FROM financial.client\n) AND dist.a11 = (\n    SELECT MAX(a11)\n    FROM financial.district\n)",
+              "provided": true,
+              "original_utf8_bytes": 313,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "49e795e9d58c0a36b0cacf914ddfee1b83258f54bd794a2fede799641e5e5f4a"
+            },
+            "clarification_reason": {
+              "text": null,
+              "provided": false,
+              "truncated": false,
+              "redacted": false
+            }
+          },
+          {
+            "kind": "validate",
+            "sql_round": 1,
+            "sql": {
+              "text": "SELECT DISTINCT d.account_id\nFROM financial.disp d\nJOIN financial.client c ON d.client_id = c.client_id\nJOIN financial.district dist ON c.district_id = dist.district_id\nWHERE c.birth_date = (\n    SELECT MAX(birth_date)\n    FROM financial.client\n) AND dist.a11 = (\n    SELECT MAX(a11)\n    FROM financial.district\n)",
+              "provided": true,
+              "original_utf8_bytes": 313,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "49e795e9d58c0a36b0cacf914ddfee1b83258f54bd794a2fede799641e5e5f4a"
+            },
+            "success": false,
+            "error": {
+              "category": "sql_source_denied",
+              "sqlstate": null
+            },
+            "repair_feedback": {
+              "policy": "bird_authorized_sql_repair_v1",
+              "category": "sql_source_denied",
+              "sqlstate": null,
+              "condition": "sql_source_denied",
+              "server_reason": {
+                "text": "",
+                "provided": true,
+                "original_utf8_bytes": 0,
+                "truncated": false,
+                "redacted": false
+              },
+              "failed_sql": {
+                "text": "SELECT DISTINCT d.account_id\nFROM financial.disp d\nJOIN financial.client c ON d.client_id = c.client_id\nJOIN financial.district dist ON c.district_id = dist.district_id\nWHERE c.birth_date = (\n    SELECT MAX(birth_date)\n    FROM financial.client\n) AND dist.a11 = (\n    SELECT MAX(a11)\n    FROM financial.district\n)",
+                "provided": true,
+                "original_utf8_bytes": 313,
+                "truncated": false,
+                "redacted": false,
+                "original_sha256": "49e795e9d58c0a36b0cacf914ddfee1b83258f54bd794a2fede799641e5e5f4a"
+              },
+              "position": {
+                "raw_statement_position": null,
+                "origin": "unknown",
+                "sql_position": null,
+                "line": null,
+                "column": null,
+                "available": false,
+                "unavailable_reason": "statement_context_not_available"
+              },
+              "unresolved_column": null,
+              "authorized_fields": [],
+              "catalog_scope": "Bounded subset of referenced physical tables in the current authorized runtime.",
+              "source_identity": {
+                "logical_database_id": "financial",
+                "source_id": "bird_mini_dev_postgres_financial",
+                "backend": "postgresql",
+                "dialect": "postgres",
+                "prompt_dialect": "PostgreSQL",
+                "physical_schema": "public",
+                "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+                "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+              },
+              "guidance": [
+                "Preserve the requested output columns, filters and question meaning. Use only authorized identifiers."
+              ],
+              "duplicate_failed_sql": false,
+              "retryable": true,
+              "sql_fingerprint": "8caa29b678c440f895101aec2a6f4507d4e4a2bf4e00d27278d3931426880be4",
+              "feedback_utf8_byte_limit": 8192,
+              "omitted_authorized_fields": 0
+            }
+          },
+          {
+            "kind": "model_decision",
+            "sql_round": 1,
+            "action": "query",
+            "sql": {
+              "text": "SELECT DISTINCT d.account_id\nFROM disp d\nJOIN client c ON d.client_id = c.client_id\nJOIN district dist ON c.district_id = dist.district_id\nWHERE c.birth_date = (\n    SELECT MAX(birth_date)\n    FROM client\n) AND dist.a11 = (\n    SELECT MAX(a11)\n    FROM district\n)",
+              "provided": true,
+              "original_utf8_bytes": 263,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "8afa5ad82509b0273b9c2a3cd558c9ee8ed7d128990526a7630dfb865e683133"
+            },
+            "clarification_reason": {
+              "text": null,
+              "provided": false,
+              "truncated": false,
+              "redacted": false
+            }
+          },
+          {
+            "kind": "validate",
+            "sql_round": 1,
+            "sql": {
+              "text": "SELECT DISTINCT d.account_id\nFROM disp d\nJOIN client c ON d.client_id = c.client_id\nJOIN district dist ON c.district_id = dist.district_id\nWHERE c.birth_date = (\n    SELECT MAX(birth_date)\n    FROM client\n) AND dist.a11 = (\n    SELECT MAX(a11)\n    FROM district\n)",
+              "provided": true,
+              "original_utf8_bytes": 263,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "8afa5ad82509b0273b9c2a3cd558c9ee8ed7d128990526a7630dfb865e683133"
+            },
+            "success": true
+          },
+          {
+            "kind": "execute",
+            "sql_round": 1,
+            "sql": {
+              "text": "SELECT DISTINCT d.account_id\nFROM disp d\nJOIN client c ON d.client_id = c.client_id\nJOIN district dist ON c.district_id = dist.district_id\nWHERE c.birth_date = (\n    SELECT MAX(birth_date)\n    FROM client\n) AND dist.a11 = (\n    SELECT MAX(a11)\n    FROM district\n)",
+              "provided": true,
+              "original_utf8_bytes": 263,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "8afa5ad82509b0273b9c2a3cd558c9ee8ed7d128990526a7630dfb865e683133"
+            },
+            "success": true
+          }
+        ],
+        "clarification_reason": null,
+        "omitted_events": 0
+      },
+      "runtime_closed": true,
+      "budget": {
+        "model_http_attempts": 4,
+        "chat_http_attempts": 2,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 2
+        },
+        "generation_attempts": {
+          "1": 2
+        },
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 48,
+              "total_tokens": 48
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "rerank",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 5836
+            },
+            "returned_model": "qwen3-rerank",
+            "endpoint_kind": "rerank",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 3573,
+              "completion_tokens": 102,
+              "prompt_tokens": 3471,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "text_tokens": 3471
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 4205,
+              "completion_tokens": 85,
+              "prompt_tokens": 4120,
+              "prompt_tokens_details": {
+                "cached_tokens": 3456,
+                "text_tokens": 4120
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 21.011
+      },
+      "case_wall_seconds": 21.199,
+      "historical_baseline": {
+        "status": "validation_failed",
+        "ex_correct": false
+      }
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "mode": "diagnostic",
+      "status": "diagnostic_answered",
+      "complete": true,
+      "gold_sql_sha256": null,
+      "ex_correct": null,
+      "errors": [],
+      "new_model_request_count": 3,
+      "schema_selection_policy": {
+        "policy_id": "bird_authorized_schema_coverage_v1",
+        "threshold": 0.55,
+        "max_fields": 20,
+        "coverage_enabled": true,
+        "coverage_floor": 0.5,
+        "max_coverage_fields": 4,
+        "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+        "intent_source": "original_question_and_official_evidence",
+        "metadata_match": "native_field_name_or_official_field_label",
+        "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+        "formal_protocol_override": false,
+        "development_candidate": true
+      },
+      "source_identity": {
+        "logical_database_id": "debit_card_specializing",
+        "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+        "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+      },
+      "query_role": "askdata_m2_ro_debit_card_specializing",
+      "sql_repair_policy": "bird_authorized_sql_repair_v1",
+      "retrieval": {
+        "bm25_count": 7,
+        "dense_count": 21,
+        "rrf_count": 21,
+        "selected_count": 4,
+        "selected_field_ids": [
+          "debit_card_specializing.yearmonth.consumption",
+          "debit_card_specializing.customers.segment",
+          "debit_card_specializing.yearmonth.customerid",
+          "debit_card_specializing.yearmonth.date"
+        ],
+        "source_identity": {
+          "logical_database_id": "debit_card_specializing",
+          "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+          "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+        },
+        "schema_selection_policy": {
+          "policy_id": "bird_authorized_schema_coverage_v1",
+          "threshold": 0.55,
+          "max_fields": 20,
+          "coverage_enabled": true,
+          "coverage_floor": 0.5,
+          "max_coverage_fields": 4,
+          "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+          "intent_source": "original_question_and_official_evidence",
+          "metadata_match": "native_field_name_or_official_field_label",
+          "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+          "formal_protocol_override": false,
+          "development_candidate": true
+        },
+        "baseline_field_ids": [
+          "debit_card_specializing.yearmonth.consumption",
+          "debit_card_specializing.customers.segment",
+          "debit_card_specializing.yearmonth.customerid"
+        ],
+        "coverage_field_ids": [
+          "debit_card_specializing.yearmonth.date"
+        ]
+      },
+      "index_sha256": "02120375f916e7dc199ba4541ec8e5d0589365539507912802337449147bcaa2",
+      "agent_isolation": {
+        "filesystem": "seccomp_deny_all_new_file_opens",
+        "additional_landlock_abi": 4,
+        "network_and_process": "seccomp",
+        "seccomp_library_version": "2.5.3",
+        "kernel": "6.8.0-59-generic",
+        "project_read_access": false,
+        "environment_credentials": false,
+        "direct_database_access": false
+      },
+      "agent_status": "answered",
+      "agent_trace": [
+        {
+          "sql_round": 1,
+          "validation_attempt": 1,
+          "valid": true
+        }
+      ],
+      "executions": [
+        {
+          "success": true,
+          "diagnostic": {
+            "complete": true,
+            "row_count": 1,
+            "column_count": 1,
+            "payload_bytes": 78,
+            "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+            "native_types": [
+              "float"
+            ],
+            "ordered_native_diagnostic_sha256": "b6836bcbfe86173cf99cf6594a5e708852d1b82c0f7910a7cf33568cc2974e20"
+          }
+        }
+      ],
+      "validation_events": [
+        {
+          "sql_round": 1,
+          "valid": true
+        }
+      ],
+      "first_sql_execution_success": true,
+      "final_sql_execution_success": true,
+      "result": {
+        "complete": true,
+        "row_count": 1,
+        "column_count": 1,
+        "payload_bytes": 78,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "native_types": [
+          "float"
+        ],
+        "ordered_native_diagnostic_sha256": "b6836bcbfe86173cf99cf6594a5e708852d1b82c0f7910a7cf33568cc2974e20"
+      },
+      "generated_sql": "SELECT AVG(ym.consumption) / 12 AS average_monthly_consumption FROM yearmonth ym JOIN customers c ON ym.customerid = c.customerid WHERE c.segment = 'SME' AND LEFT(ym.date, 4) = '2013'",
+      "development_diagnostics": {
+        "policy": "bird_development_observation_v1",
+        "report_only": true,
+        "limits": {
+          "sql_text_utf8_bytes": 8192,
+          "reason_utf8_bytes": 2048,
+          "schema_graph_utf8_bytes": 98304,
+          "total_utf8_bytes": 393216,
+          "max_events": 21
+        },
+        "retrieval": {
+          "candidate_count": 21,
+          "candidates": [
+            {
+              "field_id": "debit_card_specializing.yearmonth.consumption",
+              "rrf_rank": 1,
+              "rrf_score": 0.03252247488101534,
+              "bm25_rank": 2,
+              "bm25_score": 0.7161483678608285,
+              "dense_rank": 1,
+              "dense_score": 0.5435149092712998,
+              "rerank_rank": 1,
+              "rerank_score": 0.6838191982698396,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.yearmonth.date",
+              "rrf_rank": 2,
+              "rrf_score": 0.03200204813108039,
+              "bm25_rank": 3,
+              "bm25_score": 0.27603203822802214,
+              "dense_rank": 2,
+              "dense_score": 0.4884642587117735,
+              "rerank_rank": 4,
+              "rerank_score": 0.513904057769749,
+              "selected": true,
+              "selection_reason": "selected_coverage",
+              "matched_intent_terms": [
+                "date"
+              ],
+              "uncovered_intent_terms": [
+                "date"
+              ]
+            },
+            {
+              "field_id": "debit_card_specializing.customers.customerid",
+              "rrf_rank": 3,
+              "rrf_score": 0.03131881575727918,
+              "bm25_rank": 1,
+              "bm25_score": 1.0,
+              "dense_rank": 7,
+              "dense_score": 0.35351050059913397,
+              "rerank_rank": 6,
+              "rerank_score": 0.4892106812526604,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.transactions_1k.date",
+              "rrf_rank": 4,
+              "rrf_score": 0.031009615384615385,
+              "bm25_rank": 5,
+              "bm25_score": 0.21394458846946898,
+              "dense_rank": 4,
+              "dense_score": 0.42987757822631445,
+              "rerank_rank": 15,
+              "rerank_score": 0.41268960669183247,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [
+                "date"
+              ],
+              "uncovered_intent_terms": [
+                "date"
+              ]
+            },
+            {
+              "field_id": "debit_card_specializing.yearmonth.customerid",
+              "rrf_rank": 5,
+              "rrf_score": 0.030798389007344232,
+              "bm25_rank": 7,
+              "bm25_score": 0.09078517559566786,
+              "dense_rank": 3,
+              "dense_score": 0.43349949951929684,
+              "rerank_rank": 3,
+              "rerank_score": 0.579139492585447,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.customers.segment",
+              "rrf_rank": 6,
+              "rrf_score": 0.030776515151515152,
+              "bm25_rank": 4,
+              "bm25_score": 0.2234149595169413,
+              "dense_rank": 6,
+              "dense_score": 0.3552850796747258,
+              "rerank_rank": 2,
+              "rerank_score": 0.5980666315875393,
+              "selected": true,
+              "selection_reason": "selected",
+              "matched_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.customers.currency",
+              "rrf_rank": 7,
+              "rrf_score": 0.028850145288501453,
+              "bm25_rank": 6,
+              "bm25_score": 0.10042255943501927,
+              "dense_rank": 13,
+              "dense_score": 0.3184482653426273,
+              "rerank_rank": 5,
+              "rerank_score": 0.5109363894387313,
+              "selected": false,
+              "selection_reason": "coverage_no_intent_match",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.transactions_1k.time",
+              "rrf_rank": 8,
+              "rrf_score": 0.015384615384615385,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 5,
+              "dense_score": 0.35897092572685646,
+              "rerank_rank": 21,
+              "rerank_score": 0.33912601577006807,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.transactions_1k.customerid",
+              "rrf_rank": 9,
+              "rrf_score": 0.014705882352941176,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 8,
+              "dense_score": 0.3479753132620211,
+              "rerank_rank": 13,
+              "rerank_score": 0.41723189281702344,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [
+                "customer"
+              ],
+              "uncovered_intent_terms": [
+                "customer"
+              ]
+            },
+            {
+              "field_id": "debit_card_specializing.transactions_1k.gasstationid",
+              "rrf_rank": 10,
+              "rrf_score": 0.014492753623188406,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 9,
+              "dense_score": 0.34686144747778314,
+              "rerank_rank": 12,
+              "rerank_score": 0.41760968186778946,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.transactions_1k.cardid",
+              "rrf_rank": 11,
+              "rrf_score": 0.014285714285714285,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 10,
+              "dense_score": 0.3299765244225669,
+              "rerank_rank": 20,
+              "rerank_score": 0.3617612844735614,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.transactions_1k.price",
+              "rrf_rank": 12,
+              "rrf_score": 0.014084507042253521,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 11,
+              "dense_score": 0.32946067737151497,
+              "rerank_rank": 17,
+              "rerank_score": 0.38507480181312664,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.gasstations.gasstationid",
+              "rrf_rank": 13,
+              "rrf_score": 0.013888888888888888,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 12,
+              "dense_score": 0.3262600487219283,
+              "rerank_rank": 10,
+              "rerank_score": 0.4406609036020765,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.transactions_1k.amount",
+              "rrf_rank": 14,
+              "rrf_score": 0.013513513513513514,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 14,
+              "dense_score": 0.3172623476863806,
+              "rerank_rank": 11,
+              "rerank_score": 0.4178169295538883,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.transactions_1k.transactionid",
+              "rrf_rank": 15,
+              "rrf_score": 0.013333333333333334,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 15,
+              "dense_score": 0.315841669274733,
+              "rerank_rank": 18,
+              "rerank_score": 0.3828660119573132,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.transactions_1k.productid",
+              "rrf_rank": 16,
+              "rrf_score": 0.013157894736842105,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 16,
+              "dense_score": 0.3119130523364237,
+              "rerank_rank": 14,
+              "rerank_score": 0.41652993425822005,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.gasstations.chainid",
+              "rrf_rank": 17,
+              "rrf_score": 0.012987012987012988,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 17,
+              "dense_score": 0.310147136443884,
+              "rerank_rank": 9,
+              "rerank_score": 0.44287313771439796,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.gasstations.country",
+              "rrf_rank": 18,
+              "rrf_score": 0.01282051282051282,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 18,
+              "dense_score": 0.30883863078339835,
+              "rerank_rank": 7,
+              "rerank_score": 0.4720551466561673,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.gasstations.segment",
+              "rrf_rank": 19,
+              "rrf_score": 0.012658227848101266,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 19,
+              "dense_score": 0.29213983663093557,
+              "rerank_rank": 8,
+              "rerank_score": 0.4439972281406652,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.products.productid",
+              "rrf_rank": 20,
+              "rrf_score": 0.0125,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 20,
+              "dense_score": 0.2805856585367511,
+              "rerank_rank": 19,
+              "rerank_score": 0.3724365914192046,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            },
+            {
+              "field_id": "debit_card_specializing.products.description",
+              "rrf_rank": 21,
+              "rrf_score": 0.012345679012345678,
+              "bm25_rank": null,
+              "bm25_score": null,
+              "dense_rank": 21,
+              "dense_score": 0.22671549480291564,
+              "rerank_rank": 16,
+              "rerank_score": 0.40363747567164987,
+              "selected": false,
+              "selection_reason": "below_coverage_floor",
+              "matched_intent_terms": [],
+              "uncovered_intent_terms": []
+            }
+          ],
+          "selection_policy": {
+            "threshold": 0.55,
+            "max_fields": 20,
+            "score_representation": "provider score clamped to [0,1] by existing broker",
+            "policy_id": "bird_authorized_schema_coverage_v1",
+            "coverage_enabled": true,
+            "coverage_floor": 0.5,
+            "max_coverage_fields": 4,
+            "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+            "intent_source": "original_question_and_official_evidence",
+            "metadata_match": "native_field_name_or_official_field_label",
+            "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+            "formal_protocol_override": false,
+            "development_candidate": true
+          },
+          "selected_field_ids": [
+            "debit_card_specializing.yearmonth.consumption",
+            "debit_card_specializing.customers.segment",
+            "debit_card_specializing.yearmonth.customerid",
+            "debit_card_specializing.yearmonth.date"
+          ],
+          "relation_key_field_ids": [],
+          "added_relation_key_field_ids": [],
+          "baseline_field_ids": [
+            "debit_card_specializing.yearmonth.consumption",
+            "debit_card_specializing.customers.segment",
+            "debit_card_specializing.yearmonth.customerid"
+          ],
+          "coverage_field_ids": [
+            "debit_card_specializing.yearmonth.date"
+          ],
+          "anchored_table_ids": [
+            "debit_card_specializing.customers",
+            "debit_card_specializing.yearmonth"
+          ],
+          "schema_graph": {
+            "value": {
+              "source_identity": {
+                "logical_database_id": "debit_card_specializing",
+                "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+                "backend": "postgresql",
+                "dialect": "postgres",
+                "prompt_dialect": "PostgreSQL",
+                "physical_schema": "public",
+                "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+                "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+              },
+              "database": "debit_card_specializing",
+              "databases": [
+                "debit_card_specializing"
+              ],
+              "graph_version": "e8340d463002",
+              "tables": [
+                {
+                  "id": "debit_card_specializing.customers",
+                  "name": "customers",
+                  "label": "customers",
+                  "description": "Official BIRD Mini-Dev table",
+                  "domain": "debit_card_specializing",
+                  "database": "debit_card_specializing"
+                },
+                {
+                  "id": "debit_card_specializing.yearmonth",
+                  "name": "yearmonth",
+                  "label": "yearmonth",
+                  "description": "Official BIRD Mini-Dev table",
+                  "domain": "debit_card_specializing",
+                  "database": "debit_card_specializing"
+                }
+              ],
+              "fields": [
+                {
+                  "id": "debit_card_specializing.yearmonth.consumption",
+                  "table_id": "debit_card_specializing.yearmonth",
+                  "table_name": "yearmonth",
+                  "sql_name": "yearmonth.consumption",
+                  "name": "consumption",
+                  "label": "consumption",
+                  "type": "real",
+                  "description": "consumption",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.6838191982698396
+                },
+                {
+                  "id": "debit_card_specializing.customers.segment",
+                  "table_id": "debit_card_specializing.customers",
+                  "table_name": "customers",
+                  "sql_name": "customers.segment",
+                  "name": "segment",
+                  "label": "client segment",
+                  "type": "text",
+                  "description": "client segment",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.5980666315875393
+                },
+                {
+                  "id": "debit_card_specializing.yearmonth.customerid",
+                  "table_id": "debit_card_specializing.yearmonth",
+                  "table_name": "yearmonth",
+                  "sql_name": "yearmonth.customerid",
+                  "name": "customerid",
+                  "label": "Customer ID",
+                  "type": "bigint",
+                  "description": "Customer ID",
+                  "role": "field",
+                  "source": "retrieval",
+                  "score": 0.579139492585447
+                },
+                {
+                  "id": "debit_card_specializing.yearmonth.date",
+                  "table_id": "debit_card_specializing.yearmonth",
+                  "table_name": "yearmonth",
+                  "sql_name": "yearmonth.date",
+                  "name": "date",
+                  "label": "date",
+                  "type": "text",
+                  "description": "Date",
+                  "role": "field",
+                  "source": "schema_coverage",
+                  "score": 0.513904057769749
+                }
+              ],
+              "joins": []
+            },
+            "complete": true,
+            "utf8_bytes": 2139,
+            "sha256": "e2ca5bb6f12f306208c28be09d3d54af64600ef640d2a9bc6e3c1fcb9a36f8b7",
+            "omission_reason": null
+          }
+        },
+        "attempts": [
+          {
+            "kind": "model_decision",
+            "sql_round": 1,
+            "action": "query",
+            "sql": {
+              "text": "SELECT AVG(ym.consumption) / 12 AS average_monthly_consumption FROM yearmonth ym JOIN customers c ON ym.customerid = c.customerid WHERE c.segment = 'SME' AND LEFT(ym.date, 4) = '2013'",
+              "provided": true,
+              "original_utf8_bytes": 183,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "288630801671f90ef83d9fecd33d906b5247cb9eec5af1f18ac76588709ebbb3"
+            },
+            "clarification_reason": {
+              "text": null,
+              "provided": false,
+              "truncated": false,
+              "redacted": false
+            }
+          },
+          {
+            "kind": "validate",
+            "sql_round": 1,
+            "sql": {
+              "text": "SELECT AVG(ym.consumption) / 12 AS average_monthly_consumption FROM yearmonth ym JOIN customers c ON ym.customerid = c.customerid WHERE c.segment = 'SME' AND LEFT(ym.date, 4) = '2013'",
+              "provided": true,
+              "original_utf8_bytes": 183,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "288630801671f90ef83d9fecd33d906b5247cb9eec5af1f18ac76588709ebbb3"
+            },
+            "success": true
+          },
+          {
+            "kind": "execute",
+            "sql_round": 1,
+            "sql": {
+              "text": "SELECT AVG(ym.consumption) / 12 AS average_monthly_consumption FROM yearmonth ym JOIN customers c ON ym.customerid = c.customerid WHERE c.segment = 'SME' AND LEFT(ym.date, 4) = '2013'",
+              "provided": true,
+              "original_utf8_bytes": 183,
+              "truncated": false,
+              "redacted": false,
+              "original_sha256": "288630801671f90ef83d9fecd33d906b5247cb9eec5af1f18ac76588709ebbb3"
+            },
+            "success": true
+          }
+        ],
+        "clarification_reason": null,
+        "omitted_events": 0
+      },
+      "runtime_closed": true,
+      "budget": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 1,
+        "sql_tool_calls": 1,
+        "validation_attempts": {
+          "1": 1
+        },
+        "generation_attempts": {
+          "1": 1
+        },
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 79,
+              "total_tokens": 79
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "rerank",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 3623
+            },
+            "returned_model": "qwen3-rerank",
+            "endpoint_kind": "rerank",
+            "status": "complete"
+          },
+          {
+            "kind": "chat",
+            "retry": 0,
+            "usage": {
+              "total_tokens": 1773,
+              "completion_tokens": 67,
+              "prompt_tokens": 1706,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "text_tokens": 1706
+              }
+            },
+            "returned_model": "qwen3.7-plus",
+            "endpoint_kind": "chat",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 6.373
+      },
+      "case_wall_seconds": 6.559,
+      "historical_baseline": {
+        "status": "clarification",
+        "ex_correct": false
+      }
+    }
+  ],
+  "index_builds": [
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/bird_indexes/m2_bird_pg_v1/california_schools/10ff78a04992a9fa0539587b863fc4fdc69df502801c0a5b000e9e614dd1fc00/schema_index.json",
+      "sha256": "5c93205481d173318930cba96516fd5fe7175caf12bccb2329b8945050c7f81b",
+      "identity": {
+        "policy": "bird_authorized_fields_profiles_v1",
+        "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+        "source_identity": {
+          "logical_database_id": "california_schools",
+          "source_id": "bird_mini_dev_postgres_california_schools",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+          "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+        },
+        "query_role": "askdata_m2_ro_california_schools",
+        "model": {
+          "chat_model": "qwen3.7-plus",
+          "embedding_model": "text-embedding-v4",
+          "embedding_dimensions": 1024,
+          "rerank_model": "qwen3-rerank",
+          "temperature": 0,
+          "enable_thinking": false,
+          "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+        },
+        "code_sha256": {
+          "retrieval.py": "564d6185d57df0cddbb3515a33811108a8ce12d5e9d077a277d25fc5e0b813d8",
+          "model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+          "runtime.py": "24644dd5f69959cd46db7e430ec4900c78acebee567720a132ab37563d1d12d2",
+          "native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f",
+          "coverage.py": "c857134e5bc6909ca476f7c74cfcd184769f6234bbc912be3c9c0759d61c1451"
+        },
+        "sample_policy": {
+          "distinct": 3,
+          "text_characters": 64,
+          "order": "native ASC NULLS LAST"
+        }
+      },
+      "cache_hit": false,
+      "model_usage": {
+        "model_http_attempts": 9,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 841,
+              "total_tokens": 841
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 986,
+              "total_tokens": 986
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1444,
+              "total_tokens": 1444
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 930,
+              "total_tokens": 930
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1101,
+              "total_tokens": 1101
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1135,
+              "total_tokens": 1135
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1507,
+              "total_tokens": 1507
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 1666,
+              "total_tokens": 1666
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 889,
+              "total_tokens": 889
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 4.34
+      }
+    },
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/bird_indexes/m2_bird_pg_v1/debit_card_specializing/af1d8399772a333181228dd9d042f3cbf1c751b34b443547d22c748eb3709f3e/schema_index.json",
+      "sha256": "02120375f916e7dc199ba4541ec8e5d0589365539507912802337449147bcaa2",
+      "identity": {
+        "policy": "bird_authorized_fields_profiles_v1",
+        "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+        "source_identity": {
+          "logical_database_id": "debit_card_specializing",
+          "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+          "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+        },
+        "query_role": "askdata_m2_ro_debit_card_specializing",
+        "model": {
+          "chat_model": "qwen3.7-plus",
+          "embedding_model": "text-embedding-v4",
+          "embedding_dimensions": 1024,
+          "rerank_model": "qwen3-rerank",
+          "temperature": 0,
+          "enable_thinking": false,
+          "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+        },
+        "code_sha256": {
+          "retrieval.py": "564d6185d57df0cddbb3515a33811108a8ce12d5e9d077a277d25fc5e0b813d8",
+          "model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+          "runtime.py": "24644dd5f69959cd46db7e430ec4900c78acebee567720a132ab37563d1d12d2",
+          "native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f",
+          "coverage.py": "c857134e5bc6909ca476f7c74cfcd184769f6234bbc912be3c9c0759d61c1451"
+        },
+        "sample_policy": {
+          "distinct": 3,
+          "text_characters": 64,
+          "order": "native ASC NULLS LAST"
+        }
+      },
+      "cache_hit": false,
+      "model_usage": {
+        "model_http_attempts": 3,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 729,
+              "total_tokens": 729
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 880,
+              "total_tokens": 880
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 124,
+              "total_tokens": 124
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 2.463
+      }
+    },
+    {
+      "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/data/bird_indexes/m2_bird_pg_v1/financial/79b9bb60ad865bb9da0ccbc527aad40c7e5dfb5ba79ea67ffa334069fa43f214/schema_index.json",
+      "sha256": "c2dbb3b31b95aab2e3ce2ae64f2d8deaafa0be7e064c61f68ed38516c56b38fe",
+      "identity": {
+        "policy": "bird_authorized_fields_profiles_v1",
+        "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+        "source_identity": {
+          "logical_database_id": "financial",
+          "source_id": "bird_mini_dev_postgres_financial",
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "prompt_dialect": "PostgreSQL",
+          "physical_schema": "public",
+          "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+          "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+        },
+        "query_role": "askdata_m2_ro_financial",
+        "model": {
+          "chat_model": "qwen3.7-plus",
+          "embedding_model": "text-embedding-v4",
+          "embedding_dimensions": 1024,
+          "rerank_model": "qwen3-rerank",
+          "temperature": 0,
+          "enable_thinking": false,
+          "chat_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "embedding_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "rerank_base": "https://dashscope.aliyuncs.com/compatible-api/v1"
+        },
+        "code_sha256": {
+          "retrieval.py": "564d6185d57df0cddbb3515a33811108a8ce12d5e9d077a277d25fc5e0b813d8",
+          "model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+          "runtime.py": "24644dd5f69959cd46db7e430ec4900c78acebee567720a132ab37563d1d12d2",
+          "native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f",
+          "coverage.py": "c857134e5bc6909ca476f7c74cfcd184769f6234bbc912be3c9c0759d61c1451"
+        },
+        "sample_policy": {
+          "distinct": 3,
+          "text_characters": 64,
+          "order": "native ASC NULLS LAST"
+        }
+      },
+      "cache_hit": false,
+      "model_usage": {
+        "model_http_attempts": 6,
+        "chat_http_attempts": 0,
+        "sql_tool_calls": 0,
+        "validation_attempts": {},
+        "generation_attempts": {},
+        "model_events": [
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 811,
+              "total_tokens": 811
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 770,
+              "total_tokens": 770
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 956,
+              "total_tokens": 956
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 903,
+              "total_tokens": 903
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 958,
+              "total_tokens": 958
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          },
+          {
+            "kind": "embedding",
+            "retry": 0,
+            "usage": {
+              "prompt_tokens": 485,
+              "total_tokens": 485
+            },
+            "returned_model": "text-embedding-v4",
+            "endpoint_kind": "embedding",
+            "status": "complete"
+          }
+        ],
+        "elapsed_seconds": 12.904
+      }
+    }
+  ],
+  "sql_repair_policy": "bird_authorized_sql_repair_v1",
+  "schema_selection_policy": {
+    "policy_id": "bird_authorized_schema_coverage_v1",
+    "threshold": 0.55,
+    "max_fields": 20,
+    "coverage_enabled": true,
+    "coverage_floor": 0.5,
+    "max_coverage_fields": 4,
+    "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+    "intent_source": "original_question_and_official_evidence",
+    "metadata_match": "native_field_name_or_official_field_label",
+    "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+    "formal_protocol_override": false,
+    "development_candidate": true
+  },
+  "budget_counter_probes": [
+    {
+      "name": "shared_16_http_attempts",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "chat_10_http_attempts",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "three_sql_calls",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "three_validation_attempts",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "one_transport_retry",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "98304_prompt_utf8_bytes",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "expired_case_deadline",
+      "passed": true,
+      "simulated_counters_only": true
+    }
+  ],
+  "current_isolation_probe": {
+    "isolation": {
+      "filesystem": "seccomp_deny_all_new_file_opens",
+      "additional_landlock_abi": 4,
+      "network_and_process": "seccomp",
+      "seccomp_library_version": "2.5.3",
+      "kernel": "6.8.0-59-generic",
+      "project_read_access": false,
+      "environment_credentials": false,
+      "direct_database_access": false
+    },
+    "probes": {
+      "read_denials": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "network_socket_denied": true,
+      "process_creation_denied": true,
+      "secret_environment_absent": true
+    },
+    "passed": true
+  },
+  "current_timeout_probe": {
+    "passed": true,
+    "probe_seconds": 1,
+    "formal_case_timeout_seconds": 600
+  },
+  "preparation_pools_closed": true,
+  "source_receipts": [
+    {
+      "database_id": "california_schools",
+      "role": "askdata_m2_ro_california_schools",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+      "authorized_data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "debit_card_specializing",
+      "role": "askdata_m2_ro_debit_card_specializing",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+      "authorized_data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    },
+    {
+      "database_id": "financial",
+      "role": "askdata_m2_ro_financial",
+      "snapshot": "906:906:",
+      "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+      "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+      "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+      "authorized_catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+      "authorized_data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9",
+      "live_target_verified": true,
+      "verification_method": "fresh typed domain rows and same-snapshot server guards"
+    }
+  ],
+  "summary": {
+    "case_count": 3,
+    "status_counts": {
+      "diagnostic_answered": 3
+    },
+    "diagnostics_recorded_count": 3,
+    "runtime_closed_count": 3,
+    "repeated_sql_case_count": 0,
+    "database_validation_skipped_count": 1,
+    "case_model_http_attempts": 10,
+    "observed_case_http_attempts": 10,
+    "shared_index_http_attempts": 18,
+    "primary_ex": null,
+    "formal_ex_denominator": null
+  },
+  "snapshot": {
+    "path": "/home/zhangwenzong_25/Python_work/askdata_studio_ops_release/backend/evaluation/results/snapshots/bird_diagnostics/m2_bird_pg_v1/7323ecd0582544ec81576f3d4e0df1e9/report.json",
+    "sha256": "354e2ca13ce043f5a2dd472f570f16ca40afc593d961482dc2bcd42b5e15d6aa"
+  },
+  "finished_at": "2026-10-17T07:42:29.289963+00:00"
+}

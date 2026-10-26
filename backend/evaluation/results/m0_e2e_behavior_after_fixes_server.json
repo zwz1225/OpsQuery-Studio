@@ -1,0 +1,823 @@
+{
+  "run_manifest": {
+    "manifest_version": 1,
+    "mode": "e2e",
+    "scope": "behavior",
+    "dataset": {
+      "source": "evaluation/cases/all_cases.jsonl",
+      "case_list": "evaluation/cases/e2e_behavior.json",
+      "case_ids": [
+        "GROWTH_OPS-001",
+        "E2E-ROUTE-DIRECT",
+        "E2E-ROUTE-QA",
+        "E2E-PERMISSION-READ",
+        "E2E-CLARIFY-START",
+        "E2E-CLARIFY-RESUME",
+        "E2E-EMPTY-RESULT",
+        "E2E-FAILURE-PREPROCESS"
+      ],
+      "version": "0e5fb4622d37de473a2af3c09bcee8f1007fb5b05aa849cefc20be7698d816cf"
+    },
+    "versions": {
+      "data": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+      "schema": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede",
+      "application": "c9aa02fe8d5817cdb4745d63752ddb190f8bc66c4e95dcffea73de7e292e4453",
+      "evaluator": "d11c0ccc5f7bdd10e559787e2d36ac9685058dac73b3cdb8f93cec000260ef3b",
+      "evaluation_code": "b198aede65ffd534334ed97701ef6c4ffd62d333797da4fb3501008acb3715ed"
+    },
+    "config": {
+      "api_key_configured": true,
+      "llm_model": "qwen3.7-plus",
+      "llm_enable_thinking": false,
+      "embedding_model": "text-embedding-v4",
+      "embedding_dimensions": 1024,
+      "rerank_model": "qwen3-rerank",
+      "semantic_fallbacks": false,
+      "route_availability_fallback": "direct_response_no_database",
+      "schema_recall_threshold": 0.55,
+      "bm25_top_k": 30,
+      "dense_top_k": 30,
+      "rrf_top_k": 40,
+      "max_schema_fields": 20,
+      "time_field_supplement": {
+        "enabled": false,
+        "max_extra_fields": 2,
+        "max_total_fields": 22
+      },
+      "max_saved_memories": 20,
+      "mcp_max_tool_calls": 3,
+      "short_term_memory": {
+        "summary_enabled": true,
+        "summary_trigger_tokens": 12000,
+        "summary_batch_tokens": 6000,
+        "min_recent_turns": 5,
+        "archive_enabled": false,
+        "table_row_limit": 50
+      },
+      "route_context_turns": 6,
+      "llm_temperature": 0.0,
+      "user_roles": [
+        "demo_channel_ops",
+        "demo_content_ops",
+        "demo_growth_ops"
+      ],
+      "evaluation_date": "2026-10-03"
+    },
+    "run_id": "d3c2ae87e8254d5f8ab9f90f06c26e45",
+    "created_at": "2026-10-03T14:12:47.402547Z",
+    "fingerprint": "da4a3d44aedb8e4e73d39e13c7f53aa5153f84123b9c6a4537a62170e439139e"
+  },
+  "run_status": "complete",
+  "summary": {
+    "case_count": 8,
+    "behavior_pass_count": 7,
+    "behavior_success_rate": 0.875,
+    "behavior_by_type": {
+      "database_query": {
+        "count": 1,
+        "passed": 1
+      },
+      "direct_response": {
+        "count": 1,
+        "passed": 1
+      },
+      "data_qa": {
+        "count": 1,
+        "passed": 1
+      },
+      "permission_denial": {
+        "count": 1,
+        "passed": 1
+      },
+      "clarification_start": {
+        "count": 1,
+        "passed": 1
+      },
+      "clarification_recovery": {
+        "count": 1,
+        "passed": 0
+      },
+      "empty_result": {
+        "count": 1,
+        "passed": 1
+      },
+      "controlled_failure": {
+        "count": 1,
+        "passed": 1
+      }
+    },
+    "sql_case_count": 5,
+    "result_scored_count": 2,
+    "result_accuracy": 1.0,
+    "strict_scored_count": 2,
+    "strict_result_accuracy": 1.0,
+    "unscored_count": 6
+  },
+  "cases": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "run_id": "d3c2ae87e8254d5f8ab9f90f06c26e45",
+      "trace_id": "d3c2ae87e8254d5f8ab9f90f06c26e45:GROWTH_OPS-001",
+      "task_id": "dc6f8b415d9a",
+      "query": "查询2026年每个月的新增用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "scenario": "growth_ops",
+      "operation": "submit",
+      "behavior_type": "database_query",
+      "route": "database_query",
+      "status": "completed",
+      "response_message": "查询完成",
+      "response_analysis": "数据显示2026年1月至8月的新增用户数在1344至1603之间波动，其中5月达到最高值1603人，8月为最低值1344人。",
+      "route_reason": "用户明确要求查询2026年每月的新增用户数，属于典型的数据库查询请求。",
+      "direct_response_type": null,
+      "workflow_mode": "single_database_agent",
+      "result_validation_reason": "结果数据包含了2026年1月至8月的新增用户数，虽然缺少9-12月数据，但已返回的数据完全符合查询要求的格式和逻辑，能够部分回答问题。",
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": true,
+      "row_count": 8,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "duration_ms": 31090.205,
+      "trace": {
+        "execution_log": [
+          {
+            "stage": "mcp_tool_call",
+            "success": true,
+            "call_index": 1,
+            "tool": "query_short_video_ops",
+            "arguments": {
+              "sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(new_users) AS new_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC"
+            },
+            "query_contract": {
+              "grain": "时间趋势",
+              "source_tables": [
+                "growth_daily_metrics"
+              ],
+              "filters": [
+                {
+                  "phrase": "2026年",
+                  "field": "growth_daily_metrics.metric_date",
+                  "operator": "范围",
+                  "value": ">= '2026-01-01' AND < '2027-01-01'"
+                }
+              ],
+              "metrics": [
+                "SUM(new_users)"
+              ],
+              "output_columns": [
+                "month",
+                "new_users"
+              ],
+              "metric_plan": {
+                "metrics": [
+                  {
+                    "name": "new_users",
+                    "kind": "aggregate",
+                    "description": "按指标日期汇总的新用户数量",
+                    "source_table": "growth_daily_metrics",
+                    "source_field": "new_users",
+                    "aggregation": "SUM",
+                    "time_field": {
+                      "table": "growth_daily_metrics",
+                      "field": "metric_date"
+                    },
+                    "available": true
+                  }
+                ],
+                "formulas": [],
+                "joins": [],
+                "selected_sources": [
+                  "growth_daily_metrics.new_users"
+                ],
+                "warnings": []
+              },
+              "constraint_plan": {
+                "filter_constraints": [],
+                "time_constraints": [],
+                "group_constraints": [],
+                "join_constraints": [],
+                "conditional_filter_rules": [],
+                "warnings": []
+              },
+              "constraint_validation": {
+                "status": "PASS",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": []
+              }
+            },
+            "result": {
+              "database": "short_video_ops",
+              "sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(new_users) AS new_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC",
+              "success": true,
+              "columns": [
+                "month",
+                "new_users"
+              ],
+              "rows": [
+                {
+                  "month": "2026-01",
+                  "new_users": 1520
+                },
+                {
+                  "month": "2026-02",
+                  "new_users": 1440
+                },
+                {
+                  "month": "2026-03",
+                  "new_users": 1538
+                },
+                {
+                  "month": "2026-04",
+                  "new_users": 1525
+                },
+                {
+                  "month": "2026-05",
+                  "new_users": 1603
+                },
+                {
+                  "month": "2026-06",
+                  "new_users": 1475
+                },
+                {
+                  "month": "2026-07",
+                  "new_users": 1555
+                },
+                {
+                  "month": "2026-08",
+                  "new_users": 1344
+                }
+              ],
+              "row_count": 8,
+              "truncated": false,
+              "execution_ms": 1635.426,
+              "error": null
+            },
+            "reason": "根据查询契约生成并执行只读SQL",
+            "sql_validation": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "invalid_columns": []
+            },
+            "sql_validation_attempts": [
+              {
+                "status": "PASS",
+                "errors": [],
+                "warnings": [],
+                "invalid_columns": []
+              }
+            ],
+            "metric_planning": {
+              "metrics": [
+                {
+                  "name": "new_users",
+                  "kind": "aggregate",
+                  "description": "按指标日期汇总的新用户数量",
+                  "source_table": "growth_daily_metrics",
+                  "source_field": "new_users",
+                  "aggregation": "SUM",
+                  "time_field": {
+                    "table": "growth_daily_metrics",
+                    "field": "metric_date"
+                  },
+                  "available": true
+                }
+              ],
+              "formulas": [],
+              "joins": [],
+              "selected_sources": [
+                "growth_daily_metrics.new_users"
+              ],
+              "warnings": []
+            },
+            "metric_validation": {
+              "errors": []
+            },
+            "metric_validation_attempts": [
+              {
+                "errors": []
+              }
+            ],
+            "constraint_validation": {
+              "status": "PASS",
+              "missing_constraints": [],
+              "missing_group_constraints": [],
+              "unsupported_constraints": [],
+              "join_violations": [],
+              "warnings": []
+            },
+            "constraint_validation_attempts": [
+              {
+                "status": "PASS",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": []
+              }
+            ]
+          },
+          {
+            "stage": "execute_duckdb",
+            "success": true,
+            "error": null,
+            "via": "mcp"
+          }
+        ],
+        "tool_calls": [
+          {
+            "call_index": 1,
+            "database": "short_video_ops",
+            "arguments": {
+              "mode": "single_database_agent",
+              "transport": "mcp_in_process",
+              "tool_name": "query_short_video_ops",
+              "schema_graph_version": "552915ead4c5",
+              "sql_source": "model_mcp"
+            },
+            "sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(new_users) AS new_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC",
+            "success": true,
+            "row_count": 8,
+            "truncated": false,
+            "error": null
+          }
+        ],
+        "clarification": null
+      },
+      "generated_sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(new_users) AS new_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC",
+      "strict_comparison_reason": "严格结果一致",
+      "gold_result_source": "cache",
+      "generated_result_rows": 8
+    },
+    {
+      "case_id": "E2E-ROUTE-DIRECT",
+      "run_id": "d3c2ae87e8254d5f8ab9f90f06c26e45",
+      "trace_id": "d3c2ae87e8254d5f8ab9f90f06c26e45:E2E-ROUTE-DIRECT",
+      "task_id": "a06716a605ae",
+      "query": "你好，请简单介绍你能做什么。",
+      "scenario": "growth_ops",
+      "operation": "submit",
+      "behavior_type": "direct_response",
+      "route": "direct_response",
+      "status": "completed",
+      "response_message": "已直接回答",
+      "response_analysis": "你好！我是问数系统的请求预处理器。我主要负责理解你的自然语言问题，判断你是想查询新的数据库数据、分析已有的数据结果，还是进行一般交流。如果是查数，我会帮你提取关键指标和条件；如果是闲聊或能力咨询，我会直接与你对话。请问有什么我可以帮你的吗？",
+      "route_reason": "用户询问系统能力，属于一般交流/能力询问，不涉及数据查询或已有数据分析。",
+      "direct_response_type": "answer",
+      "workflow_mode": "direct_response",
+      "result_validation_reason": null,
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true,
+        "analysis_present": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": false,
+      "row_count": 0,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "result scoring not requested",
+      "duration_ms": 4242.19,
+      "trace": {
+        "execution_log": [],
+        "tool_calls": [],
+        "clarification": null
+      }
+    },
+    {
+      "case_id": "E2E-ROUTE-QA",
+      "run_id": "d3c2ae87e8254d5f8ab9f90f06c26e45",
+      "trace_id": "d3c2ae87e8254d5f8ab9f90f06c26e45:E2E-ROUTE-QA",
+      "task_id": "a03efd8ea44b",
+      "query": "请解释刚才查询结果的业务含义，不要重新查询数据库。",
+      "scenario": "growth_ops",
+      "operation": "submit",
+      "behavior_type": "data_qa",
+      "route": "data_qa",
+      "status": "completed",
+      "response_message": "已进入数据问答，没有重复查询数据库。",
+      "response_analysis": "该查询结果展示了2026年1月至8月期间，每月新增用户的数量统计。业务含义如下：\n\n1. **数据范围**：涵盖了2026年前8个月的月度新增用户表现。\n2. **核心指标**：`new_users` 代表当月新注册或新激活的用户总数。\n3. **趋势洞察**：\n   - **峰值**：5月份新增用户数达到最高值1603人，表明该月可能受特定营销活动、季节性因素或产品迭代影响，获客效果最佳。\n   - **谷值**：8月份新增用户数降至最低1344人，需关注是否存在暑期效应、市场竞争加剧或渠道投放减少等情况。\n   - **波动情况**：整体数值在1344至1603之间波动，平均每月新增约1500人左右，显示用户增长保持在一个相对稳定的区间，但存在月度间的起伏。\n\n此数据可用于评估各月市场推广活动的有效性，并为后续的资源分配和用户增长策略提供依据。",
+      "route_reason": "用户明确要求解释上下文中已存在的查询结果，并显式指出不要重新查询数据库，符合data_qa意图定义。",
+      "direct_response_type": null,
+      "workflow_mode": "qa",
+      "result_validation_reason": null,
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true,
+        "analysis_present": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": false,
+      "row_count": 0,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "result scoring not requested",
+      "duration_ms": 23424.422,
+      "trace": {
+        "execution_log": [],
+        "tool_calls": [],
+        "clarification": null
+      }
+    },
+    {
+      "case_id": "E2E-PERMISSION-READ",
+      "run_id": "d3c2ae87e8254d5f8ab9f90f06c26e45",
+      "trace_id": "d3c2ae87e8254d5f8ab9f90f06c26e45:E2E-PERMISSION-READ",
+      "query": "以内容运营身份读取增长运营的上一条查询任务。",
+      "scenario": "content_ops",
+      "operation": "get_task_denied",
+      "behavior_type": "permission_denial",
+      "route": "task_access",
+      "status": "denied",
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "permission_denied": true
+      },
+      "behavior_correct": true,
+      "observed_exception": "PermissionError",
+      "source_case_id": "GROWTH_OPS-001",
+      "sql_execution_success": false,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "cross-user task access denied",
+      "duration_ms": 0.025
+    },
+    {
+      "case_id": "E2E-CLARIFY-START",
+      "run_id": "d3c2ae87e8254d5f8ab9f90f06c26e45",
+      "trace_id": "d3c2ae87e8254d5f8ab9f90f06c26e45:E2E-CLARIFY-START",
+      "task_id": "ead6e382093d",
+      "query": "请找出2026年5月表现最好的渠道；如果“表现”没有明确指标，请先让我选择指标。",
+      "scenario": "channel_ops",
+      "operation": "submit",
+      "behavior_type": "clarification_start",
+      "route": "database_query",
+      "status": "waiting_clarification",
+      "response_message": "查询已暂停，等待你的补充信息。",
+      "response_analysis": "请问“表现最好”具体是指哪个指标最高？ 你可以直接回复：转化事件数、归因用户数、注册人数。",
+      "route_reason": "用户明确要求查询2026年5月的数据，并指出了‘表现’这一指标存在歧义，要求先选择指标。根据规则，当用户明确要求查询新数据但缺少改变查询口径的指标时，仍选择database_query，由后续智能体提供结构化澄清选项。",
+      "direct_response_type": null,
+      "workflow_mode": "single_database_agent",
+      "result_validation_reason": null,
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true,
+        "clarification_options": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": false,
+      "row_count": 0,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "result scoring not requested",
+      "duration_ms": 27726.825,
+      "trace": {
+        "execution_log": [],
+        "tool_calls": [],
+        "clarification": {
+          "parameter": "表现最好的衡量指标",
+          "question": "请问“表现最好”具体是指哪个指标最高？",
+          "reason": "不同指标会导致完全不同的渠道排名，需要明确排序依据。",
+          "options": [
+            {
+              "id": "option_1",
+              "label": "转化事件数",
+              "description": "按渠道在2026年5月产生的转化事件总数降序排列",
+              "recommended": true
+            },
+            {
+              "id": "option_2",
+              "label": "归因用户数",
+              "description": "按渠道在2026年5月归因的用户数量降序排列",
+              "recommended": false
+            },
+            {
+              "id": "option_3",
+              "label": "注册人数",
+              "description": "按渠道在2026年5月带来的注册用户数降序排列",
+              "recommended": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "E2E-CLARIFY-RESUME",
+      "run_id": "d3c2ae87e8254d5f8ab9f90f06c26e45",
+      "trace_id": "d3c2ae87e8254d5f8ab9f90f06c26e45:E2E-CLARIFY-RESUME",
+      "task_id": "ead6e382093d",
+      "query": "选择上一步澄清的第一个指标选项并继续查询。",
+      "scenario": "channel_ops",
+      "operation": "clarify",
+      "behavior_type": "clarification_recovery",
+      "route": "database_query",
+      "status": "waiting_clarification",
+      "response_message": "查询已暂停，等待你的补充信息。",
+      "response_analysis": "请问“表现最好”具体是指哪个指标？ 你可以直接回复：转化事件数量、归因用户数量、投放目标完成率。",
+      "route_reason": "用户明确要求查询2026年5月的数据，并指出了‘表现’这一指标存在歧义，要求先选择指标。根据规则，当用户明确要求查询新数据但缺少改变查询口径的指标时，仍选择database_query，由后续智能体提供结构化澄清选项。",
+      "direct_response_type": null,
+      "workflow_mode": "single_database_agent",
+      "result_validation_reason": null,
+      "route_correct": true,
+      "status_correct": false,
+      "behavior_checks": {
+        "route": true,
+        "status": false,
+        "sql_present": false,
+        "tool_success": false
+      },
+      "behavior_correct": false,
+      "sql_execution_success": false,
+      "row_count": 0,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "result scoring not requested",
+      "duration_ms": 11840.533,
+      "trace": {
+        "execution_log": [],
+        "tool_calls": [],
+        "clarification": {
+          "parameter": "表现最好的衡量指标",
+          "question": "请问“表现最好”具体是指哪个指标？",
+          "reason": "不同指标（如转化量、归因用户数、投放目标完成率等）会导致不同的渠道排名结果，需要明确排序依据。",
+          "options": [
+            {
+              "id": "option_1",
+              "label": "转化事件数量",
+              "description": "按渠道在2026年5月产生的转化事件总数降序排列",
+              "recommended": true
+            },
+            {
+              "id": "option_2",
+              "label": "归因用户数量",
+              "description": "按渠道在2026年5月归因的用户总数降序排列",
+              "recommended": false
+            },
+            {
+              "id": "option_3",
+              "label": "投放目标完成率",
+              "description": "按渠道在2026年5月的实际表现相对于月度目标的完成率降序排列",
+              "recommended": false
+            }
+          ]
+        }
+      },
+      "source_case_id": "E2E-CLARIFY-START",
+      "selected_clarification_option_id": "option_1"
+    },
+    {
+      "case_id": "E2E-EMPTY-RESULT",
+      "run_id": "d3c2ae87e8254d5f8ab9f90f06c26e45",
+      "trace_id": "d3c2ae87e8254d5f8ab9f90f06c26e45:E2E-EMPTY-RESULT",
+      "task_id": "92cf79865454",
+      "query": "请列出1900年1月1日注册的用户ID和注册时间，最多20行。",
+      "scenario": "growth_ops",
+      "operation": "submit",
+      "behavior_type": "empty_result",
+      "route": "database_query",
+      "status": "completed",
+      "response_message": "查询完成",
+      "response_analysis": "查询已成功执行，当前条件下没有匹配记录。",
+      "route_reason": "用户明确要求查询特定日期注册的用户ID和注册时间，并限制了返回行数，属于典型的数据库查询请求。",
+      "direct_response_type": null,
+      "workflow_mode": "single_database_agent",
+      "result_validation_reason": "SQL执行成功，结果为空",
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true,
+        "sql_contains": true,
+        "tool_success": true,
+        "empty_rows": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": true,
+      "row_count": 0,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "comparison_reason": "结果一致",
+      "duration_ms": 19200.717,
+      "trace": {
+        "execution_log": [
+          {
+            "stage": "mcp_tool_call",
+            "success": true,
+            "call_index": 1,
+            "tool": "query_short_video_ops",
+            "arguments": {
+              "sql": "SELECT user_id, registered_at FROM user_registrations WHERE registered_at >= '1900-01-01' AND registered_at < '1900-01-02' LIMIT 20"
+            },
+            "query_contract": {
+              "grain": "实体明细",
+              "source_tables": [
+                "user_registrations"
+              ],
+              "filters": [
+                {
+                  "phrase": "1900年1月1日注册",
+                  "field": "user_registrations.registered_at",
+                  "operator": "范围",
+                  "value": "['1900-01-01', '1900-01-02')"
+                }
+              ],
+              "metrics": [],
+              "output_columns": [
+                "user_id",
+                "registered_at"
+              ],
+              "metric_plan": {
+                "metrics": [],
+                "formulas": [],
+                "joins": [],
+                "selected_sources": [],
+                "warnings": []
+              },
+              "constraint_plan": {
+                "filter_constraints": [],
+                "time_constraints": [],
+                "group_constraints": [],
+                "join_constraints": [],
+                "conditional_filter_rules": [],
+                "warnings": [
+                  "问题包含日期 1900-01-01，但无法唯一确定过滤时间字段"
+                ]
+              },
+              "constraint_validation": {
+                "status": "WARN",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": [
+                  "问题包含日期 1900-01-01，但无法唯一确定过滤时间字段"
+                ]
+              }
+            },
+            "result": {
+              "database": "short_video_ops",
+              "sql": "SELECT user_id, registered_at FROM user_registrations WHERE registered_at >= '1900-01-01' AND registered_at < '1900-01-02' LIMIT 20",
+              "success": true,
+              "columns": [
+                "user_id",
+                "registered_at"
+              ],
+              "rows": [],
+              "row_count": 0,
+              "truncated": false,
+              "execution_ms": 1601.158,
+              "error": null
+            },
+            "reason": "根据查询契约生成并执行只读SQL",
+            "sql_validation": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "invalid_columns": []
+            },
+            "sql_validation_attempts": [
+              {
+                "status": "PASS",
+                "errors": [],
+                "warnings": [],
+                "invalid_columns": []
+              }
+            ],
+            "metric_planning": {
+              "metrics": [],
+              "formulas": [],
+              "joins": [],
+              "selected_sources": [],
+              "warnings": []
+            },
+            "metric_validation": {
+              "errors": []
+            },
+            "metric_validation_attempts": [
+              {
+                "errors": []
+              }
+            ],
+            "constraint_validation": {
+              "status": "WARN",
+              "missing_constraints": [],
+              "missing_group_constraints": [],
+              "unsupported_constraints": [],
+              "join_violations": [],
+              "warnings": [
+                "问题包含日期 1900-01-01，但无法唯一确定过滤时间字段"
+              ]
+            },
+            "constraint_validation_attempts": [
+              {
+                "status": "WARN",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": [
+                  "问题包含日期 1900-01-01，但无法唯一确定过滤时间字段"
+                ]
+              }
+            ]
+          },
+          {
+            "stage": "execute_duckdb",
+            "success": true,
+            "error": null,
+            "via": "mcp"
+          }
+        ],
+        "tool_calls": [
+          {
+            "call_index": 1,
+            "database": "short_video_ops",
+            "arguments": {
+              "mode": "single_database_agent",
+              "transport": "mcp_in_process",
+              "tool_name": "query_short_video_ops",
+              "schema_graph_version": "58a5679ec391",
+              "sql_source": "model_mcp"
+            },
+            "sql": "SELECT user_id, registered_at FROM user_registrations WHERE registered_at >= '1900-01-01' AND registered_at < '1900-01-02' LIMIT 20",
+            "success": true,
+            "row_count": 0,
+            "truncated": false,
+            "error": null
+          }
+        ],
+        "clarification": null
+      },
+      "generated_sql": "SELECT user_id, registered_at FROM user_registrations WHERE registered_at >= '1900-01-01' AND registered_at < '1900-01-02' LIMIT 20",
+      "strict_comparison_reason": "严格结果一致",
+      "gold_result_source": "execution",
+      "generated_result_rows": 0
+    },
+    {
+      "case_id": "E2E-FAILURE-PREPROCESS",
+      "run_id": "d3c2ae87e8254d5f8ab9f90f06c26e45",
+      "trace_id": "d3c2ae87e8254d5f8ab9f90f06c26e45:E2E-FAILURE-PREPROCESS",
+      "task_id": "2ad0bf3b8098",
+      "query": "受控故障：在工作流预处理阶段注入失败，检查服务入口返回。",
+      "scenario": "growth_ops",
+      "operation": "submit_with_injected_workflow_error",
+      "behavior_type": "controlled_failure",
+      "route": "database_query",
+      "status": "failed",
+      "response_message": "处理停止：preprocess失败",
+      "response_analysis": "M0 controlled workflow failure",
+      "route_reason": "未使用本地语义兜底",
+      "direct_response_type": null,
+      "workflow_mode": "failed_explicitly",
+      "result_validation_reason": null,
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true,
+        "failure_stage": true,
+        "workflow_mode": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": false,
+      "row_count": 0,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "result scoring not requested",
+      "duration_ms": 1.105,
+      "trace": {
+        "execution_log": [
+          {
+            "stage": "preprocess",
+            "success": false,
+            "error": "M0 controlled workflow failure"
+          }
+        ],
+        "tool_calls": [],
+        "clarification": null
+      }
+    }
+  ]
+}

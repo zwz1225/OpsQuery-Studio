@@ -1,0 +1,3441 @@
+{
+  "stage": "M1 D3 explicit PostgreSQL Gold79 case review",
+  "review_kind": "Agent offline SQL/type/semantic review; live PostgreSQL execution pending",
+  "review_date": "2026-10-10",
+  "baseline_sha256": "0eb11d55d07cbcc8926b4c5de6657c1f897e7559387cfb5f5c884ef20ec9e6ec",
+  "c3_evidence_sha256": "2cd9a7b9ad94300b36a9494b22a76e28db2d64a91c8d23835c96e982e6ea7166",
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_postgres",
+    "backend": "postgresql",
+    "dialect": "postgres",
+    "prompt_dialect": "PostgreSQL",
+    "physical_schema": "askdata_ops",
+    "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+    "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+  },
+  "sqlglot_version": "30.17.0",
+  "case_count": 79,
+  "cases": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "query": "查询2026年每个月的新增用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Sum the original additive metric by month; keep the frozen [2026-01-01, 2026-08-29) window and month ascending. No calendar-window correction in D3.",
+      "original_sql_sha256": "856e53f5ea57594e3191a7d4c796871c58fe78056573a9b17a409727346b8abe",
+      "postgres_sql_sha256": "2ffa6de4378fc0905cc7f8f3ba6cab192e4e3029146737e3f5b7a2dfc76c887f",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "month",
+        "value"
+      ],
+      "physical_tables": [
+        "growth_daily_metrics"
+      ],
+      "where_clauses": [
+        "metric_date >= CAST('2026-01-01' AS DATE) AND metric_date < CAST('2026-08-29' AS DATE)"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "month",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-002",
+      "query": "查询2026年每个月的激活用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Sum the original additive metric by month; keep the frozen [2026-01-01, 2026-08-29) window and month ascending. No calendar-window correction in D3.",
+      "original_sql_sha256": "b73905fa5914c72bed15ec551fbe500dc5211c86c2bb65a1d450cf32ed08b0a1",
+      "postgres_sql_sha256": "9e3231c582e90ac414401eaff5bff2e51e3e000f4eb32f86a4dd9e052a13fea2",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "month",
+        "value"
+      ],
+      "physical_tables": [
+        "growth_daily_metrics"
+      ],
+      "where_clauses": [
+        "metric_date >= CAST('2026-01-01' AS DATE) AND metric_date < CAST('2026-08-29' AS DATE)"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "month",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-003",
+      "query": "查询2026年每个月的次日留存用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Sum the original additive metric by month; keep the frozen [2026-01-01, 2026-08-29) window and month ascending. No calendar-window correction in D3.",
+      "original_sql_sha256": "3990f57e073c43c22c43eb7bd5a472243f7c5adeb92fc1ee4085eac826263805",
+      "postgres_sql_sha256": "ef1fc19675b9eea6bf165b457dd224230bce63d45040b1f340328c7b0e3d6694",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "month",
+        "value"
+      ],
+      "physical_tables": [
+        "growth_daily_metrics"
+      ],
+      "where_clauses": [
+        "metric_date >= CAST('2026-01-01' AS DATE) AND metric_date < CAST('2026-08-29' AS DATE)"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "month",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-004",
+      "query": "查询2026年每个月的七日留存用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Sum the original additive metric by month; keep the frozen [2026-01-01, 2026-08-29) window and month ascending. No calendar-window correction in D3.",
+      "original_sql_sha256": "83bb4ee5a224a247907002af83a3306d39feed73ba3c703d60a7864329a8f874",
+      "postgres_sql_sha256": "e428f5322664bcefd729a0ddeb8715f88be0c6a795af304e450f90efc6846134",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "month",
+        "value"
+      ],
+      "physical_tables": [
+        "growth_daily_metrics"
+      ],
+      "where_clauses": [
+        "metric_date >= CAST('2026-01-01' AS DATE) AND metric_date < CAST('2026-08-29' AS DATE)"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "month",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-005",
+      "query": "查询2026年每个月的日活用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Sum the original additive metric by month; keep the frozen [2026-01-01, 2026-08-29) window and month ascending. No calendar-window correction in D3.",
+      "original_sql_sha256": "ee2dd365cf5a4920bea2ea2307c958597bef96b8f7840418b1c55dcfb8fdec2d",
+      "postgres_sql_sha256": "ab39c3aff558bc56a98d7a8b605872a0bf5b662cffb53318193eed7af9db63a2",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "month",
+        "value"
+      ],
+      "physical_tables": [
+        "growth_daily_metrics"
+      ],
+      "where_clauses": [
+        "metric_date >= CAST('2026-01-01' AS DATE) AND metric_date < CAST('2026-08-29' AS DATE)"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "month",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-006",
+      "query": "查看2026-01每天的新增用户数变化；请返回指标日期、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Daily sum within January 2026; retain the original DATE output and ascending day order.",
+      "original_sql_sha256": "621c8c3e08bddb37594392bd4dfb760bd496817606462d0cf5e4673f4af68d54",
+      "postgres_sql_sha256": "45fbb4c76892e3df1fa7608701572bd39740dfff931774842585f2ae87bd8536",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "metric_date",
+        "value"
+      ],
+      "physical_tables": [
+        "growth_daily_metrics"
+      ],
+      "where_clauses": [
+        "STRFTIME(metric_date, '%Y-%m') = '2026-01'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "metric_date",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-026",
+      "query": "2026-01各获客渠道新增用户数排名；请返回渠道名称、新增用户数；聚合口径：可加总指标按当前查询粒度求和；按核心指标从高到低展示。",
+      "semantic_note": "January channel-level sum of new users; preserve channel join and descending total with channel-name tie break.",
+      "original_sql_sha256": "c30d9572350e3917ed5227f422a867cb7f43daa4f1c1212a351eb9d8c88ec511",
+      "postgres_sql_sha256": "bcadb64d8a5f4f80effd41d3a74fe3460a2e058b7f6c44d585f3d36e90810fb6",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "new_users"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "growth_daily_metrics"
+      ],
+      "where_clauses": [
+        "STRFTIME(g.metric_date, '%Y-%m') = '2026-01'"
+      ],
+      "join_clauses": [
+        "JOIN acquisition_channels AS c ON g.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "new_users",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-061",
+      "query": "自然推荐渠道激活用户的平均激活耗时；请返回渠道名称、平均激活耗时；聚合口径：平均指标取算术平均。",
+      "semantic_note": "Average activation_seconds only for truthy numeric is_activated in the originally named channel. Nonzero is true; NULL remains excluded. Round to two places; no added ordering.",
+      "original_sql_sha256": "a5902d6949645071288eb32a2bda1f6bb6e4d51ae7eed23e1e494a2ff82cfafc",
+      "postgres_sql_sha256": "efacc4a288e322067d8bfd689d92891d9830cc8d1399784b1ba508c1810b6e9c",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "user_activations",
+        "user_registrations"
+      ],
+      "where_clauses": [
+        "a.is_activated AND c.channel_name = '自然推荐'"
+      ],
+      "join_clauses": [
+        "JOIN user_registrations AS r ON a.registration_id = r.registration_id",
+        "JOIN acquisition_channels AS c ON r.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-062",
+      "query": "应用商店渠道激活用户的平均激活耗时；请返回渠道名称、平均激活耗时；聚合口径：平均指标取算术平均。",
+      "semantic_note": "Average activation_seconds only for truthy numeric is_activated in the originally named channel. Nonzero is true; NULL remains excluded. Round to two places; no added ordering.",
+      "original_sql_sha256": "21d4f0c28d06bc757c44b20d6cecd71c707600f6042cbba2505e11812f2a305c",
+      "postgres_sql_sha256": "97dcc2a43dc08de6eeedef54081474df98f227a0bd5308f0102b735f2dbad8ed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "user_activations",
+        "user_registrations"
+      ],
+      "where_clauses": [
+        "a.is_activated AND c.channel_name = '应用商店'"
+      ],
+      "join_clauses": [
+        "JOIN user_registrations AS r ON a.registration_id = r.registration_id",
+        "JOIN acquisition_channels AS c ON r.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-063",
+      "query": "信息流广告渠道激活用户的平均激活耗时；请返回渠道名称、平均激活耗时；聚合口径：平均指标取算术平均。",
+      "semantic_note": "Average activation_seconds only for truthy numeric is_activated in the originally named channel. Nonzero is true; NULL remains excluded. Round to two places; no added ordering.",
+      "original_sql_sha256": "50213e551a676da2bca8b574092564ac49fac138da8ae847e7846fea6add317a",
+      "postgres_sql_sha256": "346626418b7112a23fa39b77f7e04e477675606ce30a80953bd4e29e358f75bf",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "user_activations",
+        "user_registrations"
+      ],
+      "where_clauses": [
+        "a.is_activated AND c.channel_name = '信息流广告'"
+      ],
+      "join_clauses": [
+        "JOIN user_registrations AS r ON a.registration_id = r.registration_id",
+        "JOIN acquisition_channels AS c ON r.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-064",
+      "query": "搜索广告渠道激活用户的平均激活耗时；请返回渠道名称、平均激活耗时；聚合口径：平均指标取算术平均。",
+      "semantic_note": "Average activation_seconds only for truthy numeric is_activated in the originally named channel. Nonzero is true; NULL remains excluded. Round to two places; no added ordering.",
+      "original_sql_sha256": "dd01ec742b1afa083d24d1fb213da5fb0d1602975e5a12ea1d22325a71bf9c82",
+      "postgres_sql_sha256": "902abd7e04ec643f19008a3ecfa3788b3e71c540041e28d185875186b0f3efd2",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "user_activations",
+        "user_registrations"
+      ],
+      "where_clauses": [
+        "a.is_activated AND c.channel_name = '搜索广告'"
+      ],
+      "join_clauses": [
+        "JOIN user_registrations AS r ON a.registration_id = r.registration_id",
+        "JOIN acquisition_channels AS c ON r.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-066",
+      "query": "按激活规则统计用户数，重点查看观看3条视频；请返回激活规则、用户数；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Count activation IDs by activation_rule; preserve the explicit CASE-based priority and secondary count/rule ordering.",
+      "original_sql_sha256": "9e255ec362d717e487c84f4c1773bf7b091d71087c5274c9e0c390cc3c7ab067",
+      "postgres_sql_sha256": "58aec54d4de280a03b1d0a8ef93816604d385f0dcd3527fc4e5160848a2caab2",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 3
+      },
+      "output_columns": [
+        "activation_rule",
+        "users"
+      ],
+      "physical_tables": [
+        "user_activations"
+      ],
+      "where_clauses": [],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY CASE WHEN activation_rule = '观看3条视频' THEN 0 ELSE 1 END, users DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-086",
+      "query": "华东用户平均活跃时长和会话次数；请返回地区、平均活跃时长、平均会话次数；聚合口径：平均指标取算术平均。",
+      "semantic_note": "Keep the original region filter and average active_minutes/session_count, each rounded to two places.",
+      "original_sql_sha256": "c4ab31b38929bb618599891ef463d7d2cc2e672ca52f731b758bcf81197056ac",
+      "postgres_sql_sha256": "9cb4b33162646fbc87222b630cfb02d91b54eb100d71db2cf4e9c6b42a3c2a61",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "region",
+        "avg_active_minutes",
+        "avg_session_count"
+      ],
+      "physical_tables": [
+        "user_daily_activity",
+        "user_profiles"
+      ],
+      "where_clauses": [
+        "p.region = '华东'"
+      ],
+      "join_clauses": [
+        "JOIN user_profiles AS p ON a.user_id = p.user_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-101",
+      "query": "用户按地区的分布；请返回地区、用户数；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Count user IDs by the original profile dimension; preserve descending users and dimension tie break.",
+      "original_sql_sha256": "9af9cb2cdb8adfc5f4fa08c07460e0b0ad818b91bbe749e77191c71c952c0c87",
+      "postgres_sql_sha256": "451fbeeb3566c5e90bf1f65145cfa86a9b40764291519fe6143ce2f0dff951aa",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "region",
+        "users"
+      ],
+      "physical_tables": [
+        "user_profiles"
+      ],
+      "where_clauses": [],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-131",
+      "query": "面向沉默7天的召回活动效果排名；请返回活动名称、触达数量、召回率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按核心指标从高到低展示。",
+      "semantic_note": "Count joined recall touches for the original campaign segment; recalled nonzero contributes one. Keep the touch denominator and descending recall rate.",
+      "original_sql_sha256": "dd7aa1c8cec2dfce21e0f1e45c048d1de8262ef53bf55fb070cc72a0ab8fbb3d",
+      "postgres_sql_sha256": "8095745b229570144801f827212fabf9822d534043e05f08b5d930fd6f06cb04",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "r.recalled",
+            "table": "recall_results",
+            "column": "recalled",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "campaign_name",
+        "touches",
+        "recall_rate"
+      ],
+      "physical_tables": [
+        "recall_campaigns",
+        "recall_results",
+        "recall_touches"
+      ],
+      "where_clauses": [
+        "c.target_segment = '沉默7天'"
+      ],
+      "join_clauses": [
+        "JOIN recall_touches AS t ON c.recall_campaign_id = t.recall_campaign_id",
+        "JOIN recall_results AS r ON t.touch_id = r.touch_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 3 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "recall_rate",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-149",
+      "query": "2026-04各渠道激活率实际值与目标差距；请返回渠道名称、实际比率、激活率目标、目标差距；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "Registration-month cohort activation ratio in the CTE, compared with target_month substring for the same original month. Preserve channel joins, unrounded subtraction before gap rounding, and descending gap.",
+      "original_sql_sha256": "1e839ff9c0bd873b252042cec880a3d75773912746b6c5bbcd48609278749a15",
+      "postgres_sql_sha256": "8c3be5449f6c7fb883fac4de0bff928ae3557a171db0d79346f3f05c59594742",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 1,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "actual_rate",
+        "activation_rate_target",
+        "gap"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "growth_targets",
+        "user_activations",
+        "user_registrations"
+      ],
+      "where_clauses": [
+        "SUBSTRING(t.target_month, 1, 7) = '2026-04'",
+        "STRFTIME(r.registered_at, '%Y-%m') = '2026-04'"
+      ],
+      "join_clauses": [
+        "JOIN acquisition_channels AS c ON t.channel_id = c.channel_id",
+        "JOIN actual AS a ON t.channel_id = a.channel_id",
+        "JOIN user_activations AS a ON r.registration_id = a.registration_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY gap DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-150",
+      "query": "2026-05各渠道激活率实际值与目标差距；请返回渠道名称、实际比率、激活率目标、目标差距；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "Registration-month cohort activation ratio in the CTE, compared with target_month substring for the same original month. Preserve channel joins, unrounded subtraction before gap rounding, and descending gap.",
+      "original_sql_sha256": "7c7fccbd4cb3b35aaf84063374c9278753c1d644a16bd8b973afd26e3247c3db",
+      "postgres_sql_sha256": "5d58640343371ef355fe79a0a55d092eea3ff9ee11a48246f38a88b9e1668650",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 1,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "actual_rate",
+        "activation_rate_target",
+        "gap"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "growth_targets",
+        "user_activations",
+        "user_registrations"
+      ],
+      "where_clauses": [
+        "SUBSTRING(t.target_month, 1, 7) = '2026-05'",
+        "STRFTIME(r.registered_at, '%Y-%m') = '2026-05'"
+      ],
+      "join_clauses": [
+        "JOIN acquisition_channels AS c ON t.channel_id = c.channel_id",
+        "JOIN actual AS a ON t.channel_id = a.channel_id",
+        "JOIN user_activations AS a ON r.registration_id = a.registration_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY gap DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-001",
+      "query": "2026-01每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Daily spend sum for the original selected month; round AFTER sum and preserve date ascending. No additional dates or gap filling.",
+      "original_sql_sha256": "9c046f98c12fe41c2c0cdd4cde24494079edf510558624447cb6a3a820d8982b",
+      "postgres_sql_sha256": "9f5efd73933c6ba964d31e65d81401c8a3c78eefdb5b48ea02e77d487275b6b0",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "physical_tables": [
+        "ad_daily_stats"
+      ],
+      "where_clauses": [
+        "STRFTIME(stat_date, '%Y-%m') = '2026-01'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "stat_date",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-002",
+      "query": "2026-02每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Daily spend sum for the original selected month; round AFTER sum and preserve date ascending. No additional dates or gap filling.",
+      "original_sql_sha256": "37b2c2eb3dcf6b0b58666b98d97492bf4177b3e0b77af615ef0b57cdb440eda4",
+      "postgres_sql_sha256": "30466be4f610a236106af60fb3515e8415f27e8660614db4f571ac79a7e66477",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "physical_tables": [
+        "ad_daily_stats"
+      ],
+      "where_clauses": [
+        "STRFTIME(stat_date, '%Y-%m') = '2026-02'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "stat_date",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-003",
+      "query": "2026-03每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Daily spend sum for the original selected month; round AFTER sum and preserve date ascending. No additional dates or gap filling.",
+      "original_sql_sha256": "c6b43ad432bc0065eb4f112d57b95de50da29361cdbc00e0ba22d57d3303ad1a",
+      "postgres_sql_sha256": "6dd62aa175a8aabc4c48147d4e5ff5aa48dcf4d6795b89ae7d1d8088874133c1",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "physical_tables": [
+        "ad_daily_stats"
+      ],
+      "where_clauses": [
+        "STRFTIME(stat_date, '%Y-%m') = '2026-03'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "stat_date",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-004",
+      "query": "2026-04每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Daily spend sum for the original selected month; round AFTER sum and preserve date ascending. No additional dates or gap filling.",
+      "original_sql_sha256": "d202512bcec7b61a849c1b9146b268d72cebdb17b9b565142f5ded80dbd67ab3",
+      "postgres_sql_sha256": "0a10953f2e02fa3538513d94cd27d59c095cb0f98139e54e0508b39d4cc4ef57",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "physical_tables": [
+        "ad_daily_stats"
+      ],
+      "where_clauses": [
+        "STRFTIME(stat_date, '%Y-%m') = '2026-04'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "stat_date",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-005",
+      "query": "2026-05每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Daily spend sum for the original selected month; round AFTER sum and preserve date ascending. No additional dates or gap filling.",
+      "original_sql_sha256": "9a9a478e8da2d3a0db6891afeccb1137243220df287b82f7d46ebe70963c7f52",
+      "postgres_sql_sha256": "d93fb3927b4790f6bd6c62257e9ec5f4e33f372189eea47f936328cc8623be81",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "physical_tables": [
+        "ad_daily_stats"
+      ],
+      "where_clauses": [
+        "STRFTIME(stat_date, '%Y-%m') = '2026-05'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "stat_date",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-066",
+      "query": "registration转化事件的数量和平均价值；请返回转化类型、转化数、平均价值；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "semantic_note": "Keep original conversion_type filter; COUNT(*) conversions and average conversion_value rounded to two places by type.",
+      "original_sql_sha256": "a993768b7cb0b7eed8a24e9fc3af60180346eda015e886a4dbfb72846948a268",
+      "postgres_sql_sha256": "0746d1fe29e1173b584aa99b53cc4f9454b44926d9b2f3e9588264fb81919fb9",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "physical_tables": [
+        "channel_conversion_events"
+      ],
+      "where_clauses": [
+        "conversion_type = 'registration'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-067",
+      "query": "activation转化事件的数量和平均价值；请返回转化类型、转化数、平均价值；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "semantic_note": "Keep original conversion_type filter; COUNT(*) conversions and average conversion_value rounded to two places by type.",
+      "original_sql_sha256": "012615e28880ed73ea82a156533232a775cb7f40e1fb14dda5861e59d5bb6fef",
+      "postgres_sql_sha256": "b73432bf3cdf3861d9c181cc49905f4644754f5ace67d1879eb956a8ed0d20f6",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "physical_tables": [
+        "channel_conversion_events"
+      ],
+      "where_clauses": [
+        "conversion_type = 'activation'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-068",
+      "query": "请汇总registration转化事件的数量和平均价值；请返回转化类型、转化数、平均价值；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "semantic_note": "Keep original conversion_type filter; COUNT(*) conversions and average conversion_value rounded to two places by type.",
+      "original_sql_sha256": "a993768b7cb0b7eed8a24e9fc3af60180346eda015e886a4dbfb72846948a268",
+      "postgres_sql_sha256": "0746d1fe29e1173b584aa99b53cc4f9454b44926d9b2f3e9588264fb81919fb9",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "physical_tables": [
+        "channel_conversion_events"
+      ],
+      "where_clauses": [
+        "conversion_type = 'registration'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-069",
+      "query": "请汇总activation转化事件的数量和平均价值；请返回转化类型、转化数、平均价值；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "semantic_note": "Keep original conversion_type filter; COUNT(*) conversions and average conversion_value rounded to two places by type.",
+      "original_sql_sha256": "012615e28880ed73ea82a156533232a775cb7f40e1fb14dda5861e59d5bb6fef",
+      "postgres_sql_sha256": "b73432bf3cdf3861d9c181cc49905f4644754f5ace67d1879eb956a8ed0d20f6",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "physical_tables": [
+        "channel_conversion_events"
+      ],
+      "where_clauses": [
+        "conversion_type = 'activation'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-070",
+      "query": "请分析registration转化事件的数量和平均价值；请返回转化类型、转化数、平均价值；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "semantic_note": "Keep original conversion_type filter; COUNT(*) conversions and average conversion_value rounded to two places by type.",
+      "original_sql_sha256": "a993768b7cb0b7eed8a24e9fc3af60180346eda015e886a4dbfb72846948a268",
+      "postgres_sql_sha256": "0746d1fe29e1173b584aa99b53cc4f9454b44926d9b2f3e9588264fb81919fb9",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "physical_tables": [
+        "channel_conversion_events"
+      ],
+      "where_clauses": [
+        "conversion_type = 'registration'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-076",
+      "query": "统计active状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+      "semantic_note": "Keep original campaign status filter; count campaign IDs and sum budget rounded to two places by status.",
+      "original_sql_sha256": "615d338f3766b7e9b50eeb08bd13c78147930361868d18d75d7bf221d1f39592",
+      "postgres_sql_sha256": "b09a07865eacbea25b8b96386d5b2550ec571bfef2cc0f8b07245f2f5e0f6835",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "physical_tables": [
+        "ad_campaigns"
+      ],
+      "where_clauses": [
+        "status = 'active'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-077",
+      "query": "统计completed状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+      "semantic_note": "Keep original campaign status filter; count campaign IDs and sum budget rounded to two places by status.",
+      "original_sql_sha256": "f74d7f9357b9455bcb26c2b9605b85abc82a7cc1c2e1f5a99d272ed08d597b4d",
+      "postgres_sql_sha256": "90dad65a5881e52aa110a6fcf72fb03dcc09e9f2f83bbed00279daecd4eea69f",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "physical_tables": [
+        "ad_campaigns"
+      ],
+      "where_clauses": [
+        "status = 'completed'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-078",
+      "query": "请汇总统计active状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+      "semantic_note": "Keep original campaign status filter; count campaign IDs and sum budget rounded to two places by status.",
+      "original_sql_sha256": "615d338f3766b7e9b50eeb08bd13c78147930361868d18d75d7bf221d1f39592",
+      "postgres_sql_sha256": "b09a07865eacbea25b8b96386d5b2550ec571bfef2cc0f8b07245f2f5e0f6835",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "physical_tables": [
+        "ad_campaigns"
+      ],
+      "where_clauses": [
+        "status = 'active'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-079",
+      "query": "请汇总统计completed状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+      "semantic_note": "Keep original campaign status filter; count campaign IDs and sum budget rounded to two places by status.",
+      "original_sql_sha256": "f74d7f9357b9455bcb26c2b9605b85abc82a7cc1c2e1f5a99d272ed08d597b4d",
+      "postgres_sql_sha256": "90dad65a5881e52aa110a6fcf72fb03dcc09e9f2f83bbed00279daecd4eea69f",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "physical_tables": [
+        "ad_campaigns"
+      ],
+      "where_clauses": [
+        "status = 'completed'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-101",
+      "query": "短视频创意的状态分布；请返回创意状态、创意数量；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep original creative_type literal; count creative IDs by status with descending count and status tie break.",
+      "original_sql_sha256": "a480179252226a8254f817560ac80a41847e9259ac3795cc828054c3e2897616",
+      "postgres_sql_sha256": "6d917a1339c7501c7b55daa58b3e87f8d54b727aeea2788a1fe4d6b709f4385d",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "creative_status",
+        "creatives"
+      ],
+      "physical_tables": [
+        "ad_creatives"
+      ],
+      "where_clauses": [
+        "creative_type = '短视频'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-141",
+      "query": "registration转化按渠道分布；请返回渠道名称、转化数；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep registration conversion event filter and channel join; count event IDs by channel and preserve ordering.",
+      "original_sql_sha256": "8d66241a70e9a954c2c9bf4bc1d5b69cbcadc3d236b0a1d888573d0b6478dcda",
+      "postgres_sql_sha256": "b62127892214b4ef4eab4ba09ff9b8e4ac23d026dd8f138b61d712582336d91c",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "conversions"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "channel_conversion_events"
+      ],
+      "where_clauses": [
+        "e.conversion_type = 'registration'"
+      ],
+      "join_clauses": [
+        "JOIN acquisition_channels AS c ON e.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-001",
+      "query": "2026-01每天的视频曝光量和播放量；请返回指标日期、曝光量、播放量；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Daily impressions and play_count sums for the original month; preserve date ascending and original table grain.",
+      "original_sql_sha256": "824c2cef4cf4c4fa1d920cd24a700e165e16958ba6cca1c0a7ff5e7d478273cb",
+      "postgres_sql_sha256": "16d2639188344e6dcce06238e133f0b7f23f58ffe28e22f58dd8000c6047f5da",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "metric_date",
+        "impressions",
+        "plays"
+      ],
+      "physical_tables": [
+        "content_daily_metrics"
+      ],
+      "where_clauses": [
+        "STRFTIME(metric_date, '%Y-%m') = '2026-01'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "metric_date",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-029",
+      "query": "基于播放明细，计算知识类内容每次播放的平均观看时长和平均完播率；请返回内容分类、平均观看时长、平均完播率；聚合口径：平均指标取算术平均。",
+      "semantic_note": "Original category-filtered play joins; keep average watch_seconds (two places) and completion_rate (four places). No weighted averaging introduced.",
+      "original_sql_sha256": "6cc79013796629a77e5770eca5730b05b07eddc7c0b275b77a26e6e345731ec7",
+      "postgres_sql_sha256": "4dc7fb3cf5bf1b9fcdf7b4d5dadfe53b3ce49a46220ceda800b767d6d47af274",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "category_name",
+        "avg_watch_seconds",
+        "avg_completion_rate"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "contents",
+        "video_plays"
+      ],
+      "where_clauses": [
+        "cat.category_name = '知识'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON p.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-030",
+      "query": "基于播放明细，计算体育类内容每次播放的平均观看时长和平均完播率；请返回内容分类、平均观看时长、平均完播率；聚合口径：平均指标取算术平均。",
+      "semantic_note": "Original category-filtered play joins; keep average watch_seconds (two places) and completion_rate (four places). No weighted averaging introduced.",
+      "original_sql_sha256": "f7705c39c37282732dfbf92557b3c7adb23509aa2e40fc7f6e5d6e3868c83f6d",
+      "postgres_sql_sha256": "7ccbebd6c1d4afe1512c4d1f5d63c9ea3520e50d7c5bd1159d8f228934363434",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "category_name",
+        "avg_watch_seconds",
+        "avg_completion_rate"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "contents",
+        "video_plays"
+      ],
+      "where_clauses": [
+        "cat.category_name = '体育'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON p.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-031",
+      "query": "like互动按内容分类分布；请返回内容分类、互动数；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep original interaction_type literal and category joins; count interaction IDs by category, descending count then category name.",
+      "original_sql_sha256": "04788eba5add8bf03a57118ccef88dcc75e609af8e2569648f3883768ec0f185",
+      "postgres_sql_sha256": "f6d9fca85f993dd54bec9584d14bba858d025754cc015d58208d1512944e2d5a",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "contents",
+        "video_interactions"
+      ],
+      "where_clauses": [
+        "i.interaction_type = 'like'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON i.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-032",
+      "query": "comment互动按内容分类分布；请返回内容分类、互动数；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep original interaction_type literal and category joins; count interaction IDs by category, descending count then category name.",
+      "original_sql_sha256": "23c062075b7f4b0202e7b72d2710f8218b0c0afe06770bd79117faafa357ce62",
+      "postgres_sql_sha256": "df83b93c33e335ed24f74ebd29c9c96bbd51529bbbe6fc02db72c13ae957b2b9",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "contents",
+        "video_interactions"
+      ],
+      "where_clauses": [
+        "i.interaction_type = 'comment'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON i.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-033",
+      "query": "share互动按内容分类分布；请返回内容分类、互动数；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep original interaction_type literal and category joins; count interaction IDs by category, descending count then category name.",
+      "original_sql_sha256": "7aaa1fd892ffebb4f3672a145544907ef1babf0b54f874d97be8d3ddfa3632a0",
+      "postgres_sql_sha256": "db9b6417a591e0993d49a455c2260972c00f2505ae1037a63294ebee84a1a245",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "contents",
+        "video_interactions"
+      ],
+      "where_clauses": [
+        "i.interaction_type = 'share'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON i.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-034",
+      "query": "favorite互动按内容分类分布；请返回内容分类、互动数；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep original interaction_type literal and category joins; count interaction IDs by category, descending count then category name.",
+      "original_sql_sha256": "48cc7b0ae5877b7a405ada3a325efde33b19d153e7bb33832103a2d2888e55ec",
+      "postgres_sql_sha256": "5c8514df17eeb8b8273ce03656830d7c1b8c8b252195c537cbc873c893145e80",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "contents",
+        "video_interactions"
+      ],
+      "where_clauses": [
+        "i.interaction_type = 'favorite'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON i.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-035",
+      "query": "follow互动按内容分类分布；请返回内容分类、互动数；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep original interaction_type literal and category joins; count interaction IDs by category, descending count then category name.",
+      "original_sql_sha256": "d0ed415f88502c2080118643535efd55c2f64c03dcd903e48a38593461b7d90e",
+      "postgres_sql_sha256": "b98eb639522bf338656a06077d50a18c33ffb86bd66310452a69b98fd45ec56a",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "contents",
+        "video_interactions"
+      ],
+      "where_clauses": [
+        "i.interaction_type = 'follow'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON i.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-036",
+      "query": "2026-01每天的有效互动数；请返回互动日期、互动数；聚合口径：数量指标按对应业务记录计数；按时间升序展示。",
+      "semantic_note": "January valid interactions: nonzero numeric flag is true; DATE(interacted_at) remains the daily output/group. Preserve January predicate and ascending day.",
+      "original_sql_sha256": "259c51efec6660a657c32fb9703a8980ec049bec46343b1f3d0b2edf524d76ff",
+      "postgres_sql_sha256": "0e538b7f2088f298120ed8b542f4245380810f1398906b9864b254dcb363d45d",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "valid_interaction",
+            "table": "video_interactions",
+            "column": "valid_interaction",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "interaction_date",
+        "interactions"
+      ],
+      "physical_tables": [
+        "video_interactions"
+      ],
+      "where_clauses": [
+        "valid_interaction AND STRFTIME(interacted_at, '%Y-%m') = '2026-01'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "interaction_date",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-051",
+      "query": "搞笑类内容数量和平均视频时长；请返回内容分类、内容数量、平均视频时长；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "semantic_note": "Original category filter; count content IDs and average duration_seconds rounded to two places. Preserve category grain.",
+      "original_sql_sha256": "103af5a918dedb1b6c0d5215b922162594738a2ba6b69b19591e78633310bc94",
+      "postgres_sql_sha256": "ac20f5ed45e516c9841de77d6b952a28f68e4c5c7ac231a4e7cec553250d8144",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "category_name",
+        "contents",
+        "avg_duration_seconds"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "contents"
+      ],
+      "where_clauses": [
+        "cat.category_name = '搞笑'"
+      ],
+      "join_clauses": [
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-076",
+      "query": "新星级创作者数量和状态分布；请返回创作者状态、创作者数量；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Original creator_level filter; count creator IDs by status, descending count then status.",
+      "original_sql_sha256": "ded5d20bd99178624576b6f89812f47864fe67fd5dd2af8fe5f5d7de4c90c3ee",
+      "postgres_sql_sha256": "74232ac14d9de90a027fa4b65c567b5fa494c1dca2c1b456d354e76c892d38d5",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "creator_status",
+        "creators"
+      ],
+      "physical_tables": [
+        "creators"
+      ],
+      "where_clauses": [
+        "creator_level = '新星'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-121",
+      "query": "流量加热系数至少1.0的热点内容数量和平均排名；请返回最低流量加热系数、内容数量、平均排名；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均；按核心指标从高到低展示。",
+      "semantic_note": "Keep original traffic_boost threshold and literal min_traffic_boost output; count content IDs and two-place average ranking.",
+      "original_sql_sha256": "51b3f0d190ca7f6b6758201ceb30b457e835e0e1a57905ab0235e1752ca87281",
+      "postgres_sql_sha256": "9a680cb00bb3458def6a266645c97429e97fc1a2f4f2120777c6d412292e9ae9",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "min_traffic_boost",
+        "contents",
+        "avg_ranking"
+      ],
+      "physical_tables": [
+        "topic_content_relations"
+      ],
+      "where_clauses": [
+        "traffic_boost >= 1.0"
+      ],
+      "join_clauses": [],
+      "group_clauses": [],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-126",
+      "query": "approved审核状态按风险类型分布；请返回风险类型、审核数量；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep approved audit filter; count audit IDs by risk_type, descending count then risk type.",
+      "original_sql_sha256": "583ea545ba58dab6899eb65841e4dca8a752efdf3071817a0da34eac9c9e3dbb",
+      "postgres_sql_sha256": "d04cdeaabcc741439ba4ff6f4439c21ccab901237e6e139d95acc6dbcbe2a81d",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "risk_type",
+        "audits"
+      ],
+      "physical_tables": [
+        "content_audits"
+      ],
+      "where_clauses": [
+        "audit_status = 'approved'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-136",
+      "query": "不感兴趣举报按内容分类分布；请返回内容分类、举报数量；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep original report_reason literal and category joins; count report IDs by category, descending count then category.",
+      "original_sql_sha256": "55a72689411e479d4c3cae4e5f15b6cb9835cef3c25424878a5055e133e219e9",
+      "postgres_sql_sha256": "6c61ebc12e3922d6fb44ec2f999fe9b40cdfa0f0e73ace2177890ab5aeeead33",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "category_name",
+        "reports"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "content_reports",
+        "contents"
+      ],
+      "where_clauses": [
+        "r.report_reason = '不感兴趣'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON r.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-137",
+      "query": "低俗内容举报按内容分类分布；请返回内容分类、举报数量；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep original report_reason literal and category joins; count report IDs by category, descending count then category.",
+      "original_sql_sha256": "89df736b2a06a5f35a30ced871fc92648549e9386585cf1a8f384d08b4bde133",
+      "postgres_sql_sha256": "498c5fbc3bb5d768a031a730def1205fedcb269c06fe57f1cf84cb5829bf2549",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "category_name",
+        "reports"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "content_reports",
+        "contents"
+      ],
+      "where_clauses": [
+        "r.report_reason = '低俗内容'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON r.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-138",
+      "query": "侵权搬运举报按内容分类分布；请返回内容分类、举报数量；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep original report_reason literal and category joins; count report IDs by category, descending count then category.",
+      "original_sql_sha256": "f7629d8796dad96c9a4d4cc6113e2f34120f9ae34a9a88209e50ed19b4d6c248",
+      "postgres_sql_sha256": "b4f75017763fbbb4cf841e3ac58bf369ceaa1b0292a417270040a6433a18a566",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "category_name",
+        "reports"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "content_reports",
+        "contents"
+      ],
+      "where_clauses": [
+        "r.report_reason = '侵权搬运'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON r.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-007",
+      "query": "查看2026-01每天的激活用户数变化；请返回指标日期、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Daily sum within January 2026; retain the original DATE output and ascending day order.",
+      "original_sql_sha256": "f820bf6ebd3acb920416925e2590d5f096e9a2f2901f9cd9d6b9fdc32c4055a9",
+      "postgres_sql_sha256": "b42bcb10e7c91bc0d84eefc60e3134a55d831154a0793184203e13ddc93ebd0c",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "metric_date",
+        "value"
+      ],
+      "physical_tables": [
+        "growth_daily_metrics"
+      ],
+      "where_clauses": [
+        "STRFTIME(metric_date, '%Y-%m') = '2026-01'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "metric_date",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-050",
+      "query": "2026-02Android端各渠道注册人数排行；请返回渠道名称、注册用户数；聚合口径：数量指标按对应业务记录计数；按核心指标从高到低展示。",
+      "semantic_note": "February registrations on the original Android platform by channel; preserve descending registrations and channel-name tie break.",
+      "original_sql_sha256": "e585da1a7fcc99955663250cd9387062eb2dfc3802aa9f707b2b2b4d0e6aa5bb",
+      "postgres_sql_sha256": "a56c72e02720ccdbd8a38cf2c15a4863dca8a4fae737263ed2fe1b739459377d",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "registrations"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "user_registrations"
+      ],
+      "where_clauses": [
+        "STRFTIME(r.registered_at, '%Y-%m') = '2026-02' AND r.platform = 'Android'"
+      ],
+      "join_clauses": [
+        "JOIN acquisition_channels AS c ON r.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "registrations",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-051",
+      "query": "2026-01各渠道注册到激活的转化率；请返回渠道名称、注册用户数、激活用户数、激活率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "January registration cohort: keep COUNT(registration_id) denominator and NULLIF zero guard; two numeric activation truth tests preserve counts and four-place activation rate.",
+      "original_sql_sha256": "4a5475984dda034b1815516dab98d415ccd56b5d5aab76cca9b866ec05e4ee7f",
+      "postgres_sql_sha256": "c7fc3014c89140e249d84bf75d1a6074d13e368d586b19bb39d6a3a6a0243219",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          },
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 1,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "registrations",
+        "activated_users",
+        "activation_rate"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "user_activations",
+        "user_registrations"
+      ],
+      "where_clauses": [
+        "STRFTIME(r.registered_at, '%Y-%m') = '2026-01'"
+      ],
+      "join_clauses": [
+        "JOIN user_activations AS a ON r.registration_id = a.registration_id",
+        "JOIN acquisition_channels AS c ON r.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 4 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-075",
+      "query": "统计2026-05注册的用户数、其中最终激活的用户数，以及注册到激活率；请返回月份、注册用户数、激活用户数、激活率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "May registration cohort: same joined registration denominator and activation count; preserve literal month output and four-place rate. No new zero guard added.",
+      "original_sql_sha256": "a40b66153e8679df6628adb13613b0c99eca6e861961a27a9c4d15a5b816f97b",
+      "postgres_sql_sha256": "7bb41b49e367657832a41274e425a543131215c42005a5c26ed0bf23df00c547",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          },
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "month",
+        "registrations",
+        "activated_users",
+        "activation_rate"
+      ],
+      "physical_tables": [
+        "user_activations",
+        "user_registrations"
+      ],
+      "where_clauses": [
+        "STRFTIME(r.registered_at, '%Y-%m') = '2026-05'"
+      ],
+      "join_clauses": [
+        "JOIN user_activations AS a ON r.registration_id = a.registration_id"
+      ],
+      "group_clauses": [],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-076",
+      "query": "各渠道1日留存率排名；请返回渠道名称、观察用户数、留存率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按核心指标从高到低展示。",
+      "semantic_note": "Day-1 retention by channel: numeric retained nonzero is true; observed row count remains the denominator. Preserve descending retention rate.",
+      "original_sql_sha256": "bf3c5655f16c001c176242f1234ddf6d063153c3b3d0b8fed92700629c475d9f",
+      "postgres_sql_sha256": "dadf81c2af0510a9678cd1b251ae3173cfbe8cb097decabbb5603a833884f965",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "r.is_retained",
+            "table": "user_retention",
+            "column": "is_retained",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "observed_users",
+        "retention_rate"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "user_retention"
+      ],
+      "where_clauses": [
+        "r.retention_day = 1"
+      ],
+      "join_clauses": [
+        "JOIN acquisition_channels AS c ON r.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 3 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "retention_rate",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-100",
+      "query": "统计2026-05期间注册平台为iOS的用户产生的播放总次数除以去重用户数；请返回注册平台、人均播放次数；聚合口径：去重数量按对应实体唯一标识计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "May iOS activity joined to registrations: plays per DISTINCT activity user, not per joined row. Keep two-place rounding and original join multiplicity.",
+      "original_sql_sha256": "ced14e26ca168baba929e8c35bdc6e34b3a22ae5dc27a23dfde92b06b134dd2e",
+      "postgres_sql_sha256": "5b58401cf68033cb93be5a5f54ea674d4f6ac18b3c092b963e6c6abaa4233eb4",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "platform",
+        "plays_per_user"
+      ],
+      "physical_tables": [
+        "user_daily_activity",
+        "user_registrations"
+      ],
+      "where_clauses": [
+        "r.platform = 'iOS' AND STRFTIME(a.activity_date, '%Y-%m') = '2026-05'"
+      ],
+      "join_clauses": [
+        "JOIN user_registrations AS r ON a.user_id = r.user_id"
+      ],
+      "group_clauses": [],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-102",
+      "query": "用户按年龄段的分布；请返回年龄段、用户数；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Count user IDs by the original profile dimension; preserve descending users and dimension tie break.",
+      "original_sql_sha256": "ab08658c43305a8e9cd9257ccd714b1f3ceadc60960a16f211dddc96028702ee",
+      "postgres_sql_sha256": "0ee939481ff5c0f8146e14c862ec7cb682c5643b0f87d3945f65c800f15cdeb9",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "age_group",
+        "users"
+      ],
+      "physical_tables": [
+        "user_profiles"
+      ],
+      "where_clauses": [],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-125",
+      "query": "按生命周期快照中的参与度评分，查询华中评分最高的前10名用户；请返回用户ID、参与度评分；按核心指标从高到低展示；最多返回10行。",
+      "semantic_note": "Top ten lifecycle engagement_score rows for the original region; preserve descending score and user_id tie break.",
+      "original_sql_sha256": "0cf1647b3a8690f7403f25ed2e965b32758406a32fdd75b530355d7672a0a60a",
+      "postgres_sql_sha256": "8bbfd5cc59e93213e70a09a62abac09f5f0f498d4e384031f055094e2aec4669",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "user_id",
+        "engagement_score"
+      ],
+      "physical_tables": [
+        "user_lifecycle_snapshots",
+        "user_profiles"
+      ],
+      "where_clauses": [
+        "p.region = '华中'"
+      ],
+      "join_clauses": [
+        "JOIN user_profiles AS p ON l.user_id = p.user_id"
+      ],
+      "group_clauses": [],
+      "order_clauses": [
+        "ORDER BY l.engagement_score DESC, l.user_id"
+      ],
+      "limit_clauses": [
+        "LIMIT 10"
+      ],
+      "order_sensitive": true,
+      "order_by_column": "engagement_score",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-126",
+      "query": "push触达方式的送达率、点击率和召回率；请返回触达方式、触达数量、送达率、点击率、召回率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "Push touch-channel delivery/click/recall rates over COUNT(*) after the original touch/result join. Preserve each distinct numeric flag, four-place rounding and original lack of ordering.",
+      "original_sql_sha256": "947d6f2d337250848e0ec337dc17930f12cc5d551b5a9745feffc4fe7db775c2",
+      "postgres_sql_sha256": "168854483a56c8659545d00bfe59e05d93c63c31a68f4ee3aa05e3b3aef807be",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "t.delivered",
+            "table": "recall_touches",
+            "column": "delivered",
+            "physical_type": "bigint"
+          },
+          {
+            "expression": "t.clicked",
+            "table": "recall_touches",
+            "column": "clicked",
+            "physical_type": "bigint"
+          },
+          {
+            "expression": "r.recalled",
+            "table": "recall_results",
+            "column": "recalled",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 3,
+        "floating_division_count": 3,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "touch_channel",
+        "touches",
+        "delivery_rate",
+        "click_rate",
+        "recall_rate"
+      ],
+      "physical_tables": [
+        "recall_results",
+        "recall_touches"
+      ],
+      "where_clauses": [
+        "t.touch_channel = 'push'"
+      ],
+      "join_clauses": [
+        "JOIN recall_results AS r ON t.touch_id = r.touch_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "GROWTH_OPS-148",
+      "query": "2026-03各渠道激活率实际值与目标差距；请返回渠道名称、实际比率、激活率目标、目标差距；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "Registration-month cohort activation ratio in the CTE, compared with target_month substring for the same original month. Preserve channel joins, unrounded subtraction before gap rounding, and descending gap.",
+      "original_sql_sha256": "d1bc2335d39310afa5e01685870e53085220ad6d4d194b19f16fced706a93511",
+      "postgres_sql_sha256": "11eade162914d2acf2b5eafb4d17bb25ef4da8a3a35de4563983bedd3bfc9e79",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 1,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "actual_rate",
+        "activation_rate_target",
+        "gap"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "growth_targets",
+        "user_activations",
+        "user_registrations"
+      ],
+      "where_clauses": [
+        "SUBSTRING(t.target_month, 1, 7) = '2026-03'",
+        "STRFTIME(r.registered_at, '%Y-%m') = '2026-03'"
+      ],
+      "join_clauses": [
+        "JOIN acquisition_channels AS c ON t.channel_id = c.channel_id",
+        "JOIN actual AS a ON t.channel_id = a.channel_id",
+        "JOIN user_activations AS a ON r.registration_id = a.registration_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY gap DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-006",
+      "query": "信息流广告2026年各月广告消耗；请返回月份、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Monthly summed spend for the original named channel; keep original joins and month ascending.",
+      "original_sql_sha256": "9afc4becb7404ac020b8a4a1d1fabc40f8aa79b47b7bbec9ab547b71482b5293",
+      "postgres_sql_sha256": "39c9f70c3aa8123b6c42370873b5daa2fd5aa41bcabc45038345508774cfbcc3",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "month",
+        "spend"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "ad_campaigns",
+        "ad_daily_stats"
+      ],
+      "where_clauses": [
+        "c.channel_name = '信息流广告'"
+      ],
+      "join_clauses": [
+        "JOIN ad_campaigns AS p ON s.ad_campaign_id = p.ad_campaign_id",
+        "JOIN acquisition_channels AS c ON p.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "month",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-025",
+      "query": "截至2026-05各月广告消耗及环比变化；请返回月份、广告消耗、环比变化率；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按时间升序展示。",
+      "semantic_note": "Monthly spend through May (original upper bound only); MOM uses unrounded spend and preceding month LAG. First MOM stays NULL, NULLIF keeps a zero previous month NULL, and month order is unchanged.",
+      "original_sql_sha256": "9d8293c1769865ca04742826cc81055988b6ea7ba9d1c30643b2cc39120e3759",
+      "postgres_sql_sha256": "3d81ee22ef6bd2c32f4d7e247a8f1a0761a517a232d08da08f8ed5ec5e8291f2",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 1,
+        "month_format_count": 2,
+        "substring_count": 0,
+        "nullif_count": 1,
+        "nulls_last_order_count": 3
+      },
+      "output_columns": [
+        "month",
+        "spend",
+        "mom"
+      ],
+      "physical_tables": [
+        "ad_daily_stats"
+      ],
+      "where_clauses": [
+        "STRFTIME(stat_date, '%Y-%m') <= '2026-05'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY month",
+        "ORDER BY month",
+        "ORDER BY month"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "month",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-026",
+      "query": "2026-01各渠道曝光、点击和点击率；请返回渠道名称、曝光量、点击数、点击率；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "January channel CTR: summed clicks divided by summed impressions with NULLIF; preserve four-place rounding and descending CTR.",
+      "original_sql_sha256": "48f19cd22bddcad90b38ef9cf39721e03e69a1b14bd7a29f416089b67dde5cee",
+      "postgres_sql_sha256": "dcc73dbfdcdc12ae5699a34f56fbf5f650329435f8938c84140eaa3de5a228aa",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 1,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "impressions",
+        "clicks",
+        "ctr"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "ad_campaigns",
+        "ad_daily_stats"
+      ],
+      "where_clauses": [
+        "STRFTIME(s.stat_date, '%Y-%m') = '2026-01'"
+      ],
+      "join_clauses": [
+        "JOIN ad_campaigns AS p ON s.ad_campaign_id = p.ad_campaign_id",
+        "JOIN acquisition_channels AS c ON p.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 4 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-050",
+      "query": "请汇总信息流广告的平均点击成本；请返回渠道名称、平均点击成本；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "Original named-channel CPC: summed spend / summed clicks with NULLIF; preserve joins and four-place rounding.",
+      "original_sql_sha256": "0a14343b01eaf15f5b3e7e18cf7b4e98cf98e8989dd9a83a27ee953f44f5a2e7",
+      "postgres_sql_sha256": "90932c3f1ac15ef559cb05437ee5225cd80a3411fdc940b2d01f57e6eb22d9ef",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 1,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "channel_name",
+        "cpc"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "ad_campaigns",
+        "ad_daily_stats"
+      ],
+      "where_clauses": [
+        "c.channel_name = '信息流广告'"
+      ],
+      "join_clauses": [
+        "JOIN ad_campaigns AS p ON s.ad_campaign_id = p.ad_campaign_id",
+        "JOIN acquisition_channels AS c ON p.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-051",
+      "query": "2026-01各渠道转化数、转化率和CPA；请返回渠道名称、转化数、转化率、CPA；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "January channel conversions, conversion_rate and CPA; preserve separate click/conversion denominators, NULLIF guards, rounding four/two, and ascending CPA with channel tie break.",
+      "original_sql_sha256": "04dfc24ef9363ec85bce4fc7f877f19d9f251e14b8de7e67e8a55c57513c453a",
+      "postgres_sql_sha256": "7284c45bd1b4a66e635925fdea2a4ef62ad9f945d459daa8c31a11e01dfd1651",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 2,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 2,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "conversions",
+        "conversion_rate",
+        "cpa"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "ad_campaigns",
+        "ad_daily_stats"
+      ],
+      "where_clauses": [
+        "STRFTIME(s.stat_date, '%Y-%m') = '2026-01'"
+      ],
+      "join_clauses": [
+        "JOIN ad_campaigns AS p ON s.ad_campaign_id = p.ad_campaign_id",
+        "JOIN acquisition_channels AS c ON p.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 4, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-080",
+      "query": "请分析统计active状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+      "semantic_note": "Keep original campaign status filter; count campaign IDs and sum budget rounded to two places by status.",
+      "original_sql_sha256": "615d338f3766b7e9b50eeb08bd13c78147930361868d18d75d7bf221d1f39592",
+      "postgres_sql_sha256": "b09a07865eacbea25b8b96386d5b2550ec571bfef2cc0f8b07245f2f5e0f6835",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "physical_tables": [
+        "ad_campaigns"
+      ],
+      "where_clauses": [
+        "status = 'active'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-100",
+      "query": "请汇总预算调整原因为转化成本偏高的调整次数和平均幅度；请返回调整原因、调整次数、平均调整幅度；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "semantic_note": "Original budget-adjustment reason; average of new_budget - previous_budget (not difference of separately rounded averages), rounded to two places.",
+      "original_sql_sha256": "54aa4fa2bf743e711b524cb8041784997d802acf4980dc0a34afbc9f30434b67",
+      "postgres_sql_sha256": "db9b9caffc246c0b3c295d71bdcb6129fb416574c9a5219d1d7c3a41bf1b8501",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "adjustment_reason",
+        "adjustments",
+        "avg_change"
+      ],
+      "physical_tables": [
+        "budget_adjustments"
+      ],
+      "where_clauses": [
+        "adjustment_reason = '转化成本偏高'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-102",
+      "query": "图文创意的状态分布；请返回创意状态、创意数量；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep original creative_type literal; count creative IDs by status with descending count and status tie break.",
+      "original_sql_sha256": "7e657594958b967d01d7f40ce0584647b8e79a360b3f15c16e827358ba1537cd",
+      "postgres_sql_sha256": "4105a7db489b81ad621b8e296f068b5465be7207b253ddf91d42305f9c9bbf52",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "creative_status",
+        "creatives"
+      ],
+      "physical_tables": [
+        "ad_creatives"
+      ],
+      "where_clauses": [
+        "creative_type = '图文'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-126",
+      "query": "last_click归因按渠道的用户数和平均置信度；请返回渠道名称、用户数、平均置信度；聚合口径：去重数量按对应实体唯一标识计数，平均指标取算术平均。",
+      "semantic_note": "Original last_click attribution filter; DISTINCT users and four-place average confidence_score by channel, preserve descending users.",
+      "original_sql_sha256": "18dfe88791facae23df806b584bcc5f6fefea8576629ff5243a83649c29fa70b",
+      "postgres_sql_sha256": "2eeafd7b704befe3cd9d4967acf4e78df5798b5077874ec7f3dd6ec9f781caff",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "users",
+        "avg_confidence"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "channel_attributions"
+      ],
+      "where_clauses": [
+        "a.attribution_type = 'last_click'"
+      ],
+      "join_clauses": [
+        "JOIN acquisition_channels AS c ON a.channel_id = c.channel_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CHANNEL_OPS-136",
+      "query": "2026-01各渠道实际CPA与目标CPA差距；请返回渠道名称、实际CPA、目标CPA、目标差距；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "January summed spend / summed conversions in CTE; compare with target_month January and subtract target_cpa before rounding. Preserve NULLIF and ascending gap including NULLS LAST.",
+      "original_sql_sha256": "24b94b247ba38af231254fd8b2ccee8777bc058435e2228b8427d40c1f404a38",
+      "postgres_sql_sha256": "d5d728433efe6b5507e95548c23c8b83437de865a41f0ab688f9f9ab30ed15e7",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 1,
+        "nullif_count": 1,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "channel_name",
+        "actual_cpa",
+        "target_cpa",
+        "gap"
+      ],
+      "physical_tables": [
+        "acquisition_channels",
+        "ad_campaigns",
+        "ad_daily_stats",
+        "channel_targets"
+      ],
+      "where_clauses": [
+        "SUBSTRING(t.target_month, 1, 7) = '2026-01'",
+        "STRFTIME(s.stat_date, '%Y-%m') = '2026-01'"
+      ],
+      "join_clauses": [
+        "JOIN acquisition_channels AS c ON t.channel_id = c.channel_id",
+        "JOIN actual AS a ON t.channel_id = a.channel_id",
+        "JOIN ad_campaigns AS p ON s.ad_campaign_id = p.ad_campaign_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY gap, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-002",
+      "query": "2026-02每天的视频曝光量和播放量；请返回指标日期、曝光量、播放量；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "semantic_note": "Daily impressions and play_count sums for the original month; preserve date ascending and original table grain.",
+      "original_sql_sha256": "ddc6fbd0fe604c524345a3235784b7877cc5ea0207c02b1aa61c2afdcc8dc20a",
+      "postgres_sql_sha256": "a478737b1e77d5ff571f32617bb5fe82d0826f65713330178c8d481968070f87",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "output_columns": [
+        "metric_date",
+        "impressions",
+        "plays"
+      ],
+      "physical_tables": [
+        "content_daily_metrics"
+      ],
+      "where_clauses": [
+        "STRFTIME(metric_date, '%Y-%m') = '2026-02'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": "metric_date",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-025",
+      "query": "体育类播放量最高的前10条内容；请返回内容标题、播放量；聚合口径：可加总指标按当前查询粒度求和；按核心指标从高到低展示；最多返回10行。",
+      "semantic_note": "Sports title Top 10 by summed plays, title tie break. Preserve the previously reviewed limit=10, boundary=8 candidate policy verbatim; do not broaden ties.",
+      "original_sql_sha256": "b7256e7245d50f0ed9be25b437d6545eeb97f7c40077edb06911019404ed3a7f",
+      "postgres_sql_sha256": "e9ea43e51ce344f207bd90e3320600a61b2a05e0fe81951d206e14eaa1200f7f",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "content_title",
+        "plays"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "content_daily_metrics",
+        "contents"
+      ],
+      "where_clauses": [
+        "cat.category_name = '体育'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON m.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [
+        "LIMIT 10"
+      ],
+      "order_sensitive": true,
+      "order_by_column": "plays",
+      "top_n_tie_policy": {
+        "limit": 10,
+        "boundary_value": 8,
+        "boundary_candidates": [
+          {
+            "content_title": "体育内容002575",
+            "plays": 8
+          },
+          {
+            "content_title": "体育内容002711",
+            "plays": 8
+          },
+          {
+            "content_title": "体育内容003797",
+            "plays": 8
+          },
+          {
+            "content_title": "体育内容006542",
+            "plays": 8
+          },
+          {
+            "content_title": "体育内容006759",
+            "plays": 8
+          },
+          {
+            "content_title": "体育内容008320",
+            "plays": 8
+          },
+          {
+            "content_title": "体育内容011482",
+            "plays": 8
+          },
+          {
+            "content_title": "体育内容011509",
+            "plays": 8
+          },
+          {
+            "content_title": "体育内容012056",
+            "plays": 8
+          },
+          {
+            "content_title": "体育内容012155",
+            "plays": 8
+          },
+          {
+            "content_title": "体育内容013558",
+            "plays": 8
+          },
+          {
+            "content_title": "体育内容013837",
+            "plays": 8
+          }
+        ]
+      },
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-026",
+      "query": "基于播放明细，计算搞笑类内容每次播放的平均观看时长和平均完播率；请返回内容分类、平均观看时长、平均完播率；聚合口径：平均指标取算术平均。",
+      "semantic_note": "Original category-filtered play joins; keep average watch_seconds (two places) and completion_rate (four places). No weighted averaging introduced.",
+      "original_sql_sha256": "e810439e70c4666ddc98b987ca43af5632849b91c6b53e83fff6492f71c892aa",
+      "postgres_sql_sha256": "6a60d11ff3cadc40b6ab6d597b2427eb0ec43d1c9bb565f52338b908faafbb99",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "category_name",
+        "avg_watch_seconds",
+        "avg_completion_rate"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "contents",
+        "video_plays"
+      ],
+      "where_clauses": [
+        "cat.category_name = '搞笑'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON p.content_id = c.content_id",
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-050",
+      "query": "2026-05平均完播率最高的前10条内容；请返回内容标题、完播率；聚合口径：平均指标取算术平均；按核心指标从高到低展示；最多返回10行。",
+      "semantic_note": "May title Top 10 by average daily completion_rate, rounded to four places before ordering; preserve title tie break and original metric grain.",
+      "original_sql_sha256": "780aabc379f6551fe88cbe1d5286f18bad90750f5e6ceaa4fc272b1bafa4c05a",
+      "postgres_sql_sha256": "1dbb1ba5b49106a43b500036c11b2d416c3f0e2288f6b4a15124436e4f260681",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "content_title",
+        "completion_rate"
+      ],
+      "physical_tables": [
+        "content_daily_metrics",
+        "contents"
+      ],
+      "where_clauses": [
+        "STRFTIME(m.metric_date, '%Y-%m') = '2026-05'"
+      ],
+      "join_clauses": [
+        "JOIN contents AS c ON m.content_id = c.content_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [
+        "LIMIT 10"
+      ],
+      "order_sensitive": true,
+      "order_by_column": "completion_rate",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-052",
+      "query": "生活类内容数量和平均视频时长；请返回内容分类、内容数量、平均视频时长；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "semantic_note": "Original category filter; count content IDs and average duration_seconds rounded to two places. Preserve category grain.",
+      "original_sql_sha256": "817d7d0b802cd41f9beafaa8131828025eec08a2add974b03f4dde59e5d8d5ef",
+      "postgres_sql_sha256": "d13b1afccd73ec9f01b97190d8844e13941992d392dc91e614a682ecca89128b",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "category_name",
+        "contents",
+        "avg_duration_seconds"
+      ],
+      "physical_tables": [
+        "content_categories",
+        "contents"
+      ],
+      "where_clauses": [
+        "cat.category_name = '生活'"
+      ],
+      "join_clauses": [
+        "JOIN content_categories AS cat ON c.category_id = cat.category_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-077",
+      "query": "成长级创作者数量和状态分布；请返回创作者状态、创作者数量；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Original creator_level filter; count creator IDs by status, descending count then status.",
+      "original_sql_sha256": "809e772c5b67b2fed6a98dd6df95cd20988086d0e6614028c5636df3f5f04b7b",
+      "postgres_sql_sha256": "18274f49b150683a137d4f2323862fe8d01f6e5ac717a4c3609cb5360a29e7e0",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "creator_status",
+        "creators"
+      ],
+      "physical_tables": [
+        "creators"
+      ],
+      "where_clauses": [
+        "creator_level = '成长'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-100",
+      "query": "请汇总查询2026年8月新星级创作者的每日互动率算术平均值前10名；请返回创作者名称、互动率；聚合口径：平均指标取算术平均；按核心指标从高到低展示；最多返回10行。",
+      "semantic_note": "August rising-creator averages of interaction_rate, four-place rounding; preserve creator filter, name grouping, descending average/name and LIMIT 10.",
+      "original_sql_sha256": "9ac27d4b16f06920cc5828bff84ffdc181de8858dd8e7533c992a5ee730f6d4f",
+      "postgres_sql_sha256": "192a2ae8796ab6ee263d11015eb04efd072ffe569d3cc1b14bb1c71614b302cb",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "creator_name",
+        "interaction_rate"
+      ],
+      "physical_tables": [
+        "creator_daily_metrics",
+        "creators"
+      ],
+      "where_clauses": [
+        "STRFTIME(m.metric_date, '%Y-%m') = '2026-08' AND c.creator_level = '新星'"
+      ],
+      "join_clauses": [
+        "JOIN creators AS c ON m.creator_id = c.creator_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [
+        "LIMIT 10"
+      ],
+      "order_sensitive": true,
+      "order_by_column": "interaction_rate",
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-101",
+      "query": "content类型内容标签的使用次数；请返回标签名称、使用次数；聚合口径：数量指标按对应业务记录计数。",
+      "semantic_note": "Keep original content-tag-type filter; count related content IDs per tag without adding DISTINCT, descending uses then tag name.",
+      "original_sql_sha256": "116c007cf2f243c04ffd0da2cc0324193f654d5fe3ff4d083c32b061c50282f6",
+      "postgres_sql_sha256": "9cbd77950a79c0756889664c0e91156379cb183da2306efad4af04ea362b35f9",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "output_columns": [
+        "tag_name",
+        "uses"
+      ],
+      "physical_tables": [
+        "content_tag_relations",
+        "content_tags"
+      ],
+      "where_clauses": [
+        "t.tag_type = 'content'"
+      ],
+      "join_clauses": [
+        "JOIN content_tag_relations AS r ON t.content_tag_id = r.content_tag_id"
+      ],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [
+        "ORDER BY 2 DESC, 1"
+      ],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-125",
+      "query": "流量加热系数至少3.0的热点内容数量和平均排名；请返回最低流量加热系数、内容数量、平均排名；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均；按核心指标从高到低展示。",
+      "semantic_note": "Keep original traffic_boost threshold and literal min_traffic_boost output; count content IDs and two-place average ranking.",
+      "original_sql_sha256": "2d035b6f0c765414c91053ea296bc43077ea8c42dd25a286cf38952d654ebd49",
+      "postgres_sql_sha256": "ce208a60c1d083dce5bac8daf6a5dec37d6bbd7267a012b512e7acdbb00d2cee",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "min_traffic_boost",
+        "contents",
+        "avg_ranking"
+      ],
+      "physical_tables": [
+        "topic_content_relations"
+      ],
+      "where_clauses": [
+        "traffic_boost >= 3.0"
+      ],
+      "join_clauses": [],
+      "group_clauses": [],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": true,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    },
+    {
+      "case_id": "CONTENT_OPS-150",
+      "query": "请汇总human审核方式的通过率和驳回率；请返回审核方式、审核数量、通过率、驳回率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "semantic_note": "Human-review audit rows: approval and rejection counts use string status predicates over the same COUNT(*) denominator; four-place rates. Other statuses remain in denominator.",
+      "original_sql_sha256": "7621f5332b8ed84d6a01949860667baa43bca777e0da91a256ac05763190c8ed",
+      "postgres_sql_sha256": "817f14a2bb250ecd536a1fcefc34cded20f757c917c81c136376f5acdf4e6050",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 2,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "output_columns": [
+        "review_mode",
+        "audits",
+        "approval_rate",
+        "rejection_rate"
+      ],
+      "physical_tables": [
+        "content_audits"
+      ],
+      "where_clauses": [
+        "review_mode = 'human'"
+      ],
+      "join_clauses": [],
+      "group_clauses": [
+        "GROUP BY 1"
+      ],
+      "order_clauses": [],
+      "limit_clauses": [],
+      "order_sensitive": false,
+      "order_by_column": null,
+      "top_n_tie_policy": null,
+      "status": "offline_reviewed_pending_postgres_execution",
+      "postgres_execution_verified": false
+    }
+  ]
+}

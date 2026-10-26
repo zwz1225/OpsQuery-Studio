@@ -1,0 +1,490 @@
+{
+  "stage": "M1 E v5 CONTENT_OPS-001 exact column review",
+  "run_status": "complete",
+  "recorded_at": "2026-10-14T07:39:33.900463+00:00",
+  "run_manifest": {
+    "source_identity": {
+      "logical_database_id": "short_video_ops",
+      "source_id": "short_video_ops_postgres",
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "prompt_dialect": "PostgreSQL",
+      "physical_schema": "askdata_ops",
+      "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+    },
+    "manifest_version": 4,
+    "mode": "offline_rescore",
+    "scope": "m1_e_v5_content001",
+    "dataset": {
+      "source": "evaluation/cases/all_cases.jsonl",
+      "case_list": null,
+      "case_ids": [
+        "CONTENT_OPS-001"
+      ],
+      "version": "0e7b0721de98927097813b9b3c70c5a30a536ebf6f67d6fbd391831acad43c0c"
+    },
+    "gold_selection": {
+      "selection_version": 1,
+      "cases": [
+        {
+          "case_id": "CONTENT_OPS-001",
+          "gold": {
+            "sql": "SELECT\n  metric_date,\n  SUM(impressions) AS impressions,\n  SUM(play_count) AS plays\nFROM content_daily_metrics\nWHERE\n  TO_CHAR(metric_date, 'YYYY-MM') = '2026-01'\nGROUP BY\n  1\nORDER BY\n  1",
+            "dialect": "postgres",
+            "selection_key": "gold_sql_by_dialect.postgres",
+            "selection_version": 1
+          }
+        }
+      ]
+    },
+    "result_policy": {
+      "version": 1,
+      "cases": [
+        {
+          "case_id": "CONTENT_OPS-001",
+          "policy": {
+            "allowed_auxiliary_columns": [],
+            "column_aliases": {
+              "impressions": [
+                "曝光量"
+              ],
+              "metric_date": [
+                "指标日期"
+              ],
+              "plays": [
+                "play_count",
+                "播放量"
+              ]
+            },
+            "column_mapping": "explicit_per_case_aliases_v1",
+            "expected_columns": [
+              "metric_date",
+              "impressions",
+              "plays"
+            ],
+            "normalization_version": 1,
+            "numeric_comparison": "existing_business_tolerance_v1",
+            "order_by_column": "metric_date",
+            "order_sensitive": true,
+            "reject_truncation": true,
+            "row_limit": 10000,
+            "top_n_tie_policy": null,
+            "version": 1
+          }
+        }
+      ]
+    },
+    "source_verification": {
+      "kind": "live_postgresql_verification",
+      "live_target_verified": true,
+      "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+      "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+      "table_count": 41,
+      "field_count": 276,
+      "row_count": 722732,
+      "full_typed_row_match_count": 41,
+      "readonly_table_acl_match_count": 41,
+      "readonly_column_acl_match_count": 41
+    },
+    "versions": {
+      "data": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+      "schema": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "application": "66a1be7e693ce39e9320fb830264d40e8fa1555d6e07efb1827bb6a5d73d2222",
+      "evaluator": "2410abbbcb30ddd2df48e8ff9ecc314c917cc95f477b2ed547b3e7767bf741a9",
+      "evaluation_code": "9192bcafc5a0957ab8173e9225d932041c288b9bebc4830bf9ce04def785fcf8",
+      "gold_selection": "ce02c47ed6dd8a45cfd5619c3665741ebecc6eea97ce56b337c9f2cb05a101f9",
+      "result_policy": "5f184d77da032f24f8dcdecbcd571c93be8dd81e340a63a2b8ba325d036eb58b",
+      "physical_schema": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817"
+    },
+    "config": {
+      "operation": "saved_sql_postgres_replay",
+      "new_model_request_count": 0,
+      "source_run_id": "4d173d09c42b468b992942c4e2a6cfb2"
+    },
+    "run_id": "ba06424761384d52837571dd9b014a27",
+    "created_at": "2026-10-14T07:39:28.387166Z",
+    "fingerprint": "7f880843ef766ea9b4b9a66adfabc1498bd7644dfd3557527870cfee15a51d5a"
+  },
+  "source_report_sha256": "bd8d2a5fb01d0a87c34f43656ae228183b7f7e8efa3143519e862060fd8ef37e",
+  "formal_cases_sha256": "ff5956e9f4aca878ee63e232bdea1fef3416a28eda72669f91a33546c70f3adc",
+  "formal_cases_modified": false,
+  "new_model_request_count": 0,
+  "summary": {
+    "case_count": 1,
+    "original_strict_pass_count": 0,
+    "candidate_strict_pass_count": 1,
+    "loose_pass_count": 1,
+    "alias_addition_count": 3,
+    "failed_case_ids": []
+  },
+  "cases": [
+    {
+      "case_id": "CONTENT_OPS-001",
+      "source_run_id": "4d173d09c42b468b992942c4e2a6cfb2",
+      "generated_sql_sha256": "2da9406a2084936de17c7f397766ca9712049f3a476c7fb722252f36fdb76174",
+      "generated_sql": "SELECT\n  cdm.metric_date AS \"指标日期\",\n  SUM(cdm.impressions) AS \"曝光量\",\n  SUM(cdm.play_count) AS \"播放量\"\nFROM askdata_ops.content_daily_metrics cdm\nWHERE cdm.metric_date >= '2026-01-01' AND cdm.metric_date < '2026-02-01'\nGROUP BY cdm.metric_date\nORDER BY cdm.metric_date ASC",
+      "postgres_gold_sql": "SELECT\n  metric_date,\n  SUM(impressions) AS impressions,\n  SUM(play_count) AS plays\nFROM content_daily_metrics\nWHERE\n  TO_CHAR(metric_date, 'YYYY-MM') = '2026-01'\nGROUP BY\n  1\nORDER BY\n  1",
+      "projection_review": [
+        {
+          "gold_column": "metric_date",
+          "actual_column": "指标日期",
+          "expression": "cdm.metric_date"
+        },
+        {
+          "gold_column": "impressions",
+          "actual_column": "曝光量",
+          "expression": "SUM(cdm.impressions)"
+        },
+        {
+          "gold_column": "plays",
+          "actual_column": "播放量",
+          "expression": "SUM(cdm.play_count)"
+        }
+      ],
+      "actual_columns": [
+        "指标日期",
+        "曝光量",
+        "播放量"
+      ],
+      "actual_rows": [
+        {
+          "指标日期": "2026-01-01",
+          "曝光量": 343.0,
+          "播放量": 97.0
+        },
+        {
+          "指标日期": "2026-01-02",
+          "曝光量": 187.0,
+          "播放量": 55.0
+        },
+        {
+          "指标日期": "2026-01-03",
+          "曝光量": 202.0,
+          "播放量": 77.0
+        },
+        {
+          "指标日期": "2026-01-04",
+          "曝光量": 224.0,
+          "播放量": 87.0
+        },
+        {
+          "指标日期": "2026-01-05",
+          "曝光量": 224.0,
+          "播放量": 65.0
+        },
+        {
+          "指标日期": "2026-01-06",
+          "曝光量": 214.0,
+          "播放量": 71.0
+        },
+        {
+          "指标日期": "2026-01-07",
+          "曝光量": 227.0,
+          "播放量": 91.0
+        },
+        {
+          "指标日期": "2026-01-08",
+          "曝光量": 235.0,
+          "播放量": 88.0
+        },
+        {
+          "指标日期": "2026-01-09",
+          "曝光量": 310.0,
+          "播放量": 110.0
+        },
+        {
+          "指标日期": "2026-01-10",
+          "曝光量": 262.0,
+          "播放量": 79.0
+        },
+        {
+          "指标日期": "2026-01-11",
+          "曝光量": 281.0,
+          "播放量": 93.0
+        },
+        {
+          "指标日期": "2026-01-12",
+          "曝光量": 212.0,
+          "播放量": 68.0
+        },
+        {
+          "指标日期": "2026-01-13",
+          "曝光量": 232.0,
+          "播放量": 73.0
+        },
+        {
+          "指标日期": "2026-01-14",
+          "曝光量": 415.0,
+          "播放量": 156.0
+        },
+        {
+          "指标日期": "2026-01-15",
+          "曝光量": 299.0,
+          "播放量": 113.0
+        },
+        {
+          "指标日期": "2026-01-16",
+          "曝光量": 273.0,
+          "播放量": 92.0
+        },
+        {
+          "指标日期": "2026-01-17",
+          "曝光量": 141.0,
+          "播放量": 46.0
+        },
+        {
+          "指标日期": "2026-01-18",
+          "曝光量": 366.0,
+          "播放量": 131.0
+        },
+        {
+          "指标日期": "2026-01-19",
+          "曝光量": 225.0,
+          "播放量": 71.0
+        },
+        {
+          "指标日期": "2026-01-20",
+          "曝光量": 322.0,
+          "播放量": 97.0
+        },
+        {
+          "指标日期": "2026-01-21",
+          "曝光量": 246.0,
+          "播放量": 77.0
+        },
+        {
+          "指标日期": "2026-01-22",
+          "曝光量": 187.0,
+          "播放量": 70.0
+        },
+        {
+          "指标日期": "2026-01-23",
+          "曝光量": 179.0,
+          "播放量": 61.0
+        },
+        {
+          "指标日期": "2026-01-24",
+          "曝光量": 303.0,
+          "播放量": 106.0
+        },
+        {
+          "指标日期": "2026-01-25",
+          "曝光量": 232.0,
+          "播放量": 106.0
+        },
+        {
+          "指标日期": "2026-01-26",
+          "曝光量": 237.0,
+          "播放量": 72.0
+        },
+        {
+          "指标日期": "2026-01-27",
+          "曝光量": 278.0,
+          "播放量": 90.0
+        },
+        {
+          "指标日期": "2026-01-28",
+          "曝光量": 227.0,
+          "播放量": 86.0
+        },
+        {
+          "指标日期": "2026-01-29",
+          "曝光量": 297.0,
+          "播放量": 108.0
+        },
+        {
+          "指标日期": "2026-01-30",
+          "曝光量": 201.0,
+          "播放量": 64.0
+        },
+        {
+          "指标日期": "2026-01-31",
+          "曝光量": 289.0,
+          "播放量": 115.0
+        }
+      ],
+      "gold_columns": [
+        "metric_date",
+        "impressions",
+        "plays"
+      ],
+      "gold_rows": [
+        {
+          "metric_date": "2026-01-01",
+          "impressions": 343.0,
+          "plays": 97.0
+        },
+        {
+          "metric_date": "2026-01-02",
+          "impressions": 187.0,
+          "plays": 55.0
+        },
+        {
+          "metric_date": "2026-01-03",
+          "impressions": 202.0,
+          "plays": 77.0
+        },
+        {
+          "metric_date": "2026-01-04",
+          "impressions": 224.0,
+          "plays": 87.0
+        },
+        {
+          "metric_date": "2026-01-05",
+          "impressions": 224.0,
+          "plays": 65.0
+        },
+        {
+          "metric_date": "2026-01-06",
+          "impressions": 214.0,
+          "plays": 71.0
+        },
+        {
+          "metric_date": "2026-01-07",
+          "impressions": 227.0,
+          "plays": 91.0
+        },
+        {
+          "metric_date": "2026-01-08",
+          "impressions": 235.0,
+          "plays": 88.0
+        },
+        {
+          "metric_date": "2026-01-09",
+          "impressions": 310.0,
+          "plays": 110.0
+        },
+        {
+          "metric_date": "2026-01-10",
+          "impressions": 262.0,
+          "plays": 79.0
+        },
+        {
+          "metric_date": "2026-01-11",
+          "impressions": 281.0,
+          "plays": 93.0
+        },
+        {
+          "metric_date": "2026-01-12",
+          "impressions": 212.0,
+          "plays": 68.0
+        },
+        {
+          "metric_date": "2026-01-13",
+          "impressions": 232.0,
+          "plays": 73.0
+        },
+        {
+          "metric_date": "2026-01-14",
+          "impressions": 415.0,
+          "plays": 156.0
+        },
+        {
+          "metric_date": "2026-01-15",
+          "impressions": 299.0,
+          "plays": 113.0
+        },
+        {
+          "metric_date": "2026-01-16",
+          "impressions": 273.0,
+          "plays": 92.0
+        },
+        {
+          "metric_date": "2026-01-17",
+          "impressions": 141.0,
+          "plays": 46.0
+        },
+        {
+          "metric_date": "2026-01-18",
+          "impressions": 366.0,
+          "plays": 131.0
+        },
+        {
+          "metric_date": "2026-01-19",
+          "impressions": 225.0,
+          "plays": 71.0
+        },
+        {
+          "metric_date": "2026-01-20",
+          "impressions": 322.0,
+          "plays": 97.0
+        },
+        {
+          "metric_date": "2026-01-21",
+          "impressions": 246.0,
+          "plays": 77.0
+        },
+        {
+          "metric_date": "2026-01-22",
+          "impressions": 187.0,
+          "plays": 70.0
+        },
+        {
+          "metric_date": "2026-01-23",
+          "impressions": 179.0,
+          "plays": 61.0
+        },
+        {
+          "metric_date": "2026-01-24",
+          "impressions": 303.0,
+          "plays": 106.0
+        },
+        {
+          "metric_date": "2026-01-25",
+          "impressions": 232.0,
+          "plays": 106.0
+        },
+        {
+          "metric_date": "2026-01-26",
+          "impressions": 237.0,
+          "plays": 72.0
+        },
+        {
+          "metric_date": "2026-01-27",
+          "impressions": 278.0,
+          "plays": 90.0
+        },
+        {
+          "metric_date": "2026-01-28",
+          "impressions": 227.0,
+          "plays": 86.0
+        },
+        {
+          "metric_date": "2026-01-29",
+          "impressions": 297.0,
+          "plays": 108.0
+        },
+        {
+          "metric_date": "2026-01-30",
+          "impressions": 201.0,
+          "plays": 64.0
+        },
+        {
+          "metric_date": "2026-01-31",
+          "impressions": 289.0,
+          "plays": 115.0
+        }
+      ],
+      "original_strict": false,
+      "original_reason": "列 metric_date 缺失或映射不唯一",
+      "candidate_strict": true,
+      "candidate_reason": "严格结果一致",
+      "loose_correct": true,
+      "loose_reason": "结果一致（忽略列顺序和辅助列）",
+      "alias_additions": {
+        "metric_date": [
+          "指标日期"
+        ],
+        "impressions": [
+          "曝光量"
+        ],
+        "plays": [
+          "播放量"
+        ]
+      },
+      "allowed_auxiliary_columns_additions": []
+    }
+  ]
+}

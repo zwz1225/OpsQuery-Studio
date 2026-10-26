@@ -1,0 +1,109 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "gap": [
+        "cpa_gap"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "channel_name",
+      "actual_cpa",
+      "target_cpa",
+      "gap"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": false,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "WITH actual AS (SELECT p.channel_id,SUM(s.spend)/NULLIF(SUM(s.conversions),0) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1) SELECT c.channel_name,ROUND(a.cpa,2) actual_cpa,t.target_cpa,ROUND(a.cpa-t.target_cpa,2) gap FROM channel_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-01' ORDER BY gap,1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CHANNEL_OPS-136",
+  "question": "2026-01各渠道实际CPA与目标CPA差距；请返回渠道名称、实际CPA、目标CPA、目标差距；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+  "gold_sql": "WITH actual AS (SELECT p.channel_id,SUM(s.spend)/NULLIF(SUM(s.conversions),0) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1) SELECT c.channel_name,ROUND(a.cpa,2) actual_cpa,t.target_cpa,ROUND(a.cpa-t.target_cpa,2) gap FROM channel_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-01' ORDER BY gap,1",
+  "database": "short_video_ops",
+  "scenario": "channel_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.ad_accounts",
+      "short_video_ops.ad_campaigns",
+      "short_video_ops.ad_creatives",
+      "short_video_ops.ad_daily_stats",
+      "short_video_ops.budget_adjustments",
+      "short_video_ops.channel_attributions",
+      "short_video_ops.channel_conversion_events",
+      "short_video_ops.channel_targets",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "channel_ops"
+    ],
+    "user_id": "demo_channel_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "channel_name",
+    "actual_cpa",
+    "target_cpa",
+    "gap"
+  ],
+  "rows": [
+    {
+      "channel_name": "信息流广告",
+      "actual_cpa": 11.55,
+      "target_cpa": 211.25,
+      "gap": -199.7
+    },
+    {
+      "channel_name": "品牌广告",
+      "actual_cpa": 14.08,
+      "target_cpa": 180.63,
+      "gap": -166.55
+    },
+    {
+      "channel_name": "搜索广告",
+      "actual_cpa": 12.21,
+      "target_cpa": 149.87,
+      "gap": -137.66
+    },
+    {
+      "channel_name": "达人推广",
+      "actual_cpa": 11.43,
+      "target_cpa": 143.5,
+      "gap": -132.07
+    }
+  ],
+  "generated_at": "2026-10-10T14:56:16.921509+00:00"
+}

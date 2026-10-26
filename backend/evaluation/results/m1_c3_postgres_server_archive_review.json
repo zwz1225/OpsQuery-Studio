@@ -1,0 +1,239 @@
+{
+  "stage": "M1 C3 downloaded server runtime evidence review",
+  "run_status": "complete",
+  "conclusion": "accepted_for_controlled_postgresql_metadata_executor_and_runtime",
+  "reviewed_at": "2026-10-10T06:35:27.625957+00:00",
+  "server_report": {
+    "path": "evaluation/results/m1_c3_postgres_runtime_server_v2.json",
+    "sha256": "2cd9a7b9ad94300b36a9494b22a76e28db2d64a91c8d23835c96e982e6ea7166",
+    "bytes": 81217,
+    "started_at": "2026-10-10T06:11:46.983491+00:00",
+    "finished_at": "2026-10-10T06:12:30.698527+00:00",
+    "duration_seconds": 43.715036
+  },
+  "c1_server_report_sha256": "12b0da642fc319afd35be04c5e9d0c3b8939f73e44aeab1add329356f77a1d77",
+  "c2_server_report_sha256": "f8fd6a37aae2c2e8536c51199153e9572156bc7e12489855c05c45604777835e",
+  "m1_b_evidence_sha256": {
+    "import": "215c9ce2e1ae53e140b7c17e4222d8eae29dcce7dd423ab03f74918d13032ce9",
+    "validation": "1e8e9b757f6391b15766169b631f3c7d287a1fdd95ea933570773989a57851f6"
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_postgres",
+    "backend": "postgresql",
+    "dialect": "postgres",
+    "prompt_dialect": "PostgreSQL",
+    "physical_schema": "askdata_ops",
+    "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+    "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+  },
+  "physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+  "summary": {
+    "report_bytes": 81217,
+    "report_sha256": "2cd9a7b9ad94300b36a9494b22a76e28db2d64a91c8d23835c96e982e6ea7166",
+    "duration_seconds": 43.715036,
+    "review_check_count": 36,
+    "review_pass_count": 36,
+    "review_failures": [],
+    "catalog_recomputed": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+    "physical_schema_recomputed": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+    "profile_reference": {
+      "registered_at_min": "2026-01-01 00:02:15",
+      "registered_at_max": "2026-08-28 23:59:05",
+      "distinct_user_ids": 12000,
+      "duration_min": 8,
+      "duration_max": 180,
+      "duration_average": "94.10"
+    },
+    "guarded_sql_count": 11,
+    "guarded_sql_min_ms": 2613.956,
+    "guarded_sql_max_ms": 2732.202,
+    "guarded_sql_average_ms": 2638.415,
+    "report_write_status_present": false
+  },
+  "review_checks": [
+    {
+      "name": "complete_valid_json_and_no_errors",
+      "passed": true
+    },
+    {
+      "name": "default_application_stays_duckdb",
+      "passed": true
+    },
+    {
+      "name": "verified_postgresql_runtime_and_no_model_requests",
+      "passed": true
+    },
+    {
+      "name": "configuration_matches_accepted_c1_c2",
+      "passed": true
+    },
+    {
+      "name": "recorded_source_matches_recomputed_m1_b_evidence",
+      "passed": true
+    },
+    {
+      "name": "source_identity_fields_and_versions",
+      "passed": true
+    },
+    {
+      "name": "live_recorded_data_version_consistency",
+      "passed": true
+    },
+    {
+      "name": "all_41_table_column_and_primary_key_definitions_match_m1_b",
+      "passed": true
+    },
+    {
+      "name": "physical_schema_digest_recomputed",
+      "passed": true
+    },
+    {
+      "name": "counts_recomputed_from_table_definitions",
+      "passed": true
+    },
+    {
+      "name": "full_typed_data_coverage_matches_m1_b",
+      "passed": true
+    },
+    {
+      "name": "database_schema_table_and_column_readonly_grants",
+      "passed": true
+    },
+    {
+      "name": "content_guard_algorithm_and_snapshot_recorded",
+      "passed": true
+    },
+    {
+      "name": "postgres_catalog_digest_independently_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "all_53_business_relations_have_valid_field_endpoints",
+      "passed": true
+    },
+    {
+      "name": "exactly_24_unique_expected_passed_probes",
+      "passed": true
+    },
+    {
+      "name": "all_sql_actual_outcomes_match_expected",
+      "passed": true
+    },
+    {
+      "name": "positive_query_counts_columns_and_no_errors",
+      "passed": true
+    },
+    {
+      "name": "empty_result_has_columns_and_no_error",
+      "passed": true
+    },
+    {
+      "name": "preview_and_scoring_limits_correctly_truncate",
+      "passed": true
+    },
+    {
+      "name": "division_by_zero_redacted_and_recovered",
+      "passed": true
+    },
+    {
+      "name": "ten_illegal_sql_probes_and_application_role_denied",
+      "passed": true
+    },
+    {
+      "name": "guard_mismatch_and_restore_without_target_mutation",
+      "passed": true
+    },
+    {
+      "name": "local_profile_reference_csv_snapshot_matches_m1_b",
+      "passed": true
+    },
+    {
+      "name": "timestamp_profile_samples_match_frozen_csv",
+      "passed": true
+    },
+    {
+      "name": "text_profile_samples_match_frozen_csv",
+      "passed": true
+    },
+    {
+      "name": "profile_requested_fields_and_text_statistics",
+      "passed": true
+    },
+    {
+      "name": "numeric_profile_samples_match_frozen_csv",
+      "passed": true
+    },
+    {
+      "name": "numeric_profile_statistics_match_frozen_csv",
+      "passed": true
+    },
+    {
+      "name": "manager_closed_no_active_available_or_waiting_operations",
+      "passed": true
+    },
+    {
+      "name": "pinned_psycopg_dependencies_match_c2",
+      "passed": true
+    },
+    {
+      "name": "actual_postgres_connection_identity_matches_source",
+      "passed": true
+    },
+    {
+      "name": "configured_pool_limits_and_request_accounting",
+      "passed": true
+    },
+    {
+      "name": "recorded_source_and_connection_layer_flags_keep_their_scope",
+      "passed": true
+    },
+    {
+      "name": "valid_timezone_aware_timestamps",
+      "passed": true
+    },
+    {
+      "name": "no_raw_credential_or_connection_parameter_fields",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "new_model_request_count": 0,
+  "new_remote_database_request_count": 0,
+  "raw_report_preserved": true,
+  "observations": [
+    {
+      "code": "storage_patch_status_unconfirmed",
+      "severity": "follow_up",
+      "detail": "No report_write_status field. Report matches pre-patch schema; remote script/version is not attested. Complete saved report meets C3 runtime gates; deployment of the storage diagnostic patch remains to be confirmed."
+    },
+    {
+      "code": "expected_negative_probe_errors",
+      "severity": "info",
+      "detail": "Rejected SQL, division by zero, role denial and injected guard mismatch are expected successful probes."
+    },
+    {
+      "code": "closed_pool_accounting",
+      "severity": "info",
+      "detail": "pool_size=1 is retained accounting; state=closed, active=0, available=0, waiting=0 pass lifecycle acceptance."
+    },
+    {
+      "code": "runtime_flag_scope",
+      "severity": "info",
+      "detail": "Top-level runtime flags represent assembly in this command. recorded_source and manager flags do not attest full runtime verification. Default application remains DuckDB."
+    },
+    {
+      "code": "guard_overhead",
+      "severity": "info",
+      "detail": "Native SQL timing includes all-table structure/ACL/content verification, not model or end-to-end latency."
+    }
+  ],
+  "evidence_limits": [
+    "Archive review opens no PostgreSQL connections and does not regenerate remote typed row hashes.",
+    "Live aggregate match counts are attested by the server script; raw per-table live row digests, ACL and index query results are not saved.",
+    "Query row values are not saved; server assertions check values. Local review checks reported columns, row counts, truncation and errors.",
+    "Schema and catalog digests reconstructed locally; profile samples/statistics independently cross-checked against accepted CSV snapshot.",
+    "Server guard probe changes expected in-memory fingerprints only, not PostgreSQL data.",
+    "M1 D dialect prompts, PostgreSQL Gold variants and source-isolated benchmark/cache/live/E2E acceptance remain pending."
+  ]
+}

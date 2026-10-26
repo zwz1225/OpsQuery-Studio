@@ -1,0 +1,305 @@
+{
+  "stage": "M3 E02 recorded selection dry run; not live benchmark",
+  "run_status": "complete",
+  "source_capture_sha256": "1d056034333edfa1287e59cae7452276770981e43acf743cccc09b074fae891a",
+  "public_development_inputs_sha256": "6760724e98b6da967ac5ebb2698c4e5cab385875bd150ad36a3b252ffdc52f03",
+  "recorded_index_count": 8,
+  "case_count": 24,
+  "changed_case_ids": [
+    "BIRD-PG-1479"
+  ],
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "source_binding_scope": "Recorded E01 source identities simulated for offline logic; current live source not verified",
+  "formal_ex": null,
+  "results": [
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "prior_selected_count": 12,
+      "candidate_selected_count": 12,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "prior_selected_count": 7,
+      "candidate_selected_count": 7,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "database_id": "california_schools",
+      "prior_selected_count": 4,
+      "candidate_selected_count": 4,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0085",
+      "database_id": "california_schools",
+      "prior_selected_count": 16,
+      "candidate_selected_count": 16,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "prior_selected_count": 7,
+      "candidate_selected_count": 7,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": [
+        {
+          "relation_id": "card_games:cards:foreign_data",
+          "missing_field_ids": [
+            "card_games.cards.uuid",
+            "card_games.foreign_data.uuid"
+          ],
+          "reason": "incomplete_child_key_coverage",
+          "automatic_completion": false
+        }
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0379",
+      "database_id": "card_games",
+      "prior_selected_count": 3,
+      "candidate_selected_count": 3,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0407",
+      "database_id": "card_games",
+      "prior_selected_count": 20,
+      "candidate_selected_count": 20,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": [
+        {
+          "relation_id": "card_games:cards:foreign_data",
+          "missing_field_ids": [
+            "card_games.cards.uuid",
+            "card_games.foreign_data.uuid"
+          ],
+          "reason": "incomplete_child_key_coverage",
+          "automatic_completion": false
+        }
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0480",
+      "database_id": "card_games",
+      "prior_selected_count": 8,
+      "candidate_selected_count": 8,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": [
+        {
+          "relation_id": "card_games:cards:foreign_data",
+          "missing_field_ids": [
+            "card_games.cards.uuid",
+            "card_games.foreign_data.uuid"
+          ],
+          "reason": "incomplete_child_key_coverage",
+          "automatic_completion": false
+        }
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "database_id": "codebase_community",
+      "prior_selected_count": 3,
+      "candidate_selected_count": 3,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0637",
+      "database_id": "codebase_community",
+      "prior_selected_count": 6,
+      "candidate_selected_count": 6,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "prior_selected_count": 4,
+      "candidate_selected_count": 4,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": [
+        {
+          "relation_id": "debit_card_specializing:customers:yearmonth",
+          "missing_field_ids": [
+            "debit_card_specializing.customers.customerid"
+          ],
+          "reason": "eligible_reviewed_candidate_not_declared_fk",
+          "automatic_completion": false
+        }
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-1479",
+      "database_id": "debit_card_specializing",
+      "prior_selected_count": 2,
+      "candidate_selected_count": 5,
+      "added_field_ids": [
+        "debit_card_specializing.customers.currency",
+        "debit_card_specializing.customers.customerid",
+        "debit_card_specializing.yearmonth.customerid"
+      ],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [
+        "debit_card_specializing:customers:yearmonth"
+      ],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "prior_selected_count": 2,
+      "candidate_selected_count": 2,
+      "added_field_ids": [],
+      "rejection_reasons": [
+        "multiple_public_currency_values",
+        "multiple_public_currency_values"
+      ],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "prior_selected_count": 9,
+      "candidate_selected_count": 9,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "prior_selected_count": 16,
+      "candidate_selected_count": 16,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "database_id": "student_club",
+      "prior_selected_count": 8,
+      "candidate_selected_count": 8,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-1457",
+      "database_id": "student_club",
+      "prior_selected_count": 8,
+      "candidate_selected_count": 8,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-1460",
+      "database_id": "student_club",
+      "prior_selected_count": 8,
+      "candidate_selected_count": 8,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "database_id": "superhero",
+      "prior_selected_count": 6,
+      "candidate_selected_count": 6,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0773",
+      "database_id": "superhero",
+      "prior_selected_count": 12,
+      "candidate_selected_count": 12,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0206",
+      "database_id": "toxicology",
+      "prior_selected_count": 7,
+      "candidate_selected_count": 7,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0226",
+      "database_id": "toxicology",
+      "prior_selected_count": 5,
+      "candidate_selected_count": 5,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0263",
+      "database_id": "toxicology",
+      "prior_selected_count": 3,
+      "candidate_selected_count": 3,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    },
+    {
+      "case_id": "BIRD-PG-0273",
+      "database_id": "toxicology",
+      "prior_selected_count": 4,
+      "candidate_selected_count": 4,
+      "added_field_ids": [],
+      "rejection_reasons": [],
+      "admitted_relation_ids": [],
+      "missing_relation_key_groups": []
+    }
+  ]
+}

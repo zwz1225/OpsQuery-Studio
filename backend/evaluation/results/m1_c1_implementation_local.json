@@ -1,0 +1,43 @@
+{
+    "stage":  "M1 C1 local configuration implementation",
+    "date":  "2026-10-09",
+    "status":  "passed",
+    "test_evidence_origin":  "Commands completed in this implementation session; package generation did not rerun tests.",
+    "focused_tests":  {
+                          "command":  "python -m unittest discover -s tests -p test_postgres_config.py -v",
+                          "failed":  0,
+                          "executed":  25
+                      },
+    "regression_tests":  {
+                             "command":  "python -m unittest discover -s tests -q",
+                             "elapsed_seconds":  65.691,
+                             "failed":  0,
+                             "executed":  322
+                         },
+    "config_check_sha256":  "ed7e1d016cfef418f6b7b4d842078dbb9cd17a9b1d2bfe056da6ba0c1f5caf7d",
+    "recorded_data_version":  "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+    "recorded_physical_schema_version":  "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+    "original_m1_b_report_sha256":  {
+                                        "import":  "215c9ce2e1ae53e140b7c17e4222d8eae29dcce7dd423ab03f74918d13032ce9",
+                                        "validation":  "1e8e9b757f6391b15766169b631f3c7d287a1fdd95ea933570773989a57851f6"
+                                    },
+    "credentials_configured":  false,
+    "postgresql_connected":  false,
+    "live_target_verified":  false,
+    "runtime_available":  false,
+    "artifact_sha256":  {
+                            "backend/app/config.py":  "09689ce913935fb68722941a159b63b6bb369dd564355adcd799552609031a75",
+                            "backend/app/datasources/postgres_config.py":  "cc1dc6f6c80dd88f2e3937cd6753f84b02e5ef2b7b0ae9a151524c715e5442d2",
+                            "backend/scripts/check_m1_c_postgres_config.py":  "106df164878f003d3da3e15a97d122aac15f0620cf400a8f2e384c70a8456518",
+                            "backend/tests/test_postgres_config.py":  "4d25f9d7b16e6611279484dd7fbaf769d3fc396878f65069af5b2bcd53843d0c",
+                            "backend/.env.example":  "63f517ffb5a630d8052573556780e914f60c67bec6c551959ef10157d9414765",
+                            "backend/evaluation/M1_C1_CONFIGURATION_ACCEPTANCE.md":  "499da2a8ed93a6b812b6aa9793d960e90470d38cc3a67ed22c719d25ba63cc9a",
+                            "M1_数据源依赖梳理与最小适配方案.md":  "d06b4cdf412e679cbaf46ae9ee51947c7c9064bbcc4aca003a7a9209c6fd25db"
+                        },
+    "sync_package":  {
+                         "sha256":  "ba590de9023387bcf1113019ac5293a8e18707d1cf464a03f5c145ecc9aa2c2a",
+                         "file_count":  7,
+                         "filename":  "M1_C1_配置与来源身份同步包_20261009.zip",
+                         "all_entry_hashes_verified":  true
+                     }
+}

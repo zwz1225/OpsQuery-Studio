@@ -1,0 +1,9 @@
+{
+  "run_status": "complete",
+  "tests_run": 18,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "live_model_calls": 0,
+  "live_database_connections": 0
+}

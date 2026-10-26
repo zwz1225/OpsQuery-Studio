@@ -1,0 +1,25 @@
+{
+  "stage": "M1 E v4 seven-case exact strict policy applied",
+  "run_status": "complete",
+  "recorded_at": "2026-10-14T03:51:30.545258+00:00",
+  "source_cases_sha256": "22a7ee6f9d8d2309e79ceb5d831468b30f609c485a0a31ba5d1a0cbde3d9ba6b",
+  "updated_cases_sha256": "ff5956e9f4aca878ee63e232bdea1fef3416a28eda72669f91a33546c70f3adc",
+  "replay_report_sha256": "7a400f6ce7835672a80e2f30fd8ac6147366b8f96c3a7983c05a771fd96fed92",
+  "source_report_sha256": {
+    "m1_e_postgres_live_classic_server_v4.json": "71069c4ab43ef935c9e7ea16481c33a688684b952e3b0abdbe42248a9bc56735",
+    "m1_e_postgres_live_phase83_server_v4.json": "e001bfffb11b9037720e759efdb5f959b4ed42e04121c7d0f5d067736fd55025"
+  },
+  "changed_case_ids": [
+    "CHANNEL_OPS-001",
+    "CHANNEL_OPS-002",
+    "CHANNEL_OPS-067",
+    "CHANNEL_OPS-069",
+    "CHANNEL_OPS-070",
+    "CHANNEL_OPS-026",
+    "CHANNEL_OPS-136"
+  ],
+  "changed_case_count": 7,
+  "alias_addition_count": 16,
+  "auxiliary_allow_count": 0,
+  "new_model_request_count": 0
+}

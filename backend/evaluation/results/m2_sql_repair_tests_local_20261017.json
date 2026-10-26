@@ -1,0 +1,28 @@
+{
+  "stage": "M2 SQL repair feedback local offline regression",
+  "started_at": "2026-10-17T06:11:36.449138+00:00",
+  "finished_at": "2026-10-17T06:12:15.362440+00:00",
+  "run_status": "complete",
+  "tests_run": 118,
+  "passed": 115,
+  "skipped": [
+    {
+      "test": "test_hard_supervisor_timeout (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    },
+    {
+      "test": "test_real_filesystem_network_process_and_env_isolation (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    },
+    {
+      "test": "test_real_indexer_builds_without_project_file_access (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "elapsed_seconds": 38.906,
+  "postgresql_connected": false,
+  "new_model_request_count": 0,
+  "scope": "Offline/fake models and database operations; actual server behavior still requires a new development diagnostic run."
+}

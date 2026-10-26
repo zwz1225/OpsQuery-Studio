@@ -1,0 +1,4417 @@
+{
+  "stage": "M1 B source preparation",
+  "status": "passed",
+  "created_at": "2026-10-08T06:55:18.892294+00:00",
+  "duckdb_version": "1.5.5",
+  "target_plan": {
+    "source_id": "short_video_ops_postgres",
+    "logical_database_id": "short_video_ops",
+    "backend": "postgresql",
+    "dialect": "postgres",
+    "physical_database": "askdata_m1_test",
+    "physical_schema": "askdata_ops",
+    "import_role": "askdata_import",
+    "query_role": "askdata_readonly"
+  },
+  "postgresql_connected": false,
+  "new_model_request_count": 0,
+  "errors": [],
+  "warnings": [],
+  "tables": [
+    {
+      "name": "acquisition_channels",
+      "logical_table_id": "short_video_ops.acquisition_channels",
+      "csv_sha256": "e1dd8578aa5b173e28060d1c8c731234fcb97657b96cde58e6d0c71758a10151",
+      "utf8_bom": true,
+      "row_count": 10,
+      "columns": [
+        {
+          "name": "channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 10,
+          "minimum": "CH01",
+          "maximum": "CH10",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 10,
+          "minimum": "信息流广告",
+          "maximum": "达人推广",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5,
+          "minimum": "offline",
+          "maximum": "referral",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "owner_team",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": "增长运营中心",
+          "maximum": "增长运营中心",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "enabled",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": 1,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 10,
+          "average": 1.0
+        }
+      ],
+      "primary_key": [
+        "channel_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "ca4fc733b93355fdf88e569b077681d8c4c17f610f585a59b69dd85846b5b0ce",
+      "raw_typed_row_multiset_sha256": "ca4fc733b93355fdf88e569b077681d8c4c17f610f585a59b69dd85846b5b0ce"
+    },
+    {
+      "name": "ad_accounts",
+      "logical_table_id": "short_video_ops.ad_accounts",
+      "csv_sha256": "717f5850e1b810566d45a237cae630dcd1bd5d880daed71bc7064d87230a73d5",
+      "utf8_bom": true,
+      "row_count": 8,
+      "columns": [
+        {
+          "name": "ad_account_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 8,
+          "minimum": "AA0101",
+          "maximum": "AA0402",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "account_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 8,
+          "minimum": "官方投放账户AA0101",
+          "maximum": "官方投放账户AA0402",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "CH03",
+          "maximum": "CH06",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "account_status",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": "active",
+          "maximum": "active",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "currency",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": "CNY",
+          "maximum": "CNY",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "ad_account_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "0699e8d293e0e7e5fe3847ae1b7064e03fbacf6382fa1f8de407aa7e155dc10b",
+      "raw_typed_row_multiset_sha256": "0699e8d293e0e7e5fe3847ae1b7064e03fbacf6382fa1f8de407aa7e155dc10b"
+    },
+    {
+      "name": "ad_campaigns",
+      "logical_table_id": "short_video_ops.ad_campaigns",
+      "csv_sha256": "2cbe6f55d8bb36d2c8db41e2a3602a6e0beebac1b369a2c2708bc047e02b928f",
+      "utf8_bom": true,
+      "row_count": 100,
+      "columns": [
+        {
+          "name": "ad_campaign_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 100,
+          "minimum": "ADC00001",
+          "maximum": "ADC00100",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "ad_campaign_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 100,
+          "minimum": "拉新计划001",
+          "maximum": "拉新计划100",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "ad_account_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 8,
+          "minimum": "AA0101",
+          "maximum": "AA0402",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "CH03",
+          "maximum": "CH06",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "objective",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "七日留存",
+          "maximum": "激活",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "budget",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 100,
+          "minimum": 31079,
+          "maximum": 258566,
+          "raw_empty_cell_count": 0,
+          "sum": 13673537,
+          "average": 136735.37
+        },
+        {
+          "name": "start_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 81,
+          "minimum": "2026-01-02",
+          "maximum": "2026-06-20",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "end_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 79,
+          "minimum": "2026-03-01",
+          "maximum": "2026-08-28",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "status",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": "active",
+          "maximum": "completed",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "ad_campaign_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "4f6f2b996b56e6ec48681f95e37e3d80b89b68e530428844f4f202531af11712",
+      "raw_typed_row_multiset_sha256": "4f6f2b996b56e6ec48681f95e37e3d80b89b68e530428844f4f202531af11712"
+    },
+    {
+      "name": "ad_creatives",
+      "logical_table_id": "short_video_ops.ad_creatives",
+      "csv_sha256": "ff1b906c7b471042014835b24cba1e5a719ac23ac8fee596fc4259cbdaedf489",
+      "utf8_bom": true,
+      "row_count": 408,
+      "columns": [
+        {
+          "name": "creative_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 408,
+          "minimum": "CR0000001",
+          "maximum": "CR0000408",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "ad_campaign_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 100,
+          "minimum": "ADC00001",
+          "maximum": "ADC00100",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "creative_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 408,
+          "minimum": "素材ADC00001-1",
+          "maximum": "素材ADC00100-5",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "creative_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "图文",
+          "maximum": "短视频",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "creative_theme",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "功能卖点",
+          "maximum": "达人推荐",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "creative_status",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": "active",
+          "maximum": "paused",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "creative_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "3a4f65ce5ce4a2502a4f69679daafbcd84687af0935febef620e2af88cef9b21",
+      "raw_typed_row_multiset_sha256": "3a4f65ce5ce4a2502a4f69679daafbcd84687af0935febef620e2af88cef9b21"
+    },
+    {
+      "name": "ad_daily_stats",
+      "logical_table_id": "short_video_ops.ad_daily_stats",
+      "csv_sha256": "d26bad3fa663b8e0abeb1ff056e9f65df55aa163aebe298b179e90e9b2de90fc",
+      "utf8_bom": true,
+      "row_count": 5978,
+      "columns": [
+        {
+          "name": "ad_stat_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5978,
+          "minimum": "ADS000000001",
+          "maximum": "ADS000005978",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "ad_campaign_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 100,
+          "minimum": "ADC00001",
+          "maximum": "ADC00100",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "stat_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 239,
+          "minimum": "2026-01-02",
+          "maximum": "2026-08-28",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "impressions",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 5783,
+          "minimum": 12002,
+          "maximum": 94951,
+          "raw_empty_cell_count": 0,
+          "sum": 322491805,
+          "average": 53946.437771830046
+        },
+        {
+          "name": "clicks",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 2906,
+          "minimum": 154,
+          "maximum": 4840,
+          "raw_empty_cell_count": 0,
+          "sum": 10297979,
+          "average": 1722.6462027433925
+        },
+        {
+          "name": "conversions",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 573,
+          "minimum": 14,
+          "maximum": 732,
+          "raw_empty_cell_count": 0,
+          "sum": 1145696,
+          "average": 191.6520575443292
+        },
+        {
+          "name": "spend",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 5942,
+          "minimum": 225.15,
+          "maximum": 6141.65,
+          "raw_empty_cell_count": 0,
+          "sum": 13406831.880000014,
+          "average": 2242.695195717634
+        },
+        {
+          "name": "click_through_rate",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 3093,
+          "minimum": 0.012,
+          "maximum": 0.052,
+          "raw_empty_cell_count": 0,
+          "sum": 191.01256999999956,
+          "average": 0.031952587822013975
+        },
+        {
+          "name": "cost_per_conversion",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 2477,
+          "minimum": 2.4,
+          "maximum": 73.08,
+          "raw_empty_cell_count": 0,
+          "sum": 86978.75000000007,
+          "average": 14.549807627969233
+        }
+      ],
+      "primary_key": [
+        "ad_stat_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "0250cffdec380454b72ccddae7841cba9d10cd39b321dece87252451c9cdb392",
+      "raw_typed_row_multiset_sha256": "0250cffdec380454b72ccddae7841cba9d10cd39b321dece87252451c9cdb392"
+    },
+    {
+      "name": "budget_adjustments",
+      "logical_table_id": "short_video_ops.budget_adjustments",
+      "csv_sha256": "41fe7fa82dc10f97e551a7e891a9f40d02a5baac40c480e2135dc9ee488e1359",
+      "utf8_bom": true,
+      "row_count": 700,
+      "columns": [
+        {
+          "name": "adjustment_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 700,
+          "minimum": "BA000001",
+          "maximum": "BA000700",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "ad_campaign_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 100,
+          "minimum": "ADC00001",
+          "maximum": "ADC00100",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "adjusted_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 700,
+          "minimum": "2026-01-02 09:10:02.000000",
+          "maximum": "2026-08-25 11:04:39.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "previous_budget",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 100,
+          "minimum": 31079,
+          "maximum": 258566,
+          "raw_empty_cell_count": 0,
+          "sum": 97906710,
+          "average": 139866.72857142857
+        },
+        {
+          "name": "new_budget",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 700,
+          "minimum": 23742,
+          "maximum": 363431,
+          "raw_empty_cell_count": 0,
+          "sum": 102804712,
+          "average": 146863.8742857143
+        },
+        {
+          "name": "adjustment_reason",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "留存质量较好",
+          "maximum": "阶段性加量",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "operator_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 8,
+          "minimum": "渠道运营01",
+          "maximum": "渠道运营08",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "adjustment_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "beaaeb0dbed2cabc4d75d6ff7babac260c034fdae45c92c4cee9645db9d26679",
+      "raw_typed_row_multiset_sha256": "beaaeb0dbed2cabc4d75d6ff7babac260c034fdae45c92c4cee9645db9d26679"
+    },
+    {
+      "name": "channel_attributions",
+      "logical_table_id": "short_video_ops.channel_attributions",
+      "csv_sha256": "46a4d8305627dff300d4a6e4a6f9ab9012e61c1e9ca5609360ac39b76d94297b",
+      "utf8_bom": true,
+      "row_count": 5816,
+      "columns": [
+        {
+          "name": "attribution_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5816,
+          "minimum": "ATTR00000001",
+          "maximum": "ATTR00005816",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5816,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "CH03",
+          "maximum": "CH06",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "ad_campaign_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 177,
+          "non_null_distinct_count": 100,
+          "minimum": "ADC00001",
+          "maximum": "ADC00100",
+          "raw_empty_cell_count": 177
+        },
+        {
+          "name": "attribution_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "first_click",
+          "maximum": "view_through",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "attributed_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 5815,
+          "minimum": "2026-01-01 00:51:32.000000",
+          "maximum": "2026-08-28 17:49:37.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "confidence_score",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 2900,
+          "minimum": 0.62,
+          "maximum": 0.9899,
+          "raw_empty_cell_count": 0,
+          "sum": 4681.5935,
+          "average": 0.8049507393397524
+        }
+      ],
+      "primary_key": [
+        "attribution_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "0694ba61f836206f341ae7fbdc494a4f334b3f93430e024dceff13e642c30c78",
+      "raw_typed_row_multiset_sha256": "0694ba61f836206f341ae7fbdc494a4f334b3f93430e024dceff13e642c30c78"
+    },
+    {
+      "name": "channel_conversion_events",
+      "logical_table_id": "short_video_ops.channel_conversion_events",
+      "csv_sha256": "d99dea3ef61ee18d1a72ce5d98b00d4e35502e20d5217810170d31157c7ac078",
+      "utf8_bom": true,
+      "row_count": 9920,
+      "columns": [
+        {
+          "name": "conversion_event_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 9920,
+          "minimum": "CE000000001",
+          "maximum": "CE000009920",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5816,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "CH03",
+          "maximum": "CH06",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "ad_campaign_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 306,
+          "non_null_distinct_count": 100,
+          "minimum": "ADC00001",
+          "maximum": "ADC00100",
+          "raw_empty_cell_count": 306
+        },
+        {
+          "name": "conversion_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": "activation",
+          "maximum": "registration",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "converted_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 9906,
+          "minimum": "2026-01-01 02:37:32.000000",
+          "maximum": "2026-08-28 22:34:37.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "conversion_value",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": 1,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 9920,
+          "average": 1.0
+        }
+      ],
+      "primary_key": [
+        "conversion_event_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "5fcde3fbb8812dec89388cc572185db9c0c14b83994794761949cccf0a973184",
+      "raw_typed_row_multiset_sha256": "5fcde3fbb8812dec89388cc572185db9c0c14b83994794761949cccf0a973184"
+    },
+    {
+      "name": "channel_targets",
+      "logical_table_id": "short_video_ops.channel_targets",
+      "csv_sha256": "bbfe0316b3baf48b853c9cc5ea23f7cea44ad57d8e329108afca1f3a3a3dd849",
+      "utf8_bom": true,
+      "row_count": 32,
+      "columns": [
+        {
+          "name": "channel_target_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 32,
+          "minimum": "CT00001",
+          "maximum": "CT00032",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "target_month",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 8,
+          "minimum": "2026-01",
+          "maximum": "2026-08",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "CH03",
+          "maximum": "CH06",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "spend_target",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 32,
+          "minimum": 351988,
+          "maximum": 895614,
+          "raw_empty_cell_count": 0,
+          "sum": 19888699,
+          "average": 621521.84375
+        },
+        {
+          "name": "registration_target",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 32,
+          "minimum": 823,
+          "maximum": 2394,
+          "raw_empty_cell_count": 0,
+          "sum": 53303,
+          "average": 1665.71875
+        },
+        {
+          "name": "activation_target",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 32,
+          "minimum": 599,
+          "maximum": 1781,
+          "raw_empty_cell_count": 0,
+          "sum": 38036,
+          "average": 1188.625
+        },
+        {
+          "name": "target_cpa",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 32,
+          "minimum": 81.68,
+          "maximum": 250.03,
+          "raw_empty_cell_count": 0,
+          "sum": 5010.649999999999,
+          "average": 156.58281249999996
+        }
+      ],
+      "primary_key": [
+        "channel_target_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "36d2fe518756f8498b61a42445246cbe295151080f357d3e61c2b3b35244f957",
+      "raw_typed_row_multiset_sha256": "36d2fe518756f8498b61a42445246cbe295151080f357d3e61c2b3b35244f957"
+    },
+    {
+      "name": "content_audits",
+      "logical_table_id": "short_video_ops.content_audits",
+      "csv_sha256": "0d5b76eed09bda3e547b02a2d80d466889b6f364ae0cbf5493965fd3499b831b",
+      "utf8_bom": true,
+      "row_count": 8000,
+      "columns": [
+        {
+          "name": "audit_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 8000,
+          "minimum": "AUD00000001",
+          "maximum": "AUD00008000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "content_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 8000,
+          "minimum": "V00000001",
+          "maximum": "V00015000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "audited_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 7997,
+          "minimum": "2026-01-01 00:35:31.000000",
+          "maximum": "2026-08-29 00:43:20.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "audit_status",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "approved",
+          "maximum": "rejected",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "risk_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "低俗",
+          "maximum": "虚假信息",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "review_mode",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "human",
+          "maximum": "mixed",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "audit_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "e6e3c45621b283faaf4cc9bafb4925b4a85a72b6b4c91e4b98c7851ffb092725",
+      "raw_typed_row_multiset_sha256": "e6e3c45621b283faaf4cc9bafb4925b4a85a72b6b4c91e4b98c7851ffb092725"
+    },
+    {
+      "name": "content_categories",
+      "logical_table_id": "short_video_ops.content_categories",
+      "csv_sha256": "62f0d6c0cc83ab02333bbef6e8274442a9b82a0f04b7ae7f82af62393a0fb671",
+      "utf8_bom": true,
+      "row_count": 12,
+      "columns": [
+        {
+          "name": "category_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12,
+          "minimum": "CAT01",
+          "maximum": "CAT12",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "category_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12,
+          "minimum": "亲子",
+          "maximum": "音乐",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "category_level",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": 1,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 12,
+          "average": 1.0
+        },
+        {
+          "name": "enabled",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": 1,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 12,
+          "average": 1.0
+        }
+      ],
+      "primary_key": [
+        "category_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "e79fd97fe5af2854b27ee91fa7b57867c90756c7855b1a4b8c6e9dd6261a7908",
+      "raw_typed_row_multiset_sha256": "e79fd97fe5af2854b27ee91fa7b57867c90756c7855b1a4b8c6e9dd6261a7908"
+    },
+    {
+      "name": "content_daily_metrics",
+      "logical_table_id": "short_video_ops.content_daily_metrics",
+      "csv_sha256": "0d1828e22aa17bebc60c96f773b114c7e94a794eab1114f6f2f6688871a50638",
+      "utf8_bom": true,
+      "row_count": 9000,
+      "columns": [
+        {
+          "name": "content_metric_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 9000,
+          "minimum": "CM00000001",
+          "maximum": "CM00009000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "metric_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 240,
+          "minimum": "2026-01-01",
+          "maximum": "2026-08-28",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "content_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 9000,
+          "minimum": "V00000001",
+          "maximum": "V00015000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "impressions",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 22,
+          "minimum": 1,
+          "maximum": 22,
+          "raw_empty_cell_count": 0,
+          "sum": 84168,
+          "average": 9.352
+        },
+        {
+          "name": "play_count",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 14,
+          "minimum": 0,
+          "maximum": 13,
+          "raw_empty_cell_count": 0,
+          "sum": 29472,
+          "average": 3.2746666666666666
+        },
+        {
+          "name": "watch_seconds",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 832,
+          "minimum": 0,
+          "maximum": 1844,
+          "raw_empty_cell_count": 0,
+          "sum": 1683808,
+          "average": 187.08977777777778
+        },
+        {
+          "name": "interaction_count",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 6,
+          "minimum": 0,
+          "maximum": 5,
+          "raw_empty_cell_count": 0,
+          "sum": 3852,
+          "average": 0.428
+        },
+        {
+          "name": "play_rate",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 101,
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "raw_empty_cell_count": 0,
+          "sum": 3139.0381999999668,
+          "average": 0.34878202222221855
+        },
+        {
+          "name": "completion_rate",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 4417,
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "raw_empty_cell_count": 0,
+          "sum": 5009.688699999989,
+          "average": 0.5566320777777766
+        }
+      ],
+      "primary_key": [
+        "content_metric_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "fbdf0f15c19458033045c1df9e24fe03df47dc29c4306afd3631920973438639",
+      "raw_typed_row_multiset_sha256": "fbdf0f15c19458033045c1df9e24fe03df47dc29c4306afd3631920973438639"
+    },
+    {
+      "name": "content_reports",
+      "logical_table_id": "short_video_ops.content_reports",
+      "csv_sha256": "6ec50eae5acd580276dbc9cb02920ad042bde09d264d5f736ad981054af9aeed",
+      "utf8_bom": true,
+      "row_count": 5000,
+      "columns": [
+        {
+          "name": "report_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5000,
+          "minimum": "RPT00000001",
+          "maximum": "RPT00005000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4100,
+          "minimum": "U0000003",
+          "maximum": "U0011999",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "content_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4246,
+          "minimum": "V00000011",
+          "maximum": "V00014994",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "report_reason",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "不感兴趣",
+          "maximum": "虚假信息",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "reported_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 4998,
+          "minimum": "2026-01-01 00:55:31.000000",
+          "maximum": "2026-08-28 23:09:03.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "process_status",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "dismissed",
+          "maximum": "processed",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "report_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "0d0940a53bbff5a641dbde9c1afc779d64dd74e1f2c72b6cd0f53e648b7d7bae",
+      "raw_typed_row_multiset_sha256": "0d0940a53bbff5a641dbde9c1afc779d64dd74e1f2c72b6cd0f53e648b7d7bae"
+    },
+    {
+      "name": "content_tag_relations",
+      "logical_table_id": "short_video_ops.content_tag_relations",
+      "csv_sha256": "50177097cd0112a90f3c38a033a54b26cd6d63df13fafbe63707f8ca4da4d2d7",
+      "utf8_bom": true,
+      "row_count": 37475,
+      "columns": [
+        {
+          "name": "content_tag_relation_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 37475,
+          "minimum": "CTR000000001",
+          "maximum": "CTR000037475",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "content_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 15000,
+          "minimum": "V00000001",
+          "maximum": "V00015000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "content_tag_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 18,
+          "minimum": "CTAG001",
+          "maximum": "CTAG018",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "confidence_score",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 3999,
+          "minimum": 0.6,
+          "maximum": 1.0,
+          "raw_empty_cell_count": 0,
+          "sum": 29993.430900000203,
+          "average": 0.8003583962641815
+        },
+        {
+          "name": "source",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": "model",
+          "maximum": "model",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "content_tag_relation_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "05c1645d27a79323c2df4292b247ca7a9def8335c09d70b6f76ca83b76bb2ae8",
+      "raw_typed_row_multiset_sha256": "05c1645d27a79323c2df4292b247ca7a9def8335c09d70b6f76ca83b76bb2ae8"
+    },
+    {
+      "name": "content_tags",
+      "logical_table_id": "short_video_ops.content_tags",
+      "csv_sha256": "ef29886b383f1d4adcd38110780ebc454eef85ae455174ca8780641165f09d33",
+      "utf8_bom": true,
+      "row_count": 18,
+      "columns": [
+        {
+          "name": "content_tag_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 18,
+          "minimum": "CTAG001",
+          "maximum": "CTAG018",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "tag_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 18,
+          "minimum": "专业讲解",
+          "maximum": "高颜值",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "tag_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 7,
+          "minimum": "activity",
+          "maximum": "trend",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "enabled",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": 1,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 18,
+          "average": 1.0
+        }
+      ],
+      "primary_key": [
+        "content_tag_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "daa3f7a88348bdb546774373a90daa49d764cf5c65f27f8dd8ff2965786f9c95",
+      "raw_typed_row_multiset_sha256": "daa3f7a88348bdb546774373a90daa49d764cf5c65f27f8dd8ff2965786f9c95"
+    },
+    {
+      "name": "contents",
+      "logical_table_id": "short_video_ops.contents",
+      "csv_sha256": "6e1c0c5f93d3fc1fad07ef2110fad51fe02c4ed104f55312d5e5783d8fd44809",
+      "utf8_bom": true,
+      "row_count": 15000,
+      "columns": [
+        {
+          "name": "content_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 15000,
+          "minimum": "V00000001",
+          "maximum": "V00015000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "creator_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1799,
+          "minimum": "C000001",
+          "maximum": "C001800",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "category_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12,
+          "minimum": "CAT01",
+          "maximum": "CAT12",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "content_title",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 15000,
+          "minimum": "亲子内容000015",
+          "maximum": "音乐内容014966",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "duration_seconds",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 173,
+          "minimum": 8,
+          "maximum": 180,
+          "raw_empty_cell_count": 0,
+          "sum": 1411554,
+          "average": 94.1036
+        },
+        {
+          "name": "published_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 14991,
+          "minimum": "2026-01-01 00:09:31.000000",
+          "maximum": "2026-08-28 23:59:31.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "content_status",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": "published",
+          "maximum": "removed",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "visibility",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": "public",
+          "maximum": "public",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "quality_score",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 5813,
+          "minimum": 0.08,
+          "maximum": 0.99,
+          "raw_empty_cell_count": 0,
+          "sum": 8967.845500000016,
+          "average": 0.5978563666666677
+        }
+      ],
+      "primary_key": [
+        "content_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "32a50b82636767d40e1383fe8f578410c499fc23dd70eb5d7e31aac3a3f54894",
+      "raw_typed_row_multiset_sha256": "32a50b82636767d40e1383fe8f578410c499fc23dd70eb5d7e31aac3a3f54894"
+    },
+    {
+      "name": "creator_daily_metrics",
+      "logical_table_id": "short_video_ops.creator_daily_metrics",
+      "csv_sha256": "3cbea3463c7f351573b4cf1aeda4f25aed0d33c53b032f4ad1cb099ed124b6e3",
+      "utf8_bom": true,
+      "row_count": 1800,
+      "columns": [
+        {
+          "name": "creator_metric_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1800,
+          "minimum": "CRM0000001",
+          "maximum": "CRM0001800",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "metric_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": "2026-08-28",
+          "maximum": "2026-08-28",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "creator_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1800,
+          "minimum": "C000001",
+          "maximum": "C001800",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "play_count",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 61,
+          "minimum": 0,
+          "maximum": 76,
+          "raw_empty_cell_count": 0,
+          "sum": 48697,
+          "average": 27.05388888888889
+        },
+        {
+          "name": "interaction_count",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 16,
+          "minimum": 0,
+          "maximum": 15,
+          "raw_empty_cell_count": 0,
+          "sum": 6443,
+          "average": 3.5794444444444444
+        },
+        {
+          "name": "published_count",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 19,
+          "minimum": 0,
+          "maximum": 18,
+          "raw_empty_cell_count": 0,
+          "sum": 15000,
+          "average": 8.333333333333334
+        },
+        {
+          "name": "interaction_rate",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 214,
+          "minimum": 0.0,
+          "maximum": 0.6667,
+          "raw_empty_cell_count": 0,
+          "sum": 235.7905999999991,
+          "average": 0.13099477777777727
+        }
+      ],
+      "primary_key": [
+        "creator_metric_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "037c11d3228ea16cf04110c1d636aa4d4778976fff37c2f28d70d5d2c7e7052c",
+      "raw_typed_row_multiset_sha256": "037c11d3228ea16cf04110c1d636aa4d4778976fff37c2f28d70d5d2c7e7052c"
+    },
+    {
+      "name": "creator_profiles",
+      "logical_table_id": "short_video_ops.creator_profiles",
+      "csv_sha256": "851cd2499e82fcc184193d671f877d3ff5cd114acdef862c1d40ae0d207bed1b",
+      "utf8_bom": true,
+      "row_count": 1800,
+      "columns": [
+        {
+          "name": "creator_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1800,
+          "minimum": "C000001",
+          "maximum": "C001800",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "primary_category_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12,
+          "minimum": "CAT01",
+          "maximum": "CAT12",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "follower_count",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 1799,
+          "minimum": 353,
+          "maximum": 1199352,
+          "raw_empty_cell_count": 0,
+          "sum": 1102385530,
+          "average": 612436.4055555556
+        },
+        {
+          "name": "published_content_count",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 1444,
+          "minimum": 7,
+          "maximum": 3998,
+          "raw_empty_cell_count": 0,
+          "sum": 3559545,
+          "average": 1977.525
+        },
+        {
+          "name": "quality_score",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 1525,
+          "minimum": 0.15,
+          "maximum": 0.98,
+          "raw_empty_cell_count": 0,
+          "sum": 1011.4996999999987,
+          "average": 0.5619442777777771
+        },
+        {
+          "name": "creator_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "个人",
+          "maximum": "机构",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "snapshot_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": "2026-08-28",
+          "maximum": "2026-08-28",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "creator_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "6042f0a5506560e27a60f50de7d467053544139ac72c2c816c4564d7ec0b0454",
+      "raw_typed_row_multiset_sha256": "6042f0a5506560e27a60f50de7d467053544139ac72c2c816c4564d7ec0b0454"
+    },
+    {
+      "name": "creators",
+      "logical_table_id": "short_video_ops.creators",
+      "csv_sha256": "9ab2bd4e79acffee5698b5f6ee8068329681c344354c1ea52672941e611d63c6",
+      "utf8_bom": true,
+      "row_count": 1800,
+      "columns": [
+        {
+          "name": "creator_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1800,
+          "minimum": "C000001",
+          "maximum": "C001800",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "creator_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1800,
+          "minimum": "创作者00001",
+          "maximum": "创作者01800",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "creator_level",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "头部",
+          "maximum": "新星",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "joined_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 1800,
+          "minimum": "2024-08-19 12:16:33.000000",
+          "maximum": "2026-08-28 19:03:43.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "creator_status",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "active",
+          "maximum": "restricted",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "creator_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "1a517a336a547901c34079806bfd9a229c1d9b45f10192ebee9d9678ef141f73",
+      "raw_typed_row_multiset_sha256": "1a517a336a547901c34079806bfd9a229c1d9b45f10192ebee9d9678ef141f73"
+    },
+    {
+      "name": "growth_daily_metrics",
+      "logical_table_id": "short_video_ops.growth_daily_metrics",
+      "csv_sha256": "85b9dc9f0cabf8811638b9b000a58648cd71cf878c4725d4778172dddce87b0d",
+      "utf8_bom": true,
+      "row_count": 2400,
+      "columns": [
+        {
+          "name": "metric_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 2400,
+          "minimum": "GM00000001",
+          "maximum": "GM00002400",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "metric_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 240,
+          "minimum": "2026-01-01",
+          "maximum": "2026-08-28",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 10,
+          "minimum": "CH01",
+          "maximum": "CH10",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "new_users",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 20,
+          "minimum": 0,
+          "maximum": 20,
+          "raw_empty_cell_count": 0,
+          "sum": 12000,
+          "average": 5.0
+        },
+        {
+          "name": "activated_users",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 16,
+          "minimum": 0,
+          "maximum": 15,
+          "raw_empty_cell_count": 0,
+          "sum": 8978,
+          "average": 3.7408333333333332
+        },
+        {
+          "name": "day1_retained_users",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 11,
+          "minimum": 0,
+          "maximum": 10,
+          "raw_empty_cell_count": 0,
+          "sum": 3767,
+          "average": 1.5695833333333333
+        },
+        {
+          "name": "day7_retained_users",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 9,
+          "minimum": 0,
+          "maximum": 8,
+          "raw_empty_cell_count": 0,
+          "sum": 3342,
+          "average": 1.3925
+        },
+        {
+          "name": "daily_active_users",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 165,
+          "minimum": 0,
+          "maximum": 201,
+          "raw_empty_cell_count": 0,
+          "sum": 86017,
+          "average": 35.84041666666667
+        }
+      ],
+      "primary_key": [
+        "metric_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "53d958ebc1e771e95022c35d094135deced28b2d4d49c25859061331f463df8c",
+      "raw_typed_row_multiset_sha256": "53d958ebc1e771e95022c35d094135deced28b2d4d49c25859061331f463df8c"
+    },
+    {
+      "name": "growth_targets",
+      "logical_table_id": "short_video_ops.growth_targets",
+      "csv_sha256": "4f74ae9a926d3abc5e4261e6bb36601ac9ec487d2b400d4a545a03abae6ac37d",
+      "utf8_bom": true,
+      "row_count": 80,
+      "columns": [
+        {
+          "name": "target_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 80,
+          "minimum": "GT00001",
+          "maximum": "GT00080",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "target_month",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 8,
+          "minimum": "2026-01",
+          "maximum": "2026-08",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 10,
+          "minimum": "CH01",
+          "maximum": "CH10",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "new_user_target",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 74,
+          "minimum": 704,
+          "maximum": 1782,
+          "raw_empty_cell_count": 0,
+          "sum": 93774,
+          "average": 1172.175
+        },
+        {
+          "name": "activation_rate_target",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 80,
+          "minimum": 0.6237,
+          "maximum": 0.8186,
+          "raw_empty_cell_count": 0,
+          "sum": 57.018400000000014,
+          "average": 0.7127300000000002
+        },
+        {
+          "name": "day7_retention_target",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 78,
+          "minimum": 0.2235,
+          "maximum": 0.419,
+          "raw_empty_cell_count": 0,
+          "sum": 25.719400000000004,
+          "average": 0.32149250000000007
+        },
+        {
+          "name": "owner_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 10,
+          "minimum": "增长负责人01",
+          "maximum": "增长负责人10",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "target_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "715fdea3c21e6b6c1b83091314ee101adc7c1d88ba794032b8e8ec28632f33d5",
+      "raw_typed_row_multiset_sha256": "715fdea3c21e6b6c1b83091314ee101adc7c1d88ba794032b8e8ec28632f33d5"
+    },
+    {
+      "name": "recall_campaigns",
+      "logical_table_id": "short_video_ops.recall_campaigns",
+      "csv_sha256": "61707dd98bbf9067ddec9a233bbe27244bda329b99363c18344cbe99c7f4f50c",
+      "utf8_bom": true,
+      "row_count": 24,
+      "columns": [
+        {
+          "name": "recall_campaign_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 24,
+          "minimum": "RC0001",
+          "maximum": "RC0024",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "campaign_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 24,
+          "minimum": "沉默用户召回01",
+          "maximum": "沉默用户召回24",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "target_segment",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "沉默14天",
+          "maximum": "流失30天",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "touch_channel",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "in_app",
+          "maximum": "sms",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "start_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 24,
+          "minimum": "2026-01-31",
+          "maximum": "2026-07-28",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "end_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 24,
+          "minimum": "2026-02-07",
+          "maximum": "2026-08-04",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "status",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": "completed",
+          "maximum": "completed",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "recall_campaign_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "6672b9239f99296244ef06165cfe17782d2e5a62f99b7d0fbd8ccae16a7a1887",
+      "raw_typed_row_multiset_sha256": "6672b9239f99296244ef06165cfe17782d2e5a62f99b7d0fbd8ccae16a7a1887"
+    },
+    {
+      "name": "recall_results",
+      "logical_table_id": "short_video_ops.recall_results",
+      "csv_sha256": "e61336d55d61b3fe51c749b8430f27386a2ee8ee1e5f6c2af80bb32307c80432",
+      "utf8_bom": true,
+      "row_count": 9000,
+      "columns": [
+        {
+          "name": "recall_result_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 9000,
+          "minimum": "RCR000000001",
+          "maximum": "RCR000009000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "touch_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 9000,
+          "minimum": "RCT000000001",
+          "maximum": "RCT000009000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5143,
+          "minimum": "U0000002",
+          "maximum": "U0011997",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "recalled",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": 0,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 745,
+          "average": 0.08277777777777778
+        },
+        {
+          "name": "returned_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 8255,
+          "non_null_distinct_count": 643,
+          "minimum": "2026-02-02 10:00:00.000000",
+          "maximum": "2026-08-06 14:00:00.000000",
+          "raw_empty_cell_count": 8255,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "active_days_after_recall",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 8,
+          "minimum": 0,
+          "maximum": 7,
+          "raw_empty_cell_count": 0,
+          "sum": 3008,
+          "average": 0.3342222222222222
+        }
+      ],
+      "primary_key": [
+        "recall_result_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "b1a9618b3013ae7ed0c3d5b75b95e3c1df5a5c3e239a0299656fd76e3582b696",
+      "raw_typed_row_multiset_sha256": "b1a9618b3013ae7ed0c3d5b75b95e3c1df5a5c3e239a0299656fd76e3582b696"
+    },
+    {
+      "name": "recall_touches",
+      "logical_table_id": "short_video_ops.recall_touches",
+      "csv_sha256": "0ab215862d5c87168d347a948d3e4e709b8cc4a69183b0dd039efd9ac4a4a0c9",
+      "utf8_bom": true,
+      "row_count": 9000,
+      "columns": [
+        {
+          "name": "touch_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 9000,
+          "minimum": "RCT000000001",
+          "maximum": "RCT000009000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "recall_campaign_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 24,
+          "minimum": "RC0001",
+          "maximum": "RC0024",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5143,
+          "minimum": "U0000002",
+          "maximum": "U0011997",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "touch_channel",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "in_app",
+          "maximum": "sms",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "sent_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 1763,
+          "minimum": "2026-01-31 08:00:00.000000",
+          "maximum": "2026-08-03 21:00:00.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "delivered",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": 0,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 8448,
+          "average": 0.9386666666666666
+        },
+        {
+          "name": "clicked",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": 0,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 1295,
+          "average": 0.1438888888888889
+        }
+      ],
+      "primary_key": [
+        "touch_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "d0b1b926e059b0fa6c231259e42640a9b5acf8416a0e03fd2be637892748d84d",
+      "raw_typed_row_multiset_sha256": "d0b1b926e059b0fa6c231259e42640a9b5acf8416a0e03fd2be637892748d84d"
+    },
+    {
+      "name": "topic_content_relations",
+      "logical_table_id": "short_video_ops.topic_content_relations",
+      "csv_sha256": "cbf2fe499c9f345bc77391a3c6f3528f4b31f9573bd7c12bd71adb647d8bc020",
+      "utf8_bom": true,
+      "row_count": 4500,
+      "columns": [
+        {
+          "name": "topic_content_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4500,
+          "minimum": "TC00000001",
+          "maximum": "TC00004500",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "topic_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 120,
+          "minimum": "TOP0001",
+          "maximum": "TOP0120",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "content_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3881,
+          "minimum": "V00000007",
+          "maximum": "V00014996",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "joined_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 2633,
+          "minimum": "2026-01-04 16:28:18.000000",
+          "maximum": "2026-08-28 23:57:45.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "ranking",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 500,
+          "minimum": 1,
+          "maximum": 500,
+          "raw_empty_cell_count": 0,
+          "sum": 1132468,
+          "average": 251.65955555555556
+        },
+        {
+          "name": "traffic_boost",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 251,
+          "minimum": 1.0,
+          "maximum": 3.5,
+          "raw_empty_cell_count": 0,
+          "sum": 10084.870000000023,
+          "average": 2.2410822222222273
+        }
+      ],
+      "primary_key": [
+        "topic_content_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "0fd9d007e51033fd8adf172b243f4ab94f3f6196b8150956ece2f9c4203ceb84",
+      "raw_typed_row_multiset_sha256": "0fd9d007e51033fd8adf172b243f4ab94f3f6196b8150956ece2f9c4203ceb84"
+    },
+    {
+      "name": "trending_topics",
+      "logical_table_id": "short_video_ops.trending_topics",
+      "csv_sha256": "13ee49abc019baacbaa57c25f347942d97f833383224df85ea94b35788ad6d65",
+      "utf8_bom": true,
+      "row_count": 120,
+      "columns": [
+        {
+          "name": "topic_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 120,
+          "minimum": "TOP0001",
+          "maximum": "TOP0120",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "topic_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 120,
+          "minimum": "平台热点话题001",
+          "maximum": "平台热点话题120",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "topic_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5,
+          "minimum": "娱乐",
+          "maximum": "赛事",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "start_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 100,
+          "minimum": "2026-01-03",
+          "maximum": "2026-08-07",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "end_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 89,
+          "minimum": "2026-01-07",
+          "maximum": "2026-08-11",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "heat_score",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 120,
+          "minimum": 7137,
+          "maximum": 99304,
+          "raw_empty_cell_count": 0,
+          "sum": 6318853,
+          "average": 52657.10833333333
+        },
+        {
+          "name": "topic_status",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": "ended",
+          "maximum": "ended",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "topic_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "0e8ad875086aa5393ad5091e506298877b44bc5fdcc2d39c1548a5ce9f4ffe43",
+      "raw_typed_row_multiset_sha256": "0e8ad875086aa5393ad5091e506298877b44bc5fdcc2d39c1548a5ce9f4ffe43"
+    },
+    {
+      "name": "user_activations",
+      "logical_table_id": "short_video_ops.user_activations",
+      "csv_sha256": "9df08d95f6c3b752fc46469ba30ae882773efaa2a9b8816e6bda0235f0be3de1",
+      "utf8_bom": true,
+      "row_count": 12000,
+      "columns": [
+        {
+          "name": "activation_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "ACT00000001",
+          "maximum": "ACT00012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "registration_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "REG00000001",
+          "maximum": "REG00012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "is_activated",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": 0,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 8978,
+          "average": 0.7481666666666666
+        },
+        {
+          "name": "activated_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 3022,
+          "non_null_distinct_count": 8976,
+          "minimum": "2026-01-01 02:07:32.000000",
+          "maximum": "2026-08-29 09:39:09.000000",
+          "raw_empty_cell_count": 3022,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "activation_seconds",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 3022,
+          "non_null_distinct_count": 720,
+          "minimum": 60,
+          "maximum": 43200,
+          "raw_empty_cell_count": 3022,
+          "sum": 193589220,
+          "average": 21562.621964802853
+        },
+        {
+          "name": "activation_rule",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "完成首次互动",
+          "maximum": "观看满5分钟",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "activation_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "7f67636d57aa30ca6a3953d47dd8f82803b48aef94e6e31d3c98404b9dd6e014",
+      "raw_typed_row_multiset_sha256": "7f67636d57aa30ca6a3953d47dd8f82803b48aef94e6e31d3c98404b9dd6e014"
+    },
+    {
+      "name": "user_churn_events",
+      "logical_table_id": "short_video_ops.user_churn_events",
+      "csv_sha256": "f70a6b76bada1595b5fa81aa4334efc210e485a39be77c4f1882f94904c23756",
+      "utf8_bom": true,
+      "row_count": 7149,
+      "columns": [
+        {
+          "name": "churn_event_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 7149,
+          "minimum": "CHURN00000001",
+          "maximum": "CHURN00007149",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 7149,
+          "minimum": "U0000002",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "identified_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": "2026-08-28",
+          "maximum": "2026-08-28",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "churn_level",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": "high",
+          "maximum": "medium",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "inactive_days",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 226,
+          "minimum": 8,
+          "maximum": 239,
+          "raw_empty_cell_count": 0,
+          "sum": 332758,
+          "average": 46.54609036228843
+        },
+        {
+          "name": "churn_reason",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "活跃频次下降",
+          "maximum": "连续未登录",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "churn_event_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "2a0c68416492a805f1af78060fc4b4ae135bbbd627362c304237e7b2ebefc6f3",
+      "raw_typed_row_multiset_sha256": "2a0c68416492a805f1af78060fc4b4ae135bbbd627362c304237e7b2ebefc6f3"
+    },
+    {
+      "name": "user_daily_activity",
+      "logical_table_id": "short_video_ops.user_daily_activity",
+      "csv_sha256": "842f79936acc9f1266df981e9b2e5b43bbd67832080860a86e35d5c86cefdb29",
+      "utf8_bom": true,
+      "row_count": 86017,
+      "columns": [
+        {
+          "name": "activity_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 86017,
+          "minimum": "DA0000000001",
+          "maximum": "DA0000086017",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 11746,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "activity_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 240,
+          "minimum": "2026-01-01",
+          "maximum": "2026-08-28",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "active_minutes",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 187,
+          "minimum": 1,
+          "maximum": 223,
+          "raw_empty_cell_count": 0,
+          "sum": 2837707,
+          "average": 32.99007173000686
+        },
+        {
+          "name": "session_count",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 9,
+          "minimum": 1,
+          "maximum": 9,
+          "raw_empty_cell_count": 0,
+          "sum": 178115,
+          "average": 2.0706953276677864
+        },
+        {
+          "name": "play_count",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 364,
+          "minimum": 1,
+          "maximum": 522,
+          "raw_empty_cell_count": 0,
+          "sum": 5206825,
+          "average": 60.532511015264426
+        },
+        {
+          "name": "interaction_count",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 61,
+          "minimum": 0,
+          "maximum": 83,
+          "raw_empty_cell_count": 0,
+          "sum": 478589,
+          "average": 5.563888533661951
+        },
+        {
+          "name": "is_valid_active",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": 0,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 83824,
+          "average": 0.9745050397014544
+        }
+      ],
+      "primary_key": [
+        "activity_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "4613d5193227526b3ad45c09caf664bfb4fc2fb49ec15328b24889dcfe9cee30",
+      "raw_typed_row_multiset_sha256": "4613d5193227526b3ad45c09caf664bfb4fc2fb49ec15328b24889dcfe9cee30"
+    },
+    {
+      "name": "user_devices",
+      "logical_table_id": "short_video_ops.user_devices",
+      "csv_sha256": "593055b894885f46ae61084f9e12da260393f7eab5060631d035a84ed4ad563d",
+      "utf8_bom": true,
+      "row_count": 13985,
+      "columns": [
+        {
+          "name": "device_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 13985,
+          "minimum": "D00000001",
+          "maximum": "D00013985",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "device_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": "Android",
+          "maximum": "iOS",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "device_level",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "中端机",
+          "maximum": "高端机",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "app_version",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "9.5.0",
+          "maximum": "9.8.0",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "first_seen_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 11996,
+          "minimum": "2026-01-01 00:02:15.000000",
+          "maximum": "2026-08-28 23:59:05.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        }
+      ],
+      "primary_key": [
+        "device_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "731b6d81c98b20a591c01d84fe85f18ee5c08432662ffb1eb9c88b935b1c7836",
+      "raw_typed_row_multiset_sha256": "731b6d81c98b20a591c01d84fe85f18ee5c08432662ffb1eb9c88b935b1c7836"
+    },
+    {
+      "name": "user_lifecycle_snapshots",
+      "logical_table_id": "short_video_ops.user_lifecycle_snapshots",
+      "csv_sha256": "c98a5f0ed9f1f278a2a54fef3da1ffd239cffe01440fcf93e15921eba097a0a7",
+      "utf8_bom": true,
+      "row_count": 12000,
+      "columns": [
+        {
+          "name": "snapshot_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "LCS00000001",
+          "maximum": "LCS00012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "snapshot_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": "2026-08-28",
+          "maximum": "2026-08-28",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "lifecycle_stage",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "新用户",
+          "maximum": "流失用户",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "active_days",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 21,
+          "minimum": 0,
+          "maximum": 20,
+          "raw_empty_cell_count": 0,
+          "sum": 86017,
+          "average": 7.168083333333334
+        },
+        {
+          "name": "days_since_last_active",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 234,
+          "minimum": 0,
+          "maximum": 239,
+          "raw_empty_cell_count": 0,
+          "sum": 345095,
+          "average": 28.757916666666667
+        },
+        {
+          "name": "engagement_score",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 4621,
+          "minimum": 0.05,
+          "maximum": 0.8703,
+          "raw_empty_cell_count": 0,
+          "sum": 3755.9556000000252,
+          "average": 0.3129963000000021
+        }
+      ],
+      "primary_key": [
+        "snapshot_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "3c64e45d991c11f0e9b8e394123bf90fa387ec4da0f3cfda5530cda9b33179cc",
+      "raw_typed_row_multiset_sha256": "3c64e45d991c11f0e9b8e394123bf90fa387ec4da0f3cfda5530cda9b33179cc"
+    },
+    {
+      "name": "user_profiles",
+      "logical_table_id": "short_video_ops.user_profiles",
+      "csv_sha256": "eb484a79dc1cfa6e3dfaf192040c22c66079378c13e0010ade6b99141714e57b",
+      "utf8_bom": true,
+      "row_count": 12000,
+      "columns": [
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "gender",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "女",
+          "maximum": "男",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "age_group",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 6,
+          "minimum": "18-24岁",
+          "maximum": "50岁以上",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "region",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5,
+          "minimum": "华东",
+          "maximum": "西南",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "province",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 19,
+          "minimum": "上海",
+          "maximum": "重庆",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "city",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 20,
+          "minimum": "上海",
+          "maximum": "青岛",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "city_tier",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5,
+          "minimum": "一线",
+          "maximum": "新一线",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "primary_interest",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 10,
+          "minimum": "亲子",
+          "maximum": "音乐",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "updated_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 11997,
+          "minimum": "2026-01-02 08:29:35.000000",
+          "maximum": "2026-10-27 10:04:11.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        }
+      ],
+      "primary_key": [
+        "user_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "41319bc9a57ce4372ce0bca2ac940e5b4bdd13b0bae5d53f914636daf12bceea",
+      "raw_typed_row_multiset_sha256": "41319bc9a57ce4372ce0bca2ac940e5b4bdd13b0bae5d53f914636daf12bceea"
+    },
+    {
+      "name": "user_registrations",
+      "logical_table_id": "short_video_ops.user_registrations",
+      "csv_sha256": "2f7e1cb1381f1e67ec09c3464f6fffec67a25efe5db9552da0503ec611e25cdd",
+      "utf8_bom": true,
+      "row_count": 12000,
+      "columns": [
+        {
+          "name": "registration_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "REG00000001",
+          "maximum": "REG00012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 10,
+          "minimum": "CH01",
+          "maximum": "CH10",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "registered_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 11996,
+          "minimum": "2026-01-01 00:02:15.000000",
+          "maximum": "2026-08-28 23:59:05.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "registration_method",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "Apple",
+          "maximum": "游客转正",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "platform",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": "Android",
+          "maximum": "iOS",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "registration_status",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": "completed",
+          "maximum": "reviewed",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "registration_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "895fa7802cd8a52213850f9bb02c31cdf4cee76c6ee114c992305f829d7264bf",
+      "raw_typed_row_multiset_sha256": "895fa7802cd8a52213850f9bb02c31cdf4cee76c6ee114c992305f829d7264bf"
+    },
+    {
+      "name": "user_retention",
+      "logical_table_id": "short_video_ops.user_retention",
+      "csv_sha256": "7d756b767b11e88f89ab7caa9cf45c6087bf3b8045d8556c09614def8f99838a",
+      "utf8_bom": true,
+      "row_count": 57334,
+      "columns": [
+        {
+          "name": "retention_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 57334,
+          "minimum": "RET000000001",
+          "maximum": "RET000057334",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 11954,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 10,
+          "minimum": "CH01",
+          "maximum": "CH10",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "registration_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 239,
+          "minimum": "2026-01-01",
+          "maximum": "2026-08-27",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "retention_day",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 5,
+          "minimum": 1,
+          "maximum": 30,
+          "raw_empty_cell_count": 0,
+          "sum": 604253,
+          "average": 10.539173963093452
+        },
+        {
+          "name": "observation_date",
+          "source_type": "DATE",
+          "postgresql_type": "date",
+          "null_count": 0,
+          "non_null_distinct_count": 239,
+          "minimum": "2026-01-02",
+          "maximum": "2026-08-28",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "is_retained",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": 0,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 16105,
+          "average": 0.28089789653608677
+        }
+      ],
+      "primary_key": [
+        "retention_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "3f3cafa77bfbb8c8fff90cb732941613c4ef90c94a956327f323cc1e0dc8e1e2",
+      "raw_typed_row_multiset_sha256": "3f3cafa77bfbb8c8fff90cb732941613c4ef90c94a956327f323cc1e0dc8e1e2"
+    },
+    {
+      "name": "user_sessions",
+      "logical_table_id": "short_video_ops.user_sessions",
+      "csv_sha256": "3eec7cd61d7350da3279c9955973a6299d2f42bb10909696f0a1022c9f1454c5",
+      "utf8_bom": true,
+      "row_count": 151094,
+      "columns": [
+        {
+          "name": "session_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 151094,
+          "minimum": "SES0000000001",
+          "maximum": "SES0000151094",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 11746,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "device_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 13553,
+          "minimum": "D00000001",
+          "maximum": "D00013985",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 10,
+          "minimum": "CH01",
+          "maximum": "CH10",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "started_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 101413,
+          "minimum": "2026-01-01 08:12:00.000000",
+          "maximum": "2026-08-28 23:59:00.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "ended_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 132088,
+          "minimum": "2026-01-01 08:29:00.000000",
+          "maximum": "2026-08-29 01:21:00.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "duration_seconds",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 751,
+          "minimum": 30,
+          "maximum": 12960,
+          "raw_empty_cell_count": 0,
+          "sum": 160618479,
+          "average": 1063.036778429322
+        },
+        {
+          "name": "landing_page",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "关注页",
+          "maximum": "消息页",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "session_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "1cf5245fce7acfa20edbf13c06c17f13f47f97429d734828ae921477111ed040",
+      "raw_typed_row_multiset_sha256": "1cf5245fce7acfa20edbf13c06c17f13f47f97429d734828ae921477111ed040"
+    },
+    {
+      "name": "user_tag_relations",
+      "logical_table_id": "short_video_ops.user_tag_relations",
+      "csv_sha256": "6953b6e8f4964821f7ca038c7c490555c140f5da5abc4615047702684a74fcd2",
+      "utf8_bom": true,
+      "row_count": 24000,
+      "columns": [
+        {
+          "name": "relation_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 24000,
+          "minimum": "UTR000000001",
+          "maximum": "UTR000024000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 10395,
+          "minimum": "U0000002",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "tag_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12,
+          "minimum": "UT01",
+          "maximum": "UT12",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "tag_score",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 4382,
+          "minimum": 0.55,
+          "maximum": 0.99,
+          "raw_empty_cell_count": 0,
+          "sum": 18475.91630000011,
+          "average": 0.7698298458333379
+        },
+        {
+          "name": "assigned_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 23985,
+          "minimum": "2026-01-01 00:11:14.000000",
+          "maximum": "2026-08-28 23:48:18.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "source",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "manual",
+          "maximum": "rule",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "relation_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "c6f1b14c5b166430c1c21b0c7d722d38636e132491b285fd96039f1c3a549ffa",
+      "raw_typed_row_multiset_sha256": "c6f1b14c5b166430c1c21b0c7d722d38636e132491b285fd96039f1c3a549ffa"
+    },
+    {
+      "name": "user_tags",
+      "logical_table_id": "short_video_ops.user_tags",
+      "csv_sha256": "481d3df2867088458b6a1637ff39ae55c59608cebe3b3ccb4d72e743f32b12dd",
+      "utf8_bom": true,
+      "row_count": 12,
+      "columns": [
+        {
+          "name": "tag_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12,
+          "minimum": "UT01",
+          "maximum": "UT12",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "tag_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12,
+          "minimum": "付费流量",
+          "maximum": "高活跃",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "tag_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 7,
+          "minimum": "activity",
+          "maximum": "risk",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "enabled",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": 1,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 12,
+          "average": 1.0
+        }
+      ],
+      "primary_key": [
+        "tag_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "77696166c28367e37dbfda336e671d7ba60fe47a2863923b2c7bf63f2373c1cc",
+      "raw_typed_row_multiset_sha256": "77696166c28367e37dbfda336e671d7ba60fe47a2863923b2c7bf63f2373c1cc"
+    },
+    {
+      "name": "users",
+      "logical_table_id": "short_video_ops.users",
+      "csv_sha256": "bb7efa5fd0a5d17fdf1845d297baae7a38c2214795b0e23e03aed0b9c8d6e7ca",
+      "utf8_bom": true,
+      "row_count": 12000,
+      "columns": [
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "nickname",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "短视频用户000001",
+          "maximum": "短视频用户012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "register_channel_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 10,
+          "minimum": "CH01",
+          "maximum": "CH10",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "registered_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 11996,
+          "minimum": "2026-01-01 00:02:15.000000",
+          "maximum": "2026-08-28 23:59:05.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "account_status",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "active",
+          "maximum": "inactive",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "register_platform",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": "Android",
+          "maximum": "iOS",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "user_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "560dc32419710110023edc08e1c66c44a2b82d0df646f62f221aba34aca107b8",
+      "raw_typed_row_multiset_sha256": "560dc32419710110023edc08e1c66c44a2b82d0df646f62f221aba34aca107b8"
+    },
+    {
+      "name": "video_exposures",
+      "logical_table_id": "short_video_ops.video_exposures",
+      "csv_sha256": "2136288a9eb1d7f55197adebe5d490ca44f85dc4164b82ecca70f6afa283b468",
+      "utf8_bom": true,
+      "row_count": 140000,
+      "columns": [
+        {
+          "name": "exposure_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 140000,
+          "minimum": "EXP0000000001",
+          "maximum": "EXP0000140000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 12000,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "content_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 14999,
+          "minimum": "V00000001",
+          "maximum": "V00015000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "position_name",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5,
+          "minimum": "关注流",
+          "maximum": "首页推荐",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "exposed_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 138685,
+          "minimum": "2026-01-01 18:22:47.000000",
+          "maximum": "2026-08-28 23:59:57.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "clicked",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": 0,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 48697,
+          "average": 0.3478357142857143
+        },
+        {
+          "name": "recommendation_source",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4,
+          "minimum": "关注关系",
+          "maximum": "热门推荐",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "exposure_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "e3e9db27ecc1b6a207dd26dfbb916c563bd7003b3826dafec462972a23488b9c",
+      "raw_typed_row_multiset_sha256": "e3e9db27ecc1b6a207dd26dfbb916c563bd7003b3826dafec462972a23488b9c"
+    },
+    {
+      "name": "video_interactions",
+      "logical_table_id": "short_video_ops.video_interactions",
+      "csv_sha256": "2b2940c9e24ea793fcf068c267f96634e55672fc9554ef7dfa4ad3d8179d4e42",
+      "utf8_bom": true,
+      "row_count": 6443,
+      "columns": [
+        {
+          "name": "interaction_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 6443,
+          "minimum": "INT0000000001",
+          "maximum": "INT0000006443",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "play_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 6443,
+          "minimum": "PLAY0000000025",
+          "maximum": "PLAY0000048676",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 4923,
+          "minimum": "U0000006",
+          "maximum": "U0011997",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "content_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5144,
+          "minimum": "V00000002",
+          "maximum": "V00014996",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "interaction_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 5,
+          "minimum": "comment",
+          "maximum": "share",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "interacted_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 6440,
+          "minimum": "2026-01-02 13:22:03.000000",
+          "maximum": "2026-08-29 00:02:03.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "valid_interaction",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 1,
+          "minimum": 1,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 6443,
+          "average": 1.0
+        }
+      ],
+      "primary_key": [
+        "interaction_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "55a2d88fa0d37bc4cbcf5019725730443f6716b55c943195367211222e9242f9",
+      "raw_typed_row_multiset_sha256": "55a2d88fa0d37bc4cbcf5019725730443f6716b55c943195367211222e9242f9"
+    },
+    {
+      "name": "video_plays",
+      "logical_table_id": "short_video_ops.video_plays",
+      "csv_sha256": "f8addafc233c45eb04e1393f203003efb6aff334de5cc619c464e8068a7a15bf",
+      "utf8_bom": true,
+      "row_count": 48697,
+      "columns": [
+        {
+          "name": "play_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 48697,
+          "minimum": "PLAY0000000001",
+          "maximum": "PLAY0000048697",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "exposure_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 48697,
+          "minimum": "EXP0000000001",
+          "maximum": "EXP0000139999",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "user_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 11780,
+          "minimum": "U0000001",
+          "maximum": "U0012000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "content_id",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 14276,
+          "minimum": "V00000001",
+          "maximum": "V00015000",
+          "raw_empty_cell_count": 0
+        },
+        {
+          "name": "played_at",
+          "source_type": "TIMESTAMP",
+          "postgresql_type": "timestamp without time zone",
+          "null_count": 0,
+          "non_null_distinct_count": 48534,
+          "minimum": "2026-01-01 18:22:47.000000",
+          "maximum": "2026-08-28 23:59:57.000000",
+          "raw_empty_cell_count": 0,
+          "fractional_value_count": 0,
+          "max_fractional_digits": 0
+        },
+        {
+          "name": "watch_seconds",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 180,
+          "minimum": 1,
+          "maximum": 180,
+          "raw_empty_cell_count": 0,
+          "sum": 2784873,
+          "average": 57.187773374129826
+        },
+        {
+          "name": "completion_rate",
+          "source_type": "DOUBLE",
+          "postgresql_type": "double precision",
+          "null_count": 0,
+          "non_null_distinct_count": 6591,
+          "minimum": 0.0152,
+          "maximum": 1.0,
+          "raw_empty_cell_count": 0,
+          "sum": 29555.145300000062,
+          "average": 0.6069192208965657
+        },
+        {
+          "name": "completed",
+          "source_type": "BIGINT",
+          "postgresql_type": "bigint",
+          "null_count": 0,
+          "non_null_distinct_count": 2,
+          "minimum": 0,
+          "maximum": 1,
+          "raw_empty_cell_count": 0,
+          "sum": 5851,
+          "average": 0.12015113867384028
+        },
+        {
+          "name": "network_type",
+          "source_type": "VARCHAR",
+          "postgresql_type": "text",
+          "null_count": 0,
+          "non_null_distinct_count": 3,
+          "minimum": "4g",
+          "maximum": "wifi",
+          "raw_empty_cell_count": 0
+        }
+      ],
+      "primary_key": [
+        "play_id"
+      ],
+      "primary_key_duplicate_groups": 0,
+      "primary_key_null_rows": 0,
+      "typed_row_multiset_sha256": "e95bee4bc38d0e668325ae7b724d87104e393a9e94691470a3a284ccb2ba8c86",
+      "raw_typed_row_multiset_sha256": "e95bee4bc38d0e668325ae7b724d87104e393a9e94691470a3a284ccb2ba8c86"
+    }
+  ],
+  "relations": [
+    {
+      "left_table": "short_video_ops.acquisition_channels",
+      "left_table_name": "acquisition_channels",
+      "left_field": "channel_id",
+      "right_table": "short_video_ops.users",
+      "right_table_name": "users",
+      "right_field": "register_channel_id",
+      "relation_type": "foreign_key",
+      "description": "用户通过渠道注册",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.user_profiles",
+      "right_table_name": "user_profiles",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户对应画像",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.user_devices",
+      "right_table_name": "user_devices",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户绑定设备",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.user_registrations",
+      "right_table_name": "user_registrations",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户产生注册记录",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.acquisition_channels",
+      "left_table_name": "acquisition_channels",
+      "left_field": "channel_id",
+      "right_table": "short_video_ops.user_registrations",
+      "right_table_name": "user_registrations",
+      "right_field": "channel_id",
+      "relation_type": "foreign_key",
+      "description": "注册归因到渠道",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.user_registrations",
+      "left_table_name": "user_registrations",
+      "left_field": "registration_id",
+      "right_table": "short_video_ops.user_activations",
+      "right_table_name": "user_activations",
+      "right_field": "registration_id",
+      "relation_type": "foreign_key",
+      "description": "注册产生激活结果",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.user_activations",
+      "right_table_name": "user_activations",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户对应激活结果",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.user_daily_activity",
+      "right_table_name": "user_daily_activity",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户产生活跃记录",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.user_retention",
+      "right_table_name": "user_retention",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户对应留存结果",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.acquisition_channels",
+      "left_table_name": "acquisition_channels",
+      "left_field": "channel_id",
+      "right_table": "short_video_ops.user_retention",
+      "right_table_name": "user_retention",
+      "right_field": "channel_id",
+      "relation_type": "foreign_key",
+      "description": "留存结果归因到渠道",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.user_tags",
+      "left_table_name": "user_tags",
+      "left_field": "tag_id",
+      "right_table": "short_video_ops.user_tag_relations",
+      "right_table_name": "user_tag_relations",
+      "right_field": "tag_id",
+      "relation_type": "foreign_key",
+      "description": "标签分配给用户",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.user_tag_relations",
+      "right_table_name": "user_tag_relations",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户获得标签",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.user_sessions",
+      "right_table_name": "user_sessions",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户产生访问会话",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.user_devices",
+      "left_table_name": "user_devices",
+      "left_field": "device_id",
+      "right_table": "short_video_ops.user_sessions",
+      "right_table_name": "user_sessions",
+      "right_field": "device_id",
+      "relation_type": "foreign_key",
+      "description": "会话使用设备",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.acquisition_channels",
+      "left_table_name": "acquisition_channels",
+      "left_field": "channel_id",
+      "right_table": "short_video_ops.user_sessions",
+      "right_table_name": "user_sessions",
+      "right_field": "channel_id",
+      "relation_type": "foreign_key",
+      "description": "会话来源渠道",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.user_lifecycle_snapshots",
+      "right_table_name": "user_lifecycle_snapshots",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户对应生命周期快照",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.user_churn_events",
+      "right_table_name": "user_churn_events",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户产生流失事件",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.recall_campaigns",
+      "left_table_name": "recall_campaigns",
+      "left_field": "recall_campaign_id",
+      "right_table": "short_video_ops.recall_touches",
+      "right_table_name": "recall_touches",
+      "right_field": "recall_campaign_id",
+      "relation_type": "foreign_key",
+      "description": "召回活动产生触达",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.recall_touches",
+      "right_table_name": "recall_touches",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户收到召回触达",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.recall_touches",
+      "left_table_name": "recall_touches",
+      "left_field": "touch_id",
+      "right_table": "short_video_ops.recall_results",
+      "right_table_name": "recall_results",
+      "right_field": "touch_id",
+      "relation_type": "foreign_key",
+      "description": "触达产生召回结果",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.acquisition_channels",
+      "left_table_name": "acquisition_channels",
+      "left_field": "channel_id",
+      "right_table": "short_video_ops.growth_daily_metrics",
+      "right_table_name": "growth_daily_metrics",
+      "right_field": "channel_id",
+      "relation_type": "foreign_key",
+      "description": "增长指标按渠道统计",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.acquisition_channels",
+      "left_table_name": "acquisition_channels",
+      "left_field": "channel_id",
+      "right_table": "short_video_ops.growth_targets",
+      "right_table_name": "growth_targets",
+      "right_field": "channel_id",
+      "relation_type": "foreign_key",
+      "description": "增长目标按渠道制定",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.acquisition_channels",
+      "left_table_name": "acquisition_channels",
+      "left_field": "channel_id",
+      "right_table": "short_video_ops.ad_accounts",
+      "right_table_name": "ad_accounts",
+      "right_field": "channel_id",
+      "relation_type": "foreign_key",
+      "description": "广告账户归属渠道",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.ad_accounts",
+      "left_table_name": "ad_accounts",
+      "left_field": "ad_account_id",
+      "right_table": "short_video_ops.ad_campaigns",
+      "right_table_name": "ad_campaigns",
+      "right_field": "ad_account_id",
+      "relation_type": "foreign_key",
+      "description": "广告账户包含计划",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.acquisition_channels",
+      "left_table_name": "acquisition_channels",
+      "left_field": "channel_id",
+      "right_table": "short_video_ops.ad_campaigns",
+      "right_table_name": "ad_campaigns",
+      "right_field": "channel_id",
+      "relation_type": "foreign_key",
+      "description": "广告计划投放至渠道",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.ad_campaigns",
+      "left_table_name": "ad_campaigns",
+      "left_field": "ad_campaign_id",
+      "right_table": "short_video_ops.ad_creatives",
+      "right_table_name": "ad_creatives",
+      "right_field": "ad_campaign_id",
+      "relation_type": "foreign_key",
+      "description": "广告计划使用创意素材",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.ad_campaigns",
+      "left_table_name": "ad_campaigns",
+      "left_field": "ad_campaign_id",
+      "right_table": "short_video_ops.ad_daily_stats",
+      "right_table_name": "ad_daily_stats",
+      "right_field": "ad_campaign_id",
+      "relation_type": "foreign_key",
+      "description": "广告计划产生每日效果",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.channel_attributions",
+      "right_table_name": "channel_attributions",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户对应渠道归因",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.acquisition_channels",
+      "left_table_name": "acquisition_channels",
+      "left_field": "channel_id",
+      "right_table": "short_video_ops.channel_attributions",
+      "right_table_name": "channel_attributions",
+      "right_field": "channel_id",
+      "relation_type": "foreign_key",
+      "description": "归因结果对应渠道",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.channel_conversion_events",
+      "right_table_name": "channel_conversion_events",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户产生渠道转化事件",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.acquisition_channels",
+      "left_table_name": "acquisition_channels",
+      "left_field": "channel_id",
+      "right_table": "short_video_ops.channel_conversion_events",
+      "right_table_name": "channel_conversion_events",
+      "right_field": "channel_id",
+      "relation_type": "foreign_key",
+      "description": "转化事件归因到渠道",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.acquisition_channels",
+      "left_table_name": "acquisition_channels",
+      "left_field": "channel_id",
+      "right_table": "short_video_ops.channel_targets",
+      "right_table_name": "channel_targets",
+      "right_field": "channel_id",
+      "relation_type": "foreign_key",
+      "description": "渠道对应月度目标",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.ad_campaigns",
+      "left_table_name": "ad_campaigns",
+      "left_field": "ad_campaign_id",
+      "right_table": "short_video_ops.budget_adjustments",
+      "right_table_name": "budget_adjustments",
+      "right_field": "ad_campaign_id",
+      "relation_type": "foreign_key",
+      "description": "广告计划产生预算调整",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.creators",
+      "left_table_name": "creators",
+      "left_field": "creator_id",
+      "right_table": "short_video_ops.creator_profiles",
+      "right_table_name": "creator_profiles",
+      "right_field": "creator_id",
+      "relation_type": "foreign_key",
+      "description": "创作者对应画像",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.creators",
+      "left_table_name": "creators",
+      "left_field": "creator_id",
+      "right_table": "short_video_ops.contents",
+      "right_table_name": "contents",
+      "right_field": "creator_id",
+      "relation_type": "foreign_key",
+      "description": "创作者发布内容",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.content_categories",
+      "left_table_name": "content_categories",
+      "left_field": "category_id",
+      "right_table": "short_video_ops.contents",
+      "right_table_name": "contents",
+      "right_field": "category_id",
+      "relation_type": "foreign_key",
+      "description": "内容归属分类",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.contents",
+      "left_table_name": "contents",
+      "left_field": "content_id",
+      "right_table": "short_video_ops.content_tag_relations",
+      "right_table_name": "content_tag_relations",
+      "right_field": "content_id",
+      "relation_type": "foreign_key",
+      "description": "内容获得标签",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.content_tags",
+      "left_table_name": "content_tags",
+      "left_field": "content_tag_id",
+      "right_table": "short_video_ops.content_tag_relations",
+      "right_table_name": "content_tag_relations",
+      "right_field": "content_tag_id",
+      "relation_type": "foreign_key",
+      "description": "标签关联内容",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.video_exposures",
+      "right_table_name": "video_exposures",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户获得视频曝光",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.contents",
+      "left_table_name": "contents",
+      "left_field": "content_id",
+      "right_table": "short_video_ops.video_exposures",
+      "right_table_name": "video_exposures",
+      "right_field": "content_id",
+      "relation_type": "foreign_key",
+      "description": "内容获得曝光",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.video_exposures",
+      "left_table_name": "video_exposures",
+      "left_field": "exposure_id",
+      "right_table": "short_video_ops.video_plays",
+      "right_table_name": "video_plays",
+      "right_field": "exposure_id",
+      "relation_type": "foreign_key",
+      "description": "曝光产生播放",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.video_plays",
+      "right_table_name": "video_plays",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户产生播放",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.contents",
+      "left_table_name": "contents",
+      "left_field": "content_id",
+      "right_table": "short_video_ops.video_plays",
+      "right_table_name": "video_plays",
+      "right_field": "content_id",
+      "relation_type": "foreign_key",
+      "description": "内容产生播放",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.video_plays",
+      "left_table_name": "video_plays",
+      "left_field": "play_id",
+      "right_table": "short_video_ops.video_interactions",
+      "right_table_name": "video_interactions",
+      "right_field": "play_id",
+      "relation_type": "foreign_key",
+      "description": "播放产生互动",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.video_interactions",
+      "right_table_name": "video_interactions",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户产生互动",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.contents",
+      "left_table_name": "contents",
+      "left_field": "content_id",
+      "right_table": "short_video_ops.video_interactions",
+      "right_table_name": "video_interactions",
+      "right_field": "content_id",
+      "relation_type": "foreign_key",
+      "description": "内容获得互动",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.contents",
+      "left_table_name": "contents",
+      "left_field": "content_id",
+      "right_table": "short_video_ops.content_daily_metrics",
+      "right_table_name": "content_daily_metrics",
+      "right_field": "content_id",
+      "relation_type": "foreign_key",
+      "description": "内容对应日指标",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.creators",
+      "left_table_name": "creators",
+      "left_field": "creator_id",
+      "right_table": "short_video_ops.creator_daily_metrics",
+      "right_table_name": "creator_daily_metrics",
+      "right_field": "creator_id",
+      "relation_type": "foreign_key",
+      "description": "创作者对应日指标",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.contents",
+      "left_table_name": "contents",
+      "left_field": "content_id",
+      "right_table": "short_video_ops.content_audits",
+      "right_table_name": "content_audits",
+      "right_field": "content_id",
+      "relation_type": "foreign_key",
+      "description": "内容产生审核记录",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.users",
+      "left_table_name": "users",
+      "left_field": "user_id",
+      "right_table": "short_video_ops.content_reports",
+      "right_table_name": "content_reports",
+      "right_field": "user_id",
+      "relation_type": "foreign_key",
+      "description": "用户提交内容举报",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.contents",
+      "left_table_name": "contents",
+      "left_field": "content_id",
+      "right_table": "short_video_ops.content_reports",
+      "right_table_name": "content_reports",
+      "right_field": "content_id",
+      "relation_type": "foreign_key",
+      "description": "举报指向内容",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.trending_topics",
+      "left_table_name": "trending_topics",
+      "left_field": "topic_id",
+      "right_table": "short_video_ops.topic_content_relations",
+      "right_table_name": "topic_content_relations",
+      "right_field": "topic_id",
+      "relation_type": "foreign_key",
+      "description": "热点话题关联内容",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    },
+    {
+      "left_table": "short_video_ops.contents",
+      "left_table_name": "contents",
+      "left_field": "content_id",
+      "right_table": "short_video_ops.topic_content_relations",
+      "right_table_name": "topic_content_relations",
+      "right_field": "content_id",
+      "relation_type": "foreign_key",
+      "description": "内容参与热点话题",
+      "endpoint_valid": true,
+      "unmatched_non_null_child_rows": 0,
+      "create_fk_constraint": false
+    }
+  ],
+  "source": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+    "expected_data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "files_sha256": {
+      "acquisition_channels.csv": "e1dd8578aa5b173e28060d1c8c731234fcb97657b96cde58e6d0c71758a10151",
+      "ad_accounts.csv": "717f5850e1b810566d45a237cae630dcd1bd5d880daed71bc7064d87230a73d5",
+      "ad_campaigns.csv": "2cbe6f55d8bb36d2c8db41e2a3602a6e0beebac1b369a2c2708bc047e02b928f",
+      "ad_creatives.csv": "ff1b906c7b471042014835b24cba1e5a719ac23ac8fee596fc4259cbdaedf489",
+      "ad_daily_stats.csv": "d26bad3fa663b8e0abeb1ff056e9f65df55aa163aebe298b179e90e9b2de90fc",
+      "budget_adjustments.csv": "41fe7fa82dc10f97e551a7e891a9f40d02a5baac40c480e2135dc9ee488e1359",
+      "channel_attributions.csv": "46a4d8305627dff300d4a6e4a6f9ab9012e61c1e9ca5609360ac39b76d94297b",
+      "channel_conversion_events.csv": "d99dea3ef61ee18d1a72ce5d98b00d4e35502e20d5217810170d31157c7ac078",
+      "channel_targets.csv": "bbfe0316b3baf48b853c9cc5ea23f7cea44ad57d8e329108afca1f3a3a3dd849",
+      "content_audits.csv": "0d5b76eed09bda3e547b02a2d80d466889b6f364ae0cbf5493965fd3499b831b",
+      "content_categories.csv": "62f0d6c0cc83ab02333bbef6e8274442a9b82a0f04b7ae7f82af62393a0fb671",
+      "content_daily_metrics.csv": "0d1828e22aa17bebc60c96f773b114c7e94a794eab1114f6f2f6688871a50638",
+      "content_reports.csv": "6ec50eae5acd580276dbc9cb02920ad042bde09d264d5f736ad981054af9aeed",
+      "content_tag_relations.csv": "50177097cd0112a90f3c38a033a54b26cd6d63df13fafbe63707f8ca4da4d2d7",
+      "content_tags.csv": "ef29886b383f1d4adcd38110780ebc454eef85ae455174ca8780641165f09d33",
+      "contents.csv": "6e1c0c5f93d3fc1fad07ef2110fad51fe02c4ed104f55312d5e5783d8fd44809",
+      "creator_daily_metrics.csv": "3cbea3463c7f351573b4cf1aeda4f25aed0d33c53b032f4ad1cb099ed124b6e3",
+      "creator_profiles.csv": "851cd2499e82fcc184193d671f877d3ff5cd114acdef862c1d40ae0d207bed1b",
+      "creators.csv": "9ab2bd4e79acffee5698b5f6ee8068329681c344354c1ea52672941e611d63c6",
+      "growth_daily_metrics.csv": "85b9dc9f0cabf8811638b9b000a58648cd71cf878c4725d4778172dddce87b0d",
+      "growth_targets.csv": "4f74ae9a926d3abc5e4261e6bb36601ac9ec487d2b400d4a545a03abae6ac37d",
+      "recall_campaigns.csv": "61707dd98bbf9067ddec9a233bbe27244bda329b99363c18344cbe99c7f4f50c",
+      "recall_results.csv": "e61336d55d61b3fe51c749b8430f27386a2ee8ee1e5f6c2af80bb32307c80432",
+      "recall_touches.csv": "0ab215862d5c87168d347a948d3e4e709b8cc4a69183b0dd039efd9ac4a4a0c9",
+      "topic_content_relations.csv": "cbf2fe499c9f345bc77391a3c6f3528f4b31f9573bd7c12bd71adb647d8bc020",
+      "trending_topics.csv": "13ee49abc019baacbaa57c25f347942d97f833383224df85ea94b35788ad6d65",
+      "user_activations.csv": "9df08d95f6c3b752fc46469ba30ae882773efaa2a9b8816e6bda0235f0be3de1",
+      "user_churn_events.csv": "f70a6b76bada1595b5fa81aa4334efc210e485a39be77c4f1882f94904c23756",
+      "user_daily_activity.csv": "842f79936acc9f1266df981e9b2e5b43bbd67832080860a86e35d5c86cefdb29",
+      "user_devices.csv": "593055b894885f46ae61084f9e12da260393f7eab5060631d035a84ed4ad563d",
+      "user_lifecycle_snapshots.csv": "c98a5f0ed9f1f278a2a54fef3da1ffd239cffe01440fcf93e15921eba097a0a7",
+      "user_profiles.csv": "eb484a79dc1cfa6e3dfaf192040c22c66079378c13e0010ade6b99141714e57b",
+      "user_registrations.csv": "2f7e1cb1381f1e67ec09c3464f6fffec67a25efe5db9552da0503ec611e25cdd",
+      "user_retention.csv": "7d756b767b11e88f89ab7caa9cf45c6087bf3b8045d8556c09614def8f99838a",
+      "user_sessions.csv": "3eec7cd61d7350da3279c9955973a6299d2f42bb10909696f0a1022c9f1454c5",
+      "user_tag_relations.csv": "6953b6e8f4964821f7ca038c7c490555c140f5da5abc4615047702684a74fcd2",
+      "user_tags.csv": "481d3df2867088458b6a1637ff39ae55c59608cebe3b3ccb4d72e743f32b12dd",
+      "users.csv": "bb7efa5fd0a5d17fdf1845d297baae7a38c2214795b0e23e03aed0b9c8d6e7ca",
+      "video_exposures.csv": "2136288a9eb1d7f55197adebe5d490ca44f85dc4164b82ecca70f6afa283b468",
+      "video_interactions.csv": "2b2940c9e24ea793fcf068c267f96634e55672fc9554ef7dfa4ad3d8179d4e42",
+      "video_plays.csv": "f8addafc233c45eb04e1393f203003efb6aff334de5cc619c464e8068a7a15bf",
+      "_schema.json": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede",
+      "_database_manifest.json": "f82006fdde9113ac97674788c533898fe410e91c81ddfdc60ad23fe6ebd8d2b1"
+    },
+    "csv_bytes": 51894889
+  },
+  "csv_null_probe": {
+    "passed": true,
+    "unquoted_empty_is_null": true,
+    "quoted_empty_is_null": true,
+    "literal_NULL_is_text": true,
+    "quoted_comma_preserved": true
+  },
+  "source_files_unchanged": true,
+  "summary": {
+    "table_count": 41,
+    "field_count": 276,
+    "row_count": 722732,
+    "relation_count": 53,
+    "type_counts": {
+      "VARCHAR": 168,
+      "BIGINT": 54,
+      "DATE": 16,
+      "DOUBLE": 17,
+      "TIMESTAMP": 21
+    },
+    "error_count": 0,
+    "warning_count": 0,
+    "columns_with_null": [
+      {
+        "table": "channel_attributions",
+        "column": "ad_campaign_id",
+        "null_count": 177
+      },
+      {
+        "table": "channel_conversion_events",
+        "column": "ad_campaign_id",
+        "null_count": 306
+      },
+      {
+        "table": "recall_results",
+        "column": "returned_at",
+        "null_count": 8255
+      },
+      {
+        "table": "user_activations",
+        "column": "activated_at",
+        "null_count": 3022
+      },
+      {
+        "table": "user_activations",
+        "column": "activation_seconds",
+        "null_count": 3022
+      }
+    ]
+  },
+  "import_spec_sha256": "8f936c3089614a38b17194b76e0c073c20cfe5b194ecb8f9f1e27b8f4d2ca7fd"
+}

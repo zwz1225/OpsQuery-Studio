@@ -1,0 +1,48 @@
+{
+  "stage": "M3 E02 independent development24 server pair preparation",
+  "recorded_at": "2026-10-22",
+  "bundle_schema": "m3_e02_pair24_bundle_v1",
+  "bundle_id": "2ff7b2a2b12751bf163d970ce8e688498c5bfc9bfaf325c7e67a1a58fb2a0dd6",
+  "sync_package": "M3_E02_pair24_sync_20261022_v5.zip",
+  "sync_package_sha256": "0da7134c14664d82a4d6471b42c7c61cf511d930141f03e9708f664c3d59f5bd",
+  "sync_package_zip_test": "passed",
+  "duplicate_zip_member_count": 0,
+  "fixed_case_count": 24,
+  "primary_case_ids": [
+    "BIRD-PG-1479"
+  ],
+  "observed_diagnostic_case_ids": [
+    "BIRD-PG-0407"
+  ],
+  "preserved_success_regression_count": 20,
+  "baseline_producer_file_count": 96,
+  "candidate_producer_file_count": 98,
+  "candidate_changed_existing_files": [
+    "evaluation/bird/case_worker.py",
+    "evaluation/bird/diagnostic_runner.py",
+    "evaluation/bird/intent.py",
+    "evaluation/bird/retrieval.py"
+  ],
+  "candidate_added_files": [
+    "evaluation/bird/demand_relations.py",
+    "evaluation/bird/reviewed_relations.py"
+  ],
+  "output_contract_enabled": false,
+  "indexes": "independent isolated indexes; no cross-side copy or forced cache hit",
+  "test_runs": [
+    {
+      "command": "python -m unittest tests.test_m3_e02_pair24 -q",
+      "result": "passed",
+      "tests": 6
+    },
+    {
+      "command": "python -m unittest tests.test_m3_e02_pair24 tests.test_m3_condition_relations -q",
+      "result": "passed",
+      "tests": 17
+    }
+  ],
+  "server_preflight_run": false,
+  "postgresql_connected": false,
+  "model_requests": 0,
+  "holdout_run": false
+}

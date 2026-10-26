@@ -1,0 +1,914 @@
+{
+  "run_status": "complete",
+  "policy": {
+    "policy_id": "bird_public_intent_candidate_v1",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+    "baseline_preserved": true,
+    "max_fields": 20,
+    "max_added_fields": 8,
+    "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+    "max_related_hops": 2,
+    "join_source": "declared_foreign_keys_only",
+    "canonical_lookup_max_pairs": 4,
+    "canonical_lookup_sql_tool_calls": 1,
+    "lookup_consumes_existing_sql_budget": true,
+    "numeric_policy": "percentage_real_operand_before_scaling_v1",
+    "native_ex_unchanged": true
+  },
+  "source_report_sha256": "4f08270884badfe30d896d5c5ac55c84a7eee1c1060891c2846a452949a4512a",
+  "case_count": 14,
+  "checks": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "required_fields": [
+        "event.event_date",
+        "event.event_name",
+        "event.status",
+        "event.type"
+      ],
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "required_fields": [
+        "atom.atom_id",
+        "atom.element"
+      ],
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-1399",
+      "required_fields": [
+        "member.first_name",
+        "member.last_name"
+      ],
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-1399",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "required_fields": [
+        "posts.title",
+        "users.displayname"
+      ],
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-0036",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "check": "baseline_preserved_and_bounded",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "baseline_field_ids": [
+        "california_schools.schools.mailstrabr",
+        "california_schools.schools.mailstreet",
+        "california_schools.satscores.avgscrmath",
+        "california_schools.schools.streetabr",
+        "california_schools.satscores.sname"
+      ],
+      "added_field_ids": [
+        "california_schools.schools.school",
+        "california_schools.schools.street"
+      ],
+      "graph_field_ids": [
+        "california_schools.schools.mailstrabr",
+        "california_schools.schools.mailstreet",
+        "california_schools.satscores.avgscrmath",
+        "california_schools.schools.streetabr",
+        "california_schools.satscores.sname",
+        "california_schools.schools.school",
+        "california_schools.schools.street",
+        "california_schools.schools.cdscode",
+        "california_schools.satscores.cds"
+      ],
+      "declared_join_ids": [
+        "satscores_cds_fkey:cds"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "california_schools.schools.school",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "california_schools.schools",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        },
+        {
+          "field_id": "california_schools.schools.street",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "california_schools.schools",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        }
+      ],
+      "captured_sql_constraint_violations": [
+        {
+          "code": "nullable_order_nulls_first",
+          "reason": "Rank nonmissing values first: use explicit NULLS LAST on this nullable ordering expression.",
+          "expression": "sc.avgscrmath"
+        }
+      ],
+      "canonical_lookup_plan": [],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "baseline_field_ids": [
+        "financial.district.a11",
+        "financial.disp.client_id",
+        "financial.loan.account_id",
+        "financial.client.birth_date",
+        "financial.client.client_id",
+        "financial.disp.account_id",
+        "financial.trans.account",
+        "financial.order.account_id",
+        "financial.account.account_id"
+      ],
+      "added_field_ids": [],
+      "graph_field_ids": [
+        "financial.district.a11",
+        "financial.disp.client_id",
+        "financial.loan.account_id",
+        "financial.client.birth_date",
+        "financial.client.client_id",
+        "financial.disp.account_id",
+        "financial.trans.account",
+        "financial.order.account_id",
+        "financial.account.account_id",
+        "financial.district.district_id",
+        "financial.account.district_id",
+        "financial.client.district_id",
+        "financial.trans.account_id"
+      ],
+      "declared_join_ids": [
+        "account_district_id_fkey:district_id",
+        "client_district_id_fkey:district_id",
+        "disp_account_id_fkey:account_id",
+        "loan_account_id_fkey:account_id",
+        "order_account_id_fkey:account_id",
+        "trans_account_id_fkey:account_id"
+      ],
+      "coverage_decisions": [],
+      "captured_sql_constraint_violations": [
+        {
+          "code": "nullable_order_nulls_first",
+          "reason": "Rank nonmissing values first: use explicit NULLS LAST on this nullable ordering expression.",
+          "expression": "c.birth_date"
+        },
+        {
+          "code": "nullable_order_nulls_first",
+          "reason": "Rank nonmissing values first: use explicit NULLS LAST on this nullable ordering expression.",
+          "expression": "dist.a11"
+        }
+      ],
+      "canonical_lookup_plan": [],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "baseline_field_ids": [
+        "debit_card_specializing.yearmonth.consumption",
+        "debit_card_specializing.customers.segment",
+        "debit_card_specializing.yearmonth.customerid",
+        "debit_card_specializing.yearmonth.date"
+      ],
+      "added_field_ids": [],
+      "graph_field_ids": [
+        "debit_card_specializing.yearmonth.consumption",
+        "debit_card_specializing.customers.segment",
+        "debit_card_specializing.yearmonth.customerid",
+        "debit_card_specializing.yearmonth.date"
+      ],
+      "declared_join_ids": [],
+      "coverage_decisions": [],
+      "captured_sql_constraint_violations": [],
+      "canonical_lookup_plan": [],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "baseline_field_ids": [],
+      "added_field_ids": [
+        "student_club.event.event_date",
+        "student_club.event.event_name",
+        "student_club.event.status",
+        "student_club.event.type"
+      ],
+      "graph_field_ids": [
+        "student_club.event.event_date",
+        "student_club.event.event_name",
+        "student_club.event.status",
+        "student_club.event.type"
+      ],
+      "declared_join_ids": [],
+      "coverage_decisions": [
+        {
+          "field_id": "student_club.event.event_name",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "student_club.event",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        },
+        {
+          "field_id": "student_club.event.event_date",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "student_club.event",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        },
+        {
+          "field_id": "student_club.event.type",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "student_club.event",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        },
+        {
+          "field_id": "student_club.event.status",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "student_club.event",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        }
+      ],
+      "captured_sql_constraint_violations": [],
+      "canonical_lookup_plan": [
+        {
+          "table_id": "student_club.event",
+          "table": "event",
+          "field": "type",
+          "requested": "Game"
+        },
+        {
+          "table_id": "student_club.event",
+          "table": "event",
+          "field": "status",
+          "requested": "Closed"
+        }
+      ],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "baseline_field_ids": [
+        "toxicology.bond.bond_type"
+      ],
+      "added_field_ids": [
+        "toxicology.atom.atom_id",
+        "toxicology.atom.element"
+      ],
+      "graph_field_ids": [
+        "toxicology.bond.bond_type",
+        "toxicology.atom.atom_id",
+        "toxicology.atom.element",
+        "toxicology.molecule.molecule_id",
+        "toxicology.atom.molecule_id",
+        "toxicology.bond.molecule_id"
+      ],
+      "declared_join_ids": [
+        "atom_molecule_id_fkey:molecule_id",
+        "bond_molecule_id_fkey:molecule_id"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "toxicology.atom.atom_id",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "toxicology.atom",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        },
+        {
+          "field_id": "toxicology.atom.element",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "toxicology.atom",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        }
+      ],
+      "captured_sql_constraint_violations": [],
+      "canonical_lookup_plan": [
+        {
+          "table_id": "toxicology.atom",
+          "table": "atom",
+          "field": "element",
+          "requested": "c"
+        },
+        {
+          "table_id": "toxicology.bond",
+          "table": "bond",
+          "field": "bond_type",
+          "requested": "="
+        }
+      ],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-1399",
+      "database_id": "student_club",
+      "baseline_field_ids": [
+        "student_club.event.notes",
+        "student_club.attendance.link_to_event",
+        "student_club.attendance.link_to_member",
+        "student_club.event.event_id",
+        "student_club.event.type",
+        "student_club.event.event_date",
+        "student_club.event.event_name",
+        "student_club.event.status",
+        "student_club.event.location"
+      ],
+      "added_field_ids": [
+        "student_club.member.first_name",
+        "student_club.member.last_name"
+      ],
+      "graph_field_ids": [
+        "student_club.event.notes",
+        "student_club.attendance.link_to_event",
+        "student_club.attendance.link_to_member",
+        "student_club.event.event_id",
+        "student_club.event.type",
+        "student_club.event.event_date",
+        "student_club.event.event_name",
+        "student_club.event.status",
+        "student_club.event.location",
+        "student_club.member.first_name",
+        "student_club.member.last_name",
+        "student_club.member.member_id"
+      ],
+      "declared_join_ids": [
+        "attendance_link_to_event_fkey:link_to_event",
+        "attendance_link_to_member_fkey:link_to_member"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "student_club.member.first_name",
+          "reason": "complete_authorized_name_group",
+          "priority": 5,
+          "table_id": "student_club.member",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "complete_authorized_name_group"
+        },
+        {
+          "field_id": "student_club.member.last_name",
+          "reason": "complete_authorized_name_group",
+          "priority": 5,
+          "table_id": "student_club.member",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "complete_authorized_name_group"
+        }
+      ],
+      "captured_sql_constraint_violations": [],
+      "canonical_lookup_plan": [
+        {
+          "table_id": "student_club.event",
+          "table": "event",
+          "field": "event_name",
+          "requested": "Women's Soccer"
+        },
+        {
+          "table_id": "student_club.member",
+          "table": "member",
+          "field": "first_name",
+          "requested": "Women's Soccer"
+        },
+        {
+          "table_id": "student_club.member",
+          "table": "member",
+          "field": "last_name",
+          "requested": "Women's Soccer"
+        }
+      ],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "database_id": "codebase_community",
+      "baseline_field_ids": [
+        "codebase_community.votes.bountyamount"
+      ],
+      "added_field_ids": [
+        "codebase_community.posts.title",
+        "codebase_community.users.displayname"
+      ],
+      "graph_field_ids": [
+        "codebase_community.votes.bountyamount",
+        "codebase_community.posts.title",
+        "codebase_community.users.displayname",
+        "codebase_community.users.id",
+        "codebase_community.posts.lasteditoruserid",
+        "codebase_community.posts.id",
+        "codebase_community.votes.postid"
+      ],
+      "declared_join_ids": [
+        "posts_lasteditoruserid_fkey:lasteditoruserid",
+        "votes_postid_fkey:postid"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "codebase_community.posts.title",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "codebase_community.posts",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        },
+        {
+          "field_id": "codebase_community.users.displayname",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "codebase_community.users",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        }
+      ],
+      "captured_sql_constraint_violations": [],
+      "canonical_lookup_plan": [],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "baseline_field_ids": [
+        "california_schools.schools.admfname1",
+        "california_schools.satscores.numge1500",
+        "california_schools.schools.admlname1",
+        "california_schools.schools.admlname2",
+        "california_schools.schools.admemail1",
+        "california_schools.satscores.sname",
+        "california_schools.satscores.rtype",
+        "california_schools.satscores.dname"
+      ],
+      "added_field_ids": [
+        "california_schools.schools.admfname2",
+        "california_schools.schools.admfname3",
+        "california_schools.schools.admlname3",
+        "california_schools.schools.school"
+      ],
+      "graph_field_ids": [
+        "california_schools.schools.admfname1",
+        "california_schools.satscores.numge1500",
+        "california_schools.schools.admlname1",
+        "california_schools.schools.admlname2",
+        "california_schools.schools.admemail1",
+        "california_schools.satscores.sname",
+        "california_schools.satscores.rtype",
+        "california_schools.satscores.dname",
+        "california_schools.schools.admfname2",
+        "california_schools.schools.admfname3",
+        "california_schools.schools.admlname3",
+        "california_schools.schools.school",
+        "california_schools.schools.cdscode",
+        "california_schools.satscores.cds"
+      ],
+      "declared_join_ids": [
+        "satscores_cds_fkey:cds"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "california_schools.schools.school",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "california_schools.schools",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        },
+        {
+          "field_id": "california_schools.schools.admfname2",
+          "reason": "complete_authorized_name_group",
+          "priority": 5,
+          "table_id": "california_schools.schools",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "complete_authorized_name_group"
+        },
+        {
+          "field_id": "california_schools.schools.admfname3",
+          "reason": "complete_authorized_name_group",
+          "priority": 5,
+          "table_id": "california_schools.schools",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "complete_authorized_name_group"
+        },
+        {
+          "field_id": "california_schools.schools.admlname3",
+          "reason": "complete_authorized_name_group",
+          "priority": 5,
+          "table_id": "california_schools.schools",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "complete_authorized_name_group"
+        }
+      ],
+      "captured_sql_constraint_violations": [
+        {
+          "code": "nullable_order_nulls_first",
+          "reason": "Rank nonmissing values first: use explicit NULLS LAST on this nullable ordering expression.",
+          "expression": "sat.numge1500"
+        },
+        {
+          "code": "incomplete_output_name_group",
+          "reason": "Include every requested numbered first/last-name slot, in slot order.",
+          "fields": [
+            "admfname1",
+            "admlname1",
+            "admfname2",
+            "admlname2",
+            "admfname3",
+            "admlname3"
+          ]
+        }
+      ],
+      "canonical_lookup_plan": [],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "database_id": "california_schools",
+      "baseline_field_ids": [
+        "california_schools.schools.gsserved",
+        "california_schools.schools.gsoffered",
+        "california_schools.schools.longitude"
+      ],
+      "added_field_ids": [
+        "california_schools.schools.school"
+      ],
+      "graph_field_ids": [
+        "california_schools.schools.gsserved",
+        "california_schools.schools.gsoffered",
+        "california_schools.schools.longitude",
+        "california_schools.schools.school"
+      ],
+      "declared_join_ids": [],
+      "coverage_decisions": [
+        {
+          "field_id": "california_schools.schools.school",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "california_schools.schools",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        }
+      ],
+      "captured_sql_constraint_violations": [
+        {
+          "code": "nullable_order_nulls_first",
+          "reason": "Rank nonmissing values first: use explicit NULLS LAST on this nullable ordering expression.",
+          "expression": "ABS(longitude)"
+        }
+      ],
+      "canonical_lookup_plan": [],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "baseline_field_ids": [
+        "debit_card_specializing.customers.currency"
+      ],
+      "added_field_ids": [],
+      "graph_field_ids": [
+        "debit_card_specializing.customers.currency"
+      ],
+      "declared_join_ids": [],
+      "coverage_decisions": [],
+      "captured_sql_constraint_violations": [
+        {
+          "code": "difference_output_shape",
+          "reason": "Return the signed quantity from the evidence formula as one numeric output expression, without an additional explanatory Yes/No column."
+        },
+        {
+          "code": "difference_sign",
+          "reason": "Do not wrap the signed difference specified by the evidence in ABS."
+        }
+      ],
+      "canonical_lookup_plan": [],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "baseline_field_ids": [
+        "financial.trans.type",
+        "financial.trans.operation",
+        "financial.disp.client_id",
+        "financial.client.client_id",
+        "financial.trans.account_id",
+        "financial.trans.trans_id",
+        "financial.disp.account_id",
+        "financial.order.account_id",
+        "financial.loan.account_id",
+        "financial.account.account_id",
+        "financial.trans.amount",
+        "financial.disp.disp_id",
+        "financial.trans.account",
+        "financial.client.district_id",
+        "financial.order.amount",
+        "financial.trans.bank"
+      ],
+      "added_field_ids": [],
+      "graph_field_ids": [
+        "financial.trans.type",
+        "financial.trans.operation",
+        "financial.disp.client_id",
+        "financial.client.client_id",
+        "financial.trans.account_id",
+        "financial.trans.trans_id",
+        "financial.disp.account_id",
+        "financial.order.account_id",
+        "financial.loan.account_id",
+        "financial.account.account_id",
+        "financial.trans.amount",
+        "financial.disp.disp_id",
+        "financial.trans.account",
+        "financial.client.district_id",
+        "financial.order.amount",
+        "financial.trans.bank",
+        "financial.district.district_id",
+        "financial.account.district_id"
+      ],
+      "declared_join_ids": [
+        "account_district_id_fkey:district_id",
+        "client_district_id_fkey:district_id",
+        "disp_account_id_fkey:account_id",
+        "loan_account_id_fkey:account_id",
+        "order_account_id_fkey:account_id",
+        "trans_account_id_fkey:account_id"
+      ],
+      "coverage_decisions": [],
+      "captured_sql_constraint_violations": [
+        {
+          "code": "unrequested_projection_star",
+          "reason": "Choose the requested output attributes explicitly; a list of entities defaults to their primary identifiers under this development convention."
+        }
+      ],
+      "canonical_lookup_plan": [
+        {
+          "table_id": "financial.trans",
+          "table": "trans",
+          "field": "operation",
+          "requested": "VYBER"
+        }
+      ],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "database_id": "student_club",
+      "baseline_field_ids": [
+        "student_club.budget.amount",
+        "student_club.expense.link_to_budget",
+        "student_club.budget.category",
+        "student_club.budget.link_to_event",
+        "student_club.budget.spent",
+        "student_club.budget.remaining",
+        "student_club.budget.budget_id"
+      ],
+      "added_field_ids": [
+        "student_club.event.event_name"
+      ],
+      "graph_field_ids": [
+        "student_club.budget.amount",
+        "student_club.expense.link_to_budget",
+        "student_club.budget.category",
+        "student_club.budget.link_to_event",
+        "student_club.budget.spent",
+        "student_club.budget.remaining",
+        "student_club.budget.budget_id",
+        "student_club.event.event_name",
+        "student_club.event.event_id"
+      ],
+      "declared_join_ids": [
+        "budget_link_to_event_fkey:link_to_event",
+        "expense_link_to_budget_fkey:link_to_budget"
+      ],
+      "coverage_decisions": [
+        {
+          "field_id": "student_club.event.event_name",
+          "reason": "explicit_public_identifier_or_label",
+          "priority": 4,
+          "table_id": "student_club.event",
+          "basis": "public_input_and_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label"
+        }
+      ],
+      "captured_sql_constraint_violations": [
+        {
+          "code": "name_compared_to_foreign_key",
+          "reason": "Join the authorized named entity; its foreign key stores an identifier, not the requested human name.",
+          "key": "student_club.budget.link_to_event",
+          "name_field": "student_club.event.event_name"
+        }
+      ],
+      "canonical_lookup_plan": [
+        {
+          "table_id": "student_club.event",
+          "table": "event",
+          "field": "event_name",
+          "requested": "April Speaker"
+        }
+      ],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "baseline_field_ids": [
+        "card_games.cards.bordercolor",
+        "card_games.cards.id",
+        "card_games.legalities.id",
+        "card_games.foreign_data.id",
+        "card_games.sets.isforeignonly",
+        "card_games.cards.ispromo",
+        "card_games.set_translations.id"
+      ],
+      "added_field_ids": [],
+      "graph_field_ids": [
+        "card_games.cards.bordercolor",
+        "card_games.cards.id",
+        "card_games.legalities.id",
+        "card_games.foreign_data.id",
+        "card_games.sets.isforeignonly",
+        "card_games.cards.ispromo",
+        "card_games.set_translations.id"
+      ],
+      "declared_join_ids": [],
+      "coverage_decisions": [],
+      "captured_sql_constraint_violations": [
+        {
+          "code": "percentage_numeric_path",
+          "reason": "Development numeric policy requires a REAL numerator before scaling/division; avoid a decimal literal or final-only cast. Native EX has no tolerance."
+        }
+      ],
+      "canonical_lookup_plan": [
+        {
+          "table_id": "card_games.cards",
+          "table": "cards",
+          "field": "bordercolor",
+          "requested": "borderless"
+        }
+      ],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "database_id": "superhero",
+      "baseline_field_ids": [
+        "superhero.hero_attribute.attribute_value",
+        "superhero.hero_attribute.attribute_id",
+        "superhero.hero_attribute.hero_id",
+        "superhero.superhero.full_name",
+        "superhero.attribute.id",
+        "superhero.attribute.attribute_name"
+      ],
+      "added_field_ids": [],
+      "graph_field_ids": [
+        "superhero.hero_attribute.attribute_value",
+        "superhero.hero_attribute.attribute_id",
+        "superhero.hero_attribute.hero_id",
+        "superhero.superhero.full_name",
+        "superhero.attribute.id",
+        "superhero.attribute.attribute_name",
+        "superhero.superhero.id"
+      ],
+      "declared_join_ids": [
+        "hero_attribute_attribute_id_fkey:attribute_id",
+        "hero_attribute_hero_id_fkey:hero_id"
+      ],
+      "coverage_decisions": [],
+      "captured_sql_constraint_violations": [
+        {
+          "code": "nullable_order_nulls_first",
+          "reason": "Rank nonmissing values first: use explicit NULLS LAST on this nullable ordering expression.",
+          "expression": "ha.attribute_value"
+        }
+      ],
+      "canonical_lookup_plan": [
+        {
+          "table_id": "superhero.attribute",
+          "table": "attribute",
+          "field": "attribute_name",
+          "requested": "strength"
+        }
+      ],
+      "profile_values_available": false,
+      "canonical_values_verified": false
+    }
+  ],
+  "postgresql_connected": false,
+  "new_model_request_count": 0,
+  "gold_read": false,
+  "native_execution_verified": false,
+  "limits": [
+    "Local metadata replay has no stored profile samples or live canonical values. SME category admission and canonical spelling require the server run.",
+    "Coverage and static rejection checks do not prove generated SQL or native EX improvement."
+  ]
+}

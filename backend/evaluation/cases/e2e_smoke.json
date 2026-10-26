@@ -1,0 +1,9 @@
+{
+  "name": "e2e_smoke_v1",
+  "purpose": "Natural-question service-entry evaluation, separate from component cases with annotated retrieval terms",
+  "cases": [
+    {"case_id": "GROWTH_OPS-001", "expected_route": "database_query", "expected_status": "completed"},
+    {"case_id": "CHANNEL_OPS-001", "expected_route": "database_query", "expected_status": "completed"},
+    {"case_id": "CONTENT_OPS-001", "expected_route": "database_query", "expected_status": "completed"}
+  ]
+}

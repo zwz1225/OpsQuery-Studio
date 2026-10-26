@@ -1,0 +1,23 @@
+{
+  "stage": "M2 three-case grain diagnostic local preparation",
+  "run_status": "complete",
+  "recorded_at": "2026-10-18T13:21:59.450342+00:00",
+  "package": "E:\\PythonLearn\\askdata_studio_ops_release\\M2_grain_diagnostics_sync_20261018.zip",
+  "package_sha256": "a2aa7c14c80826652d09bbe0445f8cf7c23dd8ebeff7d98f1165e9b0a16440fe",
+  "package_bytes": 22093,
+  "package_file_count": 5,
+  "manifest_sha256": "0d5e9570abcf9154e622f14426285824354503e948c9fb1acaa73a95501754b9",
+  "tests_report_sha256": "d819e259655b6ce40385af992489fccefe8192add51fb8ddb590d077c9e0fa9b",
+  "tests_run": 50,
+  "tests_passed": 50,
+  "tests_skipped": 0,
+  "protected_input_count": 199,
+  "protected_inputs_unchanged": true,
+  "producer_code_binding_unchanged": true,
+  "expected_code_file_count": 96,
+  "expected_file_count": 127,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "server_sql_execution_verified": false,
+  "pending": "Run the read-only 8-SELECT audit on the server; inspect its new independent report before changing any business rule."
+}

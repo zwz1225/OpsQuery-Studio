@@ -1,0 +1,12 @@
+{
+  "stage": "M1 D3 full local code regression",
+  "recorded_at": "2026-10-10T13:18:01.481232+00:00",
+  "run_status": "complete",
+  "test_count": 441,
+  "failure_count": 0,
+  "error_count": 0,
+  "skipped_count": 0,
+  "elapsed_seconds": 79.624,
+  "new_model_request_count": 0,
+  "remote_postgresql_connected": false
+}

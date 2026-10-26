@@ -1,0 +1,4444 @@
+{
+  "stage": "M2 development diagnostic14 downloaded report review",
+  "run_status": "complete",
+  "reviewed_at": "2026-10-17T05:30:16.803566+00:00",
+  "source_report_sha256": "b9be464b9ac890509784df5523d998c18112d2209e76e35de686ede9dd6b12e5",
+  "check_count": 1009,
+  "check_pass_count": 1009,
+  "failed_checks": [],
+  "diagnostic_evidence_accepted": true,
+  "formal_ex_score": null,
+  "gold_executed": false,
+  "local_postgresql_connected": false,
+  "new_model_request_count_during_review": 0,
+  "summary": {
+    "case_count": 14,
+    "status_counts": {
+      "validation_failed": 2,
+      "clarification": 5,
+      "diagnostic_answered": 7
+    },
+    "diagnostics_recorded_count": 14,
+    "runtime_closed_count": 14,
+    "case_model_http_attempts": 47,
+    "observed_case_http_attempts": 47,
+    "shared_index_http_attempts": 49,
+    "primary_ex": null,
+    "formal_ex_denominator": null
+  },
+  "total_recorded_http_attempts": 96,
+  "http_kind_counts": {
+    "embedding": 63,
+    "rerank": 14,
+    "chat": 19
+  },
+  "total_wall_seconds": 338.109749,
+  "selection_reason_counts": {
+    "selected": 73,
+    "below_threshold": 401
+  },
+  "case_reviews": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "status": "validation_failed",
+      "checks_passed": true,
+      "candidate_count": 40,
+      "selected_field_count": 4,
+      "graph_field_count": 6,
+      "graph_join_count": 1,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [
+        "california_schools.schools.cdscode",
+        "california_schools.satscores.cds"
+      ],
+      "clarification_reason": null,
+      "generated_sql": null,
+      "native_types": null,
+      "model_decision_sql_hashes": [
+        "4151ca5f39e443475f3e66656106ddd2846e590b6058df5370a40e04ece881d0",
+        "df2e343a5fdc64053e2a91b2eef216f30913acf3eb253c00f546361615246aed",
+        "dd139cbccebdb955b2bf0a8d446b7721b2fb74e991f660aee3e5c12c7326723a"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "status": "validation_failed",
+      "checks_passed": true,
+      "candidate_count": 39,
+      "selected_field_count": 9,
+      "graph_field_count": 13,
+      "graph_join_count": 6,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [
+        "financial.district.district_id",
+        "financial.account.district_id",
+        "financial.client.district_id",
+        "financial.trans.account_id"
+      ],
+      "clarification_reason": null,
+      "generated_sql": null,
+      "native_types": null,
+      "model_decision_sql_hashes": [
+        "c31e18acad21d4ba4612d9a813d5168703d45ddaa9c4043742a2141af39c16b9",
+        "c31e18acad21d4ba4612d9a813d5168703d45ddaa9c4043742a2141af39c16b9",
+        "c31e18acad21d4ba4612d9a813d5168703d45ddaa9c4043742a2141af39c16b9"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "status": "clarification",
+      "checks_passed": true,
+      "candidate_count": 21,
+      "selected_field_count": 3,
+      "graph_field_count": 3,
+      "graph_join_count": 0,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [],
+      "clarification_reason": "The provided schema is incomplete. It lists tables 'customers' and 'yearmonth' but only shows a subset of columns (segment, consumption, customerid). The evidence mentions a 'Date' column in the 'yearmonth' table to filter by year 2013, and a join between customers and yearmonth is implied but not explicitly defined in the graph joins. Without knowing the exact column name for the date/yearmonth identifier in the 'yearmonth' table and the primary key in 'customers' to perform the join, I cannot construct a valid SQL query. Please provide the full schema including all column names for both tables.",
+      "generated_sql": null,
+      "native_types": null,
+      "model_decision_sql_hashes": [
+        "a649cecc6908469e9fafd601f7bae54b36b10f289555ab7270cd44f307183688"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "status": "clarification",
+      "checks_passed": true,
+      "candidate_count": 39,
+      "selected_field_count": 0,
+      "graph_field_count": 0,
+      "graph_join_count": 0,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [],
+      "clarification_reason": "missing information",
+      "generated_sql": null,
+      "native_types": null,
+      "model_decision_sql_hashes": []
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "status": "clarification",
+      "checks_passed": true,
+      "candidate_count": 11,
+      "selected_field_count": 1,
+      "graph_field_count": 1,
+      "graph_join_count": 0,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [],
+      "clarification_reason": "The provided schema only contains the 'bond' table with a 'bond_type' column. The question asks for the percentage of 'carbon' (an element) in molecules, which implies the existence of tables for atoms/elements and their association with bonds or molecules (e.g., an 'atom' table with an 'element' column and a way to link atoms to bonds). Without these tables, it is impossible to calculate the percentage of carbon.",
+      "generated_sql": null,
+      "native_types": null,
+      "model_decision_sql_hashes": []
+    },
+    {
+      "case_id": "BIRD-PG-1399",
+      "database_id": "student_club",
+      "status": "clarification",
+      "checks_passed": true,
+      "candidate_count": 39,
+      "selected_field_count": 9,
+      "graph_field_count": 9,
+      "graph_join_count": 1,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [],
+      "clarification_reason": "The schema provided does not include a 'member' or 'student' table containing first_name and last_name fields. The attendance table only has link_to_member (text ID), but there is no table to resolve 'Maya Mclean' to a member ID. Missing information about the member table structure.",
+      "generated_sql": null,
+      "native_types": null,
+      "model_decision_sql_hashes": []
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "database_id": "codebase_community",
+      "status": "clarification",
+      "checks_passed": true,
+      "candidate_count": 40,
+      "selected_field_count": 1,
+      "graph_field_count": 1,
+      "graph_join_count": 0,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [],
+      "clarification_reason": "The provided schema only contains the 'votes' table with a 'bountyamount' field. The question requires information about 'user' (DisplayName) and 'post title' (Title), which are not present in the available schema. Therefore, it is impossible to construct a query that joins votes with users and posts to answer the question.",
+      "generated_sql": null,
+      "native_types": null,
+      "model_decision_sql_hashes": []
+    },
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "status": "diagnostic_answered",
+      "checks_passed": true,
+      "candidate_count": 40,
+      "selected_field_count": 8,
+      "graph_field_count": 10,
+      "graph_join_count": 1,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [
+        "california_schools.schools.cdscode",
+        "california_schools.satscores.cds"
+      ],
+      "clarification_reason": null,
+      "generated_sql": "SELECT s.admfname1, s.admlname1 FROM schools s JOIN satscores sat ON s.cdscode = sat.cds ORDER BY sat.numge1500 DESC LIMIT 1",
+      "native_types": [
+        "NoneType"
+      ],
+      "model_decision_sql_hashes": [
+        "5127fe2a73a331a86f3579267db69ff11e3592cef5da7789f82b36651bc7d0ec"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "database_id": "california_schools",
+      "status": "diagnostic_answered",
+      "checks_passed": true,
+      "candidate_count": 40,
+      "selected_field_count": 3,
+      "graph_field_count": 3,
+      "graph_join_count": 0,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [],
+      "clarification_reason": null,
+      "generated_sql": "SELECT gsoffered FROM schools ORDER BY ABS(longitude) DESC LIMIT 1",
+      "native_types": [
+        "NoneType"
+      ],
+      "model_decision_sql_hashes": [
+        "419782795778e2ec2540afbd44064928fe82e560ae63753fa928de7a64f7bef9"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "status": "diagnostic_answered",
+      "checks_passed": true,
+      "candidate_count": 21,
+      "selected_field_count": 1,
+      "graph_field_count": 1,
+      "graph_join_count": 0,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [],
+      "clarification_reason": null,
+      "generated_sql": "SELECT CASE WHEN czk_count > eur_count THEN 'Yes' ELSE 'No' END AS is_more_czk, ABS(czk_count - eur_count) AS difference FROM (SELECT COUNT(*) FILTER (WHERE currency = 'CZK') AS czk_count, COUNT(*) FILTER (WHERE currency = 'EUR') AS eur_count FROM customers) sub",
+      "native_types": [
+        "int",
+        "str"
+      ],
+      "model_decision_sql_hashes": [
+        "4d3137c5531412cf6cc2ef3ef2521c10c260166711269216349e24546dd8ac45"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "status": "diagnostic_answered",
+      "checks_passed": true,
+      "candidate_count": 38,
+      "selected_field_count": 16,
+      "graph_field_count": 18,
+      "graph_join_count": 6,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [
+        "financial.district.district_id",
+        "financial.account.district_id"
+      ],
+      "clarification_reason": null,
+      "generated_sql": "SELECT t.* FROM trans t JOIN account a ON t.account_id = a.account_id JOIN disp d ON a.account_id = d.account_id WHERE d.client_id = 3356 AND t.operation = 'VYBER'",
+      "native_types": [
+        "NoneType",
+        "date",
+        "int",
+        "str"
+      ],
+      "model_decision_sql_hashes": [
+        "020c431bb2afb4302e4c93778c1561c91839298240c3af71bc87803c3b87ea36"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "database_id": "student_club",
+      "status": "diagnostic_answered",
+      "checks_passed": true,
+      "candidate_count": 35,
+      "selected_field_count": 6,
+      "graph_field_count": 7,
+      "graph_join_count": 1,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [
+        "student_club.budget.budget_id"
+      ],
+      "clarification_reason": null,
+      "generated_sql": "SELECT category, SUM(amount) AS amount_budgeted FROM budget WHERE link_to_event = 'April Speaker' GROUP BY category ORDER BY amount_budgeted ASC",
+      "native_types": [],
+      "model_decision_sql_hashes": [
+        "2fe1fd65c6894d10d42e698631c23a962a3ef190d1af5c32425ca2d00c50276f"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "status": "diagnostic_answered",
+      "checks_passed": true,
+      "candidate_count": 40,
+      "selected_field_count": 7,
+      "graph_field_count": 7,
+      "graph_join_count": 0,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [],
+      "clarification_reason": null,
+      "generated_sql": "SELECT COUNT(CASE WHEN bordercolor = 'borderless' THEN 1 END) * 100.0 / COUNT(*) AS percentage FROM cards",
+      "native_types": [
+        "Decimal"
+      ],
+      "model_decision_sql_hashes": [
+        "176a21141bfd5d2e6e7f0ec680f6d6884ae65268a4c49c7f20b43f0f23d789aa"
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "database_id": "superhero",
+      "status": "diagnostic_answered",
+      "checks_passed": true,
+      "candidate_count": 31,
+      "selected_field_count": 5,
+      "graph_field_count": 6,
+      "graph_join_count": 2,
+      "schema_graph_reconstructed_exactly": true,
+      "added_relation_key_field_ids": [
+        "superhero.superhero.id"
+      ],
+      "clarification_reason": null,
+      "generated_sql": "SELECT s.full_name FROM superhero s JOIN hero_attribute ha ON s.id = ha.hero_id JOIN attribute a ON ha.attribute_id = a.id WHERE a.attribute_name = 'strength' ORDER BY ha.attribute_value DESC LIMIT 1",
+      "native_types": [],
+      "model_decision_sql_hashes": [
+        "f62c2794e5b2848bcc1caaca861785f8c4eaf31bda3800e7d20f5775dac168b3"
+      ]
+    }
+  ],
+  "validation_details": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "sqlstate": "42703",
+      "message_primary": "column s.name does not exist",
+      "sql_sha256": "4151ca5f39e443475f3e66656106ddd2846e590b6058df5370a40e04ece881d0",
+      "raw_explain_position": 30,
+      "generated_sql_position": 8,
+      "near_generated_sql": "s.name, sc.mailstreet AS postal_stre"
+    },
+    {
+      "case_id": "BIRD-PG-0050",
+      "sqlstate": "42703",
+      "message_primary": "column s.name does not exist",
+      "sql_sha256": "df2e343a5fdc64053e2a91b2eef216f30913acf3eb253c00f546361615246aed",
+      "raw_explain_position": 30,
+      "generated_sql_position": 8,
+      "near_generated_sql": "s.name, sch.mailstreet AS postal_str"
+    },
+    {
+      "case_id": "BIRD-PG-0050",
+      "sqlstate": "42703",
+      "message_primary": "column s.name does not exist",
+      "sql_sha256": "dd139cbccebdb955b2bf0a8d446b7721b2fb74e991f660aee3e5c12c7326723a",
+      "raw_explain_position": 30,
+      "generated_sql_position": 8,
+      "near_generated_sql": "s.name, sc.mailstreet AS postal_stre"
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "sqlstate": "42P10",
+      "message_primary": "for SELECT DISTINCT, ORDER BY expressions must appear in select list",
+      "sql_sha256": "c31e18acad21d4ba4612d9a813d5168703d45ddaa9c4043742a2141af39c16b9",
+      "raw_explain_position": 192,
+      "generated_sql_position": 170,
+      "near_generated_sql": "c.birth_date DESC, dist.a11 DESC\nLIM"
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "sqlstate": "42P10",
+      "message_primary": "for SELECT DISTINCT, ORDER BY expressions must appear in select list",
+      "sql_sha256": "c31e18acad21d4ba4612d9a813d5168703d45ddaa9c4043742a2141af39c16b9",
+      "raw_explain_position": 192,
+      "generated_sql_position": 170,
+      "near_generated_sql": "c.birth_date DESC, dist.a11 DESC\nLIM"
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "sqlstate": "42P10",
+      "message_primary": "for SELECT DISTINCT, ORDER BY expressions must appear in select list",
+      "sql_sha256": "c31e18acad21d4ba4612d9a813d5168703d45ddaa9c4043742a2141af39c16b9",
+      "raw_explain_position": 192,
+      "generated_sql_position": 170,
+      "near_generated_sql": "c.birth_date DESC, dist.a11 DESC\nLIM"
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "sqlstate": "42703",
+      "message_primary": "column ym.yearmonth does not exist",
+      "sql_sha256": "a649cecc6908469e9fafd601f7bae54b36b10f289555ab7270cd44f307183688",
+      "raw_explain_position": 191,
+      "generated_sql_position": 169,
+      "near_generated_sql": "ym.yearmonth::text, 1, 4) = '2013'"
+    }
+  ],
+  "declared_fk_relation_counts": {
+    "california_schools": 2,
+    "card_games": 2,
+    "codebase_community": 7,
+    "debit_card_specializing": 0,
+    "financial": 8,
+    "student_club": 8,
+    "superhero": 11,
+    "toxicology": 5
+  },
+  "limitations": [
+    "This is a new model diagnostic run, not a replay of old missing SQL; no new EX score is produced.",
+    "Graph construction, scope and hashes were independently reconstructed; actual index files and vectors were not downloaded.",
+    "PostgreSQL statement_position refers to the EXPLAIN-wrapped statement. Derived generated-SQL positions subtract the 22-character prefix; the original report is preserved.",
+    "BIRD-PG-1435 provides only the generic model explanation missing information; that wording was not invented by the reviewer.",
+    "Decimal versus reference REAL remains a candidate numerical-path issue; no Gold/native value pair is present.",
+    "Snapshot payload hash was reconstructed; the actual server snapshot file was not downloaded."
+  ],
+  "recommended_next_step": "Develop a bounded structured SQL-repair feedback path and authorized schema coverage improvements as a new development candidate; preserve original Gold/EX/permissions/budgets, version any frozen retrieval-policy change explicitly.",
+  "checks": [
+    {
+      "name": "complete_diagnostic_stage",
+      "passed": true
+    },
+    {
+      "name": "diagnostic_not_formal_score",
+      "passed": true
+    },
+    {
+      "name": "existing_verified_target",
+      "passed": true
+    },
+    {
+      "name": "protocol_source_binding",
+      "passed": true
+    },
+    {
+      "name": "recorded_prerequisite_links",
+      "passed": true
+    },
+    {
+      "name": "code_binding_digest",
+      "passed": true
+    },
+    {
+      "name": "delivered_file_inventory",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/routes.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/database.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/contracts.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/csv_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/dialects.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_connections.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/row_digest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/sql_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/values.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/errors.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/main.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/schemas.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/server.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/database_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/presentation_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/time_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/model_client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/data_qa_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/duckdb_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/metric_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/postgres_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/response_generator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/single_database_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/time_field_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/access_control.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/auth.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/askdata_service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/memory_store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_archive.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/short_term_memory.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/registry.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/clarification.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/query_graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/result_builder.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/state.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/budgets.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/case_worker.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/diagnostic_runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/diagnostics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/evidence.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/isolated_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/manifest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/metrics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/model.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/native.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/retrieval.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/sql.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird_protocol.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/run_bird_benchmark.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/check_m2_c_bird_runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_common.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_dump.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_structure.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_target.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_typed_rows.py",
+      "passed": true
+    },
+    {
+      "name": "server_environment",
+      "passed": true
+    },
+    {
+      "name": "model_configuration",
+      "passed": true
+    },
+    {
+      "name": "exact_unique_14_development_cases",
+      "passed": true
+    },
+    {
+      "name": "actual_current_isolation",
+      "passed": true
+    },
+    {
+      "name": "mandatory_isolation_policy",
+      "passed": true
+    },
+    {
+      "name": "current_timeout_probe",
+      "passed": true
+    },
+    {
+      "name": "seven_simulated_budget_probes",
+      "passed": true
+    },
+    {
+      "name": "preparation_pools_closed",
+      "passed": true
+    },
+    {
+      "name": "eight_unique_receipts",
+      "passed": true
+    },
+    {
+      "name": "california_schools:fresh_source_receipt",
+      "passed": true
+    },
+    {
+      "name": "card_games:fresh_source_receipt",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:fresh_source_receipt",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:fresh_source_receipt",
+      "passed": true
+    },
+    {
+      "name": "financial:fresh_source_receipt",
+      "passed": true
+    },
+    {
+      "name": "student_club:fresh_source_receipt",
+      "passed": true
+    },
+    {
+      "name": "superhero:fresh_source_receipt",
+      "passed": true
+    },
+    {
+      "name": "toxicology:fresh_source_receipt",
+      "passed": true
+    },
+    {
+      "name": "eight_current_indexes",
+      "passed": true
+    },
+    {
+      "name": "california_schools:current_index_identity",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:counter",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:0",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:1",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:2",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:3",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:4",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:5",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:6",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:7",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:8",
+      "passed": true
+    },
+    {
+      "name": "california_schools:new_index_batches",
+      "passed": true
+    },
+    {
+      "name": "card_games:current_index_identity",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:counter",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:0",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:1",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:2",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:3",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:4",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:5",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:6",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:7",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:8",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:9",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:10",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:11",
+      "passed": true
+    },
+    {
+      "name": "card_games:new_index_batches",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:current_index_identity",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:counter",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:0",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:1",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:2",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:3",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:4",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:5",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:6",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:7",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:new_index_batches",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:current_index_identity",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:counter",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:0",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:1",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:2",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:new_index_batches",
+      "passed": true
+    },
+    {
+      "name": "financial:current_index_identity",
+      "passed": true
+    },
+    {
+      "name": "financial:index:counter",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:0",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:1",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:2",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:3",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:4",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:5",
+      "passed": true
+    },
+    {
+      "name": "financial:new_index_batches",
+      "passed": true
+    },
+    {
+      "name": "student_club:current_index_identity",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:counter",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:0",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:1",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:2",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:3",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:4",
+      "passed": true
+    },
+    {
+      "name": "student_club:new_index_batches",
+      "passed": true
+    },
+    {
+      "name": "superhero:current_index_identity",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:counter",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:0",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:1",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:2",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:3",
+      "passed": true
+    },
+    {
+      "name": "superhero:new_index_batches",
+      "passed": true
+    },
+    {
+      "name": "toxicology:current_index_identity",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index:counter",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index:event:0",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index:event:1",
+      "passed": true
+    },
+    {
+      "name": "toxicology:new_index_batches",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:36",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:37",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:38",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:39",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:candidate:40",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_sql:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_sql:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:exact_sql:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:structured_pg_reason:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:validation_log:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:structured_pg_reason:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:validation_log:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:structured_pg_reason:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:unanswered_diagnostic_status",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:event:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:chat_output:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:event:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:chat_output:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:36",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:37",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:38",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:candidate:39",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_sql:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_sql:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:exact_sql:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:structured_pg_reason:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:validation_log:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:structured_pg_reason:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:validation_log:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:structured_pg_reason:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:unanswered_diagnostic_status",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:event:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:chat_output:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:event:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:chat_output:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:structured_pg_reason:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:actual_clarification_reason",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:unanswered_diagnostic_status",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:event:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:chat_output:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:36",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:37",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:38",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:candidate:39",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:actual_clarification_reason",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:unanswered_diagnostic_status",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:actual_clarification_reason",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:unanswered_diagnostic_status",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:36",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:37",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:38",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:candidate:39",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:actual_clarification_reason",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:unanswered_diagnostic_status",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:36",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:37",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:38",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:39",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:candidate:40",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:actual_clarification_reason",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:unanswered_diagnostic_status",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:36",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:37",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:38",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:39",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:candidate:40",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:successful_native_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:36",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:37",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:38",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:39",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:candidate:40",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:successful_native_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:successful_native_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:36",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:37",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:candidate:38",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:successful_native_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:successful_native_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:32",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:33",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:34",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:35",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:36",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:37",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:38",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:39",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:candidate:40",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:successful_native_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:case_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:source_role_mode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:historical_status_only",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:closed_error_free",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:bounded_diagnostic_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:index_reference",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate_scope_count",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:retrieval_summary",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:3",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:4",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:5",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:6",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:7",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:8",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:9",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:10",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:11",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:12",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:13",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:14",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:15",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:16",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:17",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:18",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:19",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:21",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:22",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:23",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:24",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:25",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:26",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:27",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:28",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:29",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:30",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:candidate:31",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:rerank_order_and_top20",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:exact_final_graph_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:graph_bytes_digest",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:added_relation_keys",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:all_attempt_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:exact_sql:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:exact_sql:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:exact_sql:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:validation_log:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:no_invented_clarification",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:successful_native_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:counter",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:event:0",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:event:1",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:event:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:chat_output:2",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:case_budget",
+      "passed": true
+    },
+    {
+      "name": "entire_summary_recomputed",
+      "passed": true
+    },
+    {
+      "name": "snapshot_payload_hash",
+      "passed": true
+    },
+    {
+      "name": "snapshot_diagnostic_partition",
+      "passed": true
+    },
+    {
+      "name": "timeline",
+      "passed": true
+    }
+  ]
+}

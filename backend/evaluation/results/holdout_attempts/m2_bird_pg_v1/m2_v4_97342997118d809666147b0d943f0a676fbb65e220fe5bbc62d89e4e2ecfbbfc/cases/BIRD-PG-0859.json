@@ -1,0 +1,1947 @@
+{
+  "agent_isolation": {
+    "additional_landlock_abi": 4,
+    "direct_database_access": false,
+    "environment_credentials": false,
+    "filesystem": "seccomp_deny_all_new_file_opens",
+    "kernel": "6.8.0-59-generic",
+    "network_and_process": "seccomp",
+    "project_read_access": false,
+    "seccomp_library_version": "2.5.3"
+  },
+  "agent_started": true,
+  "agent_status": "answered",
+  "agent_trace": [
+    {
+      "sql_round": 1,
+      "valid": true,
+      "validation_attempt": 1
+    }
+  ],
+  "budget": {
+    "chat_http_attempts": 1,
+    "elapsed_seconds": 12.034,
+    "generation_attempts": {
+      "1": 1
+    },
+    "model_events": [
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 54,
+          "total_tokens": 54
+        }
+      },
+      {
+        "endpoint_kind": "rerank",
+        "kind": "rerank",
+        "retry": 0,
+        "returned_model": "qwen3-rerank",
+        "status": "complete",
+        "usage": {
+          "total_tokens": 6098
+        }
+      },
+      {
+        "endpoint_kind": "chat",
+        "kind": "chat",
+        "retry": 0,
+        "returned_model": "qwen3.7-plus",
+        "status": "complete",
+        "usage": {
+          "completion_tokens": 63,
+          "prompt_tokens": 7844,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "text_tokens": 7844
+          },
+          "total_tokens": 7907
+        }
+      }
+    ],
+    "model_http_attempts": 3,
+    "sql_tool_calls": 1,
+    "validation_attempts": {
+      "1": 1
+    }
+  },
+  "candidate_sha256": "97342997118d809666147b0d943f0a676fbb65e220fe5bbc62d89e4e2ecfbbfc",
+  "canonical_lookup": {
+    "executed": false,
+    "matches": [],
+    "max_values_per_probe": 3,
+    "policy": "bird_public_intent_candidate_v4",
+    "probe_count": 0,
+    "source_identity": {
+      "backend": "postgresql",
+      "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+      "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918",
+      "dialect": "postgres",
+      "logical_database_id": "formula_1",
+      "physical_schema": "public",
+      "prompt_dialect": "PostgreSQL",
+      "source_id": "bird_mini_dev_postgres_formula_1"
+    },
+    "sql_tool_calls": 0
+  },
+  "case_id": "BIRD-PG-0859",
+  "case_wall_seconds": 12.293,
+  "complete": true,
+  "database_id": "formula_1",
+  "development_diagnostics": {
+    "attempts": [
+      {
+        "action": "query",
+        "clarification_reason": {
+          "provided": false,
+          "redacted": false,
+          "text": null,
+          "truncated": false
+        },
+        "kind": "model_decision",
+        "sql": {
+          "original_sha256": "541b9adac9de32af09f19e3e5e30c058fbd1d43105683ad57cdac99642b52958",
+          "original_utf8_bytes": 141,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT q.q1 FROM qualifying q JOIN drivers d ON q.driverid = d.driverid WHERE d.forename = 'Bruno' AND d.surname = 'Senna' AND q.raceid = 354",
+          "truncated": false
+        },
+        "sql_round": 1
+      },
+      {
+        "kind": "validate",
+        "sql": {
+          "original_sha256": "541b9adac9de32af09f19e3e5e30c058fbd1d43105683ad57cdac99642b52958",
+          "original_utf8_bytes": 141,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT q.q1 FROM qualifying q JOIN drivers d ON q.driverid = d.driverid WHERE d.forename = 'Bruno' AND d.surname = 'Senna' AND q.raceid = 354",
+          "truncated": false
+        },
+        "sql_round": 1,
+        "success": true
+      },
+      {
+        "kind": "execute",
+        "sql": {
+          "original_sha256": "541b9adac9de32af09f19e3e5e30c058fbd1d43105683ad57cdac99642b52958",
+          "original_utf8_bytes": 141,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT q.q1 FROM qualifying q JOIN drivers d ON q.driverid = d.driverid WHERE d.forename = 'Bruno' AND d.surname = 'Senna' AND q.raceid = 354",
+          "truncated": false
+        },
+        "sql_round": 1,
+        "success": true
+      }
+    ],
+    "clarification_reason": null,
+    "limits": {
+      "max_events": 21,
+      "reason_utf8_bytes": 2048,
+      "schema_graph_utf8_bytes": 98304,
+      "sql_text_utf8_bytes": 8192,
+      "total_utf8_bytes": 393216
+    },
+    "omitted_events": 0,
+    "policy": "bird_development_observation_v1",
+    "report_only": true,
+    "retrieval": {
+      "added_relation_key_field_ids": [
+        "formula_1.drivers.driverid",
+        "formula_1.laptimes.driverid",
+        "formula_1.laptimes.raceid",
+        "formula_1.results.driverid"
+      ],
+      "anchored_table_ids": [
+        "formula_1.qualifying"
+      ],
+      "baseline_field_ids": [
+        "formula_1.qualifying.q1",
+        "formula_1.qualifying.raceid",
+        "formula_1.qualifying.qualifyid",
+        "formula_1.qualifying.position",
+        "formula_1.qualifying.driverid",
+        "formula_1.qualifying.number"
+      ],
+      "candidate_count": 39,
+      "candidates": [
+        {
+          "bm25_rank": 3,
+          "bm25_score": 0.6988176747253801,
+          "dense_rank": 7,
+          "dense_score": 0.5533712210973173,
+          "field_id": "formula_1.qualifying.qualifyid",
+          "matched_intent_terms": [],
+          "rerank_rank": 3,
+          "rerank_score": 0.5903025625409163,
+          "rrf_rank": 1,
+          "rrf_score": 0.030798389007344232,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 2,
+          "bm25_score": 0.9581766610541982,
+          "dense_rank": 9,
+          "dense_score": 0.5514124716526213,
+          "field_id": "formula_1.qualifying.q2",
+          "matched_intent_terms": [
+            "qualifying"
+          ],
+          "rerank_rank": 9,
+          "rerank_score": 0.5365983236140935,
+          "rrf_rank": 2,
+          "rrf_score": 0.030621785881252923,
+          "selected": false,
+          "selection_reason": "coverage_intent_already_covered",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 7,
+          "bm25_score": 0.5343739400442821,
+          "dense_rank": 6,
+          "dense_score": 0.563072086911085,
+          "field_id": "formula_1.drivers.driverref",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 36,
+          "rerank_score": 0.4249714057698032,
+          "rrf_rank": 3,
+          "rrf_score": 0.03007688828584351,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "driver"
+          ]
+        },
+        {
+          "bm25_rank": 1,
+          "bm25_score": 1.0,
+          "dense_rank": 14,
+          "dense_score": 0.5333436960953051,
+          "field_id": "formula_1.qualifying.q1",
+          "matched_intent_terms": [],
+          "rerank_rank": 1,
+          "rerank_score": 0.72581548046633,
+          "rrf_rank": 4,
+          "rrf_score": 0.029906956136464335,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 12,
+          "bm25_score": 0.44300841520454165,
+          "dense_rank": 3,
+          "dense_score": 0.6029711304089848,
+          "field_id": "formula_1.qualifying.raceid",
+          "matched_intent_terms": [],
+          "rerank_rank": 2,
+          "rerank_score": 0.6263393320471243,
+          "rrf_rank": 5,
+          "rrf_score": 0.02976190476190476,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 14,
+          "bm25_score": 0.4264741638460367,
+          "dense_rank": 2,
+          "dense_score": 0.6071936448217342,
+          "field_id": "formula_1.qualifying.driverid",
+          "matched_intent_terms": [],
+          "rerank_rank": 5,
+          "rerank_score": 0.5746825253382425,
+          "rrf_rank": 6,
+          "rrf_score": 0.02964254577157803,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 6,
+          "bm25_score": 0.5578974490488017,
+          "dense_rank": 10,
+          "dense_score": 0.550499524483549,
+          "field_id": "formula_1.results.time",
+          "matched_intent_terms": [],
+          "rerank_rank": 22,
+          "rerank_score": 0.4760292286412971,
+          "rrf_rank": 7,
+          "rrf_score": 0.029437229437229435,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 20,
+          "bm25_score": 0.39326484101347253,
+          "dense_rank": 1,
+          "dense_score": 0.6150519047537195,
+          "field_id": "formula_1.qualifying.q3",
+          "matched_intent_terms": [
+            "qualifying"
+          ],
+          "rerank_rank": 7,
+          "rerank_score": 0.5409968195813306,
+          "rrf_rank": 8,
+          "rrf_score": 0.02889344262295082,
+          "selected": false,
+          "selection_reason": "coverage_intent_already_covered",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 13,
+          "bm25_score": 0.43061731466196723,
+          "dense_rank": 15,
+          "dense_score": 0.5325646477589396,
+          "field_id": "formula_1.results.resultid",
+          "matched_intent_terms": [
+            "result"
+          ],
+          "rerank_rank": 13,
+          "rerank_score": 0.49910772316056057,
+          "rrf_rank": 9,
+          "rrf_score": 0.027031963470319637,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "result"
+          ]
+        },
+        {
+          "bm25_rank": 28,
+          "bm25_score": 0.3432219192251114,
+          "dense_rank": 4,
+          "dense_score": 0.5846008524988978,
+          "field_id": "formula_1.drivers.forename",
+          "matched_intent_terms": [
+            "forename"
+          ],
+          "rerank_rank": 35,
+          "rerank_score": 0.42655763484164577,
+          "rrf_rank": 10,
+          "rrf_score": 0.026988636363636364,
+          "selected": true,
+          "selection_reason": "selected_intent_coverage",
+          "uncovered_intent_terms": [
+            "forename"
+          ]
+        },
+        {
+          "bm25_rank": 29,
+          "bm25_score": 0.3432219192251114,
+          "dense_rank": 5,
+          "dense_score": 0.5735357259063949,
+          "field_id": "formula_1.drivers.surname",
+          "matched_intent_terms": [
+            "surname"
+          ],
+          "rerank_rank": 37,
+          "rerank_score": 0.42175859194436016,
+          "rrf_rank": 11,
+          "rrf_score": 0.02662057044079516,
+          "selected": true,
+          "selection_reason": "selected_intent_coverage",
+          "uncovered_intent_terms": [
+            "surname"
+          ]
+        },
+        {
+          "bm25_rank": 19,
+          "bm25_score": 0.4050810305718049,
+          "dense_rank": 12,
+          "dense_score": 0.5425758046568676,
+          "field_id": "formula_1.results.driverid",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 27,
+          "rerank_score": 0.4643553521188875,
+          "rrf_rank": 12,
+          "rrf_score": 0.026547116736990152,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "driver"
+          ]
+        },
+        {
+          "bm25_rank": 11,
+          "bm25_score": 0.4552800461270332,
+          "dense_rank": 21,
+          "dense_score": 0.5153967265858364,
+          "field_id": "formula_1.results.milliseconds",
+          "matched_intent_terms": [],
+          "rerank_rank": 16,
+          "rerank_score": 0.4887812060115051,
+          "rrf_rank": 13,
+          "rrf_score": 0.0264301860545992,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 16,
+          "bm25_score": 0.4216152819303099,
+          "dense_rank": 16,
+          "dense_score": 0.5314530056606159,
+          "field_id": "formula_1.results.raceid",
+          "matched_intent_terms": [
+            "race"
+          ],
+          "rerank_rank": 10,
+          "rerank_score": 0.5150038969196393,
+          "rrf_rank": 14,
+          "rrf_score": 0.02631578947368421,
+          "selected": true,
+          "selection_reason": "selected_intent_coverage",
+          "uncovered_intent_terms": [
+            "race"
+          ]
+        },
+        {
+          "bm25_rank": 10,
+          "bm25_score": 0.4609833283324225,
+          "dense_rank": 24,
+          "dense_score": 0.5070879498600533,
+          "field_id": "formula_1.drivers.driverid",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 17,
+          "rerank_score": 0.485701491125048,
+          "rrf_rank": 15,
+          "rrf_score": 0.026190476190476188,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "driver"
+          ]
+        },
+        {
+          "bm25_rank": 21,
+          "bm25_score": 0.37724810810564363,
+          "dense_rank": 26,
+          "dense_score": 0.5052569344511085,
+          "field_id": "formula_1.laptimes.raceid",
+          "matched_intent_terms": [
+            "race"
+          ],
+          "rerank_rank": 11,
+          "rerank_score": 0.5068375196433601,
+          "rrf_rank": 16,
+          "rrf_score": 0.023973585989089864,
+          "selected": false,
+          "selection_reason": "coverage_table_not_anchored",
+          "uncovered_intent_terms": [
+            "race"
+          ]
+        },
+        {
+          "bm25_rank": 18,
+          "bm25_score": 0.41652813004201833,
+          "dense_rank": 30,
+          "dense_score": 0.4955688554288511,
+          "field_id": "formula_1.races.raceid",
+          "matched_intent_terms": [
+            "race"
+          ],
+          "rerank_rank": 12,
+          "rerank_score": 0.5041093406718384,
+          "rrf_rank": 17,
+          "rrf_score": 0.02393162393162393,
+          "selected": true,
+          "selection_reason": "selected_intent_coverage",
+          "uncovered_intent_terms": [
+            "race"
+          ]
+        },
+        {
+          "bm25_rank": 30,
+          "bm25_score": 0.3420949567741909,
+          "dense_rank": 19,
+          "dense_score": 0.5195878399856827,
+          "field_id": "formula_1.driverstandings.driverstandingsid",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 33,
+          "rerank_score": 0.43027137503418905,
+          "rrf_rank": 18,
+          "rrf_score": 0.023769338959212377,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "driver"
+          ]
+        },
+        {
+          "bm25_rank": 22,
+          "bm25_score": 0.37724810810564363,
+          "dense_rank": 27,
+          "dense_score": 0.5025842959503504,
+          "field_id": "formula_1.pitstops.raceid",
+          "matched_intent_terms": [
+            "race"
+          ],
+          "rerank_rank": 18,
+          "rerank_score": 0.4851485226106438,
+          "rrf_rank": 19,
+          "rrf_score": 0.02368937482478273,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "race"
+          ]
+        },
+        {
+          "bm25_rank": 24,
+          "bm25_score": 0.3554730922899107,
+          "dense_rank": 25,
+          "dense_score": 0.5064205930416114,
+          "field_id": "formula_1.laptimes.driverid",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 15,
+          "rerank_score": 0.4963439709931441,
+          "rrf_rank": 20,
+          "rrf_score": 0.023669467787114845,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "driver"
+          ]
+        },
+        {
+          "bm25_rank": 23,
+          "bm25_score": 0.35647258264138043,
+          "dense_rank": 29,
+          "dense_score": 0.4971197752199,
+          "field_id": "formula_1.drivers.url",
+          "matched_intent_terms": [],
+          "rerank_rank": 38,
+          "rerank_score": 0.4173223509741654,
+          "rrf_rank": 21,
+          "rrf_score": 0.023284147827264113,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 4,
+          "bm25_score": 0.6547804430228152,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.constructors.name",
+          "matched_intent_terms": [],
+          "rerank_rank": 30,
+          "rerank_score": 0.447551126443294,
+          "rrf_rank": 22,
+          "rrf_score": 0.015625,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 5,
+          "bm25_score": 0.5699269861504788,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.results.grid",
+          "matched_intent_terms": [],
+          "rerank_rank": 21,
+          "rerank_score": 0.4769623800672585,
+          "rrf_rank": 23,
+          "rrf_score": 0.015384615384615385,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 8,
+          "bm25_score": 0.5163972469405426,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.circuits.name",
+          "matched_intent_terms": [],
+          "rerank_rank": 32,
+          "rerank_score": 0.43946603071420487,
+          "rrf_rank": 24,
+          "rrf_score": 0.014705882352941176,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 8,
+          "dense_score": 0.552155136477589,
+          "field_id": "formula_1.drivers.code",
+          "matched_intent_terms": [],
+          "rerank_rank": 24,
+          "rerank_score": 0.46902936473173484,
+          "rrf_rank": 25,
+          "rrf_score": 0.014705882352941176,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 9,
+          "bm25_score": 0.5099040277711565,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.races.name",
+          "matched_intent_terms": [],
+          "rerank_rank": 34,
+          "rerank_score": 0.4294316392381652,
+          "rrf_rank": 26,
+          "rrf_score": 0.014492753623188406,
+          "selected": true,
+          "selection_reason": "selected_intent_coverage",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 11,
+          "dense_score": 0.5503193608379385,
+          "field_id": "formula_1.qualifying.number",
+          "matched_intent_terms": [],
+          "rerank_rank": 6,
+          "rerank_score": 0.5539680352500242,
+          "rrf_rank": 27,
+          "rrf_score": 0.014084507042253521,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 13,
+          "dense_score": 0.5348209063498516,
+          "field_id": "formula_1.drivers.nationality",
+          "matched_intent_terms": [],
+          "rerank_rank": 29,
+          "rerank_score": 0.4525553418765348,
+          "rrf_rank": 28,
+          "rrf_score": 0.0136986301369863,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 15,
+          "bm25_score": 0.4225109054985557,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.status.status",
+          "matched_intent_terms": [],
+          "rerank_rank": 19,
+          "rerank_score": 0.48327093667763255,
+          "rrf_rank": 29,
+          "rrf_score": 0.013333333333333334,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 17,
+          "bm25_score": 0.42107653219644264,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.constructors.url",
+          "matched_intent_terms": [],
+          "rerank_rank": 39,
+          "rerank_score": 0.39355001473411133,
+          "rrf_rank": 30,
+          "rrf_score": 0.012987012987012988,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 17,
+          "dense_score": 0.5303018654325727,
+          "field_id": "formula_1.qualifying.position",
+          "matched_intent_terms": [],
+          "rerank_rank": 4,
+          "rerank_score": 0.5762952007257769,
+          "rrf_rank": 31,
+          "rrf_score": 0.012987012987012988,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 18,
+          "dense_score": 0.5283004951427629,
+          "field_id": "formula_1.driverstandings.raceid",
+          "matched_intent_terms": [],
+          "rerank_rank": 26,
+          "rerank_score": 0.4647470812402705,
+          "rrf_rank": 32,
+          "rrf_score": 0.01282051282051282,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 20,
+          "dense_score": 0.5159222197537906,
+          "field_id": "formula_1.drivers.number",
+          "matched_intent_terms": [
+            "number"
+          ],
+          "rerank_rank": 14,
+          "rerank_score": 0.49712178254170053,
+          "rrf_rank": 33,
+          "rrf_score": 0.0125,
+          "selected": true,
+          "selection_reason": "selected_intent_coverage",
+          "uncovered_intent_terms": [
+            "number"
+          ]
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 22,
+          "dense_score": 0.5124816505969285,
+          "field_id": "formula_1.qualifying.constructorid",
+          "matched_intent_terms": [],
+          "rerank_rank": 8,
+          "rerank_score": 0.5394742070551494,
+          "rrf_rank": 34,
+          "rrf_score": 0.012195121951219513,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 23,
+          "dense_score": 0.5090603293145247,
+          "field_id": "formula_1.driverstandings.driverid",
+          "matched_intent_terms": [],
+          "rerank_rank": 28,
+          "rerank_score": 0.4576209536990926,
+          "rrf_rank": 35,
+          "rrf_score": 0.012048192771084338,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 25,
+          "bm25_score": 0.3554730922899107,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.pitstops.driverid",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 25,
+          "rerank_score": 0.46854961206834805,
+          "rrf_rank": 36,
+          "rrf_score": 0.011764705882352941,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "driver"
+          ]
+        },
+        {
+          "bm25_rank": 26,
+          "bm25_score": 0.35113243368189284,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.results.fastestlaptime",
+          "matched_intent_terms": [],
+          "rerank_rank": 23,
+          "rerank_score": 0.4742601239183779,
+          "rrf_rank": 37,
+          "rrf_score": 0.011627906976744186,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 27,
+          "bm25_score": 0.3432446745844229,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.seasons.year",
+          "matched_intent_terms": [
+            "race"
+          ],
+          "rerank_rank": 31,
+          "rerank_score": 0.44284634623302765,
+          "rrf_rank": 38,
+          "rrf_score": 0.011494252873563218,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "race"
+          ]
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 28,
+          "dense_score": 0.4972024529406556,
+          "field_id": "formula_1.constructorresults.raceid",
+          "matched_intent_terms": [
+            "race"
+          ],
+          "rerank_rank": 20,
+          "rerank_score": 0.47821926221191213,
+          "rrf_rank": 39,
+          "rrf_score": 0.011363636363636364,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "race"
+          ]
+        }
+      ],
+      "coverage_field_ids": [],
+      "intent_selection": {
+        "added_field_ids": [
+          "formula_1.drivers.forename",
+          "formula_1.drivers.number",
+          "formula_1.drivers.surname",
+          "formula_1.races.name",
+          "formula_1.races.raceid",
+          "formula_1.results.number",
+          "formula_1.results.raceid"
+        ],
+        "baseline_field_ids": [
+          "formula_1.qualifying.q1",
+          "formula_1.qualifying.raceid",
+          "formula_1.qualifying.qualifyid",
+          "formula_1.qualifying.position",
+          "formula_1.qualifying.driverid",
+          "formula_1.qualifying.number"
+        ],
+        "decisions": [
+          {
+            "basis": "public_input_and_authorized_metadata",
+            "field_id": "formula_1.drivers.number",
+            "priority": 4,
+            "reason": "explicit_public_identifier_or_label",
+            "rerank_score": 0.49712178254170053,
+            "score_source": "provider_rerank",
+            "selected": true,
+            "selection_reason": "explicit_public_identifier_or_label",
+            "table_id": "formula_1.drivers"
+          },
+          {
+            "basis": "public_input_and_authorized_metadata",
+            "field_id": "formula_1.drivers.forename",
+            "priority": 4,
+            "reason": "explicit_public_identifier_or_label",
+            "rerank_score": 0.42655763484164577,
+            "score_source": "provider_rerank",
+            "selected": true,
+            "selection_reason": "explicit_public_identifier_or_label",
+            "table_id": "formula_1.drivers"
+          },
+          {
+            "basis": "public_input_and_authorized_metadata",
+            "field_id": "formula_1.drivers.surname",
+            "priority": 4,
+            "reason": "explicit_public_identifier_or_label",
+            "rerank_score": 0.42175859194436016,
+            "score_source": "provider_rerank",
+            "selected": true,
+            "selection_reason": "explicit_public_identifier_or_label",
+            "table_id": "formula_1.drivers"
+          },
+          {
+            "basis": "public_input_and_authorized_metadata",
+            "field_id": "formula_1.races.raceid",
+            "priority": 4,
+            "reason": "explicit_public_identifier_or_label",
+            "rerank_score": 0.5041093406718384,
+            "score_source": "provider_rerank",
+            "selected": true,
+            "selection_reason": "explicit_public_identifier_or_label",
+            "table_id": "formula_1.races"
+          },
+          {
+            "basis": "public_input_and_authorized_metadata",
+            "field_id": "formula_1.races.name",
+            "priority": 4,
+            "reason": "explicit_public_identifier_or_label",
+            "rerank_score": 0.4294316392381652,
+            "score_source": "provider_rerank",
+            "selected": true,
+            "selection_reason": "explicit_public_identifier_or_label",
+            "table_id": "formula_1.races"
+          },
+          {
+            "basis": "public_input_and_authorized_metadata",
+            "field_id": "formula_1.results.raceid",
+            "priority": 4,
+            "reason": "explicit_public_identifier_or_label",
+            "rerank_score": 0.5150038969196393,
+            "score_source": "provider_rerank",
+            "selected": true,
+            "selection_reason": "explicit_public_identifier_or_label",
+            "table_id": "formula_1.results"
+          },
+          {
+            "basis": "public_input_and_authorized_metadata",
+            "field_id": "formula_1.results.number",
+            "priority": 4,
+            "reason": "explicit_public_identifier_or_label",
+            "rerank_score": null,
+            "score_source": "unranked_authorized_metadata",
+            "selected": true,
+            "selection_reason": "explicit_public_identifier_or_label",
+            "table_id": "formula_1.results"
+          }
+        ],
+        "policy": {
+          "baseline_preserved": true,
+          "canonical_lookup_max_pairs": 4,
+          "canonical_lookup_sql_tool_calls": 1,
+          "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+          "development_candidate": true,
+          "formal_protocol_override": false,
+          "grain_policy": "public_explicit_entity_grain_v2",
+          "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+          "join_source": "declared_foreign_keys_only",
+          "lookup_consumes_existing_sql_budget": true,
+          "max_added_fields": 8,
+          "max_fields": 20,
+          "max_related_hops": 2,
+          "native_ex_unchanged": true,
+          "numeric_policy": "floating_count_ratio_order_advisory_v3",
+          "output_group_policy": "participant_action_target_pair_v1",
+          "policy_id": "bird_public_intent_candidate_v4",
+          "predicate_policy": "public_condition_roles_conflicts_v3",
+          "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+          "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+          "unit_policy": "public_percentage_units_precision_v2"
+        },
+        "sample_condition_candidates": []
+      },
+      "relation_key_field_ids": [
+        "formula_1.drivers.driverid",
+        "formula_1.laptimes.driverid",
+        "formula_1.laptimes.raceid",
+        "formula_1.results.driverid"
+      ],
+      "schema_graph": {
+        "complete": true,
+        "omission_reason": null,
+        "sha256": "72ec45bbc8e24047950a27eda28f7fff680c2d3a9941a907a1d38ff7462989fb",
+        "utf8_bytes": 10086,
+        "value": {
+          "database": "formula_1",
+          "databases": [
+            "formula_1"
+          ],
+          "fields": [
+            {
+              "description": "time in qualifying 1",
+              "id": "formula_1.qualifying.q1",
+              "label": "qualifying 1",
+              "name": "q1",
+              "role": "field",
+              "score": 0.72581548046633,
+              "source": "retrieval",
+              "sql_name": "qualifying.q1",
+              "table_id": "formula_1.qualifying",
+              "table_name": "qualifying",
+              "type": "text"
+            },
+            {
+              "description": "the identification number identifying each race",
+              "id": "formula_1.qualifying.raceid",
+              "label": "race Id",
+              "name": "raceid",
+              "role": "field",
+              "score": 0.6263393320471243,
+              "source": "retrieval",
+              "sql_name": "qualifying.raceid",
+              "table_id": "formula_1.qualifying",
+              "table_name": "qualifying",
+              "type": "bigint"
+            },
+            {
+              "description": "the unique identification number identifying qualifying",
+              "id": "formula_1.qualifying.qualifyid",
+              "label": "qualify Id",
+              "name": "qualifyid",
+              "role": "primary_key",
+              "score": 0.5903025625409163,
+              "source": "retrieval",
+              "sql_name": "qualifying.qualifyid",
+              "table_id": "formula_1.qualifying",
+              "table_name": "qualifying",
+              "type": "bigint"
+            },
+            {
+              "description": "position or track of circuit",
+              "id": "formula_1.qualifying.position",
+              "label": "position",
+              "name": "position",
+              "role": "field",
+              "score": 0.5762952007257769,
+              "source": "retrieval",
+              "sql_name": "qualifying.position",
+              "table_id": "formula_1.qualifying",
+              "table_name": "qualifying",
+              "type": "bigint"
+            },
+            {
+              "description": "the identification number identifying each driver",
+              "id": "formula_1.qualifying.driverid",
+              "label": "driver Id",
+              "name": "driverid",
+              "role": "field",
+              "score": 0.5746825253382425,
+              "source": "retrieval",
+              "sql_name": "qualifying.driverid",
+              "table_id": "formula_1.qualifying",
+              "table_name": "qualifying",
+              "type": "bigint"
+            },
+            {
+              "description": "number",
+              "id": "formula_1.qualifying.number",
+              "label": "number",
+              "name": "number",
+              "role": "field",
+              "score": 0.5539680352500242,
+              "source": "retrieval",
+              "sql_name": "qualifying.number",
+              "table_id": "formula_1.qualifying",
+              "table_name": "qualifying",
+              "type": "bigint"
+            },
+            {
+              "description": "forename",
+              "id": "formula_1.drivers.forename",
+              "label": "forename",
+              "name": "forename",
+              "role": "field",
+              "score": 0.42655763484164577,
+              "source": "intent_coverage",
+              "sql_name": "drivers.forename",
+              "table_id": "formula_1.drivers",
+              "table_name": "drivers",
+              "type": "text"
+            },
+            {
+              "description": "number",
+              "id": "formula_1.drivers.number",
+              "label": "number",
+              "name": "number",
+              "role": "field",
+              "score": 0.49712178254170053,
+              "source": "intent_coverage",
+              "sql_name": "drivers.number",
+              "table_id": "formula_1.drivers",
+              "table_name": "drivers",
+              "type": "bigint"
+            },
+            {
+              "description": "surname",
+              "id": "formula_1.drivers.surname",
+              "label": "surname",
+              "name": "surname",
+              "role": "field",
+              "score": 0.42175859194436016,
+              "source": "intent_coverage",
+              "sql_name": "drivers.surname",
+              "table_id": "formula_1.drivers",
+              "table_name": "drivers",
+              "type": "text"
+            },
+            {
+              "description": "name of the race",
+              "id": "formula_1.races.name",
+              "label": "name",
+              "name": "name",
+              "role": "field",
+              "score": 0.4294316392381652,
+              "source": "intent_coverage",
+              "sql_name": "races.name",
+              "table_id": "formula_1.races",
+              "table_name": "races",
+              "type": "text"
+            },
+            {
+              "description": "the unique identification number identifying the race",
+              "id": "formula_1.races.raceid",
+              "label": "race ID",
+              "name": "raceid",
+              "role": "primary_key",
+              "score": 0.5041093406718384,
+              "source": "intent_coverage",
+              "sql_name": "races.raceid",
+              "table_id": "formula_1.races",
+              "table_name": "races",
+              "type": "bigint"
+            },
+            {
+              "description": "number",
+              "id": "formula_1.results.number",
+              "label": "number",
+              "name": "number",
+              "role": "field",
+              "score": 0.0,
+              "source": "intent_coverage",
+              "sql_name": "results.number",
+              "table_id": "formula_1.results",
+              "table_name": "results",
+              "type": "bigint"
+            },
+            {
+              "description": "the identification number identifying the race",
+              "id": "formula_1.results.raceid",
+              "label": "race ID",
+              "name": "raceid",
+              "role": "field",
+              "score": 0.5150038969196393,
+              "source": "intent_coverage",
+              "sql_name": "results.raceid",
+              "table_id": "formula_1.results",
+              "table_name": "results",
+              "type": "bigint"
+            },
+            {
+              "description": "the unique identification number identifying each driver",
+              "id": "formula_1.drivers.driverid",
+              "label": "driver ID",
+              "name": "driverid",
+              "role": "primary_key",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "drivers.driverid",
+              "table_id": "formula_1.drivers",
+              "table_name": "drivers",
+              "type": "bigint"
+            },
+            {
+              "description": "the identification number identifying each driver",
+              "id": "formula_1.laptimes.driverid",
+              "label": "driver ID",
+              "name": "driverid",
+              "role": "primary_key",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "laptimes.driverid",
+              "table_id": "formula_1.laptimes",
+              "table_name": "laptimes",
+              "type": "bigint"
+            },
+            {
+              "description": "the identification number identifying race",
+              "id": "formula_1.laptimes.raceid",
+              "label": "race ID",
+              "name": "raceid",
+              "role": "primary_key",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "laptimes.raceid",
+              "table_id": "formula_1.laptimes",
+              "table_name": "laptimes",
+              "type": "bigint"
+            },
+            {
+              "description": "the identification number identifying the driver",
+              "id": "formula_1.results.driverid",
+              "label": "driver ID",
+              "name": "driverid",
+              "role": "field",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "results.driverid",
+              "table_id": "formula_1.results",
+              "table_name": "results",
+              "type": "bigint"
+            }
+          ],
+          "graph_version": "fd072e82c5bf",
+          "joins": [
+            {
+              "description": "Official database foreign key",
+              "id": "qualifying_driverid_fkey:driverid",
+              "left_field": "driverid",
+              "left_table": "formula_1.drivers",
+              "left_table_name": "drivers",
+              "relation_type": "foreign_key",
+              "right_field": "driverid",
+              "right_table": "formula_1.qualifying",
+              "right_table_name": "qualifying"
+            },
+            {
+              "description": "Official database foreign key",
+              "id": "laptimes_driverid_fkey:driverid",
+              "left_field": "driverid",
+              "left_table": "formula_1.drivers",
+              "left_table_name": "drivers",
+              "relation_type": "foreign_key",
+              "right_field": "driverid",
+              "right_table": "formula_1.laptimes",
+              "right_table_name": "laptimes"
+            },
+            {
+              "description": "Official database foreign key",
+              "id": "laptimes_raceid_fkey:raceid",
+              "left_field": "raceid",
+              "left_table": "formula_1.races",
+              "left_table_name": "races",
+              "relation_type": "foreign_key",
+              "right_field": "raceid",
+              "right_table": "formula_1.laptimes",
+              "right_table_name": "laptimes"
+            },
+            {
+              "description": "Official database foreign key",
+              "id": "results_driverid_fkey:driverid",
+              "left_field": "driverid",
+              "left_table": "formula_1.drivers",
+              "left_table_name": "drivers",
+              "relation_type": "foreign_key",
+              "right_field": "driverid",
+              "right_table": "formula_1.results",
+              "right_table_name": "results"
+            },
+            {
+              "description": "Official database foreign key",
+              "id": "qualifying_raceid_fkey:raceid",
+              "left_field": "raceid",
+              "left_table": "formula_1.races",
+              "left_table_name": "races",
+              "relation_type": "foreign_key",
+              "right_field": "raceid",
+              "right_table": "formula_1.qualifying",
+              "right_table_name": "qualifying"
+            },
+            {
+              "description": "Official database foreign key",
+              "id": "results_raceid_fkey:raceid",
+              "left_field": "raceid",
+              "left_table": "formula_1.races",
+              "left_table_name": "races",
+              "relation_type": "foreign_key",
+              "right_field": "raceid",
+              "right_table": "formula_1.results",
+              "right_table_name": "results"
+            }
+          ],
+          "relation_role_context": {
+            "context_output_groups": [],
+            "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges.",
+            "joins_are_alternatives": true,
+            "policy": "authorized_role_alternatives_v1",
+            "preferred_actor_relations": [],
+            "roles": [
+              {
+                "child_field": "driverid",
+                "child_table": "formula_1.qualifying",
+                "mandatory": false,
+                "parent_field": "driverid",
+                "parent_table": "formula_1.drivers",
+                "relation_id": "qualifying_driverid_fkey:driverid",
+                "role_description": "the identification number identifying each driver",
+                "role_label": "driver Id",
+                "source": "current_authorized_declared_foreign_key"
+              },
+              {
+                "child_field": "driverid",
+                "child_table": "formula_1.laptimes",
+                "mandatory": false,
+                "parent_field": "driverid",
+                "parent_table": "formula_1.drivers",
+                "relation_id": "laptimes_driverid_fkey:driverid",
+                "role_description": "the identification number identifying each driver",
+                "role_label": "driver ID",
+                "source": "current_authorized_declared_foreign_key"
+              },
+              {
+                "child_field": "raceid",
+                "child_table": "formula_1.laptimes",
+                "mandatory": false,
+                "parent_field": "raceid",
+                "parent_table": "formula_1.races",
+                "relation_id": "laptimes_raceid_fkey:raceid",
+                "role_description": "the identification number identifying race",
+                "role_label": "race ID",
+                "source": "current_authorized_declared_foreign_key"
+              },
+              {
+                "child_field": "driverid",
+                "child_table": "formula_1.results",
+                "mandatory": false,
+                "parent_field": "driverid",
+                "parent_table": "formula_1.drivers",
+                "relation_id": "results_driverid_fkey:driverid",
+                "role_description": "the identification number identifying the driver",
+                "role_label": "driver ID",
+                "source": "current_authorized_declared_foreign_key"
+              },
+              {
+                "child_field": "raceid",
+                "child_table": "formula_1.qualifying",
+                "mandatory": false,
+                "parent_field": "raceid",
+                "parent_table": "formula_1.races",
+                "relation_id": "qualifying_raceid_fkey:raceid",
+                "role_description": "the identification number identifying each race",
+                "role_label": "race Id",
+                "source": "current_authorized_declared_foreign_key"
+              },
+              {
+                "child_field": "raceid",
+                "child_table": "formula_1.results",
+                "mandatory": false,
+                "parent_field": "raceid",
+                "parent_table": "formula_1.races",
+                "relation_id": "results_raceid_fkey:raceid",
+                "role_description": "the identification number identifying the race",
+                "role_label": "race ID",
+                "source": "current_authorized_declared_foreign_key"
+              }
+            ]
+          },
+          "source_identity": {
+            "backend": "postgresql",
+            "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+            "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918",
+            "dialect": "postgres",
+            "logical_database_id": "formula_1",
+            "physical_schema": "public",
+            "prompt_dialect": "PostgreSQL",
+            "source_id": "bird_mini_dev_postgres_formula_1"
+          },
+          "tables": [
+            {
+              "database": "formula_1",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "formula_1",
+              "id": "formula_1.drivers",
+              "label": "drivers",
+              "name": "drivers"
+            },
+            {
+              "database": "formula_1",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "formula_1",
+              "id": "formula_1.laptimes",
+              "label": "laptimes",
+              "name": "laptimes"
+            },
+            {
+              "database": "formula_1",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "formula_1",
+              "id": "formula_1.qualifying",
+              "label": "qualifying",
+              "name": "qualifying"
+            },
+            {
+              "database": "formula_1",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "formula_1",
+              "id": "formula_1.races",
+              "label": "races",
+              "name": "races"
+            },
+            {
+              "database": "formula_1",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "formula_1",
+              "id": "formula_1.results",
+              "label": "results",
+              "name": "results"
+            }
+          ]
+        }
+      },
+      "selected_field_ids": [
+        "formula_1.qualifying.q1",
+        "formula_1.qualifying.raceid",
+        "formula_1.qualifying.qualifyid",
+        "formula_1.qualifying.position",
+        "formula_1.qualifying.driverid",
+        "formula_1.qualifying.number",
+        "formula_1.drivers.forename",
+        "formula_1.drivers.number",
+        "formula_1.drivers.surname",
+        "formula_1.races.name",
+        "formula_1.races.raceid",
+        "formula_1.results.number",
+        "formula_1.results.raceid"
+      ],
+      "selection_policy": {
+        "coverage_enabled": true,
+        "coverage_floor": 0.5,
+        "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+        "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+        "development_candidate": true,
+        "formal_protocol_override": false,
+        "intent_source": "original_question_and_official_evidence",
+        "max_coverage_fields": 4,
+        "max_fields": 20,
+        "metadata_match": "native_field_name_or_official_field_label",
+        "policy_id": "bird_authorized_schema_coverage_v1",
+        "score_representation": "provider score clamped to [0,1] by existing broker",
+        "threshold": 0.55
+      }
+    }
+  },
+  "errors": [],
+  "ex_correct": true,
+  "executions": [
+    {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "16b4e8619b9be32a9cdac4c38681a731bd1cfc05fc82d4e19f625bf2bb340a21",
+        "payload_bytes": 40,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "success": true
+    }
+  ],
+  "final_sql_execution_success": true,
+  "first_sql_execution_success": true,
+  "formal_benchmark": true,
+  "generated_sql": "SELECT q.q1 FROM qualifying q JOIN drivers d ON q.driverid = d.driverid WHERE d.forename = 'Bruno' AND d.surname = 'Senna' AND q.raceid = 354",
+  "generation_status": "diagnostic_answered",
+  "generation_worker_mode": "diagnostic",
+  "gold_executed": true,
+  "gold_execution_attempted": true,
+  "gold_sql_sha256": "d8542044ef4309982da8672097f3ec2bc7e255059b3b8c9334bc83106b4bcab0",
+  "index_sha256": "c0d00adb8179352f80878c4a3b43a4e9143901c17382164d8a43286ab1327f9e",
+  "intent_candidate_policy": {
+    "baseline_preserved": true,
+    "canonical_lookup_max_pairs": 4,
+    "canonical_lookup_sql_tool_calls": 1,
+    "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "grain_policy": "public_explicit_entity_grain_v2",
+    "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+    "join_source": "declared_foreign_keys_only",
+    "lookup_consumes_existing_sql_budget": true,
+    "max_added_fields": 8,
+    "max_fields": 20,
+    "max_related_hops": 2,
+    "native_ex_unchanged": true,
+    "numeric_policy": "floating_count_ratio_order_advisory_v3",
+    "output_group_policy": "participant_action_target_pair_v1",
+    "policy_id": "bird_public_intent_candidate_v4",
+    "predicate_policy": "public_condition_roles_conflicts_v3",
+    "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+    "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+    "unit_policy": "public_percentage_units_precision_v2"
+  },
+  "intent_contract": {
+    "canonical_values": [],
+    "entity_grain": {},
+    "entity_identifier_output": null,
+    "explicit_top_n": null,
+    "guidance": [
+      "For ranked nonmissing values, write NULLS LAST explicitly on nullable ORDER BY expressions, including ABS and aggregates. Preserve any explicit request to rank missing values first.",
+      "Preserve Top-N size, ordinal offset, direction, ties and requested output order; do not add arbitrary tie-breakers.",
+      "Project exactly the requested attributes. For a list of entity instances without requested attributes, prefer that entity primary key; do not SELECT table.*. This is an explicit development output convention, not an inferred reference answer.",
+      "For full names, keep first/last fields together and include all numbered person slots requested, in slot order. Do not add email/contact fields.",
+      "Cover every business population and condition from question/evidence. A difference calculation returns the requested signed difference, not ABS or an extra Yes/No column unless requested.",
+      "Profile samples are coverage hints, never new mandatory filters. Do not turn names, table/role nouns or arithmetic constants into equality predicates. Required conditions below bind a specific public evidence field and value; preserve that ownership.",
+      "Inspect entity_grain.enforcement and its public_basis. Only an explicit distinct-entity request mandates deduplication. A primary key or one-to-many join alone is advisory: preserve requested joined-row weighting and state unresolved grain; do not invent DISTINCT or choose reference answers.",
+      "Join edges in relation_role_context are alternatives. Select the participant matching the question action, not an editor/owner merely because it is the first shortest path. Context output groups use the explicit development convention to include the named related entity title/name alongside the requested actor label; they are not reference-answer hints.",
+      "If quantity_difference_scalar is true, the evidence provides the quantity formula for an independent yes/no comparison: return only that signed numeric difference, whose sign also answers the comparison. If entity_identifier_output is supplied, the explicit entity-list development convention requests that primary identifier alone.",
+      "Foreign keys store identifiers, not human names. Join the authorized referenced entity and filter its name field. Name fields on different tables are not assumed interchangeable.",
+      "Canonical values below come from bounded case-insensitive equality lookups. Use a unique stored spelling without removing/changing conditions; not_found and ambiguous are not permission to guess.",
+      "Use output_units for scale/type decisions and participant_output for projection groups. These are versioned public development conventions with explicit overrides and ambiguity records, not hidden reference requirements. For count percentages, prefer a REAL or DOUBLE PRECISION numerator scaled before division; operation order alone never triggers rejection. Preserve explicit fraction, exact-formula, decimal and rounding requests. Native EX has no tolerance.",
+      "Missing schema is a reason to clarify only after checking the supplied authorized field groups and declared FK paths. Explain the specific missing field or ambiguity."
+    ],
+    "name_groups": [],
+    "ordinal_descending": null,
+    "ordinal_rank": null,
+    "output_units": {
+      "arithmetic_preference": "requested_or_source_type",
+      "formula_excerpt": null,
+      "guidance": "Percentage means a 0-100 numeric output under this visible development convention. An evidence DIVIDE formula without a scale supplies the base ratio; the percentage question supplies *100. Explicit 0-1/fraction requests or an exact-formula instruction override this default. Record conflicts; never consult a reference answer. For unrounded count percentages prefer CAST(conditional_count AS REAL) * 100 / NULLIF(total_count,0), preserving entity grain; DOUBLE PRECISION is also allowed. Scaling before division is a numerical suggestion, never an operation-order rejection. Do not change types, round, or normalize returned results to make comparisons pass.",
+      "operation_order_authority": "advisory_only",
+      "output_unit": "unspecified",
+      "policy": "public_percentage_units_precision_v2",
+      "precision": {
+        "conflict": false,
+        "decimal_places": null,
+        "enforcement": "advisory",
+        "guidance": "Implement explicitly requested decimal places in the final SQL numeric output (for example ROUND(numeric_expression, n)). Preserve the requested unit and population; do not round driver results or add scoring tolerance. Ambiguous/complex output ownership is advisory.",
+        "policy": "explicit_public_decimal_places_v1",
+        "requests": [],
+        "unsupported": false
+      },
+      "question_formula_scale_conflict": false,
+      "ratio_multiplier": null,
+      "resolution_basis": "no_explicit_output_unit",
+      "resolution_is_development_convention": false
+    },
+    "participant_output": {
+      "advisory_groups": [],
+      "basis": "public_action_target_frame_and_unique_authorized_role",
+      "guidance": "Required groups are an explicit development output convention: project the requested participant label and the named action-target title, in that order. Mere filter/context mentions do not mandate projection. Explicit only/exclude instructions take precedence. Do not add contact fields, all columns or other candidate join roles.",
+      "policy": "participant_action_target_pair_v1",
+      "required_groups": []
+    },
+    "percentage_real_arithmetic": false,
+    "policy": {
+      "baseline_preserved": true,
+      "canonical_lookup_max_pairs": 4,
+      "canonical_lookup_sql_tool_calls": 1,
+      "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+      "development_candidate": true,
+      "formal_protocol_override": false,
+      "grain_policy": "public_explicit_entity_grain_v2",
+      "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+      "join_source": "declared_foreign_keys_only",
+      "lookup_consumes_existing_sql_budget": true,
+      "max_added_fields": 8,
+      "max_fields": 20,
+      "max_related_hops": 2,
+      "native_ex_unchanged": true,
+      "numeric_policy": "floating_count_ratio_order_advisory_v3",
+      "output_group_policy": "participant_action_target_pair_v1",
+      "policy_id": "bird_public_intent_candidate_v4",
+      "predicate_policy": "public_condition_roles_conflicts_v3",
+      "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+      "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+      "unit_policy": "public_percentage_units_precision_v2"
+    },
+    "profile_coverage_hints": [],
+    "public_evidence": {
+      "conditions": [],
+      "conflicts": [],
+      "guidance": "Keep numerator, denominator and population roles separate. Conflicting bindings are advisory; do not require their conjunction or guess which is correct.",
+      "policy": "public_condition_roles_conflicts_v3"
+    },
+    "quantity_difference_scalar": false,
+    "relation_role_context": {
+      "context_output_groups": [],
+      "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges.",
+      "joins_are_alternatives": true,
+      "policy": "authorized_role_alternatives_v1",
+      "preferred_actor_relations": [],
+      "roles": [
+        {
+          "child_field": "driverid",
+          "child_table": "formula_1.qualifying",
+          "mandatory": false,
+          "parent_field": "driverid",
+          "parent_table": "formula_1.drivers",
+          "relation_id": "qualifying_driverid_fkey:driverid",
+          "role_description": "the identification number identifying each driver",
+          "role_label": "driver Id",
+          "source": "current_authorized_declared_foreign_key"
+        },
+        {
+          "child_field": "driverid",
+          "child_table": "formula_1.laptimes",
+          "mandatory": false,
+          "parent_field": "driverid",
+          "parent_table": "formula_1.drivers",
+          "relation_id": "laptimes_driverid_fkey:driverid",
+          "role_description": "the identification number identifying each driver",
+          "role_label": "driver ID",
+          "source": "current_authorized_declared_foreign_key"
+        },
+        {
+          "child_field": "raceid",
+          "child_table": "formula_1.laptimes",
+          "mandatory": false,
+          "parent_field": "raceid",
+          "parent_table": "formula_1.races",
+          "relation_id": "laptimes_raceid_fkey:raceid",
+          "role_description": "the identification number identifying race",
+          "role_label": "race ID",
+          "source": "current_authorized_declared_foreign_key"
+        },
+        {
+          "child_field": "driverid",
+          "child_table": "formula_1.results",
+          "mandatory": false,
+          "parent_field": "driverid",
+          "parent_table": "formula_1.drivers",
+          "relation_id": "results_driverid_fkey:driverid",
+          "role_description": "the identification number identifying the driver",
+          "role_label": "driver ID",
+          "source": "current_authorized_declared_foreign_key"
+        },
+        {
+          "child_field": "raceid",
+          "child_table": "formula_1.qualifying",
+          "mandatory": false,
+          "parent_field": "raceid",
+          "parent_table": "formula_1.races",
+          "relation_id": "qualifying_raceid_fkey:raceid",
+          "role_description": "the identification number identifying each race",
+          "role_label": "race Id",
+          "source": "current_authorized_declared_foreign_key"
+        },
+        {
+          "child_field": "raceid",
+          "child_table": "formula_1.results",
+          "mandatory": false,
+          "parent_field": "raceid",
+          "parent_table": "formula_1.races",
+          "relation_id": "results_raceid_fkey:raceid",
+          "role_description": "the identification number identifying the race",
+          "role_label": "race ID",
+          "source": "current_authorized_declared_foreign_key"
+        }
+      ]
+    },
+    "remaining_sql_execution_rounds": 3,
+    "required_profile_conditions": []
+  },
+  "mode": "live",
+  "native_comparison": {
+    "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion",
+    "difference_codes": [],
+    "difference_preview_row_limit": 5,
+    "difference_preview_utf8_byte_limit": 65536,
+    "gold_column_count": 1,
+    "gold_only_preview": {
+      "oversized_rows_omitted": 0,
+      "preview_truncated": false,
+      "rows": [],
+      "utf8_bytes": 0
+    },
+    "gold_only_tuple_count": 0,
+    "gold_row_count": 1,
+    "gold_unique_tuple_count": 1,
+    "matches_frozen_gold": true,
+    "native_type_sets_differ": false,
+    "prediction_column_count": 1,
+    "prediction_only_preview": {
+      "oversized_rows_omitted": 0,
+      "preview_truncated": false,
+      "rows": [],
+      "utf8_bytes": 0
+    },
+    "prediction_only_tuple_count": 0,
+    "prediction_row_count": 1,
+    "prediction_unique_tuple_count": 1,
+    "preview_only": true
+  },
+  "native_results": {
+    "prediction": {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "16b4e8619b9be32a9cdac4c38681a731bd1cfc05fc82d4e19f625bf2bb340a21",
+        "payload_bytes": 40,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "preview": {
+        "columns": [
+          "q1"
+        ],
+        "complete_result_row_count": 1,
+        "preview_only": true,
+        "preview_truncated": false,
+        "rows": [
+          [
+            [
+              "text",
+              "1:23.796"
+            ]
+          ]
+        ]
+      },
+      "preview_row_limit": 20
+    },
+    "reference": {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "16b4e8619b9be32a9cdac4c38681a731bd1cfc05fc82d4e19f625bf2bb340a21",
+        "payload_bytes": 40,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "preview": {
+        "columns": [
+          "q1"
+        ],
+        "complete_result_row_count": 1,
+        "preview_only": true,
+        "preview_truncated": false,
+        "rows": [
+          [
+            [
+              "text",
+              "1:23.796"
+            ]
+          ]
+        ]
+      },
+      "preview_row_limit": 20
+    }
+  },
+  "new_model_request_count": 3,
+  "query_role": "askdata_m2_ro_formula_1",
+  "result": {
+    "column_count": 1,
+    "complete": true,
+    "native_types": [
+      "str"
+    ],
+    "ordered_native_diagnostic_sha256": "16b4e8619b9be32a9cdac4c38681a731bd1cfc05fc82d4e19f625bf2bb340a21",
+    "payload_bytes": 40,
+    "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+    "row_count": 1
+  },
+  "result_diagnostics": {
+    "column_count_match": true,
+    "ordered_rows_match": true,
+    "row_multiset_match": true
+  },
+  "retrieval": {
+    "baseline_field_ids": [
+      "formula_1.qualifying.q1",
+      "formula_1.qualifying.raceid",
+      "formula_1.qualifying.qualifyid",
+      "formula_1.qualifying.position",
+      "formula_1.qualifying.driverid",
+      "formula_1.qualifying.number"
+    ],
+    "bm25_count": 30,
+    "coverage_field_ids": [],
+    "dense_count": 30,
+    "intent_selection": {
+      "added_field_ids": [
+        "formula_1.drivers.forename",
+        "formula_1.drivers.number",
+        "formula_1.drivers.surname",
+        "formula_1.races.name",
+        "formula_1.races.raceid",
+        "formula_1.results.number",
+        "formula_1.results.raceid"
+      ],
+      "baseline_field_ids": [
+        "formula_1.qualifying.q1",
+        "formula_1.qualifying.raceid",
+        "formula_1.qualifying.qualifyid",
+        "formula_1.qualifying.position",
+        "formula_1.qualifying.driverid",
+        "formula_1.qualifying.number"
+      ],
+      "decisions": [
+        {
+          "basis": "public_input_and_authorized_metadata",
+          "field_id": "formula_1.drivers.number",
+          "priority": 4,
+          "reason": "explicit_public_identifier_or_label",
+          "rerank_score": 0.49712178254170053,
+          "score_source": "provider_rerank",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label",
+          "table_id": "formula_1.drivers"
+        },
+        {
+          "basis": "public_input_and_authorized_metadata",
+          "field_id": "formula_1.drivers.forename",
+          "priority": 4,
+          "reason": "explicit_public_identifier_or_label",
+          "rerank_score": 0.42655763484164577,
+          "score_source": "provider_rerank",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label",
+          "table_id": "formula_1.drivers"
+        },
+        {
+          "basis": "public_input_and_authorized_metadata",
+          "field_id": "formula_1.drivers.surname",
+          "priority": 4,
+          "reason": "explicit_public_identifier_or_label",
+          "rerank_score": 0.42175859194436016,
+          "score_source": "provider_rerank",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label",
+          "table_id": "formula_1.drivers"
+        },
+        {
+          "basis": "public_input_and_authorized_metadata",
+          "field_id": "formula_1.races.raceid",
+          "priority": 4,
+          "reason": "explicit_public_identifier_or_label",
+          "rerank_score": 0.5041093406718384,
+          "score_source": "provider_rerank",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label",
+          "table_id": "formula_1.races"
+        },
+        {
+          "basis": "public_input_and_authorized_metadata",
+          "field_id": "formula_1.races.name",
+          "priority": 4,
+          "reason": "explicit_public_identifier_or_label",
+          "rerank_score": 0.4294316392381652,
+          "score_source": "provider_rerank",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label",
+          "table_id": "formula_1.races"
+        },
+        {
+          "basis": "public_input_and_authorized_metadata",
+          "field_id": "formula_1.results.raceid",
+          "priority": 4,
+          "reason": "explicit_public_identifier_or_label",
+          "rerank_score": 0.5150038969196393,
+          "score_source": "provider_rerank",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label",
+          "table_id": "formula_1.results"
+        },
+        {
+          "basis": "public_input_and_authorized_metadata",
+          "field_id": "formula_1.results.number",
+          "priority": 4,
+          "reason": "explicit_public_identifier_or_label",
+          "rerank_score": null,
+          "score_source": "unranked_authorized_metadata",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label",
+          "table_id": "formula_1.results"
+        }
+      ],
+      "policy": {
+        "baseline_preserved": true,
+        "canonical_lookup_max_pairs": 4,
+        "canonical_lookup_sql_tool_calls": 1,
+        "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+        "development_candidate": true,
+        "formal_protocol_override": false,
+        "grain_policy": "public_explicit_entity_grain_v2",
+        "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+        "join_source": "declared_foreign_keys_only",
+        "lookup_consumes_existing_sql_budget": true,
+        "max_added_fields": 8,
+        "max_fields": 20,
+        "max_related_hops": 2,
+        "native_ex_unchanged": true,
+        "numeric_policy": "floating_count_ratio_order_advisory_v3",
+        "output_group_policy": "participant_action_target_pair_v1",
+        "policy_id": "bird_public_intent_candidate_v4",
+        "predicate_policy": "public_condition_roles_conflicts_v3",
+        "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+        "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+        "unit_policy": "public_percentage_units_precision_v2"
+      },
+      "sample_condition_candidates": []
+    },
+    "rrf_count": 39,
+    "schema_selection_policy": {
+      "coverage_enabled": true,
+      "coverage_floor": 0.5,
+      "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+      "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+      "development_candidate": true,
+      "formal_protocol_override": false,
+      "intent_source": "original_question_and_official_evidence",
+      "max_coverage_fields": 4,
+      "max_fields": 20,
+      "metadata_match": "native_field_name_or_official_field_label",
+      "policy_id": "bird_authorized_schema_coverage_v1",
+      "threshold": 0.55
+    },
+    "selected_count": 13,
+    "selected_field_ids": [
+      "formula_1.qualifying.q1",
+      "formula_1.qualifying.raceid",
+      "formula_1.qualifying.qualifyid",
+      "formula_1.qualifying.position",
+      "formula_1.qualifying.driverid",
+      "formula_1.qualifying.number",
+      "formula_1.drivers.forename",
+      "formula_1.drivers.number",
+      "formula_1.drivers.surname",
+      "formula_1.races.name",
+      "formula_1.races.raceid",
+      "formula_1.results.number",
+      "formula_1.results.raceid"
+    ],
+    "source_identity": {
+      "backend": "postgresql",
+      "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+      "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918",
+      "dialect": "postgres",
+      "logical_database_id": "formula_1",
+      "physical_schema": "public",
+      "prompt_dialect": "PostgreSQL",
+      "source_id": "bird_mini_dev_postgres_formula_1"
+    }
+  },
+  "runtime_closed": true,
+  "schema_selection_policy": {
+    "coverage_enabled": true,
+    "coverage_floor": 0.5,
+    "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+    "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "intent_source": "original_question_and_official_evidence",
+    "max_coverage_fields": 4,
+    "max_fields": 20,
+    "metadata_match": "native_field_name_or_official_field_label",
+    "policy_id": "bird_authorized_schema_coverage_v1",
+    "threshold": 0.55
+  },
+  "scorer_runtime_closed": true,
+  "scoring_scope": "trusted_after_agent_exit_with_original_case_deadline",
+  "source_identity": {
+    "backend": "postgresql",
+    "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+    "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918",
+    "dialect": "postgres",
+    "logical_database_id": "formula_1",
+    "physical_schema": "public",
+    "prompt_dialect": "PostgreSQL",
+    "source_id": "bird_mini_dev_postgres_formula_1"
+  },
+  "sql_repair_policy": "bird_authorized_sql_repair_v2",
+  "status": "scored",
+  "validation_events": [
+    {
+      "sql_round": 1,
+      "valid": true
+    }
+  ]
+}

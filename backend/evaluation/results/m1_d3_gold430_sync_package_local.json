@@ -1,0 +1,153 @@
+{
+  "stage": "M1 D3 Gold430 sync package",
+  "run_status": "complete",
+  "created_at": "2026-10-12T03:38:12.005618+00:00",
+  "package": "M1_D3_Gold430同步包_20261012.zip",
+  "package_sha256": "427fb8d9c9adb6fcd2df1aa2ea05814d01c469f61597ba7c4fa4cbb73910c3d5",
+  "package_bytes": 419429,
+  "file_count": 28,
+  "zip_crc_and_all_entry_bytes_verified": true,
+  "contains_env_or_credentials": false,
+  "files": [
+    {
+      "path": "AskData_Studio_后续项目改进方案.md",
+      "bytes": 31933,
+      "sha256": "ee7d88db606930b7a08fe4260e189676ebed3efad3774903acc19ebbf8fbf2d9"
+    },
+    {
+      "path": "后续参考路线.md",
+      "bytes": 13186,
+      "sha256": "2baed0e40eddd82a581f78ac923cd719be4de6639dc0c179aa7be34a6761f6a8"
+    },
+    {
+      "path": "M1_数据源依赖梳理与最小适配方案.md",
+      "bytes": 29059,
+      "sha256": "f907a497236a892e1199e3af0aae6fa03f59991ab2a7d1c0918eb885a2bdfbe8"
+    },
+    {
+      "path": "backend/scripts/audit_m1_d3_gold430.py",
+      "bytes": 8279,
+      "sha256": "590e3b0911336cbb680378745f0715409266628f7263745324910839096fb078"
+    },
+    {
+      "path": "backend/scripts/prepare_m1_d3_gold430.py",
+      "bytes": 4154,
+      "sha256": "47e78e96acef69e164ca329c9e949dcbf36ca97769377714b1418fcb089931e3"
+    },
+    {
+      "path": "backend/scripts/check_m1_d3_gold430_compatibility.py",
+      "bytes": 5147,
+      "sha256": "c2160652e994f6fa62f7cfe696b1418efe8ed169adeb03d183ab16ca21ae8420"
+    },
+    {
+      "path": "backend/scripts/audit_m1_d3_gold79.py",
+      "bytes": 13874,
+      "sha256": "176c55211cb526b5c933d4ab8d61ef000a626e25368cb5d005b58fab9116fb3e"
+    },
+    {
+      "path": "backend/scripts/check_m1_d3_duckdb_compatibility.py",
+      "bytes": 6530,
+      "sha256": "b8260e6c8f191589e847693a5534dabcc4fe1f4426b19543253ceb7d0d231884"
+    },
+    {
+      "path": "backend/tests/test_m1_d3_gold79.py",
+      "bytes": 7239,
+      "sha256": "424d0d726786e1772b65d8db5dc869980e574dc7222998b43da6ba9e64bbbd49"
+    },
+    {
+      "path": "backend/tests/test_m1_d3_gold430.py",
+      "bytes": 7713,
+      "sha256": "7ee16c8c6707c19c8cf58c26d8ece825f402df9eb1b7f94ddcfcc0b554135ffc"
+    },
+    {
+      "path": "backend/evaluation/cases/all_cases.jsonl",
+      "bytes": 763999,
+      "sha256": "e1cb760a8ffa4f89e45ca73403c439975c51d2be47cd36800ee4c7c0ee1925f1"
+    },
+    {
+      "path": "backend/evaluation/cases/m1_d3_postgres_gold430.json",
+      "bytes": 9906,
+      "sha256": "43eb82ccace5120f20beeb20adaf95ecdff915fe41cea2ab11415b8f46be1cda"
+    },
+    {
+      "path": "backend/evaluation/cases/m1_d3_postgres_gold351.json",
+      "bytes": 8112,
+      "sha256": "ece909bb7bcd89b8f1c4cc1ee7f8b3526a85599575c648bb859ec0e5898ac615"
+    },
+    {
+      "path": "backend/evaluation/cases/m1_d3_postgres_gold351_review.json",
+      "bytes": 728848,
+      "sha256": "bf1b4676d35ba786647532b33fee29ccd34c2de4a2abdfda5b93bc5774f7685a"
+    },
+    {
+      "path": "backend/evaluation/cases/m1_d3_postgres_gold79.json",
+      "bytes": 2008,
+      "sha256": "3028f12d2850fce7612edf77015af9dc0011fe4085f349b0232e78cf515f2c64"
+    },
+    {
+      "path": "backend/evaluation/cases/m1_d3_postgres_gold79_review.json",
+      "bytes": 132466,
+      "sha256": "fb0ba5949b9e0d68a124dc5d92c533372a423b031a613c9bc8026a153d2b8daf"
+    },
+    {
+      "path": "backend/evaluation/cases/e2e_behavior_postgres.json",
+      "bytes": 4219,
+      "sha256": "5c94c6eed02bbfea79bfb44688998992abd6f503624deb23ea70a54fd7f7b8d4"
+    },
+    {
+      "path": "backend/evaluation/M1_D3_POSTGRES_GOLD430_ACCEPTANCE.md",
+      "bytes": 8382,
+      "sha256": "c91dfeef31f305316c03e2518a8f4242aa042dd8e1bf2b0ba8d0a509564f681a"
+    },
+    {
+      "path": "backend/evaluation/M1_D3_POSTGRES_GOLD351_REVIEW.md",
+      "bytes": 579234,
+      "sha256": "708f5f66083da63c7323a61bbe1dbc1e68298670a39e42a315dfd8e909870ac5"
+    },
+    {
+      "path": "backend/evaluation/results/m1_all_cases_before_postgres_gold430_20261012.jsonl",
+      "bytes": 610185,
+      "sha256": "16fe651be76e5eacde7eb30ac6b1880eb4fcb0d22eebb7b347142f26e488a34f"
+    },
+    {
+      "path": "backend/evaluation/results/m1_all_cases_before_postgres_gold79_20261010.jsonl",
+      "bytes": 583743,
+      "sha256": "0eb11d55d07cbcc8926b4c5de6657c1f897e7559387cfb5f5c884ef20ec9e6ec"
+    },
+    {
+      "path": "backend/evaluation/results/m1_c3_postgres_runtime_server_v2.json",
+      "bytes": 81217,
+      "sha256": "2cd9a7b9ad94300b36a9494b22a76e28db2d64a91c8d23835c96e982e6ea7166"
+    },
+    {
+      "path": "backend/evaluation/results/m1_b_postgres_import_server.json",
+      "bytes": 167652,
+      "sha256": "215c9ce2e1ae53e140b7c17e4222d8eae29dcce7dd423ab03f74918d13032ce9"
+    },
+    {
+      "path": "backend/evaluation/results/m1_b_postgres_validation_server.json",
+      "bytes": 171988,
+      "sha256": "1e8e9b757f6391b15766169b631f3c7d287a1fdd95ea933570773989a57851f6"
+    },
+    {
+      "path": "backend/evaluation/results/m1_d3_gold430_audit_local.json",
+      "bytes": 234165,
+      "sha256": "eae2253017147fdd7fe84bd275a0a984448e18ed3b75560d6c2d2d8ca162b90a"
+    },
+    {
+      "path": "backend/evaluation/results/m1_d3_gold430_duckdb_compatibility_local.json",
+      "bytes": 345202,
+      "sha256": "e5bdd9c552b36edb3c951734ddfa54b6ef727277c9856c278610bab906762938"
+    },
+    {
+      "path": "backend/evaluation/results/m1_d3_gold430_regression_local.json",
+      "bytes": 366,
+      "sha256": "2e6b7185a308d07cd5aeff2c879bef8d5a8b0dd8456eaf578ab67851256065a6"
+    },
+    {
+      "path": "backend/evaluation/results/m1_d3_gold430_local_acceptance.json",
+      "bytes": 1922,
+      "sha256": "75bee61ec984aca0d69b0e5258455cc15d261389bf6eb9e1eb691a4e4e07f8b4"
+    }
+  ]
+}

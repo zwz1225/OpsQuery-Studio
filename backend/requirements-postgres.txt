@@ -1,0 +1,3 @@
+# Optional M1 B/C dependencies; the application remains on DuckDB until runtime acceptance.
+psycopg[binary]==3.2.13
+psycopg-pool==3.2.8

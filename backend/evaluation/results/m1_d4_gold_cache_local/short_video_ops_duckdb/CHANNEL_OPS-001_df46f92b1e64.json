@@ -1,0 +1,201 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "spend": [
+        "ad_spend"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "stat_date",
+      "spend"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": "stat_date",
+    "order_sensitive": true,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT stat_date,ROUND(SUM(spend),2) spend FROM ad_daily_stats WHERE strftime(stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CHANNEL_OPS-001",
+  "question": "2026-01每天的广告消耗；请返回统计日期、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+  "gold_sql": "SELECT stat_date,ROUND(SUM(spend),2) spend FROM ad_daily_stats WHERE strftime(stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 1",
+  "database": "short_video_ops",
+  "scenario": "channel_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.ad_accounts",
+      "short_video_ops.ad_campaigns",
+      "short_video_ops.ad_creatives",
+      "short_video_ops.ad_daily_stats",
+      "short_video_ops.budget_adjustments",
+      "short_video_ops.channel_attributions",
+      "short_video_ops.channel_conversion_events",
+      "short_video_ops.channel_targets",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "channel_ops"
+    ],
+    "user_id": "demo_channel_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "stat_date",
+    "spend"
+  ],
+  "rows": [
+    {
+      "stat_date": "2026-01-02",
+      "spend": 547.01
+    },
+    {
+      "stat_date": "2026-01-03",
+      "spend": 4092.0
+    },
+    {
+      "stat_date": "2026-01-04",
+      "spend": 1326.62
+    },
+    {
+      "stat_date": "2026-01-05",
+      "spend": 2622.66
+    },
+    {
+      "stat_date": "2026-01-06",
+      "spend": 1151.76
+    },
+    {
+      "stat_date": "2026-01-07",
+      "spend": 7150.09
+    },
+    {
+      "stat_date": "2026-01-08",
+      "spend": 7481.14
+    },
+    {
+      "stat_date": "2026-01-09",
+      "spend": 8729.2
+    },
+    {
+      "stat_date": "2026-01-10",
+      "spend": 6831.43
+    },
+    {
+      "stat_date": "2026-01-11",
+      "spend": 12802.42
+    },
+    {
+      "stat_date": "2026-01-12",
+      "spend": 10972.35
+    },
+    {
+      "stat_date": "2026-01-13",
+      "spend": 9370.02
+    },
+    {
+      "stat_date": "2026-01-14",
+      "spend": 12486.72
+    },
+    {
+      "stat_date": "2026-01-15",
+      "spend": 19280.28
+    },
+    {
+      "stat_date": "2026-01-16",
+      "spend": 14618.85
+    },
+    {
+      "stat_date": "2026-01-17",
+      "spend": 16386.99
+    },
+    {
+      "stat_date": "2026-01-18",
+      "spend": 17622.83
+    },
+    {
+      "stat_date": "2026-01-19",
+      "spend": 17616.27
+    },
+    {
+      "stat_date": "2026-01-20",
+      "spend": 22490.45
+    },
+    {
+      "stat_date": "2026-01-21",
+      "spend": 24398.57
+    },
+    {
+      "stat_date": "2026-01-22",
+      "spend": 20489.45
+    },
+    {
+      "stat_date": "2026-01-23",
+      "spend": 28875.65
+    },
+    {
+      "stat_date": "2026-01-24",
+      "spend": 25586.03
+    },
+    {
+      "stat_date": "2026-01-25",
+      "spend": 22621.8
+    },
+    {
+      "stat_date": "2026-01-26",
+      "spend": 28105.8
+    },
+    {
+      "stat_date": "2026-01-27",
+      "spend": 29406.48
+    },
+    {
+      "stat_date": "2026-01-28",
+      "spend": 26343.91
+    },
+    {
+      "stat_date": "2026-01-29",
+      "spend": 23721.29
+    },
+    {
+      "stat_date": "2026-01-30",
+      "spend": 32152.19
+    },
+    {
+      "stat_date": "2026-01-31",
+      "spend": 26532.57
+    }
+  ],
+  "generated_at": "2026-10-10T14:52:39.779443+00:00"
+}

@@ -1,0 +1,33 @@
+{
+  "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede",
+  "input_artifact_sha256": {
+    "import_manifest.json": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879",
+    "source_preflight.json": "2b5ee790d3e4ed83998b095f6339b3954855380322ac91280d765235a350048e"
+  },
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "readiness_scope": "Source inventory only; server readiness, initialization, import and live equality are pending",
+  "run_status": "complete",
+  "stage": "M2 B source preparation review",
+  "summary": {
+    "column_count": 798,
+    "control_statement_counts": {
+      "column_default": 24,
+      "constraint": 155,
+      "create_sequence": 24,
+      "create_table": 75,
+      "index": 25,
+      "owner": 99,
+      "search_path": 1,
+      "sequence_owned_by": 24,
+      "sequence_value": 24,
+      "session_setting": 11
+    },
+    "logical_database_count": 11,
+    "question_count": 500,
+    "sequence_count": 24,
+    "source_row_count": 3898114,
+    "table_count": 75
+  },
+  "target_data_verified": false
+}

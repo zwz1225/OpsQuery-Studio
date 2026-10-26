@@ -1,0 +1,105 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {},
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "channel_name",
+      "conversions",
+      "conversion_rate",
+      "cpa"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": false,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT c.channel_name,SUM(s.conversions) conversions, ROUND(SUM(s.conversions)*1.0/NULLIF(SUM(s.clicks),0),4) conversion_rate, ROUND(SUM(s.spend)/NULLIF(SUM(s.conversions),0),2) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4,1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CHANNEL_OPS-051",
+  "question": "2026-01各渠道转化数、转化率和CPA；请返回渠道名称、转化数、转化率、CPA；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+  "gold_sql": "SELECT c.channel_name,SUM(s.conversions) conversions, ROUND(SUM(s.conversions)*1.0/NULLIF(SUM(s.clicks),0),4) conversion_rate, ROUND(SUM(s.spend)/NULLIF(SUM(s.conversions),0),2) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4,1",
+  "database": "short_video_ops",
+  "scenario": "channel_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.ad_accounts",
+      "short_video_ops.ad_campaigns",
+      "short_video_ops.ad_creatives",
+      "short_video_ops.ad_daily_stats",
+      "short_video_ops.budget_adjustments",
+      "short_video_ops.channel_attributions",
+      "short_video_ops.channel_conversion_events",
+      "short_video_ops.channel_targets",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "channel_ops"
+    ],
+    "user_id": "demo_channel_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "channel_name",
+    "conversions",
+    "conversion_rate",
+    "cpa"
+  ],
+  "rows": [
+    {
+      "channel_name": "达人推广",
+      "conversions": 5579,
+      "conversion_rate": 0.1175,
+      "cpa": 11.43
+    },
+    {
+      "channel_name": "信息流广告",
+      "conversions": 17785,
+      "conversion_rate": 0.1048,
+      "cpa": 11.55
+    },
+    {
+      "channel_name": "搜索广告",
+      "conversions": 9662,
+      "conversion_rate": 0.1166,
+      "cpa": 12.21
+    },
+    {
+      "channel_name": "品牌广告",
+      "conversions": 6725,
+      "conversion_rate": 0.0952,
+      "cpa": 14.08
+    }
+  ],
+  "generated_at": "2026-10-10T14:55:56.937331+00:00"
+}

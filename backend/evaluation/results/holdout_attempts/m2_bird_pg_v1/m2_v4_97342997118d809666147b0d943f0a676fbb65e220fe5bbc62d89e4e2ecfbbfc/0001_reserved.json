@@ -1,0 +1,11 @@
+{
+  "attempt_id": "1218483158c643a085e7b9360dd4a7d7",
+  "candidate_id": "m2_v4_97342997118d809666147b0d943f0a676fbb65e220fe5bbc62d89e4e2ecfbbfc",
+  "candidate_sha256": "97342997118d809666147b0d943f0a676fbb65e220fe5bbc62d89e4e2ecfbbfc",
+  "hostname": "user-Rack-Server",
+  "kind": "reserved",
+  "previous_event_sha256": null,
+  "process_id": 3797129,
+  "recorded_at": "2026-10-19T08:53:52.236140+00:00",
+  "sequence": 1
+}

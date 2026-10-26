@@ -1,0 +1,156 @@
+{
+  "review_date": "2026-10-06",
+  "reference_project": "DB-GPT",
+  "local_root": "E:\\Afternoon\\DB-GPT",
+  "commit": "ad203de5c7301c9a103caa1198d17aaee18c6647",
+  "commit_date": "2026-10-04",
+  "working_tree_clean": true,
+  "scope": [
+    "connection lifecycle and factory",
+    "schema-scoped physical metadata",
+    "SQL dialect propagation",
+    "execution results and timeout handling",
+    "schema summary/index refresh"
+  ],
+  "review_method": "Local documentation and selected source sections; whole-file hashes identify evidence, not full-file review coverage.",
+  "limitations": [
+    "DB-GPT was not installed or started.",
+    "No PostgreSQL connection or DB-GPT test execution.",
+    "Runtime risks inferred from source need AskData adapter acceptance tests."
+  ],
+  "file_count": 22,
+  "files": [
+    {
+      "path": "docs/docs/modules/connections.md",
+      "sha256": "69f448ec40cc160acd14219b0a9b9041f73982473a4b88728562f7c9b95e490e",
+      "line_count": 26,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/docs/docs/modules/connections.md"
+    },
+    {
+      "path": "docs/docs/installation/integrations/postgres_install.md",
+      "sha256": "c394ce20c2a3cfb5a40a0bbf2ba74960d40dbcd6a3261891c9b1c3a7af3109ad",
+      "line_count": 40,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/docs/docs/installation/integrations/postgres_install.md"
+    },
+    {
+      "path": "docs/docs/installation/integrations/duckdb_install.md",
+      "sha256": "922cceeb7fcae3856e477e19634c3cb66891b7d7fa3defe88ca9cb74e41f5bde",
+      "line_count": 42,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/docs/docs/installation/integrations/duckdb_install.md"
+    },
+    {
+      "path": "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/application/datasources.md",
+      "sha256": "4f672b8eb66458387b87e04a23cc43680d61939a187c1e114afb7999fe152b5f",
+      "line_count": 49,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/application/datasources.md"
+    },
+    {
+      "path": "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/application/apps/chat_db.md",
+      "sha256": "94cbe162e322e12e15027793894a89514908f425ee19a92ed59834aa4119afbf",
+      "line_count": 82,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/application/apps/chat_db.md"
+    },
+    {
+      "path": "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/agents/modules/resource/database.md",
+      "sha256": "e69a386f8b516f0b4fc42a308d90bcbce840735603ceaf58ea4ef360ac3afad8",
+      "line_count": 17,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/agents/modules/resource/database.md"
+    },
+    {
+      "path": "docs/docs/config-reference/datasource/conn_postgresql_postgresqlparameters_22efa5.mdx",
+      "sha256": "9b394dd471a79135cde3a3a60b12d4fc500d1e8a5e8265b65037aa3a521099ba",
+      "line_count": 95,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/docs/docs/config-reference/datasource/conn_postgresql_postgresqlparameters_22efa5.mdx"
+    },
+    {
+      "path": "docs/docs/config-reference/datasource/base_rdbmsdatasourceparameters_4f774f.mdx",
+      "sha256": "e2e29a0bdfd28c6c0a285590d352f4eb87045b4b42a642a599a1ef537796ac34",
+      "line_count": 87,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/docs/docs/config-reference/datasource/base_rdbmsdatasourceparameters_4f774f.mdx"
+    },
+    {
+      "path": "packages/dbgpt-core/src/dbgpt/datasource/base.py",
+      "sha256": "63dcc982ee2da3d24ef1c7a5eb6be10b5f0983306eba1828b7ee9710826d14dd",
+      "line_count": 274,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-core/src/dbgpt/datasource/base.py"
+    },
+    {
+      "path": "packages/dbgpt-core/src/dbgpt/datasource/parameter.py",
+      "sha256": "33c229291b01d9b9eaffacc73a403e98711aa3d9a9c252e09530cd3dc5a3de69",
+      "line_count": 95,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-core/src/dbgpt/datasource/parameter.py"
+    },
+    {
+      "path": "packages/dbgpt-core/src/dbgpt/datasource/rdbms/base.py",
+      "sha256": "4f6b8dff7b8231788f671518406b69382b84c61cc15c26539e4883a3fb9e2f92",
+      "line_count": 910,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-core/src/dbgpt/datasource/rdbms/base.py"
+    },
+    {
+      "path": "packages/dbgpt-ext/src/dbgpt_ext/datasource/rdbms/conn_postgresql.py",
+      "sha256": "4789885bd27a4e1c30be9eed291686f05c8c4f9ead2b8834f3fbc9ab965a11e5",
+      "line_count": 341,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-ext/src/dbgpt_ext/datasource/rdbms/conn_postgresql.py"
+    },
+    {
+      "path": "packages/dbgpt-ext/src/dbgpt_ext/datasource/rdbms/conn_duckdb.py",
+      "sha256": "323038af66c2c6c7c9f107bf4ea17d68dc89f3a0f90c32d4dc914d3d35c03f15",
+      "line_count": 133,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-ext/src/dbgpt_ext/datasource/rdbms/conn_duckdb.py"
+    },
+    {
+      "path": "packages/dbgpt-serve/src/dbgpt_serve/datasource/manages/connector_manager.py",
+      "sha256": "fdc29bfaab8fd026baed8bb85a5a5b22d1da69e1e355d4a18e81cdf1294490f0",
+      "line_count": 511,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-serve/src/dbgpt_serve/datasource/manages/connector_manager.py"
+    },
+    {
+      "path": "packages/dbgpt-serve/src/dbgpt_serve/datasource/service/service.py",
+      "sha256": "d45de5dcbc47ef1f668f9635bfe0a750ff1d6675b3ca6bfb50abd3766cc9fe47",
+      "line_count": 326,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-serve/src/dbgpt_serve/datasource/service/service.py"
+    },
+    {
+      "path": "packages/dbgpt-ext/src/dbgpt_ext/rag/summary/rdbms_db_summary.py",
+      "sha256": "fdb251edc9907364d576a11a19c0bc5635018464c5dc0c397baba8a6be9f9e2e",
+      "line_count": 307,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-ext/src/dbgpt_ext/rag/summary/rdbms_db_summary.py"
+    },
+    {
+      "path": "packages/dbgpt-ext/src/dbgpt_ext/rag/assembler/db_schema.py",
+      "sha256": "aea33b85fc2aed57748f13341c71489fa40d7cb9e0ea786e7f3feb481ed4743e",
+      "line_count": 157,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-ext/src/dbgpt_ext/rag/assembler/db_schema.py"
+    },
+    {
+      "path": "packages/dbgpt-serve/src/dbgpt_serve/datasource/service/db_summary_client.py",
+      "sha256": "52fab3247ddb198c8f02ea6a3d4b3ed5a1e0e2c44afdcf284dba02afda2f2dcf",
+      "line_count": 214,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-serve/src/dbgpt_serve/datasource/service/db_summary_client.py"
+    },
+    {
+      "path": "packages/dbgpt-core/src/dbgpt/agent/resource/database.py",
+      "sha256": "26f045cc650f66cff6435659bba35ff3c5f958c9b71c7ad42b247c802a0bafa0",
+      "line_count": 207,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-core/src/dbgpt/agent/resource/database.py"
+    },
+    {
+      "path": "packages/dbgpt-app/src/dbgpt_app/scene/chat_db/auto_execute/chat.py",
+      "sha256": "b936c688e2ab317f73bd04b12739d0efaf176b119a2b79b54c9afe67d5d18b6e",
+      "line_count": 92,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-app/src/dbgpt_app/scene/chat_db/auto_execute/chat.py"
+    },
+    {
+      "path": "packages/dbgpt-app/src/dbgpt_app/scene/chat_db/auto_execute/prompt.py",
+      "sha256": "2704cc7d1898bfef53e558db0cf26edb750c0180aa1af968c1eccc1b802912a8",
+      "line_count": 128,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-app/src/dbgpt_app/scene/chat_db/auto_execute/prompt.py"
+    },
+    {
+      "path": "packages/dbgpt-ext/src/dbgpt_ext/datasource/rdbms/tests/test_conn_duckdb.py",
+      "sha256": "06aea09c61b78983985305ff949450dca86b18f9b95f6f6598effb26eb4016cf",
+      "line_count": 41,
+      "source_url": "https://github.com/eosphoros-ai/DB-GPT/blob/ad203de5c7301c9a103caa1198d17aaee18c6647/packages/dbgpt-ext/src/dbgpt_ext/datasource/rdbms/tests/test_conn_duckdb.py"
+    }
+  ]
+}

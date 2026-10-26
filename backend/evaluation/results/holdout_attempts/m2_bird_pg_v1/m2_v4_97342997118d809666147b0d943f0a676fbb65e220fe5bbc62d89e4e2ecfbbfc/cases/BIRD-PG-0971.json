@@ -1,0 +1,1383 @@
+{
+  "agent_isolation": {
+    "additional_landlock_abi": 4,
+    "direct_database_access": false,
+    "environment_credentials": false,
+    "filesystem": "seccomp_deny_all_new_file_opens",
+    "kernel": "6.8.0-59-generic",
+    "network_and_process": "seccomp",
+    "project_read_access": false,
+    "seccomp_library_version": "2.5.3"
+  },
+  "agent_started": true,
+  "agent_status": "answered",
+  "agent_trace": [
+    {
+      "sql_round": 1,
+      "valid": true,
+      "validation_attempt": 1
+    }
+  ],
+  "budget": {
+    "chat_http_attempts": 1,
+    "elapsed_seconds": 11.33,
+    "generation_attempts": {
+      "1": 1
+    },
+    "model_events": [
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 29,
+          "total_tokens": 29
+        }
+      },
+      {
+        "endpoint_kind": "rerank",
+        "kind": "rerank",
+        "retry": 0,
+        "returned_model": "qwen3-rerank",
+        "status": "complete",
+        "usage": {
+          "total_tokens": 5261
+        }
+      },
+      {
+        "endpoint_kind": "chat",
+        "kind": "chat",
+        "retry": 0,
+        "returned_model": "qwen3.7-plus",
+        "status": "complete",
+        "usage": {
+          "completion_tokens": 26,
+          "prompt_tokens": 3929,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "text_tokens": 3929
+          },
+          "total_tokens": 3955
+        }
+      }
+    ],
+    "model_http_attempts": 3,
+    "sql_tool_calls": 1,
+    "validation_attempts": {
+      "1": 1
+    }
+  },
+  "candidate_sha256": "97342997118d809666147b0d943f0a676fbb65e220fe5bbc62d89e4e2ecfbbfc",
+  "canonical_lookup": {
+    "executed": false,
+    "matches": [],
+    "max_values_per_probe": 3,
+    "policy": "bird_public_intent_candidate_v4",
+    "probe_count": 0,
+    "source_identity": {
+      "backend": "postgresql",
+      "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+      "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918",
+      "dialect": "postgres",
+      "logical_database_id": "formula_1",
+      "physical_schema": "public",
+      "prompt_dialect": "PostgreSQL",
+      "source_id": "bird_mini_dev_postgres_formula_1"
+    },
+    "sql_tool_calls": 0
+  },
+  "case_id": "BIRD-PG-0971",
+  "case_wall_seconds": 11.591,
+  "complete": true,
+  "database_id": "formula_1",
+  "development_diagnostics": {
+    "attempts": [
+      {
+        "action": "query",
+        "clarification_reason": {
+          "provided": false,
+          "redacted": false,
+          "text": null,
+          "truncated": false
+        },
+        "kind": "model_decision",
+        "sql": {
+          "original_sha256": "c8c5a7104b4415c611cb36d8bbd071b93a6393d70db1384f7f64ce5137c39af4",
+          "original_utf8_bytes": 83,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT driverref FROM drivers WHERE nationality = 'German' ORDER BY dob ASC LIMIT 1",
+          "truncated": false
+        },
+        "sql_round": 1
+      },
+      {
+        "kind": "validate",
+        "sql": {
+          "original_sha256": "c8c5a7104b4415c611cb36d8bbd071b93a6393d70db1384f7f64ce5137c39af4",
+          "original_utf8_bytes": 83,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT driverref FROM drivers WHERE nationality = 'German' ORDER BY dob ASC LIMIT 1",
+          "truncated": false
+        },
+        "sql_round": 1,
+        "success": true
+      },
+      {
+        "kind": "execute",
+        "sql": {
+          "original_sha256": "c8c5a7104b4415c611cb36d8bbd071b93a6393d70db1384f7f64ce5137c39af4",
+          "original_utf8_bytes": 83,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT driverref FROM drivers WHERE nationality = 'German' ORDER BY dob ASC LIMIT 1",
+          "truncated": false
+        },
+        "sql_round": 1,
+        "success": true
+      }
+    ],
+    "clarification_reason": null,
+    "limits": {
+      "max_events": 21,
+      "reason_utf8_bytes": 2048,
+      "schema_graph_utf8_bytes": 98304,
+      "sql_text_utf8_bytes": 8192,
+      "total_utf8_bytes": 393216
+    },
+    "omitted_events": 0,
+    "policy": "bird_development_observation_v1",
+    "report_only": true,
+    "retrieval": {
+      "added_relation_key_field_ids": [
+        "formula_1.drivers.driverid",
+        "formula_1.driverstandings.driverid"
+      ],
+      "anchored_table_ids": [
+        "formula_1.drivers",
+        "formula_1.driverstandings"
+      ],
+      "baseline_field_ids": [
+        "formula_1.driverstandings.raceid",
+        "formula_1.drivers.driverref",
+        "formula_1.drivers.dob"
+      ],
+      "candidate_count": 40,
+      "candidates": [
+        {
+          "bm25_rank": 1,
+          "bm25_score": 1.0,
+          "dense_rank": 1,
+          "dense_score": 0.6407090769314085,
+          "field_id": "formula_1.drivers.driverref",
+          "matched_intent_terms": [],
+          "rerank_rank": 2,
+          "rerank_score": 0.6512057262733546,
+          "rrf_rank": 1,
+          "rrf_score": 0.03278688524590164,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 7,
+          "bm25_score": 0.5211400636551362,
+          "dense_rank": 13,
+          "dense_score": 0.5287391820058387,
+          "field_id": "formula_1.results.time",
+          "matched_intent_terms": [],
+          "rerank_rank": 28,
+          "rerank_score": 0.389927197746359,
+          "rrf_rank": 2,
+          "rrf_score": 0.02862400327131466,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 6,
+          "bm25_score": 0.5464694661849162,
+          "dense_rank": 19,
+          "dense_score": 0.5030876132280176,
+          "field_id": "formula_1.driverstandings.raceid",
+          "matched_intent_terms": [],
+          "rerank_rank": 1,
+          "rerank_score": 0.6544669135158752,
+          "rrf_rank": 3,
+          "rrf_score": 0.027809742999616416,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 18,
+          "bm25_score": 0.3489784956201617,
+          "dense_rank": 7,
+          "dense_score": 0.5881916064210807,
+          "field_id": "formula_1.drivers.dob",
+          "matched_intent_terms": [],
+          "rerank_rank": 3,
+          "rerank_score": 0.5811914199358412,
+          "rrf_rank": 4,
+          "rrf_score": 0.027745885954841176,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 15,
+          "bm25_score": 0.38619482574039166,
+          "dense_rank": 11,
+          "dense_score": 0.5483174209024021,
+          "field_id": "formula_1.results.driverid",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 11,
+          "rerank_score": 0.492738121089399,
+          "rrf_rank": 5,
+          "rrf_score": 0.027417840375586856,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "driver"
+          ]
+        },
+        {
+          "bm25_rank": 3,
+          "bm25_score": 0.7783372960912098,
+          "dense_rank": 27,
+          "dense_score": 0.47585609918584304,
+          "field_id": "formula_1.circuits.circuitref",
+          "matched_intent_terms": [
+            "reference"
+          ],
+          "rerank_rank": 10,
+          "rerank_score": 0.493775661647086,
+          "rrf_rank": 6,
+          "rrf_score": 0.02736726874657909,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "reference"
+          ]
+        },
+        {
+          "bm25_rank": 25,
+          "bm25_score": 0.32222586593243363,
+          "dense_rank": 6,
+          "dense_score": 0.589359821961,
+          "field_id": "formula_1.driverstandings.driverstandingsid",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 15,
+          "rerank_score": 0.47671916102937467,
+          "rrf_rank": 7,
+          "rrf_score": 0.026916221033868093,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "driver"
+          ]
+        },
+        {
+          "bm25_rank": 16,
+          "bm25_score": 0.3827653989146347,
+          "dense_rank": 14,
+          "dense_score": 0.5278932170837192,
+          "field_id": "formula_1.results.milliseconds",
+          "matched_intent_terms": [],
+          "rerank_rank": 20,
+          "rerank_score": 0.44216561149665584,
+          "rrf_rank": 8,
+          "rrf_score": 0.02667140825035562,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 9,
+          "bm25_score": 0.46277513577142093,
+          "dense_rank": 24,
+          "dense_score": 0.48287099611606,
+          "field_id": "formula_1.constructors.name",
+          "matched_intent_terms": [],
+          "rerank_rank": 26,
+          "rerank_score": 0.4025791309444611,
+          "rrf_rank": 9,
+          "rrf_score": 0.026397515527950312,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 20,
+          "bm25_score": 0.3345609965256453,
+          "dense_rank": 12,
+          "dense_score": 0.5349093942685446,
+          "field_id": "formula_1.laptimes.driverid",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 6,
+          "rerank_score": 0.5193214965223361,
+          "rrf_rank": 10,
+          "rrf_score": 0.02638888888888889,
+          "selected": false,
+          "selection_reason": "coverage_table_not_anchored",
+          "uncovered_intent_terms": [
+            "driver"
+          ]
+        },
+        {
+          "bm25_rank": 23,
+          "bm25_score": 0.3303425635459029,
+          "dense_rank": 10,
+          "dense_score": 0.5512922731160723,
+          "field_id": "formula_1.drivers.driverid",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 13,
+          "rerank_score": 0.4907228004333333,
+          "rrf_rank": 11,
+          "rrf_score": 0.026333907056798625,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 28,
+          "bm25_score": 0.2233813843449082,
+          "dense_rank": 9,
+          "dense_score": 0.556222061197654,
+          "field_id": "formula_1.drivers.url",
+          "matched_intent_terms": [],
+          "rerank_rank": 14,
+          "rerank_score": 0.48366666001767405,
+          "rrf_rank": 12,
+          "rrf_score": 0.025856389986824768,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 22,
+          "bm25_score": 0.3345609965256453,
+          "dense_rank": 15,
+          "dense_score": 0.5265997824085651,
+          "field_id": "formula_1.qualifying.driverid",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 12,
+          "rerank_score": 0.4908558880876006,
+          "rrf_rank": 13,
+          "rrf_score": 0.025528455284552845,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "driver"
+          ]
+        },
+        {
+          "bm25_rank": 21,
+          "bm25_score": 0.3345609965256453,
+          "dense_rank": 16,
+          "dense_score": 0.521598977028832,
+          "field_id": "formula_1.pitstops.driverid",
+          "matched_intent_terms": [
+            "driver"
+          ],
+          "rerank_rank": 7,
+          "rerank_score": 0.5018792042845293,
+          "rrf_rank": 14,
+          "rrf_score": 0.025503573749187783,
+          "selected": false,
+          "selection_reason": "coverage_table_not_anchored",
+          "uncovered_intent_terms": [
+            "driver"
+          ]
+        },
+        {
+          "bm25_rank": 29,
+          "bm25_score": 0.20911897077315786,
+          "dense_rank": 18,
+          "dense_score": 0.5079921501029839,
+          "field_id": "formula_1.constructors.nationality",
+          "matched_intent_terms": [],
+          "rerank_rank": 25,
+          "rerank_score": 0.41265845479760477,
+          "rrf_rank": 15,
+          "rrf_score": 0.024056467876692595,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 27,
+          "bm25_score": 0.22786936398443,
+          "dense_rank": 26,
+          "dense_score": 0.4776196878893,
+          "field_id": "formula_1.status.status",
+          "matched_intent_terms": [],
+          "rerank_rank": 29,
+          "rerank_score": 0.3859363317683857,
+          "rrf_rank": 16,
+          "rrf_score": 0.023122159850307404,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 2,
+          "bm25_score": 0.7871129624890184,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.constructors.constructorref",
+          "matched_intent_terms": [
+            "reference"
+          ],
+          "rerank_rank": 4,
+          "rerank_score": 0.5412862841383098,
+          "rrf_rank": 17,
+          "rrf_score": 0.016129032258064516,
+          "selected": false,
+          "selection_reason": "coverage_table_not_anchored",
+          "uncovered_intent_terms": [
+            "reference"
+          ]
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 2,
+          "dense_score": 0.6150851775928332,
+          "field_id": "formula_1.drivers.forename",
+          "matched_intent_terms": [],
+          "rerank_rank": 5,
+          "rerank_score": 0.5346879662157971,
+          "rrf_rank": 18,
+          "rrf_score": 0.016129032258064516,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 3,
+          "dense_score": 0.6124133782079506,
+          "field_id": "formula_1.drivers.code",
+          "matched_intent_terms": [],
+          "rerank_rank": 18,
+          "rerank_score": 0.45148495973661745,
+          "rrf_rank": 19,
+          "rrf_score": 0.015873015873015872,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 4,
+          "bm25_score": 0.6334059337505508,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.qualifying.q1",
+          "matched_intent_terms": [],
+          "rerank_rank": 36,
+          "rerank_score": 0.37140716976403493,
+          "rrf_rank": 20,
+          "rrf_score": 0.015625,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 4,
+          "dense_score": 0.5945956253598702,
+          "field_id": "formula_1.drivers.number",
+          "matched_intent_terms": [],
+          "rerank_rank": 16,
+          "rerank_score": 0.46910847144332707,
+          "rrf_rank": 21,
+          "rrf_score": 0.015625,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 5,
+          "bm25_score": 0.6255440134644042,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.qualifying.q2",
+          "matched_intent_terms": [],
+          "rerank_rank": 39,
+          "rerank_score": 0.3437140236487328,
+          "rrf_rank": 22,
+          "rrf_score": 0.015384615384615385,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 5,
+          "dense_score": 0.5926930268001457,
+          "field_id": "formula_1.drivers.nationality",
+          "matched_intent_terms": [],
+          "rerank_rank": 23,
+          "rerank_score": 0.424200267849286,
+          "rrf_rank": 23,
+          "rrf_score": 0.015384615384615385,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 8,
+          "bm25_score": 0.49706233372636227,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.results.statusid",
+          "matched_intent_terms": [],
+          "rerank_rank": 32,
+          "rerank_score": 0.3795251032444158,
+          "rrf_rank": 24,
+          "rrf_score": 0.014705882352941176,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 8,
+          "dense_score": 0.5765723812923904,
+          "field_id": "formula_1.drivers.surname",
+          "matched_intent_terms": [],
+          "rerank_rank": 9,
+          "rerank_score": 0.49724907785307365,
+          "rrf_rank": 25,
+          "rrf_score": 0.014705882352941176,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 10,
+          "bm25_score": 0.45503620383703947,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.results.grid",
+          "matched_intent_terms": [],
+          "rerank_rank": 35,
+          "rerank_score": 0.37167813349026835,
+          "rrf_rank": 26,
+          "rrf_score": 0.014285714285714285,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 11,
+          "bm25_score": 0.4318961425295007,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.races.name",
+          "matched_intent_terms": [],
+          "rerank_rank": 31,
+          "rerank_score": 0.38022428787941387,
+          "rrf_rank": 27,
+          "rrf_score": 0.014084507042253521,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 12,
+          "bm25_score": 0.4059559943938635,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.seasons.year",
+          "matched_intent_terms": [
+            "year"
+          ],
+          "rerank_rank": 30,
+          "rerank_score": 0.3849760129560105,
+          "rrf_rank": 28,
+          "rrf_score": 0.013888888888888888,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "year"
+          ]
+        },
+        {
+          "bm25_rank": 13,
+          "bm25_score": 0.4012448874214151,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.races.year",
+          "matched_intent_terms": [
+            "year"
+          ],
+          "rerank_rank": 21,
+          "rerank_score": 0.4357013881764018,
+          "rrf_rank": 29,
+          "rrf_score": 0.0136986301369863,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "year"
+          ]
+        },
+        {
+          "bm25_rank": 14,
+          "bm25_score": 0.40058956490776404,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.qualifying.q3",
+          "matched_intent_terms": [],
+          "rerank_rank": 40,
+          "rerank_score": 0.3259992329519986,
+          "rrf_rank": 30,
+          "rrf_score": 0.013513513513513514,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 17,
+          "bm25_score": 0.37798001739400683,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.constructors.url",
+          "matched_intent_terms": [],
+          "rerank_rank": 33,
+          "rerank_score": 0.3782969629123538,
+          "rrf_rank": 31,
+          "rrf_score": 0.012987012987012988,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 17,
+          "dense_score": 0.5203272831103419,
+          "field_id": "formula_1.driverstandings.driverid",
+          "matched_intent_terms": [],
+          "rerank_rank": 8,
+          "rerank_score": 0.5008446032499094,
+          "rrf_rank": 32,
+          "rrf_score": 0.012987012987012988,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 19,
+          "bm25_score": 0.3470034856901011,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.results.fastestlaptime",
+          "matched_intent_terms": [],
+          "rerank_rank": 34,
+          "rerank_score": 0.3718229954603287,
+          "rrf_rank": 33,
+          "rrf_score": 0.012658227848101266,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 20,
+          "dense_score": 0.49726450039488124,
+          "field_id": "formula_1.laptimes.milliseconds",
+          "matched_intent_terms": [],
+          "rerank_rank": 22,
+          "rerank_score": 0.42448433104567906,
+          "rrf_rank": 34,
+          "rrf_score": 0.0125,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 21,
+          "dense_score": 0.49606639413014725,
+          "field_id": "formula_1.driverstandings.position",
+          "matched_intent_terms": [],
+          "rerank_rank": 17,
+          "rerank_score": 0.45873237154838087,
+          "rrf_rank": 35,
+          "rrf_score": 0.012345679012345678,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 22,
+          "dense_score": 0.4954068440307425,
+          "field_id": "formula_1.driverstandings.wins",
+          "matched_intent_terms": [],
+          "rerank_rank": 19,
+          "rerank_score": 0.4438866473209634,
+          "rrf_rank": 36,
+          "rrf_score": 0.012195121951219513,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 23,
+          "dense_score": 0.4858681700058803,
+          "field_id": "formula_1.results.number",
+          "matched_intent_terms": [],
+          "rerank_rank": 38,
+          "rerank_score": 0.35067131898840354,
+          "rrf_rank": 37,
+          "rrf_score": 0.012048192771084338,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 24,
+          "bm25_score": 0.3255898395273982,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.circuits.name",
+          "matched_intent_terms": [],
+          "rerank_rank": 27,
+          "rerank_score": 0.39648828540772674,
+          "rrf_rank": 38,
+          "rrf_score": 0.011904761904761904,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 25,
+          "dense_score": 0.4785676613283676,
+          "field_id": "formula_1.constructors.constructorid",
+          "matched_intent_terms": [],
+          "rerank_rank": 37,
+          "rerank_score": 0.3622444752802314,
+          "rrf_rank": 39,
+          "rrf_score": 0.011764705882352941,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 26,
+          "bm25_score": 0.2813355548025474,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "formula_1.qualifying.qualifyid",
+          "matched_intent_terms": [],
+          "rerank_rank": 24,
+          "rerank_score": 0.41873713967351617,
+          "rrf_rank": 40,
+          "rrf_score": 0.011627906976744186,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        }
+      ],
+      "coverage_field_ids": [],
+      "intent_selection": {
+        "added_field_ids": [],
+        "baseline_field_ids": [
+          "formula_1.driverstandings.raceid",
+          "formula_1.drivers.driverref",
+          "formula_1.drivers.dob"
+        ],
+        "decisions": [],
+        "policy": {
+          "baseline_preserved": true,
+          "canonical_lookup_max_pairs": 4,
+          "canonical_lookup_sql_tool_calls": 1,
+          "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+          "development_candidate": true,
+          "formal_protocol_override": false,
+          "grain_policy": "public_explicit_entity_grain_v2",
+          "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+          "join_source": "declared_foreign_keys_only",
+          "lookup_consumes_existing_sql_budget": true,
+          "max_added_fields": 8,
+          "max_fields": 20,
+          "max_related_hops": 2,
+          "native_ex_unchanged": true,
+          "numeric_policy": "floating_count_ratio_order_advisory_v3",
+          "output_group_policy": "participant_action_target_pair_v1",
+          "policy_id": "bird_public_intent_candidate_v4",
+          "predicate_policy": "public_condition_roles_conflicts_v3",
+          "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+          "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+          "unit_policy": "public_percentage_units_precision_v2"
+        },
+        "sample_condition_candidates": []
+      },
+      "relation_key_field_ids": [
+        "formula_1.drivers.driverid",
+        "formula_1.driverstandings.driverid"
+      ],
+      "schema_graph": {
+        "complete": true,
+        "omission_reason": null,
+        "sha256": "6fdf5326b95fdf1e2c4547250592bf2d5f067f56ad850514083638fa1947f12d",
+        "utf8_bytes": 3258,
+        "value": {
+          "database": "formula_1",
+          "databases": [
+            "formula_1"
+          ],
+          "fields": [
+            {
+              "description": "id number identifying which races",
+              "id": "formula_1.driverstandings.raceid",
+              "label": "constructor Reference name",
+              "name": "raceid",
+              "role": "field",
+              "score": 0.6544669135158752,
+              "source": "retrieval",
+              "sql_name": "driverstandings.raceid",
+              "table_id": "formula_1.driverstandings",
+              "table_name": "driverstandings",
+              "type": "bigint"
+            },
+            {
+              "description": "driver reference name",
+              "id": "formula_1.drivers.driverref",
+              "label": "driver reference name",
+              "name": "driverref",
+              "role": "field",
+              "score": 0.6512057262733546,
+              "source": "retrieval",
+              "sql_name": "drivers.driverref",
+              "table_id": "formula_1.drivers",
+              "table_name": "drivers",
+              "type": "text"
+            },
+            {
+              "description": "date of birth",
+              "id": "formula_1.drivers.dob",
+              "label": "date of birth",
+              "name": "dob",
+              "role": "field",
+              "score": 0.5811914199358412,
+              "source": "retrieval",
+              "sql_name": "drivers.dob",
+              "table_id": "formula_1.drivers",
+              "table_name": "drivers",
+              "type": "date"
+            },
+            {
+              "description": "the unique identification number identifying each driver",
+              "id": "formula_1.drivers.driverid",
+              "label": "driver ID",
+              "name": "driverid",
+              "role": "primary_key",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "drivers.driverid",
+              "table_id": "formula_1.drivers",
+              "table_name": "drivers",
+              "type": "bigint"
+            },
+            {
+              "description": "id number identifying which drivers",
+              "id": "formula_1.driverstandings.driverid",
+              "label": "driverid",
+              "name": "driverid",
+              "role": "field",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "driverstandings.driverid",
+              "table_id": "formula_1.driverstandings",
+              "table_name": "driverstandings",
+              "type": "bigint"
+            }
+          ],
+          "graph_version": "1323cf20c2b4",
+          "joins": [
+            {
+              "description": "Official database foreign key",
+              "id": "driverstandings_driverid_fkey:driverid",
+              "left_field": "driverid",
+              "left_table": "formula_1.drivers",
+              "left_table_name": "drivers",
+              "relation_type": "foreign_key",
+              "right_field": "driverid",
+              "right_table": "formula_1.driverstandings",
+              "right_table_name": "driverstandings"
+            }
+          ],
+          "relation_role_context": {
+            "context_output_groups": [],
+            "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges.",
+            "joins_are_alternatives": true,
+            "policy": "authorized_role_alternatives_v1",
+            "preferred_actor_relations": [],
+            "roles": [
+              {
+                "child_field": "driverid",
+                "child_table": "formula_1.driverstandings",
+                "mandatory": false,
+                "parent_field": "driverid",
+                "parent_table": "formula_1.drivers",
+                "relation_id": "driverstandings_driverid_fkey:driverid",
+                "role_description": "id number identifying which drivers",
+                "role_label": "driverid",
+                "source": "current_authorized_declared_foreign_key"
+              }
+            ]
+          },
+          "source_identity": {
+            "backend": "postgresql",
+            "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+            "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918",
+            "dialect": "postgres",
+            "logical_database_id": "formula_1",
+            "physical_schema": "public",
+            "prompt_dialect": "PostgreSQL",
+            "source_id": "bird_mini_dev_postgres_formula_1"
+          },
+          "tables": [
+            {
+              "database": "formula_1",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "formula_1",
+              "id": "formula_1.drivers",
+              "label": "drivers",
+              "name": "drivers"
+            },
+            {
+              "database": "formula_1",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "formula_1",
+              "id": "formula_1.driverstandings",
+              "label": "driverstandings",
+              "name": "driverstandings"
+            }
+          ]
+        }
+      },
+      "selected_field_ids": [
+        "formula_1.driverstandings.raceid",
+        "formula_1.drivers.driverref",
+        "formula_1.drivers.dob"
+      ],
+      "selection_policy": {
+        "coverage_enabled": true,
+        "coverage_floor": 0.5,
+        "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+        "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+        "development_candidate": true,
+        "formal_protocol_override": false,
+        "intent_source": "original_question_and_official_evidence",
+        "max_coverage_fields": 4,
+        "max_fields": 20,
+        "metadata_match": "native_field_name_or_official_field_label",
+        "policy_id": "bird_authorized_schema_coverage_v1",
+        "score_representation": "provider score clamped to [0,1] by existing broker",
+        "threshold": 0.55
+      }
+    }
+  },
+  "errors": [],
+  "ex_correct": true,
+  "executions": [
+    {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "dde1d767f6a538b386b4a814efe6e5206bef6ca1fbb38dea65e6dfe35661420f",
+        "payload_bytes": 45,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "success": true
+    }
+  ],
+  "final_sql_execution_success": true,
+  "first_sql_execution_success": true,
+  "formal_benchmark": true,
+  "generated_sql": "SELECT driverref FROM drivers WHERE nationality = 'German' ORDER BY dob ASC LIMIT 1",
+  "generation_status": "diagnostic_answered",
+  "generation_worker_mode": "diagnostic",
+  "gold_executed": true,
+  "gold_execution_attempted": true,
+  "gold_sql_sha256": "dcc83d60835c1095c8d88b41dd5e5e7b03bd05d2ecbeecd143cc4386c1be3193",
+  "index_sha256": "c0d00adb8179352f80878c4a3b43a4e9143901c17382164d8a43286ab1327f9e",
+  "intent_candidate_policy": {
+    "baseline_preserved": true,
+    "canonical_lookup_max_pairs": 4,
+    "canonical_lookup_sql_tool_calls": 1,
+    "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "grain_policy": "public_explicit_entity_grain_v2",
+    "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+    "join_source": "declared_foreign_keys_only",
+    "lookup_consumes_existing_sql_budget": true,
+    "max_added_fields": 8,
+    "max_fields": 20,
+    "max_related_hops": 2,
+    "native_ex_unchanged": true,
+    "numeric_policy": "floating_count_ratio_order_advisory_v3",
+    "output_group_policy": "participant_action_target_pair_v1",
+    "policy_id": "bird_public_intent_candidate_v4",
+    "predicate_policy": "public_condition_roles_conflicts_v3",
+    "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+    "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+    "unit_policy": "public_percentage_units_precision_v2"
+  },
+  "intent_contract": {
+    "canonical_values": [],
+    "entity_grain": {},
+    "entity_identifier_output": null,
+    "explicit_top_n": null,
+    "guidance": [
+      "For ranked nonmissing values, write NULLS LAST explicitly on nullable ORDER BY expressions, including ABS and aggregates. Preserve any explicit request to rank missing values first.",
+      "Preserve Top-N size, ordinal offset, direction, ties and requested output order; do not add arbitrary tie-breakers.",
+      "Project exactly the requested attributes. For a list of entity instances without requested attributes, prefer that entity primary key; do not SELECT table.*. This is an explicit development output convention, not an inferred reference answer.",
+      "For full names, keep first/last fields together and include all numbered person slots requested, in slot order. Do not add email/contact fields.",
+      "Cover every business population and condition from question/evidence. A difference calculation returns the requested signed difference, not ABS or an extra Yes/No column unless requested.",
+      "Profile samples are coverage hints, never new mandatory filters. Do not turn names, table/role nouns or arithmetic constants into equality predicates. Required conditions below bind a specific public evidence field and value; preserve that ownership.",
+      "Inspect entity_grain.enforcement and its public_basis. Only an explicit distinct-entity request mandates deduplication. A primary key or one-to-many join alone is advisory: preserve requested joined-row weighting and state unresolved grain; do not invent DISTINCT or choose reference answers.",
+      "Join edges in relation_role_context are alternatives. Select the participant matching the question action, not an editor/owner merely because it is the first shortest path. Context output groups use the explicit development convention to include the named related entity title/name alongside the requested actor label; they are not reference-answer hints.",
+      "If quantity_difference_scalar is true, the evidence provides the quantity formula for an independent yes/no comparison: return only that signed numeric difference, whose sign also answers the comparison. If entity_identifier_output is supplied, the explicit entity-list development convention requests that primary identifier alone.",
+      "Foreign keys store identifiers, not human names. Join the authorized referenced entity and filter its name field. Name fields on different tables are not assumed interchangeable.",
+      "Canonical values below come from bounded case-insensitive equality lookups. Use a unique stored spelling without removing/changing conditions; not_found and ambiguous are not permission to guess.",
+      "Use output_units for scale/type decisions and participant_output for projection groups. These are versioned public development conventions with explicit overrides and ambiguity records, not hidden reference requirements. For count percentages, prefer a REAL or DOUBLE PRECISION numerator scaled before division; operation order alone never triggers rejection. Preserve explicit fraction, exact-formula, decimal and rounding requests. Native EX has no tolerance.",
+      "Missing schema is a reason to clarify only after checking the supplied authorized field groups and declared FK paths. Explain the specific missing field or ambiguity."
+    ],
+    "name_groups": [],
+    "ordinal_descending": null,
+    "ordinal_rank": null,
+    "output_units": {
+      "arithmetic_preference": "requested_or_source_type",
+      "formula_excerpt": null,
+      "guidance": "Percentage means a 0-100 numeric output under this visible development convention. An evidence DIVIDE formula without a scale supplies the base ratio; the percentage question supplies *100. Explicit 0-1/fraction requests or an exact-formula instruction override this default. Record conflicts; never consult a reference answer. For unrounded count percentages prefer CAST(conditional_count AS REAL) * 100 / NULLIF(total_count,0), preserving entity grain; DOUBLE PRECISION is also allowed. Scaling before division is a numerical suggestion, never an operation-order rejection. Do not change types, round, or normalize returned results to make comparisons pass.",
+      "operation_order_authority": "advisory_only",
+      "output_unit": "unspecified",
+      "policy": "public_percentage_units_precision_v2",
+      "precision": {
+        "conflict": false,
+        "decimal_places": null,
+        "enforcement": "advisory",
+        "guidance": "Implement explicitly requested decimal places in the final SQL numeric output (for example ROUND(numeric_expression, n)). Preserve the requested unit and population; do not round driver results or add scoring tolerance. Ambiguous/complex output ownership is advisory.",
+        "policy": "explicit_public_decimal_places_v1",
+        "requests": [],
+        "unsupported": false
+      },
+      "question_formula_scale_conflict": false,
+      "ratio_multiplier": null,
+      "resolution_basis": "no_explicit_output_unit",
+      "resolution_is_development_convention": false
+    },
+    "participant_output": {
+      "advisory_groups": [],
+      "basis": "public_action_target_frame_and_unique_authorized_role",
+      "guidance": "Required groups are an explicit development output convention: project the requested participant label and the named action-target title, in that order. Mere filter/context mentions do not mandate projection. Explicit only/exclude instructions take precedence. Do not add contact fields, all columns or other candidate join roles.",
+      "policy": "participant_action_target_pair_v1",
+      "required_groups": []
+    },
+    "percentage_real_arithmetic": false,
+    "policy": {
+      "baseline_preserved": true,
+      "canonical_lookup_max_pairs": 4,
+      "canonical_lookup_sql_tool_calls": 1,
+      "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+      "development_candidate": true,
+      "formal_protocol_override": false,
+      "grain_policy": "public_explicit_entity_grain_v2",
+      "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+      "join_source": "declared_foreign_keys_only",
+      "lookup_consumes_existing_sql_budget": true,
+      "max_added_fields": 8,
+      "max_fields": 20,
+      "max_related_hops": 2,
+      "native_ex_unchanged": true,
+      "numeric_policy": "floating_count_ratio_order_advisory_v3",
+      "output_group_policy": "participant_action_target_pair_v1",
+      "policy_id": "bird_public_intent_candidate_v4",
+      "predicate_policy": "public_condition_roles_conflicts_v3",
+      "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+      "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+      "unit_policy": "public_percentage_units_precision_v2"
+    },
+    "profile_coverage_hints": [],
+    "public_evidence": {
+      "conditions": [],
+      "conflicts": [],
+      "guidance": "Keep numerator, denominator and population roles separate. Conflicting bindings are advisory; do not require their conjunction or guess which is correct.",
+      "policy": "public_condition_roles_conflicts_v3"
+    },
+    "quantity_difference_scalar": false,
+    "relation_role_context": {
+      "context_output_groups": [],
+      "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges.",
+      "joins_are_alternatives": true,
+      "policy": "authorized_role_alternatives_v1",
+      "preferred_actor_relations": [],
+      "roles": [
+        {
+          "child_field": "driverid",
+          "child_table": "formula_1.driverstandings",
+          "mandatory": false,
+          "parent_field": "driverid",
+          "parent_table": "formula_1.drivers",
+          "relation_id": "driverstandings_driverid_fkey:driverid",
+          "role_description": "id number identifying which drivers",
+          "role_label": "driverid",
+          "source": "current_authorized_declared_foreign_key"
+        }
+      ]
+    },
+    "remaining_sql_execution_rounds": 3,
+    "required_profile_conditions": []
+  },
+  "mode": "live",
+  "native_comparison": {
+    "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion",
+    "difference_codes": [],
+    "difference_preview_row_limit": 5,
+    "difference_preview_utf8_byte_limit": 65536,
+    "gold_column_count": 1,
+    "gold_only_preview": {
+      "oversized_rows_omitted": 0,
+      "preview_truncated": false,
+      "rows": [],
+      "utf8_bytes": 0
+    },
+    "gold_only_tuple_count": 0,
+    "gold_row_count": 1,
+    "gold_unique_tuple_count": 1,
+    "matches_frozen_gold": true,
+    "native_type_sets_differ": false,
+    "prediction_column_count": 1,
+    "prediction_only_preview": {
+      "oversized_rows_omitted": 0,
+      "preview_truncated": false,
+      "rows": [],
+      "utf8_bytes": 0
+    },
+    "prediction_only_tuple_count": 0,
+    "prediction_row_count": 1,
+    "prediction_unique_tuple_count": 1,
+    "preview_only": true
+  },
+  "native_results": {
+    "prediction": {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "dde1d767f6a538b386b4a814efe6e5206bef6ca1fbb38dea65e6dfe35661420f",
+        "payload_bytes": 45,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "preview": {
+        "columns": [
+          "driverref"
+        ],
+        "complete_result_row_count": 1,
+        "preview_only": true,
+        "preview_truncated": false,
+        "rows": [
+          [
+            [
+              "text",
+              "brudes"
+            ]
+          ]
+        ]
+      },
+      "preview_row_limit": 20
+    },
+    "reference": {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "dde1d767f6a538b386b4a814efe6e5206bef6ca1fbb38dea65e6dfe35661420f",
+        "payload_bytes": 45,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "preview": {
+        "columns": [
+          "driverref"
+        ],
+        "complete_result_row_count": 1,
+        "preview_only": true,
+        "preview_truncated": false,
+        "rows": [
+          [
+            [
+              "text",
+              "brudes"
+            ]
+          ]
+        ]
+      },
+      "preview_row_limit": 20
+    }
+  },
+  "new_model_request_count": 3,
+  "query_role": "askdata_m2_ro_formula_1",
+  "result": {
+    "column_count": 1,
+    "complete": true,
+    "native_types": [
+      "str"
+    ],
+    "ordered_native_diagnostic_sha256": "dde1d767f6a538b386b4a814efe6e5206bef6ca1fbb38dea65e6dfe35661420f",
+    "payload_bytes": 45,
+    "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+    "row_count": 1
+  },
+  "result_diagnostics": {
+    "column_count_match": true,
+    "ordered_rows_match": true,
+    "row_multiset_match": true
+  },
+  "retrieval": {
+    "baseline_field_ids": [
+      "formula_1.driverstandings.raceid",
+      "formula_1.drivers.driverref",
+      "formula_1.drivers.dob"
+    ],
+    "bm25_count": 30,
+    "coverage_field_ids": [],
+    "dense_count": 30,
+    "intent_selection": {
+      "added_field_ids": [],
+      "baseline_field_ids": [
+        "formula_1.driverstandings.raceid",
+        "formula_1.drivers.driverref",
+        "formula_1.drivers.dob"
+      ],
+      "decisions": [],
+      "policy": {
+        "baseline_preserved": true,
+        "canonical_lookup_max_pairs": 4,
+        "canonical_lookup_sql_tool_calls": 1,
+        "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+        "development_candidate": true,
+        "formal_protocol_override": false,
+        "grain_policy": "public_explicit_entity_grain_v2",
+        "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+        "join_source": "declared_foreign_keys_only",
+        "lookup_consumes_existing_sql_budget": true,
+        "max_added_fields": 8,
+        "max_fields": 20,
+        "max_related_hops": 2,
+        "native_ex_unchanged": true,
+        "numeric_policy": "floating_count_ratio_order_advisory_v3",
+        "output_group_policy": "participant_action_target_pair_v1",
+        "policy_id": "bird_public_intent_candidate_v4",
+        "predicate_policy": "public_condition_roles_conflicts_v3",
+        "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+        "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+        "unit_policy": "public_percentage_units_precision_v2"
+      },
+      "sample_condition_candidates": []
+    },
+    "rrf_count": 40,
+    "schema_selection_policy": {
+      "coverage_enabled": true,
+      "coverage_floor": 0.5,
+      "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+      "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+      "development_candidate": true,
+      "formal_protocol_override": false,
+      "intent_source": "original_question_and_official_evidence",
+      "max_coverage_fields": 4,
+      "max_fields": 20,
+      "metadata_match": "native_field_name_or_official_field_label",
+      "policy_id": "bird_authorized_schema_coverage_v1",
+      "threshold": 0.55
+    },
+    "selected_count": 3,
+    "selected_field_ids": [
+      "formula_1.driverstandings.raceid",
+      "formula_1.drivers.driverref",
+      "formula_1.drivers.dob"
+    ],
+    "source_identity": {
+      "backend": "postgresql",
+      "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+      "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918",
+      "dialect": "postgres",
+      "logical_database_id": "formula_1",
+      "physical_schema": "public",
+      "prompt_dialect": "PostgreSQL",
+      "source_id": "bird_mini_dev_postgres_formula_1"
+    }
+  },
+  "runtime_closed": true,
+  "schema_selection_policy": {
+    "coverage_enabled": true,
+    "coverage_floor": 0.5,
+    "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+    "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "intent_source": "original_question_and_official_evidence",
+    "max_coverage_fields": 4,
+    "max_fields": 20,
+    "metadata_match": "native_field_name_or_official_field_label",
+    "policy_id": "bird_authorized_schema_coverage_v1",
+    "threshold": 0.55
+  },
+  "scorer_runtime_closed": true,
+  "scoring_scope": "trusted_after_agent_exit_with_original_case_deadline",
+  "source_identity": {
+    "backend": "postgresql",
+    "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+    "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918",
+    "dialect": "postgres",
+    "logical_database_id": "formula_1",
+    "physical_schema": "public",
+    "prompt_dialect": "PostgreSQL",
+    "source_id": "bird_mini_dev_postgres_formula_1"
+  },
+  "sql_repair_policy": "bird_authorized_sql_repair_v2",
+  "status": "scored",
+  "validation_events": [
+    {
+      "sql_round": 1,
+      "valid": true
+    }
+  ]
+}

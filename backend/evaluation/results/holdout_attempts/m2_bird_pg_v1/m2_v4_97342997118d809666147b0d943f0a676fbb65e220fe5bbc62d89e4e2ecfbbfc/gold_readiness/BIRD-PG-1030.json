@@ -1,0 +1,53 @@
+{
+  "budget": {
+    "chat_http_attempts": 0,
+    "elapsed_seconds": 6.784,
+    "generation_attempts": {},
+    "model_events": [],
+    "model_http_attempts": 0,
+    "sql_tool_calls": 0,
+    "validation_attempts": {}
+  },
+  "case_id": "BIRD-PG-1030",
+  "complete": true,
+  "database_id": "european_football_2",
+  "errors": [],
+  "ex_correct": null,
+  "gold_sql_sha256": "511e054a2bb879740de8a427446c12d1ada1082a44bf0f0a4ceefcbccb138201",
+  "mode": "gold",
+  "new_model_request_count": 0,
+  "query_role": "askdata_m2_ro_european_football_2",
+  "result": {
+    "answer_details": "scorer-only; no answer rows, counts or digests exposed",
+    "complete": true,
+    "native_hashable": true,
+    "within_payload_limit": true,
+    "within_row_limit": true
+  },
+  "runtime_closed": true,
+  "schema_selection_policy": {
+    "coverage_enabled": false,
+    "coverage_floor": null,
+    "coverage_gain": null,
+    "coverage_scope": null,
+    "development_candidate": false,
+    "formal_protocol_override": false,
+    "intent_source": null,
+    "max_coverage_fields": 0,
+    "max_fields": 20,
+    "metadata_match": null,
+    "policy_id": "bird_rerank_055_top20_v1",
+    "threshold": 0.55
+  },
+  "source_identity": {
+    "backend": "postgresql",
+    "catalog_version": "7e65c485d64772c03edab6c13baa65eae104a933b2b115be747fe0c733cdfd8b",
+    "data_version": "cc4a4cfeed56bc10bb114cb58229c32cdcd5e270020dce63b21b931931562c16",
+    "dialect": "postgres",
+    "logical_database_id": "european_football_2",
+    "physical_schema": "public",
+    "prompt_dialect": "PostgreSQL",
+    "source_id": "bird_mini_dev_postgres_european_football_2"
+  },
+  "status": "gold_ready"
+}

@@ -1,0 +1,543 @@
+{
+  "case_count": 2,
+  "cases": [
+    {
+      "baseline_added_field_ids": [],
+      "baseline_graph": {
+        "fields": [
+          {
+            "description": "Consumption",
+            "id": "debit_card_specializing.yearmonth.consumption",
+            "label": "Consumption",
+            "name": "consumption",
+            "role": "field",
+            "score": 0.6333862504269453,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.consumption",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "real"
+          },
+          {
+            "description": "Customer ID",
+            "id": "debit_card_specializing.yearmonth.customerid",
+            "label": "Customer ID",
+            "name": "customerid",
+            "role": "field",
+            "score": 0.5824590071957304,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.customerid",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "bigint"
+          },
+          {
+            "description": "Date",
+            "id": "debit_card_specializing.yearmonth.date",
+            "label": "Date",
+            "name": "date",
+            "role": "field",
+            "score": 0.5215005964174337,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.date",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "text"
+          }
+        ],
+        "joins": [],
+        "tables": [
+          {
+            "database": "debit_card_specializing",
+            "description": "Authorized PostgreSQL table from the recorded M2 validation catalog",
+            "domain": "",
+            "id": "debit_card_specializing.yearmonth",
+            "label": "yearmonth",
+            "name": "yearmonth"
+          }
+        ]
+      },
+      "candidate_graph": {
+        "condition_relation_context": {
+          "admitted_public_conditions": [
+            {
+              "authority": "public_entity_role_plus_unique_authorized_profile_owner",
+              "field_id": "debit_card_specializing.customers.segment",
+              "mandatory": false,
+              "public_source": "question",
+              "public_span": [
+                44,
+                57
+              ],
+              "role": "public_categorical_population_condition",
+              "value": "SME"
+            }
+          ],
+          "guidance": "Cover the public condition using its owning field. Profile matches alone never mandate predicates. Candidate equalities are alternatives, not database constraints; no join type is prescribed. Clarify unresolved ownership/connectivity instead of silently discarding a condition.",
+          "policy": {
+            "authority": "declared_fk_or_separately_reviewed_source_bound_candidate",
+            "automatic_join_type": null,
+            "baseline_preserved": true,
+            "development_candidate": true,
+            "formal_protocol_override": false,
+            "max_fields": 20,
+            "max_hops": 2,
+            "max_intent_additions": 8,
+            "native_ex_unchanged": true,
+            "numeric_policy_changed": false,
+            "policy_id": "bird_public_categorical_population_context_v1",
+            "samples_are_predicates": false,
+            "sql_rewriting": false
+          },
+          "public_output_relation": [],
+          "unresolved_required_roles": []
+        },
+        "fields": [
+          {
+            "description": "Consumption",
+            "id": "debit_card_specializing.yearmonth.consumption",
+            "label": "Consumption",
+            "name": "consumption",
+            "role": "field",
+            "score": 0.6333862504269453,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.consumption",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "real"
+          },
+          {
+            "description": "Customer ID",
+            "id": "debit_card_specializing.yearmonth.customerid",
+            "label": "Customer ID",
+            "name": "customerid",
+            "role": "field",
+            "score": 0.5824590071957304,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.customerid",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "bigint"
+          },
+          {
+            "description": "Date",
+            "id": "debit_card_specializing.yearmonth.date",
+            "label": "Date",
+            "name": "date",
+            "role": "field",
+            "score": 0.5215005964174337,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.date",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "text"
+          },
+          {
+            "description": "client segment",
+            "id": "debit_card_specializing.customers.segment",
+            "label": "client segment",
+            "name": "segment",
+            "role": "field",
+            "score": 0.0,
+            "source": "condition_relation_coverage",
+            "sql_name": "customers.segment",
+            "table_id": "debit_card_specializing.customers",
+            "table_name": "customers",
+            "type": "text"
+          },
+          {
+            "description": "CustomerID",
+            "id": "debit_card_specializing.customers.customerid",
+            "label": "CustomerID",
+            "name": "customerid",
+            "role": "primary_key",
+            "score": 0.0,
+            "source": "condition_relation_coverage",
+            "sql_name": "customers.customerid",
+            "table_id": "debit_card_specializing.customers",
+            "table_name": "customers",
+            "type": "bigint"
+          }
+        ],
+        "joins": [
+          {
+            "authority": "reviewed_source_bound_candidate",
+            "declared_foreign_key": false,
+            "description": "Candidate equality from reviewed source-bound key coverage; not a declared FK. Choose join/population semantics from public input.",
+            "id": "debit_card_specializing:customers:yearmonth:customerid",
+            "join_type": null,
+            "key_group": {
+              "child_fields": [
+                "customerid"
+              ],
+              "parent_fields": [
+                "customerid"
+              ]
+            },
+            "left_field": "customerid",
+            "left_table": "debit_card_specializing.customers",
+            "left_table_name": "customers",
+            "mandatory": false,
+            "relation_type": "reviewed_candidate",
+            "right_field": "customerid",
+            "right_table": "debit_card_specializing.yearmonth",
+            "right_table_name": "yearmonth"
+          }
+        ],
+        "tables": [
+          {
+            "database": "debit_card_specializing",
+            "description": "Authorized PostgreSQL table from the recorded M2 validation catalog",
+            "domain": "",
+            "id": "debit_card_specializing.customers",
+            "label": "customers",
+            "name": "customers"
+          },
+          {
+            "database": "debit_card_specializing",
+            "description": "Authorized PostgreSQL table from the recorded M2 validation catalog",
+            "domain": "",
+            "id": "debit_card_specializing.yearmonth",
+            "label": "yearmonth",
+            "name": "yearmonth"
+          }
+        ]
+      },
+      "case_id": "BIRD-PG-1480",
+      "categorical_candidate_added_field_ids": [
+        "debit_card_specializing.customers.customerid",
+        "debit_card_specializing.customers.segment"
+      ],
+      "recorded_selected_field_ids": [
+        "debit_card_specializing.yearmonth.consumption",
+        "debit_card_specializing.yearmonth.customerid",
+        "debit_card_specializing.yearmonth.date"
+      ],
+      "unresolved_required_roles": []
+    },
+    {
+      "baseline_added_field_ids": [],
+      "baseline_graph": {
+        "fields": [
+          {
+            "description": "Consumption",
+            "id": "debit_card_specializing.yearmonth.consumption",
+            "label": "Consumption",
+            "name": "consumption",
+            "role": "field",
+            "score": 0.6694617084551462,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.consumption",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "real"
+          },
+          {
+            "description": "Date",
+            "id": "debit_card_specializing.yearmonth.date",
+            "label": "Date",
+            "name": "date",
+            "role": "field",
+            "score": 0.5634902325498422,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.date",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "text"
+          },
+          {
+            "description": "Currency",
+            "id": "debit_card_specializing.customers.currency",
+            "label": "Currency",
+            "name": "currency",
+            "role": "field",
+            "score": 0.5033956864425757,
+            "source": "recorded_selection",
+            "sql_name": "customers.currency",
+            "table_id": "debit_card_specializing.customers",
+            "table_name": "customers",
+            "type": "text"
+          },
+          {
+            "description": "CustomerID",
+            "id": "debit_card_specializing.customers.customerid",
+            "label": "CustomerID",
+            "name": "customerid",
+            "role": "primary_key",
+            "score": 0.33784285326649216,
+            "source": "recorded_selection",
+            "sql_name": "customers.customerid",
+            "table_id": "debit_card_specializing.customers",
+            "table_name": "customers",
+            "type": "bigint"
+          },
+          {
+            "description": "Customer ID",
+            "id": "debit_card_specializing.yearmonth.customerid",
+            "label": "Customer ID",
+            "name": "customerid",
+            "role": "field",
+            "score": 0.5125985259704419,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.customerid",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "bigint"
+          }
+        ],
+        "joins": [
+          {
+            "authority": "reviewed_source_bound_candidate",
+            "declared_foreign_key": false,
+            "description": "Candidate equality from reviewed source-bound key coverage; not a declared FK. Choose join/population semantics from public input.",
+            "id": "debit_card_specializing:customers:yearmonth:customerid",
+            "join_type": null,
+            "key_group": {
+              "child_fields": [
+                "customerid"
+              ],
+              "parent_fields": [
+                "customerid"
+              ]
+            },
+            "left_field": "customerid",
+            "left_table": "debit_card_specializing.customers",
+            "left_table_name": "customers",
+            "mandatory": false,
+            "relation_type": "reviewed_candidate",
+            "right_field": "customerid",
+            "right_table": "debit_card_specializing.yearmonth",
+            "right_table_name": "yearmonth"
+          }
+        ],
+        "tables": [
+          {
+            "database": "debit_card_specializing",
+            "description": "Authorized PostgreSQL table from the recorded M2 validation catalog",
+            "domain": "",
+            "id": "debit_card_specializing.customers",
+            "label": "customers",
+            "name": "customers"
+          },
+          {
+            "database": "debit_card_specializing",
+            "description": "Authorized PostgreSQL table from the recorded M2 validation catalog",
+            "domain": "",
+            "id": "debit_card_specializing.yearmonth",
+            "label": "yearmonth",
+            "name": "yearmonth"
+          }
+        ]
+      },
+      "candidate_graph": {
+        "condition_relation_context": {
+          "admitted_public_conditions": [
+            {
+              "authority": "public_role_plus_profile_coverage_hint",
+              "field_id": "debit_card_specializing.customers.currency",
+              "mandatory": false,
+              "public_source": "question",
+              "public_span": [
+                48,
+                59
+              ],
+              "role": "payment_currency_condition",
+              "value": "CZK"
+            }
+          ],
+          "guidance": "Cover the public condition using its owning field. Profile matches alone never mandate predicates. Candidate equalities are alternatives, not database constraints; no join type is prescribed. Clarify unresolved ownership/connectivity instead of silently discarding a condition.",
+          "policy": {
+            "authority": "declared_fk_or_separately_reviewed_source_bound_candidate",
+            "automatic_join_type": null,
+            "baseline_preserved": true,
+            "development_candidate": true,
+            "formal_protocol_override": false,
+            "max_fields": 20,
+            "max_hops": 2,
+            "max_intent_additions": 8,
+            "native_ex_unchanged": true,
+            "numeric_policy_changed": false,
+            "policy_id": "bird_public_categorical_population_context_v1",
+            "samples_are_predicates": false,
+            "sql_rewriting": false
+          },
+          "public_output_relation": [],
+          "unresolved_required_roles": []
+        },
+        "fields": [
+          {
+            "description": "Consumption",
+            "id": "debit_card_specializing.yearmonth.consumption",
+            "label": "Consumption",
+            "name": "consumption",
+            "role": "field",
+            "score": 0.6694617084551462,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.consumption",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "real"
+          },
+          {
+            "description": "Date",
+            "id": "debit_card_specializing.yearmonth.date",
+            "label": "Date",
+            "name": "date",
+            "role": "field",
+            "score": 0.5634902325498422,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.date",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "text"
+          },
+          {
+            "description": "Currency",
+            "id": "debit_card_specializing.customers.currency",
+            "label": "Currency",
+            "name": "currency",
+            "role": "field",
+            "score": 0.5033956864425757,
+            "source": "recorded_selection",
+            "sql_name": "customers.currency",
+            "table_id": "debit_card_specializing.customers",
+            "table_name": "customers",
+            "type": "text"
+          },
+          {
+            "description": "CustomerID",
+            "id": "debit_card_specializing.customers.customerid",
+            "label": "CustomerID",
+            "name": "customerid",
+            "role": "primary_key",
+            "score": 0.33784285326649216,
+            "source": "recorded_selection",
+            "sql_name": "customers.customerid",
+            "table_id": "debit_card_specializing.customers",
+            "table_name": "customers",
+            "type": "bigint"
+          },
+          {
+            "description": "Customer ID",
+            "id": "debit_card_specializing.yearmonth.customerid",
+            "label": "Customer ID",
+            "name": "customerid",
+            "role": "field",
+            "score": 0.5125985259704419,
+            "source": "recorded_selection",
+            "sql_name": "yearmonth.customerid",
+            "table_id": "debit_card_specializing.yearmonth",
+            "table_name": "yearmonth",
+            "type": "bigint"
+          }
+        ],
+        "joins": [
+          {
+            "authority": "reviewed_source_bound_candidate",
+            "declared_foreign_key": false,
+            "description": "Candidate equality from reviewed source-bound key coverage; not a declared FK. Choose join/population semantics from public input.",
+            "id": "debit_card_specializing:customers:yearmonth:customerid",
+            "join_type": null,
+            "key_group": {
+              "child_fields": [
+                "customerid"
+              ],
+              "parent_fields": [
+                "customerid"
+              ]
+            },
+            "left_field": "customerid",
+            "left_table": "debit_card_specializing.customers",
+            "left_table_name": "customers",
+            "mandatory": false,
+            "relation_type": "reviewed_candidate",
+            "right_field": "customerid",
+            "right_table": "debit_card_specializing.yearmonth",
+            "right_table_name": "yearmonth"
+          }
+        ],
+        "tables": [
+          {
+            "database": "debit_card_specializing",
+            "description": "Authorized PostgreSQL table from the recorded M2 validation catalog",
+            "domain": "",
+            "id": "debit_card_specializing.customers",
+            "label": "customers",
+            "name": "customers"
+          },
+          {
+            "database": "debit_card_specializing",
+            "description": "Authorized PostgreSQL table from the recorded M2 validation catalog",
+            "domain": "",
+            "id": "debit_card_specializing.yearmonth",
+            "label": "yearmonth",
+            "name": "yearmonth"
+          }
+        ]
+      },
+      "case_id": "BIRD-PG-1479",
+      "categorical_candidate_added_field_ids": [],
+      "recorded_selected_field_ids": [
+        "debit_card_specializing.yearmonth.consumption",
+        "debit_card_specializing.yearmonth.date",
+        "debit_card_specializing.customers.currency",
+        "debit_card_specializing.customers.customerid",
+        "debit_card_specializing.yearmonth.customerid"
+      ],
+      "unresolved_required_roles": []
+    }
+  ],
+  "checks": {
+    "atomic_key_closure": true,
+    "authorized_catalog_field_ownership": true,
+    "condition_not_mandatory": true,
+    "database_connected": false,
+    "existing_1479_preserved": true,
+    "full_profile_unique_owner_not_rescanned": true,
+    "join_semantics_unprescribed": true,
+    "model_called": false,
+    "recorded_profile_hints_replayed": true,
+    "recorded_source_binding": true,
+    "relation_is_not_declared_fk": true
+  },
+  "current_live_target_verified": false,
+  "formal_benchmark": false,
+  "holdout_run": false,
+  "new_model_request_count": 0,
+  "policy_id": "bird_public_categorical_population_context_v1",
+  "postgresql_connected": false,
+  "query_role": "askdata_m2_ro_debit_card_specializing",
+  "relation_candidate": {
+    "authority": "reviewed_source_bound_candidate",
+    "child_key": "customerid",
+    "child_table": "debit_card_specializing.yearmonth",
+    "declared_foreign_key": false,
+    "id": "debit_card_specializing:customers:yearmonth",
+    "join_type": null,
+    "observed_null_child_rows": 0,
+    "observed_orphan_rows": 0,
+    "parent_key": "customerid",
+    "parent_table": "debit_card_specializing.customers",
+    "source_review_sha256": "d03bcb1e9c384a3237484a7d1574fce6ce1baa257570791ebad794e24aabf472"
+  },
+  "run_status": "complete",
+  "source_evidence_sha256": {
+    "capture": "2e204fbc10bd9d37bef79caef8bf93a3c45e84b4c9f4def65f37d1960bf0b74c",
+    "dev_schema": "48aa9febe7282d1690f3ed1f222dc040c182df83812ba4e9bee956084d99c8ff",
+    "import_spec": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879",
+    "public_inputs": "6760724e98b6da967ac5ebb2698c4e5cab385875bd150ad36a3b252ffdc52f03",
+    "validation": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6"
+  },
+  "source_identity": {
+    "backend": "postgresql",
+    "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+    "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450",
+    "dialect": "postgres",
+    "logical_database_id": "debit_card_specializing",
+    "physical_schema": "public",
+    "prompt_dialect": "PostgreSQL",
+    "source_id": "bird_mini_dev_postgres_debit_card_specializing"
+  },
+  "source_scope": "Recorded E06 live receipt plus accepted M2 source/catalog evidence; no new live verification",
+  "stage": "M3 public categorical population condition authorized graph replay"
+}

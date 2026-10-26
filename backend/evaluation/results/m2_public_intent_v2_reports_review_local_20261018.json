@@ -1,0 +1,3688 @@
+{
+  "stage": "M2 public intent v2 diagnostic14 and native14 downloaded report review",
+  "run_status": "failed",
+  "reviewed_at": "2026-10-18T05:43:58.943759+00:00",
+  "diagnostic_report_sha256": "4743a1b3234f358a51684278c093b31baaea26de3bfc3c3b4c110c2863f6ee52",
+  "native_report_sha256": "f0170d51cbcef805c13befc590c101678f5277fe6ef50b76dc7c2667500d7c08",
+  "check_count": 695,
+  "check_pass_count": 694,
+  "failed_checks": [
+    "0201_observed_scale_relationship"
+  ],
+  "evidence_chain_accepted": false,
+  "candidate_progress_confirmed": false,
+  "all_fourteen_correct": false,
+  "formal_ex": null,
+  "matched_case_ids": [
+    "BIRD-PG-0050",
+    "BIRD-PG-0095",
+    "BIRD-PG-1473",
+    "BIRD-PG-1435",
+    "BIRD-PG-0036",
+    "BIRD-PG-0082",
+    "BIRD-PG-1486",
+    "BIRD-PG-0159",
+    "BIRD-PG-1405",
+    "BIRD-PG-0368",
+    "BIRD-PG-0766"
+  ],
+  "mismatched_case_ids": [
+    "BIRD-PG-0201",
+    "BIRD-PG-1399",
+    "BIRD-PG-0586"
+  ],
+  "restored_case_ids": [
+    "BIRD-PG-0036",
+    "BIRD-PG-0159",
+    "BIRD-PG-1405",
+    "BIRD-PG-0368"
+  ],
+  "summary": {
+    "diagnostic_answered_count": 14,
+    "sql_execution_success_count": 14,
+    "native_matches": 11,
+    "native_mismatches": 3,
+    "development_subset_native_match_rate": 0.7857142857142857,
+    "previous_native_matches": 7,
+    "restored_native_matches": 4,
+    "previous_success_regressions": [],
+    "case_http_attempts": 45,
+    "chat_http_attempts": 17,
+    "shared_index_http_attempts": 49,
+    "total_model_http_attempts": 94,
+    "diagnostic_sql_tool_calls": 21,
+    "canonical_lookup_sql_calls": 7,
+    "canonical_lookup_pairs": 8,
+    "native_replay_sql_calls": 28,
+    "validation_rejected_sql_count": 3,
+    "replay_new_model_request_count": 0
+  },
+  "case_reviews": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "generation_count": 1,
+      "sql_tool_calls": 1,
+      "lookup_probe_count": 0,
+      "added_field_ids": [
+        "california_schools.schools.school",
+        "california_schools.schools.street"
+      ],
+      "first_sql": "SELECT s.mailstreet, sc.sname FROM schools s JOIN satscores sc ON s.cdscode = sc.cds ORDER BY sc.avgscrmath DESC NULLS LAST LIMIT 1 OFFSET 6",
+      "final_sql": "SELECT s.mailstreet, sc.sname FROM schools s JOIN satscores sc ON s.cdscode = sc.cds ORDER BY sc.avgscrmath DESC NULLS LAST LIMIT 1 OFFSET 6",
+      "required_profile_conditions": [],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 2,
+        "gold_column_count": 2,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "generation_count": 2,
+      "sql_tool_calls": 1,
+      "lookup_probe_count": 0,
+      "added_field_ids": [],
+      "first_sql": "SELECT d.account_id\nFROM disp d\nJOIN client c ON d.client_id = c.client_id\nJOIN district dist ON c.district_id = dist.district_id\nORDER BY c.birth_date DESC, dist.a11 DESC\nLIMIT 1",
+      "final_sql": "SELECT d.account_id\nFROM disp d\nJOIN client c ON d.client_id = c.client_id\nJOIN district dist ON c.district_id = dist.district_id\nORDER BY c.birth_date DESC NULLS LAST, dist.a11 DESC NULLS LAST\nLIMIT 1",
+      "required_profile_conditions": [],
+      "validation_rejections": [
+        [
+          {
+            "code": "nullable_order_nulls_first",
+            "reason": "Rank nonmissing values first: use explicit NULLS LAST on this nullable ordering expression.",
+            "expression": "c.birth_date"
+          },
+          {
+            "code": "nullable_order_nulls_first",
+            "reason": "Rank nonmissing values first: use explicit NULLS LAST on this nullable ordering expression.",
+            "expression": "dist.a11"
+          }
+        ]
+      ],
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "database_id": "debit_card_specializing",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "generation_count": 1,
+      "sql_tool_calls": 1,
+      "lookup_probe_count": 0,
+      "added_field_ids": [],
+      "first_sql": "SELECT AVG(ym.consumption) / 12 AS average_monthly_consumption FROM yearmonth ym JOIN customers c ON ym.customerid = c.customerid WHERE c.segment = 'SME' AND LEFT(ym.date, 4) = '2013'",
+      "final_sql": "SELECT AVG(ym.consumption) / 12 AS average_monthly_consumption FROM yearmonth ym JOIN customers c ON ym.customerid = c.customerid WHERE c.segment = 'SME' AND LEFT(ym.date, 4) = '2013'",
+      "required_profile_conditions": [],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "generation_count": 1,
+      "sql_tool_calls": 2,
+      "lookup_probe_count": 1,
+      "added_field_ids": [
+        "student_club.event.event_date",
+        "student_club.event.event_name",
+        "student_club.event.status",
+        "student_club.event.type"
+      ],
+      "first_sql": "SELECT event_name FROM event WHERE type = 'Game' AND status = 'Closed' AND event_date BETWEEN '2019-03-15' AND '2020-03-20'",
+      "final_sql": "SELECT event_name FROM event WHERE type = 'Game' AND status = 'Closed' AND event_date BETWEEN '2019-03-15' AND '2020-03-20'",
+      "required_profile_conditions": [
+        {
+          "table_id": "student_club.event",
+          "field_id": "student_club.event.status",
+          "field": "status",
+          "value": "Closed",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        }
+      ],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 3,
+        "gold_row_count": 2,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 2,
+        "gold_unique_tuple_count": 2,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "checks_passed": true,
+      "matches_frozen_gold": false,
+      "generation_count": 3,
+      "sql_tool_calls": 2,
+      "lookup_probe_count": 2,
+      "added_field_ids": [
+        "toxicology.atom.atom_id",
+        "toxicology.atom.element"
+      ],
+      "first_sql": "SELECT CAST(SUM(CASE WHEN a.element = 'c' THEN 1 ELSE 0 END) AS REAL) / NULLIF(COUNT(a.atom_id), 0) AS percentage FROM atom a JOIN bond b ON a.molecule_id = b.molecule_id WHERE b.bond_type = '=';",
+      "final_sql": "SELECT CAST(SUM(CASE WHEN a.element = 'c' THEN 1 ELSE 0 END) AS REAL) / NULLIF(COUNT(DISTINCT a.atom_id), 0) AS percentage FROM atom a WHERE EXISTS (SELECT 1 FROM bond b WHERE b.molecule_id = a.molecule_id AND b.bond_type = '=')",
+      "required_profile_conditions": [
+        {
+          "table_id": "toxicology.atom",
+          "field_id": "toxicology.atom.element",
+          "field": "element",
+          "value": "c",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        },
+        {
+          "table_id": "toxicology.bond",
+          "field_id": "toxicology.bond.bond_type",
+          "field": "bond_type",
+          "value": "=",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        }
+      ],
+      "validation_rejections": [
+        [
+          {
+            "code": "entity_grain_fanout",
+            "reason": "SUM of per-row indicator after a nonunique join weights repeated entities. Preserve the public counted-identifier grain with conditional DISTINCT identifier counts or a semijoin.",
+            "table_id": "toxicology.atom",
+            "primary_key": "atom_id"
+          }
+        ],
+        [
+          {
+            "code": "entity_grain_fanout",
+            "reason": "SUM of per-row indicator after a nonunique join weights repeated entities. Preserve the public counted-identifier grain with conditional DISTINCT identifier counts or a semijoin.",
+            "table_id": "toxicology.atom",
+            "primary_key": "atom_id"
+          }
+        ]
+      ],
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 1,
+        "gold_only_tuple_count": 1,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "float",
+                "0x1.8d69110447107p-2"
+              ]
+            ]
+          ],
+          "utf8_bytes": 34,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "float",
+                "0x1.367a154b5784ep+5"
+              ]
+            ]
+          ],
+          "utf8_bytes": 34,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-1399",
+      "database_id": "student_club",
+      "checks_passed": true,
+      "matches_frozen_gold": false,
+      "generation_count": 1,
+      "sql_tool_calls": 2,
+      "lookup_probe_count": 1,
+      "added_field_ids": [
+        "student_club.member.first_name",
+        "student_club.member.last_name"
+      ],
+      "first_sql": "SELECT CASE WHEN COUNT(*) > 0 THEN 'Yes' ELSE 'No' END AS attended FROM attendance a JOIN member m ON a.link_to_member = m.member_id JOIN event e ON a.link_to_event = e.event_id WHERE m.first_name = 'Maya' AND m.last_name = 'Mclean' AND e.event_name = 'Women''s Soccer'",
+      "final_sql": "SELECT CASE WHEN COUNT(*) > 0 THEN 'Yes' ELSE 'No' END AS attended FROM attendance a JOIN member m ON a.link_to_member = m.member_id JOIN event e ON a.link_to_event = e.event_id WHERE m.first_name = 'Maya' AND m.last_name = 'Mclean' AND e.event_name = 'Women''s Soccer'",
+      "required_profile_conditions": [],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 1,
+        "gold_row_count": 14,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 2,
+        "prediction_only_tuple_count": 1,
+        "gold_only_tuple_count": 2,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "Yes"
+              ]
+            ]
+          ],
+          "utf8_bytes": 16,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "YES"
+              ]
+            ],
+            [
+              [
+                "null"
+              ]
+            ]
+          ],
+          "utf8_bytes": 26,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": true,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "database_id": "codebase_community",
+      "checks_passed": true,
+      "matches_frozen_gold": false,
+      "generation_count": 1,
+      "sql_tool_calls": 1,
+      "lookup_probe_count": 0,
+      "added_field_ids": [
+        "codebase_community.posts.title",
+        "codebase_community.users.displayname"
+      ],
+      "first_sql": "SELECT DISTINCT u.displayname\nFROM users u\nJOIN votes v ON u.id = v.userid\nJOIN posts p ON v.postid = p.id\nWHERE v.bountyamount = 50\nAND p.title ILIKE '%variance%'",
+      "final_sql": "SELECT DISTINCT u.displayname\nFROM users u\nJOIN votes v ON u.id = v.userid\nJOIN posts p ON v.postid = p.id\nWHERE v.bountyamount = 50\nAND p.title ILIKE '%variance%'",
+      "required_profile_conditions": [],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "column_count_differs",
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 2,
+        "gold_row_count": 2,
+        "prediction_column_count": 1,
+        "gold_column_count": 2,
+        "prediction_unique_tuple_count": 2,
+        "gold_unique_tuple_count": 2,
+        "prediction_only_tuple_count": 2,
+        "gold_only_tuple_count": 2,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "chl"
+              ]
+            ],
+            [
+              [
+                "text",
+                "shabbychef"
+              ]
+            ]
+          ],
+          "utf8_bytes": 39,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "chl"
+              ],
+              [
+                "text",
+                "How to combine confidence intervals for a variance component of a mixed-effects model when using multiple imputation"
+              ]
+            ],
+            [
+              [
+                "text",
+                "shabbychef"
+              ],
+              [
+                "text",
+                "Unbiased estimation of covariance matrix for multiply censored data"
+              ]
+            ]
+          ],
+          "utf8_bytes": 246,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "generation_count": 1,
+      "sql_tool_calls": 1,
+      "lookup_probe_count": 0,
+      "added_field_ids": [
+        "california_schools.schools.admfname2",
+        "california_schools.schools.admfname3",
+        "california_schools.schools.admlname3",
+        "california_schools.schools.school"
+      ],
+      "first_sql": "SELECT s.admfname1, s.admlname1, s.admfname2, s.admlname2, s.admfname3, s.admlname3 FROM schools s JOIN satscores sat ON s.cdscode = sat.cds ORDER BY sat.numge1500 DESC NULLS LAST LIMIT 1",
+      "final_sql": "SELECT s.admfname1, s.admlname1, s.admfname2, s.admlname2, s.admfname3, s.admlname3 FROM schools s JOIN satscores sat ON s.cdscode = sat.cds ORDER BY sat.numge1500 DESC NULLS LAST LIMIT 1",
+      "required_profile_conditions": [],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 6,
+        "gold_column_count": 6,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "database_id": "california_schools",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "generation_count": 1,
+      "sql_tool_calls": 1,
+      "lookup_probe_count": 0,
+      "added_field_ids": [
+        "california_schools.schools.school"
+      ],
+      "first_sql": "SELECT gsoffered FROM schools ORDER BY ABS(longitude) DESC NULLS LAST LIMIT 1",
+      "final_sql": "SELECT gsoffered FROM schools ORDER BY ABS(longitude) DESC NULLS LAST LIMIT 1",
+      "required_profile_conditions": [],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "generation_count": 1,
+      "sql_tool_calls": 1,
+      "lookup_probe_count": 0,
+      "added_field_ids": [
+        "debit_card_specializing.customers.segment"
+      ],
+      "first_sql": "SELECT (COUNT(*) FILTER (WHERE currency = 'CZK') - COUNT(*) FILTER (WHERE currency = 'EUR')) AS difference FROM customers WHERE segment = 'SME'",
+      "final_sql": "SELECT (COUNT(*) FILTER (WHERE currency = 'CZK') - COUNT(*) FILTER (WHERE currency = 'EUR')) AS difference FROM customers WHERE segment = 'SME'",
+      "required_profile_conditions": [],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "generation_count": 1,
+      "sql_tool_calls": 2,
+      "lookup_probe_count": 1,
+      "added_field_ids": [],
+      "first_sql": "SELECT t.trans_id FROM trans t JOIN account a ON t.account_id = a.account_id JOIN disp d ON a.account_id = d.account_id WHERE d.client_id = 3356 AND t.operation = 'VYBER'",
+      "final_sql": "SELECT t.trans_id FROM trans t JOIN account a ON t.account_id = a.account_id JOIN disp d ON a.account_id = d.account_id WHERE d.client_id = 3356 AND t.operation = 'VYBER'",
+      "required_profile_conditions": [
+        {
+          "table_id": "financial.trans",
+          "field_id": "financial.trans.operation",
+          "field": "operation",
+          "value": "VYBER",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        }
+      ],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 140,
+        "gold_row_count": 140,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 140,
+        "gold_unique_tuple_count": 140,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": false
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "database_id": "student_club",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "generation_count": 1,
+      "sql_tool_calls": 2,
+      "lookup_probe_count": 1,
+      "added_field_ids": [
+        "student_club.event.event_name"
+      ],
+      "first_sql": "SELECT b.category, SUM(b.amount) AS amount_budgeted FROM budget b JOIN event e ON b.link_to_event = e.event_id WHERE e.event_name = 'April Speaker' GROUP BY b.category ORDER BY amount_budgeted ASC",
+      "final_sql": "SELECT b.category, SUM(b.amount) AS amount_budgeted FROM budget b JOIN event e ON b.link_to_event = e.event_id WHERE e.event_name = 'April Speaker' GROUP BY b.category ORDER BY amount_budgeted ASC",
+      "required_profile_conditions": [],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 4,
+        "gold_row_count": 4,
+        "prediction_column_count": 2,
+        "gold_column_count": 2,
+        "prediction_unique_tuple_count": 4,
+        "gold_unique_tuple_count": 4,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "generation_count": 1,
+      "sql_tool_calls": 2,
+      "lookup_probe_count": 1,
+      "added_field_ids": [],
+      "first_sql": "SELECT (COUNT(CASE WHEN bordercolor = 'borderless' THEN 1 END)::REAL / NULLIF(COUNT(*), 0)) * 100 AS percentage FROM cards",
+      "final_sql": "SELECT (COUNT(CASE WHEN bordercolor = 'borderless' THEN 1 END)::REAL / NULLIF(COUNT(*), 0)) * 100 AS percentage FROM cards",
+      "required_profile_conditions": [
+        {
+          "table_id": "card_games.cards",
+          "field_id": "card_games.cards.bordercolor",
+          "field": "bordercolor",
+          "value": "borderless",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        }
+      ],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "database_id": "superhero",
+      "checks_passed": true,
+      "matches_frozen_gold": true,
+      "generation_count": 1,
+      "sql_tool_calls": 2,
+      "lookup_probe_count": 1,
+      "added_field_ids": [],
+      "first_sql": "SELECT s.full_name FROM superhero s JOIN hero_attribute ha ON s.id = ha.hero_id JOIN attribute a ON ha.attribute_id = a.id WHERE a.attribute_name = 'Strength' ORDER BY ha.attribute_value DESC NULLS LAST LIMIT 1",
+      "final_sql": "SELECT s.full_name FROM superhero s JOIN hero_attribute ha ON s.id = ha.hero_id JOIN attribute a ON ha.attribute_id = a.id WHERE a.attribute_name = 'Strength' ORDER BY ha.attribute_value DESC NULLS LAST LIMIT 1",
+      "required_profile_conditions": [
+        {
+          "table_id": "superhero.attribute",
+          "field_id": "superhero.attribute.attribute_name",
+          "field": "attribute_name",
+          "value": "Strength",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        }
+      ],
+      "validation_rejections": [],
+      "native_comparison": {
+        "matches_frozen_gold": true,
+        "difference_codes": [],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 0,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_full_comparison": true
+    }
+  ],
+  "full_native_result_objects_reconstructed": 26,
+  "partial_native_previews": 2,
+  "remaining_failures": {
+    "BIRD-PG-0201": {
+      "prediction": 0.3880961092816197,
+      "reference": 38.80961092816197,
+      "grain_repair_observed": true,
+      "current_issue": "Fraction versus percentage scale; public evidence omits *100 while frozen Gold includes it. Resolve the public convention explicitly; do not reintroduce grain repair or alter scoring."
+    },
+    "BIRD-PG-0586": {
+      "actor_fk_fixed": true,
+      "reference_user_projection_matches": true,
+      "output_context_supplied_but_not_projected": true,
+      "current_issue": "One projected user column versus two reference columns user+title. ILIKE versus LIKE is also an observable condition difference requiring controlled verification."
+    },
+    "BIRD-PG-1399": {
+      "current_issue": "Generated scalar Yes versus frozen tuple set YES/NULL. Keep mismatch and reference-shape review; no label/NULL normalization."
+    }
+  },
+  "next_steps": [
+    "Preserve these reports as the accepted v2 diagnostic baseline.",
+    "Define visible percentage-unit and context-output conventions from public input; test generic boundaries, avoiding case-ID/Gold-derived runtime rules.",
+    "Before further model calls, use trusted no-model diagnostic SQL variants to isolate scale for 0201 and projection/filter semantics for 0586.",
+    "Continue to record 1399 separately under frozen native scoring, and keep holdout closed."
+  ],
+  "local_postgresql_connected": false,
+  "new_model_request_count_during_review": 0,
+  "limitations": [
+    "0159 has two 140-row complete server results but only two 20-row local previews; full digests/native comparisons remain server evidence.",
+    "26 complete native result objects and 13 complete per-case comparisons were reconstructed locally.",
+    "Actual index/snapshot files were not downloaded: index identities and graph provenance are checked, and the declared snapshot content hash is reconstructed.",
+    "The numerical relationship for 0201 was checked in Python; no modified SQL was executed against PostgreSQL locally.",
+    "14 selected development cases are not a development80 or holdout benchmark score."
+  ],
+  "checks": [
+    {
+      "name": "delivered_files",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/api/routes.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/database.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/contracts.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/csv_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/dialects.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_config.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_connections.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/postgres_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/row_digest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/sql_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/datasources/values.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/errors.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/main.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/schemas.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/server.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/database_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/presentation_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/mcp_runtime/tools/time_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/model_client.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/constraint_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/data_qa_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/duckdb_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/metric_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/postgres_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/response_generator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/single_database_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/querying/sql_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/retrieval/time_field_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/access_control.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/security/auth.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/askdata_service.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/memory_store.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_archive.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/session_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/services/short_term_memory.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/skills/registry.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/clarification.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/query_graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/result_builder.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:app/workflows/state.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/budgets.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/case_worker.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/coverage.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/diagnostic_runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/diagnostics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/evidence.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/first_sql_audit.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/intent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/intent_replay.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/isolated_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/manifest.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/metrics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/model.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/native.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/relationships.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/repair.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/replay.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/retrieval.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/semantics.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/sql.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird/supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/bird_protocol.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:evaluation/run_bird_benchmark.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/check_m2_c_bird_runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_common.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_dump.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_structure.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_target.py",
+      "passed": true
+    },
+    {
+      "name": "current_file:scripts/m2_b_typed_rows.py",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:binding_digest",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:complete_verified_read_only",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:source_and_nonformal",
+      "passed": true
+    },
+    {
+      "name": "native:binding_digest",
+      "passed": true
+    },
+    {
+      "name": "native:complete_verified_read_only",
+      "passed": true
+    },
+    {
+      "name": "native:source_and_nonformal",
+      "passed": true
+    },
+    {
+      "name": "same_producer_code",
+      "passed": true
+    },
+    {
+      "name": "server_environment_preserved",
+      "passed": true
+    },
+    {
+      "name": "source_hash_chain",
+      "passed": true
+    },
+    {
+      "name": "unchanged_recorded_prerequisites",
+      "passed": true
+    },
+    {
+      "name": "diagnostic_gold_hidden",
+      "passed": true
+    },
+    {
+      "name": "native_no_model",
+      "passed": true
+    },
+    {
+      "name": "fresh_isolation",
+      "passed": true
+    },
+    {
+      "name": "budget_and_watchdog_probes",
+      "passed": true
+    },
+    {
+      "name": "same_fourteen_development_inputs",
+      "passed": true
+    },
+    {
+      "name": "case_list_hash",
+      "passed": true
+    },
+    {
+      "name": "fixed_model_configuration",
+      "passed": true
+    },
+    {
+      "name": "snapshot_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt_inventory",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt:california_schools",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt:card_games",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt:codebase_community",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt:debit_card_specializing",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt:financial",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt:student_club",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt:superhero",
+      "passed": true
+    },
+    {
+      "name": "diagnostic:receipt:toxicology",
+      "passed": true
+    },
+    {
+      "name": "native:receipt_inventory",
+      "passed": true
+    },
+    {
+      "name": "native:receipt:california_schools",
+      "passed": true
+    },
+    {
+      "name": "native:receipt:financial",
+      "passed": true
+    },
+    {
+      "name": "native:receipt:debit_card_specializing",
+      "passed": true
+    },
+    {
+      "name": "native:receipt:student_club",
+      "passed": true
+    },
+    {
+      "name": "native:receipt:toxicology",
+      "passed": true
+    },
+    {
+      "name": "native:receipt:codebase_community",
+      "passed": true
+    },
+    {
+      "name": "native:receipt:card_games",
+      "passed": true
+    },
+    {
+      "name": "native:receipt:superhero",
+      "passed": true
+    },
+    {
+      "name": "eight_indexes",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index_scope",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index_code",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index_partition",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index_budget",
+      "passed": true
+    },
+    {
+      "name": "card_games:index_scope",
+      "passed": true
+    },
+    {
+      "name": "card_games:index_code",
+      "passed": true
+    },
+    {
+      "name": "card_games:index_partition",
+      "passed": true
+    },
+    {
+      "name": "card_games:index_budget",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index_scope",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index_code",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index_partition",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index_budget",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index_scope",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index_code",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index_partition",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index_budget",
+      "passed": true
+    },
+    {
+      "name": "financial:index_scope",
+      "passed": true
+    },
+    {
+      "name": "financial:index_code",
+      "passed": true
+    },
+    {
+      "name": "financial:index_partition",
+      "passed": true
+    },
+    {
+      "name": "financial:index_budget",
+      "passed": true
+    },
+    {
+      "name": "student_club:index_scope",
+      "passed": true
+    },
+    {
+      "name": "student_club:index_code",
+      "passed": true
+    },
+    {
+      "name": "student_club:index_partition",
+      "passed": true
+    },
+    {
+      "name": "student_club:index_budget",
+      "passed": true
+    },
+    {
+      "name": "superhero:index_scope",
+      "passed": true
+    },
+    {
+      "name": "superhero:index_code",
+      "passed": true
+    },
+    {
+      "name": "superhero:index_partition",
+      "passed": true
+    },
+    {
+      "name": "superhero:index_budget",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index_scope",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index_code",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index_partition",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:join_endpoint:satscores_cds_fkey:cds",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0050:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:reconstructed_rejection:214",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:bounded_feedback:215",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:local_reason_not_pg:216",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:join_endpoint:account_district_id_fkey:district_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:join_endpoint:client_district_id_fkey:district_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:join_endpoint:disp_account_id_fkey:account_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:join_endpoint:loan_account_id_fkey:account_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:join_endpoint:order_account_id_fkey:account_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:join_endpoint:trans_account_id_fkey:account_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:join_endpoint:disp_client_id_fkey:client_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0095:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1473:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:lookup_resolution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:lookup_resolution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:reconstructed_rejection:327",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:bounded_feedback:328",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:local_reason_not_pg:329",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:reconstructed_rejection:330",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:bounded_feedback:331",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:local_reason_not_pg:332",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:join_endpoint:atom_molecule_id_fkey:molecule_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:join_endpoint:bond_molecule_id_fkey:molecule_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:lookup_resolution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:join_endpoint:attendance_link_to_event_fkey:link_to_event",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:join_endpoint:attendance_link_to_member_fkey:link_to_member",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1399:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:join_endpoint:posts_lasteditoruserid_fkey:lasteditoruserid",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:join_endpoint:votes_postid_fkey:postid",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:join_endpoint:posts_owneruserid_fkey:owneruserid",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:join_endpoint:votes_userid_fkey:userid",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0586:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:join_endpoint:satscores_cds_fkey:cds",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0082:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:lookup_resolution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:partial_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:partial_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:server_full_result_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:join_endpoint:account_district_id_fkey:district_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:join_endpoint:client_district_id_fkey:district_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:join_endpoint:disp_account_id_fkey:account_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:join_endpoint:loan_account_id_fkey:account_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:join_endpoint:order_account_id_fkey:account_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:join_endpoint:trans_account_id_fkey:account_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:join_endpoint:disp_client_id_fkey:client_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:lookup_resolution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:join_endpoint:budget_link_to_event_fkey:link_to_event",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:join_endpoint:expense_link_to_budget_fkey:link_to_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1405:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:lookup_resolution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:join_endpoint:set_translations_setcode_fkey:setcode",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0368:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:termination",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:http_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:generation_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:lookup_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:lookup_plan",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:lookup_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:lookup_resolution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:complete_graph",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:declared_joins",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:bounded_fields",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:selection_record",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:v1_selection_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:bounded_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:final_sql_capture",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:native_sql_bytes",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:native_budget",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:native_executions",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:preview:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:full_native_object:captured_generated",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:preview:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:full_native_object:frozen_gold",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:native_comparison_recomputed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:captured_result_preserved",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:reviewer_hypotheses",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:contract_from_public_authorized_inputs",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:role_context_reconstructed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:graph_version",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:association_keys_recorded",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:join_endpoint:hero_attribute_attribute_id_fkey:attribute_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:join_endpoint:hero_attribute_hero_id_fkey:hero_id",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:sample_hints_not_mandatory",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:explicit_public_predicate_authority",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:attempt_capture_integrity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0766:no_transport_retry",
+      "passed": true
+    },
+    {
+      "name": "totals",
+      "passed": true
+    },
+    {
+      "name": "fourteen_answered_eleven_matches",
+      "passed": true
+    },
+    {
+      "name": "twenty_six_full_two_partial",
+      "passed": true
+    },
+    {
+      "name": "false_population_feedback_absent",
+      "passed": true
+    },
+    {
+      "name": "previous_seven_retained",
+      "passed": true
+    },
+    {
+      "name": "four_restored_without_repairs",
+      "passed": true
+    },
+    {
+      "name": "fixed_error_list",
+      "passed": true
+    },
+    {
+      "name": "all_captured_results_preserved",
+      "passed": true
+    },
+    {
+      "name": "runtime_and_diagnostic_summary",
+      "passed": true
+    },
+    {
+      "name": "0201_two_grain_rejections_then_semijoin",
+      "passed": true
+    },
+    {
+      "name": "0201_observed_scale_relationship",
+      "passed": false
+    },
+    {
+      "name": "0586_actor_names_equal_reference_projection",
+      "passed": true
+    },
+    {
+      "name": "0586_correct_actor_fk_but_missing_title",
+      "passed": true
+    },
+    {
+      "name": "1399_reference_shape_unchanged",
+      "passed": true
+    },
+    {
+      "name": "0368_exact_float_retained",
+      "passed": true
+    },
+    {
+      "name": "latest_delivery_file_inventory",
+      "passed": true
+    }
+  ]
+}

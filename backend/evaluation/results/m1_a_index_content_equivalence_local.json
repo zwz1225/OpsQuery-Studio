@@ -1,0 +1,18 @@
+{
+  "verification": "raw field documents unchanged from pre-M1 A source backup",
+  "document_count": 276,
+  "before_digest": "3ce60abaa0903cc1395e2012c9ed264b06eeabd8a5a2cdc2a383f1380a2e04ec",
+  "after_digest": "3ce60abaa0903cc1395e2012c9ed264b06eeabd8a5a2cdc2a383f1380a2e04ec",
+  "equal": true,
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "model_requests": 0
+}

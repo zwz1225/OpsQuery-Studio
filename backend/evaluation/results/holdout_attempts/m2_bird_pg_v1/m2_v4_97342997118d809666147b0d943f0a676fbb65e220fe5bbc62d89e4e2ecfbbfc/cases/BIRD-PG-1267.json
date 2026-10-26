@@ -1,0 +1,1695 @@
+{
+  "agent_isolation": {
+    "additional_landlock_abi": 4,
+    "direct_database_access": false,
+    "environment_credentials": false,
+    "filesystem": "seccomp_deny_all_new_file_opens",
+    "kernel": "6.8.0-59-generic",
+    "network_and_process": "seccomp",
+    "project_read_access": false,
+    "seccomp_library_version": "2.5.3"
+  },
+  "agent_started": true,
+  "agent_status": "answered",
+  "agent_trace": [
+    {
+      "sql_round": 1,
+      "valid": true,
+      "validation_attempt": 1
+    }
+  ],
+  "budget": {
+    "chat_http_attempts": 1,
+    "elapsed_seconds": 3.824,
+    "generation_attempts": {
+      "1": 1
+    },
+    "model_events": [
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 74,
+          "total_tokens": 74
+        }
+      },
+      {
+        "endpoint_kind": "rerank",
+        "kind": "rerank",
+        "retry": 0,
+        "returned_model": "qwen3-rerank",
+        "status": "complete",
+        "usage": {
+          "total_tokens": 7267
+        }
+      },
+      {
+        "endpoint_kind": "chat",
+        "kind": "chat",
+        "retry": 0,
+        "returned_model": "qwen3.7-plus",
+        "status": "complete",
+        "usage": {
+          "completion_tokens": 51,
+          "prompt_tokens": 7217,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "text_tokens": 7217
+          },
+          "total_tokens": 7268
+        }
+      }
+    ],
+    "model_http_attempts": 3,
+    "sql_tool_calls": 1,
+    "validation_attempts": {
+      "1": 1
+    }
+  },
+  "candidate_sha256": "97342997118d809666147b0d943f0a676fbb65e220fe5bbc62d89e4e2ecfbbfc",
+  "canonical_lookup": {
+    "executed": false,
+    "matches": [],
+    "max_values_per_probe": 3,
+    "policy": "bird_public_intent_candidate_v4",
+    "probe_count": 0,
+    "source_identity": {
+      "backend": "postgresql",
+      "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+      "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c",
+      "dialect": "postgres",
+      "logical_database_id": "thrombosis_prediction",
+      "physical_schema": "public",
+      "prompt_dialect": "PostgreSQL",
+      "source_id": "bird_mini_dev_postgres_thrombosis_prediction"
+    },
+    "sql_tool_calls": 0
+  },
+  "case_id": "BIRD-PG-1267",
+  "case_wall_seconds": 4.076,
+  "complete": true,
+  "database_id": "thrombosis_prediction",
+  "development_diagnostics": {
+    "attempts": [
+      {
+        "action": "query",
+        "clarification_reason": {
+          "provided": false,
+          "redacted": false,
+          "text": null,
+          "truncated": false
+        },
+        "kind": "model_decision",
+        "sql": {
+          "original_sha256": "f029f2c121969f133d2ce72353e4ca3b47ad3e9885b61de18c8f5ac00847147f",
+          "original_utf8_bytes": 114,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT COUNT(*) FROM laboratory l JOIN examination e ON l.id = e.id WHERE l.sm IN ('-', '+-') AND e.thrombosis = 0",
+          "truncated": false
+        },
+        "sql_round": 1
+      },
+      {
+        "kind": "validate",
+        "sql": {
+          "original_sha256": "f029f2c121969f133d2ce72353e4ca3b47ad3e9885b61de18c8f5ac00847147f",
+          "original_utf8_bytes": 114,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT COUNT(*) FROM laboratory l JOIN examination e ON l.id = e.id WHERE l.sm IN ('-', '+-') AND e.thrombosis = 0",
+          "truncated": false
+        },
+        "sql_round": 1,
+        "success": true
+      },
+      {
+        "kind": "execute",
+        "sql": {
+          "original_sha256": "f029f2c121969f133d2ce72353e4ca3b47ad3e9885b61de18c8f5ac00847147f",
+          "original_utf8_bytes": 114,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT COUNT(*) FROM laboratory l JOIN examination e ON l.id = e.id WHERE l.sm IN ('-', '+-') AND e.thrombosis = 0",
+          "truncated": false
+        },
+        "sql_round": 1,
+        "success": true
+      }
+    ],
+    "clarification_reason": null,
+    "limits": {
+      "max_events": 21,
+      "reason_utf8_bytes": 2048,
+      "schema_graph_utf8_bytes": 98304,
+      "sql_text_utf8_bytes": 8192,
+      "total_utf8_bytes": 393216
+    },
+    "omitted_events": 0,
+    "policy": "bird_development_observation_v1",
+    "report_only": true,
+    "retrieval": {
+      "added_relation_key_field_ids": [
+        "thrombosis_prediction.patient.id",
+        "thrombosis_prediction.examination.id"
+      ],
+      "anchored_table_ids": [
+        "thrombosis_prediction.examination",
+        "thrombosis_prediction.laboratory"
+      ],
+      "baseline_field_ids": [
+        "thrombosis_prediction.laboratory.sm",
+        "thrombosis_prediction.laboratory.centromea",
+        "thrombosis_prediction.laboratory.ssa",
+        "thrombosis_prediction.laboratory.sc170",
+        "thrombosis_prediction.laboratory.ssb",
+        "thrombosis_prediction.laboratory.DNA-II",
+        "thrombosis_prediction.laboratory.ra",
+        "thrombosis_prediction.examination.thrombosis",
+        "thrombosis_prediction.laboratory.crp",
+        "thrombosis_prediction.laboratory.dna",
+        "thrombosis_prediction.examination.ana",
+        "thrombosis_prediction.laboratory.igg",
+        "thrombosis_prediction.laboratory.rnp",
+        "thrombosis_prediction.laboratory.cpk",
+        "thrombosis_prediction.laboratory.c4",
+        "thrombosis_prediction.laboratory.igm",
+        "thrombosis_prediction.laboratory.id",
+        "thrombosis_prediction.laboratory.alb",
+        "thrombosis_prediction.laboratory.rf",
+        "thrombosis_prediction.examination.aCL IgA"
+      ],
+      "candidate_count": 40,
+      "candidates": [
+        {
+          "bm25_rank": 1,
+          "bm25_score": 1.0,
+          "dense_rank": 1,
+          "dense_score": 0.8456938691672315,
+          "field_id": "thrombosis_prediction.laboratory.sm",
+          "matched_intent_terms": [],
+          "rerank_rank": 1,
+          "rerank_score": 0.7412005946958033,
+          "rrf_rank": 1,
+          "rrf_score": 0.03278688524590164,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 4,
+          "bm25_score": 0.2159206306822741,
+          "dense_rank": 4,
+          "dense_score": 0.7155766643424363,
+          "field_id": "thrombosis_prediction.laboratory.centromea",
+          "matched_intent_terms": [],
+          "rerank_rank": 2,
+          "rerank_score": 0.7031756851056924,
+          "rrf_rank": 2,
+          "rrf_score": 0.03125,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 2,
+          "bm25_score": 0.6112417515480364,
+          "dense_rank": 8,
+          "dense_score": 0.6598126784413137,
+          "field_id": "thrombosis_prediction.examination.thrombosis",
+          "matched_intent_terms": [],
+          "rerank_rank": 8,
+          "rerank_score": 0.6552659523853712,
+          "rrf_rank": 3,
+          "rrf_score": 0.030834914611005692,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 10,
+          "bm25_score": 0.18005840161338577,
+          "dense_rank": 2,
+          "dense_score": 0.7474753834528391,
+          "field_id": "thrombosis_prediction.laboratory.ssb",
+          "matched_intent_terms": [],
+          "rerank_rank": 5,
+          "rerank_score": 0.680796780793633,
+          "rrf_rank": 4,
+          "rrf_score": 0.0304147465437788,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 9,
+          "bm25_score": 0.18005840161338577,
+          "dense_rank": 3,
+          "dense_score": 0.7353899493177259,
+          "field_id": "thrombosis_prediction.laboratory.ssa",
+          "matched_intent_terms": [],
+          "rerank_rank": 3,
+          "rerank_score": 0.7020338647448371,
+          "rrf_rank": 5,
+          "rrf_score": 0.03036576949620428,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 8,
+          "bm25_score": 0.18005840161338577,
+          "dense_rank": 5,
+          "dense_score": 0.7114074027738537,
+          "field_id": "thrombosis_prediction.laboratory.sc170",
+          "matched_intent_terms": [],
+          "rerank_rank": 4,
+          "rerank_score": 0.6924320096712178,
+          "rrf_rank": 6,
+          "rrf_score": 0.030090497737556562,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 6,
+          "bm25_score": 0.18512077303713048,
+          "dense_rank": 7,
+          "dense_score": 0.6738229747933276,
+          "field_id": "thrombosis_prediction.laboratory.dna",
+          "matched_intent_terms": [],
+          "rerank_rank": 10,
+          "rerank_score": 0.6468299956773038,
+          "rrf_rank": 7,
+          "rrf_score": 0.03007688828584351,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 12,
+          "bm25_score": 0.17556713870119725,
+          "dense_rank": 9,
+          "dense_score": 0.6584430914696038,
+          "field_id": "thrombosis_prediction.laboratory.rnp",
+          "matched_intent_terms": [],
+          "rerank_rank": 13,
+          "rerank_score": 0.6393301116309176,
+          "rrf_rank": 8,
+          "rrf_score": 0.028381642512077296,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 5,
+          "bm25_score": 0.2125584546362197,
+          "dense_rank": 17,
+          "dense_score": 0.6208181284637779,
+          "field_id": "thrombosis_prediction.examination.ANA Pattern",
+          "matched_intent_terms": [],
+          "rerank_rank": 36,
+          "rerank_score": 0.5359220622754993,
+          "rrf_rank": 9,
+          "rrf_score": 0.028371628371628373,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 17,
+          "bm25_score": 0.1328169382961328,
+          "dense_rank": 6,
+          "dense_score": 0.6836901421078462,
+          "field_id": "thrombosis_prediction.laboratory.DNA-II",
+          "matched_intent_terms": [],
+          "rerank_rank": 6,
+          "rerank_score": 0.6763579722920292,
+          "rrf_rank": 10,
+          "rrf_score": 0.02813852813852814,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 16,
+          "bm25_score": 0.13983791658039216,
+          "dense_rank": 10,
+          "dense_score": 0.65301287096959,
+          "field_id": "thrombosis_prediction.examination.ana",
+          "matched_intent_terms": [],
+          "rerank_rank": 11,
+          "rerank_score": 0.6440813702706027,
+          "rrf_rank": 11,
+          "rrf_score": 0.027443609022556388,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 3,
+          "bm25_score": 0.2758847374157167,
+          "dense_rank": 28,
+          "dense_score": 0.6033808219918656,
+          "field_id": "thrombosis_prediction.patient.admission",
+          "matched_intent_terms": [],
+          "rerank_rank": 32,
+          "rerank_score": 0.5582094094741534,
+          "rrf_rank": 12,
+          "rrf_score": 0.027236652236652236,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": 20,
+          "bm25_score": 0.13037331733221236,
+          "dense_rank": 16,
+          "dense_score": 0.6216170636418427,
+          "field_id": "thrombosis_prediction.examination.lac",
+          "matched_intent_terms": [],
+          "rerank_rank": 31,
+          "rerank_score": 0.5702669691301143,
+          "rrf_rank": 13,
+          "rrf_score": 0.025657894736842105,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": 19,
+          "bm25_score": 0.13037331733221236,
+          "dense_rank": 18,
+          "dense_score": 0.617646785826176,
+          "field_id": "thrombosis_prediction.examination.rvvt",
+          "matched_intent_terms": [],
+          "rerank_rank": 27,
+          "rerank_score": 0.5883232154986912,
+          "rrf_rank": 14,
+          "rrf_score": 0.025478740668614087,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": 18,
+          "bm25_score": 0.13037331733221236,
+          "dense_rank": 21,
+          "dense_score": 0.6098395767941138,
+          "field_id": "thrombosis_prediction.examination.kct",
+          "matched_intent_terms": [],
+          "rerank_rank": 28,
+          "rerank_score": 0.585888583879528,
+          "rrf_rank": 15,
+          "rrf_score": 0.0251661918328585,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": 14,
+          "bm25_score": 0.16804119216512378,
+          "dense_rank": 26,
+          "dense_score": 0.6055396879764238,
+          "field_id": "thrombosis_prediction.examination.aCL IgM",
+          "matched_intent_terms": [],
+          "rerank_rank": 30,
+          "rerank_score": 0.5820750108495782,
+          "rrf_rank": 16,
+          "rrf_score": 0.0251414204902577,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": 13,
+          "bm25_score": 0.16805672984486894,
+          "dense_rank": 29,
+          "dense_score": 0.6020326119207912,
+          "field_id": "thrombosis_prediction.examination.aCL IgA",
+          "matched_intent_terms": [],
+          "rerank_rank": 20,
+          "rerank_score": 0.6096460530262582,
+          "rrf_rank": 17,
+          "rrf_score": 0.024934585193166076,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 24,
+          "bm25_score": 0.09055903521857679,
+          "dense_rank": 23,
+          "dense_score": 0.6077242498829007,
+          "field_id": "thrombosis_prediction.examination.id",
+          "matched_intent_terms": [],
+          "rerank_rank": 23,
+          "rerank_score": 0.5976052757735949,
+          "rrf_rank": 18,
+          "rrf_score": 0.023952954675846242,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": 26,
+          "bm25_score": 0.08636987953393095,
+          "dense_rank": 24,
+          "dense_score": 0.6065688013524597,
+          "field_id": "thrombosis_prediction.laboratory.crp",
+          "matched_intent_terms": [],
+          "rerank_rank": 9,
+          "rerank_score": 0.6544250998890775,
+          "rrf_rank": 19,
+          "rrf_score": 0.02353266888150609,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 22,
+          "bm25_score": 0.12619036694633096,
+          "dense_rank": 30,
+          "dense_score": 0.5997060936275588,
+          "field_id": "thrombosis_prediction.patient.id",
+          "matched_intent_terms": [],
+          "rerank_rank": 26,
+          "rerank_score": 0.5952491563641842,
+          "rrf_rank": 20,
+          "rrf_score": 0.023306233062330622,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": 7,
+          "bm25_score": 0.18122451948242455,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.patient.First Date",
+          "matched_intent_terms": [],
+          "rerank_rank": 40,
+          "rerank_score": 0.5240698513985106,
+          "rrf_rank": 21,
+          "rrf_score": 0.014925373134328358,
+          "selected": false,
+          "selection_reason": "coverage_table_not_anchored",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 11,
+          "bm25_score": 0.17648913666395602,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.patient.description",
+          "matched_intent_terms": [],
+          "rerank_rank": 37,
+          "rerank_score": 0.5345211169995985,
+          "rrf_rank": 22,
+          "rrf_score": 0.014084507042253521,
+          "selected": false,
+          "selection_reason": "coverage_table_not_anchored",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 11,
+          "dense_score": 0.6435502521827545,
+          "field_id": "thrombosis_prediction.examination.diagnosis",
+          "matched_intent_terms": [],
+          "rerank_rank": 25,
+          "rerank_score": 0.5957963870147522,
+          "rrf_rank": 23,
+          "rrf_score": 0.014084507042253521,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 12,
+          "dense_score": 0.6328613217138763,
+          "field_id": "thrombosis_prediction.patient.diagnosis",
+          "matched_intent_terms": [],
+          "rerank_rank": 35,
+          "rerank_score": 0.5411103903110489,
+          "rrf_rank": 24,
+          "rrf_score": 0.013888888888888888,
+          "selected": false,
+          "selection_reason": "coverage_table_not_anchored",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 13,
+          "dense_score": 0.6231865606954575,
+          "field_id": "thrombosis_prediction.laboratory.igm",
+          "matched_intent_terms": [],
+          "rerank_rank": 16,
+          "rerank_score": 0.6257505085517145,
+          "rrf_rank": 25,
+          "rrf_score": 0.0136986301369863,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 14,
+          "dense_score": 0.6225758461879957,
+          "field_id": "thrombosis_prediction.laboratory.c4",
+          "matched_intent_terms": [],
+          "rerank_rank": 15,
+          "rerank_score": 0.6263445314584165,
+          "rrf_rank": 26,
+          "rrf_score": 0.013513513513513514,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 15,
+          "bm25_score": 0.15917045938173424,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.examination.aCL IgG",
+          "matched_intent_terms": [],
+          "rerank_rank": 21,
+          "rerank_score": 0.5989795584673298,
+          "rrf_rank": 27,
+          "rrf_score": 0.013333333333333334,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 15,
+          "dense_score": 0.6220039239813965,
+          "field_id": "thrombosis_prediction.laboratory.rf",
+          "matched_intent_terms": [],
+          "rerank_rank": 19,
+          "rerank_score": 0.6118975504979953,
+          "rrf_rank": 28,
+          "rrf_score": 0.013333333333333334,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 19,
+          "dense_score": 0.6154136654867273,
+          "field_id": "thrombosis_prediction.laboratory.ra",
+          "matched_intent_terms": [],
+          "rerank_rank": 7,
+          "rerank_score": 0.67280340744052,
+          "rrf_rank": 29,
+          "rrf_score": 0.012658227848101266,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 20,
+          "dense_score": 0.614153075086729,
+          "field_id": "thrombosis_prediction.examination.symptoms",
+          "matched_intent_terms": [],
+          "rerank_rank": 34,
+          "rerank_score": 0.553044344007191,
+          "rrf_rank": 30,
+          "rrf_score": 0.0125,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": 21,
+          "bm25_score": 0.12619036694633096,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.id",
+          "matched_intent_terms": [],
+          "rerank_rank": 17,
+          "rerank_score": 0.6236194403089694,
+          "rrf_rank": 31,
+          "rrf_score": 0.012345679012345678,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 22,
+          "dense_score": 0.6079601096036759,
+          "field_id": "thrombosis_prediction.laboratory.tat",
+          "matched_intent_terms": [],
+          "rerank_rank": 24,
+          "rerank_score": 0.5962212069734176,
+          "rrf_rank": 32,
+          "rrf_score": 0.012195121951219513,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": 23,
+          "bm25_score": 0.11156585521652805,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.date",
+          "matched_intent_terms": [],
+          "rerank_rank": 39,
+          "rerank_score": 0.5266388449919526,
+          "rrf_rank": 33,
+          "rrf_score": 0.012048192771084338,
+          "selected": false,
+          "selection_reason": "coverage_no_intent_match",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 25,
+          "bm25_score": 0.08662534246159084,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.wbc",
+          "matched_intent_terms": [],
+          "rerank_rank": 29,
+          "rerank_score": 0.5827814166446907,
+          "rrf_rank": 34,
+          "rrf_score": 0.011764705882352941,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 25,
+          "dense_score": 0.606373869188555,
+          "field_id": "thrombosis_prediction.laboratory.igg",
+          "matched_intent_terms": [],
+          "rerank_rank": 12,
+          "rerank_score": 0.6426707461783436,
+          "rrf_rank": 35,
+          "rrf_score": 0.011764705882352941,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 27,
+          "bm25_score": 0.08428876778040661,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.hgb",
+          "matched_intent_terms": [],
+          "rerank_rank": 33,
+          "rerank_score": 0.555898573430087,
+          "rrf_rank": 36,
+          "rrf_score": 0.011494252873563218,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 27,
+          "dense_score": 0.6040424943331489,
+          "field_id": "thrombosis_prediction.patient.sex",
+          "matched_intent_terms": [],
+          "rerank_rank": 38,
+          "rerank_score": 0.5325688856380815,
+          "rrf_rank": 37,
+          "rrf_score": 0.011494252873563218,
+          "selected": false,
+          "selection_reason": "coverage_table_not_anchored",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 28,
+          "bm25_score": 0.07742965045738091,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.alb",
+          "matched_intent_terms": [],
+          "rerank_rank": 18,
+          "rerank_score": 0.6186498405084819,
+          "rrf_rank": 38,
+          "rrf_score": 0.011363636363636364,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 29,
+          "bm25_score": 0.07584579784124662,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.cpk",
+          "matched_intent_terms": [],
+          "rerank_rank": 14,
+          "rerank_score": 0.6321132625198989,
+          "rrf_rank": 39,
+          "rrf_score": 0.011235955056179775,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 30,
+          "bm25_score": 0.07490048092217877,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "thrombosis_prediction.laboratory.tp",
+          "matched_intent_terms": [],
+          "rerank_rank": 22,
+          "rerank_score": 0.5984386402942267,
+          "rrf_rank": 40,
+          "rrf_score": 0.011111111111111112,
+          "selected": false,
+          "selection_reason": "beyond_top20"
+        }
+      ],
+      "coverage_field_ids": [],
+      "intent_selection": {
+        "added_field_ids": [],
+        "baseline_field_ids": [
+          "thrombosis_prediction.laboratory.sm",
+          "thrombosis_prediction.laboratory.centromea",
+          "thrombosis_prediction.laboratory.ssa",
+          "thrombosis_prediction.laboratory.sc170",
+          "thrombosis_prediction.laboratory.ssb",
+          "thrombosis_prediction.laboratory.DNA-II",
+          "thrombosis_prediction.laboratory.ra",
+          "thrombosis_prediction.examination.thrombosis",
+          "thrombosis_prediction.laboratory.crp",
+          "thrombosis_prediction.laboratory.dna",
+          "thrombosis_prediction.examination.ana",
+          "thrombosis_prediction.laboratory.igg",
+          "thrombosis_prediction.laboratory.rnp",
+          "thrombosis_prediction.laboratory.cpk",
+          "thrombosis_prediction.laboratory.c4",
+          "thrombosis_prediction.laboratory.igm",
+          "thrombosis_prediction.laboratory.id",
+          "thrombosis_prediction.laboratory.alb",
+          "thrombosis_prediction.laboratory.rf",
+          "thrombosis_prediction.examination.aCL IgA"
+        ],
+        "decisions": [],
+        "policy": {
+          "baseline_preserved": true,
+          "canonical_lookup_max_pairs": 4,
+          "canonical_lookup_sql_tool_calls": 1,
+          "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+          "development_candidate": true,
+          "formal_protocol_override": false,
+          "grain_policy": "public_explicit_entity_grain_v2",
+          "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+          "join_source": "declared_foreign_keys_only",
+          "lookup_consumes_existing_sql_budget": true,
+          "max_added_fields": 8,
+          "max_fields": 20,
+          "max_related_hops": 2,
+          "native_ex_unchanged": true,
+          "numeric_policy": "floating_count_ratio_order_advisory_v3",
+          "output_group_policy": "participant_action_target_pair_v1",
+          "policy_id": "bird_public_intent_candidate_v4",
+          "predicate_policy": "public_condition_roles_conflicts_v3",
+          "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+          "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+          "unit_policy": "public_percentage_units_precision_v2"
+        },
+        "sample_condition_candidates": []
+      },
+      "relation_key_field_ids": [
+        "thrombosis_prediction.patient.id",
+        "thrombosis_prediction.examination.id"
+      ],
+      "schema_graph": {
+        "complete": true,
+        "omission_reason": null,
+        "sha256": "eceed48d63aa8d5a018e31588e4b2b00e356a10429bacac013626e454423c7c6",
+        "utf8_bytes": 9140,
+        "value": {
+          "database": "thrombosis_prediction",
+          "databases": [
+            "thrombosis_prediction"
+          ],
+          "fields": [
+            {
+              "description": "anti-SM",
+              "id": "thrombosis_prediction.laboratory.sm",
+              "label": "anti-SM",
+              "name": "sm",
+              "role": "field",
+              "score": 0.7412005946958033,
+              "source": "retrieval",
+              "sql_name": "laboratory.sm",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "text"
+            },
+            {
+              "description": "anti-centromere",
+              "id": "thrombosis_prediction.laboratory.centromea",
+              "label": "anti-centromere",
+              "name": "centromea",
+              "role": "field",
+              "score": 0.7031756851056924,
+              "source": "retrieval",
+              "sql_name": "laboratory.centromea",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "text"
+            },
+            {
+              "description": "anti-SSA",
+              "id": "thrombosis_prediction.laboratory.ssa",
+              "label": "anti-SSA",
+              "name": "ssa",
+              "role": "field",
+              "score": 0.7020338647448371,
+              "source": "retrieval",
+              "sql_name": "laboratory.ssa",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "text"
+            },
+            {
+              "description": "anti-scl70",
+              "id": "thrombosis_prediction.laboratory.sc170",
+              "label": "anti-scl70",
+              "name": "sc170",
+              "role": "field",
+              "score": 0.6924320096712178,
+              "source": "retrieval",
+              "sql_name": "laboratory.sc170",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "text"
+            },
+            {
+              "description": "anti-SSB",
+              "id": "thrombosis_prediction.laboratory.ssb",
+              "label": "anti-SSB",
+              "name": "ssb",
+              "role": "field",
+              "score": 0.680796780793633,
+              "source": "retrieval",
+              "sql_name": "laboratory.ssb",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "text"
+            },
+            {
+              "description": "anti-DNA",
+              "id": "thrombosis_prediction.laboratory.DNA-II",
+              "label": "anti-DNA",
+              "name": "DNA-II",
+              "role": "field",
+              "score": 0.6763579722920292,
+              "source": "retrieval",
+              "sql_name": "laboratory.DNA-II",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "bigint"
+            },
+            {
+              "description": "Rhuematoid Factor",
+              "id": "thrombosis_prediction.laboratory.ra",
+              "label": "Rhuematoid Factor",
+              "name": "ra",
+              "role": "field",
+              "score": 0.67280340744052,
+              "source": "retrieval",
+              "sql_name": "laboratory.ra",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "text"
+            },
+            {
+              "description": "degree of thrombosis",
+              "id": "thrombosis_prediction.examination.thrombosis",
+              "label": "thrombosis",
+              "name": "thrombosis",
+              "role": "field",
+              "score": 0.6552659523853712,
+              "source": "retrieval",
+              "sql_name": "examination.thrombosis",
+              "table_id": "thrombosis_prediction.examination",
+              "table_name": "examination",
+              "type": "bigint"
+            },
+            {
+              "description": "C-reactive protein",
+              "id": "thrombosis_prediction.laboratory.crp",
+              "label": "C-reactive protein",
+              "name": "crp",
+              "role": "field",
+              "score": 0.6544250998890775,
+              "source": "retrieval",
+              "sql_name": "laboratory.crp",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "text"
+            },
+            {
+              "description": "anti-DNA",
+              "id": "thrombosis_prediction.laboratory.dna",
+              "label": "anti-DNA",
+              "name": "dna",
+              "role": "field",
+              "score": 0.6468299956773038,
+              "source": "retrieval",
+              "sql_name": "laboratory.dna",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "text"
+            },
+            {
+              "description": "anti-nucleus antibody concentration",
+              "id": "thrombosis_prediction.examination.ana",
+              "label": "anti-nucleus antibody",
+              "name": "ana",
+              "role": "field",
+              "score": 0.6440813702706027,
+              "source": "retrieval",
+              "sql_name": "examination.ana",
+              "table_id": "thrombosis_prediction.examination",
+              "table_name": "examination",
+              "type": "bigint"
+            },
+            {
+              "description": "Ig G",
+              "id": "thrombosis_prediction.laboratory.igg",
+              "label": "Ig G",
+              "name": "igg",
+              "role": "field",
+              "score": 0.6426707461783436,
+              "source": "retrieval",
+              "sql_name": "laboratory.igg",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "bigint"
+            },
+            {
+              "description": "anti-ribonuclear protein",
+              "id": "thrombosis_prediction.laboratory.rnp",
+              "label": "anti-ribonuclear protein",
+              "name": "rnp",
+              "role": "field",
+              "score": 0.6393301116309176,
+              "source": "retrieval",
+              "sql_name": "laboratory.rnp",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "text"
+            },
+            {
+              "description": "creatinine phosphokinase",
+              "id": "thrombosis_prediction.laboratory.cpk",
+              "label": "creatinine phosphokinase",
+              "name": "cpk",
+              "role": "field",
+              "score": 0.6321132625198989,
+              "source": "retrieval",
+              "sql_name": "laboratory.cpk",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "bigint"
+            },
+            {
+              "description": "complement 4",
+              "id": "thrombosis_prediction.laboratory.c4",
+              "label": "complement 4",
+              "name": "c4",
+              "role": "field",
+              "score": 0.6263445314584165,
+              "source": "retrieval",
+              "sql_name": "laboratory.c4",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "bigint"
+            },
+            {
+              "description": "Ig M",
+              "id": "thrombosis_prediction.laboratory.igm",
+              "label": "Ig M",
+              "name": "igm",
+              "role": "field",
+              "score": 0.6257505085517145,
+              "source": "retrieval",
+              "sql_name": "laboratory.igm",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "bigint"
+            },
+            {
+              "description": "identification of the patient",
+              "id": "thrombosis_prediction.laboratory.id",
+              "label": "id",
+              "name": "id",
+              "role": "field",
+              "score": 0.6236194403089694,
+              "source": "retrieval",
+              "sql_name": "laboratory.id",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "bigint"
+            },
+            {
+              "description": "albumin",
+              "id": "thrombosis_prediction.laboratory.alb",
+              "label": "albumin",
+              "name": "alb",
+              "role": "field",
+              "score": 0.6186498405084819,
+              "source": "retrieval",
+              "sql_name": "laboratory.alb",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "real"
+            },
+            {
+              "description": "RAHA",
+              "id": "thrombosis_prediction.laboratory.rf",
+              "label": "RAHA",
+              "name": "rf",
+              "role": "field",
+              "score": 0.6118975504979953,
+              "source": "retrieval",
+              "sql_name": "laboratory.rf",
+              "table_id": "thrombosis_prediction.laboratory",
+              "table_name": "laboratory",
+              "type": "text"
+            },
+            {
+              "description": "anti-Cardiolipin antibody (IgA) concentration",
+              "id": "thrombosis_prediction.examination.aCL IgA",
+              "label": "anti-Cardiolipin antibody (IgA) concentration",
+              "name": "aCL IgA",
+              "role": "field",
+              "score": 0.6096460530262582,
+              "source": "retrieval",
+              "sql_name": "examination.aCL IgA",
+              "table_id": "thrombosis_prediction.examination",
+              "table_name": "examination",
+              "type": "bigint"
+            },
+            {
+              "description": "identification of the patient",
+              "id": "thrombosis_prediction.patient.id",
+              "label": "id",
+              "name": "id",
+              "role": "primary_key",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "patient.id",
+              "table_id": "thrombosis_prediction.patient",
+              "table_name": "patient",
+              "type": "bigint"
+            },
+            {
+              "description": "identification of the patient",
+              "id": "thrombosis_prediction.examination.id",
+              "label": "id",
+              "name": "id",
+              "role": "field",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "examination.id",
+              "table_id": "thrombosis_prediction.examination",
+              "table_name": "examination",
+              "type": "bigint"
+            }
+          ],
+          "graph_version": "0bfbbacdfa85",
+          "joins": [
+            {
+              "description": "Official database foreign key",
+              "id": "examination_id_fkey:id",
+              "left_field": "id",
+              "left_table": "thrombosis_prediction.patient",
+              "left_table_name": "patient",
+              "relation_type": "foreign_key",
+              "right_field": "id",
+              "right_table": "thrombosis_prediction.examination",
+              "right_table_name": "examination"
+            },
+            {
+              "description": "Official database foreign key",
+              "id": "laboratory_id_fkey:id",
+              "left_field": "id",
+              "left_table": "thrombosis_prediction.patient",
+              "left_table_name": "patient",
+              "relation_type": "foreign_key",
+              "right_field": "id",
+              "right_table": "thrombosis_prediction.laboratory",
+              "right_table_name": "laboratory"
+            }
+          ],
+          "relation_role_context": {
+            "context_output_groups": [],
+            "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges.",
+            "joins_are_alternatives": true,
+            "policy": "authorized_role_alternatives_v1",
+            "preferred_actor_relations": [],
+            "roles": [
+              {
+                "child_field": "id",
+                "child_table": "thrombosis_prediction.examination",
+                "mandatory": false,
+                "parent_field": "id",
+                "parent_table": "thrombosis_prediction.patient",
+                "relation_id": "examination_id_fkey:id",
+                "role_description": "identification of the patient",
+                "role_label": "id",
+                "source": "current_authorized_declared_foreign_key"
+              },
+              {
+                "child_field": "id",
+                "child_table": "thrombosis_prediction.laboratory",
+                "mandatory": false,
+                "parent_field": "id",
+                "parent_table": "thrombosis_prediction.patient",
+                "relation_id": "laboratory_id_fkey:id",
+                "role_description": "identification of the patient",
+                "role_label": "id",
+                "source": "current_authorized_declared_foreign_key"
+              }
+            ]
+          },
+          "source_identity": {
+            "backend": "postgresql",
+            "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+            "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c",
+            "dialect": "postgres",
+            "logical_database_id": "thrombosis_prediction",
+            "physical_schema": "public",
+            "prompt_dialect": "PostgreSQL",
+            "source_id": "bird_mini_dev_postgres_thrombosis_prediction"
+          },
+          "tables": [
+            {
+              "database": "thrombosis_prediction",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "thrombosis_prediction",
+              "id": "thrombosis_prediction.examination",
+              "label": "examination",
+              "name": "examination"
+            },
+            {
+              "database": "thrombosis_prediction",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "thrombosis_prediction",
+              "id": "thrombosis_prediction.laboratory",
+              "label": "laboratory",
+              "name": "laboratory"
+            },
+            {
+              "database": "thrombosis_prediction",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "thrombosis_prediction",
+              "id": "thrombosis_prediction.patient",
+              "label": "patient",
+              "name": "patient"
+            }
+          ]
+        }
+      },
+      "selected_field_ids": [
+        "thrombosis_prediction.laboratory.sm",
+        "thrombosis_prediction.laboratory.centromea",
+        "thrombosis_prediction.laboratory.ssa",
+        "thrombosis_prediction.laboratory.sc170",
+        "thrombosis_prediction.laboratory.ssb",
+        "thrombosis_prediction.laboratory.DNA-II",
+        "thrombosis_prediction.laboratory.ra",
+        "thrombosis_prediction.examination.thrombosis",
+        "thrombosis_prediction.laboratory.crp",
+        "thrombosis_prediction.laboratory.dna",
+        "thrombosis_prediction.examination.ana",
+        "thrombosis_prediction.laboratory.igg",
+        "thrombosis_prediction.laboratory.rnp",
+        "thrombosis_prediction.laboratory.cpk",
+        "thrombosis_prediction.laboratory.c4",
+        "thrombosis_prediction.laboratory.igm",
+        "thrombosis_prediction.laboratory.id",
+        "thrombosis_prediction.laboratory.alb",
+        "thrombosis_prediction.laboratory.rf",
+        "thrombosis_prediction.examination.aCL IgA"
+      ],
+      "selection_policy": {
+        "coverage_enabled": true,
+        "coverage_floor": 0.5,
+        "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+        "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+        "development_candidate": true,
+        "formal_protocol_override": false,
+        "intent_source": "original_question_and_official_evidence",
+        "max_coverage_fields": 4,
+        "max_fields": 20,
+        "metadata_match": "native_field_name_or_official_field_label",
+        "policy_id": "bird_authorized_schema_coverage_v1",
+        "score_representation": "provider score clamped to [0,1] by existing broker",
+        "threshold": 0.55
+      }
+    }
+  },
+  "errors": [],
+  "ex_correct": false,
+  "executions": [
+    {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "int"
+        ],
+        "ordered_native_diagnostic_sha256": "dae14e88c315508eaabcbe577ff06c97df7cc54420da2a7bf525ffe68a10a49e",
+        "payload_bytes": 35,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "success": true
+    }
+  ],
+  "final_sql_execution_success": true,
+  "first_sql_execution_success": true,
+  "formal_benchmark": true,
+  "generated_sql": "SELECT COUNT(*) FROM laboratory l JOIN examination e ON l.id = e.id WHERE l.sm IN ('-', '+-') AND e.thrombosis = 0",
+  "generation_status": "diagnostic_answered",
+  "generation_worker_mode": "diagnostic",
+  "gold_executed": true,
+  "gold_execution_attempted": true,
+  "gold_sql_sha256": "63d993db5d679d502409399ef0c2b3a69b71f16b1f84ca80ab4c00a85e0b649b",
+  "index_sha256": "2a340fe146cdd604a2b761a722bff9581e66ddb8f96733e6b988c427649ec8bd",
+  "intent_candidate_policy": {
+    "baseline_preserved": true,
+    "canonical_lookup_max_pairs": 4,
+    "canonical_lookup_sql_tool_calls": 1,
+    "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "grain_policy": "public_explicit_entity_grain_v2",
+    "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+    "join_source": "declared_foreign_keys_only",
+    "lookup_consumes_existing_sql_budget": true,
+    "max_added_fields": 8,
+    "max_fields": 20,
+    "max_related_hops": 2,
+    "native_ex_unchanged": true,
+    "numeric_policy": "floating_count_ratio_order_advisory_v3",
+    "output_group_policy": "participant_action_target_pair_v1",
+    "policy_id": "bird_public_intent_candidate_v4",
+    "predicate_policy": "public_condition_roles_conflicts_v3",
+    "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+    "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+    "unit_policy": "public_percentage_units_precision_v2"
+  },
+  "intent_contract": {
+    "canonical_values": [],
+    "entity_grain": {},
+    "entity_identifier_output": null,
+    "explicit_top_n": null,
+    "guidance": [
+      "For ranked nonmissing values, write NULLS LAST explicitly on nullable ORDER BY expressions, including ABS and aggregates. Preserve any explicit request to rank missing values first.",
+      "Preserve Top-N size, ordinal offset, direction, ties and requested output order; do not add arbitrary tie-breakers.",
+      "Project exactly the requested attributes. For a list of entity instances without requested attributes, prefer that entity primary key; do not SELECT table.*. This is an explicit development output convention, not an inferred reference answer.",
+      "For full names, keep first/last fields together and include all numbered person slots requested, in slot order. Do not add email/contact fields.",
+      "Cover every business population and condition from question/evidence. A difference calculation returns the requested signed difference, not ABS or an extra Yes/No column unless requested.",
+      "Profile samples are coverage hints, never new mandatory filters. Do not turn names, table/role nouns or arithmetic constants into equality predicates. Required conditions below bind a specific public evidence field and value; preserve that ownership.",
+      "Inspect entity_grain.enforcement and its public_basis. Only an explicit distinct-entity request mandates deduplication. A primary key or one-to-many join alone is advisory: preserve requested joined-row weighting and state unresolved grain; do not invent DISTINCT or choose reference answers.",
+      "Join edges in relation_role_context are alternatives. Select the participant matching the question action, not an editor/owner merely because it is the first shortest path. Context output groups use the explicit development convention to include the named related entity title/name alongside the requested actor label; they are not reference-answer hints.",
+      "If quantity_difference_scalar is true, the evidence provides the quantity formula for an independent yes/no comparison: return only that signed numeric difference, whose sign also answers the comparison. If entity_identifier_output is supplied, the explicit entity-list development convention requests that primary identifier alone.",
+      "Foreign keys store identifiers, not human names. Join the authorized referenced entity and filter its name field. Name fields on different tables are not assumed interchangeable.",
+      "Canonical values below come from bounded case-insensitive equality lookups. Use a unique stored spelling without removing/changing conditions; not_found and ambiguous are not permission to guess.",
+      "Use output_units for scale/type decisions and participant_output for projection groups. These are versioned public development conventions with explicit overrides and ambiguity records, not hidden reference requirements. For count percentages, prefer a REAL or DOUBLE PRECISION numerator scaled before division; operation order alone never triggers rejection. Preserve explicit fraction, exact-formula, decimal and rounding requests. Native EX has no tolerance.",
+      "Missing schema is a reason to clarify only after checking the supplied authorized field groups and declared FK paths. Explain the specific missing field or ambiguity."
+    ],
+    "name_groups": [],
+    "ordinal_descending": null,
+    "ordinal_rank": null,
+    "output_units": {
+      "arithmetic_preference": "requested_or_source_type",
+      "formula_excerpt": null,
+      "guidance": "Percentage means a 0-100 numeric output under this visible development convention. An evidence DIVIDE formula without a scale supplies the base ratio; the percentage question supplies *100. Explicit 0-1/fraction requests or an exact-formula instruction override this default. Record conflicts; never consult a reference answer. For unrounded count percentages prefer CAST(conditional_count AS REAL) * 100 / NULLIF(total_count,0), preserving entity grain; DOUBLE PRECISION is also allowed. Scaling before division is a numerical suggestion, never an operation-order rejection. Do not change types, round, or normalize returned results to make comparisons pass.",
+      "operation_order_authority": "advisory_only",
+      "output_unit": "unspecified",
+      "policy": "public_percentage_units_precision_v2",
+      "precision": {
+        "conflict": false,
+        "decimal_places": null,
+        "enforcement": "advisory",
+        "guidance": "Implement explicitly requested decimal places in the final SQL numeric output (for example ROUND(numeric_expression, n)). Preserve the requested unit and population; do not round driver results or add scoring tolerance. Ambiguous/complex output ownership is advisory.",
+        "policy": "explicit_public_decimal_places_v1",
+        "requests": [],
+        "unsupported": false
+      },
+      "question_formula_scale_conflict": false,
+      "ratio_multiplier": null,
+      "resolution_basis": "no_explicit_output_unit",
+      "resolution_is_development_convention": false
+    },
+    "participant_output": {
+      "advisory_groups": [],
+      "basis": "public_action_target_frame_and_unique_authorized_role",
+      "guidance": "Required groups are an explicit development output convention: project the requested participant label and the named action-target title, in that order. Mere filter/context mentions do not mandate projection. Explicit only/exclude instructions take precedence. Do not add contact fields, all columns or other candidate join roles.",
+      "policy": "participant_action_target_pair_v1",
+      "required_groups": []
+    },
+    "percentage_real_arithmetic": false,
+    "policy": {
+      "baseline_preserved": true,
+      "canonical_lookup_max_pairs": 4,
+      "canonical_lookup_sql_tool_calls": 1,
+      "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+      "development_candidate": true,
+      "formal_protocol_override": false,
+      "grain_policy": "public_explicit_entity_grain_v2",
+      "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+      "join_source": "declared_foreign_keys_only",
+      "lookup_consumes_existing_sql_budget": true,
+      "max_added_fields": 8,
+      "max_fields": 20,
+      "max_related_hops": 2,
+      "native_ex_unchanged": true,
+      "numeric_policy": "floating_count_ratio_order_advisory_v3",
+      "output_group_policy": "participant_action_target_pair_v1",
+      "policy_id": "bird_public_intent_candidate_v4",
+      "predicate_policy": "public_condition_roles_conflicts_v3",
+      "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+      "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+      "unit_policy": "public_percentage_units_precision_v2"
+    },
+    "profile_coverage_hints": [],
+    "public_evidence": {
+      "conditions": [],
+      "conflicts": [],
+      "guidance": "Keep numerator, denominator and population roles separate. Conflicting bindings are advisory; do not require their conjunction or guess which is correct.",
+      "policy": "public_condition_roles_conflicts_v3"
+    },
+    "quantity_difference_scalar": false,
+    "relation_role_context": {
+      "context_output_groups": [],
+      "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges.",
+      "joins_are_alternatives": true,
+      "policy": "authorized_role_alternatives_v1",
+      "preferred_actor_relations": [],
+      "roles": [
+        {
+          "child_field": "id",
+          "child_table": "thrombosis_prediction.examination",
+          "mandatory": false,
+          "parent_field": "id",
+          "parent_table": "thrombosis_prediction.patient",
+          "relation_id": "examination_id_fkey:id",
+          "role_description": "identification of the patient",
+          "role_label": "id",
+          "source": "current_authorized_declared_foreign_key"
+        },
+        {
+          "child_field": "id",
+          "child_table": "thrombosis_prediction.laboratory",
+          "mandatory": false,
+          "parent_field": "id",
+          "parent_table": "thrombosis_prediction.patient",
+          "relation_id": "laboratory_id_fkey:id",
+          "role_description": "identification of the patient",
+          "role_label": "id",
+          "source": "current_authorized_declared_foreign_key"
+        }
+      ]
+    },
+    "remaining_sql_execution_rounds": 3,
+    "required_profile_conditions": []
+  },
+  "mode": "live",
+  "native_comparison": {
+    "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion",
+    "difference_codes": [
+      "prediction_has_nonreference_tuples",
+      "prediction_missing_reference_tuples"
+    ],
+    "difference_preview_row_limit": 5,
+    "difference_preview_utf8_byte_limit": 65536,
+    "gold_column_count": 1,
+    "gold_only_preview": {
+      "oversized_rows_omitted": 0,
+      "preview_truncated": false,
+      "rows": [
+        [
+          [
+            "int",
+            "7"
+          ]
+        ]
+      ],
+      "utf8_bytes": 13
+    },
+    "gold_only_tuple_count": 1,
+    "gold_row_count": 1,
+    "gold_unique_tuple_count": 1,
+    "matches_frozen_gold": false,
+    "native_type_sets_differ": false,
+    "prediction_column_count": 1,
+    "prediction_only_preview": {
+      "oversized_rows_omitted": 0,
+      "preview_truncated": false,
+      "rows": [
+        [
+          [
+            "int",
+            "0"
+          ]
+        ]
+      ],
+      "utf8_bytes": 13
+    },
+    "prediction_only_tuple_count": 1,
+    "prediction_row_count": 1,
+    "prediction_unique_tuple_count": 1,
+    "preview_only": true
+  },
+  "native_results": {
+    "prediction": {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "int"
+        ],
+        "ordered_native_diagnostic_sha256": "dae14e88c315508eaabcbe577ff06c97df7cc54420da2a7bf525ffe68a10a49e",
+        "payload_bytes": 35,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "preview": {
+        "columns": [
+          "count"
+        ],
+        "complete_result_row_count": 1,
+        "preview_only": true,
+        "preview_truncated": false,
+        "rows": [
+          [
+            [
+              "int",
+              "0"
+            ]
+          ]
+        ]
+      },
+      "preview_row_limit": 20
+    },
+    "reference": {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "int"
+        ],
+        "ordered_native_diagnostic_sha256": "cb134a282d3dc7360e42def9a622bbf0e86cd8611f8a8b2ed984c38955ac4fdf",
+        "payload_bytes": 35,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "preview": {
+        "columns": [
+          "count"
+        ],
+        "complete_result_row_count": 1,
+        "preview_only": true,
+        "preview_truncated": false,
+        "rows": [
+          [
+            [
+              "int",
+              "7"
+            ]
+          ]
+        ]
+      },
+      "preview_row_limit": 20
+    }
+  },
+  "new_model_request_count": 3,
+  "query_role": "askdata_m2_ro_thrombosis_prediction",
+  "result": {
+    "column_count": 1,
+    "complete": true,
+    "native_types": [
+      "int"
+    ],
+    "ordered_native_diagnostic_sha256": "dae14e88c315508eaabcbe577ff06c97df7cc54420da2a7bf525ffe68a10a49e",
+    "payload_bytes": 35,
+    "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+    "row_count": 1
+  },
+  "result_diagnostics": {
+    "column_count_match": true,
+    "ordered_rows_match": false,
+    "row_multiset_match": false
+  },
+  "retrieval": {
+    "baseline_field_ids": [
+      "thrombosis_prediction.laboratory.sm",
+      "thrombosis_prediction.laboratory.centromea",
+      "thrombosis_prediction.laboratory.ssa",
+      "thrombosis_prediction.laboratory.sc170",
+      "thrombosis_prediction.laboratory.ssb",
+      "thrombosis_prediction.laboratory.DNA-II",
+      "thrombosis_prediction.laboratory.ra",
+      "thrombosis_prediction.examination.thrombosis",
+      "thrombosis_prediction.laboratory.crp",
+      "thrombosis_prediction.laboratory.dna",
+      "thrombosis_prediction.examination.ana",
+      "thrombosis_prediction.laboratory.igg",
+      "thrombosis_prediction.laboratory.rnp",
+      "thrombosis_prediction.laboratory.cpk",
+      "thrombosis_prediction.laboratory.c4",
+      "thrombosis_prediction.laboratory.igm",
+      "thrombosis_prediction.laboratory.id",
+      "thrombosis_prediction.laboratory.alb",
+      "thrombosis_prediction.laboratory.rf",
+      "thrombosis_prediction.examination.aCL IgA"
+    ],
+    "bm25_count": 30,
+    "coverage_field_ids": [],
+    "dense_count": 30,
+    "intent_selection": {
+      "added_field_ids": [],
+      "baseline_field_ids": [
+        "thrombosis_prediction.laboratory.sm",
+        "thrombosis_prediction.laboratory.centromea",
+        "thrombosis_prediction.laboratory.ssa",
+        "thrombosis_prediction.laboratory.sc170",
+        "thrombosis_prediction.laboratory.ssb",
+        "thrombosis_prediction.laboratory.DNA-II",
+        "thrombosis_prediction.laboratory.ra",
+        "thrombosis_prediction.examination.thrombosis",
+        "thrombosis_prediction.laboratory.crp",
+        "thrombosis_prediction.laboratory.dna",
+        "thrombosis_prediction.examination.ana",
+        "thrombosis_prediction.laboratory.igg",
+        "thrombosis_prediction.laboratory.rnp",
+        "thrombosis_prediction.laboratory.cpk",
+        "thrombosis_prediction.laboratory.c4",
+        "thrombosis_prediction.laboratory.igm",
+        "thrombosis_prediction.laboratory.id",
+        "thrombosis_prediction.laboratory.alb",
+        "thrombosis_prediction.laboratory.rf",
+        "thrombosis_prediction.examination.aCL IgA"
+      ],
+      "decisions": [],
+      "policy": {
+        "baseline_preserved": true,
+        "canonical_lookup_max_pairs": 4,
+        "canonical_lookup_sql_tool_calls": 1,
+        "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+        "development_candidate": true,
+        "formal_protocol_override": false,
+        "grain_policy": "public_explicit_entity_grain_v2",
+        "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+        "join_source": "declared_foreign_keys_only",
+        "lookup_consumes_existing_sql_budget": true,
+        "max_added_fields": 8,
+        "max_fields": 20,
+        "max_related_hops": 2,
+        "native_ex_unchanged": true,
+        "numeric_policy": "floating_count_ratio_order_advisory_v3",
+        "output_group_policy": "participant_action_target_pair_v1",
+        "policy_id": "bird_public_intent_candidate_v4",
+        "predicate_policy": "public_condition_roles_conflicts_v3",
+        "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+        "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+        "unit_policy": "public_percentage_units_precision_v2"
+      },
+      "sample_condition_candidates": []
+    },
+    "rrf_count": 40,
+    "schema_selection_policy": {
+      "coverage_enabled": true,
+      "coverage_floor": 0.5,
+      "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+      "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+      "development_candidate": true,
+      "formal_protocol_override": false,
+      "intent_source": "original_question_and_official_evidence",
+      "max_coverage_fields": 4,
+      "max_fields": 20,
+      "metadata_match": "native_field_name_or_official_field_label",
+      "policy_id": "bird_authorized_schema_coverage_v1",
+      "threshold": 0.55
+    },
+    "selected_count": 20,
+    "selected_field_ids": [
+      "thrombosis_prediction.laboratory.sm",
+      "thrombosis_prediction.laboratory.centromea",
+      "thrombosis_prediction.laboratory.ssa",
+      "thrombosis_prediction.laboratory.sc170",
+      "thrombosis_prediction.laboratory.ssb",
+      "thrombosis_prediction.laboratory.DNA-II",
+      "thrombosis_prediction.laboratory.ra",
+      "thrombosis_prediction.examination.thrombosis",
+      "thrombosis_prediction.laboratory.crp",
+      "thrombosis_prediction.laboratory.dna",
+      "thrombosis_prediction.examination.ana",
+      "thrombosis_prediction.laboratory.igg",
+      "thrombosis_prediction.laboratory.rnp",
+      "thrombosis_prediction.laboratory.cpk",
+      "thrombosis_prediction.laboratory.c4",
+      "thrombosis_prediction.laboratory.igm",
+      "thrombosis_prediction.laboratory.id",
+      "thrombosis_prediction.laboratory.alb",
+      "thrombosis_prediction.laboratory.rf",
+      "thrombosis_prediction.examination.aCL IgA"
+    ],
+    "source_identity": {
+      "backend": "postgresql",
+      "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+      "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c",
+      "dialect": "postgres",
+      "logical_database_id": "thrombosis_prediction",
+      "physical_schema": "public",
+      "prompt_dialect": "PostgreSQL",
+      "source_id": "bird_mini_dev_postgres_thrombosis_prediction"
+    }
+  },
+  "runtime_closed": true,
+  "schema_selection_policy": {
+    "coverage_enabled": true,
+    "coverage_floor": 0.5,
+    "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+    "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "intent_source": "original_question_and_official_evidence",
+    "max_coverage_fields": 4,
+    "max_fields": 20,
+    "metadata_match": "native_field_name_or_official_field_label",
+    "policy_id": "bird_authorized_schema_coverage_v1",
+    "threshold": 0.55
+  },
+  "scorer_runtime_closed": true,
+  "scoring_scope": "trusted_after_agent_exit_with_original_case_deadline",
+  "source_identity": {
+    "backend": "postgresql",
+    "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+    "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c",
+    "dialect": "postgres",
+    "logical_database_id": "thrombosis_prediction",
+    "physical_schema": "public",
+    "prompt_dialect": "PostgreSQL",
+    "source_id": "bird_mini_dev_postgres_thrombosis_prediction"
+  },
+  "sql_repair_policy": "bird_authorized_sql_repair_v2",
+  "status": "scored",
+  "validation_events": [
+    {
+      "sql_round": 1,
+      "valid": true
+    }
+  ]
+}

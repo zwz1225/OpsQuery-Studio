@@ -1,0 +1,1937 @@
+{
+  "sources": {
+    "off_run_id": "c49cbc382ef648d3b3cc4094fa77e99c",
+    "on_run_id": "d736e46bce3a4665902adfa557a8d06f",
+    "off_sha256": "bf372bd9ddbeddd6d0765170b7faf7e7fd00c3c0916f6f8b3c6fdf7aa891b2c0",
+    "on_sha256": "61dcfcc88162927e0ade862600dd048af84387e81e430b5d68b7db0eb61d4aa0",
+    "dataset_version": "d8b9832134cebdab2f270a03c78d4722b8e50f8b9cb18f44478fd43b410c5b59",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "cases": [
+    {
+      "case_id": "GROWTH_OPS-007",
+      "query": "查看2026-01每天的激活用户数变化；请返回指标日期、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "gold_sql": "SELECT metric_date, SUM(activated_users) AS value FROM growth_daily_metrics WHERE strftime(metric_date, '%Y-%m') = '2026-01' GROUP BY 1 ORDER BY 1",
+      "expected_columns": [
+        "metric_date",
+        "value"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT metric_date, SUM(activated_users) AS activated_users FROM growth_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2026-02-01' GROUP BY metric_date ORDER BY metric_date ASC",
+          "actual_columns": [
+            "metric_date",
+            "activated_users"
+          ],
+          "expected_columns": [
+            "metric_date",
+            "value"
+          ],
+          "actual_row_count": 31,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "value": [
+                  "activated_users"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT metric_date, SUM(activated_users) AS activated_users FROM growth_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2026-02-01' GROUP BY metric_date ORDER BY metric_date ASC",
+          "actual_columns": [
+            "metric_date",
+            "activated_users"
+          ],
+          "expected_columns": [
+            "metric_date",
+            "value"
+          ],
+          "actual_row_count": 31,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "value": [
+                  "activated_users"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "GROWTH_OPS-050",
+      "query": "2026-02Android端各渠道注册人数排行；请返回渠道名称、注册用户数；聚合口径：数量指标按对应业务记录计数；按核心指标从高到低展示。",
+      "gold_sql": "SELECT c.channel_name, COUNT(r.registration_id) AS registrations FROM user_registrations r JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE strftime(r.registered_at,'%Y-%m')='2026-02' AND r.platform='Android' GROUP BY 1 ORDER BY 2 DESC,1",
+      "expected_columns": [
+        "channel_name",
+        "registrations"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  ac.channel_name,\n  COUNT(*) AS registered_users\nFROM user_registrations ur\nJOIN acquisition_channels ac ON ur.channel_id = ac.channel_id\nWHERE ur.platform = 'Android'\n  AND ur.registered_at >= '2026-02-01'\n  AND ur.registered_at < '2026-03-01'\nGROUP BY ac.channel_name\nORDER BY registered_users DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "registered_users"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "registrations"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "registrations": [
+                  "registered_users"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  ac.channel_name,\n  COUNT(ur.registration_id) AS registered_users\nFROM user_registrations ur\nJOIN acquisition_channels ac ON ur.channel_id = ac.channel_id\nWHERE ur.platform = 'Android'\n  AND ur.registered_at >= '2026-02-01'\n  AND ur.registered_at < '2026-03-01'\nGROUP BY ac.channel_name\nORDER BY registered_users DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "registered_users"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "registrations"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "registrations": [
+                  "registered_users"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "GROWTH_OPS-051",
+      "query": "2026-01各渠道注册到激活的转化率；请返回渠道名称、注册用户数、激活用户数、激活率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "gold_sql": "SELECT c.channel_name, COUNT(r.registration_id) AS registrations, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END) AS activated_users, ROUND(SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/NULLIF(COUNT(r.registration_id),0),4) AS activation_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE strftime(r.registered_at,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4 DESC,1",
+      "expected_columns": [
+        "channel_name",
+        "registrations",
+        "activated_users",
+        "activation_rate"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  ac.channel_name,\n  COUNT(DISTINCT ur.registration_id) AS registered_users,\n  COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END) AS activated_users,\n  CASE \n    WHEN COUNT(DISTINCT ur.registration_id) = 0 THEN 0.0\n    ELSE CAST(COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END) AS DOUBLE) / COUNT(DISTINCT ur.registration_id)\n  END AS activation_rate\nFROM user_registrations ur\nJOIN acquisition_channels ac ON ur.channel_id = ac.channel_id\nLEFT JOIN user_activations ua ON ur.registration_id = ua.registration_id\nWHERE ur.registered_at >= '2026-01-01' AND ur.registered_at < '2026-02-01'\nGROUP BY ac.channel_name\nORDER BY activation_rate DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "registered_users",
+            "activated_users",
+            "activation_rate"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "registrations",
+            "activated_users",
+            "activation_rate"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "registrations": [
+                  "registered_users"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  ac.channel_name,\n  COUNT(DISTINCT ur.registration_id) AS registered_users,\n  COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END) AS activated_users,\n  CASE \n    WHEN COUNT(DISTINCT ur.registration_id) = 0 THEN 0.0\n    ELSE CAST(COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END) AS DOUBLE) / COUNT(DISTINCT ur.registration_id)\n  END AS activation_rate\nFROM user_registrations ur\nJOIN acquisition_channels ac ON ur.channel_id = ac.channel_id\nLEFT JOIN user_activations ua ON ur.registration_id = ua.registration_id\nWHERE ur.registered_at >= '2026-01-01' AND ur.registered_at < '2026-02-01'\nGROUP BY ac.channel_name\nORDER BY activation_rate DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "registered_users",
+            "activated_users",
+            "activation_rate"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "registrations",
+            "activated_users",
+            "activation_rate"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "registrations": [
+                  "registered_users"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "GROWTH_OPS-075",
+      "query": "统计2026-05注册的用户数、其中最终激活的用户数，以及注册到激活率；请返回月份、注册用户数、激活用户数、激活率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "gold_sql": "SELECT '2026-05' AS month, COUNT(r.registration_id) AS registrations, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END) AS activated_users, ROUND(SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(r.registration_id),4) AS activation_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-05'",
+      "expected_columns": [
+        "month",
+        "registrations",
+        "activated_users",
+        "activation_rate"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  STRFTIME(r.registered_at, '%Y-%m') AS month,\n  COUNT(DISTINCT r.registration_id) AS registered_users,\n  COUNT(DISTINCT CASE WHEN a.is_activated = 1 THEN r.registration_id END) AS activated_users,\n  CAST(COUNT(DISTINCT CASE WHEN a.is_activated = 1 THEN r.registration_id END) AS DOUBLE) / NULLIF(CAST(COUNT(DISTINCT r.registration_id) AS DOUBLE), 0) AS activation_rate\nFROM user_registrations r\nLEFT JOIN user_activations a ON r.registration_id = a.registration_id\nWHERE r.registered_at >= '2026-05-01' AND r.registered_at < '2026-06-01'\nGROUP BY STRFTIME(r.registered_at, '%Y-%m')\nORDER BY month",
+          "actual_columns": [
+            "month",
+            "registered_users",
+            "activated_users",
+            "activation_rate"
+          ],
+          "expected_columns": [
+            "month",
+            "registrations",
+            "activated_users",
+            "activation_rate"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "registrations": [
+                  "registered_users"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  STRFTIME(r.registered_at, '%Y-%m') AS month,\n  COUNT(DISTINCT r.registration_id) AS registered_users,\n  COUNT(DISTINCT CASE WHEN a.is_activated = 1 THEN r.registration_id END) AS activated_users,\n  CAST(COUNT(DISTINCT CASE WHEN a.is_activated = 1 THEN r.registration_id END) AS DOUBLE) / NULLIF(CAST(COUNT(DISTINCT r.registration_id) AS DOUBLE), 0) AS activation_rate\nFROM user_registrations r\nLEFT JOIN user_activations a ON r.registration_id = a.registration_id\nWHERE r.registered_at >= '2026-05-01' AND r.registered_at < '2026-06-01'\nGROUP BY STRFTIME(r.registered_at, '%Y-%m')\nORDER BY month",
+          "actual_columns": [
+            "month",
+            "registered_users",
+            "activated_users",
+            "activation_rate"
+          ],
+          "expected_columns": [
+            "month",
+            "registrations",
+            "activated_users",
+            "activation_rate"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "registrations": [
+                  "registered_users"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "GROWTH_OPS-076",
+      "query": "各渠道1日留存率排名；请返回渠道名称、观察用户数、留存率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按核心指标从高到低展示。",
+      "gold_sql": "SELECT c.channel_name, COUNT(*) AS observed_users, ROUND(SUM(CASE WHEN r.is_retained THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS retention_rate FROM user_retention r JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE r.retention_day=1 GROUP BY 1 ORDER BY 3 DESC,1",
+      "expected_columns": [
+        "channel_name",
+        "observed_users",
+        "retention_rate"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": true,
+          "generated_sql": "SELECT \n  ac.channel_name,\n  COUNT(*) AS observed_users,\n  CAST(SUM(CASE WHEN ur.is_retained = 1 THEN 1 ELSE 0 END) AS DOUBLE) / NULLIF(CAST(COUNT(*) AS DOUBLE), 0) AS retention_rate\nFROM user_retention ur\nJOIN acquisition_channels ac ON ur.channel_id = ac.channel_id\nWHERE ur.retention_day = 1\nGROUP BY ac.channel_name\nORDER BY retention_rate DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "observed_users",
+            "retention_rate"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "observed_users",
+            "retention_rate"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {},
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": true,
+          "generated_sql": "SELECT \n  ac.channel_name,\n  COUNT(*) AS observed_users,\n  ROUND(SUM(CASE WHEN ur.is_retained = 1 THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(*), 0), 4) AS retention_rate\nFROM user_retention ur\nJOIN acquisition_channels ac ON ur.channel_id = ac.channel_id\nWHERE ur.retention_day = 1\nGROUP BY ac.channel_name\nORDER BY retention_rate DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "observed_users",
+            "retention_rate"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "observed_users",
+            "retention_rate"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {},
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "GROWTH_OPS-100",
+      "query": "统计2026-05期间注册平台为iOS的用户产生的播放总次数除以去重用户数；请返回注册平台、人均播放次数；聚合口径：去重数量按对应实体唯一标识计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "gold_sql": "SELECT 'iOS' AS platform, ROUND(SUM(a.play_count)*1.0/COUNT(DISTINCT a.user_id),2) AS plays_per_user FROM user_daily_activity a JOIN user_registrations r ON a.user_id=r.user_id WHERE r.platform='iOS' AND strftime(a.activity_date,'%Y-%m')='2026-05'",
+      "expected_columns": [
+        "platform",
+        "plays_per_user"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": false,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  u.register_platform,\n  SUM(uda.play_count) AS total_play_count,\n  COUNT(DISTINCT uda.user_id) AS distinct_user_count,\n  ROUND(SUM(uda.play_count) * 1.0 / NULLIF(COUNT(DISTINCT uda.user_id), 0), 4) AS avg_play_per_user\nFROM users u\nJOIN user_daily_activity uda ON u.user_id = uda.user_id\nWHERE u.registered_at >= '2026-05-01' AND u.registered_at < '2026-06-01'\n  AND u.register_platform = 'iOS'\nGROUP BY u.register_platform\nORDER BY u.register_platform ASC",
+          "actual_columns": [
+            "register_platform",
+            "total_play_count",
+            "distinct_user_count",
+            "avg_play_per_user"
+          ],
+          "expected_columns": [
+            "platform",
+            "plays_per_user"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": []
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  u.register_platform AS register_platform,\n  SUM(uda.play_count) AS total_play_count,\n  COUNT(DISTINCT uda.user_id) AS distinct_user_count,\n  ROUND(SUM(uda.play_count) * 1.0 / NULLIF(COUNT(DISTINCT uda.user_id), 0), 4) AS avg_play_per_user\nFROM users u\nJOIN user_daily_activity uda ON u.user_id = uda.user_id\nWHERE u.register_platform = 'iOS'\n  AND uda.activity_date >= '2026-05-01'\n  AND uda.activity_date < '2026-06-01'\nGROUP BY u.register_platform",
+          "actual_columns": [
+            "register_platform",
+            "total_play_count",
+            "distinct_user_count",
+            "avg_play_per_user"
+          ],
+          "expected_columns": [
+            "platform",
+            "plays_per_user"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "platform": [
+                  "register_platform"
+                ],
+                "plays_per_user": [
+                  "avg_play_per_user"
+                ]
+              },
+              "extra_columns": [
+                "total_play_count",
+                "distinct_user_count"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "GROWTH_OPS-102",
+      "query": "用户按年龄段的分布；请返回年龄段、用户数；聚合口径：数量指标按对应业务记录计数。",
+      "gold_sql": "SELECT age_group, COUNT(user_id) AS users FROM user_profiles GROUP BY 1 ORDER BY 2 DESC,1",
+      "expected_columns": [
+        "age_group",
+        "users"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  up.age_group AS \"年龄段\",\n  COUNT(DISTINCT u.user_id) AS \"用户数\"\nFROM users u\nJOIN user_profiles up ON u.user_id = up.user_id\nGROUP BY up.age_group\nORDER BY \"用户数\" DESC, up.age_group ASC",
+          "actual_columns": [
+            "年龄段",
+            "用户数"
+          ],
+          "expected_columns": [
+            "age_group",
+            "users"
+          ],
+          "actual_row_count": 6,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "age_group": [
+                  "年龄段"
+                ],
+                "users": [
+                  "用户数"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  up.age_group AS \"年龄段\",\n  COUNT(DISTINCT u.user_id) AS \"用户数\"\nFROM users u\nJOIN user_profiles up ON u.user_id = up.user_id\nGROUP BY up.age_group\nORDER BY \"用户数\" DESC, up.age_group ASC",
+          "actual_columns": [
+            "年龄段",
+            "用户数"
+          ],
+          "expected_columns": [
+            "age_group",
+            "users"
+          ],
+          "actual_row_count": 6,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "age_group": [
+                  "年龄段"
+                ],
+                "users": [
+                  "用户数"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "GROWTH_OPS-125",
+      "query": "按生命周期快照中的参与度评分，查询华中评分最高的前10名用户；请返回用户ID、参与度评分；按核心指标从高到低展示；最多返回10行。",
+      "gold_sql": "SELECT l.user_id, l.engagement_score FROM user_lifecycle_snapshots l JOIN user_profiles p ON l.user_id=p.user_id WHERE p.region='华中' ORDER BY l.engagement_score DESC,l.user_id LIMIT 10",
+      "expected_columns": [
+        "user_id",
+        "engagement_score"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": true,
+          "generated_sql": "SELECT \n  uls.user_id,\n  uls.engagement_score\nFROM user_lifecycle_snapshots uls\nJOIN user_profiles up ON uls.user_id = up.user_id\nWHERE up.region = '华中'\nORDER BY uls.engagement_score DESC, uls.user_id ASC\nLIMIT 10",
+          "actual_columns": [
+            "user_id",
+            "engagement_score"
+          ],
+          "expected_columns": [
+            "user_id",
+            "engagement_score"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {},
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": true,
+          "generated_sql": "SELECT\n  uls.user_id,\n  uls.engagement_score\nFROM user_lifecycle_snapshots uls\nJOIN user_profiles up ON uls.user_id = up.user_id\nWHERE up.region = '华中'\nORDER BY uls.engagement_score DESC, uls.user_id ASC\nLIMIT 10",
+          "actual_columns": [
+            "user_id",
+            "engagement_score"
+          ],
+          "expected_columns": [
+            "user_id",
+            "engagement_score"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {},
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "GROWTH_OPS-126",
+      "query": "push触达方式的送达率、点击率和召回率；请返回触达方式、触达数量、送达率、点击率、召回率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "gold_sql": "SELECT t.touch_channel, COUNT(*) AS touches, ROUND(SUM(CASE WHEN t.delivered THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS delivery_rate, ROUND(SUM(CASE WHEN t.clicked THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS click_rate, ROUND(SUM(CASE WHEN r.recalled THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS recall_rate FROM recall_touches t JOIN recall_results r ON t.touch_id=r.touch_id WHERE t.touch_channel='push' GROUP BY 1",
+      "expected_columns": [
+        "touch_channel",
+        "touches",
+        "delivery_rate",
+        "click_rate",
+        "recall_rate"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  t.touch_channel AS touch_channel,\n  COUNT(*) AS touch_count,\n  SUM(t.delivered) * 1.0 / NULLIF(COUNT(*), 0) AS delivery_rate,\n  SUM(t.clicked) * 1.0 / NULLIF(COUNT(*), 0) AS click_rate,\n  SUM(r.recalled) * 1.0 / NULLIF(COUNT(*), 0) AS recall_rate\nFROM recall_touches t\nLEFT JOIN recall_results r ON t.touch_id = r.touch_id\nWHERE t.touch_channel = 'push'\nGROUP BY t.touch_channel\nORDER BY touch_channel ASC",
+          "actual_columns": [
+            "touch_channel",
+            "touch_count",
+            "delivery_rate",
+            "click_rate",
+            "recall_rate"
+          ],
+          "expected_columns": [
+            "touch_channel",
+            "touches",
+            "delivery_rate",
+            "click_rate",
+            "recall_rate"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "touches": [
+                  "touch_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  t.touch_channel AS touch_channel,\n  COUNT(*) AS touch_count,\n  SUM(t.delivered) * 1.0 / NULLIF(COUNT(*), 0) AS delivery_rate,\n  SUM(t.clicked) * 1.0 / NULLIF(COUNT(*), 0) AS click_rate,\n  SUM(r.recalled) * 1.0 / NULLIF(COUNT(*), 0) AS recall_rate\nFROM recall_touches t\nLEFT JOIN recall_results r ON t.touch_id = r.touch_id\nWHERE t.touch_channel = 'push'\nGROUP BY t.touch_channel\nORDER BY touch_channel ASC",
+          "actual_columns": [
+            "touch_channel",
+            "touch_count",
+            "delivery_rate",
+            "click_rate",
+            "recall_rate"
+          ],
+          "expected_columns": [
+            "touch_channel",
+            "touches",
+            "delivery_rate",
+            "click_rate",
+            "recall_rate"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "touches": [
+                  "touch_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "GROWTH_OPS-148",
+      "query": "2026-03各渠道激活率实际值与目标差距；请返回渠道名称、实际比率、激活率目标、目标差距；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "gold_sql": "WITH actual AS (SELECT r.channel_id, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(*) AS actual_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-03' GROUP BY 1) SELECT c.channel_name,ROUND(a.actual_rate,4) AS actual_rate,t.activation_rate_target, ROUND(a.actual_rate-t.activation_rate_target,4) AS gap FROM growth_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-03' ORDER BY gap DESC,1",
+      "expected_columns": [
+        "channel_name",
+        "actual_rate",
+        "activation_rate_target",
+        "gap"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  ac.channel_name,\n  SUM(CASE WHEN ua.is_activated = 1 THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(ur.registration_id), 0) AS actual_activation_rate,\n  gt.activation_rate_target,\n  (SUM(CASE WHEN ua.is_activated = 1 THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(ur.registration_id), 0)) - gt.activation_rate_target AS target_gap\nFROM user_registrations ur\nJOIN user_activations ua ON ur.registration_id = ua.registration_id\nJOIN acquisition_channels ac ON ur.channel_id = ac.channel_id\nJOIN growth_targets gt ON ac.channel_id = gt.channel_id\nWHERE ur.registered_at >= '2026-03-01' AND ur.registered_at < '2026-04-01'\n  AND gt.target_month = '2026-03'\nGROUP BY ac.channel_name, gt.activation_rate_target\nORDER BY actual_activation_rate DESC",
+          "actual_columns": [
+            "channel_name",
+            "actual_activation_rate",
+            "activation_rate_target",
+            "target_gap"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "actual_rate",
+            "activation_rate_target",
+            "gap"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "actual_rate": [
+                  "actual_activation_rate"
+                ],
+                "gap": [
+                  "target_gap"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  ac.channel_name,\n  SUM(CASE WHEN ua.is_activated = 1 THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(DISTINCT ur.registration_id), 0) AS actual_activation_rate,\n  gt.activation_rate_target,\n  (SUM(CASE WHEN ua.is_activated = 1 THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(DISTINCT ur.registration_id), 0)) - gt.activation_rate_target AS target_gap\nFROM user_registrations ur\nJOIN acquisition_channels ac ON ur.channel_id = ac.channel_id\nLEFT JOIN user_activations ua ON ur.registration_id = ua.registration_id\nJOIN growth_targets gt ON ac.channel_id = gt.channel_id AND gt.target_month = '2026-03'\nWHERE ur.registered_at >= '2026-03-01' AND ur.registered_at < '2026-04-01'\nGROUP BY ac.channel_name, gt.activation_rate_target\nORDER BY actual_activation_rate DESC",
+          "actual_columns": [
+            "channel_name",
+            "actual_activation_rate",
+            "activation_rate_target",
+            "target_gap"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "actual_rate",
+            "activation_rate_target",
+            "gap"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "actual_rate": [
+                  "actual_activation_rate"
+                ],
+                "gap": [
+                  "target_gap"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CHANNEL_OPS-006",
+      "query": "信息流广告2026年各月广告消耗；请返回月份、广告消耗；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "gold_sql": "SELECT strftime(s.stat_date,'%Y-%m') AS month,ROUND(SUM(s.spend),2) spend FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE c.channel_name='信息流广告' GROUP BY 1 ORDER BY 1",
+      "expected_columns": [
+        "month",
+        "spend"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  STRFTIME(ads.stat_date, '%Y-%m') AS month,\n  ROUND(SUM(ads.spend), 2) AS ad_spend\nFROM ad_daily_stats ads\nJOIN ad_campaigns ac ON ads.ad_campaign_id = ac.ad_campaign_id\nJOIN acquisition_channels ch ON ac.channel_id = ch.channel_id\nWHERE ch.channel_name = '信息流广告'\n  AND ads.stat_date >= '2026-01-01' \n  AND ads.stat_date < '2027-01-01'\nGROUP BY STRFTIME(ads.stat_date, '%Y-%m')\nORDER BY month ASC",
+          "actual_columns": [
+            "month",
+            "ad_spend"
+          ],
+          "expected_columns": [
+            "month",
+            "spend"
+          ],
+          "actual_row_count": 8,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "spend": [
+                  "ad_spend"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  STRFTIME(ads.stat_date, '%Y-%m') AS month,\n  SUM(ads.spend) AS ad_spend\nFROM ad_daily_stats ads\nJOIN ad_campaigns ac ON ads.ad_campaign_id = ac.ad_campaign_id\nJOIN acquisition_channels ch ON ac.channel_id = ch.channel_id\nWHERE ch.channel_name = '信息流广告'\n  AND ads.stat_date >= '2026-01-01' \n  AND ads.stat_date < '2027-01-01'\nGROUP BY STRFTIME(ads.stat_date, '%Y-%m')\nORDER BY month ASC",
+          "actual_columns": [
+            "month",
+            "ad_spend"
+          ],
+          "expected_columns": [
+            "month",
+            "spend"
+          ],
+          "actual_row_count": 8,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "spend": [
+                  "ad_spend"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CHANNEL_OPS-025",
+      "query": "截至2026-05各月广告消耗及环比变化；请返回月份、广告消耗、环比变化率；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母；按时间升序展示。",
+      "gold_sql": "WITH m AS (SELECT strftime(stat_date,'%Y-%m') AS month,SUM(spend) spend FROM ad_daily_stats WHERE strftime(stat_date,'%Y-%m')<='2026-05' GROUP BY 1) SELECT month,ROUND(spend,2) spend,ROUND((spend-LAG(spend) OVER(ORDER BY month))/NULLIF(LAG(spend) OVER(ORDER BY month),0),4) mom FROM m ORDER BY month",
+      "expected_columns": [
+        "month",
+        "spend",
+        "mom"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "WITH monthly_spend AS (\n  SELECT\n    strftime(stat_date, '%Y-%m') AS month,\n    SUM(spend) AS total_spend\n  FROM ad_daily_stats\n  WHERE stat_date < '2026-06-01'\n  GROUP BY strftime(stat_date, '%Y-%m')\n)\nSELECT\n  month,\n  ROUND(total_spend, 2) AS ad_spend,\n  CASE\n    WHEN LAG(total_spend) OVER (ORDER BY month) IS NULL THEN NULL\n    ELSE ROUND((total_spend - LAG(total_spend) OVER (ORDER BY month)) / NULLIF(LAG(total_spend) OVER (ORDER BY month), 0), 4)\n  END AS mom_change_rate\nFROM monthly_spend\nORDER BY month ASC",
+          "actual_columns": [
+            "month",
+            "ad_spend",
+            "mom_change_rate"
+          ],
+          "expected_columns": [
+            "month",
+            "spend",
+            "mom"
+          ],
+          "actual_row_count": 5,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "spend": [
+                  "ad_spend"
+                ],
+                "mom": [
+                  "mom_change_rate"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "WITH monthly_spend AS (\n  SELECT\n    strftime(stat_date, '%Y-%m') AS month,\n    SUM(spend) AS total_spend\n  FROM ad_daily_stats\n  WHERE stat_date < '2026-06-01'\n  GROUP BY strftime(stat_date, '%Y-%m')\n),\nspend_with_lag AS (\n  SELECT\n    month,\n    total_spend,\n    LAG(total_spend) OVER (ORDER BY month) AS prev_month_spend\n  FROM monthly_spend\n)\nSELECT\n  month,\n  ROUND(total_spend, 2) AS ad_spend,\n  CASE\n    WHEN prev_month_spend IS NULL OR prev_month_spend = 0 THEN NULL\n    ELSE ROUND((total_spend - prev_month_spend) / prev_month_spend, 4)\n  END AS mom_change_rate\nFROM spend_with_lag\nORDER BY month ASC",
+          "actual_columns": [
+            "month",
+            "ad_spend",
+            "mom_change_rate"
+          ],
+          "expected_columns": [
+            "month",
+            "spend",
+            "mom"
+          ],
+          "actual_row_count": 5,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "spend": [
+                  "ad_spend"
+                ],
+                "mom": [
+                  "mom_change_rate"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CHANNEL_OPS-026",
+      "query": "2026-01各渠道曝光、点击和点击率；请返回渠道名称、曝光量、点击数、点击率；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "gold_sql": "SELECT c.channel_name,SUM(s.impressions) impressions,SUM(s.clicks) clicks, ROUND(SUM(s.clicks)*1.0/NULLIF(SUM(s.impressions),0),4) ctr FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4 DESC,1",
+      "expected_columns": [
+        "channel_name",
+        "impressions",
+        "clicks",
+        "ctr"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  ac.channel_name,\n  SUM(ads.impressions) AS impressions,\n  SUM(ads.clicks) AS clicks,\n  CASE WHEN SUM(ads.impressions) > 0 THEN ROUND(SUM(ads.clicks) * 1.0 / SUM(ads.impressions), 4) ELSE 0 END AS click_through_rate\nFROM ad_daily_stats ads\nJOIN ad_campaigns camp ON ads.ad_campaign_id = camp.ad_campaign_id\nJOIN acquisition_channels ac ON camp.channel_id = ac.channel_id\nWHERE ads.stat_date >= '2026-01-01' AND ads.stat_date < '2026-02-01'\nGROUP BY ac.channel_name\nORDER BY click_through_rate DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "impressions",
+            "clicks",
+            "click_through_rate"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "impressions",
+            "clicks",
+            "ctr"
+          ],
+          "actual_row_count": 4,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "ctr": [
+                  "click_through_rate"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  ac.channel_name,\n  SUM(ads.impressions) AS total_impressions,\n  SUM(ads.clicks) AS total_clicks,\n  CASE WHEN SUM(ads.impressions) > 0 THEN ROUND(CAST(SUM(ads.clicks) AS DOUBLE) / SUM(ads.impressions), 4) ELSE 0 END AS click_through_rate\nFROM ad_daily_stats ads\nJOIN ad_campaigns camp ON ads.ad_campaign_id = camp.ad_campaign_id\nJOIN acquisition_channels ac ON camp.channel_id = ac.channel_id\nWHERE ads.stat_date >= '2026-01-01' AND ads.stat_date < '2026-02-01'\nGROUP BY ac.channel_name\nORDER BY total_impressions DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "total_impressions",
+            "total_clicks",
+            "click_through_rate"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "impressions",
+            "clicks",
+            "ctr"
+          ],
+          "actual_row_count": 4,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "impressions": [
+                  "total_impressions"
+                ],
+                "clicks": [
+                  "total_clicks"
+                ],
+                "ctr": [
+                  "click_through_rate"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CHANNEL_OPS-050",
+      "query": "请汇总信息流广告的平均点击成本；请返回渠道名称、平均点击成本；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "gold_sql": "SELECT c.channel_name,ROUND(SUM(s.spend)/NULLIF(SUM(s.clicks),0),4) cpc FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE c.channel_name='信息流广告' GROUP BY 1",
+      "expected_columns": [
+        "channel_name",
+        "cpc"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  ac.channel_name,\n  SUM(ads.spend) / NULLIF(SUM(ads.clicks), 0) AS avg_cpc\nFROM ad_daily_stats ads\nJOIN ad_campaigns camp ON ads.ad_campaign_id = camp.ad_campaign_id\nJOIN acquisition_channels ac ON camp.channel_id = ac.channel_id\nWHERE ac.channel_name = '信息流广告'\nGROUP BY ac.channel_name",
+          "actual_columns": [
+            "channel_name",
+            "avg_cpc"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "cpc"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "cpc": [
+                  "avg_cpc"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  ac.channel_name,\n  SUM(ads.spend) / NULLIF(SUM(ads.clicks), 0) AS avg_cpc\nFROM ad_daily_stats ads\nJOIN ad_campaigns camp ON ads.ad_campaign_id = camp.ad_campaign_id\nJOIN acquisition_channels ac ON camp.channel_id = ac.channel_id\nWHERE ac.channel_name = '信息流广告'\nGROUP BY ac.channel_name",
+          "actual_columns": [
+            "channel_name",
+            "avg_cpc"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "cpc"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "cpc": [
+                  "avg_cpc"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CHANNEL_OPS-051",
+      "query": "2026-01各渠道转化数、转化率和CPA；请返回渠道名称、转化数、转化率、CPA；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "gold_sql": "SELECT c.channel_name,SUM(s.conversions) conversions, ROUND(SUM(s.conversions)*1.0/NULLIF(SUM(s.clicks),0),4) conversion_rate, ROUND(SUM(s.spend)/NULLIF(SUM(s.conversions),0),2) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id JOIN acquisition_channels c ON p.channel_id=c.channel_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 4,1",
+      "expected_columns": [
+        "channel_name",
+        "conversions",
+        "conversion_rate",
+        "cpa"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": true,
+          "generated_sql": "SELECT \n  ac.channel_name,\n  SUM(ads.conversions) AS conversions,\n  ROUND(SUM(ads.conversions) * 1.0 / NULLIF(SUM(ads.clicks), 0), 4) AS conversion_rate,\n  ROUND(SUM(ads.spend) / NULLIF(SUM(ads.conversions), 0), 2) AS cpa\nFROM ad_daily_stats ads\nJOIN ad_campaigns camp ON ads.ad_campaign_id = camp.ad_campaign_id\nJOIN acquisition_channels ac ON camp.channel_id = ac.channel_id\nWHERE ads.stat_date >= '2026-01-01' AND ads.stat_date < '2026-02-01'\nGROUP BY ac.channel_name\nORDER BY conversions DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "conversions",
+            "conversion_rate",
+            "cpa"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "conversions",
+            "conversion_rate",
+            "cpa"
+          ],
+          "actual_row_count": 4,
+          "candidate_mappings": [
+            {
+              "column_aliases": {},
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": true,
+          "generated_sql": "SELECT \n  ac.channel_name,\n  SUM(ads.conversions) AS conversions,\n  ROUND(SUM(ads.conversions) * 1.0 / NULLIF(SUM(ads.clicks), 0), 4) AS conversion_rate,\n  ROUND(SUM(ads.spend) / NULLIF(SUM(ads.conversions), 0), 2) AS cpa\nFROM ad_daily_stats ads\nJOIN ad_campaigns camp ON ads.ad_campaign_id = camp.ad_campaign_id\nJOIN acquisition_channels ac ON camp.channel_id = ac.channel_id\nWHERE ads.stat_date >= '2026-01-01' AND ads.stat_date < '2026-02-01'\nGROUP BY ac.channel_name\nORDER BY conversions DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "conversions",
+            "conversion_rate",
+            "cpa"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "conversions",
+            "conversion_rate",
+            "cpa"
+          ],
+          "actual_row_count": 4,
+          "candidate_mappings": [
+            {
+              "column_aliases": {},
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CHANNEL_OPS-080",
+      "query": "请分析统计active状态广告计划的数量和预算；请返回状态、广告计划数、预算；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和。",
+      "gold_sql": "SELECT status,COUNT(ad_campaign_id) campaigns,ROUND(SUM(budget),2) budget FROM ad_campaigns WHERE status='active' GROUP BY 1",
+      "expected_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  status,\n  COUNT(*) AS ad_campaign_count,\n  SUM(budget) AS total_budget\nFROM ad_campaigns\nWHERE status = 'active'\nGROUP BY status",
+          "actual_columns": [
+            "status",
+            "ad_campaign_count",
+            "total_budget"
+          ],
+          "expected_columns": [
+            "status",
+            "campaigns",
+            "budget"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "campaigns": [
+                  "ad_campaign_count"
+                ],
+                "budget": [
+                  "total_budget"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  status,\n  COUNT(*) AS ad_campaign_count,\n  SUM(budget) AS total_budget\nFROM ad_campaigns\nWHERE status = 'active'\nGROUP BY status",
+          "actual_columns": [
+            "status",
+            "ad_campaign_count",
+            "total_budget"
+          ],
+          "expected_columns": [
+            "status",
+            "campaigns",
+            "budget"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "campaigns": [
+                  "ad_campaign_count"
+                ],
+                "budget": [
+                  "total_budget"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CHANNEL_OPS-100",
+      "query": "请汇总预算调整原因为转化成本偏高的调整次数和平均幅度；请返回调整原因、调整次数、平均调整幅度；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "gold_sql": "SELECT adjustment_reason,COUNT(*) adjustments, ROUND(AVG(new_budget-previous_budget),2) avg_change FROM budget_adjustments WHERE adjustment_reason='转化成本偏高' GROUP BY 1",
+      "expected_columns": [
+        "adjustment_reason",
+        "adjustments",
+        "avg_change"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT adjustment_reason, COUNT(*) AS adjustment_count, AVG(new_budget - previous_budget) AS avg_adjustment_amount FROM budget_adjustments WHERE adjustment_reason = '转化成本偏高' GROUP BY adjustment_reason",
+          "actual_columns": [
+            "adjustment_reason",
+            "adjustment_count",
+            "avg_adjustment_amount"
+          ],
+          "expected_columns": [
+            "adjustment_reason",
+            "adjustments",
+            "avg_change"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "adjustments": [
+                  "adjustment_count"
+                ],
+                "avg_change": [
+                  "avg_adjustment_amount"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  adjustment_reason AS \"调整原因\",\n  COUNT(*) AS \"调整次数\",\n  AVG(new_budget - previous_budget) AS \"平均调整幅度\"\nFROM budget_adjustments\nWHERE adjustment_reason = '转化成本偏高'\nGROUP BY adjustment_reason",
+          "actual_columns": [
+            "调整原因",
+            "调整次数",
+            "平均调整幅度"
+          ],
+          "expected_columns": [
+            "adjustment_reason",
+            "adjustments",
+            "avg_change"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "adjustment_reason": [
+                  "调整原因"
+                ],
+                "adjustments": [
+                  "调整次数"
+                ],
+                "avg_change": [
+                  "平均调整幅度"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CHANNEL_OPS-102",
+      "query": "图文创意的状态分布；请返回创意状态、创意数量；聚合口径：数量指标按对应业务记录计数。",
+      "gold_sql": "SELECT creative_status,COUNT(creative_id) creatives FROM ad_creatives WHERE creative_type='图文' GROUP BY 1 ORDER BY 2 DESC,1",
+      "expected_columns": [
+        "creative_status",
+        "creatives"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT creative_status, COUNT(*) AS creative_count FROM ad_creatives WHERE creative_type = '图文' GROUP BY creative_status ORDER BY creative_count DESC, creative_status ASC",
+          "actual_columns": [
+            "creative_status",
+            "creative_count"
+          ],
+          "expected_columns": [
+            "creative_status",
+            "creatives"
+          ],
+          "actual_row_count": 2,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "creatives": [
+                  "creative_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT creative_status, COUNT(*) AS creative_count FROM ad_creatives WHERE creative_type = '图文' GROUP BY creative_status ORDER BY creative_count DESC, creative_status ASC",
+          "actual_columns": [
+            "creative_status",
+            "creative_count"
+          ],
+          "expected_columns": [
+            "creative_status",
+            "creatives"
+          ],
+          "actual_row_count": 2,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "creatives": [
+                  "creative_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CHANNEL_OPS-126",
+      "query": "last_click归因按渠道的用户数和平均置信度；请返回渠道名称、用户数、平均置信度；聚合口径：去重数量按对应实体唯一标识计数，平均指标取算术平均。",
+      "gold_sql": "SELECT c.channel_name,COUNT(DISTINCT a.user_id) users,ROUND(AVG(a.confidence_score),4) avg_confidence FROM channel_attributions a JOIN acquisition_channels c ON a.channel_id=c.channel_id WHERE a.attribution_type='last_click' GROUP BY 1 ORDER BY 2 DESC,1",
+      "expected_columns": [
+        "channel_name",
+        "users",
+        "avg_confidence"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  ac.channel_name,\n  COUNT(DISTINCT ca.user_id) AS user_count,\n  AVG(ca.confidence_score) AS avg_confidence\nFROM channel_attributions ca\nJOIN acquisition_channels ac ON ca.channel_id = ac.channel_id\nWHERE ca.attribution_type = 'last_click'\nGROUP BY ac.channel_name\nORDER BY user_count DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "user_count",
+            "avg_confidence"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "users",
+            "avg_confidence"
+          ],
+          "actual_row_count": 4,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "users": [
+                  "user_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  ac.channel_name,\n  COUNT(DISTINCT ca.user_id) AS user_count,\n  AVG(ca.confidence_score) AS avg_confidence\nFROM channel_attributions ca\nJOIN acquisition_channels ac ON ca.channel_id = ac.channel_id\nWHERE ca.attribution_type = 'last_click'\nGROUP BY ac.channel_name\nORDER BY user_count DESC, ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "user_count",
+            "avg_confidence"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "users",
+            "avg_confidence"
+          ],
+          "actual_row_count": 4,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "users": [
+                  "user_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CHANNEL_OPS-136",
+      "query": "2026-01各渠道实际CPA与目标CPA差距；请返回渠道名称、实际CPA、目标CPA、目标差距；聚合口径：可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "gold_sql": "WITH actual AS (SELECT p.channel_id,SUM(s.spend)/NULLIF(SUM(s.conversions),0) cpa FROM ad_daily_stats s JOIN ad_campaigns p ON s.ad_campaign_id=p.ad_campaign_id WHERE strftime(s.stat_date,'%Y-%m')='2026-01' GROUP BY 1) SELECT c.channel_name,ROUND(a.cpa,2) actual_cpa,t.target_cpa,ROUND(a.cpa-t.target_cpa,2) gap FROM channel_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-01' ORDER BY gap,1",
+      "expected_columns": [
+        "channel_name",
+        "actual_cpa",
+        "target_cpa",
+        "gap"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  ac.channel_name,\n  ROUND(SUM(ads.spend) / NULLIF(SUM(ads.conversions), 0), 2) AS actual_cpa,\n  ct.target_cpa,\n  ROUND(ROUND(SUM(ads.spend) / NULLIF(SUM(ads.conversions), 0), 2) - ct.target_cpa, 2) AS cpa_gap\nFROM ad_daily_stats ads\nJOIN ad_campaigns camp ON ads.ad_campaign_id = camp.ad_campaign_id\nJOIN acquisition_channels ac ON camp.channel_id = ac.channel_id\nJOIN channel_targets ct ON ac.channel_id = ct.channel_id\nWHERE ads.stat_date >= '2026-01-01' AND ads.stat_date < '2026-02-01'\n  AND ct.target_month = '2026-01'\nGROUP BY ac.channel_name, ct.target_cpa\nORDER BY ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "actual_cpa",
+            "target_cpa",
+            "cpa_gap"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "actual_cpa",
+            "target_cpa",
+            "gap"
+          ],
+          "actual_row_count": 4,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "gap": [
+                  "cpa_gap"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  ac.channel_name,\n  ROUND(SUM(ads.spend) / NULLIF(SUM(ads.conversions), 0), 2) AS actual_cpa,\n  ct.target_cpa,\n  ROUND(ROUND(SUM(ads.spend) / NULLIF(SUM(ads.conversions), 0), 2) - ct.target_cpa, 2) AS cpa_gap\nFROM ad_daily_stats ads\nJOIN ad_campaigns camp ON ads.ad_campaign_id = camp.ad_campaign_id\nJOIN acquisition_channels ac ON camp.channel_id = ac.channel_id\nJOIN channel_targets ct ON ac.channel_id = ct.channel_id\nWHERE ads.stat_date >= '2026-01-01' AND ads.stat_date < '2026-02-01'\n  AND ct.target_month = '2026-01'\nGROUP BY ac.channel_name, ct.target_cpa\nORDER BY ac.channel_name ASC",
+          "actual_columns": [
+            "channel_name",
+            "actual_cpa",
+            "target_cpa",
+            "cpa_gap"
+          ],
+          "expected_columns": [
+            "channel_name",
+            "actual_cpa",
+            "target_cpa",
+            "gap"
+          ],
+          "actual_row_count": 4,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "gap": [
+                  "cpa_gap"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CONTENT_OPS-002",
+      "query": "2026-02每天的视频曝光量和播放量；请返回指标日期、曝光量、播放量；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "gold_sql": "SELECT metric_date,SUM(impressions) impressions,SUM(play_count) plays FROM content_daily_metrics WHERE strftime(metric_date,'%Y-%m')='2026-02' GROUP BY 1 ORDER BY 1",
+      "expected_columns": [
+        "metric_date",
+        "impressions",
+        "plays"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT metric_date, SUM(impressions) AS impressions, SUM(play_count) AS play_count FROM content_daily_metrics WHERE metric_date >= '2026-02-01' AND metric_date < '2026-03-01' GROUP BY metric_date ORDER BY metric_date ASC",
+          "actual_columns": [
+            "metric_date",
+            "impressions",
+            "play_count"
+          ],
+          "expected_columns": [
+            "metric_date",
+            "impressions",
+            "plays"
+          ],
+          "actual_row_count": 28,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "plays": [
+                  "play_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  metric_date,\n  SUM(impressions) AS impressions,\n  SUM(play_count) AS play_count\nFROM content_daily_metrics\nWHERE metric_date >= '2026-02-01' AND metric_date < '2026-03-01'\nGROUP BY metric_date\nORDER BY metric_date ASC",
+          "actual_columns": [
+            "metric_date",
+            "impressions",
+            "play_count"
+          ],
+          "expected_columns": [
+            "metric_date",
+            "impressions",
+            "plays"
+          ],
+          "actual_row_count": 28,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "plays": [
+                  "play_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CONTENT_OPS-025",
+      "query": "体育类播放量最高的前10条内容；请返回内容标题、播放量；聚合口径：可加总指标按当前查询粒度求和；按核心指标从高到低展示；最多返回10行。",
+      "gold_sql": "SELECT c.content_title,SUM(m.play_count) plays FROM content_daily_metrics m JOIN contents c ON m.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='体育' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+      "expected_columns": [
+        "content_title",
+        "plays"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": false,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  c.content_title,\n  SUM(m.play_count) AS play_count\nFROM contents c\nJOIN content_categories cat ON c.category_id = cat.category_id\nJOIN content_daily_metrics m ON c.content_id = m.content_id\nWHERE cat.category_name = '体育'\nGROUP BY c.content_title\nORDER BY play_count DESC\nLIMIT 10",
+          "actual_columns": [
+            "content_title",
+            "play_count"
+          ],
+          "expected_columns": [
+            "content_title",
+            "plays"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": []
+        },
+        "on": {
+          "result_correct": false,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  c.content_title,\n  SUM(m.play_count) AS play_count\nFROM contents c\nJOIN content_categories cc ON c.category_id = cc.category_id\nJOIN content_daily_metrics m ON c.content_id = m.content_id\nWHERE cc.category_name = '体育'\nGROUP BY c.content_title\nORDER BY play_count DESC\nLIMIT 10",
+          "actual_columns": [
+            "content_title",
+            "play_count"
+          ],
+          "expected_columns": [
+            "content_title",
+            "plays"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": []
+        }
+      }
+    },
+    {
+      "case_id": "CONTENT_OPS-026",
+      "query": "基于播放明细，计算搞笑类内容每次播放的平均观看时长和平均完播率；请返回内容分类、平均观看时长、平均完播率；聚合口径：平均指标取算术平均。",
+      "gold_sql": "SELECT cat.category_name,ROUND(AVG(p.watch_seconds),2) avg_watch_seconds, ROUND(AVG(p.completion_rate),4) avg_completion_rate FROM video_plays p JOIN contents c ON p.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='搞笑' GROUP BY 1",
+      "expected_columns": [
+        "category_name",
+        "avg_watch_seconds",
+        "avg_completion_rate"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  cc.category_name AS \"内容分类\",\n  AVG(vp.watch_seconds) AS \"平均观看时长\",\n  AVG(vp.completion_rate) AS \"平均完播率\"\nFROM video_plays vp\nJOIN contents c ON vp.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE cc.category_name = '搞笑'\nGROUP BY cc.category_name",
+          "actual_columns": [
+            "内容分类",
+            "平均观看时长",
+            "平均完播率"
+          ],
+          "expected_columns": [
+            "category_name",
+            "avg_watch_seconds",
+            "avg_completion_rate"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "category_name": [
+                  "内容分类"
+                ],
+                "avg_watch_seconds": [
+                  "平均观看时长"
+                ],
+                "avg_completion_rate": [
+                  "平均完播率"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  cc.category_name AS \"内容分类\",\n  AVG(vp.watch_seconds) AS \"平均观看时长\",\n  AVG(vp.completion_rate) AS \"平均完播率\"\nFROM video_plays vp\nJOIN contents c ON vp.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE cc.category_name = '搞笑'\nGROUP BY cc.category_name",
+          "actual_columns": [
+            "内容分类",
+            "平均观看时长",
+            "平均完播率"
+          ],
+          "expected_columns": [
+            "category_name",
+            "avg_watch_seconds",
+            "avg_completion_rate"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "category_name": [
+                  "内容分类"
+                ],
+                "avg_watch_seconds": [
+                  "平均观看时长"
+                ],
+                "avg_completion_rate": [
+                  "平均完播率"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CONTENT_OPS-050",
+      "query": "2026-05平均完播率最高的前10条内容；请返回内容标题、完播率；聚合口径：平均指标取算术平均；按核心指标从高到低展示；最多返回10行。",
+      "gold_sql": "SELECT c.content_title,ROUND(AVG(m.completion_rate),4) completion_rate FROM content_daily_metrics m JOIN contents c ON m.content_id=c.content_id WHERE strftime(m.metric_date,'%Y-%m')='2026-05' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+      "expected_columns": [
+        "content_title",
+        "completion_rate"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  c.content_title,\n  AVG(cdm.completion_rate) AS avg_completion_rate\nFROM contents c\nJOIN content_daily_metrics cdm ON c.content_id = cdm.content_id\nWHERE cdm.metric_date >= '2026-05-01' AND cdm.metric_date < '2026-06-01'\nGROUP BY c.content_id, c.content_title\nORDER BY avg_completion_rate DESC\nLIMIT 10",
+          "actual_columns": [
+            "content_title",
+            "avg_completion_rate"
+          ],
+          "expected_columns": [
+            "content_title",
+            "completion_rate"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "completion_rate": [
+                  "avg_completion_rate"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  c.content_title,\n  AVG(cdm.completion_rate) AS avg_completion_rate\nFROM contents c\nJOIN content_daily_metrics cdm ON c.content_id = cdm.content_id\nWHERE cdm.metric_date >= '2026-05-01' AND cdm.metric_date < '2026-06-01'\nGROUP BY c.content_id, c.content_title\nORDER BY avg_completion_rate DESC\nLIMIT 10",
+          "actual_columns": [
+            "content_title",
+            "avg_completion_rate"
+          ],
+          "expected_columns": [
+            "content_title",
+            "completion_rate"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "completion_rate": [
+                  "avg_completion_rate"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CONTENT_OPS-052",
+      "query": "生活类内容数量和平均视频时长；请返回内容分类、内容数量、平均视频时长；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均。",
+      "gold_sql": "SELECT cat.category_name,COUNT(c.content_id) contents,ROUND(AVG(c.duration_seconds),2) avg_duration_seconds FROM contents c JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='生活' GROUP BY 1",
+      "expected_columns": [
+        "category_name",
+        "contents",
+        "avg_duration_seconds"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  cc.category_name AS \"内容分类\",\n  COUNT(c.content_id) AS \"内容数量\",\n  AVG(c.duration_seconds) AS \"平均视频时长\"\nFROM contents c\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE cc.category_name = '生活'\nGROUP BY cc.category_name",
+          "actual_columns": [
+            "内容分类",
+            "内容数量",
+            "平均视频时长"
+          ],
+          "expected_columns": [
+            "category_name",
+            "contents",
+            "avg_duration_seconds"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "category_name": [
+                  "内容分类"
+                ],
+                "contents": [
+                  "内容数量"
+                ],
+                "avg_duration_seconds": [
+                  "平均视频时长"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": false,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  cc.category_name AS \"内容分类\",\n  COUNT(c.content_id) AS \"内容数量\",\n  AVG(c.duration_seconds) AS \"平均视频时长\"\nFROM contents c\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE c.content_status = 'published'\n  AND cc.category_name = '生活'\nGROUP BY cc.category_name",
+          "actual_columns": [
+            "内容分类",
+            "内容数量",
+            "平均视频时长"
+          ],
+          "expected_columns": [
+            "category_name",
+            "contents",
+            "avg_duration_seconds"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": []
+        }
+      }
+    },
+    {
+      "case_id": "CONTENT_OPS-077",
+      "query": "成长级创作者数量和状态分布；请返回创作者状态、创作者数量；聚合口径：数量指标按对应业务记录计数。",
+      "gold_sql": "SELECT creator_status,COUNT(creator_id) creators FROM creators WHERE creator_level='成长' GROUP BY 1 ORDER BY 2 DESC,1",
+      "expected_columns": [
+        "creator_status",
+        "creators"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT creators.creator_status AS creator_status, COUNT(creators.creator_id) AS creator_count FROM creators WHERE creators.creator_level = '成长' GROUP BY creators.creator_status ORDER BY creator_count DESC",
+          "actual_columns": [
+            "creator_status",
+            "creator_count"
+          ],
+          "expected_columns": [
+            "creator_status",
+            "creators"
+          ],
+          "actual_row_count": 3,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "creators": [
+                  "creator_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT creators.creator_status, COUNT(*) AS creator_count FROM creators WHERE creators.creator_level = '成长' GROUP BY creators.creator_status ORDER BY creator_count DESC",
+          "actual_columns": [
+            "creator_status",
+            "creator_count"
+          ],
+          "expected_columns": [
+            "creator_status",
+            "creators"
+          ],
+          "actual_row_count": 3,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "creators": [
+                  "creator_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CONTENT_OPS-100",
+      "query": "请汇总查询2026年8月新星级创作者的每日互动率算术平均值前10名；请返回创作者名称、互动率；聚合口径：平均指标取算术平均；按核心指标从高到低展示；最多返回10行。",
+      "gold_sql": "SELECT c.creator_name,ROUND(AVG(m.interaction_rate),4) interaction_rate FROM creator_daily_metrics m JOIN creators c ON m.creator_id=c.creator_id WHERE strftime(m.metric_date,'%Y-%m')='2026-08' AND c.creator_level='新星' GROUP BY 1 ORDER BY 2 DESC,1 LIMIT 10",
+      "expected_columns": [
+        "creator_name",
+        "interaction_rate"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  c.creator_name,\n  AVG(cdm.interaction_rate) AS avg_interaction_rate\nFROM creator_daily_metrics cdm\nJOIN creators c ON cdm.creator_id = c.creator_id\nWHERE cdm.metric_date >= '2026-08-01'\n  AND cdm.metric_date < '2026-09-01'\n  AND c.creator_level = '新星'\nGROUP BY c.creator_name\nORDER BY avg_interaction_rate DESC, c.creator_name ASC\nLIMIT 10",
+          "actual_columns": [
+            "creator_name",
+            "avg_interaction_rate"
+          ],
+          "expected_columns": [
+            "creator_name",
+            "interaction_rate"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "interaction_rate": [
+                  "avg_interaction_rate"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT \n  c.creator_name,\n  AVG(cdm.interaction_rate) AS avg_interaction_rate\nFROM creator_daily_metrics cdm\nJOIN creators c ON cdm.creator_id = c.creator_id\nWHERE cdm.metric_date >= '2026-08-01' \n  AND cdm.metric_date < '2026-09-01'\n  AND c.creator_level = '新星'\nGROUP BY c.creator_name\nORDER BY avg_interaction_rate DESC, c.creator_name ASC\nLIMIT 10",
+          "actual_columns": [
+            "creator_name",
+            "avg_interaction_rate"
+          ],
+          "expected_columns": [
+            "creator_name",
+            "interaction_rate"
+          ],
+          "actual_row_count": 10,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "interaction_rate": [
+                  "avg_interaction_rate"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CONTENT_OPS-101",
+      "query": "content类型内容标签的使用次数；请返回标签名称、使用次数；聚合口径：数量指标按对应业务记录计数。",
+      "gold_sql": "SELECT t.tag_name,COUNT(r.content_id) uses FROM content_tags t JOIN content_tag_relations r ON t.content_tag_id=r.content_tag_id WHERE t.tag_type='content' GROUP BY 1 ORDER BY 2 DESC,1",
+      "expected_columns": [
+        "tag_name",
+        "uses"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT ct.tag_name, COUNT(*) AS usage_count FROM content_tag_relations ctr JOIN content_tags ct ON ctr.content_tag_id = ct.content_tag_id WHERE ct.tag_type = 'content' GROUP BY ct.tag_name ORDER BY usage_count DESC",
+          "actual_columns": [
+            "tag_name",
+            "usage_count"
+          ],
+          "expected_columns": [
+            "tag_name",
+            "uses"
+          ],
+          "actual_row_count": 4,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "uses": [
+                  "usage_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  ct.tag_name,\n  COUNT(*) AS usage_count\nFROM content_tag_relations ctr\nJOIN content_tags ct ON ctr.content_tag_id = ct.content_tag_id\nWHERE ct.tag_type = 'content'\nGROUP BY ct.tag_name\nORDER BY usage_count DESC, ct.tag_name ASC",
+          "actual_columns": [
+            "tag_name",
+            "usage_count"
+          ],
+          "expected_columns": [
+            "tag_name",
+            "uses"
+          ],
+          "actual_row_count": 4,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "uses": [
+                  "usage_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CONTENT_OPS-125",
+      "query": "流量加热系数至少3.0的热点内容数量和平均排名；请返回最低流量加热系数、内容数量、平均排名；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均；按核心指标从高到低展示。",
+      "gold_sql": "SELECT 3.0 min_traffic_boost,COUNT(content_id) contents,ROUND(AVG(ranking),2) avg_ranking FROM topic_content_relations WHERE traffic_boost>=3.0",
+      "expected_columns": [
+        "min_traffic_boost",
+        "contents",
+        "avg_ranking"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT MIN(traffic_boost) AS min_traffic_boost, COUNT(*) AS content_count, AVG(ranking) AS avg_ranking FROM topic_content_relations WHERE traffic_boost >= 3.0",
+          "actual_columns": [
+            "min_traffic_boost",
+            "content_count",
+            "avg_ranking"
+          ],
+          "expected_columns": [
+            "min_traffic_boost",
+            "contents",
+            "avg_ranking"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "contents": [
+                  "content_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT MIN(tcr.traffic_boost) AS min_traffic_boost, COUNT(*) AS content_count, AVG(tcr.ranking) AS avg_ranking FROM topic_content_relations tcr WHERE tcr.traffic_boost >= 3.0",
+          "actual_columns": [
+            "min_traffic_boost",
+            "content_count",
+            "avg_ranking"
+          ],
+          "expected_columns": [
+            "min_traffic_boost",
+            "contents",
+            "avg_ranking"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "contents": [
+                  "content_count"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "CONTENT_OPS-150",
+      "query": "请汇总human审核方式的通过率和驳回率；请返回审核方式、审核数量、通过率、驳回率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "gold_sql": "SELECT review_mode,COUNT(*) audits, ROUND(SUM(CASE WHEN audit_status='approved' THEN 1 ELSE 0 END)*1.0/COUNT(*),4) approval_rate, ROUND(SUM(CASE WHEN audit_status='rejected' THEN 1 ELSE 0 END)*1.0/COUNT(*),4) rejection_rate FROM content_audits WHERE review_mode='human' GROUP BY 1",
+      "expected_columns": [
+        "review_mode",
+        "audits",
+        "approval_rate",
+        "rejection_rate"
+      ],
+      "runs": {
+        "off": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  review_mode AS \"审核方式\",\n  COUNT(*) AS \"审核数量\",\n  ROUND(SUM(CASE WHEN audit_status = 'approved' THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(*), 0), 4) AS \"通过率\",\n  ROUND(SUM(CASE WHEN audit_status = 'rejected' THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(*), 0), 4) AS \"驳回率\"\nFROM content_audits\nWHERE review_mode = 'human'\nGROUP BY review_mode",
+          "actual_columns": [
+            "审核方式",
+            "审核数量",
+            "通过率",
+            "驳回率"
+          ],
+          "expected_columns": [
+            "review_mode",
+            "audits",
+            "approval_rate",
+            "rejection_rate"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "review_mode": [
+                  "审核方式"
+                ],
+                "audits": [
+                  "审核数量"
+                ],
+                "approval_rate": [
+                  "通过率"
+                ],
+                "rejection_rate": [
+                  "驳回率"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        },
+        "on": {
+          "result_correct": true,
+          "strict_result_correct": false,
+          "generated_sql": "SELECT\n  review_mode AS \"审核方式\",\n  COUNT(*) AS \"审核数量\",\n  ROUND(SUM(CASE WHEN audit_status = 'approved' THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(*), 0), 4) AS \"通过率\",\n  ROUND(SUM(CASE WHEN audit_status = 'rejected' THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(*), 0), 4) AS \"驳回率\"\nFROM content_audits\nWHERE review_mode = 'human'\nGROUP BY review_mode",
+          "actual_columns": [
+            "审核方式",
+            "审核数量",
+            "通过率",
+            "驳回率"
+          ],
+          "expected_columns": [
+            "review_mode",
+            "audits",
+            "approval_rate",
+            "rejection_rate"
+          ],
+          "actual_row_count": 1,
+          "candidate_mappings": [
+            {
+              "column_aliases": {
+                "review_mode": [
+                  "审核方式"
+                ],
+                "audits": [
+                  "审核数量"
+                ],
+                "approval_rate": [
+                  "通过率"
+                ],
+                "rejection_rate": [
+                  "驳回率"
+                ]
+              },
+              "extra_columns": []
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

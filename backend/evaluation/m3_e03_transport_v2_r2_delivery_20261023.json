@@ -1,0 +1,60 @@
+{
+  "stage": "M3 E03 shared bounded transport v2 r2 local delivery",
+  "run_status": "complete",
+  "date": "2026-10-23",
+  "bundle_id": "168e7bb782dd3b57b5e6f1cca01dd6290596bb81c7a362c18f67b2b10ae02224",
+  "zip_name": "M3_E03_pair24_transport_v2_20261023_r2.zip",
+  "zip_sha256": "23fbc459e132f59147a1cd389e059ef40855ef65e217fded97a76666632bc668",
+  "zip_bytes": 1070431,
+  "baseline_code_files": 98,
+  "candidate_code_files": 99,
+  "common_adaptation": {
+    "policy_id": "bird_bounded_dns_recovery_v1",
+    "source_bundle_id": "1d771f953875e0c56d91720a6fba703dd4a5f6b08896355957564efafc244d0e",
+    "files": [
+      "evaluation/bird/model.py",
+      "evaluation/bird/retrieval.py",
+      "evaluation/bird/diagnostic_runner.py"
+    ],
+    "baseline_scope": "Frozen E02 candidate plus shared transport and usage reporting",
+    "candidate_scope": "Frozen E03 candidate plus identical shared transport and usage reporting"
+  },
+  "transport_policy": {
+    "policy_id": "bird_bounded_dns_recovery_v1",
+    "max_http_attempts": 2,
+    "temporary_dns_retry_delay_seconds": 2,
+    "delay_counts_toward_wall_budget": true,
+    "system_dns_modified": false,
+    "ip_pinning": false,
+    "tls_verification": "stdlib_default",
+    "embedding_batch_size": 10,
+    "extra_dns_probes": false
+  },
+  "dns_readiness_policy": {
+    "attempts_per_host": 2,
+    "timeout_seconds": 5,
+    "retry_delay_seconds": 2,
+    "before_generation_reservation": true,
+    "model_requests": 0,
+    "system_dns_modified": false
+  },
+  "shared_model_sha256": "09d9df9cf504b78372911671d0854ce64a40c4eb09de6ad786ca3b3ab60d555c",
+  "original_e03_zip_sha256": "61e9af6373f7b41058ddba50658c9f2ea4823fde20ae1b3624ea9beac38956e9",
+  "regression_evidence": "evaluation/results/m3_e03_transport_v2_tests_final_local_20261023.json",
+  "final_specific_evidence": "evaluation/results/m3_e03_transport_v2_r2_tests_local_20261023.json",
+  "tests": {
+    "related_regression_collected": 186,
+    "related_regression_skipped_linux_only": 3,
+    "failures": 0,
+    "errors": 0,
+    "final_specific_tests": 18
+  },
+  "code_scope": "Both semantic variants receive identical bounded transport policy; E02 results remain historical evidence",
+  "live_model_requests": 0,
+  "live_database_connections": 0,
+  "server_experiment_complete": false,
+  "limitations": [
+    "Persistent DNS failure still stops safely",
+    "Live Linux isolation and actual model connectivity are verified by the server runner"
+  ]
+}

@@ -1,0 +1,1332 @@
+{
+  "stage": "M1 D3 stored PostgreSQL Gold79 offline audit",
+  "run_status": "complete",
+  "checked_at": "2026-10-10T13:19:59.034801+00:00",
+  "reviewed_case_count": 79,
+  "classic_count": 49,
+  "extension_count": 30,
+  "unchanged_duckdb_sql_count": 430,
+  "untouched_unreviewed_case_count": 351,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "live_target_verified": false,
+  "postgres_execution_verified": false,
+  "source_identity_scope": "Recorded C3 snapshot; not a current live verification",
+  "recorded_source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_postgres",
+    "backend": "postgresql",
+    "dialect": "postgres",
+    "prompt_dialect": "PostgreSQL",
+    "physical_schema": "askdata_ops",
+    "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+    "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+  },
+  "dataset_sha256": "16fe651be76e5eacde7eb30ac6b1880eb4fcb0d22eebb7b347142f26e488a34f",
+  "baseline_sha256": "0eb11d55d07cbcc8926b4c5de6657c1f897e7559387cfb5f5c884ef20ec9e6ec",
+  "c3_evidence_sha256": "2cd9a7b9ad94300b36a9494b22a76e28db2d64a91c8d23835c96e982e6ea7166",
+  "review_sha256": "fb0ba5949b9e0d68a124dc5d92c533372a423b031a613c9bc8026a153d2b8daf",
+  "cases": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "2ffa6de4378fc0905cc7f8f3ba6cab192e4e3029146737e3f5b7a2dfc76c887f"
+    },
+    {
+      "case_id": "GROWTH_OPS-002",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "9e3231c582e90ac414401eaff5bff2e51e3e000f4eb32f86a4dd9e052a13fea2"
+    },
+    {
+      "case_id": "GROWTH_OPS-003",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "ef1fc19675b9eea6bf165b457dd224230bce63d45040b1f340328c7b0e3d6694"
+    },
+    {
+      "case_id": "GROWTH_OPS-004",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "e428f5322664bcefd729a0ddeb8715f88be0c6a795af304e450f90efc6846134"
+    },
+    {
+      "case_id": "GROWTH_OPS-005",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "ab39c3aff558bc56a98d7a8b605872a0bf5b662cffb53318193eed7af9db63a2"
+    },
+    {
+      "case_id": "GROWTH_OPS-006",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "45fbb4c76892e3df1fa7608701572bd39740dfff931774842585f2ae87bd8536"
+    },
+    {
+      "case_id": "GROWTH_OPS-026",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "bcadb64d8a5f4f80effd41d3a74fe3460a2e058b7f6c44d585f3d36e90810fb6"
+    },
+    {
+      "case_id": "GROWTH_OPS-061",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "efacc4a288e322067d8bfd689d92891d9830cc8d1399784b1ba508c1810b6e9c"
+    },
+    {
+      "case_id": "GROWTH_OPS-062",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "97dcc2a43dc08de6eeedef54081474df98f227a0bd5308f0102b735f2dbad8ed"
+    },
+    {
+      "case_id": "GROWTH_OPS-063",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "346626418b7112a23fa39b77f7e04e477675606ce30a80953bd4e29e358f75bf"
+    },
+    {
+      "case_id": "GROWTH_OPS-064",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "902abd7e04ec643f19008a3ecfa3788b3e71c540041e28d185875186b0f3efd2"
+    },
+    {
+      "case_id": "GROWTH_OPS-066",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 3
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "58aec54d4de280a03b1d0a8ef93816604d385f0dcd3527fc4e5160848a2caab2"
+    },
+    {
+      "case_id": "GROWTH_OPS-086",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "9cb4b33162646fbc87222b630cfb02d91b54eb100d71db2cf4e9c6b42a3c2a61"
+    },
+    {
+      "case_id": "GROWTH_OPS-101",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "451fbeeb3566c5e90bf1f65145cfa86a9b40764291519fe6143ce2f0dff951aa"
+    },
+    {
+      "case_id": "GROWTH_OPS-131",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "r.recalled",
+            "table": "recall_results",
+            "column": "recalled",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "8095745b229570144801f827212fabf9822d534043e05f08b5d930fd6f06cb04"
+    },
+    {
+      "case_id": "GROWTH_OPS-149",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 1,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "8c3be5449f6c7fb883fac4de0bff928ae3557a171db0d79346f3f05c59594742"
+    },
+    {
+      "case_id": "GROWTH_OPS-150",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 1,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "5d58640343371ef355fe79a0a55d092eea3ff9ee11a48246f38a88b9e1668650"
+    },
+    {
+      "case_id": "CHANNEL_OPS-001",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "9f5efd73933c6ba964d31e65d81401c8a3c78eefdb5b48ea02e77d487275b6b0"
+    },
+    {
+      "case_id": "CHANNEL_OPS-002",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "30466be4f610a236106af60fb3515e8415f27e8660614db4f571ac79a7e66477"
+    },
+    {
+      "case_id": "CHANNEL_OPS-003",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "6dd62aa175a8aabc4c48147d4e5ff5aa48dcf4d6795b89ae7d1d8088874133c1"
+    },
+    {
+      "case_id": "CHANNEL_OPS-004",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "0a10953f2e02fa3538513d94cd27d59c095cb0f98139e54e0508b39d4cc4ef57"
+    },
+    {
+      "case_id": "CHANNEL_OPS-005",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "d93fb3927b4790f6bd6c62257e9ec5f4e33f372189eea47f936328cc8623be81"
+    },
+    {
+      "case_id": "CHANNEL_OPS-066",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "0746d1fe29e1173b584aa99b53cc4f9454b44926d9b2f3e9588264fb81919fb9"
+    },
+    {
+      "case_id": "CHANNEL_OPS-067",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "b73432bf3cdf3861d9c181cc49905f4644754f5ace67d1879eb956a8ed0d20f6"
+    },
+    {
+      "case_id": "CHANNEL_OPS-068",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "0746d1fe29e1173b584aa99b53cc4f9454b44926d9b2f3e9588264fb81919fb9"
+    },
+    {
+      "case_id": "CHANNEL_OPS-069",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "b73432bf3cdf3861d9c181cc49905f4644754f5ace67d1879eb956a8ed0d20f6"
+    },
+    {
+      "case_id": "CHANNEL_OPS-070",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "0746d1fe29e1173b584aa99b53cc4f9454b44926d9b2f3e9588264fb81919fb9"
+    },
+    {
+      "case_id": "CHANNEL_OPS-076",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "b09a07865eacbea25b8b96386d5b2550ec571bfef2cc0f8b07245f2f5e0f6835"
+    },
+    {
+      "case_id": "CHANNEL_OPS-077",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "90dad65a5881e52aa110a6fcf72fb03dcc09e9f2f83bbed00279daecd4eea69f"
+    },
+    {
+      "case_id": "CHANNEL_OPS-078",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "b09a07865eacbea25b8b96386d5b2550ec571bfef2cc0f8b07245f2f5e0f6835"
+    },
+    {
+      "case_id": "CHANNEL_OPS-079",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "90dad65a5881e52aa110a6fcf72fb03dcc09e9f2f83bbed00279daecd4eea69f"
+    },
+    {
+      "case_id": "CHANNEL_OPS-101",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "6d917a1339c7501c7b55daa58b3e87f8d54b727aeea2788a1fe4d6b709f4385d"
+    },
+    {
+      "case_id": "CHANNEL_OPS-141",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "b62127892214b4ef4eab4ba09ff9b8e4ac23d026dd8f138b61d712582336d91c"
+    },
+    {
+      "case_id": "CONTENT_OPS-001",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "16d2639188344e6dcce06238e133f0b7f23f58ffe28e22f58dd8000c6047f5da"
+    },
+    {
+      "case_id": "CONTENT_OPS-029",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "4dc7fb3cf5bf1b9fcdf7b4d5dadfe53b3ce49a46220ceda800b767d6d47af274"
+    },
+    {
+      "case_id": "CONTENT_OPS-030",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "7ccbebd6c1d4afe1512c4d1f5d63c9ea3520e50d7c5bd1159d8f228934363434"
+    },
+    {
+      "case_id": "CONTENT_OPS-031",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "f6d9fca85f993dd54bec9584d14bba858d025754cc015d58208d1512944e2d5a"
+    },
+    {
+      "case_id": "CONTENT_OPS-032",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "df83b93c33e335ed24f74ebd29c9c96bbd51529bbbe6fc02db72c13ae957b2b9"
+    },
+    {
+      "case_id": "CONTENT_OPS-033",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "db9b6417a591e0993d49a455c2260972c00f2505ae1037a63294ebee84a1a245"
+    },
+    {
+      "case_id": "CONTENT_OPS-034",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "5c8514df17eeb8b8273ce03656830d7c1b8c8b252195c537cbc873c893145e80"
+    },
+    {
+      "case_id": "CONTENT_OPS-035",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "b98eb639522bf338656a06077d50a18c33ffb86bd66310452a69b98fd45ec56a"
+    },
+    {
+      "case_id": "CONTENT_OPS-036",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "valid_interaction",
+            "table": "video_interactions",
+            "column": "valid_interaction",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "0e538b7f2088f298120ed8b542f4245380810f1398906b9864b254dcb363d45d"
+    },
+    {
+      "case_id": "CONTENT_OPS-051",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "ac20f5ed45e516c9841de77d6b952a28f68e4c5c7ac231a4e7cec553250d8144"
+    },
+    {
+      "case_id": "CONTENT_OPS-076",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "74232ac14d9de90a027fa4b65c567b5fa494c1dca2c1b456d354e76c892d38d5"
+    },
+    {
+      "case_id": "CONTENT_OPS-121",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "9a680cb00bb3458def6a266645c97429e97fc1a2f4f2120777c6d412292e9ae9"
+    },
+    {
+      "case_id": "CONTENT_OPS-126",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "d04cdeaabcc741439ba4ff6f4439c21ccab901237e6e139d95acc6dbcbe2a81d"
+    },
+    {
+      "case_id": "CONTENT_OPS-136",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "6c61ebc12e3922d6fb44ec2f999fe9b40cdfa0f0e73ace2177890ab5aeeead33"
+    },
+    {
+      "case_id": "CONTENT_OPS-137",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "498c5fbc3bb5d768a031a730def1205fedcb269c06fe57f1cf84cb5829bf2549"
+    },
+    {
+      "case_id": "CONTENT_OPS-138",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "b4f75017763fbbb4cf841e3ac58bf369ceaa1b0292a417270040a6433a18a566"
+    },
+    {
+      "case_id": "GROWTH_OPS-007",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "b42bcb10e7c91bc0d84eefc60e3134a55d831154a0793184203e13ddc93ebd0c"
+    },
+    {
+      "case_id": "GROWTH_OPS-050",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "a56c72e02720ccdbd8a38cf2c15a4863dca8a4fae737263ed2fe1b739459377d"
+    },
+    {
+      "case_id": "GROWTH_OPS-051",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          },
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 1,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "c7fc3014c89140e249d84bf75d1a6074d13e368d586b19bb39d6a3a6a0243219"
+    },
+    {
+      "case_id": "GROWTH_OPS-075",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          },
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "7bb41b49e367657832a41274e425a543131215c42005a5c26ed0bf23df00c547"
+    },
+    {
+      "case_id": "GROWTH_OPS-076",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "r.is_retained",
+            "table": "user_retention",
+            "column": "is_retained",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "dadf81c2af0510a9678cd1b251ae3173cfbe8cb097decabbb5603a833884f965"
+    },
+    {
+      "case_id": "GROWTH_OPS-100",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "5b58401cf68033cb93be5a5f54ea674d4f6ac18b3c092b963e6c6abaa4233eb4"
+    },
+    {
+      "case_id": "GROWTH_OPS-102",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "0ee939481ff5c0f8146e14c862ec7cb682c5643b0f87d3945f65c800f15cdeb9"
+    },
+    {
+      "case_id": "GROWTH_OPS-125",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "8bbfd5cc59e93213e70a09a62abac09f5f0f498d4e384031f055094e2aec4669"
+    },
+    {
+      "case_id": "GROWTH_OPS-126",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "t.delivered",
+            "table": "recall_touches",
+            "column": "delivered",
+            "physical_type": "bigint"
+          },
+          {
+            "expression": "t.clicked",
+            "table": "recall_touches",
+            "column": "clicked",
+            "physical_type": "bigint"
+          },
+          {
+            "expression": "r.recalled",
+            "table": "recall_results",
+            "column": "recalled",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 3,
+        "floating_division_count": 3,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "168854483a56c8659545d00bfe59e05d93c63c31a68f4ee3aa05e3b3aef807be"
+    },
+    {
+      "case_id": "GROWTH_OPS-148",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [
+          {
+            "expression": "a.is_activated",
+            "table": "user_activations",
+            "column": "is_activated",
+            "physical_type": "bigint"
+          }
+        ],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 1,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_growth_ops",
+      "postgres_sql_sha256": "11eade162914d2acf2b5eafb4d17bb25ef4da8a3a35de4563983bedd3bfc9e79"
+    },
+    {
+      "case_id": "CHANNEL_OPS-006",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "39c9f70c3aa8123b6c42370873b5daa2fd5aa41bcabc45038345508774cfbcc3"
+    },
+    {
+      "case_id": "CHANNEL_OPS-025",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 1,
+        "month_format_count": 2,
+        "substring_count": 0,
+        "nullif_count": 1,
+        "nulls_last_order_count": 3
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "3d81ee22ef6bd2c32f4d7e247a8f1a0761a517a232d08da08f8ed5ec5e8291f2"
+    },
+    {
+      "case_id": "CHANNEL_OPS-026",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 1,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "dcc73dbfdcdc12ae5699a34f56fbf5f650329435f8938c84140eaa3de5a228aa"
+    },
+    {
+      "case_id": "CHANNEL_OPS-050",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 1,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 1,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "90932c3f1ac15ef559cb05437ee5225cd80a3411fdc940b2d01f57e6eb22d9ef"
+    },
+    {
+      "case_id": "CHANNEL_OPS-051",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 2,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 2,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "7284c45bd1b4a66e635925fdea2a4ef62ad9f945d459daa8c31a11e01dfd1651"
+    },
+    {
+      "case_id": "CHANNEL_OPS-080",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "b09a07865eacbea25b8b96386d5b2550ec571bfef2cc0f8b07245f2f5e0f6835"
+    },
+    {
+      "case_id": "CHANNEL_OPS-100",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "db9b9caffc246c0b3c295d71bdcb6129fb416574c9a5219d1d7c3a41bf1b8501"
+    },
+    {
+      "case_id": "CHANNEL_OPS-102",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "4105a7db489b81ad621b8e296f068b5465be7207b253ddf91d42305f9c9bbf52"
+    },
+    {
+      "case_id": "CHANNEL_OPS-126",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "2eeafd7b704befe3cd9d4967acf4e78df5798b5077874ec7f3dd6ec9f781caff"
+    },
+    {
+      "case_id": "CHANNEL_OPS-136",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 1,
+        "month_format_count": 1,
+        "substring_count": 1,
+        "nullif_count": 1,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_channel_ops",
+      "postgres_sql_sha256": "d5d728433efe6b5507e95548c23c8b83437de865a41f0ab688f9f9ab30ed15e7"
+    },
+    {
+      "case_id": "CONTENT_OPS-002",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 1
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "a478737b1e77d5ff571f32617bb5fe82d0826f65713330178c8d481968070f87"
+    },
+    {
+      "case_id": "CONTENT_OPS-025",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "e9ea43e51ce344f207bd90e3320600a61b2a05e0fe81951d206e14eaa1200f7f"
+    },
+    {
+      "case_id": "CONTENT_OPS-026",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "6a60d11ff3cadc40b6ab6d597b2427eb0ec43d1c9bb565f52338b908faafbb99"
+    },
+    {
+      "case_id": "CONTENT_OPS-050",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "1dbb1ba5b49106a43b500036c11b2d416c3f0e2288f6b4a15124436e4f260681"
+    },
+    {
+      "case_id": "CONTENT_OPS-052",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "d13b1afccd73ec9f01b97190d8844e13941992d392dc91e614a682ecca89128b"
+    },
+    {
+      "case_id": "CONTENT_OPS-077",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "18274f49b150683a137d4f2323862fe8d01f6e5ac717a4c3609cb5360a29e7e0"
+    },
+    {
+      "case_id": "CONTENT_OPS-100",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 1,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "192a2ae8796ab6ee263d11015eb04efd072ffe569d3cc1b14bb1c71614b302cb"
+    },
+    {
+      "case_id": "CONTENT_OPS-101",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 0,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 2
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "9cbd77950a79c0756889664c0e91156379cb183da2306efad4af04ea362b35f9"
+    },
+    {
+      "case_id": "CONTENT_OPS-125",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 1,
+        "floating_division_count": 0,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "ce208a60c1d083dce5bac8daf6a5dec37d6bbd7267a012b512e7acdbb00d2cee"
+    },
+    {
+      "case_id": "CONTENT_OPS-150",
+      "status": "passed",
+      "changes": {
+        "integer_truth_tests": [],
+        "round_numeric_cast_count": 2,
+        "floating_division_count": 2,
+        "month_format_count": 0,
+        "substring_count": 0,
+        "nullif_count": 0,
+        "nulls_last_order_count": 0
+      },
+      "application_role": "demo_content_ops",
+      "postgres_sql_sha256": "817f14a2bb250ecd536a1fcefc34cded20f757c917c81c136376f5acdf4e6050"
+    }
+  ],
+  "errors": []
+}

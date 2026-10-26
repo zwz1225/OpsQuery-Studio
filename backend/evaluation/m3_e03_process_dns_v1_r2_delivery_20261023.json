@@ -1,0 +1,40 @@
+{
+  "stage": "M3 E03 process DNS r2 model-probe entry fix",
+  "run_status": "complete",
+  "date": "2026-10-23",
+  "bundle_id": "483c6a685bd96a5b5e495012ff37fc879011d4216b5fd40bb0abed2895759a2c",
+  "zip_name": "M3_E03_pair24_process_dns_v1_20261023_r2.zip",
+  "zip_sha256": "f34688a688a0bacd01cb94cc274cba4f79f112b98686a78d5cf0dec3d01a38fc",
+  "zip_bytes": 1083309,
+  "previous_bundle_id": "fe68e7c432be3bb0233ca532ce309cf5da805cca23c21ff3c8af66dd24a2e6d8",
+  "producer_sides_byte_preserved": true,
+  "changed_controllers": [
+    "m3_e03_pair_side.py"
+  ],
+  "tests_run": 40,
+  "runs": [
+    {
+      "log": "m3_e03_process_dns_v1_r2_tests_local_20261023.log",
+      "tests_run": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "log": "m3_e03_process_dns_v1_r2_bundle_tests_local_20261023.log",
+      "tests_run": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "frozen_r1_failure_reproduced": true,
+  "client_not_constructed_in_reproduced_r1_failure": true,
+  "fix": "Read workspace and bundle ID from producer m3_context.json; workspace.json has no workspace field.",
+  "server_raw_log_reviewed": false,
+  "server_model_post_verified": false,
+  "new_model_request_count": 0,
+  "live_database_connections": 0,
+  "runbook": "evaluation/M3_E03_PROCESS_DNS_R2_ENTRY_FIX_20261023.md",
+  "old_evidence_preserved": true
+}

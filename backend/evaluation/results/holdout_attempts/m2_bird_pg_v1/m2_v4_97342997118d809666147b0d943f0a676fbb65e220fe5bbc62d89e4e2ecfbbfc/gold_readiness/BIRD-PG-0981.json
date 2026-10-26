@@ -1,0 +1,53 @@
+{
+  "budget": {
+    "chat_http_attempts": 0,
+    "elapsed_seconds": 3.479,
+    "generation_attempts": {},
+    "model_events": [],
+    "model_http_attempts": 0,
+    "sql_tool_calls": 0,
+    "validation_attempts": {}
+  },
+  "case_id": "BIRD-PG-0981",
+  "complete": true,
+  "database_id": "formula_1",
+  "errors": [],
+  "ex_correct": null,
+  "gold_sql_sha256": "d0765b29142e6ab4c19778800893747f48d16f7fde775e3546883bbc825ae970",
+  "mode": "gold",
+  "new_model_request_count": 0,
+  "query_role": "askdata_m2_ro_formula_1",
+  "result": {
+    "answer_details": "scorer-only; no answer rows, counts or digests exposed",
+    "complete": true,
+    "native_hashable": true,
+    "within_payload_limit": true,
+    "within_row_limit": true
+  },
+  "runtime_closed": true,
+  "schema_selection_policy": {
+    "coverage_enabled": false,
+    "coverage_floor": null,
+    "coverage_gain": null,
+    "coverage_scope": null,
+    "development_candidate": false,
+    "formal_protocol_override": false,
+    "intent_source": null,
+    "max_coverage_fields": 0,
+    "max_fields": 20,
+    "metadata_match": null,
+    "policy_id": "bird_rerank_055_top20_v1",
+    "threshold": 0.55
+  },
+  "source_identity": {
+    "backend": "postgresql",
+    "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+    "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918",
+    "dialect": "postgres",
+    "logical_database_id": "formula_1",
+    "physical_schema": "public",
+    "prompt_dialect": "PostgreSQL",
+    "source_id": "bird_mini_dev_postgres_formula_1"
+  },
+  "status": "gold_ready"
+}

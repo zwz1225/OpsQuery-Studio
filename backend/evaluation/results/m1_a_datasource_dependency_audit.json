@@ -1,0 +1,1972 @@
+{
+  "audit_version": 1,
+  "generated_at": "2026-10-06T16:02:05.384028+00:00",
+  "scope": "M1 step 1: static dependency audit and adaptation design",
+  "database_connected": false,
+  "runtime_behavior_changed": false,
+  "summary": {
+    "table_count": 41,
+    "field_count": 276,
+    "relation_count": 53,
+    "csv_file_count": 41,
+    "declared_total_rows": 722732,
+    "schema_declared_total_rows": 722732,
+    "case_count": 430,
+    "classic_case_count": 49,
+    "source_types": {
+      "BIGINT": 54,
+      "DATE": 16,
+      "DOUBLE": 17,
+      "TIMESTAMP": 21,
+      "VARCHAR": 168
+    },
+    "business_types": {
+      "数值": 17,
+      "整数": 54,
+      "文本": 168,
+      "日期": 37
+    },
+    "fields_with_stored_profile": 276,
+    "fields_with_index_content": 276,
+    "fields_with_declared_nulls": 5,
+    "prebuilt_only_tables": 41,
+    "dependency_hit_count": 84,
+    "dependency_file_count": 33
+  },
+  "checks": {
+    "unique_logical_table_ids": true,
+    "manifest_table_count_matches": true,
+    "manifest_rows_match_schema": true,
+    "csv_names_match_catalog": true,
+    "relation_fields_exist": true
+  },
+  "limitations": [
+    "Counts and null information come from stored metadata, not a recount of all CSV records.",
+    "Pattern matches are navigation evidence, not an exhaustive semantic dependency analysis.",
+    "No PostgreSQL connection, type conversion, SQL execution, or migration has been verified."
+  ],
+  "gold_sql_features": {
+    "strftime": {
+      "case_count": 190,
+      "case_ids": [
+        "GROWTH_OPS-001",
+        "GROWTH_OPS-002",
+        "GROWTH_OPS-003",
+        "GROWTH_OPS-004",
+        "GROWTH_OPS-005",
+        "GROWTH_OPS-006",
+        "GROWTH_OPS-007",
+        "GROWTH_OPS-008",
+        "GROWTH_OPS-009",
+        "GROWTH_OPS-010",
+        "GROWTH_OPS-011",
+        "GROWTH_OPS-012",
+        "GROWTH_OPS-013",
+        "GROWTH_OPS-014",
+        "GROWTH_OPS-015",
+        "GROWTH_OPS-016",
+        "GROWTH_OPS-017",
+        "GROWTH_OPS-018",
+        "GROWTH_OPS-019",
+        "GROWTH_OPS-020",
+        "GROWTH_OPS-021",
+        "GROWTH_OPS-022",
+        "GROWTH_OPS-023",
+        "GROWTH_OPS-024",
+        "GROWTH_OPS-025",
+        "GROWTH_OPS-026",
+        "GROWTH_OPS-027",
+        "GROWTH_OPS-028",
+        "GROWTH_OPS-029",
+        "GROWTH_OPS-030",
+        "GROWTH_OPS-031",
+        "GROWTH_OPS-032",
+        "GROWTH_OPS-033",
+        "GROWTH_OPS-034",
+        "GROWTH_OPS-035",
+        "GROWTH_OPS-041",
+        "GROWTH_OPS-042",
+        "GROWTH_OPS-043",
+        "GROWTH_OPS-044",
+        "GROWTH_OPS-045",
+        "GROWTH_OPS-046",
+        "GROWTH_OPS-047",
+        "GROWTH_OPS-048",
+        "GROWTH_OPS-049",
+        "GROWTH_OPS-050",
+        "GROWTH_OPS-051",
+        "GROWTH_OPS-052",
+        "GROWTH_OPS-053",
+        "GROWTH_OPS-054",
+        "GROWTH_OPS-055",
+        "GROWTH_OPS-071",
+        "GROWTH_OPS-072",
+        "GROWTH_OPS-073",
+        "GROWTH_OPS-074",
+        "GROWTH_OPS-075",
+        "GROWTH_OPS-081",
+        "GROWTH_OPS-082",
+        "GROWTH_OPS-083",
+        "GROWTH_OPS-084",
+        "GROWTH_OPS-085",
+        "GROWTH_OPS-091",
+        "GROWTH_OPS-092",
+        "GROWTH_OPS-093",
+        "GROWTH_OPS-094",
+        "GROWTH_OPS-095",
+        "GROWTH_OPS-096",
+        "GROWTH_OPS-097",
+        "GROWTH_OPS-098",
+        "GROWTH_OPS-099",
+        "GROWTH_OPS-100",
+        "GROWTH_OPS-116",
+        "GROWTH_OPS-117",
+        "GROWTH_OPS-118",
+        "GROWTH_OPS-119",
+        "GROWTH_OPS-120",
+        "GROWTH_OPS-141",
+        "GROWTH_OPS-142",
+        "GROWTH_OPS-143",
+        "GROWTH_OPS-144",
+        "GROWTH_OPS-145",
+        "GROWTH_OPS-146",
+        "GROWTH_OPS-147",
+        "GROWTH_OPS-148",
+        "GROWTH_OPS-149",
+        "GROWTH_OPS-150",
+        "CHANNEL_OPS-001",
+        "CHANNEL_OPS-002",
+        "CHANNEL_OPS-003",
+        "CHANNEL_OPS-004",
+        "CHANNEL_OPS-005",
+        "CHANNEL_OPS-006",
+        "CHANNEL_OPS-007",
+        "CHANNEL_OPS-008",
+        "CHANNEL_OPS-009",
+        "CHANNEL_OPS-010",
+        "CHANNEL_OPS-011",
+        "CHANNEL_OPS-012",
+        "CHANNEL_OPS-013",
+        "CHANNEL_OPS-014",
+        "CHANNEL_OPS-015",
+        "CHANNEL_OPS-021",
+        "CHANNEL_OPS-022",
+        "CHANNEL_OPS-023",
+        "CHANNEL_OPS-024",
+        "CHANNEL_OPS-025",
+        "CHANNEL_OPS-026",
+        "CHANNEL_OPS-027",
+        "CHANNEL_OPS-028",
+        "CHANNEL_OPS-029",
+        "CHANNEL_OPS-030",
+        "CHANNEL_OPS-041",
+        "CHANNEL_OPS-042",
+        "CHANNEL_OPS-043",
+        "CHANNEL_OPS-044",
+        "CHANNEL_OPS-045",
+        "CHANNEL_OPS-051",
+        "CHANNEL_OPS-052",
+        "CHANNEL_OPS-053",
+        "CHANNEL_OPS-054",
+        "CHANNEL_OPS-055",
+        "CHANNEL_OPS-071",
+        "CHANNEL_OPS-072",
+        "CHANNEL_OPS-073",
+        "CHANNEL_OPS-074",
+        "CHANNEL_OPS-075",
+        "CHANNEL_OPS-081",
+        "CHANNEL_OPS-082",
+        "CHANNEL_OPS-083",
+        "CHANNEL_OPS-084",
+        "CHANNEL_OPS-085",
+        "CHANNEL_OPS-091",
+        "CHANNEL_OPS-092",
+        "CHANNEL_OPS-093",
+        "CHANNEL_OPS-094",
+        "CHANNEL_OPS-095",
+        "CHANNEL_OPS-136",
+        "CHANNEL_OPS-137",
+        "CHANNEL_OPS-138",
+        "CHANNEL_OPS-139",
+        "CHANNEL_OPS-140",
+        "CONTENT_OPS-001",
+        "CONTENT_OPS-002",
+        "CONTENT_OPS-003",
+        "CONTENT_OPS-004",
+        "CONTENT_OPS-005",
+        "CONTENT_OPS-016",
+        "CONTENT_OPS-017",
+        "CONTENT_OPS-018",
+        "CONTENT_OPS-019",
+        "CONTENT_OPS-020",
+        "CONTENT_OPS-036",
+        "CONTENT_OPS-037",
+        "CONTENT_OPS-038",
+        "CONTENT_OPS-039",
+        "CONTENT_OPS-040",
+        "CONTENT_OPS-046",
+        "CONTENT_OPS-047",
+        "CONTENT_OPS-048",
+        "CONTENT_OPS-049",
+        "CONTENT_OPS-050",
+        "CONTENT_OPS-066",
+        "CONTENT_OPS-067",
+        "CONTENT_OPS-068",
+        "CONTENT_OPS-069",
+        "CONTENT_OPS-070",
+        "CONTENT_OPS-086",
+        "CONTENT_OPS-087",
+        "CONTENT_OPS-088",
+        "CONTENT_OPS-089",
+        "CONTENT_OPS-090",
+        "CONTENT_OPS-091",
+        "CONTENT_OPS-092",
+        "CONTENT_OPS-093",
+        "CONTENT_OPS-094",
+        "CONTENT_OPS-095",
+        "CONTENT_OPS-096",
+        "CONTENT_OPS-097",
+        "CONTENT_OPS-098",
+        "CONTENT_OPS-099",
+        "CONTENT_OPS-100",
+        "CONTENT_OPS-116",
+        "CONTENT_OPS-117",
+        "CONTENT_OPS-118",
+        "CONTENT_OPS-119",
+        "CONTENT_OPS-120",
+        "CONTENT_OPS-141",
+        "CONTENT_OPS-142",
+        "CONTENT_OPS-143",
+        "CONTENT_OPS-144",
+        "CONTENT_OPS-145"
+      ]
+    },
+    "date_trunc": {
+      "case_count": 0,
+      "case_ids": []
+    },
+    "interval": {
+      "case_count": 0,
+      "case_ids": []
+    },
+    "division_operator": {
+      "case_count": 130,
+      "case_ids": [
+        "GROWTH_OPS-051",
+        "GROWTH_OPS-052",
+        "GROWTH_OPS-053",
+        "GROWTH_OPS-054",
+        "GROWTH_OPS-055",
+        "GROWTH_OPS-056",
+        "GROWTH_OPS-057",
+        "GROWTH_OPS-058",
+        "GROWTH_OPS-059",
+        "GROWTH_OPS-060",
+        "GROWTH_OPS-071",
+        "GROWTH_OPS-072",
+        "GROWTH_OPS-073",
+        "GROWTH_OPS-074",
+        "GROWTH_OPS-075",
+        "GROWTH_OPS-076",
+        "GROWTH_OPS-077",
+        "GROWTH_OPS-078",
+        "GROWTH_OPS-079",
+        "GROWTH_OPS-080",
+        "GROWTH_OPS-081",
+        "GROWTH_OPS-082",
+        "GROWTH_OPS-083",
+        "GROWTH_OPS-084",
+        "GROWTH_OPS-085",
+        "GROWTH_OPS-091",
+        "GROWTH_OPS-092",
+        "GROWTH_OPS-093",
+        "GROWTH_OPS-094",
+        "GROWTH_OPS-095",
+        "GROWTH_OPS-096",
+        "GROWTH_OPS-097",
+        "GROWTH_OPS-098",
+        "GROWTH_OPS-099",
+        "GROWTH_OPS-100",
+        "GROWTH_OPS-126",
+        "GROWTH_OPS-127",
+        "GROWTH_OPS-128",
+        "GROWTH_OPS-129",
+        "GROWTH_OPS-130",
+        "GROWTH_OPS-131",
+        "GROWTH_OPS-132",
+        "GROWTH_OPS-133",
+        "GROWTH_OPS-134",
+        "GROWTH_OPS-135",
+        "GROWTH_OPS-141",
+        "GROWTH_OPS-142",
+        "GROWTH_OPS-143",
+        "GROWTH_OPS-144",
+        "GROWTH_OPS-145",
+        "GROWTH_OPS-146",
+        "GROWTH_OPS-147",
+        "GROWTH_OPS-148",
+        "GROWTH_OPS-149",
+        "GROWTH_OPS-150",
+        "CHANNEL_OPS-021",
+        "CHANNEL_OPS-022",
+        "CHANNEL_OPS-023",
+        "CHANNEL_OPS-024",
+        "CHANNEL_OPS-025",
+        "CHANNEL_OPS-026",
+        "CHANNEL_OPS-027",
+        "CHANNEL_OPS-028",
+        "CHANNEL_OPS-029",
+        "CHANNEL_OPS-030",
+        "CHANNEL_OPS-036",
+        "CHANNEL_OPS-037",
+        "CHANNEL_OPS-038",
+        "CHANNEL_OPS-039",
+        "CHANNEL_OPS-040",
+        "CHANNEL_OPS-041",
+        "CHANNEL_OPS-042",
+        "CHANNEL_OPS-043",
+        "CHANNEL_OPS-044",
+        "CHANNEL_OPS-045",
+        "CHANNEL_OPS-046",
+        "CHANNEL_OPS-047",
+        "CHANNEL_OPS-048",
+        "CHANNEL_OPS-049",
+        "CHANNEL_OPS-050",
+        "CHANNEL_OPS-051",
+        "CHANNEL_OPS-052",
+        "CHANNEL_OPS-053",
+        "CHANNEL_OPS-054",
+        "CHANNEL_OPS-055",
+        "CHANNEL_OPS-056",
+        "CHANNEL_OPS-057",
+        "CHANNEL_OPS-058",
+        "CHANNEL_OPS-059",
+        "CHANNEL_OPS-060",
+        "CHANNEL_OPS-061",
+        "CHANNEL_OPS-062",
+        "CHANNEL_OPS-063",
+        "CHANNEL_OPS-064",
+        "CHANNEL_OPS-065",
+        "CHANNEL_OPS-071",
+        "CHANNEL_OPS-072",
+        "CHANNEL_OPS-073",
+        "CHANNEL_OPS-074",
+        "CHANNEL_OPS-075",
+        "CHANNEL_OPS-136",
+        "CHANNEL_OPS-137",
+        "CHANNEL_OPS-138",
+        "CHANNEL_OPS-139",
+        "CHANNEL_OPS-140",
+        "CONTENT_OPS-006",
+        "CONTENT_OPS-007",
+        "CONTENT_OPS-008",
+        "CONTENT_OPS-009",
+        "CONTENT_OPS-010",
+        "CONTENT_OPS-011",
+        "CONTENT_OPS-012",
+        "CONTENT_OPS-013",
+        "CONTENT_OPS-014",
+        "CONTENT_OPS-015",
+        "CONTENT_OPS-041",
+        "CONTENT_OPS-042",
+        "CONTENT_OPS-043",
+        "CONTENT_OPS-044",
+        "CONTENT_OPS-045",
+        "CONTENT_OPS-131",
+        "CONTENT_OPS-132",
+        "CONTENT_OPS-133",
+        "CONTENT_OPS-134",
+        "CONTENT_OPS-135",
+        "CONTENT_OPS-146",
+        "CONTENT_OPS-147",
+        "CONTENT_OPS-148",
+        "CONTENT_OPS-149",
+        "CONTENT_OPS-150"
+      ]
+    },
+    "cast": {
+      "case_count": 10,
+      "case_ids": [
+        "CONTENT_OPS-036",
+        "CONTENT_OPS-037",
+        "CONTENT_OPS-038",
+        "CONTENT_OPS-039",
+        "CONTENT_OPS-040",
+        "CONTENT_OPS-141",
+        "CONTENT_OPS-142",
+        "CONTENT_OPS-143",
+        "CONTENT_OPS-144",
+        "CONTENT_OPS-145"
+      ]
+    },
+    "order_by": {
+      "case_count": 310,
+      "case_ids": [
+        "GROWTH_OPS-001",
+        "GROWTH_OPS-002",
+        "GROWTH_OPS-003",
+        "GROWTH_OPS-004",
+        "GROWTH_OPS-005",
+        "GROWTH_OPS-006",
+        "GROWTH_OPS-007",
+        "GROWTH_OPS-008",
+        "GROWTH_OPS-009",
+        "GROWTH_OPS-010",
+        "GROWTH_OPS-011",
+        "GROWTH_OPS-012",
+        "GROWTH_OPS-013",
+        "GROWTH_OPS-014",
+        "GROWTH_OPS-015",
+        "GROWTH_OPS-016",
+        "GROWTH_OPS-017",
+        "GROWTH_OPS-018",
+        "GROWTH_OPS-019",
+        "GROWTH_OPS-020",
+        "GROWTH_OPS-021",
+        "GROWTH_OPS-022",
+        "GROWTH_OPS-023",
+        "GROWTH_OPS-024",
+        "GROWTH_OPS-025",
+        "GROWTH_OPS-026",
+        "GROWTH_OPS-027",
+        "GROWTH_OPS-028",
+        "GROWTH_OPS-029",
+        "GROWTH_OPS-030",
+        "GROWTH_OPS-031",
+        "GROWTH_OPS-032",
+        "GROWTH_OPS-033",
+        "GROWTH_OPS-034",
+        "GROWTH_OPS-035",
+        "GROWTH_OPS-036",
+        "GROWTH_OPS-037",
+        "GROWTH_OPS-038",
+        "GROWTH_OPS-039",
+        "GROWTH_OPS-040",
+        "GROWTH_OPS-041",
+        "GROWTH_OPS-042",
+        "GROWTH_OPS-043",
+        "GROWTH_OPS-044",
+        "GROWTH_OPS-045",
+        "GROWTH_OPS-046",
+        "GROWTH_OPS-047",
+        "GROWTH_OPS-048",
+        "GROWTH_OPS-049",
+        "GROWTH_OPS-050",
+        "GROWTH_OPS-051",
+        "GROWTH_OPS-052",
+        "GROWTH_OPS-053",
+        "GROWTH_OPS-054",
+        "GROWTH_OPS-055",
+        "GROWTH_OPS-056",
+        "GROWTH_OPS-057",
+        "GROWTH_OPS-058",
+        "GROWTH_OPS-059",
+        "GROWTH_OPS-060",
+        "GROWTH_OPS-066",
+        "GROWTH_OPS-067",
+        "GROWTH_OPS-068",
+        "GROWTH_OPS-069",
+        "GROWTH_OPS-070",
+        "GROWTH_OPS-076",
+        "GROWTH_OPS-077",
+        "GROWTH_OPS-078",
+        "GROWTH_OPS-079",
+        "GROWTH_OPS-080",
+        "GROWTH_OPS-081",
+        "GROWTH_OPS-082",
+        "GROWTH_OPS-083",
+        "GROWTH_OPS-084",
+        "GROWTH_OPS-085",
+        "GROWTH_OPS-101",
+        "GROWTH_OPS-102",
+        "GROWTH_OPS-103",
+        "GROWTH_OPS-104",
+        "GROWTH_OPS-105",
+        "GROWTH_OPS-106",
+        "GROWTH_OPS-107",
+        "GROWTH_OPS-108",
+        "GROWTH_OPS-109",
+        "GROWTH_OPS-110",
+        "GROWTH_OPS-111",
+        "GROWTH_OPS-112",
+        "GROWTH_OPS-113",
+        "GROWTH_OPS-114",
+        "GROWTH_OPS-115",
+        "GROWTH_OPS-116",
+        "GROWTH_OPS-117",
+        "GROWTH_OPS-118",
+        "GROWTH_OPS-119",
+        "GROWTH_OPS-120",
+        "GROWTH_OPS-121",
+        "GROWTH_OPS-122",
+        "GROWTH_OPS-123",
+        "GROWTH_OPS-124",
+        "GROWTH_OPS-125",
+        "GROWTH_OPS-131",
+        "GROWTH_OPS-132",
+        "GROWTH_OPS-133",
+        "GROWTH_OPS-134",
+        "GROWTH_OPS-135",
+        "GROWTH_OPS-141",
+        "GROWTH_OPS-142",
+        "GROWTH_OPS-143",
+        "GROWTH_OPS-144",
+        "GROWTH_OPS-145",
+        "GROWTH_OPS-146",
+        "GROWTH_OPS-147",
+        "GROWTH_OPS-148",
+        "GROWTH_OPS-149",
+        "GROWTH_OPS-150",
+        "CHANNEL_OPS-001",
+        "CHANNEL_OPS-002",
+        "CHANNEL_OPS-003",
+        "CHANNEL_OPS-004",
+        "CHANNEL_OPS-005",
+        "CHANNEL_OPS-006",
+        "CHANNEL_OPS-007",
+        "CHANNEL_OPS-008",
+        "CHANNEL_OPS-009",
+        "CHANNEL_OPS-010",
+        "CHANNEL_OPS-011",
+        "CHANNEL_OPS-012",
+        "CHANNEL_OPS-013",
+        "CHANNEL_OPS-014",
+        "CHANNEL_OPS-015",
+        "CHANNEL_OPS-021",
+        "CHANNEL_OPS-022",
+        "CHANNEL_OPS-023",
+        "CHANNEL_OPS-024",
+        "CHANNEL_OPS-025",
+        "CHANNEL_OPS-026",
+        "CHANNEL_OPS-027",
+        "CHANNEL_OPS-028",
+        "CHANNEL_OPS-029",
+        "CHANNEL_OPS-030",
+        "CHANNEL_OPS-041",
+        "CHANNEL_OPS-042",
+        "CHANNEL_OPS-043",
+        "CHANNEL_OPS-044",
+        "CHANNEL_OPS-045",
+        "CHANNEL_OPS-051",
+        "CHANNEL_OPS-052",
+        "CHANNEL_OPS-053",
+        "CHANNEL_OPS-054",
+        "CHANNEL_OPS-055",
+        "CHANNEL_OPS-056",
+        "CHANNEL_OPS-057",
+        "CHANNEL_OPS-058",
+        "CHANNEL_OPS-059",
+        "CHANNEL_OPS-060",
+        "CHANNEL_OPS-071",
+        "CHANNEL_OPS-072",
+        "CHANNEL_OPS-073",
+        "CHANNEL_OPS-074",
+        "CHANNEL_OPS-075",
+        "CHANNEL_OPS-081",
+        "CHANNEL_OPS-082",
+        "CHANNEL_OPS-083",
+        "CHANNEL_OPS-084",
+        "CHANNEL_OPS-085",
+        "CHANNEL_OPS-086",
+        "CHANNEL_OPS-087",
+        "CHANNEL_OPS-088",
+        "CHANNEL_OPS-089",
+        "CHANNEL_OPS-090",
+        "CHANNEL_OPS-101",
+        "CHANNEL_OPS-102",
+        "CHANNEL_OPS-103",
+        "CHANNEL_OPS-104",
+        "CHANNEL_OPS-105",
+        "CHANNEL_OPS-106",
+        "CHANNEL_OPS-107",
+        "CHANNEL_OPS-108",
+        "CHANNEL_OPS-109",
+        "CHANNEL_OPS-110",
+        "CHANNEL_OPS-111",
+        "CHANNEL_OPS-112",
+        "CHANNEL_OPS-113",
+        "CHANNEL_OPS-114",
+        "CHANNEL_OPS-115",
+        "CHANNEL_OPS-116",
+        "CHANNEL_OPS-117",
+        "CHANNEL_OPS-118",
+        "CHANNEL_OPS-119",
+        "CHANNEL_OPS-120",
+        "CHANNEL_OPS-126",
+        "CHANNEL_OPS-127",
+        "CHANNEL_OPS-128",
+        "CHANNEL_OPS-129",
+        "CHANNEL_OPS-130",
+        "CHANNEL_OPS-136",
+        "CHANNEL_OPS-137",
+        "CHANNEL_OPS-138",
+        "CHANNEL_OPS-139",
+        "CHANNEL_OPS-140",
+        "CHANNEL_OPS-141",
+        "CHANNEL_OPS-142",
+        "CHANNEL_OPS-143",
+        "CHANNEL_OPS-144",
+        "CHANNEL_OPS-145",
+        "CHANNEL_OPS-146",
+        "CHANNEL_OPS-147",
+        "CHANNEL_OPS-148",
+        "CHANNEL_OPS-149",
+        "CHANNEL_OPS-150",
+        "CONTENT_OPS-001",
+        "CONTENT_OPS-002",
+        "CONTENT_OPS-003",
+        "CONTENT_OPS-004",
+        "CONTENT_OPS-005",
+        "CONTENT_OPS-016",
+        "CONTENT_OPS-017",
+        "CONTENT_OPS-018",
+        "CONTENT_OPS-019",
+        "CONTENT_OPS-020",
+        "CONTENT_OPS-021",
+        "CONTENT_OPS-022",
+        "CONTENT_OPS-023",
+        "CONTENT_OPS-024",
+        "CONTENT_OPS-025",
+        "CONTENT_OPS-031",
+        "CONTENT_OPS-032",
+        "CONTENT_OPS-033",
+        "CONTENT_OPS-034",
+        "CONTENT_OPS-035",
+        "CONTENT_OPS-036",
+        "CONTENT_OPS-037",
+        "CONTENT_OPS-038",
+        "CONTENT_OPS-039",
+        "CONTENT_OPS-040",
+        "CONTENT_OPS-046",
+        "CONTENT_OPS-047",
+        "CONTENT_OPS-048",
+        "CONTENT_OPS-049",
+        "CONTENT_OPS-050",
+        "CONTENT_OPS-056",
+        "CONTENT_OPS-057",
+        "CONTENT_OPS-058",
+        "CONTENT_OPS-059",
+        "CONTENT_OPS-060",
+        "CONTENT_OPS-066",
+        "CONTENT_OPS-067",
+        "CONTENT_OPS-068",
+        "CONTENT_OPS-069",
+        "CONTENT_OPS-070",
+        "CONTENT_OPS-071",
+        "CONTENT_OPS-072",
+        "CONTENT_OPS-073",
+        "CONTENT_OPS-074",
+        "CONTENT_OPS-075",
+        "CONTENT_OPS-076",
+        "CONTENT_OPS-077",
+        "CONTENT_OPS-078",
+        "CONTENT_OPS-079",
+        "CONTENT_OPS-080",
+        "CONTENT_OPS-086",
+        "CONTENT_OPS-087",
+        "CONTENT_OPS-088",
+        "CONTENT_OPS-089",
+        "CONTENT_OPS-090",
+        "CONTENT_OPS-091",
+        "CONTENT_OPS-092",
+        "CONTENT_OPS-093",
+        "CONTENT_OPS-094",
+        "CONTENT_OPS-095",
+        "CONTENT_OPS-096",
+        "CONTENT_OPS-097",
+        "CONTENT_OPS-098",
+        "CONTENT_OPS-099",
+        "CONTENT_OPS-100",
+        "CONTENT_OPS-101",
+        "CONTENT_OPS-102",
+        "CONTENT_OPS-103",
+        "CONTENT_OPS-104",
+        "CONTENT_OPS-105",
+        "CONTENT_OPS-106",
+        "CONTENT_OPS-107",
+        "CONTENT_OPS-108",
+        "CONTENT_OPS-109",
+        "CONTENT_OPS-110",
+        "CONTENT_OPS-111",
+        "CONTENT_OPS-112",
+        "CONTENT_OPS-113",
+        "CONTENT_OPS-114",
+        "CONTENT_OPS-115",
+        "CONTENT_OPS-116",
+        "CONTENT_OPS-117",
+        "CONTENT_OPS-118",
+        "CONTENT_OPS-119",
+        "CONTENT_OPS-120",
+        "CONTENT_OPS-126",
+        "CONTENT_OPS-127",
+        "CONTENT_OPS-128",
+        "CONTENT_OPS-129",
+        "CONTENT_OPS-130",
+        "CONTENT_OPS-136",
+        "CONTENT_OPS-137",
+        "CONTENT_OPS-138",
+        "CONTENT_OPS-139",
+        "CONTENT_OPS-140",
+        "CONTENT_OPS-141",
+        "CONTENT_OPS-142",
+        "CONTENT_OPS-143",
+        "CONTENT_OPS-144",
+        "CONTENT_OPS-145"
+      ]
+    }
+  },
+  "source_files": [
+    {
+      "path": "app/__init__.py",
+      "sha256": "355b723e052e3e6c211f4cd922a2cccafd16836360ce633afbafdbf32bdd90ad"
+    },
+    {
+      "path": "app/api/__init__.py",
+      "sha256": "e13d97d643b76827935fb88232e4012ce4161d82adffe01e040e48090b2887ea"
+    },
+    {
+      "path": "app/api/routes.py",
+      "sha256": "3237efe75ad8141ca01d03b08e303c8bc30130f1dbeddd5f01e62e52087f893c"
+    },
+    {
+      "path": "app/config.py",
+      "sha256": "53c4b03545e0bcc90157fd6d3c67f5694ab6d569c00a8b7a8d05289433d7fc51"
+    },
+    {
+      "path": "app/database.py",
+      "sha256": "30ad145862f13262fcc4b6c3881a4823533dda3814fc9e062ba069780f92a863"
+    },
+    {
+      "path": "app/datasources/__init__.py",
+      "sha256": "660dc93b3ad4e3454e433dd79bcfd7f2db67274baeac0ebf7d84682296b117b2"
+    },
+    {
+      "path": "app/datasources/contracts.py",
+      "sha256": "b9da804d820b1d5f20fb642cf60bf37039a6fb6dd33e6212081b3335dd32c869"
+    },
+    {
+      "path": "app/datasources/csv_metadata.py",
+      "sha256": "ef68964f78da54eee5b0cd64b8f0dd3c53adde04adbcfc9cf471494f9e144638"
+    },
+    {
+      "path": "app/datasources/runtime.py",
+      "sha256": "14b4db95fdfbac1e1e026bd63ab789a138d33716adde73e201987d7b93ff436f"
+    },
+    {
+      "path": "app/datasources/sql_policy.py",
+      "sha256": "f76ba902978aba54efc56c5f81042f45e178a1840e0620b0a250da1bc1aef2c9"
+    },
+    {
+      "path": "app/datasources/values.py",
+      "sha256": "869fa4ba783aebb71a5a643ede27c1997894e1740e865f205fd935790662e7df"
+    },
+    {
+      "path": "app/errors.py",
+      "sha256": "9b0161a00017954283b60ec0e1af69d02d45fc3c11b720ea226dc43625d3bce2"
+    },
+    {
+      "path": "app/main.py",
+      "sha256": "cae83be9b955964b25f17045a742226fae2db7751c8567e5263c88ea0a785c0f"
+    },
+    {
+      "path": "app/mcp_runtime/__init__.py",
+      "sha256": "25afe0d37fd99611244cc7ff3e903cfa5c2dade31a15870e15269a609c6a7053"
+    },
+    {
+      "path": "app/mcp_runtime/client.py",
+      "sha256": "549774b6d3b0b5d2903e56f538e61299a3c9a69abcb2be6c5c155f82d0d3e51d"
+    },
+    {
+      "path": "app/mcp_runtime/schemas.py",
+      "sha256": "d71c055298a5a338f5126235c5604ce0ca96cb719db629d06a91b23a03d3787a"
+    },
+    {
+      "path": "app/mcp_runtime/server.py",
+      "sha256": "67627c0583ef09b4818165d717bf202adcb51f545b037fd5de2d0c754187bbbb"
+    },
+    {
+      "path": "app/mcp_runtime/tools/__init__.py",
+      "sha256": "b465bdc3de9e8878a59a8bd244b2e42fa03594e886d90ac5a6b218bf3892535f"
+    },
+    {
+      "path": "app/mcp_runtime/tools/database_tools.py",
+      "sha256": "35940ffb279c4c5275be362a46ed59cb26c8ae1284a694768d353fa52d1267bc"
+    },
+    {
+      "path": "app/mcp_runtime/tools/presentation_tools.py",
+      "sha256": "1524ab3baaf0ecca5e8df1b03e5682f6dd8bdfff37e3f2b64b7cf88aa9f19653"
+    },
+    {
+      "path": "app/mcp_runtime/tools/time_tools.py",
+      "sha256": "59a95659eafcc50f4c9ef2b2d1f783a04617e29018251fce64fb3af55d500974"
+    },
+    {
+      "path": "app/model_client.py",
+      "sha256": "f68cd0ced71c42e6e18464f86310aed22b71386f63f1160e49fad8bd02c92093"
+    },
+    {
+      "path": "app/models.py",
+      "sha256": "2fea8f78c9078f6bbf876d18193d4503b42f94daa4ba5c2f31b6fdd8784cf83e"
+    },
+    {
+      "path": "app/preprocessing.py",
+      "sha256": "28a9359411a925147457f5514837471e75be910e182540344add5aac21a000a2"
+    },
+    {
+      "path": "app/querying/__init__.py",
+      "sha256": "6dc948905075e824c2a2607ef66f9b842d53c013f2644bd78ed7551eac2c652c"
+    },
+    {
+      "path": "app/querying/constraint_planner.py",
+      "sha256": "efdda54af16f6e1d3d4c212779ccc34e18a07fa7cb27ae8ca7038064522eebd1"
+    },
+    {
+      "path": "app/querying/constraint_validator.py",
+      "sha256": "050fe69f979082be62d621127d159a6e6fca3cc566144ef10484a5bf912b4ecf"
+    },
+    {
+      "path": "app/querying/data_qa_agent.py",
+      "sha256": "59a3faf139e9da26e5fd373f20f1e2a85166363eea9b1c8e9888740ec49b6fe3"
+    },
+    {
+      "path": "app/querying/duckdb_engine.py",
+      "sha256": "0ad6bd9980b1962dd630519cb9d8256b06f7aabbaa3446fb9009f4a27aa0cc26"
+    },
+    {
+      "path": "app/querying/metric_planner.py",
+      "sha256": "76ad57b6f682074eb56b71101c5cc85d0483e9affcab2315ca5d4ab5c70dffa8"
+    },
+    {
+      "path": "app/querying/models.py",
+      "sha256": "4472388a7ae0bcf5803b32b02c6290757ffc4ae62c7ea2611a9eac5de7499ad3"
+    },
+    {
+      "path": "app/querying/response_generator.py",
+      "sha256": "c99a6d87dd7774a003a076f4ade68b4ba364b497a6a5fc5c3cbe3ea4b524561c"
+    },
+    {
+      "path": "app/querying/single_database_agent.py",
+      "sha256": "8d66d4f50b450416fa3f60a2ffe368e2a350037dd0a71044c4feb20005bb6728"
+    },
+    {
+      "path": "app/querying/sql_validator.py",
+      "sha256": "8b038a7e1657797dbb9855f343d1c465510ab30286dceb2fcc82fb35af2289ad"
+    },
+    {
+      "path": "app/retrieval/__init__.py",
+      "sha256": "af173889acb98646a899576f7f784db01a799c468e9736c511c500bef1ef5c53"
+    },
+    {
+      "path": "app/retrieval/graph.py",
+      "sha256": "72097a64f7ab055f6d0066ec35d87ca012a870d1d567e7ea3fe66e78c2d867d9"
+    },
+    {
+      "path": "app/retrieval/service.py",
+      "sha256": "4e148f3efb1c640d71e65c21a7ce70bfaf9d86c92c8550e6218bdffd8f5c5b07"
+    },
+    {
+      "path": "app/retrieval/store.py",
+      "sha256": "2418b4fd041ef06c8efce0f16eb0fcdbdf8dda8db527f922dad4a26e8b833bb6"
+    },
+    {
+      "path": "app/retrieval/time_field_policy.py",
+      "sha256": "62178d671b4e3772d98a36833ece3cbf0e6d0beee10d3d9b9386605b2ab0d0a4"
+    },
+    {
+      "path": "app/security/__init__.py",
+      "sha256": "f64ea4a1b53332090130642c17e6265aa4df9019634fc075448b25f3ba4e94a6"
+    },
+    {
+      "path": "app/security/access_control.py",
+      "sha256": "0165c9bf5d87cbe21da951642bcac8f68055be41ce9eac91ad8892ec3dd6f1ee"
+    },
+    {
+      "path": "app/security/auth.py",
+      "sha256": "1aaa891fc7f443bb8a7d678ac4be82a975ae1722dba56f7e228e112435dc76e3"
+    },
+    {
+      "path": "app/service.py",
+      "sha256": "3961513ad9e067f749d6bb4aa7bcb5d680219bb564baa06fcfa6b0d5a6516296"
+    },
+    {
+      "path": "app/services/__init__.py",
+      "sha256": "020f361755c5bedb3b0b82e4d1458b862c7b8f3d2073d0a87325f2772220de0c"
+    },
+    {
+      "path": "app/services/askdata_service.py",
+      "sha256": "f13e3041bd8ca20dfc7af5d7153afa934f6da9411cde8729bc8ca42663b069d5"
+    },
+    {
+      "path": "app/services/memory_store.py",
+      "sha256": "d4ed8600af12b383a459aeebf4c40d74ef99209da3fff8d611865a9b36b6cb14"
+    },
+    {
+      "path": "app/services/session_archive.py",
+      "sha256": "008336024d456a019341dcebaefbc7527adbcd8aa9d351a49914225d07951b51"
+    },
+    {
+      "path": "app/services/session_context.py",
+      "sha256": "b4590ae4410f13e05d678fbcbf8b69c102400ae67986d4ad8d4ef7093ccbbe7c"
+    },
+    {
+      "path": "app/services/short_term_memory.py",
+      "sha256": "bfbc81597254e58f8303b81e53ebcd24a244fc4d6cd7053c1d5cabe8ad48299f"
+    },
+    {
+      "path": "app/skills/__init__.py",
+      "sha256": "680726c976c87e1e888df0697b232234722401e1d1b02636949f18afab163949"
+    },
+    {
+      "path": "app/skills/data_qa/config.json",
+      "sha256": "91a01090ba7e6bb026ebcaaaee8e5847a22db52075907924fee16658eb474f18"
+    },
+    {
+      "path": "app/skills/data_qa/SKILL.md",
+      "sha256": "182fe30eab4cce01b99b457a4a50027de5a56fdb00f587af3fd431d44248f196"
+    },
+    {
+      "path": "app/skills/database_query/config.json",
+      "sha256": "f31353127fb41e141c85a12b3e2f4f0d365b5090e1811d8cbb2de62859759552"
+    },
+    {
+      "path": "app/skills/database_query/SKILL.md",
+      "sha256": "d954feec489a5d5dda445f637ca23d17e7b5259071ced4c0bd92c9ec0c4b257b"
+    },
+    {
+      "path": "app/skills/registry.py",
+      "sha256": "b1578a6829402fd103be8b40920d8fff682694ed4c4fd986935b6c8b6eb37f53"
+    },
+    {
+      "path": "app/workflows/__init__.py",
+      "sha256": "3da3f98de22b4df4c01d7082562b1decac29704d80539cc9e7a8e4f9378ae397"
+    },
+    {
+      "path": "app/workflows/clarification.py",
+      "sha256": "17314e22bdd5194f41b360cea4a38f22850a6afecc7514ec73bc9be4fb355eb8"
+    },
+    {
+      "path": "app/workflows/query_graph.py",
+      "sha256": "b117ddfff19d23583324bca85411aceb60a500c9599d439956e798f3017d1027"
+    },
+    {
+      "path": "app/workflows/result_builder.py",
+      "sha256": "f6353f59e740a08dab26ce64a9bba77af0c3ba0612e36bc8bf77534c29827273"
+    },
+    {
+      "path": "app/workflows/state.py",
+      "sha256": "7532b4d7d9223b555e22f9bb38810da1c8fa44c9c58bbe5992c42c72094ffeaf"
+    },
+    {
+      "path": "evaluation/__init__.py",
+      "sha256": "488b05857cee7e908a4e20d664b60fd3950e7d16f465820f9b1c5d89057fa1f2"
+    },
+    {
+      "path": "evaluation/analytics.py",
+      "sha256": "81f20794d4e4a9b26695b79cda81bc8c53776899d78d59b89c81ca9b90d3d8ab"
+    },
+    {
+      "path": "evaluation/case_selection.py",
+      "sha256": "acd28b44f4e81625ccb2ea77192b4a99de06686cdc6f6bc60b67d87ba98a2e53"
+    },
+    {
+      "path": "evaluation/clarification_metrics.py",
+      "sha256": "0436247a19001c4dece3320c8f531446cc33999140cc0005991857e401afde1e"
+    },
+    {
+      "path": "evaluation/diagnosis.py",
+      "sha256": "6618192f056289ffcc0ced46e23be5d15d43281e3e1ad7f71a84e45cf21dd62d"
+    },
+    {
+      "path": "evaluation/error_taxonomy.py",
+      "sha256": "67b1f16ad89cc86920d86828450098d435a0be57c08531f0a1ce19bffa187ba6"
+    },
+    {
+      "path": "evaluation/gold_result.py",
+      "sha256": "5fe580a924cc05918c78cb0ebffc0369c6ff5bf637f4bb043b6f3ed173349b64"
+    },
+    {
+      "path": "evaluation/insight.py",
+      "sha256": "54118af46544f04b6185c1a02ac5b0207f0945320aa28bcb9c242a402574f079"
+    },
+    {
+      "path": "evaluation/insight_report.py",
+      "sha256": "9d103357d9195124812a67c75db74f566bbbf08b7093bb14098f827056865761"
+    },
+    {
+      "path": "evaluation/metrics.py",
+      "sha256": "f66454be11411381bd6b7dbd026fc5907f8f5632f3ca56f27786b0171f6abb84"
+    },
+    {
+      "path": "evaluation/models.py",
+      "sha256": "e3734567618c60d383aca2da07a84ae838c411096387815cf79ab49c41dd3624"
+    },
+    {
+      "path": "evaluation/permission_metrics.py",
+      "sha256": "6f88ea15347c606d8555d7a851ed836034cca46c9fd14c7d48609dfe0cde6767"
+    },
+    {
+      "path": "evaluation/regression.py",
+      "sha256": "89dac624cc82997950b380117763b4d5eb2a3128044488b8d66acf1f062a7d6a"
+    },
+    {
+      "path": "evaluation/regression_report.py",
+      "sha256": "16042ca7387a784ab91743f2ffd8469932a32020a905846dc062907bc6baa87d"
+    },
+    {
+      "path": "evaluation/report.py",
+      "sha256": "ddfab55ec1f53528605bffc6461c25ff8e1f713a4acf7d6daa00bdfb1a42d8de"
+    },
+    {
+      "path": "evaluation/retrieval_ablation.py",
+      "sha256": "99f0dc1d3e76b5a54937e346b2197930cb3607ecb255b82d20adc262a95bc84a"
+    },
+    {
+      "path": "evaluation/retrieval_diagnosis.py",
+      "sha256": "7ebb64a7ebb18a7d420357fe566462d54c187469459c53e6ffd0d61d2287106f"
+    },
+    {
+      "path": "evaluation/retrieval_validation.py",
+      "sha256": "567d32477f0356516078bd65822d881d388af40d795ca72d40341c1629d16e7d"
+    },
+    {
+      "path": "evaluation/run_benchmark.py",
+      "sha256": "fced2ca8189dd41fdd06ef33194a3f558140a3d072bbfa5d6ef090c9df43292f"
+    },
+    {
+      "path": "evaluation/run_e2e.py",
+      "sha256": "f0f38f6b519dd67a4146580f42dbe9e5df8dba1a1eff6be4816a089a954deed4"
+    },
+    {
+      "path": "evaluation/run_manifest.py",
+      "sha256": "4d009130b2a0897d5e81eadbd185b1300fc6c53e609e5fa6a75c978e935c9ab5"
+    },
+    {
+      "path": "evaluation/snapshot.py",
+      "sha256": "5ef5d87ddabcfe491080f01a0ddd1abc35ed3fd6db7b1a284d5ab03db07ca10a"
+    },
+    {
+      "path": "evaluation/time_field_ablation.py",
+      "sha256": "1acc0c68f05942b71580b05e9296a8cb61e3a200a91746560698b5cd55a70f51"
+    },
+    {
+      "path": "evaluation/trace.py",
+      "sha256": "db141f933ccd0a9dd0690e1861c91e0b74cd5f68050ff8d7809c21484ac048fa"
+    },
+    {
+      "path": "evaluation/trace_report.py",
+      "sha256": "dab2dd02841822428a66ba12955e5935d26fc9a7daa81849d796fcb309fd8aa5"
+    },
+    {
+      "path": "evaluation/trace_visualizer.py",
+      "sha256": "54bb4ca06957bf2864238d46f6585ea19855787b02ae8952132a9e9aecbec354"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "568c80b489480c5e911dc8d49661cdc688432ed3f5c1360c3fccfc118a5727d1"
+    },
+    {
+      "path": "scripts/approve_m0_phase83_aliases.py",
+      "sha256": "74f4c723665cab70d616762e135fe4c7d3b4ded8d6f0c165046b84cf35158332"
+    },
+    {
+      "path": "scripts/approve_m0_topn_tie.py",
+      "sha256": "278ad033fca9c149f2195449dde4952a3bbedb7e93b4299c680485617ccbafb8"
+    },
+    {
+      "path": "scripts/audit_m0_phase83_columns.py",
+      "sha256": "46564512e1163c0713e11bd552ca74b5500837c0b4d9cdb61f2fa24368891a8b"
+    },
+    {
+      "path": "scripts/audit_m0_topn_tie.py",
+      "sha256": "9625a1eeb773bc3d2c7df222dd4779d0b673e4ad2c93ed825e4ee69b0a4d3eb5"
+    },
+    {
+      "path": "scripts/generate_short_video_ops_data.py",
+      "sha256": "309830f106e178c9efe52c83776d08d6d089a00d062d3ca9faaacf56e162c79e"
+    },
+    {
+      "path": "scripts/generate_short_video_ops_schema.py",
+      "sha256": "30d6625af0d9092d51fca3ba630f242a399cdcd3676c804a74de5bae14b46864"
+    },
+    {
+      "path": "scripts/prepare_schema_index.py",
+      "sha256": "b26f499de3a3243b4e3736c8ec85a1fde8e404aa41d475b05219b53a6fc40ff8"
+    },
+    {
+      "path": "scripts/rescore_m0_classic.py",
+      "sha256": "108f8a294be831f7d6ed09888bbfadf82a4264393a1e620782a453a00d94595f"
+    },
+    {
+      "path": "scripts/rescore_m0_phase83.py",
+      "sha256": "16af9d00131c14724beee1bd633a302dba23ce538cb7e98a8be58915528e9882"
+    },
+    {
+      "path": "scripts/rescore_m0_topn_tie.py",
+      "sha256": "2ec0414d767111214b884a569f2655769f0dfb2062d67075b8127b8d64d04036"
+    },
+    {
+      "path": "scripts/short_video_ops_definitions.py",
+      "sha256": "b3a35969fbe048a6d161a2701f7b7229f570104ee4f788375a5a7a83d534a33e"
+    },
+    {
+      "path": "scripts/validate_short_video_ops.py",
+      "sha256": "e1e964aced889d2d6d73e7566780eb83eb28c49ff329dd6454559cc571f07c6f"
+    }
+  ],
+  "data_files": [
+    {
+      "path": "data/databases/short_video_ops/_schema.json",
+      "sha256": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede"
+    },
+    {
+      "path": "data/databases/short_video_ops/acquisition_channels.csv",
+      "sha256": "e1dd8578aa5b173e28060d1c8c731234fcb97657b96cde58e6d0c71758a10151"
+    },
+    {
+      "path": "data/databases/short_video_ops/ad_accounts.csv",
+      "sha256": "717f5850e1b810566d45a237cae630dcd1bd5d880daed71bc7064d87230a73d5"
+    },
+    {
+      "path": "data/databases/short_video_ops/ad_campaigns.csv",
+      "sha256": "2cbe6f55d8bb36d2c8db41e2a3602a6e0beebac1b369a2c2708bc047e02b928f"
+    },
+    {
+      "path": "data/databases/short_video_ops/ad_creatives.csv",
+      "sha256": "ff1b906c7b471042014835b24cba1e5a719ac23ac8fee596fc4259cbdaedf489"
+    },
+    {
+      "path": "data/databases/short_video_ops/ad_daily_stats.csv",
+      "sha256": "d26bad3fa663b8e0abeb1ff056e9f65df55aa163aebe298b179e90e9b2de90fc"
+    },
+    {
+      "path": "data/databases/short_video_ops/budget_adjustments.csv",
+      "sha256": "41fe7fa82dc10f97e551a7e891a9f40d02a5baac40c480e2135dc9ee488e1359"
+    },
+    {
+      "path": "data/databases/short_video_ops/channel_attributions.csv",
+      "sha256": "46a4d8305627dff300d4a6e4a6f9ab9012e61c1e9ca5609360ac39b76d94297b"
+    },
+    {
+      "path": "data/databases/short_video_ops/channel_conversion_events.csv",
+      "sha256": "d99dea3ef61ee18d1a72ce5d98b00d4e35502e20d5217810170d31157c7ac078"
+    },
+    {
+      "path": "data/databases/short_video_ops/channel_targets.csv",
+      "sha256": "bbfe0316b3baf48b853c9cc5ea23f7cea44ad57d8e329108afca1f3a3a3dd849"
+    },
+    {
+      "path": "data/databases/short_video_ops/content_audits.csv",
+      "sha256": "0d5b76eed09bda3e547b02a2d80d466889b6f364ae0cbf5493965fd3499b831b"
+    },
+    {
+      "path": "data/databases/short_video_ops/content_categories.csv",
+      "sha256": "62f0d6c0cc83ab02333bbef6e8274442a9b82a0f04b7ae7f82af62393a0fb671"
+    },
+    {
+      "path": "data/databases/short_video_ops/content_daily_metrics.csv",
+      "sha256": "0d1828e22aa17bebc60c96f773b114c7e94a794eab1114f6f2f6688871a50638"
+    },
+    {
+      "path": "data/databases/short_video_ops/content_reports.csv",
+      "sha256": "6ec50eae5acd580276dbc9cb02920ad042bde09d264d5f736ad981054af9aeed"
+    },
+    {
+      "path": "data/databases/short_video_ops/content_tag_relations.csv",
+      "sha256": "50177097cd0112a90f3c38a033a54b26cd6d63df13fafbe63707f8ca4da4d2d7"
+    },
+    {
+      "path": "data/databases/short_video_ops/content_tags.csv",
+      "sha256": "ef29886b383f1d4adcd38110780ebc454eef85ae455174ca8780641165f09d33"
+    },
+    {
+      "path": "data/databases/short_video_ops/contents.csv",
+      "sha256": "6e1c0c5f93d3fc1fad07ef2110fad51fe02c4ed104f55312d5e5783d8fd44809"
+    },
+    {
+      "path": "data/databases/short_video_ops/creator_daily_metrics.csv",
+      "sha256": "3cbea3463c7f351573b4cf1aeda4f25aed0d33c53b032f4ad1cb099ed124b6e3"
+    },
+    {
+      "path": "data/databases/short_video_ops/creator_profiles.csv",
+      "sha256": "851cd2499e82fcc184193d671f877d3ff5cd114acdef862c1d40ae0d207bed1b"
+    },
+    {
+      "path": "data/databases/short_video_ops/creators.csv",
+      "sha256": "9ab2bd4e79acffee5698b5f6ee8068329681c344354c1ea52672941e611d63c6"
+    },
+    {
+      "path": "data/databases/short_video_ops/growth_daily_metrics.csv",
+      "sha256": "85b9dc9f0cabf8811638b9b000a58648cd71cf878c4725d4778172dddce87b0d"
+    },
+    {
+      "path": "data/databases/short_video_ops/growth_targets.csv",
+      "sha256": "4f74ae9a926d3abc5e4261e6bb36601ac9ec487d2b400d4a545a03abae6ac37d"
+    },
+    {
+      "path": "data/databases/short_video_ops/recall_campaigns.csv",
+      "sha256": "61707dd98bbf9067ddec9a233bbe27244bda329b99363c18344cbe99c7f4f50c"
+    },
+    {
+      "path": "data/databases/short_video_ops/recall_results.csv",
+      "sha256": "e61336d55d61b3fe51c749b8430f27386a2ee8ee1e5f6c2af80bb32307c80432"
+    },
+    {
+      "path": "data/databases/short_video_ops/recall_touches.csv",
+      "sha256": "0ab215862d5c87168d347a948d3e4e709b8cc4a69183b0dd039efd9ac4a4a0c9"
+    },
+    {
+      "path": "data/databases/short_video_ops/topic_content_relations.csv",
+      "sha256": "cbf2fe499c9f345bc77391a3c6f3528f4b31f9573bd7c12bd71adb647d8bc020"
+    },
+    {
+      "path": "data/databases/short_video_ops/trending_topics.csv",
+      "sha256": "13ee49abc019baacbaa57c25f347942d97f833383224df85ea94b35788ad6d65"
+    },
+    {
+      "path": "data/databases/short_video_ops/user_activations.csv",
+      "sha256": "9df08d95f6c3b752fc46469ba30ae882773efaa2a9b8816e6bda0235f0be3de1"
+    },
+    {
+      "path": "data/databases/short_video_ops/user_churn_events.csv",
+      "sha256": "f70a6b76bada1595b5fa81aa4334efc210e485a39be77c4f1882f94904c23756"
+    },
+    {
+      "path": "data/databases/short_video_ops/user_daily_activity.csv",
+      "sha256": "842f79936acc9f1266df981e9b2e5b43bbd67832080860a86e35d5c86cefdb29"
+    },
+    {
+      "path": "data/databases/short_video_ops/user_devices.csv",
+      "sha256": "593055b894885f46ae61084f9e12da260393f7eab5060631d035a84ed4ad563d"
+    },
+    {
+      "path": "data/databases/short_video_ops/user_lifecycle_snapshots.csv",
+      "sha256": "c98a5f0ed9f1f278a2a54fef3da1ffd239cffe01440fcf93e15921eba097a0a7"
+    },
+    {
+      "path": "data/databases/short_video_ops/user_profiles.csv",
+      "sha256": "eb484a79dc1cfa6e3dfaf192040c22c66079378c13e0010ade6b99141714e57b"
+    },
+    {
+      "path": "data/databases/short_video_ops/user_registrations.csv",
+      "sha256": "2f7e1cb1381f1e67ec09c3464f6fffec67a25efe5db9552da0503ec611e25cdd"
+    },
+    {
+      "path": "data/databases/short_video_ops/user_retention.csv",
+      "sha256": "7d756b767b11e88f89ab7caa9cf45c6087bf3b8045d8556c09614def8f99838a"
+    },
+    {
+      "path": "data/databases/short_video_ops/user_sessions.csv",
+      "sha256": "3eec7cd61d7350da3279c9955973a6299d2f42bb10909696f0a1022c9f1454c5"
+    },
+    {
+      "path": "data/databases/short_video_ops/user_tag_relations.csv",
+      "sha256": "6953b6e8f4964821f7ca038c7c490555c140f5da5abc4615047702684a74fcd2"
+    },
+    {
+      "path": "data/databases/short_video_ops/user_tags.csv",
+      "sha256": "481d3df2867088458b6a1637ff39ae55c59608cebe3b3ccb4d72e743f32b12dd"
+    },
+    {
+      "path": "data/databases/short_video_ops/users.csv",
+      "sha256": "bb7efa5fd0a5d17fdf1845d297baae7a38c2214795b0e23e03aed0b9c8d6e7ca"
+    },
+    {
+      "path": "data/databases/short_video_ops/video_exposures.csv",
+      "sha256": "2136288a9eb1d7f55197adebe5d490ca44f85dc4164b82ecca70f6afa283b468"
+    },
+    {
+      "path": "data/databases/short_video_ops/video_interactions.csv",
+      "sha256": "2b2940c9e24ea793fcf068c267f96634e55672fc9554ef7dfa4ad3d8179d4e42"
+    },
+    {
+      "path": "data/databases/short_video_ops/video_plays.csv",
+      "sha256": "f8addafc233c45eb04e1393f203003efb6aff334de5cc619c464e8068a7a15bf"
+    }
+  ],
+  "input_files": [
+    {
+      "path": "data/databases/short_video_ops/_database_manifest.json",
+      "sha256": "f82006fdde9113ac97674788c533898fe410e91c81ddfdc60ad23fe6ebd8d2b1"
+    },
+    {
+      "path": "evaluation/cases/all_cases.jsonl",
+      "sha256": "0766d85d69794b8d8663e1f9d037f334c230da769ea55779bd00ae80a5559d36"
+    }
+  ],
+  "dependency_matches": [
+    {
+      "path": "app/database.py",
+      "line": 13,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "/ \"short_video_ops\""
+    },
+    {
+      "path": "app/datasources/runtime.py",
+      "line": 65,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "\"\"\"One controlled CSV/DuckDB source; unsupported backends fail explicitly.\"\"\""
+    },
+    {
+      "path": "app/datasources/runtime.py",
+      "line": 67,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "from ..querying.duckdb_engine import DuckDbEngine"
+    },
+    {
+      "path": "app/datasources/runtime.py",
+      "line": 77,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "database = \"short_video_ops\""
+    },
+    {
+      "path": "app/datasources/runtime.py",
+      "line": 81,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "identity = SourceIdentity(database, source_id, backend, \"duckdb\", \"DuckDB\", \"main\","
+    },
+    {
+      "path": "app/datasources/runtime.py",
+      "line": 84,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "executor = DuckDbEngine(root, catalog=catalog, source_identity=identity)"
+    },
+    {
+      "path": "app/datasources/runtime.py",
+      "line": 86,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "if not isinstance(executor, DuckDbEngine):"
+    },
+    {
+      "path": "app/datasources/sql_policy.py",
+      "line": 48,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "if table.get(\"database\", \"short_video_ops\") == database"
+    },
+    {
+      "path": "app/datasources/values.py",
+      "line": 7,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "\"\"\"Keep the existing DuckDB result normalization contract.\"\"\""
+    },
+    {
+      "path": "app/mcp_runtime/server.py",
+      "line": 79,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "databases = sorted({str(table.get(\"database\") or \"short_video_ops\") for table in tables_catalog})"
+    },
+    {
+      "path": "app/mcp_runtime/tools/database_tools.py",
+      "line": 16,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "\"需要执行的一条DuckDB SELECT或WITH只读SQL。\""
+    },
+    {
+      "path": "app/mcp_runtime/tools/database_tools.py",
+      "line": 29,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "*, dialect: str = \"DuckDB\","
+    },
+    {
+      "path": "app/models.py",
+      "line": 125,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "database: str = \"short_video_ops\""
+    },
+    {
+      "path": "app/querying/constraint_planner.py",
+      "line": 15,
+      "categories": [
+        "static_catalog"
+      ],
+      "source": "from ..database import SCHEMA, physical_table_name"
+    },
+    {
+      "path": "app/querying/constraint_planner.py",
+      "line": 102,
+      "categories": [
+        "dialect_parser"
+      ],
+      "source": "tree = sqlglot.parse_one(sql, read=\"duckdb\")"
+    },
+    {
+      "path": "app/querying/constraint_validator.py",
+      "line": 13,
+      "categories": [
+        "static_catalog"
+      ],
+      "source": "from ..database import SCHEMA, physical_table_name"
+    },
+    {
+      "path": "app/querying/constraint_validator.py",
+      "line": 58,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "if table.get(\"database\", \"short_video_ops\") != database:"
+    },
+    {
+      "path": "app/querying/constraint_validator.py",
+      "line": 108,
+      "categories": [
+        "dialect_parser"
+      ],
+      "source": "sql = comparison.sql(dialect=\"duckdb\")"
+    },
+    {
+      "path": "app/querying/constraint_validator.py",
+      "line": 257,
+      "categories": [
+        "dialect_parser"
+      ],
+      "source": "statements = [item for item in sqlglot.parse(sql, read=\"duckdb\") if item]"
+    },
+    {
+      "path": "app/querying/duckdb_engine.py",
+      "line": 13,
+      "categories": [
+        "static_catalog"
+      ],
+      "source": "from ..database import SCHEMA, physical_table_name"
+    },
+    {
+      "path": "app/querying/duckdb_engine.py",
+      "line": 24,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "class DuckDbEngine:"
+    },
+    {
+      "path": "app/querying/duckdb_engine.py",
+      "line": 25,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "\"\"\"将 CSV 目录映射为只读 DuckDB 数据库。"
+    },
+    {
+      "path": "app/querying/duckdb_engine.py",
+      "line": 92,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "def connect(self, database: str) -> Iterator[duckdb.DuckDBPyConnection]:"
+    },
+    {
+      "path": "app/querying/duckdb_engine.py",
+      "line": 98,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "connection = duckdb.connect(\":memory:\")"
+    },
+    {
+      "path": "app/querying/duckdb_engine.py",
+      "line": 101,
+      "categories": [
+        "csv_execution"
+      ],
+      "source": "if self.catalog else sorted(folder.glob(\"*.csv\")))"
+    },
+    {
+      "path": "app/querying/duckdb_engine.py",
+      "line": 111,
+      "categories": [
+        "csv_execution"
+      ],
+      "source": "f\"SELECT * FROM read_csv_auto('{path}', header=true, sample_size=-1)\""
+    },
+    {
+      "path": "app/querying/duckdb_engine.py",
+      "line": 124,
+      "categories": [
+        "dialect_parser"
+      ],
+      "source": "access_scope, dialect=\"duckdb\")"
+    },
+    {
+      "path": "app/querying/metric_planner.py",
+      "line": 13,
+      "categories": [
+        "static_catalog"
+      ],
+      "source": "from ..database import SCHEMA, physical_table_name"
+    },
+    {
+      "path": "app/querying/metric_planner.py",
+      "line": 183,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "\"\"\"Reject clear metric-source and cohort mistakes; leave other SQL to DuckDB.\"\"\""
+    },
+    {
+      "path": "app/querying/metric_planner.py",
+      "line": 187,
+      "categories": [
+        "dialect_parser"
+      ],
+      "source": "expression = sqlglot.parse_one(sql, read=\"duckdb\")"
+    },
+    {
+      "path": "app/querying/sql_validator.py",
+      "line": 4,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "whose complete column list is available. DuckDB remains the final authority"
+    },
+    {
+      "path": "app/querying/sql_validator.py",
+      "line": 17,
+      "categories": [
+        "static_catalog"
+      ],
+      "source": "from ..database import SCHEMA, physical_table_name"
+    },
+    {
+      "path": "app/querying/sql_validator.py",
+      "line": 67,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "if table.get(\"database\", \"short_video_ops\") == database"
+    },
+    {
+      "path": "app/querying/sql_validator.py",
+      "line": 112,
+      "categories": [
+        "dialect_parser"
+      ],
+      "source": "statements = [statement for statement in sqlglot.parse(sql, read=\"duckdb\") if statement]"
+    },
+    {
+      "path": "app/retrieval/graph.py",
+      "line": 8,
+      "categories": [
+        "static_catalog"
+      ],
+      "source": "from ..database import RELATIONS, SCHEMA, physical_table_name"
+    },
+    {
+      "path": "app/retrieval/graph.py",
+      "line": 94,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "\"database\": self.tables[table_id].get(\"database\", \"short_video_ops\"),"
+    },
+    {
+      "path": "app/retrieval/graph.py",
+      "line": 129,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "dialect = source.get(\"prompt_dialect\", \"DuckDB\")"
+    },
+    {
+      "path": "app/retrieval/service.py",
+      "line": 49,
+      "categories": [
+        "static_index_version"
+      ],
+      "source": "self.index_path = index_path or BASE_DIR / \"data\" / \"schema_stores\" / self.runtime.identity.source_id / \"schema_store.json\""
+    },
+    {
+      "path": "app/retrieval/service.py",
+      "line": 465,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "database_names = sorted({table.get(\"database\", \"short_video_ops\") for table in self.tables})"
+    },
+    {
+      "path": "app/retrieval/service.py",
+      "line": 470,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "if item.get(\"database\", \"short_video_ops\") == database"
+    },
+    {
+      "path": "app/retrieval/service.py",
+      "line": 514,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "table.get(\"database\", \"short_video_ops\"), table.get(\"domain\", \"\"),"
+    },
+    {
+      "path": "app/retrieval/service.py",
+      "line": 537,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "\"database_id\": table.get(\"database\", \"short_video_ops\"),"
+    },
+    {
+      "path": "app/retrieval/time_field_policy.py",
+      "line": 11,
+      "categories": [
+        "static_catalog"
+      ],
+      "source": "from ..database import SCHEMA"
+    },
+    {
+      "path": "app/security/access_control.py",
+      "line": 8,
+      "categories": [
+        "static_catalog"
+      ],
+      "source": "from ..database import SCHEMA"
+    },
+    {
+      "path": "app/security/access_control.py",
+      "line": 11,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "DATABASE_ID = \"short_video_ops\""
+    },
+    {
+      "path": "app/services/askdata_service.py",
+      "line": 216,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "database = str(table.get(\"database\") or \"short_video_ops\") if table else \"\""
+    },
+    {
+      "path": "app/skills/database_query/SKILL.md",
+      "line": 5,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "根据用户问题和字段级Schema图生成一条可执行的 DuckDB 只读 SQL，并通过当前数据库对应的 MCP 工具执行。只能使用输入中实际提供的表、字段、关联和工具。"
+    },
+    {
+      "path": "app/skills/database_query/SKILL.md",
+      "line": 75,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "1. 信息充分后生成一条 DuckDB `SELECT` 或 `WITH`，同一数据库所需数据在这条 SQL 中查完。"
+    },
+    {
+      "path": "app/workflows/clarification.py",
+      "line": 7,
+      "categories": [
+        "static_catalog"
+      ],
+      "source": "from ..database import SCHEMA"
+    },
+    {
+      "path": "app/workflows/query_graph.py",
+      "line": 253,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "str(table.get(\"database\") or schema_graph.get(\"database\") or \"short_video_ops\")"
+    },
+    {
+      "path": "app/workflows/query_graph.py",
+      "line": 280,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "database = (state.get(\"database_names\") or [\"short_video_ops\"])[0]"
+    },
+    {
+      "path": "app/workflows/query_graph.py",
+      "line": 308,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "database = (state.get(\"database_names\") or [\"short_video_ops\"])[0]"
+    },
+    {
+      "path": "app/workflows/result_builder.py",
+      "line": 5,
+      "categories": [
+        "static_catalog"
+      ],
+      "source": "from ..database import SCHEMA"
+    },
+    {
+      "path": "app/workflows/result_builder.py",
+      "line": 117,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "\"通过MCP数据库工具调用DuckDB并整理结果\","
+    },
+    {
+      "path": "evaluation/gold_result.py",
+      "line": 39,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "\"database\": \"short_video_ops\", \"scenario\": case[\"scenario\"],"
+    },
+    {
+      "path": "evaluation/gold_result.py",
+      "line": 70,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "execution = engine.execute(\"short_video_ops\", sql, scope, row_limit=max_result_rows)"
+    },
+    {
+      "path": "evaluation/run_benchmark.py",
+      "line": 675,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "\"short_video_ops\","
+    },
+    {
+      "path": "evaluation/run_benchmark.py",
+      "line": 740,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "str(execution.get(\"database\") or \"short_video_ops\"),"
+    },
+    {
+      "path": "evaluation/run_e2e.py",
+      "line": 236,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "\"short_video_ops\", result.sql, scope, row_limit=10000,"
+    },
+    {
+      "path": "evaluation/run_manifest.py",
+      "line": 39,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "folder = base_dir / \"data\" / \"databases\" / \"short_video_ops\""
+    },
+    {
+      "path": "evaluation/run_manifest.py",
+      "line": 89,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "(base_dir / \"data\" / \"databases\" / \"short_video_ops\" / \"_schema.json\").read_bytes()"
+    },
+    {
+      "path": "scripts/audit_m0_phase83_columns.py",
+      "line": 11,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "from app.querying.duckdb_engine import DuckDbEngine"
+    },
+    {
+      "path": "scripts/audit_m0_phase83_columns.py",
+      "line": 30,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "def replay(engine: DuckDbEngine, sql: str, scope: object, case_id: str, label: str):"
+    },
+    {
+      "path": "scripts/audit_m0_phase83_columns.py",
+      "line": 31,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "result = engine.execute(\"short_video_ops\", sql, scope, row_limit=10000)"
+    },
+    {
+      "path": "scripts/audit_m0_phase83_columns.py",
+      "line": 72,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "engine = DuckDbEngine()"
+    },
+    {
+      "path": "scripts/audit_m0_topn_tie.py",
+      "line": 8,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "from app.querying.duckdb_engine import DuckDbEngine"
+    },
+    {
+      "path": "scripts/audit_m0_topn_tie.py",
+      "line": 19,
+      "categories": [
+        "concrete_executor",
+        "logical_database_literal"
+      ],
+      "source": "result = DuckDbEngine().execute(\"short_video_ops\", sql[:-9], scope,"
+    },
+    {
+      "path": "scripts/generate_short_video_ops_schema.py",
+      "line": 122,
+      "categories": [
+        "duckdb_prompt"
+      ],
+      "source": "def profile_field(connection: duckdb.DuckDBPyConnection, table_name: str, field_name: str, source_type: str) -> dict[str, Any]:"
+    },
+    {
+      "path": "scripts/generate_short_video_ops_schema.py",
+      "line": 195,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "connection = duckdb.connect(\":memory:\")"
+    },
+    {
+      "path": "scripts/generate_short_video_ops_schema.py",
+      "line": 200,
+      "categories": [
+        "csv_execution"
+      ],
+      "source": "f'CREATE OR REPLACE VIEW \"{table_name}\" AS SELECT * FROM read_csv_auto(\\'{csv_path}\\', header=true, sample_size=-1)'"
+    },
+    {
+      "path": "scripts/rescore_m0_classic.py",
+      "line": 19,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "from app.querying.duckdb_engine import DuckDbEngine"
+    },
+    {
+      "path": "scripts/rescore_m0_classic.py",
+      "line": 46,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "def replay(engine: DuckDbEngine, sql: str, scope: object, case_id: str, kind: str):"
+    },
+    {
+      "path": "scripts/rescore_m0_classic.py",
+      "line": 47,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "result = engine.execute(\"short_video_ops\", sql, scope, row_limit=10000)"
+    },
+    {
+      "path": "scripts/rescore_m0_classic.py",
+      "line": 115,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "engine = DuckDbEngine()"
+    },
+    {
+      "path": "scripts/rescore_m0_phase83.py",
+      "line": 12,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "from app.querying.duckdb_engine import DuckDbEngine"
+    },
+    {
+      "path": "scripts/rescore_m0_phase83.py",
+      "line": 42,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "def replay(engine: DuckDbEngine, sql: str, scope: object, case_id: str, kind: str):"
+    },
+    {
+      "path": "scripts/rescore_m0_phase83.py",
+      "line": 43,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "result = engine.execute(\"short_video_ops\", sql, scope, row_limit=10000)"
+    },
+    {
+      "path": "scripts/rescore_m0_phase83.py",
+      "line": 100,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "engine = DuckDbEngine()"
+    },
+    {
+      "path": "scripts/rescore_m0_topn_tie.py",
+      "line": 11,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "from app.querying.duckdb_engine import DuckDbEngine"
+    },
+    {
+      "path": "scripts/rescore_m0_topn_tie.py",
+      "line": 45,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "result = engine.execute(\"short_video_ops\", sql, scope, row_limit=10000)"
+    },
+    {
+      "path": "scripts/rescore_m0_topn_tie.py",
+      "line": 77,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "engine = DuckDbEngine()"
+    },
+    {
+      "path": "scripts/short_video_ops_definitions.py",
+      "line": 4,
+      "categories": [
+        "logical_database_literal"
+      ],
+      "source": "DATABASE = \"short_video_ops\""
+    },
+    {
+      "path": "scripts/validate_short_video_ops.py",
+      "line": 17,
+      "categories": [
+        "concrete_executor"
+      ],
+      "source": "connection = duckdb.connect(\":memory:\")"
+    },
+    {
+      "path": "scripts/validate_short_video_ops.py",
+      "line": 22,
+      "categories": [
+        "csv_execution"
+      ],
+      "source": "f'CREATE VIEW \"{table}\" AS SELECT * FROM read_csv_auto(\\'{csv_path}\\', header=true, sample_size=-1)'"
+    }
+  ],
+  "relation_issues": []
+}

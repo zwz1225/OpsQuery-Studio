@@ -1,0 +1,925 @@
+{
+  "stage": "M2 intent v2 offline preparation and first-SQL replay plan",
+  "run_status": "complete",
+  "policy": {
+    "policy_id": "bird_public_intent_candidate_v2",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+    "baseline_preserved": true,
+    "max_fields": 20,
+    "max_added_fields": 8,
+    "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+    "max_related_hops": 2,
+    "join_source": "declared_foreign_keys_only",
+    "canonical_lookup_max_pairs": 4,
+    "canonical_lookup_sql_tool_calls": 1,
+    "lookup_consumes_existing_sql_budget": true,
+    "numeric_policy": "percentage_real_operand_before_scaling_v1",
+    "predicate_policy": "explicit_unique_public_field_value_only_v2",
+    "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+    "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+    "grain_policy": "public_counted_entity_primary_key_with_fanout_check_v1",
+    "native_ex_unchanged": true
+  },
+  "checks": [
+    {
+      "check": "previous_native_match_no_new_static_violation",
+      "case_id": "BIRD-PG-0050",
+      "passed": true
+    },
+    {
+      "check": "previous_native_match_no_new_static_violation",
+      "case_id": "BIRD-PG-0095",
+      "passed": true
+    },
+    {
+      "check": "previous_native_match_no_new_static_violation",
+      "case_id": "BIRD-PG-1473",
+      "passed": true
+    },
+    {
+      "check": "previous_native_match_no_new_static_violation",
+      "case_id": "BIRD-PG-1435",
+      "passed": true
+    },
+    {
+      "check": "previous_native_match_no_new_static_violation",
+      "case_id": "BIRD-PG-0082",
+      "passed": true
+    },
+    {
+      "check": "previous_native_match_no_new_static_violation",
+      "case_id": "BIRD-PG-1486",
+      "passed": true
+    },
+    {
+      "check": "previous_native_match_no_new_static_violation",
+      "case_id": "BIRD-PG-0766",
+      "passed": true
+    },
+    {
+      "check": "first_and_gold_static_readonly_policy",
+      "case_id": "BIRD-PG-0036",
+      "passed": true
+    },
+    {
+      "check": "first_and_gold_static_readonly_policy",
+      "case_id": "BIRD-PG-0159",
+      "passed": true
+    },
+    {
+      "check": "first_and_gold_static_readonly_policy",
+      "case_id": "BIRD-PG-1405",
+      "passed": true
+    },
+    {
+      "check": "first_and_gold_static_readonly_policy",
+      "case_id": "BIRD-PG-0368",
+      "passed": true
+    }
+  ],
+  "source_report_sha256": "db2255b9cae7af1a30b24cb9b160c41c7da159bb5ec9b1d9d4fa1dd04e17f246",
+  "previous_native_report_sha256": "a8e5cb6602277ccde09dcaf0bbb3303dd76339995984e3b4d7f4a9598d30610f",
+  "first_sql_case_count": 4,
+  "first_sql_plan": [
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "first_sql": "SELECT s.admfname1, s.admlname1, s.admfname2, s.admlname2, s.admfname3, s.admlname3 FROM schools s JOIN satscores sat ON s.cdscode = sat.cds ORDER BY sat.numge1500 DESC NULLS LAST LIMIT 1",
+      "first_sql_sha256": "5db897fd6cd5b11e49b02306354eaba770f5c9d72d547764fb4d26aa90566497",
+      "frozen_gold_sha256": "8538d58c9f812f65603a8d80ad075616f658e32d29e6484923f283a95e9d1351",
+      "previous_final_sql": "SELECT s.admfname1, s.admlname1, s.admfname2, s.admlname2, s.admfname3, s.admlname3 FROM schools s JOIN satscores sat ON s.cdscode = sat.cds WHERE s.admlname2 = 'Administrator' ORDER BY sat.numge1500 DESC NULLS LAST LIMIT 1"
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "first_sql": "SELECT t.trans_id FROM trans t JOIN account a ON t.account_id = a.account_id JOIN disp d ON a.account_id = d.account_id WHERE d.client_id = 3356 AND t.operation = 'VYBER'",
+      "first_sql_sha256": "c34da07488b1fdfe1514049d77f2079f99c406b9cede7a11343373f4ee36966d",
+      "frozen_gold_sha256": "ee7eafdc44edb97e440951e8acc4528f8c4abbb8814348ec4725207693e20179",
+      "previous_final_sql": "SELECT t.trans_id FROM trans t JOIN account a ON t.account_id = a.account_id JOIN disp d ON a.account_id = d.account_id WHERE d.client_id = 3356 AND t.operation = 'VYBER' AND t.type = 'VYBER'"
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "database_id": "student_club",
+      "first_sql": "SELECT b.category, SUM(b.amount) AS amount_budgeted FROM budget b JOIN event e ON b.link_to_event = e.event_id WHERE e.event_name = 'April Speaker' GROUP BY b.category ORDER BY amount_budgeted ASC",
+      "first_sql_sha256": "f13958a6d8444c950a637e32a0496586b0fc97941ec35abdcbecd52a30afd777",
+      "frozen_gold_sha256": "82bd66178d2a91f1c8ec686ac22f96f1ab019f7c4140115ed937ec7c2803b493",
+      "previous_final_sql": "SELECT b.category, SUM(b.amount) AS amount_budgeted FROM budget b JOIN event e ON b.link_to_event = e.event_id WHERE e.event_name = 'April Speaker' AND e.type = 'Budget' GROUP BY b.category ORDER BY amount_budgeted ASC"
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "database_id": "card_games",
+      "first_sql": "SELECT (COUNT(*) FILTER (WHERE bordercolor = 'borderless')::REAL / NULLIF(COUNT(*), 0)) * 100 AS percentage FROM cards",
+      "first_sql_sha256": "616372356cb3c6dac47333ea546bc7f3aed9e5494cf064569d7093a336011ab2",
+      "frozen_gold_sha256": "a98925992af065b8fc1288070fb4405d44c0ccef7606743a2c32041617aa33e3",
+      "previous_final_sql": "SELECT (COUNT(*) FILTER (WHERE bordercolor = 'borderless')::REAL / NULLIF(COUNT(*), 0)) * 100 AS percentage FROM cards WHERE mcmid = '100' AND mcmmetaid = '100' AND multiverseid = '100' AND tcgplayerproductid = '100'"
+    }
+  ],
+  "case_reviews": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "initial_sql_violation_codes": [],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [],
+      "profile_hints": [],
+      "added_field_ids": [
+        "california_schools.schools.school",
+        "california_schools.schools.street"
+      ],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [
+          {
+            "relation_id": "satscores_cds_fkey:cds",
+            "parent_table": "california_schools.schools",
+            "parent_field": "cdscode",
+            "child_table": "california_schools.satscores",
+            "child_field": "cds",
+            "role_label": "cds",
+            "role_description": "California Department Schools",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          }
+        ],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": []
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "initial_sql_violation_codes": [
+        "nullable_order_nulls_first",
+        "nullable_order_nulls_first"
+      ],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [],
+      "profile_hints": [],
+      "added_field_ids": [],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [
+          {
+            "relation_id": "account_district_id_fkey:district_id",
+            "parent_table": "financial.district",
+            "parent_field": "district_id",
+            "child_table": "financial.account",
+            "child_field": "district_id",
+            "role_label": "location of branch",
+            "role_description": "location of branch",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "client_district_id_fkey:district_id",
+            "parent_table": "financial.district",
+            "parent_field": "district_id",
+            "child_table": "financial.client",
+            "child_field": "district_id",
+            "role_label": "location of branch",
+            "role_description": "location of branch",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "disp_account_id_fkey:account_id",
+            "parent_table": "financial.account",
+            "parent_field": "account_id",
+            "child_table": "financial.disp",
+            "child_field": "account_id",
+            "role_label": "account_id",
+            "role_description": "id number of account",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "loan_account_id_fkey:account_id",
+            "parent_table": "financial.account",
+            "parent_field": "account_id",
+            "child_table": "financial.loan",
+            "child_field": "account_id",
+            "role_label": "account_id",
+            "role_description": "the id number identifying the account",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "order_account_id_fkey:account_id",
+            "parent_table": "financial.account",
+            "parent_field": "account_id",
+            "child_table": "financial.order",
+            "child_field": "account_id",
+            "role_label": "account_id",
+            "role_description": "id number of account",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "trans_account_id_fkey:account_id",
+            "parent_table": "financial.account",
+            "parent_field": "account_id",
+            "child_table": "financial.trans",
+            "child_field": "account_id",
+            "role_label": "account_id",
+            "role_description": "",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "disp_client_id_fkey:client_id",
+            "parent_table": "financial.client",
+            "parent_field": "client_id",
+            "child_table": "financial.disp",
+            "child_field": "client_id",
+            "role_label": "client_id",
+            "role_description": "id number of client",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          }
+        ],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": []
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "initial_sql_violation_codes": [],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [],
+      "profile_hints": [
+        {
+          "field_id": "debit_card_specializing.customers.segment",
+          "table_id": "debit_card_specializing.customers",
+          "field": "segment",
+          "value": "SME",
+          "basis": "unique_category_sample_code_matches_public_token",
+          "authority": "coverage_hint_only",
+          "mandatory": false
+        }
+      ],
+      "added_field_ids": [],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": []
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "initial_sql_violation_codes": [],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [
+        {
+          "table_id": "student_club.event",
+          "field_id": "student_club.event.status",
+          "field": "status",
+          "value": "Closed",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        }
+      ],
+      "profile_hints": [],
+      "added_field_ids": [
+        "student_club.event.event_date",
+        "student_club.event.event_name",
+        "student_club.event.status",
+        "student_club.event.type"
+      ],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": [
+        {
+          "table_id": "student_club.event",
+          "table": "event",
+          "field": "status",
+          "requested": "Closed"
+        }
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "initial_sql_violation_codes": [
+        "entity_grain_fanout"
+      ],
+      "old_final_sql_violation_codes": [
+        "entity_grain_fanout"
+      ],
+      "required_public_conditions": [
+        {
+          "table_id": "toxicology.atom",
+          "field_id": "toxicology.atom.element",
+          "field": "element",
+          "value": "c",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        },
+        {
+          "table_id": "toxicology.bond",
+          "field_id": "toxicology.bond.bond_type",
+          "field": "bond_type",
+          "value": "=",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        }
+      ],
+      "profile_hints": [],
+      "added_field_ids": [
+        "toxicology.atom.atom_id",
+        "toxicology.atom.element"
+      ],
+      "entity_grain": {
+        "table_id": "toxicology.atom",
+        "primary_key": "atom_id",
+        "basis": "unique_primary_identifier_counted_in_official_evidence"
+      },
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [
+          {
+            "relation_id": "atom_molecule_id_fkey:molecule_id",
+            "parent_table": "toxicology.molecule",
+            "parent_field": "molecule_id",
+            "child_table": "toxicology.atom",
+            "child_field": "molecule_id",
+            "role_label": "molecule id",
+            "role_description": "identifying the molecule to which the atom belongs",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "bond_molecule_id_fkey:molecule_id",
+            "parent_table": "toxicology.molecule",
+            "parent_field": "molecule_id",
+            "child_table": "toxicology.bond",
+            "child_field": "molecule_id",
+            "role_label": "molecule_id",
+            "role_description": "identifying the molecule in which the bond appears",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          }
+        ],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": [
+        {
+          "table_id": "toxicology.atom",
+          "table": "atom",
+          "field": "element",
+          "requested": "c"
+        },
+        {
+          "table_id": "toxicology.bond",
+          "table": "bond",
+          "field": "bond_type",
+          "requested": "="
+        }
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-1399",
+      "initial_sql_violation_codes": [],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [],
+      "profile_hints": [],
+      "added_field_ids": [
+        "student_club.member.first_name",
+        "student_club.member.last_name"
+      ],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [
+          {
+            "relation_id": "attendance_link_to_event_fkey:link_to_event",
+            "parent_table": "student_club.event",
+            "parent_field": "event_id",
+            "child_table": "student_club.attendance",
+            "child_field": "link_to_event",
+            "role_label": "link to event",
+            "role_description": "The unique identifier of the event which was attended",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "attendance_link_to_member_fkey:link_to_member",
+            "parent_table": "student_club.member",
+            "parent_field": "member_id",
+            "child_table": "student_club.attendance",
+            "child_field": "link_to_member",
+            "role_label": "link to member",
+            "role_description": "The unique identifier of the member who attended the event",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          }
+        ],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": [
+        {
+          "table_id": "student_club.event",
+          "table": "event",
+          "field": "event_name",
+          "requested": "Women's Soccer"
+        }
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "initial_sql_violation_codes": [],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [],
+      "profile_hints": [],
+      "added_field_ids": [
+        "codebase_community.posts.title",
+        "codebase_community.users.displayname"
+      ],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [
+          {
+            "relation_id": "posts_lasteditoruserid_fkey:lasteditoruserid",
+            "parent_table": "codebase_community.users",
+            "parent_field": "id",
+            "child_table": "codebase_community.posts",
+            "child_field": "lasteditoruserid",
+            "role_label": "Last Editor User Id",
+            "role_description": "the id of the last editor",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "votes_postid_fkey:postid",
+            "parent_table": "codebase_community.posts",
+            "parent_field": "id",
+            "child_table": "codebase_community.votes",
+            "child_field": "postid",
+            "role_label": "Post Id",
+            "role_description": "the id of the post that is voted",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "posts_owneruserid_fkey:owneruserid",
+            "parent_table": "codebase_community.users",
+            "parent_field": "id",
+            "child_table": "codebase_community.posts",
+            "child_field": "owneruserid",
+            "role_label": "Owner User Id",
+            "role_description": "the id of the owner user",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "votes_userid_fkey:userid",
+            "parent_table": "codebase_community.users",
+            "parent_field": "id",
+            "child_table": "codebase_community.votes",
+            "child_field": "userid",
+            "role_label": "User Id",
+            "role_description": "the id of the voter",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          }
+        ],
+        "preferred_actor_relations": [
+          {
+            "relation_id": "votes_userid_fkey:userid",
+            "basis": "public_action_and_condition_owner_to_requested_entity_label",
+            "advisory_only": true
+          }
+        ],
+        "context_output_groups": [
+          {
+            "actor_label": "codebase_community.users.displayname",
+            "context_label": "codebase_community.posts.title",
+            "policy": "participant_with_named_context_v1",
+            "advisory_only": true
+          }
+        ],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": []
+    },
+    {
+      "case_id": "BIRD-PG-0036",
+      "initial_sql_violation_codes": [],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [],
+      "profile_hints": [],
+      "added_field_ids": [
+        "california_schools.schools.admfname2",
+        "california_schools.schools.admfname3",
+        "california_schools.schools.admlname3",
+        "california_schools.schools.school"
+      ],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [
+          {
+            "relation_id": "satscores_cds_fkey:cds",
+            "parent_table": "california_schools.schools",
+            "parent_field": "cdscode",
+            "child_table": "california_schools.satscores",
+            "child_field": "cds",
+            "role_label": "cds",
+            "role_description": "California Department Schools",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          }
+        ],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": []
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "initial_sql_violation_codes": [],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [],
+      "profile_hints": [],
+      "added_field_ids": [
+        "california_schools.schools.school"
+      ],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": []
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "initial_sql_violation_codes": [],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [],
+      "profile_hints": [
+        {
+          "field_id": "debit_card_specializing.customers.segment",
+          "table_id": "debit_card_specializing.customers",
+          "field": "segment",
+          "value": "SME",
+          "basis": "unique_category_sample_code_matches_public_token",
+          "authority": "coverage_hint_only",
+          "mandatory": false
+        },
+        {
+          "field_id": "debit_card_specializing.customers.currency",
+          "table_id": "debit_card_specializing.customers",
+          "field": "currency",
+          "value": "CZK",
+          "basis": "unique_category_sample_code_matches_public_token",
+          "authority": "coverage_hint_only",
+          "mandatory": false
+        },
+        {
+          "field_id": "debit_card_specializing.customers.currency",
+          "table_id": "debit_card_specializing.customers",
+          "field": "currency",
+          "value": "EUR",
+          "basis": "unique_category_sample_code_matches_public_token",
+          "authority": "coverage_hint_only",
+          "mandatory": false
+        }
+      ],
+      "added_field_ids": [
+        "debit_card_specializing.customers.segment"
+      ],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": []
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "initial_sql_violation_codes": [],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [
+        {
+          "table_id": "financial.trans",
+          "field_id": "financial.trans.operation",
+          "field": "operation",
+          "value": "VYBER",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        }
+      ],
+      "profile_hints": [
+        {
+          "field_id": "financial.trans.type",
+          "table_id": "financial.trans",
+          "field": "type",
+          "value": "VYBER",
+          "basis": "unique_category_sample_code_matches_public_token",
+          "authority": "coverage_hint_only",
+          "mandatory": false
+        }
+      ],
+      "added_field_ids": [],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [
+          {
+            "relation_id": "account_district_id_fkey:district_id",
+            "parent_table": "financial.district",
+            "parent_field": "district_id",
+            "child_table": "financial.account",
+            "child_field": "district_id",
+            "role_label": "location of branch",
+            "role_description": "location of branch",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "client_district_id_fkey:district_id",
+            "parent_table": "financial.district",
+            "parent_field": "district_id",
+            "child_table": "financial.client",
+            "child_field": "district_id",
+            "role_label": "location of branch",
+            "role_description": "location of branch",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "disp_account_id_fkey:account_id",
+            "parent_table": "financial.account",
+            "parent_field": "account_id",
+            "child_table": "financial.disp",
+            "child_field": "account_id",
+            "role_label": "account_id",
+            "role_description": "id number of account",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "loan_account_id_fkey:account_id",
+            "parent_table": "financial.account",
+            "parent_field": "account_id",
+            "child_table": "financial.loan",
+            "child_field": "account_id",
+            "role_label": "account_id",
+            "role_description": "the id number identifying the account",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "order_account_id_fkey:account_id",
+            "parent_table": "financial.account",
+            "parent_field": "account_id",
+            "child_table": "financial.order",
+            "child_field": "account_id",
+            "role_label": "account_id",
+            "role_description": "id number of account",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "trans_account_id_fkey:account_id",
+            "parent_table": "financial.account",
+            "parent_field": "account_id",
+            "child_table": "financial.trans",
+            "child_field": "account_id",
+            "role_label": "account_id",
+            "role_description": "",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "disp_client_id_fkey:client_id",
+            "parent_table": "financial.client",
+            "parent_field": "client_id",
+            "child_table": "financial.disp",
+            "child_field": "client_id",
+            "role_label": "client_id",
+            "role_description": "id number of client",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          }
+        ],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": [
+        {
+          "table_id": "financial.trans",
+          "table": "trans",
+          "field": "operation",
+          "requested": "VYBER"
+        }
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "initial_sql_violation_codes": [],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [],
+      "profile_hints": [],
+      "added_field_ids": [
+        "student_club.event.event_name"
+      ],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [
+          {
+            "relation_id": "budget_link_to_event_fkey:link_to_event",
+            "parent_table": "student_club.event",
+            "parent_field": "event_id",
+            "child_table": "student_club.budget",
+            "child_field": "link_to_event",
+            "role_label": "link to event",
+            "role_description": "The unique identifier of the event to which the budget line applies.",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "expense_link_to_budget_fkey:link_to_budget",
+            "parent_table": "student_club.budget",
+            "parent_field": "budget_id",
+            "child_table": "student_club.expense",
+            "child_field": "link_to_budget",
+            "role_label": "link to budget",
+            "role_description": "The unique identifier of the record in the Budget table that indicates the expected total expenditure for a given category and event.",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          }
+        ],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": [
+        {
+          "table_id": "student_club.event",
+          "table": "event",
+          "field": "event_name",
+          "requested": "April Speaker"
+        }
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "initial_sql_violation_codes": [
+        "percentage_operation_order"
+      ],
+      "old_final_sql_violation_codes": [
+        "percentage_operation_order"
+      ],
+      "required_public_conditions": [
+        {
+          "table_id": "card_games.cards",
+          "field_id": "card_games.cards.bordercolor",
+          "field": "bordercolor",
+          "value": "borderless",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        }
+      ],
+      "profile_hints": [],
+      "added_field_ids": [],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [
+          {
+            "relation_id": "set_translations_setcode_fkey:setcode",
+            "parent_table": "card_games.sets",
+            "parent_field": "code",
+            "child_table": "card_games.set_translations",
+            "child_field": "setcode",
+            "role_label": "set code",
+            "role_description": "the set code for this set",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          }
+        ],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": [
+        {
+          "table_id": "card_games.cards",
+          "table": "cards",
+          "field": "bordercolor",
+          "requested": "borderless"
+        }
+      ]
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "initial_sql_violation_codes": [],
+      "old_final_sql_violation_codes": [],
+      "required_public_conditions": [
+        {
+          "table_id": "superhero.attribute",
+          "field_id": "superhero.attribute.attribute_name",
+          "field": "attribute_name",
+          "value": "Strength",
+          "basis": "explicit_evidence_equality",
+          "authority": "unique_public_field_value_binding",
+          "mandatory": true
+        }
+      ],
+      "profile_hints": [],
+      "added_field_ids": [],
+      "entity_grain": {},
+      "relation_role_context": {
+        "policy": "authorized_role_alternatives_v1",
+        "joins_are_alternatives": true,
+        "roles": [
+          {
+            "relation_id": "hero_attribute_attribute_id_fkey:attribute_id",
+            "parent_table": "superhero.attribute",
+            "parent_field": "id",
+            "child_table": "superhero.hero_attribute",
+            "child_field": "attribute_id",
+            "role_label": "attribute id",
+            "role_description": "the id of the attribute\nMaps to attribute(id)",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          },
+          {
+            "relation_id": "hero_attribute_hero_id_fkey:hero_id",
+            "parent_table": "superhero.superhero",
+            "parent_field": "id",
+            "child_table": "superhero.hero_attribute",
+            "child_field": "hero_id",
+            "role_label": "hero id",
+            "role_description": "the id of the hero\nMaps to superhero(id)",
+            "source": "current_authorized_declared_foreign_key",
+            "mandatory": false
+          }
+        ],
+        "preferred_actor_relations": [],
+        "context_output_groups": [],
+        "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges."
+      },
+      "canonical_lookup_plan": [
+        {
+          "table_id": "superhero.attribute",
+          "table": "attribute",
+          "field": "attribute_name",
+          "requested": "strength"
+        }
+      ]
+    }
+  ],
+  "postgresql_connected": false,
+  "new_model_request_count": 0,
+  "native_execution_verified": false,
+  "profile_fixture_scope": "Only sample values already exposed by the accepted v1 contract, not a reconstructed full index. Used for negative-regression and SME coverage checks.",
+  "canonical_scope": "Reuse of accepted recorded lookup values for offline contract inspection only; new server runs repeat lookup under verified source."
+}

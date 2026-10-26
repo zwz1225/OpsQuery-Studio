@@ -1,0 +1,18 @@
+{
+  "run_status": "complete",
+  "archive": "M1_C2_连接管理同步包_20261010.zip",
+  "entry_count": 7,
+  "archive_sha256": "e0bc8a58b6f5d1a353ab2dd86425b0ca45f20ef53b97e4cb04b011f2072ba24a",
+  "entry_sha256": {
+    "backend/requirements-postgres.txt": "5ae65fcd02558d3cb1c3e24a2cfebb2cdfd4e9c079f0e508941aebfcb56a3040",
+    "backend/app/datasources/postgres_connections.py": "01fd24ac70c1075becf7890e44febe1d3f0814a77594f1cc5af6fb0f6678599c",
+    "backend/scripts/check_m1_c2_postgres_connections.py": "53ab874b3d470c1b77d7bf1752273415a1cb852a040a3a10467019145ea15b52",
+    "backend/tests/test_postgres_connections.py": "fd3060af9827957d9d8ce5fd2a98fe73da5ff0c5a67fecbea9326924f07b5dfe",
+    "backend/evaluation/M1_C2_CONNECTION_ACCEPTANCE.md": "3e9726f153e72f4d00c354816cea257468a07056233fbe9061235816931d931c",
+    "M1_数据源依赖梳理与最小适配方案.md": "52156019ab9e61064ebc8dbe060bbdb410c1495a0b8d8293f6fc3d73aedbee11",
+    "backend/evaluation/results/m1_c2_implementation_local.json": "0e01d803221a570b8e01c13c9e3427fc853fb9fd11f066b7ee8f49cfda868940"
+  },
+  "entries_match_workspace": true,
+  "real_credentials_included": false,
+  "historical_reports_included": false
+}

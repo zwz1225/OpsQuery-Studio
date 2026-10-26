@@ -1,0 +1,59 @@
+{
+  "artifact_count": 11,
+  "artifacts": {
+    "development80.json": "237b6f09f8b7ee9965f9e18b3ab2195a79b5ad949e55e6d56868a3266df29b10",
+    "holdout30.json": "d0bfb5d7fe63555fd00632c875ed3970e7282e754a4d03030a0af9f507f3141c",
+    "inputs/development80.jsonl": "6760724e98b6da967ac5ebb2698c4e5cab385875bd150ad36a3b252ffdc52f03",
+    "inputs/holdout30.jsonl": "1719472c9e7ab1b5f5c6aafa24f2625b40f1a3b6d7bf9f6a5dbeed6bb60edf41",
+    "inputs/smoke8.jsonl": "795fde65943e229ae96676d657cf05be26440cce62c66c078175e934a1323fa7",
+    "protocol.json": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+    "reference/official_calculate_ex.py.txt": "4a777188f2924dd194dd84d84dc85a5b9ec5631de0c8514dddb7990347528b92",
+    "reference/official_execute_sql.py.txt": "6f15188e26408a8d2642a7434a2c7998b274d66cb68f9dc32a0fbd478b329068",
+    "scorer/gold110.jsonl": "5189d2fa4700cb2f9e1ccbe5b80d0b374cd24d162a68f11fb909346e02dc349f",
+    "smoke8.json": "fc3983b66f9cee0b7ab24c08cf9ca0c69e6c48c2cdd0b7e6bf7206a74e542a91",
+    "source_lineage.json": "90f041a22fa37e687d8ca6da82ae375c3a6285eac3cfa16e671494cd762223c3"
+  },
+  "database_imported": false,
+  "development_case_count": 80,
+  "development_databases": [
+    "california_schools",
+    "card_games",
+    "codebase_community",
+    "debit_card_specializing",
+    "financial",
+    "student_club",
+    "superhero",
+    "toxicology"
+  ],
+  "development_difficulty_counts": {
+    "challenging": 16,
+    "moderate": 40,
+    "simple": 24
+  },
+  "gold_execution_verified": false,
+  "holdout_case_count": 30,
+  "holdout_databases": [
+    "european_football_2",
+    "formula_1",
+    "thrombosis_prediction"
+  ],
+  "holdout_difficulty_counts": {
+    "challenging": 6,
+    "moderate": 15,
+    "simple": 9
+  },
+  "new_model_request_count": 0,
+  "next": "Controlled import plan and generic source adapter; no existing internal runner is claimed compatible",
+  "official_evidence_provided": true,
+  "operation": "check",
+  "postgresql_connected": false,
+  "protocol_id": "m2_bird_pg_v1",
+  "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+  "recorded_at": "2026-10-15T12:41:03.624336+00:00",
+  "run_status": "complete",
+  "runtime_integration_ready": false,
+  "scoring_policy": "bird_native_tuple_set_ex_v1",
+  "smoke_case_count": 8,
+  "stage": "M2 A protocol and deterministic database-separated split",
+  "upstream_commit": "abd11b6db92a1c9f809b32f7564c7c71b34d67f0"
+}

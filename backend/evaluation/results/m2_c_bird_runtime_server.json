@@ -1,0 +1,1865 @@
+{
+  "stage": "M2 C domain runtime, profiles, budgets and isolation",
+  "run_status": "complete",
+  "started_at": "2026-10-16T07:50:08.242054+00:00",
+  "errors": [],
+  "postgresql_connected": true,
+  "database_created": false,
+  "database_imported": false,
+  "target_data_verified": true,
+  "new_model_request_count": 0,
+  "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+  "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede",
+  "source_binding": {
+    "protocol_sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77",
+    "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+    "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+    "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+    "physical_database": "askdata_m2_bird",
+    "physical_schema": "public",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "budgets": {
+      "case_wall_timeout_seconds": 600,
+      "chat_max_output_tokens": 4096,
+      "connect_timeout_seconds": 10,
+      "enforcement_status": "required_in_external_runner_before_live; existing internal runners are not claimed compliant",
+      "lock_timeout_ms": 5000,
+      "max_chat_http_attempts_per_case": 10,
+      "max_prompt_utf8_bytes": 98304,
+      "max_sql_tool_calls": 3,
+      "max_total_model_http_attempts_per_case": 16,
+      "max_transport_retries_per_request": 1,
+      "max_validation_attempts_per_sql_round": 3,
+      "model_request_timeout_seconds": 180,
+      "result_limit_probe": "fetch limit+1; never score preview or partial rows",
+      "result_payload_byte_limit": 67108864,
+      "result_row_limit": 100000,
+      "shared_attempt_counters": "Include generation, preprocessing, embeddings, reranking and transport retries; shared index build reported separately",
+      "sql_statement_timeout_ms": 30000,
+      "usage": "record provider usage when available; missing usage is unknown, never zero",
+      "workers": 1
+    },
+    "scoring_policy": "bird_native_tuple_set_ex_v1",
+    "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1"
+  },
+  "code_binding": {
+    "sha256": "96d0ccff7b6bfd5962c8dc091b36d68238d4068da39f379b0a30156414e7b269",
+    "files": {
+      "app/__init__.py": "355b723e052e3e6c211f4cd922a2cccafd16836360ce633afbafdbf32bdd90ad",
+      "app/api/__init__.py": "e13d97d643b76827935fb88232e4012ce4161d82adffe01e040e48090b2887ea",
+      "app/api/routes.py": "3237efe75ad8141ca01d03b08e303c8bc30130f1dbeddd5f01e62e52087f893c",
+      "app/config.py": "7e71979bf12e33bc7636d64c9a608552103c97cf176db64f8d731c73a7fc75b3",
+      "app/database.py": "30ad145862f13262fcc4b6c3881a4823533dda3814fc9e062ba069780f92a863",
+      "app/datasources/__init__.py": "660dc93b3ad4e3454e433dd79bcfd7f2db67274baeac0ebf7d84682296b117b2",
+      "app/datasources/contracts.py": "b9da804d820b1d5f20fb642cf60bf37039a6fb6dd33e6212081b3335dd32c869",
+      "app/datasources/csv_metadata.py": "ef68964f78da54eee5b0cd64b8f0dd3c53adde04adbcfc9cf471494f9e144638",
+      "app/datasources/dialects.py": "27eeb0134a3802e5a71ab013f1b7fd6f375bce3720823a449b762c962c9bc13b",
+      "app/datasources/postgres_config.py": "cc1dc6f6c80dd88f2e3937cd6753f84b02e5ef2b7b0ae9a151524c715e5442d2",
+      "app/datasources/postgres_connections.py": "26b08a853c6f691a21a3f11b615f6caea7eb6eb22ab10a22a3e544ac1146f0a1",
+      "app/datasources/postgres_metadata.py": "1a1f3cd0bac6193231a9403e010a3c482904f851ae433abb1d95bb94183c771e",
+      "app/datasources/row_digest.py": "06cb48c69b2b0d2e05006de64f6555fe8b0ab4460118afb92af8e9c3efc28b06",
+      "app/datasources/runtime.py": "586c9024d8b8dbca5ffa9ea3f04d403190285333e4c04b3a19036e897ddcbe24",
+      "app/datasources/sql_policy.py": "32407706c83ce218440a0d25cc2b07a245463a5cb93a52e21aa0d4514dd6ded9",
+      "app/datasources/values.py": "869fa4ba783aebb71a5a643ede27c1997894e1740e865f205fd935790662e7df",
+      "app/errors.py": "b71518301668603cb4dce07daed44f611bdad0a31b1e0fd9f50ba8b6fdbe4b8d",
+      "app/main.py": "cae83be9b955964b25f17045a742226fae2db7751c8567e5263c88ea0a785c0f",
+      "app/mcp_runtime/__init__.py": "25afe0d37fd99611244cc7ff3e903cfa5c2dade31a15870e15269a609c6a7053",
+      "app/mcp_runtime/client.py": "549774b6d3b0b5d2903e56f538e61299a3c9a69abcb2be6c5c155f82d0d3e51d",
+      "app/mcp_runtime/schemas.py": "d71c055298a5a338f5126235c5604ce0ca96cb719db629d06a91b23a03d3787a",
+      "app/mcp_runtime/server.py": "bc5cd3e3b1be1dfc2e12dc742046c44d0b701fe8893a82f4897471a0e915afdd",
+      "app/mcp_runtime/tools/__init__.py": "b465bdc3de9e8878a59a8bd244b2e42fa03594e886d90ac5a6b218bf3892535f",
+      "app/mcp_runtime/tools/database_tools.py": "4e916e5043d6bad56429f727377415bdac14c025a585fe2ab3865ef0911e83c9",
+      "app/mcp_runtime/tools/presentation_tools.py": "1524ab3baaf0ecca5e8df1b03e5682f6dd8bdfff37e3f2b64b7cf88aa9f19653",
+      "app/mcp_runtime/tools/time_tools.py": "59a95659eafcc50f4c9ef2b2d1f783a04617e29018251fce64fb3af55d500974",
+      "app/model_client.py": "f68cd0ced71c42e6e18464f86310aed22b71386f63f1160e49fad8bd02c92093",
+      "app/models.py": "2fea8f78c9078f6bbf876d18193d4503b42f94daa4ba5c2f31b6fdd8784cf83e",
+      "app/preprocessing.py": "28a9359411a925147457f5514837471e75be910e182540344add5aac21a000a2",
+      "app/querying/__init__.py": "6dc948905075e824c2a2607ef66f9b842d53c013f2644bd78ed7551eac2c652c",
+      "app/querying/constraint_planner.py": "73fc8d4fe47e69285903a80b9e783acbd45bf0bc65575c49380b3f9fec8f5ef0",
+      "app/querying/constraint_validator.py": "d9ebea98ba3dea34f89bf8b2645dcd6a81bcc6b72f2af7df5f334f241db2db7c",
+      "app/querying/data_qa_agent.py": "59a3faf139e9da26e5fd373f20f1e2a85166363eea9b1c8e9888740ec49b6fe3",
+      "app/querying/duckdb_engine.py": "0ad6bd9980b1962dd630519cb9d8256b06f7aabbaa3446fb9009f4a27aa0cc26",
+      "app/querying/metric_planner.py": "28d1d3bc60988779b1e3d845993e73861c15cb6a9511554605eca94aff662e38",
+      "app/querying/models.py": "4472388a7ae0bcf5803b32b02c6290757ffc4ae62c7ea2611a9eac5de7499ad3",
+      "app/querying/postgres_engine.py": "eb533e3bb5a022bcab33a181fc992cf575bdca92debbbdd486a184a09df4c857",
+      "app/querying/response_generator.py": "c99a6d87dd7774a003a076f4ade68b4ba364b497a6a5fc5c3cbe3ea4b524561c",
+      "app/querying/single_database_agent.py": "9115867fb1b964ee1aba0bde5d07364703a8c381814cbe22a91c933c8a37a107",
+      "app/querying/sql_context.py": "893df35a113720a94276b2f3108a38b51f1f8167231ff9b8bc179f078c2c543f",
+      "app/querying/sql_validator.py": "f516de49204f43129383ce4396c1ecbbc732cbc72336507597e82e74b5e18e90",
+      "app/retrieval/__init__.py": "af173889acb98646a899576f7f784db01a799c468e9736c511c500bef1ef5c53",
+      "app/retrieval/graph.py": "60195e45df0671a5c8e273aa5584a11907c87131816da5fac9773b0f6d0bf2ad",
+      "app/retrieval/service.py": "ad490b0ed8154f9237d671507896874f4fd9929e0b8edb13972f905846b2979e",
+      "app/retrieval/store.py": "965e5fd6c774229ece9c82f053e9f2d932e7ad368fde6c1c336422b6b5131656",
+      "app/retrieval/time_field_policy.py": "62178d671b4e3772d98a36833ece3cbf0e6d0beee10d3d9b9386605b2ab0d0a4",
+      "app/security/__init__.py": "f64ea4a1b53332090130642c17e6265aa4df9019634fc075448b25f3ba4e94a6",
+      "app/security/access_control.py": "0165c9bf5d87cbe21da951642bcac8f68055be41ce9eac91ad8892ec3dd6f1ee",
+      "app/security/auth.py": "1aaa891fc7f443bb8a7d678ac4be82a975ae1722dba56f7e228e112435dc76e3",
+      "app/service.py": "3961513ad9e067f749d6bb4aa7bcb5d680219bb564baa06fcfa6b0d5a6516296",
+      "app/services/__init__.py": "020f361755c5bedb3b0b82e4d1458b862c7b8f3d2073d0a87325f2772220de0c",
+      "app/services/askdata_service.py": "f13e3041bd8ca20dfc7af5d7153afa934f6da9411cde8729bc8ca42663b069d5",
+      "app/services/memory_store.py": "d4ed8600af12b383a459aeebf4c40d74ef99209da3fff8d611865a9b36b6cb14",
+      "app/services/session_archive.py": "008336024d456a019341dcebaefbc7527adbcd8aa9d351a49914225d07951b51",
+      "app/services/session_context.py": "b4590ae4410f13e05d678fbcbf8b69c102400ae67986d4ad8d4ef7093ccbbe7c",
+      "app/services/short_term_memory.py": "bfbc81597254e58f8303b81e53ebcd24a244fc4d6cd7053c1d5cabe8ad48299f",
+      "app/skills/__init__.py": "680726c976c87e1e888df0697b232234722401e1d1b02636949f18afab163949",
+      "app/skills/registry.py": "b1578a6829402fd103be8b40920d8fff682694ed4c4fd986935b6c8b6eb37f53",
+      "app/workflows/__init__.py": "3da3f98de22b4df4c01d7082562b1decac29704d80539cc9e7a8e4f9378ae397",
+      "app/workflows/clarification.py": "17314e22bdd5194f41b360cea4a38f22850a6afecc7514ec73bc9be4fb355eb8",
+      "app/workflows/query_graph.py": "9b818c9309a178b049da9edf750354bf2af8ba2781bd7091ea1447bdaafe3461",
+      "app/workflows/result_builder.py": "bfca63b31f0b71f1e823bc59912b58a75317d80f2d34cef1abec5aec46dad72e",
+      "app/workflows/state.py": "7532b4d7d9223b555e22f9bb38810da1c8fa44c9c58bbe5992c42c72094ffeaf",
+      "evaluation/bird/__init__.py": "b9d0c593cf9368540295851f3c4acb9242bc17aaa48f1b779ee7b174f9fc98f3",
+      "evaluation/bird/budgets.py": "688de220e22e28e1fe4366db4348866d61eb946d5345fd918e02e573cc013e39",
+      "evaluation/bird/case_worker.py": "3de928924e8f353322d5208421e97b68588c68a0f2423bdca6c824d8964e7c9d",
+      "evaluation/bird/evidence.py": "131ed1bd820938e7e09c0f530ebede143941fd0b418e27c2a9d802b4208f3fec",
+      "evaluation/bird/isolated_agent.py": "925d47c59c0d33fee347846b461be105aa326061cc507c6dba0bce8f06c676c0",
+      "evaluation/bird/manifest.py": "b32775e26be5eda69e76d19cd987224f187a71a6fcc1ba99866883b8adcbd83f",
+      "evaluation/bird/metrics.py": "83cf7d18559f51a532d2726100eff27353f5c6a5c24a46f5f857081d8b20c7c7",
+      "evaluation/bird/model.py": "0245ab1a610c43a0e7d4c7b576b75ac2f0c3c31c4b355363acfc7b8672fcfb2f",
+      "evaluation/bird/native.py": "c490fc6410ccf108fff09070091984b12daf8b106858d10c7dc6c436d6ec576f",
+      "evaluation/bird/retrieval.py": "075a2b9b9e34e0c0d651a344245d74aca46525d95d8b60ede8f206e770cfabbf",
+      "evaluation/bird/runner.py": "fbdbde667433949fe755cbd1680f140d7a2b6e8478816f3beb21c095368402e5",
+      "evaluation/bird/runtime.py": "e367e93db106bf3d5687f7cec815246e5d64ac920e62642f1d494c19a128a160",
+      "evaluation/bird/sql.py": "b84ca3e5a2adcb979e65fc995f920910b00583d1ca006c45cbcbe53a3f2e81fd",
+      "evaluation/bird/supervisor.py": "2a13f26b43b26ba756723f883a84d37ab5f2c3968096eb6daecde0e30ec9d082",
+      "evaluation/bird_protocol.py": "f1a60f00ae8bd8f757b28f3139e9be83fa196e8c981c0884e41315bb4c5e6b91",
+      "evaluation/run_bird_benchmark.py": "df76b1ad2280f1a1a89f76743890abcd194c0660def407f95113421dae15f48d",
+      "scripts/check_m2_c_bird_runtime.py": "70d54f2a35d8ef37de21eb01055ddd1e8a25d479638ca71eeb536334fd85b87c",
+      "scripts/m2_b_common.py": "47d4696ddd7a61f2a6c60b29ba4785f31eac1929c484d1b69d30d752745affef",
+      "scripts/m2_b_dump.py": "116345a7e0a8f3a6dc49c305b899f47655cc5d6416adcdcc8eb6bce6b0e6944f",
+      "scripts/m2_b_structure.py": "e4a33335815cb511c3e0ee6c173bfdaafd9ba5214f88e8bbd8c3e325a4f9a1a6",
+      "scripts/m2_b_target.py": "6a952d812604e27c1e43335fe82d4e4958c3c07ca37b9af980c034e8ad19f7a9",
+      "scripts/m2_b_typed_rows.py": "805165db8aba54ee61512e40f4dcb216f9a2f6b90f460d41163ca4b66e26b9ac"
+    },
+    "dependencies": {
+      "psycopg": "3.2.13",
+      "psycopg-pool": "3.2.8",
+      "sqlglot": "30.17.0"
+    },
+    "python": "3.11.15",
+    "system": "Linux",
+    "kernel": "6.8.0-59-generic",
+    "machine": "x86_64",
+    "seccomp_library_version": "2.5.3"
+  },
+  "domains": [
+    {
+      "database_id": "california_schools",
+      "role": "askdata_m2_ro_california_schools",
+      "source_identity": {
+        "logical_database_id": "california_schools",
+        "source_id": "bird_mini_dev_postgres_california_schools",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+        "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+      },
+      "typed_table_count": 3,
+      "field_count": 89,
+      "native_duplicate_names_preserved": true,
+      "cross_domain_sql_denied": true,
+      "cross_domain_profile_denied": true,
+      "profiles": {
+        "cdscode": {
+          "row_count": 9986,
+          "null_count": 0,
+          "samples": [
+            [
+              "text",
+              "01100170109835"
+            ],
+            [
+              "text",
+              "01100170112607"
+            ],
+            [
+              "text",
+              "01100170118489"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "california_schools",
+            "source_id": "bird_mini_dev_postgres_california_schools",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+            "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+          }
+        },
+        "Academic Year": {
+          "row_count": 9986,
+          "null_count": 0,
+          "samples": [
+            [
+              "text",
+              "2014-2015"
+            ]
+          ],
+          "sample_truncated": [
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "california_schools",
+            "source_id": "bird_mini_dev_postgres_california_schools",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+            "data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1"
+          }
+        }
+      },
+      "descriptions": {
+        "database_id": "california_schools",
+        "files": [
+          {
+            "table": "frpm",
+            "sha256": "f2c3fa53a02c5d711866a192f580c6a545389192a096441767f40d72ffa41334",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 29
+          },
+          {
+            "table": "satscores",
+            "sha256": "a44145158100894387d05a96987c487e3c83742892b13127b486de309bb8f138",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 11
+          },
+          {
+            "table": "schools",
+            "sha256": "f18d96abf47892e4bd8094dd47d6978ea6bbc11821eccdf91f3f54dd1685979f",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 49
+          }
+        ],
+        "unmatched_columns": []
+      },
+      "verification": {
+        "database_id": "california_schools",
+        "role": "askdata_m2_ro_california_schools",
+        "snapshot": "906:906:",
+        "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+        "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+        "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+        "authorized_catalog_version": "f61593740ec0e1333479b2609864e2cb054c41f9d84e1e1e9c0a91c6a1f8f592",
+        "authorized_data_version": "d888d8e6f4c112d59894fefdee24f4685cb9aec3c6a4bdc4ee66ab9a9ce8d4b1",
+        "live_target_verified": true,
+        "verification_method": "fresh typed domain rows and same-snapshot server guards"
+      }
+    },
+    {
+      "database_id": "card_games",
+      "role": "askdata_m2_ro_card_games",
+      "source_identity": {
+        "logical_database_id": "card_games",
+        "source_id": "bird_mini_dev_postgres_card_games",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+        "data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51"
+      },
+      "typed_table_count": 6,
+      "field_count": 115,
+      "native_duplicate_names_preserved": true,
+      "cross_domain_sql_denied": true,
+      "cross_domain_profile_denied": true,
+      "profiles": {
+        "id": {
+          "row_count": 56822,
+          "null_count": 0,
+          "samples": [
+            [
+              "int",
+              "1"
+            ],
+            [
+              "int",
+              "2"
+            ],
+            [
+              "int",
+              "3"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "card_games",
+            "source_id": "bird_mini_dev_postgres_card_games",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+            "data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51"
+          }
+        },
+        "artist": {
+          "row_count": 56822,
+          "null_count": 3,
+          "samples": [
+            [
+              "text",
+              "Aaron Boyd"
+            ],
+            [
+              "text",
+              "Aaron Forsythe"
+            ],
+            [
+              "text",
+              "Aaron Miller"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "card_games",
+            "source_id": "bird_mini_dev_postgres_card_games",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+            "data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51"
+          }
+        }
+      },
+      "descriptions": {
+        "database_id": "card_games",
+        "files": [
+          {
+            "table": "cards",
+            "sha256": "41bc566e91e165f43f7484a1d3d3f17e66094e2c0cc3092829366f6e2f019d23",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 74
+          },
+          {
+            "table": "foreign_data",
+            "sha256": "ac254726eeb2d0fd574ec64bac31617ac233842623f692469b7569febe9f3310",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 8
+          },
+          {
+            "table": "legalities",
+            "sha256": "223def1785f0f6f277db07a7881e8938e4314382697da47c080d14b52f1253e9",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 4
+          },
+          {
+            "table": "rulings",
+            "sha256": "c50c64dd4d882a17d1a8478cd48b889103a39464c78f3da5dd904fde966bd3d4",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 4
+          },
+          {
+            "table": "set_translations",
+            "sha256": "d6f172ff2add8a399176cdb9ef32a5d60c8cf11186363e6142bb48a09debb2ff",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 4
+          },
+          {
+            "table": "sets",
+            "sha256": "3679c8051713f1574d40ff6793eaebf590705915d20f086ffe3ee930a4ddbb0e",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 21
+          }
+        ],
+        "unmatched_columns": []
+      },
+      "verification": {
+        "database_id": "card_games",
+        "role": "askdata_m2_ro_card_games",
+        "snapshot": "906:906:",
+        "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+        "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+        "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+        "authorized_catalog_version": "d576ef959e0426e3fbba4e88ad93f8961d270f00b1adc7d40a82069237f56ae6",
+        "authorized_data_version": "3e4bb27a2e87d9bda103149f91654b6ea81b68a6e2ce8ae0e28e7e5fb5861d51",
+        "live_target_verified": true,
+        "verification_method": "fresh typed domain rows and same-snapshot server guards"
+      }
+    },
+    {
+      "database_id": "codebase_community",
+      "role": "askdata_m2_ro_codebase_community",
+      "source_identity": {
+        "logical_database_id": "codebase_community",
+        "source_id": "bird_mini_dev_postgres_codebase_community",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "9f9da4752911621e3159a107239173112469ab862e90ea007a9cc23a4aed5940",
+        "data_version": "ca3a7af721e8f16536b022f5fa94d2bd744dd8ebef57504070c280cd3b206a20"
+      },
+      "typed_table_count": 8,
+      "field_count": 71,
+      "native_duplicate_names_preserved": true,
+      "cross_domain_sql_denied": true,
+      "cross_domain_profile_denied": true,
+      "profiles": {
+        "id": {
+          "row_count": 79851,
+          "null_count": 0,
+          "samples": [
+            [
+              "int",
+              "1"
+            ],
+            [
+              "int",
+              "2"
+            ],
+            [
+              "int",
+              "3"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "codebase_community",
+            "source_id": "bird_mini_dev_postgres_codebase_community",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "9f9da4752911621e3159a107239173112469ab862e90ea007a9cc23a4aed5940",
+            "data_version": "ca3a7af721e8f16536b022f5fa94d2bd744dd8ebef57504070c280cd3b206a20"
+          }
+        },
+        "userid": {
+          "row_count": 79851,
+          "null_count": 0,
+          "samples": [
+            [
+              "int",
+              "2"
+            ],
+            [
+              "int",
+              "3"
+            ],
+            [
+              "int",
+              "4"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "codebase_community",
+            "source_id": "bird_mini_dev_postgres_codebase_community",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "9f9da4752911621e3159a107239173112469ab862e90ea007a9cc23a4aed5940",
+            "data_version": "ca3a7af721e8f16536b022f5fa94d2bd744dd8ebef57504070c280cd3b206a20"
+          }
+        }
+      },
+      "descriptions": {
+        "database_id": "codebase_community",
+        "files": [
+          {
+            "table": "badges",
+            "sha256": "a1a7fc9783f11107c6b80adc54d0404a31d7bc162a1f5ae5e246e4852dc41a09",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 4
+          },
+          {
+            "table": "comments",
+            "sha256": "bd8de09b3eab2b4a1f69d9298460b0f39d919504d5dfb34d00de302b77e520eb",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 7
+          },
+          {
+            "table": "posthistory",
+            "sha256": "053779c106b3bc61da71744e918b321a2436180e5c57ad2a706e9c29fef11e94",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 9
+          },
+          {
+            "table": "postlinks",
+            "sha256": "789fefbd5b9b8db2653f8079c78325d6e3fd23a2ceff69ed7ee8959674ff014c",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 5
+          },
+          {
+            "table": "posts",
+            "sha256": "33e6883bbadc4fe77b5f4f593f7f23d74c2bc2bc45c8f2086c328beeefeb28e2",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 21
+          },
+          {
+            "table": "tags",
+            "sha256": "27bc5022eeb20e18dc588a1f3cb63ac2c23720670f003fdd776ae9a5aad0a0d7",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 5
+          },
+          {
+            "table": "users",
+            "sha256": "69d3297922932d9b39eb56e673606ba56fb3474a650fe417ea32d4d627160014",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 14
+          },
+          {
+            "table": "votes",
+            "sha256": "9c3856469bc9fd563d86f7062bfb9d632c6e98ae42fd7c52117e0be15e9e7ccf",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 6
+          }
+        ],
+        "unmatched_columns": []
+      },
+      "verification": {
+        "database_id": "codebase_community",
+        "role": "askdata_m2_ro_codebase_community",
+        "snapshot": "906:906:",
+        "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+        "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+        "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+        "authorized_catalog_version": "9f9da4752911621e3159a107239173112469ab862e90ea007a9cc23a4aed5940",
+        "authorized_data_version": "ca3a7af721e8f16536b022f5fa94d2bd744dd8ebef57504070c280cd3b206a20",
+        "live_target_verified": true,
+        "verification_method": "fresh typed domain rows and same-snapshot server guards"
+      }
+    },
+    {
+      "database_id": "debit_card_specializing",
+      "role": "askdata_m2_ro_debit_card_specializing",
+      "source_identity": {
+        "logical_database_id": "debit_card_specializing",
+        "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+        "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+      },
+      "typed_table_count": 5,
+      "field_count": 21,
+      "native_duplicate_names_preserved": true,
+      "cross_domain_sql_denied": true,
+      "cross_domain_profile_denied": true,
+      "profiles": {
+        "customerid": {
+          "row_count": 32461,
+          "null_count": 0,
+          "samples": [
+            [
+              "int",
+              "3"
+            ],
+            [
+              "int",
+              "5"
+            ],
+            [
+              "int",
+              "6"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "debit_card_specializing",
+            "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+            "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+          }
+        },
+        "segment": {
+          "row_count": 32461,
+          "null_count": 0,
+          "samples": [
+            [
+              "text",
+              "KAM"
+            ],
+            [
+              "text",
+              "LAM"
+            ],
+            [
+              "text",
+              "SME"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "debit_card_specializing",
+            "source_id": "bird_mini_dev_postgres_debit_card_specializing",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+            "data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450"
+          }
+        }
+      },
+      "descriptions": {
+        "database_id": "debit_card_specializing",
+        "files": [
+          {
+            "table": "customers",
+            "sha256": "fd1ff06796da13f6331801dba2a24536fd0aed887cde2a8d08cd03530de88f2d",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 3
+          },
+          {
+            "table": "gasstations",
+            "sha256": "4e44804b860c9fe412dd8872a4f53fc0e1094035ecc027fac4d9477d05766199",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 4
+          },
+          {
+            "table": "products",
+            "sha256": "b61419d9b6481b170230a302c313fd787b5f0291f9a1a15fb3a55eb6d4f5f538",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          },
+          {
+            "table": "transactions_1k",
+            "sha256": "08bed279bc784952f1e17c97b290cf869ede6f9ea0914641052546408626b0af",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 9
+          },
+          {
+            "table": "yearmonth",
+            "sha256": "7faf48ff08295935610dc07b33596028483f8270dd1ace0c6a512ae65f8a2e16",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 3
+          }
+        ],
+        "unmatched_columns": []
+      },
+      "verification": {
+        "database_id": "debit_card_specializing",
+        "role": "askdata_m2_ro_debit_card_specializing",
+        "snapshot": "906:906:",
+        "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+        "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+        "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+        "authorized_catalog_version": "326d845efc50a478187f34b539099dc53588899647bc4a1c5a7b625249080fec",
+        "authorized_data_version": "da1966f793e175cee768bf048757f41691fff18ed46cb242cddabdb041fe0450",
+        "live_target_verified": true,
+        "verification_method": "fresh typed domain rows and same-snapshot server guards"
+      }
+    },
+    {
+      "database_id": "european_football_2",
+      "role": "askdata_m2_ro_european_football_2",
+      "source_identity": {
+        "logical_database_id": "european_football_2",
+        "source_id": "bird_mini_dev_postgres_european_football_2",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "7e65c485d64772c03edab6c13baa65eae104a933b2b115be747fe0c733cdfd8b",
+        "data_version": "cc4a4cfeed56bc10bb114cb58229c32cdcd5e270020dce63b21b931931562c16"
+      },
+      "typed_table_count": 7,
+      "field_count": 199,
+      "native_duplicate_names_preserved": true,
+      "cross_domain_sql_denied": true,
+      "cross_domain_profile_denied": true,
+      "profiles": {
+        "id": {
+          "row_count": 11,
+          "null_count": 0,
+          "samples": [
+            [
+              "int",
+              "1"
+            ],
+            [
+              "int",
+              "1729"
+            ],
+            [
+              "int",
+              "4769"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "european_football_2",
+            "source_id": "bird_mini_dev_postgres_european_football_2",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "7e65c485d64772c03edab6c13baa65eae104a933b2b115be747fe0c733cdfd8b",
+            "data_version": "cc4a4cfeed56bc10bb114cb58229c32cdcd5e270020dce63b21b931931562c16"
+          }
+        },
+        "name": {
+          "row_count": 11,
+          "null_count": 0,
+          "samples": [
+            [
+              "text",
+              "Belgium"
+            ],
+            [
+              "text",
+              "England"
+            ],
+            [
+              "text",
+              "France"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "european_football_2",
+            "source_id": "bird_mini_dev_postgres_european_football_2",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "7e65c485d64772c03edab6c13baa65eae104a933b2b115be747fe0c733cdfd8b",
+            "data_version": "cc4a4cfeed56bc10bb114cb58229c32cdcd5e270020dce63b21b931931562c16"
+          }
+        }
+      },
+      "descriptions": {
+        "database_id": "european_football_2",
+        "files": [
+          {
+            "table": "country",
+            "sha256": "e74aa65527321782a69ec5fdc68c3993aa6e1e5684426724776b81d12bcbe437",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          },
+          {
+            "table": "league",
+            "sha256": "d44bbef373f44c16dee4729012375c1bf901664f1097e3af4bb3dfc973067437",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 3
+          },
+          {
+            "table": "match",
+            "sha256": "2facc86ec5e869e7bb61b67fa660591c0a4f6291da79125dc2777a2bdafdd4dd",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 115
+          },
+          {
+            "table": "player",
+            "sha256": "a7a3cdc5c995227bbfcddf88d789f9244ffcfe0f6aed8aa69fcbef084149b92c",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 7
+          },
+          {
+            "table": "player_attributes",
+            "sha256": "d01a00206b4ec6e94435f3af7e5153abca01931c4e93a519bb86ca5bbd42b46c",
+            "encoding": "cp1252",
+            "mapped_column_count": 42
+          },
+          {
+            "table": "team",
+            "sha256": "104e03607f09cb41deddcb24a96add08aa2e9d8fc169454c3091a792df9f81ef",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 5
+          },
+          {
+            "table": "team_attributes",
+            "sha256": "3fbad7950903c65a467c291282ab90d773a9e517802e0fffad5c5abfa7390840",
+            "encoding": "cp1252",
+            "mapped_column_count": 25
+          }
+        ],
+        "unmatched_columns": []
+      },
+      "verification": {
+        "database_id": "european_football_2",
+        "role": "askdata_m2_ro_european_football_2",
+        "snapshot": "906:906:",
+        "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+        "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+        "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+        "authorized_catalog_version": "7e65c485d64772c03edab6c13baa65eae104a933b2b115be747fe0c733cdfd8b",
+        "authorized_data_version": "cc4a4cfeed56bc10bb114cb58229c32cdcd5e270020dce63b21b931931562c16",
+        "live_target_verified": true,
+        "verification_method": "fresh typed domain rows and same-snapshot server guards"
+      }
+    },
+    {
+      "database_id": "financial",
+      "role": "askdata_m2_ro_financial",
+      "source_identity": {
+        "logical_database_id": "financial",
+        "source_id": "bird_mini_dev_postgres_financial",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+        "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+      },
+      "typed_table_count": 8,
+      "field_count": 55,
+      "native_duplicate_names_preserved": true,
+      "cross_domain_sql_denied": true,
+      "cross_domain_profile_denied": true,
+      "profiles": {
+        "account_id": {
+          "row_count": 4500,
+          "null_count": 0,
+          "samples": [
+            [
+              "int",
+              "1"
+            ],
+            [
+              "int",
+              "2"
+            ],
+            [
+              "int",
+              "3"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "financial",
+            "source_id": "bird_mini_dev_postgres_financial",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+            "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+          }
+        },
+        "district_id": {
+          "row_count": 4500,
+          "null_count": 0,
+          "samples": [
+            [
+              "int",
+              "1"
+            ],
+            [
+              "int",
+              "2"
+            ],
+            [
+              "int",
+              "3"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "financial",
+            "source_id": "bird_mini_dev_postgres_financial",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+            "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+          }
+        }
+      },
+      "descriptions": {
+        "database_id": "financial",
+        "files": [
+          {
+            "table": "account",
+            "sha256": "98f9b72619c30593fadc013efc668d081193f34f2bda1353214c48c8013f03b3",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 4
+          },
+          {
+            "table": "card",
+            "sha256": "1dd79bf48c7696a5e6c3fc4835c9994b129f58307ad75c2f874f9cd1078fe300",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 4
+          },
+          {
+            "table": "client",
+            "sha256": "d1ef6f74b4730737517307c2f3b219496af264d83fe3e34f435c078b368dd800",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 4
+          },
+          {
+            "table": "disp",
+            "sha256": "3b7ade14650a78e7122fdf4f423c4dae241e923d73039c65e5e85b7ac7919ffe",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 4
+          },
+          {
+            "table": "district",
+            "sha256": "6da804294fe9e7f9f8285759b842e39e0c5c8cb10390a93d5e292c2cb28fdc48",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 16
+          },
+          {
+            "table": "loan",
+            "sha256": "e6f4c7393d3973c9647913206ec4da2b9480bca4a8fb1ed45f4d42c433112756",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 7
+          },
+          {
+            "table": "order",
+            "sha256": "d01db89f3121b96a8c5876108d835ad0ab8d8bd5e132d9d823d384ae12706476",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 6
+          },
+          {
+            "table": "trans",
+            "sha256": "59efafabbb4347853f29ebfc14fdd18633f724a669e7e26cb7b2ecd628d6c4a2",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 10
+          }
+        ],
+        "unmatched_columns": []
+      },
+      "verification": {
+        "database_id": "financial",
+        "role": "askdata_m2_ro_financial",
+        "snapshot": "906:906:",
+        "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+        "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+        "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+        "authorized_catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+        "authorized_data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9",
+        "live_target_verified": true,
+        "verification_method": "fresh typed domain rows and same-snapshot server guards"
+      }
+    },
+    {
+      "database_id": "formula_1",
+      "role": "askdata_m2_ro_formula_1",
+      "source_identity": {
+        "logical_database_id": "formula_1",
+        "source_id": "bird_mini_dev_postgres_formula_1",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+        "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918"
+      },
+      "typed_table_count": 13,
+      "field_count": 94,
+      "native_duplicate_names_preserved": true,
+      "cross_domain_sql_denied": true,
+      "cross_domain_profile_denied": true,
+      "profiles": {
+        "circuitid": {
+          "row_count": 72,
+          "null_count": 0,
+          "samples": [
+            [
+              "int",
+              "2"
+            ],
+            [
+              "int",
+              "3"
+            ],
+            [
+              "int",
+              "4"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "formula_1",
+            "source_id": "bird_mini_dev_postgres_formula_1",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+            "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918"
+          }
+        },
+        "circuitref": {
+          "row_count": 72,
+          "null_count": 0,
+          "samples": [
+            [
+              "text",
+              "BAK"
+            ],
+            [
+              "text",
+              "adelaide"
+            ],
+            [
+              "text",
+              "ain-diab"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "formula_1",
+            "source_id": "bird_mini_dev_postgres_formula_1",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+            "data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918"
+          }
+        }
+      },
+      "descriptions": {
+        "database_id": "formula_1",
+        "files": [
+          {
+            "table": "circuits",
+            "sha256": "fd69591f97ae0cb3b36b2d35524f03e5ec250c52358a71b2e41d435f3b2b658d",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 9
+          },
+          {
+            "table": "constructorresults",
+            "sha256": "b446078a76a422e9fbbb3246acf18a36bc75a441fac5f907555ac7031834f7d5",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 5
+          },
+          {
+            "table": "constructors",
+            "sha256": "79eb5ffde214702c1465ffa8584d59d3fc2e6a43fd8c41db91c02402af239dd4",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 5
+          },
+          {
+            "table": "constructorstandings",
+            "sha256": "d7df8f78744b244375278bb092f8b6d05c9cf4964bdc9cd41eb60261678db861",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 7
+          },
+          {
+            "table": "drivers",
+            "sha256": "0444a1610c97dcc1cb1af25a8aed4dc3ca585a0b27f8326d1bb9ffaa6f4e8635",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 9
+          },
+          {
+            "table": "driverstandings",
+            "sha256": "3cc467154abbf10dfc7f8ea5fdec512b5674f0683d36b893085a04de5d9aca5e",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 7
+          },
+          {
+            "table": "laptimes",
+            "sha256": "6fc86f0867ca9fc350b8583c18a74784d7a2e78afb1bc6462f83e3b7cddf5573",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 6
+          },
+          {
+            "table": "pitstops",
+            "sha256": "6c1c7eb14a445b617710ac286e1f5a303e8b808062fa760c2054c276b2b79fab",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 7
+          },
+          {
+            "table": "qualifying",
+            "sha256": "35b7e1ce9def76a653407a54f2b18901768392d92d1ef2484d24c20077c77e0e",
+            "encoding": "cp1252",
+            "mapped_column_count": 9
+          },
+          {
+            "table": "races",
+            "sha256": "a8e61de0c7e966c5198c701475d80276065f3a1cf96c3b79051c3541d8fd60d3",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 8
+          },
+          {
+            "table": "results",
+            "sha256": "7f7cde75b468b8ea135c6ed0872ef30ff715fda691786ca58e70d783b0a23b5d",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 18
+          },
+          {
+            "table": "seasons",
+            "sha256": "6a87681dcc94db3f6c81879c8569ec29a966eccc7277aa1d9ad59b16e314e5c9",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          },
+          {
+            "table": "status",
+            "sha256": "78725236cee342600f862cea296e87a4ea2e047d64d365f594526363f8acde57",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          }
+        ],
+        "unmatched_columns": [
+          {
+            "table": "constructors",
+            "original_column": "wins "
+          }
+        ]
+      },
+      "verification": {
+        "database_id": "formula_1",
+        "role": "askdata_m2_ro_formula_1",
+        "snapshot": "906:906:",
+        "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+        "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+        "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+        "authorized_catalog_version": "f4a12f36e66dfb16924c75ed0dd05fad2088f1d4c9ac115542c2331686362b9f",
+        "authorized_data_version": "4b394e3126a0783d8b0abf39ccaee6bcd14104bf880348a3216b1a4d024a0918",
+        "live_target_verified": true,
+        "verification_method": "fresh typed domain rows and same-snapshot server guards"
+      }
+    },
+    {
+      "database_id": "student_club",
+      "role": "askdata_m2_ro_student_club",
+      "source_identity": {
+        "logical_database_id": "student_club",
+        "source_id": "bird_mini_dev_postgres_student_club",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+        "data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2"
+      },
+      "typed_table_count": 8,
+      "field_count": 48,
+      "native_duplicate_names_preserved": true,
+      "cross_domain_sql_denied": true,
+      "cross_domain_profile_denied": true,
+      "profiles": {
+        "link_to_event": {
+          "row_count": 326,
+          "null_count": 0,
+          "samples": [
+            [
+              "text",
+              "rec2N69DMcrqN9PJC"
+            ],
+            [
+              "text",
+              "rec5XDvJLyxDsGZWc"
+            ],
+            [
+              "text",
+              "recEVTik3MlqbvLFi"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "student_club",
+            "source_id": "bird_mini_dev_postgres_student_club",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+            "data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2"
+          }
+        },
+        "link_to_member": {
+          "row_count": 326,
+          "null_count": 0,
+          "samples": [
+            [
+              "text",
+              "rec280Sk7o31iG0Tx"
+            ],
+            [
+              "text",
+              "rec28ORZgcm1dtqBZ"
+            ],
+            [
+              "text",
+              "rec2a03QXbFQAUZ7X"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "student_club",
+            "source_id": "bird_mini_dev_postgres_student_club",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+            "data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2"
+          }
+        }
+      },
+      "descriptions": {
+        "database_id": "student_club",
+        "files": [
+          {
+            "table": "attendance",
+            "sha256": "33a5d912e8fea231ecd73d1ee3847433ced7d1768b91866bd1403fb7fd88ea22",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          },
+          {
+            "table": "budget",
+            "sha256": "b9000d8f18b4a1613ea3c1877a41823375c2405647756a694591722ba86e60cd",
+            "encoding": "cp1252",
+            "mapped_column_count": 7
+          },
+          {
+            "table": "event",
+            "sha256": "1bf99aa2ce4ae79886eb0d4204e3edd1f0c8c0e44ed427c166f3a1a1af0aec04",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 7
+          },
+          {
+            "table": "expense",
+            "sha256": "b323e60df3ebfa3ec64686a1d76bece0bb94d81cfe5b642a54b6763b67be302d",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 7
+          },
+          {
+            "table": "income",
+            "sha256": "573755cd0f41a5dce3a053eb877a52f101bf21af745aaf83170093aa5a4d0579",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 6
+          },
+          {
+            "table": "major",
+            "sha256": "baca5c68fa1b1c9a427445bd60a1c8702cbdab9d27d5eb0a4304fb7f2ef32e0d",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 4
+          },
+          {
+            "table": "member",
+            "sha256": "1b9dda90d5fdccc4f70f057bf594a6935975e55a9f81d333714d74d1f4d9674a",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 9
+          },
+          {
+            "table": "zip_code",
+            "sha256": "1c903324ec3ff9decd6abb10ac96e3746e1c1b776a26d3a8d4bf5244c8620ecb",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 6
+          }
+        ],
+        "unmatched_columns": []
+      },
+      "verification": {
+        "database_id": "student_club",
+        "role": "askdata_m2_ro_student_club",
+        "snapshot": "906:906:",
+        "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+        "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+        "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+        "authorized_catalog_version": "933732e209930a6e5f835fd7a6c5852333ea250354529c3d3f72eda51fb9306b",
+        "authorized_data_version": "ed43ca6eda9163c343ec11b95ecc20e0f55e40378a608ed2d10994c2adf8e8c2",
+        "live_target_verified": true,
+        "verification_method": "fresh typed domain rows and same-snapshot server guards"
+      }
+    },
+    {
+      "database_id": "superhero",
+      "role": "askdata_m2_ro_superhero",
+      "source_identity": {
+        "logical_database_id": "superhero",
+        "source_id": "bird_mini_dev_postgres_superhero",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "da4f545f640fb421a606e4678596999bd6f25759f5071c5830f9fe15ee39d4f1",
+        "data_version": "6683e9c5689d1b66eecc60ea7b28f5066e55730be0e9c26c7f10ac454411e3f6"
+      },
+      "typed_table_count": 10,
+      "field_count": 31,
+      "native_duplicate_names_preserved": true,
+      "cross_domain_sql_denied": true,
+      "cross_domain_profile_denied": true,
+      "profiles": {
+        "id": {
+          "row_count": 4,
+          "null_count": 0,
+          "samples": [
+            [
+              "int",
+              "1"
+            ],
+            [
+              "int",
+              "2"
+            ],
+            [
+              "int",
+              "3"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "superhero",
+            "source_id": "bird_mini_dev_postgres_superhero",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "da4f545f640fb421a606e4678596999bd6f25759f5071c5830f9fe15ee39d4f1",
+            "data_version": "6683e9c5689d1b66eecc60ea7b28f5066e55730be0e9c26c7f10ac454411e3f6"
+          }
+        },
+        "alignment": {
+          "row_count": 4,
+          "null_count": 0,
+          "samples": [
+            [
+              "text",
+              "Bad"
+            ],
+            [
+              "text",
+              "Good"
+            ],
+            [
+              "text",
+              "N/A"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "superhero",
+            "source_id": "bird_mini_dev_postgres_superhero",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "da4f545f640fb421a606e4678596999bd6f25759f5071c5830f9fe15ee39d4f1",
+            "data_version": "6683e9c5689d1b66eecc60ea7b28f5066e55730be0e9c26c7f10ac454411e3f6"
+          }
+        }
+      },
+      "descriptions": {
+        "database_id": "superhero",
+        "files": [
+          {
+            "table": "alignment",
+            "sha256": "ebff59e5832b2870c298d2bbc85607e0f6b93c4921ff4d3265803d02a8796dce",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          },
+          {
+            "table": "attribute",
+            "sha256": "3c6bac9176d61e05ba059e8be6a3d5c5aa6eb743f526f07a1570f172cdbf6c72",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          },
+          {
+            "table": "colour",
+            "sha256": "ba732eddb938dc077cbc3f038057f566f9f12ccb53cc131168a5da538514b9cf",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          },
+          {
+            "table": "gender",
+            "sha256": "7311f964c77b6319184bbfc9ce8cc0ef87a103106bb1d6967461a5c681a3fe08",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          },
+          {
+            "table": "hero_attribute",
+            "sha256": "65af1dfdb96e4ddaba6262f3dffe9f61ea240c31d0ea2122e974d769827f039b",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 3
+          },
+          {
+            "table": "hero_power",
+            "sha256": "54eb40baa6b5b726bff28c872478caa8da8500f195239f8c6c3c552797c3794f",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          },
+          {
+            "table": "publisher",
+            "sha256": "232e8656107f426beb3c7a25f1833afb295dbfa2ae3981b2a200f08ed4f1f000",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          },
+          {
+            "table": "race",
+            "sha256": "8eb79fe0d1fc7d5641eff43d34e0e10b89fa726360d913bbee31dd55191064c7",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          },
+          {
+            "table": "superhero",
+            "sha256": "503f0a71acd1766923c571865277f81accbf79b2c9d8df4a18439dfe01ec6f44",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 12
+          },
+          {
+            "table": "superpower",
+            "sha256": "4edef8900f158238382843e348ff9842991c83f1d384c53bef5dd8cb1e613ee2",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          }
+        ],
+        "unmatched_columns": []
+      },
+      "verification": {
+        "database_id": "superhero",
+        "role": "askdata_m2_ro_superhero",
+        "snapshot": "906:906:",
+        "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+        "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+        "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+        "authorized_catalog_version": "da4f545f640fb421a606e4678596999bd6f25759f5071c5830f9fe15ee39d4f1",
+        "authorized_data_version": "6683e9c5689d1b66eecc60ea7b28f5066e55730be0e9c26c7f10ac454411e3f6",
+        "live_target_verified": true,
+        "verification_method": "fresh typed domain rows and same-snapshot server guards"
+      }
+    },
+    {
+      "database_id": "thrombosis_prediction",
+      "role": "askdata_m2_ro_thrombosis_prediction",
+      "source_identity": {
+        "logical_database_id": "thrombosis_prediction",
+        "source_id": "bird_mini_dev_postgres_thrombosis_prediction",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+        "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c"
+      },
+      "typed_table_count": 3,
+      "field_count": 64,
+      "native_duplicate_names_preserved": true,
+      "cross_domain_sql_denied": true,
+      "cross_domain_profile_denied": true,
+      "profiles": {
+        "id": {
+          "row_count": 106,
+          "null_count": 36,
+          "samples": [
+            [
+              "int",
+              "14872"
+            ],
+            [
+              "int",
+              "48473"
+            ],
+            [
+              "int",
+              "102490"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "thrombosis_prediction",
+            "source_id": "bird_mini_dev_postgres_thrombosis_prediction",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+            "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c"
+          }
+        },
+        "Examination Date": {
+          "row_count": 106,
+          "null_count": 4,
+          "samples": [
+            [
+              "date",
+              "1992-07-20"
+            ],
+            [
+              "date",
+              "1992-12-21"
+            ],
+            [
+              "date",
+              "1993-09-27"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "thrombosis_prediction",
+            "source_id": "bird_mini_dev_postgres_thrombosis_prediction",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+            "data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c"
+          }
+        }
+      },
+      "descriptions": {
+        "database_id": "thrombosis_prediction",
+        "files": [
+          {
+            "table": "examination",
+            "sha256": "b563c9030159bf169236e4582b653386bd34706e309227bf5eceb63b91eb0a89",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 13
+          },
+          {
+            "table": "laboratory",
+            "sha256": "cf9704e56cf3aca75e38de09277c307a7f0f726301b472254ce66ff4a352ff9f",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 44
+          },
+          {
+            "table": "patient",
+            "sha256": "519838a9f2592760bb26d1fb4f074bc304eee4e7aeaf46d03f652c370230e175",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 7
+          }
+        ],
+        "unmatched_columns": []
+      },
+      "verification": {
+        "database_id": "thrombosis_prediction",
+        "role": "askdata_m2_ro_thrombosis_prediction",
+        "snapshot": "906:906:",
+        "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+        "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+        "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+        "authorized_catalog_version": "abcc5366dd6ad5ad7ab16c4ba404d061a966fb58701c36904b6b1f708a68f55e",
+        "authorized_data_version": "f05a05401b3db11b0ce8d4c19ced144b9a30ba52d4e1d4857b63968283986c3c",
+        "live_target_verified": true,
+        "verification_method": "fresh typed domain rows and same-snapshot server guards"
+      }
+    },
+    {
+      "database_id": "toxicology",
+      "role": "askdata_m2_ro_toxicology",
+      "source_identity": {
+        "logical_database_id": "toxicology",
+        "source_id": "bird_mini_dev_postgres_toxicology",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "public",
+        "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+        "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+      },
+      "typed_table_count": 4,
+      "field_count": 11,
+      "native_duplicate_names_preserved": true,
+      "cross_domain_sql_denied": true,
+      "cross_domain_profile_denied": true,
+      "profiles": {
+        "atom_id": {
+          "row_count": 9111,
+          "null_count": 0,
+          "samples": [
+            [
+              "text",
+              "TR000_1"
+            ],
+            [
+              "text",
+              "TR000_2"
+            ],
+            [
+              "text",
+              "TR000_3"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "toxicology",
+            "source_id": "bird_mini_dev_postgres_toxicology",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+            "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+          }
+        },
+        "molecule_id": {
+          "row_count": 9111,
+          "null_count": 0,
+          "samples": [
+            [
+              "text",
+              "TR000"
+            ],
+            [
+              "text",
+              "TR001"
+            ],
+            [
+              "text",
+              "TR002"
+            ]
+          ],
+          "sample_truncated": [
+            false,
+            false,
+            false
+          ],
+          "sample_policy": "distinct native type ascending NULLS LAST; at most 3; text at most 64 characters",
+          "source_identity": {
+            "logical_database_id": "toxicology",
+            "source_id": "bird_mini_dev_postgres_toxicology",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "public",
+            "catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+            "data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c"
+          }
+        }
+      },
+      "descriptions": {
+        "database_id": "toxicology",
+        "files": [
+          {
+            "table": "atom",
+            "sha256": "9de75492701c77c1229242e8c3b688ced9eb9095ac59d37361dfb0ec34300245",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 3
+          },
+          {
+            "table": "bond",
+            "sha256": "7d200d38b0dcc07e8fe22718bd6bdb1bdf4b6522b7a84a5d0c95340b6d8cb4bc",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 3
+          },
+          {
+            "table": "connected",
+            "sha256": "589b24206b9f884863ca57f3e339abcb2409a15feeaff0b08afcd955cd211036",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 3
+          },
+          {
+            "table": "molecule",
+            "sha256": "a6ff2966916d03b07fd3ce275823d9ec65abb0b55158e871b07c40972b292d70",
+            "encoding": "utf-8-sig",
+            "mapped_column_count": 2
+          }
+        ],
+        "unmatched_columns": []
+      },
+      "verification": {
+        "database_id": "toxicology",
+        "role": "askdata_m2_ro_toxicology",
+        "snapshot": "906:906:",
+        "accepted_validation_sha256": "221678d07dd0509048ae2563a3a006e3dc033ea474265ac90ceb9723bfa103c6",
+        "accepted_global_data_version": "a8fbe7c8a393d3e61f2880ed75f177b17f8914265bc6a6e16744f632951c6641",
+        "accepted_global_catalog_version": "f81bd94d4a761e3720855b8eba4b4a1b6dda0d2a3629ffb8002e987285e66636",
+        "authorized_catalog_version": "29d29387b52abe99091dfe1f23653ef2a1c4d50633edc8327c2a5b702e34ccc7",
+        "authorized_data_version": "27669ad15ccaf258a405d9a00c24ebc35affc310bd1192a7acf7b10ff13c117c",
+        "live_target_verified": true,
+        "verification_method": "fresh typed domain rows and same-snapshot server guards"
+      }
+    }
+  ],
+  "budget_counter_probes": [
+    {
+      "name": "shared_16_http_attempts",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "chat_10_http_attempts",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "three_sql_calls",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "three_validation_attempts",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "one_transport_retry",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "98304_prompt_utf8_bytes",
+      "passed": true,
+      "simulated_counters_only": true
+    },
+    {
+      "name": "expired_case_deadline",
+      "passed": true,
+      "simulated_counters_only": true
+    }
+  ],
+  "isolation": {
+    "isolation": {
+      "filesystem": "seccomp_deny_all_new_file_opens",
+      "additional_landlock_abi": 4,
+      "network_and_process": "seccomp",
+      "seccomp_library_version": "2.5.3",
+      "kernel": "6.8.0-59-generic",
+      "project_read_access": false,
+      "environment_credentials": false,
+      "direct_database_access": false
+    },
+    "probes": {
+      "read_denials": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "network_socket_denied": true,
+      "process_creation_denied": true,
+      "secret_environment_absent": true
+    },
+    "passed": true
+  },
+  "hard_process_timeout_probe": {
+    "passed": true,
+    "probe_timeout_seconds": 1,
+    "formal_case_timeout_seconds": 600,
+    "process_group_terminated": true
+  },
+  "unknown_database_rejected": true,
+  "sql_failure_recovery_verified": true,
+  "pools_closed": true,
+  "runtime_verified": true,
+  "runtime_available": true,
+  "agent_isolation_verified": true,
+  "budget_enforcement_verified": true,
+  "summary": {
+    "logical_database_count": 11,
+    "table_count": 75,
+    "field_count": 798,
+    "profile_field_count": 22,
+    "isolation_path_denials": 4,
+    "simulated_budget_checks": 7
+  },
+  "verification_scope": "Fresh per-domain typed snapshots plus live content guards and real Linux Agent isolation; Gold110 and live are separate gates.",
+  "finished_at": "2026-10-16T07:51:38.744015+00:00"
+}

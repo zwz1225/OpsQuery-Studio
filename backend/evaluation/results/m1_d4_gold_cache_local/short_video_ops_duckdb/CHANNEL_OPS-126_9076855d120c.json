@@ -1,0 +1,103 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "users": [
+        "user_count"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "channel_name",
+      "users",
+      "avg_confidence"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": false,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT c.channel_name,COUNT(DISTINCT a.user_id) users,ROUND(AVG(a.confidence_score),4) avg_confidence FROM channel_attributions a JOIN acquisition_channels c ON a.channel_id=c.channel_id WHERE a.attribution_type='last_click' GROUP BY 1 ORDER BY 2 DESC,1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CHANNEL_OPS-126",
+  "question": "last_click归因按渠道的用户数和平均置信度；请返回渠道名称、用户数、平均置信度；聚合口径：去重数量按对应实体唯一标识计数，平均指标取算术平均。",
+  "gold_sql": "SELECT c.channel_name,COUNT(DISTINCT a.user_id) users,ROUND(AVG(a.confidence_score),4) avg_confidence FROM channel_attributions a JOIN acquisition_channels c ON a.channel_id=c.channel_id WHERE a.attribution_type='last_click' GROUP BY 1 ORDER BY 2 DESC,1",
+  "database": "short_video_ops",
+  "scenario": "channel_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.ad_accounts",
+      "short_video_ops.ad_campaigns",
+      "short_video_ops.ad_creatives",
+      "short_video_ops.ad_daily_stats",
+      "short_video_ops.budget_adjustments",
+      "short_video_ops.channel_attributions",
+      "short_video_ops.channel_conversion_events",
+      "short_video_ops.channel_targets",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "channel_ops"
+    ],
+    "user_id": "demo_channel_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "channel_name",
+    "users",
+    "avg_confidence"
+  ],
+  "rows": [
+    {
+      "channel_name": "信息流广告",
+      "users": 1414,
+      "avg_confidence": 0.8092
+    },
+    {
+      "channel_name": "达人推广",
+      "users": 982,
+      "avg_confidence": 0.805
+    },
+    {
+      "channel_name": "搜索广告",
+      "users": 939,
+      "avg_confidence": 0.7994
+    },
+    {
+      "channel_name": "品牌广告",
+      "users": 639,
+      "avg_confidence": 0.8038
+    }
+  ],
+  "generated_at": "2026-10-10T14:56:13.195287+00:00"
+}

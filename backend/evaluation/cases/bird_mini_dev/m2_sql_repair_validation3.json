@@ -1,0 +1,5 @@
+{
+  "purpose": "Development SQL-repair validation only; no Gold execution or formal EX score",
+  "protocol_id": "m2_bird_pg_v1",
+  "case_ids": ["BIRD-PG-0050", "BIRD-PG-0095", "BIRD-PG-1473"]
+}

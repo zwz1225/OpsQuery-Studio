@@ -1,0 +1,97 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "conversions": [
+        "conversion_count"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "channel_name",
+      "conversions"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": false,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT c.channel_name,COUNT(e.conversion_event_id) conversions FROM channel_conversion_events e JOIN acquisition_channels c ON e.channel_id=c.channel_id WHERE e.conversion_type='registration' GROUP BY 1 ORDER BY 2 DESC,1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CHANNEL_OPS-141",
+  "question": "registration转化按渠道分布；请返回渠道名称、转化数；聚合口径：数量指标按对应业务记录计数。",
+  "gold_sql": "SELECT c.channel_name,COUNT(e.conversion_event_id) conversions FROM channel_conversion_events e JOIN acquisition_channels c ON e.channel_id=c.channel_id WHERE e.conversion_type='registration' GROUP BY 1 ORDER BY 2 DESC,1",
+  "database": "short_video_ops",
+  "scenario": "channel_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.ad_accounts",
+      "short_video_ops.ad_campaigns",
+      "short_video_ops.ad_creatives",
+      "short_video_ops.ad_daily_stats",
+      "short_video_ops.budget_adjustments",
+      "short_video_ops.channel_attributions",
+      "short_video_ops.channel_conversion_events",
+      "short_video_ops.channel_targets",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "channel_ops"
+    ],
+    "user_id": "demo_channel_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "channel_name",
+    "conversions"
+  ],
+  "rows": [
+    {
+      "channel_name": "信息流广告",
+      "conversions": 2067
+    },
+    {
+      "channel_name": "达人推广",
+      "conversions": 1437
+    },
+    {
+      "channel_name": "搜索广告",
+      "conversions": 1342
+    },
+    {
+      "channel_name": "品牌广告",
+      "conversions": 970
+    }
+  ],
+  "generated_at": "2026-10-10T14:53:42.749427+00:00"
+}

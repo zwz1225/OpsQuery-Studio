@@ -1,0 +1,123 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "registrations": [
+        "registered_users"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "channel_name",
+      "registrations"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": "registrations",
+    "order_sensitive": true,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT c.channel_name, COUNT(r.registration_id) AS registrations FROM user_registrations r JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE strftime(r.registered_at,'%Y-%m')='2026-02' AND r.platform='Android' GROUP BY 1 ORDER BY 2 DESC,1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "GROWTH_OPS-050",
+  "question": "2026-02Android端各渠道注册人数排行；请返回渠道名称、注册用户数；聚合口径：数量指标按对应业务记录计数；按核心指标从高到低展示。",
+  "gold_sql": "SELECT c.channel_name, COUNT(r.registration_id) AS registrations FROM user_registrations r JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE strftime(r.registered_at,'%Y-%m')='2026-02' AND r.platform='Android' GROUP BY 1 ORDER BY 2 DESC,1",
+  "database": "short_video_ops",
+  "scenario": "growth_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.growth_daily_metrics",
+      "short_video_ops.growth_targets",
+      "short_video_ops.recall_campaigns",
+      "short_video_ops.recall_results",
+      "short_video_ops.recall_touches",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_churn_events",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_lifecycle_snapshots",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.user_sessions",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "growth_ops"
+    ],
+    "user_id": "demo_growth_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "channel_name",
+    "registrations"
+  ],
+  "rows": [
+    {
+      "channel_name": "信息流广告",
+      "registrations": 156
+    },
+    {
+      "channel_name": "自然推荐",
+      "registrations": 136
+    },
+    {
+      "channel_name": "达人推广",
+      "registrations": 100
+    },
+    {
+      "channel_name": "应用商店",
+      "registrations": 94
+    },
+    {
+      "channel_name": "好友邀请",
+      "registrations": 90
+    },
+    {
+      "channel_name": "搜索广告",
+      "registrations": 87
+    },
+    {
+      "channel_name": "品牌广告",
+      "registrations": 83
+    },
+    {
+      "channel_name": "社交分享",
+      "registrations": 51
+    },
+    {
+      "channel_name": "线下活动",
+      "registrations": 42
+    },
+    {
+      "channel_name": "其他渠道",
+      "registrations": 32
+    }
+  ],
+  "generated_at": "2026-10-10T14:55:05.492471+00:00"
+}

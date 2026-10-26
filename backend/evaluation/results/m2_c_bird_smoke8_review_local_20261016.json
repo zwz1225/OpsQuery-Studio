@@ -1,0 +1,2136 @@
+{
+  "stage": "M2 C downloaded smoke8 live evidence review",
+  "run_status": "complete",
+  "reviewed_at": "2026-10-16T08:46:08.664821+00:00",
+  "source_report": "evaluation/results/m2_c_bird_smoke8_server.json",
+  "source_report_sha256": "d976857553ab5d0321cd97b868b595bcd785b10b0f28e6b2dbbc140fc0e97a69",
+  "check_count": 431,
+  "check_pass_count": 431,
+  "failed_checks": [],
+  "infrastructure_smoke_evidence_accepted": true,
+  "can_proceed_to_unchanged_development80_baseline": true,
+  "model_quality_pass_claimed": false,
+  "local_postgresql_connected": false,
+  "new_model_requests_during_review": 0,
+  "summary": {
+    "case_count": 8,
+    "complete_result_count": 6,
+    "status_counts": {
+      "scored": 6,
+      "clarification": 2
+    },
+    "primary_denominator": 8,
+    "ex_pass_count": 3,
+    "primary_ex": 0.375,
+    "ex_given_complete_results": 0.5,
+    "first_sql_execution_success_count": 6,
+    "final_sql_execution_success_count": 6,
+    "clarification_rate": 0.25,
+    "latency_seconds": {
+      "p50": 6.306,
+      "p95": 18.2,
+      "measured_count": 8
+    },
+    "by_database": {
+      "california_schools": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": 0.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "card_games": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 1,
+        "primary_ex": 1.0,
+        "ex_given_complete_results": 1.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "codebase_community": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 1,
+        "primary_ex": 1.0,
+        "ex_given_complete_results": 1.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "debit_card_specializing": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": 0.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "financial": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": 0.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "student_club": {
+        "case_count": 1,
+        "complete_result_count": 0,
+        "status_counts": {
+          "clarification": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": null,
+        "first_sql_execution_success_count": 0,
+        "final_sql_execution_success_count": 0,
+        "clarification_rate": 1.0
+      },
+      "superhero": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 1,
+        "primary_ex": 1.0,
+        "ex_given_complete_results": 1.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      },
+      "toxicology": {
+        "case_count": 1,
+        "complete_result_count": 0,
+        "status_counts": {
+          "clarification": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": null,
+        "first_sql_execution_success_count": 0,
+        "final_sql_execution_success_count": 0,
+        "clarification_rate": 1.0
+      }
+    },
+    "by_difficulty": {
+      "simple": {
+        "case_count": 3,
+        "complete_result_count": 3,
+        "status_counts": {
+          "scored": 3
+        },
+        "primary_denominator": 3,
+        "ex_pass_count": 1,
+        "primary_ex": 0.3333333333333333,
+        "ex_given_complete_results": 0.3333333333333333,
+        "first_sql_execution_success_count": 3,
+        "final_sql_execution_success_count": 3,
+        "clarification_rate": 0.0
+      },
+      "moderate": {
+        "case_count": 4,
+        "complete_result_count": 2,
+        "status_counts": {
+          "scored": 2,
+          "clarification": 2
+        },
+        "primary_denominator": 4,
+        "ex_pass_count": 2,
+        "primary_ex": 0.5,
+        "ex_given_complete_results": 1.0,
+        "first_sql_execution_success_count": 2,
+        "final_sql_execution_success_count": 2,
+        "clarification_rate": 0.5
+      },
+      "challenging": {
+        "case_count": 1,
+        "complete_result_count": 1,
+        "status_counts": {
+          "scored": 1
+        },
+        "primary_denominator": 1,
+        "ex_pass_count": 0,
+        "primary_ex": 0.0,
+        "ex_given_complete_results": 0.0,
+        "first_sql_execution_success_count": 1,
+        "final_sql_execution_success_count": 1,
+        "clarification_rate": 0.0
+      }
+    },
+    "new_model_request_count": 24,
+    "observed_model_http_attempts": 24,
+    "model_attempt_count_incomplete": false,
+    "shared_index_http_attempts": 49
+  },
+  "reported_total_runtime_seconds": 254.438681,
+  "index_http_attempts": 49,
+  "case_http_attempts": 24,
+  "total_recorded_http_attempts": 73,
+  "http_kind_counts": {
+    "embedding": 57,
+    "rerank": 8,
+    "chat": 8
+  },
+  "case_reviews": [
+    {
+      "case_id": "BIRD-PG-0036",
+      "database_id": "california_schools",
+      "status": "scored",
+      "ex_correct": false,
+      "selected_field_count": 8,
+      "sql_execution_count": 1,
+      "result_rows": 1,
+      "result_columns": 2,
+      "case_wall_seconds": 4.425,
+      "evidence_checks_passed": true,
+      "development_diagnosis": {
+        "class": "projection_and_null_order",
+        "observation": "Predicted 2 administrator columns versus 6 in frozen Gold; DESC lacks NULLS LAST; predicted row is two NULLs."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0480",
+      "database_id": "card_games",
+      "status": "scored",
+      "ex_correct": true,
+      "selected_field_count": 7,
+      "sql_execution_count": 1,
+      "result_rows": 2,
+      "result_columns": 1,
+      "case_wall_seconds": 17.04,
+      "evidence_checks_passed": true,
+      "development_diagnosis": null
+    },
+    {
+      "case_id": "BIRD-PG-0707",
+      "database_id": "codebase_community",
+      "status": "scored",
+      "ex_correct": true,
+      "selected_field_count": 9,
+      "sql_execution_count": 1,
+      "result_rows": 1,
+      "result_columns": 1,
+      "case_wall_seconds": 18.824,
+      "evidence_checks_passed": true,
+      "development_diagnosis": null
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "database_id": "debit_card_specializing",
+      "status": "scored",
+      "ex_correct": false,
+      "selected_field_count": 1,
+      "sql_execution_count": 1,
+      "result_rows": 1,
+      "result_columns": 2,
+      "case_wall_seconds": 8.188,
+      "evidence_checks_passed": true,
+      "development_diagnosis": {
+        "class": "missing_population_filter_and_extra_projection",
+        "observation": "Only currency retrieved; prediction omits Segment=SME and adds a Yes/No column. Gold returns the SME currency count difference only."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "database_id": "financial",
+      "status": "scored",
+      "ex_correct": false,
+      "selected_field_count": 16,
+      "sql_execution_count": 1,
+      "result_rows": 140,
+      "result_columns": 10,
+      "case_wall_seconds": 15.535,
+      "evidence_checks_passed": true,
+      "development_diagnosis": {
+        "class": "projection_scope",
+        "observation": "Prediction SELECT t.* returns 10 columns; frozen Gold returns trans_id only. No alias policy can resolve positional tuple shape."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-1435",
+      "database_id": "student_club",
+      "status": "clarification",
+      "ex_correct": false,
+      "selected_field_count": 0,
+      "sql_execution_count": 0,
+      "result_rows": null,
+      "result_columns": null,
+      "case_wall_seconds": 2.525,
+      "evidence_checks_passed": true,
+      "development_diagnosis": {
+        "class": "empty_final_schema_and_clarification",
+        "observation": "39 RRF candidates but zero selected fields, then clarification without SQL. Raw rerank scores and clarification wording are not recorded."
+      }
+    },
+    {
+      "case_id": "BIRD-PG-0806",
+      "database_id": "superhero",
+      "status": "scored",
+      "ex_correct": true,
+      "selected_field_count": 12,
+      "sql_execution_count": 1,
+      "result_rows": 1,
+      "result_columns": 1,
+      "case_wall_seconds": 3.43,
+      "evidence_checks_passed": true,
+      "development_diagnosis": null
+    },
+    {
+      "case_id": "BIRD-PG-0201",
+      "database_id": "toxicology",
+      "status": "clarification",
+      "ex_correct": false,
+      "selected_field_count": 1,
+      "sql_execution_count": 0,
+      "result_rows": null,
+      "result_columns": null,
+      "case_wall_seconds": 3.575,
+      "evidence_checks_passed": true,
+      "development_diagnosis": {
+        "class": "incomplete_final_schema_and_clarification",
+        "observation": "Only bond.bond_type selected, then clarification without SQL. Required atom fields are absent from selected fields; exact model reason is not recorded."
+      }
+    }
+  ],
+  "index_reviews": [
+    {
+      "database_id": "california_schools",
+      "authorized_field_count": 89,
+      "cache_hit": false,
+      "embedding_http_attempts": 9,
+      "identity_sha256": "41f077af819ce3e794873f667a0be11f5c808f544c3f732f29f22745534a9b56",
+      "reported_index_sha256": "6b4862fadfc46c1a40a5592d2aed501c559b1df794693902ef145021ada99f7a",
+      "actual_index_file_downloaded": false
+    },
+    {
+      "database_id": "card_games",
+      "authorized_field_count": 115,
+      "cache_hit": false,
+      "embedding_http_attempts": 12,
+      "identity_sha256": "8b8744e172b0a795792708906cafc482f9420502116eaa11d288a3f62ed23959",
+      "reported_index_sha256": "d7bfc4bac72ec72fb6549a4bc655f96f0f7ea07706d608b22c1ec0a84ddf4624",
+      "actual_index_file_downloaded": false
+    },
+    {
+      "database_id": "codebase_community",
+      "authorized_field_count": 71,
+      "cache_hit": false,
+      "embedding_http_attempts": 8,
+      "identity_sha256": "03985b5261d90a06392289dc66e0759588eeae19a72dc12eaad7d2373685a64f",
+      "reported_index_sha256": "02763990de8f096eb519a6d428b0063bb8c02843fd83ebeda59a492da4b007dc",
+      "actual_index_file_downloaded": false
+    },
+    {
+      "database_id": "debit_card_specializing",
+      "authorized_field_count": 21,
+      "cache_hit": false,
+      "embedding_http_attempts": 3,
+      "identity_sha256": "9e96af4ffdaeb0a55a2f424701f724278e25a761e232fd3fb44ee19b6f8bc743",
+      "reported_index_sha256": "6595a483b014a518b3ffa372facf3b30b2a973a6eeacf1762ce151d6aa7a95de",
+      "actual_index_file_downloaded": false
+    },
+    {
+      "database_id": "financial",
+      "authorized_field_count": 55,
+      "cache_hit": false,
+      "embedding_http_attempts": 6,
+      "identity_sha256": "f0e6d02e313671db392a3d658017a77b03b326992f8b7fe8063c9b7eeebb63d7",
+      "reported_index_sha256": "82a8da515dd4320a1a131932fe84e9b357ccb93b2367bab5c83593301beb432d",
+      "actual_index_file_downloaded": false
+    },
+    {
+      "database_id": "student_club",
+      "authorized_field_count": 48,
+      "cache_hit": false,
+      "embedding_http_attempts": 5,
+      "identity_sha256": "af7a48fcb189773da06579e10c3e6645fabb6ca3da89a3910441de98e49e2c7f",
+      "reported_index_sha256": "3a5579beb8fc67ec3293448a4ec639b0354d1eedcaf4a9cf3ceca35dba8350da",
+      "actual_index_file_downloaded": false
+    },
+    {
+      "database_id": "superhero",
+      "authorized_field_count": 31,
+      "cache_hit": false,
+      "embedding_http_attempts": 4,
+      "identity_sha256": "e971270d959f5897f0a69205c3bf3480799789ca790c8e48d60c682476f59c51",
+      "reported_index_sha256": "bdb2b009b8df18c4a5dc323ad089777ee49ea59e535fba4372001ad3a4a5b526",
+      "actual_index_file_downloaded": false
+    },
+    {
+      "database_id": "toxicology",
+      "authorized_field_count": 11,
+      "cache_hit": false,
+      "embedding_http_attempts": 2,
+      "identity_sha256": "9396a7dd46c743083c3435c48ed26f893d18ef70834d47c966a8a2e0bca93a5a",
+      "reported_index_sha256": "fb0f6b66fa88dc75a9ef9d20bab150fa601fd3d358fc6516d608381f27cb99d5",
+      "actual_index_file_downloaded": false
+    }
+  ],
+  "next_step": "Preserve smoke8 and run frozen development80 once with current code, prompts, thresholds, data, endpoints and budgets. Diagnose/tune on development80 afterwards; holdout live remains closed.",
+  "limitations": [
+    "Downloaded report records native EX decisions and result diagnostics, not full native predicted/Gold tuples; EX was not independently reexecuted locally.",
+    "Index identity, hash references and source-scoped selected fields were checked. Actual server index files/vectors/documents were not downloaded.",
+    "Final graph with FK supplementation, raw rerank scores and clarification wording are absent; precise retrieval/model causal attribution remains pending.",
+    "Per-HTTP durations and prompt UTF-8 byte lengths are not recorded; their limits rely on the bound implementation and prior runtime probes.",
+    "Snapshot hash was reconstructed from report content; actual server snapshot file was not downloaded."
+  ],
+  "checks": [
+    {
+      "name": "completed_without_infrastructure_errors",
+      "passed": true
+    },
+    {
+      "name": "live_smoke8_single_worker",
+      "passed": true
+    },
+    {
+      "name": "verified_existing_target",
+      "passed": true
+    },
+    {
+      "name": "protocol_and_import_spec",
+      "passed": true
+    },
+    {
+      "name": "runtime_and_gold_report_hash_links",
+      "passed": true
+    },
+    {
+      "name": "previous_gold_acceptance",
+      "passed": true
+    },
+    {
+      "name": "full_source_binding",
+      "passed": true
+    },
+    {
+      "name": "exact_server_code_dependency_environment_binding",
+      "passed": true
+    },
+    {
+      "name": "code_binding_digest",
+      "passed": true
+    },
+    {
+      "name": "delivered_file_inventory",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/api/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/api/routes.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/config.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/database.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/contracts.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/csv_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/dialects.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/postgres_config.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/postgres_connections.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/postgres_metadata.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/row_digest.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/sql_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/datasources/values.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/errors.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/main.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/client.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/schemas.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/server.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/tools/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/tools/database_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/tools/presentation_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/mcp_runtime/tools/time_tools.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/model_client.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/preprocessing.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/constraint_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/constraint_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/data_qa_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/duckdb_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/metric_planner.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/models.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/postgres_engine.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/response_generator.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/single_database_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/sql_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/querying/sql_validator.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/retrieval/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/retrieval/graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/retrieval/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/retrieval/store.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/retrieval/time_field_policy.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/security/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/security/access_control.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/security/auth.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/service.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/askdata_service.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/memory_store.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/session_archive.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/session_context.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/services/short_term_memory.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/skills/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/skills/registry.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/workflows/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/workflows/clarification.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/workflows/query_graph.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/workflows/result_builder.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:app/workflows/state.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/budgets.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/case_worker.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/evidence.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/isolated_agent.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/manifest.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/metrics.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/model.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/native.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/retrieval.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/runner.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/sql.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird/supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/bird_protocol.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:evaluation/run_bird_benchmark.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/check_m2_c_bird_runtime.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/m2_b_common.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/m2_b_dump.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/m2_b_structure.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/m2_b_target.py",
+      "passed": true
+    },
+    {
+      "name": "current_source:scripts/m2_b_typed_rows.py",
+      "passed": true
+    },
+    {
+      "name": "frozen_model_configuration",
+      "passed": true
+    },
+    {
+      "name": "frozen_case_selection",
+      "passed": true
+    },
+    {
+      "name": "public_input_digest",
+      "passed": true
+    },
+    {
+      "name": "actual_selected_gold_digest",
+      "passed": true
+    },
+    {
+      "name": "fixed_denominator_and_closed_holdout",
+      "passed": true
+    },
+    {
+      "name": "eight_source_partitioned_indexes",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index_identity",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index_partition_path",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index_digest_recorded",
+      "passed": true
+    },
+    {
+      "name": "california_schools:fresh_index_build",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index_embedding_batches",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event_counts",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:3:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:3:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:4:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:4:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:5:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:5:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:6:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:6:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:7:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:7:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:8:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "california_schools:index:event:8:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index_identity",
+      "passed": true
+    },
+    {
+      "name": "card_games:index_partition_path",
+      "passed": true
+    },
+    {
+      "name": "card_games:index_digest_recorded",
+      "passed": true
+    },
+    {
+      "name": "card_games:fresh_index_build",
+      "passed": true
+    },
+    {
+      "name": "card_games:index_embedding_batches",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event_counts",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:3:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:3:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:4:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:4:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:5:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:5:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:6:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:6:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:7:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:7:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:8:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:8:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:9:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:9:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:10:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:10:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:11:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "card_games:index:event:11:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index_identity",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index_partition_path",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index_digest_recorded",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:fresh_index_build",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index_embedding_batches",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event_counts",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:3:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:3:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:4:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:4:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:5:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:5:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:6:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:6:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:7:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:index:event:7:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index_identity",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index_partition_path",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index_digest_recorded",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:fresh_index_build",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index_embedding_batches",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event_counts",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:index:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "financial:index_identity",
+      "passed": true
+    },
+    {
+      "name": "financial:index_partition_path",
+      "passed": true
+    },
+    {
+      "name": "financial:index_digest_recorded",
+      "passed": true
+    },
+    {
+      "name": "financial:fresh_index_build",
+      "passed": true
+    },
+    {
+      "name": "financial:index_embedding_batches",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event_counts",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:3:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:3:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:4:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:4:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:5:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "financial:index:event:5:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "student_club:index_identity",
+      "passed": true
+    },
+    {
+      "name": "student_club:index_partition_path",
+      "passed": true
+    },
+    {
+      "name": "student_club:index_digest_recorded",
+      "passed": true
+    },
+    {
+      "name": "student_club:fresh_index_build",
+      "passed": true
+    },
+    {
+      "name": "student_club:index_embedding_batches",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event_counts",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:3:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:3:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:4:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "student_club:index:event:4:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "superhero:index_identity",
+      "passed": true
+    },
+    {
+      "name": "superhero:index_partition_path",
+      "passed": true
+    },
+    {
+      "name": "superhero:index_digest_recorded",
+      "passed": true
+    },
+    {
+      "name": "superhero:fresh_index_build",
+      "passed": true
+    },
+    {
+      "name": "superhero:index_embedding_batches",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event_counts",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:3:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "superhero:index:event:3:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index_identity",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index_partition_path",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index_digest_recorded",
+      "passed": true
+    },
+    {
+      "name": "toxicology:fresh_index_build",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index_embedding_batches",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index:event_counts",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "toxicology:index:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "eight_unique_source_receipts",
+      "passed": true
+    },
+    {
+      "name": "california_schools:receipt",
+      "passed": true
+    },
+    {
+      "name": "card_games:receipt",
+      "passed": true
+    },
+    {
+      "name": "codebase_community:receipt",
+      "passed": true
+    },
+    {
+      "name": "debit_card_specializing:receipt",
+      "passed": true
+    },
+    {
+      "name": "financial:receipt",
+      "passed": true
+    },
+    {
+      "name": "student_club:receipt",
+      "passed": true
+    },
+    {
+      "name": "superhero:receipt",
+      "passed": true
+    },
+    {
+      "name": "toxicology:receipt",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:frozen_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:bound_source_and_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:no_errors_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:bound_index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:retrieval_scope",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:retrieval_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:event_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:event:2:chat_output_limit",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:three_expected_http_calls",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:case_budgets",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:scored_shape",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:valid_source_scoped_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:one_validated_successful_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:complete_native_result",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0036:reported_ex_and_secondary_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:frozen_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:bound_source_and_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:no_errors_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:bound_index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:retrieval_scope",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:retrieval_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:event_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:event:2:chat_output_limit",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:three_expected_http_calls",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:case_budgets",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:scored_shape",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:valid_source_scoped_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:one_validated_successful_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:complete_native_result",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0480:reported_ex_and_secondary_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:frozen_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:bound_source_and_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:no_errors_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:bound_index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:retrieval_scope",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:retrieval_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:event_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:event:2:chat_output_limit",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:three_expected_http_calls",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:case_budgets",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:scored_shape",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:valid_source_scoped_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:one_validated_successful_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:complete_native_result",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0707:reported_ex_and_secondary_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:frozen_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:bound_source_and_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:no_errors_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:bound_index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:retrieval_scope",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:retrieval_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:event_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:event:2:chat_output_limit",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:three_expected_http_calls",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:case_budgets",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:scored_shape",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:valid_source_scoped_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:one_validated_successful_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:complete_native_result",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1486:reported_ex_and_secondary_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:frozen_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:bound_source_and_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:no_errors_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:bound_index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:retrieval_scope",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:retrieval_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:event_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:event:2:chat_output_limit",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:three_expected_http_calls",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:case_budgets",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:scored_shape",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:valid_source_scoped_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:one_validated_successful_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:complete_native_result",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0159:reported_ex_and_secondary_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:frozen_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:bound_source_and_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:no_errors_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:bound_index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:retrieval_scope",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:retrieval_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:event_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:event:2:chat_output_limit",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:three_expected_http_calls",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:case_budgets",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:clarification_counted_as_unanswered",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-1435:clarification_no_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:frozen_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:bound_source_and_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:no_errors_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:bound_index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:retrieval_scope",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:retrieval_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:event_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:event:2:chat_output_limit",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:three_expected_http_calls",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:case_budgets",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:scored_shape",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:valid_source_scoped_sql",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:one_validated_successful_execution",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:complete_native_result",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0806:reported_ex_and_secondary_diagnostics",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:frozen_identity",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:bound_source_and_role",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:no_errors_closed",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:bound_index",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:retrieval_scope",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:retrieval_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:isolation",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:event_counts",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:event:0:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:event:0:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:event:1:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:event:1:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:event:2:model_status_retry",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:event:2:provider_usage",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:event:2:chat_output_limit",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:three_expected_http_calls",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:case_budgets",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:clarification_counted_as_unanswered",
+      "passed": true
+    },
+    {
+      "name": "BIRD-PG-0201:clarification_no_sql",
+      "passed": true
+    },
+    {
+      "name": "entire_summary_independently_recomputed",
+      "passed": true
+    },
+    {
+      "name": "root_case_request_count",
+      "passed": true
+    },
+    {
+      "name": "timeline",
+      "passed": true
+    },
+    {
+      "name": "snapshot_partition",
+      "passed": true
+    },
+    {
+      "name": "snapshot_payload_hash_reconstruction",
+      "passed": true
+    }
+  ]
+}

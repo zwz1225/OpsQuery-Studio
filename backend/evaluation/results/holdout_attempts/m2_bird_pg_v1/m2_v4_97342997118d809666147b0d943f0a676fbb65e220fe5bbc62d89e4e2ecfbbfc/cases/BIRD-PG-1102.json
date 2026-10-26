@@ -1,0 +1,1398 @@
+{
+  "agent_isolation": {
+    "additional_landlock_abi": 4,
+    "direct_database_access": false,
+    "environment_credentials": false,
+    "filesystem": "seccomp_deny_all_new_file_opens",
+    "kernel": "6.8.0-59-generic",
+    "network_and_process": "seccomp",
+    "project_read_access": false,
+    "seccomp_library_version": "2.5.3"
+  },
+  "agent_started": true,
+  "agent_status": "answered",
+  "agent_trace": [
+    {
+      "sql_round": 1,
+      "valid": true,
+      "validation_attempt": 1
+    }
+  ],
+  "budget": {
+    "chat_http_attempts": 1,
+    "elapsed_seconds": 29.745,
+    "generation_attempts": {
+      "1": 1
+    },
+    "model_events": [
+      {
+        "endpoint_kind": "embedding",
+        "kind": "embedding",
+        "retry": 0,
+        "returned_model": "text-embedding-v4",
+        "status": "complete",
+        "usage": {
+          "prompt_tokens": 95,
+          "total_tokens": 95
+        }
+      },
+      {
+        "endpoint_kind": "rerank",
+        "kind": "rerank",
+        "retry": 0,
+        "returned_model": "qwen3-rerank",
+        "status": "complete",
+        "usage": {
+          "total_tokens": 8376
+        }
+      },
+      {
+        "endpoint_kind": "chat",
+        "kind": "chat",
+        "retry": 0,
+        "returned_model": "qwen3.7-plus",
+        "status": "complete",
+        "usage": {
+          "completion_tokens": 66,
+          "prompt_tokens": 4168,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "text_tokens": 4168
+          },
+          "total_tokens": 4234
+        }
+      }
+    ],
+    "model_http_attempts": 3,
+    "sql_tool_calls": 1,
+    "validation_attempts": {
+      "1": 1
+    }
+  },
+  "candidate_sha256": "97342997118d809666147b0d943f0a676fbb65e220fe5bbc62d89e4e2ecfbbfc",
+  "canonical_lookup": {
+    "executed": false,
+    "matches": [],
+    "max_values_per_probe": 3,
+    "policy": "bird_public_intent_candidate_v4",
+    "probe_count": 0,
+    "source_identity": {
+      "backend": "postgresql",
+      "catalog_version": "7e65c485d64772c03edab6c13baa65eae104a933b2b115be747fe0c733cdfd8b",
+      "data_version": "cc4a4cfeed56bc10bb114cb58229c32cdcd5e270020dce63b21b931931562c16",
+      "dialect": "postgres",
+      "logical_database_id": "european_football_2",
+      "physical_schema": "public",
+      "prompt_dialect": "PostgreSQL",
+      "source_id": "bird_mini_dev_postgres_european_football_2"
+    },
+    "sql_tool_calls": 0
+  },
+  "case_id": "BIRD-PG-1102",
+  "case_wall_seconds": 29.978,
+  "complete": true,
+  "database_id": "european_football_2",
+  "development_diagnostics": {
+    "attempts": [
+      {
+        "action": "query",
+        "clarification_reason": {
+          "provided": false,
+          "redacted": false,
+          "text": null,
+          "truncated": false
+        },
+        "kind": "model_decision",
+        "sql": {
+          "original_sha256": "cf9b0737eaadedf70d5c40f330f360186dd58f4dee64a0d601dd18406305a9a3",
+          "original_utf8_bytes": 201,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT p.player_name FROM player p JOIN player_attributes pa ON p.player_api_id = pa.player_api_id WHERE pa.overall_rating = 77 AND pa.date LIKE '2016-06-23%' ORDER BY p.birthday ASC NULLS LAST LIMIT 1",
+          "truncated": false
+        },
+        "sql_round": 1
+      },
+      {
+        "kind": "validate",
+        "sql": {
+          "original_sha256": "cf9b0737eaadedf70d5c40f330f360186dd58f4dee64a0d601dd18406305a9a3",
+          "original_utf8_bytes": 201,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT p.player_name FROM player p JOIN player_attributes pa ON p.player_api_id = pa.player_api_id WHERE pa.overall_rating = 77 AND pa.date LIKE '2016-06-23%' ORDER BY p.birthday ASC NULLS LAST LIMIT 1",
+          "truncated": false
+        },
+        "sql_round": 1,
+        "success": true
+      },
+      {
+        "kind": "execute",
+        "sql": {
+          "original_sha256": "cf9b0737eaadedf70d5c40f330f360186dd58f4dee64a0d601dd18406305a9a3",
+          "original_utf8_bytes": 201,
+          "provided": true,
+          "redacted": false,
+          "text": "SELECT p.player_name FROM player p JOIN player_attributes pa ON p.player_api_id = pa.player_api_id WHERE pa.overall_rating = 77 AND pa.date LIKE '2016-06-23%' ORDER BY p.birthday ASC NULLS LAST LIMIT 1",
+          "truncated": false
+        },
+        "sql_round": 1,
+        "success": true
+      }
+    ],
+    "clarification_reason": null,
+    "limits": {
+      "max_events": 21,
+      "reason_utf8_bytes": 2048,
+      "schema_graph_utf8_bytes": 98304,
+      "sql_text_utf8_bytes": 8192,
+      "total_utf8_bytes": 393216
+    },
+    "omitted_events": 0,
+    "policy": "bird_development_observation_v1",
+    "report_only": true,
+    "retrieval": {
+      "added_relation_key_field_ids": [
+        "european_football_2.player.player_api_id",
+        "european_football_2.player_attributes.player_api_id"
+      ],
+      "anchored_table_ids": [
+        "european_football_2.player",
+        "european_football_2.player_attributes"
+      ],
+      "baseline_field_ids": [
+        "european_football_2.player_attributes.overall_rating",
+        "european_football_2.player.birthday"
+      ],
+      "candidate_count": 40,
+      "candidates": [
+        {
+          "bm25_rank": 1,
+          "bm25_score": 1.0,
+          "dense_rank": 2,
+          "dense_score": 0.49825608669769844,
+          "field_id": "european_football_2.player_attributes.overall_rating",
+          "matched_intent_terms": [],
+          "rerank_rank": 1,
+          "rerank_score": 0.6915311268002238,
+          "rrf_rank": 1,
+          "rrf_score": 0.03252247488101534,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 3,
+          "bm25_score": 0.5451719698200743,
+          "dense_rank": 1,
+          "dense_score": 0.6111165922423959,
+          "field_id": "european_football_2.player.birthday",
+          "matched_intent_terms": [],
+          "rerank_rank": 2,
+          "rerank_score": 0.6493667164808796,
+          "rrf_rank": 2,
+          "rrf_score": 0.032266458495966696,
+          "selected": true,
+          "selection_reason": "selected"
+        },
+        {
+          "bm25_rank": 10,
+          "bm25_score": 0.358336351023016,
+          "dense_rank": 3,
+          "dense_score": 0.4844901198097434,
+          "field_id": "european_football_2.player_attributes.date",
+          "matched_intent_terms": [
+            "date"
+          ],
+          "rerank_rank": 3,
+          "rerank_score": 0.4959185435260514,
+          "rrf_rank": 3,
+          "rrf_score": 0.030158730158730156,
+          "selected": true,
+          "selection_reason": "selected_intent_coverage",
+          "uncovered_intent_terms": [
+            "date"
+          ]
+        },
+        {
+          "bm25_rank": 23,
+          "bm25_score": 0.2704904343930098,
+          "dense_rank": 5,
+          "dense_score": 0.42886232909983035,
+          "field_id": "european_football_2.player_attributes.potential",
+          "matched_intent_terms": [],
+          "rerank_rank": 27,
+          "rerank_score": 0.3965544093898179,
+          "rrf_rank": 4,
+          "rrf_score": 0.027432808155699723,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 13,
+          "bm25_score": 0.33449432813652685,
+          "dense_rank": 14,
+          "dense_score": 0.4143522955245574,
+          "field_id": "european_football_2.player_attributes.crossing",
+          "matched_intent_terms": [],
+          "rerank_rank": 21,
+          "rerank_score": 0.42672010728611837,
+          "rrf_rank": 5,
+          "rrf_score": 0.027212143650499815,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 6,
+          "bm25_score": 0.4069502918855431,
+          "dense_rank": 23,
+          "dense_score": 0.40717637354086456,
+          "field_id": "european_football_2.player_attributes.defensive_work_rate",
+          "matched_intent_terms": [],
+          "rerank_rank": 28,
+          "rerank_score": 0.3919518107806169,
+          "rrf_rank": 6,
+          "rrf_score": 0.02719970792259949,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 11,
+          "bm25_score": 0.3545124690578308,
+          "dense_rank": 18,
+          "dense_score": 0.40975626227584633,
+          "field_id": "european_football_2.player_attributes.attacking_work_rate",
+          "matched_intent_terms": [],
+          "rerank_rank": 25,
+          "rerank_score": 0.4034403502004436,
+          "rrf_rank": 7,
+          "rrf_score": 0.02690501986276634,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 26,
+          "bm25_score": 0.25766185690446947,
+          "dense_rank": 6,
+          "dense_score": 0.42774212140185197,
+          "field_id": "european_football_2.player.player_api_id",
+          "matched_intent_terms": [
+            "player"
+          ],
+          "rerank_rank": 6,
+          "rerank_score": 0.47271805017081203,
+          "rrf_rank": 8,
+          "rrf_score": 0.026779422128259338,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "player"
+          ]
+        },
+        {
+          "bm25_rank": 24,
+          "bm25_score": 0.2650451700298435,
+          "dense_rank": 11,
+          "dense_score": 0.41631223446122195,
+          "field_id": "european_football_2.player_attributes.aggression",
+          "matched_intent_terms": [],
+          "rerank_rank": 19,
+          "rerank_score": 0.4289274078029961,
+          "rrf_rank": 9,
+          "rrf_score": 0.025989268947015427,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 30,
+          "bm25_score": 0.2510458733947897,
+          "dense_rank": 9,
+          "dense_score": 0.4235159676163777,
+          "field_id": "european_football_2.player_attributes.player_api_id",
+          "matched_intent_terms": [
+            "player"
+          ],
+          "rerank_rank": 8,
+          "rerank_score": 0.46796647236844396,
+          "rrf_rank": 10,
+          "rrf_score": 0.025603864734299518,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "player"
+          ]
+        },
+        {
+          "bm25_rank": 19,
+          "bm25_score": 0.2869108932801148,
+          "dense_rank": 22,
+          "dense_score": 0.4074408940195743,
+          "field_id": "european_football_2.player_attributes.id",
+          "matched_intent_terms": [],
+          "rerank_rank": 7,
+          "rerank_score": 0.46944254903818683,
+          "rrf_rank": 11,
+          "rrf_score": 0.02485334979932078,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 15,
+          "bm25_score": 0.31674873471237613,
+          "dense_rank": 30,
+          "dense_score": 0.39446526533651943,
+          "field_id": "european_football_2.player.id",
+          "matched_intent_terms": [],
+          "rerank_rank": 11,
+          "rerank_score": 0.45066380144752793,
+          "rrf_rank": 12,
+          "rrf_score": 0.024444444444444446,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 2,
+          "bm25_score": 0.577211426673965,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.match.shoton",
+          "matched_intent_terms": [],
+          "rerank_rank": 40,
+          "rerank_score": 0.2638200327121666,
+          "rrf_rank": 13,
+          "rrf_score": 0.016129032258064516,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 4,
+          "bm25_score": 0.4817942554819324,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.team_attributes.buildupplayspeed",
+          "matched_intent_terms": [],
+          "rerank_rank": 13,
+          "rerank_score": 0.4450199087423887,
+          "rrf_rank": 14,
+          "rrf_score": 0.015625,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 4,
+          "dense_score": 0.4308715699154167,
+          "field_id": "european_football_2.player_attributes.strength",
+          "matched_intent_terms": [],
+          "rerank_rank": 12,
+          "rerank_score": 0.44594352343617666,
+          "rrf_rank": 15,
+          "rrf_score": 0.015625,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 5,
+          "bm25_score": 0.40857724389208133,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.team_attributes.chancecreationcrossing",
+          "matched_intent_terms": [],
+          "rerank_rank": 32,
+          "rerank_score": 0.3702934480808642,
+          "rrf_rank": 16,
+          "rrf_score": 0.015384615384615385,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 7,
+          "bm25_score": 0.400662978514063,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.match.shotoff",
+          "matched_intent_terms": [],
+          "rerank_rank": 35,
+          "rerank_score": 0.3263720995964444,
+          "rrf_rank": 17,
+          "rrf_score": 0.014925373134328358,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 7,
+          "dense_score": 0.4259657547144967,
+          "field_id": "european_football_2.player_attributes.stamina",
+          "matched_intent_terms": [],
+          "rerank_rank": 15,
+          "rerank_score": 0.4424074152734518,
+          "rrf_rank": 18,
+          "rrf_score": 0.014925373134328358,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 8,
+          "bm25_score": 0.3683794971589209,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.team_attributes.chancecreationshooting",
+          "matched_intent_terms": [],
+          "rerank_rank": 33,
+          "rerank_score": 0.3470964417024469,
+          "rrf_rank": 19,
+          "rrf_score": 0.014705882352941176,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 8,
+          "dense_score": 0.4253421552790795,
+          "field_id": "european_football_2.player_attributes.vision",
+          "matched_intent_terms": [],
+          "rerank_rank": 17,
+          "rerank_score": 0.43881496543867105,
+          "rrf_rank": 20,
+          "rrf_score": 0.014705882352941176,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 9,
+          "bm25_score": 0.36306035360550754,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.team_attributes.defencepressure",
+          "matched_intent_terms": [],
+          "rerank_rank": 31,
+          "rerank_score": 0.37443696345679,
+          "rrf_rank": 21,
+          "rrf_score": 0.014492753623188406,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 10,
+          "dense_score": 0.42001237377246825,
+          "field_id": "european_football_2.player_attributes.reactions",
+          "matched_intent_terms": [],
+          "rerank_rank": 14,
+          "rerank_score": 0.4446516596275361,
+          "rrf_rank": 22,
+          "rrf_score": 0.014285714285714285,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 12,
+          "bm25_score": 0.3357474345027659,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.player.player_fifa_api_id",
+          "matched_intent_terms": [
+            "player"
+          ],
+          "rerank_rank": 5,
+          "rerank_score": 0.47933898681570164,
+          "rrf_rank": 23,
+          "rrf_score": 0.013888888888888888,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "player"
+          ]
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 12,
+          "dense_score": 0.4162266590400902,
+          "field_id": "european_football_2.player_attributes.agility",
+          "matched_intent_terms": [],
+          "rerank_rank": 16,
+          "rerank_score": 0.4392053895829097,
+          "rrf_rank": 24,
+          "rrf_score": 0.013888888888888888,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 13,
+          "dense_score": 0.4147779360100745,
+          "field_id": "european_football_2.player_attributes.balance",
+          "matched_intent_terms": [],
+          "rerank_rank": 23,
+          "rerank_score": 0.4216646604749633,
+          "rrf_rank": 25,
+          "rrf_score": 0.0136986301369863,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 14,
+          "bm25_score": 0.32894628775595997,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.player_attributes.player_fifa_api_id",
+          "matched_intent_terms": [
+            "player"
+          ],
+          "rerank_rank": 4,
+          "rerank_score": 0.4885961302094336,
+          "rrf_rank": 26,
+          "rrf_score": 0.013513513513513514,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "player"
+          ]
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 15,
+          "dense_score": 0.4131617503015828,
+          "field_id": "european_football_2.player_attributes.acceleration",
+          "matched_intent_terms": [],
+          "rerank_rank": 18,
+          "rerank_score": 0.43454234398055613,
+          "rrf_rank": 27,
+          "rrf_score": 0.013333333333333334,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 16,
+          "bm25_score": 0.307705041056452,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.team_attributes.defenceaggression",
+          "matched_intent_terms": [],
+          "rerank_rank": 34,
+          "rerank_score": 0.33421757281603454,
+          "rrf_rank": 28,
+          "rrf_score": 0.013157894736842105,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 16,
+          "dense_score": 0.41016964281225265,
+          "field_id": "european_football_2.player.height",
+          "matched_intent_terms": [],
+          "rerank_rank": 24,
+          "rerank_score": 0.41662393119961505,
+          "rrf_rank": 29,
+          "rrf_score": 0.013157894736842105,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 17,
+          "bm25_score": 0.3000619702350268,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.team_attributes.defenceteamwidth",
+          "matched_intent_terms": [],
+          "rerank_rank": 37,
+          "rerank_score": 0.3209277715119317,
+          "rrf_rank": 30,
+          "rrf_score": 0.012987012987012988,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 17,
+          "dense_score": 0.41010154092043427,
+          "field_id": "european_football_2.player_attributes.jumping",
+          "matched_intent_terms": [],
+          "rerank_rank": 20,
+          "rerank_score": 0.4268405441565789,
+          "rrf_rank": 31,
+          "rrf_score": 0.012987012987012988,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 18,
+          "bm25_score": 0.2998076636127583,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.match.possession",
+          "matched_intent_terms": [],
+          "rerank_rank": 36,
+          "rerank_score": 0.32093780840215597,
+          "rrf_rank": 32,
+          "rrf_score": 0.01282051282051282,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 19,
+          "dense_score": 0.4096023469782787,
+          "field_id": "european_football_2.match.home_player_y6",
+          "matched_intent_terms": [
+            "player"
+          ],
+          "rerank_rank": 26,
+          "rerank_score": 0.3998820635283312,
+          "rrf_rank": 33,
+          "rrf_score": 0.012658227848101266,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "player"
+          ]
+        },
+        {
+          "bm25_rank": 20,
+          "bm25_score": 0.2860977300206344,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.match.date",
+          "matched_intent_terms": [
+            "date"
+          ],
+          "rerank_rank": 30,
+          "rerank_score": 0.38676067626944194,
+          "rrf_rank": 34,
+          "rrf_score": 0.0125,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": [
+            "date"
+          ]
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 20,
+          "dense_score": 0.4083056087925725,
+          "field_id": "european_football_2.player_attributes.positioning",
+          "matched_intent_terms": [],
+          "rerank_rank": 9,
+          "rerank_score": 0.45244590221375425,
+          "rrf_rank": 35,
+          "rrf_score": 0.0125,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 21,
+          "bm25_score": 0.27777482309382867,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.team_attributes.buildupplaypassing",
+          "matched_intent_terms": [],
+          "rerank_rank": 29,
+          "rerank_score": 0.3893411771884482,
+          "rrf_rank": 36,
+          "rrf_score": 0.012345679012345678,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 21,
+          "dense_score": 0.4081360254246801,
+          "field_id": "european_football_2.player_attributes.marking",
+          "matched_intent_terms": [],
+          "rerank_rank": 10,
+          "rerank_score": 0.4515295978620993,
+          "rrf_rank": 37,
+          "rrf_score": 0.012345679012345678,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 22,
+          "bm25_score": 0.27365385262456493,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.team_attributes.defencedefenderlineclass",
+          "matched_intent_terms": [],
+          "rerank_rank": 38,
+          "rerank_score": 0.31228854437183184,
+          "rrf_rank": 38,
+          "rrf_score": 0.012195121951219513,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": null,
+          "bm25_score": null,
+          "dense_rank": 24,
+          "dense_score": 0.40547668582780305,
+          "field_id": "european_football_2.player_attributes.finishing",
+          "matched_intent_terms": [],
+          "rerank_rank": 22,
+          "rerank_score": 0.4264623448688039,
+          "rrf_rank": 39,
+          "rrf_score": 0.011904761904761904,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        },
+        {
+          "bm25_rank": 25,
+          "bm25_score": 0.25985014639608894,
+          "dense_rank": null,
+          "dense_score": null,
+          "field_id": "european_football_2.team_attributes.chancecreationpositioningclass",
+          "matched_intent_terms": [],
+          "rerank_rank": 39,
+          "rerank_score": 0.3096815119507793,
+          "rrf_rank": 40,
+          "rrf_score": 0.011764705882352941,
+          "selected": false,
+          "selection_reason": "below_coverage_floor",
+          "uncovered_intent_terms": []
+        }
+      ],
+      "coverage_field_ids": [],
+      "intent_selection": {
+        "added_field_ids": [
+          "european_football_2.player_attributes.date"
+        ],
+        "baseline_field_ids": [
+          "european_football_2.player_attributes.overall_rating",
+          "european_football_2.player.birthday"
+        ],
+        "decisions": [
+          {
+            "basis": "public_input_and_authorized_metadata",
+            "field_id": "european_football_2.player_attributes.date",
+            "priority": 4,
+            "reason": "explicit_public_identifier_or_label",
+            "rerank_score": 0.4959185435260514,
+            "score_source": "provider_rerank",
+            "selected": true,
+            "selection_reason": "explicit_public_identifier_or_label",
+            "table_id": "european_football_2.player_attributes"
+          }
+        ],
+        "policy": {
+          "baseline_preserved": true,
+          "canonical_lookup_max_pairs": 4,
+          "canonical_lookup_sql_tool_calls": 1,
+          "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+          "development_candidate": true,
+          "formal_protocol_override": false,
+          "grain_policy": "public_explicit_entity_grain_v2",
+          "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+          "join_source": "declared_foreign_keys_only",
+          "lookup_consumes_existing_sql_budget": true,
+          "max_added_fields": 8,
+          "max_fields": 20,
+          "max_related_hops": 2,
+          "native_ex_unchanged": true,
+          "numeric_policy": "floating_count_ratio_order_advisory_v3",
+          "output_group_policy": "participant_action_target_pair_v1",
+          "policy_id": "bird_public_intent_candidate_v4",
+          "predicate_policy": "public_condition_roles_conflicts_v3",
+          "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+          "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+          "unit_policy": "public_percentage_units_precision_v2"
+        },
+        "sample_condition_candidates": []
+      },
+      "relation_key_field_ids": [
+        "european_football_2.player.player_api_id",
+        "european_football_2.player_attributes.player_api_id"
+      ],
+      "schema_graph": {
+        "complete": true,
+        "omission_reason": null,
+        "sha256": "82d2f634bbffffead5b01caeee96c5307ba3254c8719120fbce210fddebd14a4",
+        "utf8_bytes": 3566,
+        "value": {
+          "database": "european_football_2",
+          "databases": [
+            "european_football_2"
+          ],
+          "fields": [
+            {
+              "description": "the overall rating of the player",
+              "id": "european_football_2.player_attributes.overall_rating",
+              "label": "overall_rating",
+              "name": "overall_rating",
+              "role": "field",
+              "score": 0.6915311268002238,
+              "source": "retrieval",
+              "sql_name": "player_attributes.overall_rating",
+              "table_id": "european_football_2.player_attributes",
+              "table_name": "player_attributes",
+              "type": "bigint"
+            },
+            {
+              "description": "the player's birthday",
+              "id": "european_football_2.player.birthday",
+              "label": "birthday",
+              "name": "birthday",
+              "role": "field",
+              "score": 0.6493667164808796,
+              "source": "retrieval",
+              "sql_name": "player.birthday",
+              "table_id": "european_football_2.player",
+              "table_name": "player",
+              "type": "text"
+            },
+            {
+              "description": "date",
+              "id": "european_football_2.player_attributes.date",
+              "label": "date",
+              "name": "date",
+              "role": "field",
+              "score": 0.4959185435260514,
+              "source": "intent_coverage",
+              "sql_name": "player_attributes.date",
+              "table_id": "european_football_2.player_attributes",
+              "table_name": "player_attributes",
+              "type": "text"
+            },
+            {
+              "description": "the id of the player api",
+              "id": "european_football_2.player.player_api_id",
+              "label": "player api id",
+              "name": "player_api_id",
+              "role": "field",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "player.player_api_id",
+              "table_id": "european_football_2.player",
+              "table_name": "player",
+              "type": "bigint"
+            },
+            {
+              "description": "the id of the player api",
+              "id": "european_football_2.player_attributes.player_api_id",
+              "label": "player api id",
+              "name": "player_api_id",
+              "role": "field",
+              "score": 1.0,
+              "source": "relation_key",
+              "sql_name": "player_attributes.player_api_id",
+              "table_id": "european_football_2.player_attributes",
+              "table_name": "player_attributes",
+              "type": "bigint"
+            }
+          ],
+          "graph_version": "be56f0ed0bdc",
+          "joins": [
+            {
+              "description": "Official database foreign key",
+              "id": "player_attributes_player_api_id_fkey:player_api_id",
+              "left_field": "player_api_id",
+              "left_table": "european_football_2.player",
+              "left_table_name": "player",
+              "relation_type": "foreign_key",
+              "right_field": "player_api_id",
+              "right_table": "european_football_2.player_attributes",
+              "right_table_name": "player_attributes"
+            }
+          ],
+          "relation_role_context": {
+            "context_output_groups": [],
+            "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges.",
+            "joins_are_alternatives": true,
+            "policy": "authorized_role_alternatives_v1",
+            "preferred_actor_relations": [],
+            "roles": [
+              {
+                "child_field": "player_api_id",
+                "child_table": "european_football_2.player_attributes",
+                "mandatory": false,
+                "parent_field": "player_api_id",
+                "parent_table": "european_football_2.player",
+                "relation_id": "player_attributes_player_api_id_fkey:player_api_id",
+                "role_description": "the id of the player api",
+                "role_label": "player api id",
+                "source": "current_authorized_declared_foreign_key"
+              }
+            ]
+          },
+          "source_identity": {
+            "backend": "postgresql",
+            "catalog_version": "7e65c485d64772c03edab6c13baa65eae104a933b2b115be747fe0c733cdfd8b",
+            "data_version": "cc4a4cfeed56bc10bb114cb58229c32cdcd5e270020dce63b21b931931562c16",
+            "dialect": "postgres",
+            "logical_database_id": "european_football_2",
+            "physical_schema": "public",
+            "prompt_dialect": "PostgreSQL",
+            "source_id": "bird_mini_dev_postgres_european_football_2"
+          },
+          "tables": [
+            {
+              "database": "european_football_2",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "european_football_2",
+              "id": "european_football_2.player",
+              "label": "player",
+              "name": "player"
+            },
+            {
+              "database": "european_football_2",
+              "description": "Official BIRD Mini-Dev table",
+              "domain": "european_football_2",
+              "id": "european_football_2.player_attributes",
+              "label": "player_attributes",
+              "name": "player_attributes"
+            }
+          ]
+        }
+      },
+      "selected_field_ids": [
+        "european_football_2.player_attributes.overall_rating",
+        "european_football_2.player.birthday",
+        "european_football_2.player_attributes.date"
+      ],
+      "selection_policy": {
+        "coverage_enabled": true,
+        "coverage_floor": 0.5,
+        "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+        "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+        "development_candidate": true,
+        "formal_protocol_override": false,
+        "intent_source": "original_question_and_official_evidence",
+        "max_coverage_fields": 4,
+        "max_fields": 20,
+        "metadata_match": "native_field_name_or_official_field_label",
+        "policy_id": "bird_authorized_schema_coverage_v1",
+        "score_representation": "provider score clamped to [0,1] by existing broker",
+        "threshold": 0.55
+      }
+    }
+  },
+  "errors": [],
+  "ex_correct": true,
+  "executions": [
+    {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "ea774317841e21fc3e99a78cb7a06cfb912e7d483e916952522c0d434a88bf71",
+        "payload_bytes": 54,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "success": true
+    }
+  ],
+  "final_sql_execution_success": true,
+  "first_sql_execution_success": true,
+  "formal_benchmark": true,
+  "generated_sql": "SELECT p.player_name FROM player p JOIN player_attributes pa ON p.player_api_id = pa.player_api_id WHERE pa.overall_rating = 77 AND pa.date LIKE '2016-06-23%' ORDER BY p.birthday ASC NULLS LAST LIMIT 1",
+  "generation_status": "diagnostic_answered",
+  "generation_worker_mode": "diagnostic",
+  "gold_executed": true,
+  "gold_execution_attempted": true,
+  "gold_sql_sha256": "2433e0c67265b4cc199b89bb0a1c3b84f3bb0de630a3cd39f3ec015daef64d8a",
+  "index_sha256": "c93becff4383a6962ee82142f79a59b20330ab6642f20d36354322931ee61d7b",
+  "intent_candidate_policy": {
+    "baseline_preserved": true,
+    "canonical_lookup_max_pairs": 4,
+    "canonical_lookup_sql_tool_calls": 1,
+    "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "grain_policy": "public_explicit_entity_grain_v2",
+    "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+    "join_source": "declared_foreign_keys_only",
+    "lookup_consumes_existing_sql_budget": true,
+    "max_added_fields": 8,
+    "max_fields": 20,
+    "max_related_hops": 2,
+    "native_ex_unchanged": true,
+    "numeric_policy": "floating_count_ratio_order_advisory_v3",
+    "output_group_policy": "participant_action_target_pair_v1",
+    "policy_id": "bird_public_intent_candidate_v4",
+    "predicate_policy": "public_condition_roles_conflicts_v3",
+    "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+    "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+    "unit_policy": "public_percentage_units_precision_v2"
+  },
+  "intent_contract": {
+    "canonical_values": [],
+    "entity_grain": {},
+    "entity_identifier_output": null,
+    "explicit_top_n": null,
+    "guidance": [
+      "For ranked nonmissing values, write NULLS LAST explicitly on nullable ORDER BY expressions, including ABS and aggregates. Preserve any explicit request to rank missing values first.",
+      "Preserve Top-N size, ordinal offset, direction, ties and requested output order; do not add arbitrary tie-breakers.",
+      "Project exactly the requested attributes. For a list of entity instances without requested attributes, prefer that entity primary key; do not SELECT table.*. This is an explicit development output convention, not an inferred reference answer.",
+      "For full names, keep first/last fields together and include all numbered person slots requested, in slot order. Do not add email/contact fields.",
+      "Cover every business population and condition from question/evidence. A difference calculation returns the requested signed difference, not ABS or an extra Yes/No column unless requested.",
+      "Profile samples are coverage hints, never new mandatory filters. Do not turn names, table/role nouns or arithmetic constants into equality predicates. Required conditions below bind a specific public evidence field and value; preserve that ownership.",
+      "Inspect entity_grain.enforcement and its public_basis. Only an explicit distinct-entity request mandates deduplication. A primary key or one-to-many join alone is advisory: preserve requested joined-row weighting and state unresolved grain; do not invent DISTINCT or choose reference answers.",
+      "Join edges in relation_role_context are alternatives. Select the participant matching the question action, not an editor/owner merely because it is the first shortest path. Context output groups use the explicit development convention to include the named related entity title/name alongside the requested actor label; they are not reference-answer hints.",
+      "If quantity_difference_scalar is true, the evidence provides the quantity formula for an independent yes/no comparison: return only that signed numeric difference, whose sign also answers the comparison. If entity_identifier_output is supplied, the explicit entity-list development convention requests that primary identifier alone.",
+      "Foreign keys store identifiers, not human names. Join the authorized referenced entity and filter its name field. Name fields on different tables are not assumed interchangeable.",
+      "Canonical values below come from bounded case-insensitive equality lookups. Use a unique stored spelling without removing/changing conditions; not_found and ambiguous are not permission to guess.",
+      "Use output_units for scale/type decisions and participant_output for projection groups. These are versioned public development conventions with explicit overrides and ambiguity records, not hidden reference requirements. For count percentages, prefer a REAL or DOUBLE PRECISION numerator scaled before division; operation order alone never triggers rejection. Preserve explicit fraction, exact-formula, decimal and rounding requests. Native EX has no tolerance.",
+      "Missing schema is a reason to clarify only after checking the supplied authorized field groups and declared FK paths. Explain the specific missing field or ambiguity."
+    ],
+    "name_groups": [],
+    "ordinal_descending": null,
+    "ordinal_rank": null,
+    "output_units": {
+      "arithmetic_preference": "requested_or_source_type",
+      "formula_excerpt": null,
+      "guidance": "Percentage means a 0-100 numeric output under this visible development convention. An evidence DIVIDE formula without a scale supplies the base ratio; the percentage question supplies *100. Explicit 0-1/fraction requests or an exact-formula instruction override this default. Record conflicts; never consult a reference answer. For unrounded count percentages prefer CAST(conditional_count AS REAL) * 100 / NULLIF(total_count,0), preserving entity grain; DOUBLE PRECISION is also allowed. Scaling before division is a numerical suggestion, never an operation-order rejection. Do not change types, round, or normalize returned results to make comparisons pass.",
+      "operation_order_authority": "advisory_only",
+      "output_unit": "unspecified",
+      "policy": "public_percentage_units_precision_v2",
+      "precision": {
+        "conflict": false,
+        "decimal_places": null,
+        "enforcement": "advisory",
+        "guidance": "Implement explicitly requested decimal places in the final SQL numeric output (for example ROUND(numeric_expression, n)). Preserve the requested unit and population; do not round driver results or add scoring tolerance. Ambiguous/complex output ownership is advisory.",
+        "policy": "explicit_public_decimal_places_v1",
+        "requests": [],
+        "unsupported": false
+      },
+      "question_formula_scale_conflict": false,
+      "ratio_multiplier": null,
+      "resolution_basis": "no_explicit_output_unit",
+      "resolution_is_development_convention": false
+    },
+    "participant_output": {
+      "advisory_groups": [],
+      "basis": "public_action_target_frame_and_unique_authorized_role",
+      "guidance": "Required groups are an explicit development output convention: project the requested participant label and the named action-target title, in that order. Mere filter/context mentions do not mandate projection. Explicit only/exclude instructions take precedence. Do not add contact fields, all columns or other candidate join roles.",
+      "policy": "participant_action_target_pair_v1",
+      "required_groups": []
+    },
+    "percentage_real_arithmetic": false,
+    "policy": {
+      "baseline_preserved": true,
+      "canonical_lookup_max_pairs": 4,
+      "canonical_lookup_sql_tool_calls": 1,
+      "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+      "development_candidate": true,
+      "formal_protocol_override": false,
+      "grain_policy": "public_explicit_entity_grain_v2",
+      "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+      "join_source": "declared_foreign_keys_only",
+      "lookup_consumes_existing_sql_budget": true,
+      "max_added_fields": 8,
+      "max_fields": 20,
+      "max_related_hops": 2,
+      "native_ex_unchanged": true,
+      "numeric_policy": "floating_count_ratio_order_advisory_v3",
+      "output_group_policy": "participant_action_target_pair_v1",
+      "policy_id": "bird_public_intent_candidate_v4",
+      "predicate_policy": "public_condition_roles_conflicts_v3",
+      "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+      "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+      "unit_policy": "public_percentage_units_precision_v2"
+    },
+    "profile_coverage_hints": [],
+    "public_evidence": {
+      "conditions": [],
+      "conflicts": [],
+      "guidance": "Keep numerator, denominator and population roles separate. Conflicting bindings are advisory; do not require their conjunction or guess which is correct.",
+      "policy": "public_condition_roles_conflicts_v3"
+    },
+    "quantity_difference_scalar": false,
+    "relation_role_context": {
+      "context_output_groups": [],
+      "guidance": "Choose the edge matching the requested action. Editor, owner and event participant are different roles; do not AND all alternative edges.",
+      "joins_are_alternatives": true,
+      "policy": "authorized_role_alternatives_v1",
+      "preferred_actor_relations": [],
+      "roles": [
+        {
+          "child_field": "player_api_id",
+          "child_table": "european_football_2.player_attributes",
+          "mandatory": false,
+          "parent_field": "player_api_id",
+          "parent_table": "european_football_2.player",
+          "relation_id": "player_attributes_player_api_id_fkey:player_api_id",
+          "role_description": "the id of the player api",
+          "role_label": "player api id",
+          "source": "current_authorized_declared_foreign_key"
+        }
+      ]
+    },
+    "remaining_sql_execution_rounds": 3,
+    "required_profile_conditions": []
+  },
+  "mode": "live",
+  "native_comparison": {
+    "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion",
+    "difference_codes": [],
+    "difference_preview_row_limit": 5,
+    "difference_preview_utf8_byte_limit": 65536,
+    "gold_column_count": 1,
+    "gold_only_preview": {
+      "oversized_rows_omitted": 0,
+      "preview_truncated": false,
+      "rows": [],
+      "utf8_bytes": 0
+    },
+    "gold_only_tuple_count": 0,
+    "gold_row_count": 1,
+    "gold_unique_tuple_count": 1,
+    "matches_frozen_gold": true,
+    "native_type_sets_differ": false,
+    "prediction_column_count": 1,
+    "prediction_only_preview": {
+      "oversized_rows_omitted": 0,
+      "preview_truncated": false,
+      "rows": [],
+      "utf8_bytes": 0
+    },
+    "prediction_only_tuple_count": 0,
+    "prediction_row_count": 1,
+    "prediction_unique_tuple_count": 1,
+    "preview_only": true
+  },
+  "native_results": {
+    "prediction": {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "ea774317841e21fc3e99a78cb7a06cfb912e7d483e916952522c0d434a88bf71",
+        "payload_bytes": 54,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "preview": {
+        "columns": [
+          "player_name"
+        ],
+        "complete_result_row_count": 1,
+        "preview_only": true,
+        "preview_truncated": false,
+        "rows": [
+          [
+            [
+              "text",
+              "Laurent Ciman"
+            ]
+          ]
+        ]
+      },
+      "preview_row_limit": 20
+    },
+    "reference": {
+      "diagnostic": {
+        "column_count": 1,
+        "complete": true,
+        "native_types": [
+          "str"
+        ],
+        "ordered_native_diagnostic_sha256": "ea774317841e21fc3e99a78cb7a06cfb912e7d483e916952522c0d434a88bf71",
+        "payload_bytes": 54,
+        "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+        "row_count": 1
+      },
+      "preview": {
+        "columns": [
+          "player_name"
+        ],
+        "complete_result_row_count": 1,
+        "preview_only": true,
+        "preview_truncated": false,
+        "rows": [
+          [
+            [
+              "text",
+              "Laurent Ciman"
+            ]
+          ]
+        ]
+      },
+      "preview_row_limit": 20
+    }
+  },
+  "new_model_request_count": 3,
+  "query_role": "askdata_m2_ro_european_football_2",
+  "result": {
+    "column_count": 1,
+    "complete": true,
+    "native_types": [
+      "str"
+    ],
+    "ordered_native_diagnostic_sha256": "ea774317841e21fc3e99a78cb7a06cfb912e7d483e916952522c0d434a88bf71",
+    "payload_bytes": 54,
+    "payload_sizing_policy": "bird_native_tagged_utf8_payload_v1",
+    "row_count": 1
+  },
+  "result_diagnostics": {
+    "column_count_match": true,
+    "ordered_rows_match": true,
+    "row_multiset_match": true
+  },
+  "retrieval": {
+    "baseline_field_ids": [
+      "european_football_2.player_attributes.overall_rating",
+      "european_football_2.player.birthday"
+    ],
+    "bm25_count": 30,
+    "coverage_field_ids": [],
+    "dense_count": 30,
+    "intent_selection": {
+      "added_field_ids": [
+        "european_football_2.player_attributes.date"
+      ],
+      "baseline_field_ids": [
+        "european_football_2.player_attributes.overall_rating",
+        "european_football_2.player.birthday"
+      ],
+      "decisions": [
+        {
+          "basis": "public_input_and_authorized_metadata",
+          "field_id": "european_football_2.player_attributes.date",
+          "priority": 4,
+          "reason": "explicit_public_identifier_or_label",
+          "rerank_score": 0.4959185435260514,
+          "score_source": "provider_rerank",
+          "selected": true,
+          "selection_reason": "explicit_public_identifier_or_label",
+          "table_id": "european_football_2.player_attributes"
+        }
+      ],
+      "policy": {
+        "baseline_preserved": true,
+        "canonical_lookup_max_pairs": 4,
+        "canonical_lookup_sql_tool_calls": 1,
+        "coverage_scope": "authorized_catalog_exact_evidence_roles_groups_or_sample_matches",
+        "development_candidate": true,
+        "formal_protocol_override": false,
+        "grain_policy": "public_explicit_entity_grain_v2",
+        "input_source": "original_question_official_evidence_authorized_catalog_and_profiles",
+        "join_source": "declared_foreign_keys_only",
+        "lookup_consumes_existing_sql_budget": true,
+        "max_added_fields": 8,
+        "max_fields": 20,
+        "max_related_hops": 2,
+        "native_ex_unchanged": true,
+        "numeric_policy": "floating_count_ratio_order_advisory_v3",
+        "output_group_policy": "participant_action_target_pair_v1",
+        "policy_id": "bird_public_intent_candidate_v4",
+        "predicate_policy": "public_condition_roles_conflicts_v3",
+        "profile_match_authority": "retrieval_hint_only_never_mandatory_predicate",
+        "relation_policy": "authorized_alternatives_with_role_metadata_v1",
+        "unit_policy": "public_percentage_units_precision_v2"
+      },
+      "sample_condition_candidates": []
+    },
+    "rrf_count": 40,
+    "schema_selection_policy": {
+      "coverage_enabled": true,
+      "coverage_floor": 0.5,
+      "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+      "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+      "development_candidate": true,
+      "formal_protocol_override": false,
+      "intent_source": "original_question_and_official_evidence",
+      "max_coverage_fields": 4,
+      "max_fields": 20,
+      "metadata_match": "native_field_name_or_official_field_label",
+      "policy_id": "bird_authorized_schema_coverage_v1",
+      "threshold": 0.55
+    },
+    "selected_count": 3,
+    "selected_field_ids": [
+      "european_football_2.player_attributes.overall_rating",
+      "european_football_2.player.birthday",
+      "european_football_2.player_attributes.date"
+    ],
+    "source_identity": {
+      "backend": "postgresql",
+      "catalog_version": "7e65c485d64772c03edab6c13baa65eae104a933b2b115be747fe0c733cdfd8b",
+      "data_version": "cc4a4cfeed56bc10bb114cb58229c32cdcd5e270020dce63b21b931931562c16",
+      "dialect": "postgres",
+      "logical_database_id": "european_football_2",
+      "physical_schema": "public",
+      "prompt_dialect": "PostgreSQL",
+      "source_id": "bird_mini_dev_postgres_european_football_2"
+    }
+  },
+  "runtime_closed": true,
+  "schema_selection_policy": {
+    "coverage_enabled": true,
+    "coverage_floor": 0.5,
+    "coverage_gain": "intent_terms_not_yet_covered_in_same_table",
+    "coverage_scope": "existing_rrf_candidates_in_baseline_selected_tables",
+    "development_candidate": true,
+    "formal_protocol_override": false,
+    "intent_source": "original_question_and_official_evidence",
+    "max_coverage_fields": 4,
+    "max_fields": 20,
+    "metadata_match": "native_field_name_or_official_field_label",
+    "policy_id": "bird_authorized_schema_coverage_v1",
+    "threshold": 0.55
+  },
+  "scorer_runtime_closed": true,
+  "scoring_scope": "trusted_after_agent_exit_with_original_case_deadline",
+  "source_identity": {
+    "backend": "postgresql",
+    "catalog_version": "7e65c485d64772c03edab6c13baa65eae104a933b2b115be747fe0c733cdfd8b",
+    "data_version": "cc4a4cfeed56bc10bb114cb58229c32cdcd5e270020dce63b21b931931562c16",
+    "dialect": "postgres",
+    "logical_database_id": "european_football_2",
+    "physical_schema": "public",
+    "prompt_dialect": "PostgreSQL",
+    "source_id": "bird_mini_dev_postgres_european_football_2"
+  },
+  "sql_repair_policy": "bird_authorized_sql_repair_v2",
+  "status": "scored",
+  "validation_events": [
+    {
+      "sql_round": 1,
+      "valid": true
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "stage": "M2 source feedback and two-case semantic audit local preparation",
+  "run_status": "complete",
+  "source_report_sha256": "9167b9005fcbd2f899dda744f4c6a3258c24777e4625281d05a6b33ca8d57123",
+  "source_policy_feedback": {
+    "policy": "bird_authorized_sql_repair_v2",
+    "category": "sql_source_denied",
+    "sqlstate": null,
+    "condition": "sql_source_denied",
+    "server_reason": {
+      "text": "",
+      "provided": true,
+      "original_utf8_bytes": 0,
+      "truncated": false,
+      "redacted": false
+    },
+    "failed_sql": {
+      "text": "SELECT DISTINCT d.account_id\nFROM financial.disp d\nJOIN financial.client c ON d.client_id = c.client_id\nJOIN financial.district dist ON c.district_id = dist.district_id\nWHERE c.birth_date = (\n    SELECT MAX(birth_date)\n    FROM financial.client\n) AND dist.a11 = (\n    SELECT MAX(a11)\n    FROM financial.district\n)",
+      "provided": true,
+      "original_utf8_bytes": 313,
+      "truncated": false,
+      "redacted": false,
+      "original_sha256": "49e795e9d58c0a36b0cacf914ddfee1b83258f54bd794a2fede799641e5e5f4a"
+    },
+    "position": {
+      "raw_statement_position": null,
+      "origin": "unknown",
+      "sql_position": null,
+      "line": null,
+      "column": null,
+      "available": false,
+      "unavailable_reason": "statement_context_not_available"
+    },
+    "unresolved_column": null,
+    "authorized_fields": [],
+    "catalog_scope": "Bounded subset of referenced physical tables in the current authorized runtime.",
+    "source_identity": {
+      "logical_database_id": "financial",
+      "source_id": "bird_mini_dev_postgres_financial",
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "prompt_dialect": "PostgreSQL",
+      "physical_schema": "public",
+      "catalog_version": "99fe4fcd205aceeff9a52e99a0353cad7fb17f5b05b2f1b3971551904b0eff99",
+      "data_version": "78cf4351aa168646163aab9dbb38e8fc3b267ef51a73571ac8d56bfdb69701b9"
+    },
+    "guidance": [
+      "Preserve the requested output columns, filters and question meaning. Use only authorized identifiers.",
+      "Fix the denied physical reference using source_policy. The logical database ID is not a schema. Preserve all predicates, joins and requested output meaning."
+    ],
+    "duplicate_failed_sql": false,
+    "retryable": true,
+    "sql_fingerprint": "8caa29b678c440f895101aec2a6f4507d4e4a2bf4e00d27278d3931426880be4",
+    "feedback_utf8_byte_limit": 8192,
+    "omitted_authorized_fields": 0,
+    "source_policy": {
+      "origin": "local_sql_policy",
+      "logical_database_id": "financial",
+      "physical_schema": "public",
+      "allowed_reference_forms": [
+        "table",
+        "public.table"
+      ],
+      "rules": [
+        "Logical database IDs group authorized tables; they are not physical schema names.",
+        "Use only unqualified tables or the public schema in the current authorized catalog; catalog-qualified references are denied.",
+        "An allowed spelling refers only to the current source; it does not grant access to another source."
+      ],
+      "denied_references": [
+        {
+          "observed_catalog": "",
+          "observed_schema": "financial",
+          "observed_table": "client",
+          "reason": "physical_schema_denied",
+          "table_in_current_catalog": true,
+          "allowed_current_source_references": [
+            "\"client\"",
+            "\"public\".\"client\""
+          ]
+        },
+        {
+          "observed_catalog": "",
+          "observed_schema": "financial",
+          "observed_table": "district",
+          "reason": "physical_schema_denied",
+          "table_in_current_catalog": true,
+          "allowed_current_source_references": [
+            "\"district\"",
+            "\"public\".\"district\""
+          ]
+        },
+        {
+          "observed_catalog": "",
+          "observed_schema": "financial",
+          "observed_table": "disp",
+          "reason": "physical_schema_denied",
+          "table_in_current_catalog": true,
+          "allowed_current_source_references": [
+            "\"disp\"",
+            "\"public\".\"disp\""
+          ]
+        }
+      ],
+      "omitted_reference_count": 0
+    },
+    "local_reason": {
+      "text": "Source reference denied by local SQL policy. Allowed physical schema: public; unqualified authorized tables are also allowed. See denied_references for the observed schema/catalog/table.",
+      "provided": true,
+      "original_utf8_bytes": 186,
+      "truncated": false,
+      "redacted": false
+    }
+  },
+  "semantic_cases": [
+    {
+      "case_id": "BIRD-PG-0050",
+      "database_id": "california_schools",
+      "query_count": 3,
+      "frozen_gold_sql_sha256": "84767e6311bf2f6fae4853411b0a6a368bc364d1d8b8ec8e66ed70589fb1bfd9",
+      "frozen_sql": "SELECT T2.MailStreet, T2.School FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode ORDER BY T1.AvgScrMath DESC NULLS LAST LIMIT 1 OFFSET 6",
+      "captured_sql": "SELECT s.mailstreet, sc.sname FROM schools s JOIN satscores sc ON s.cdscode = sc.cds ORDER BY sc.avgscrmath DESC NULLS LAST LIMIT 1 OFFSET 6"
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "database_id": "financial",
+      "query_count": 3,
+      "frozen_gold_sql_sha256": "4cb3c502c6a3db5ecb98afd9c5e506a763e5fa64d5dbf48f4ac5e81762f55d68",
+      "frozen_sql": "SELECT T1.account_id FROM account AS T1 INNER JOIN disp AS T2 ON T1.account_id = T2.account_id INNER JOIN client AS T3 ON T2.client_id = T3.client_id INNER JOIN district AS T4 ON T4.district_id = T1.district_id WHERE T2.client_id = (SELECT client_id FROM client ORDER BY birth_date DESC NULLS LAST LIMIT 1) GROUP BY T4.A11, T1.account_id",
+      "captured_sql": "SELECT DISTINCT d.account_id\nFROM disp d\nJOIN client c ON d.client_id = c.client_id\nJOIN district dist ON c.district_id = dist.district_id\nWHERE c.birth_date = (\n    SELECT MAX(birth_date)\n    FROM client\n) AND dist.a11 = (\n    SELECT MAX(a11)\n    FROM district\n)"
+    }
+  ],
+  "all_six_sql_policy_checks_passed": true,
+  "diagnostic14_case_ids": [
+    "BIRD-PG-0050",
+    "BIRD-PG-0095",
+    "BIRD-PG-1473",
+    "BIRD-PG-1435",
+    "BIRD-PG-0201",
+    "BIRD-PG-1399",
+    "BIRD-PG-0586",
+    "BIRD-PG-0036",
+    "BIRD-PG-0082",
+    "BIRD-PG-1486",
+    "BIRD-PG-0159",
+    "BIRD-PG-1405",
+    "BIRD-PG-0368",
+    "BIRD-PG-0766"
+  ],
+  "domain_count": 8,
+  "postgresql_connected": false,
+  "native_values_verified": false,
+  "gold_executed": false,
+  "primary_ex": null,
+  "new_model_request_count": 0,
+  "scope": "Local reference and policy validation; native PostgreSQL comparison and new 14-case model results are pending server execution."
+}

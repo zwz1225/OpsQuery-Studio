@@ -1,0 +1,358 @@
+{
+  "accounts": [
+    {
+      "create_temp_schema_create": [
+        true,
+        true,
+        true
+      ],
+      "default_read_only": "off",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_import"
+    },
+    {
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "default_read_only": "on",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_ro_california_schools"
+    },
+    {
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "default_read_only": "on",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_ro_card_games"
+    },
+    {
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "default_read_only": "on",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_ro_codebase_community"
+    },
+    {
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "default_read_only": "on",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_ro_debit_card_specializing"
+    },
+    {
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "default_read_only": "on",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_ro_european_football_2"
+    },
+    {
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "default_read_only": "on",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_ro_financial"
+    },
+    {
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "default_read_only": "on",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_ro_formula_1"
+    },
+    {
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "default_read_only": "on",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_ro_student_club"
+    },
+    {
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "default_read_only": "on",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_ro_superhero"
+    },
+    {
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "default_read_only": "on",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_ro_thrombosis_prediction"
+    },
+    {
+      "create_temp_schema_create": [
+        false,
+        false,
+        false
+      ],
+      "default_read_only": "on",
+      "empty": true,
+      "identity_passed": true,
+      "rights_passed": true,
+      "role": "askdata_m2_ro_toxicology"
+    }
+  ],
+  "checks": [
+    {
+      "name": "completed_initialization",
+      "passed": true
+    },
+    {
+      "name": "phase_flags",
+      "passed": true
+    },
+    {
+      "name": "frozen_target_and_protocol",
+      "passed": true
+    },
+    {
+      "name": "source_evidence_source_preflight.json",
+      "passed": true
+    },
+    {
+      "name": "source_evidence_import_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source_evidence_preparation_review.json",
+      "passed": true
+    },
+    {
+      "name": "canonical_import_spec",
+      "passed": true
+    },
+    {
+      "name": "server_preflight_evidence",
+      "passed": true
+    },
+    {
+      "name": "same_cluster",
+      "passed": true
+    },
+    {
+      "name": "fresh_target_and_roles_absent",
+      "passed": true
+    },
+    {
+      "name": "nine_live_preconditions",
+      "passed": true
+    },
+    {
+      "name": "capacity",
+      "passed": true
+    },
+    {
+      "name": "roles_committed",
+      "passed": true
+    },
+    {
+      "name": "database_created",
+      "passed": true
+    },
+    {
+      "name": "initialization_uuid",
+      "passed": true
+    },
+    {
+      "name": "twelve_distinct_logins",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_import",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_import",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_ro_california_schools",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_ro_california_schools",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_ro_card_games",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_ro_card_games",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_ro_codebase_community",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_ro_codebase_community",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_ro_debit_card_specializing",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_ro_debit_card_specializing",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_ro_european_football_2",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_ro_european_football_2",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_ro_financial",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_ro_financial",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_ro_formula_1",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_ro_formula_1",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_ro_student_club",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_ro_student_club",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_ro_superhero",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_ro_superhero",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_ro_thrombosis_prediction",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_ro_thrombosis_prediction",
+      "passed": true
+    },
+    {
+      "name": "login_identity_askdata_m2_ro_toxicology",
+      "passed": true
+    },
+    {
+      "name": "login_rights_askdata_m2_ro_toxicology",
+      "passed": true
+    },
+    {
+      "name": "summary_consistent",
+      "passed": true
+    },
+    {
+      "name": "credentials_created",
+      "passed": true
+    },
+    {
+      "name": "no_credential_values",
+      "passed": true
+    }
+  ],
+  "conclusion": "Initialization accepted; controlled import may proceed. Data import, typed target consistency and populated-table ACL verification remain pending.",
+  "initialization_id": "414a9cda2a064b698bd918a9ac5b73f8",
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "review_scope": "Downloaded report and local frozen evidence, no live server connection",
+  "reviewed_at": "2026-10-16T03:51:34.601035+00:00",
+  "run_status": "complete",
+  "source_report": "m2_b_postgres_initialization_server.json",
+  "source_report_sha256": "5e21e8f20b0581a772fbc3c03e43f8fb60748ffe104a370565cd8bbfaf56a1b2",
+  "stage": "M2 B server initialization local evidence review",
+  "summary": {
+    "check_count": 43,
+    "check_pass_count": 43,
+    "empty_target_table_count": 0,
+    "minimum_recorded_free_gib": 91.017,
+    "readonly_query_role_count": 11,
+    "role_login_count": 12
+  },
+  "target": {
+    "database": "askdata_m2_bird",
+    "import_role": "askdata_m2_import",
+    "query_roles": {
+      "california_schools": "askdata_m2_ro_california_schools",
+      "card_games": "askdata_m2_ro_card_games",
+      "codebase_community": "askdata_m2_ro_codebase_community",
+      "debit_card_specializing": "askdata_m2_ro_debit_card_specializing",
+      "european_football_2": "askdata_m2_ro_european_football_2",
+      "financial": "askdata_m2_ro_financial",
+      "formula_1": "askdata_m2_ro_formula_1",
+      "student_club": "askdata_m2_ro_student_club",
+      "superhero": "askdata_m2_ro_superhero",
+      "thrombosis_prediction": "askdata_m2_ro_thrombosis_prediction",
+      "toxicology": "askdata_m2_ro_toxicology"
+    },
+    "schema": "public"
+  }
+}

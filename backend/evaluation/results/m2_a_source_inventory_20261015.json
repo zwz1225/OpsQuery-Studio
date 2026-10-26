@@ -1,0 +1,2898 @@
+{
+  "stage": "M2 A official source acquisition review",
+  "checked_at": "2026-10-15T08:24:30.868104+00:00",
+  "run_status": "metadata_and_small_files_verified",
+  "scope": "Acquisition only. Full database archive payload, import, Gold execution and live evaluation are pending.",
+  "dataset_id": "birdsql/bird_mini_dev",
+  "task_family": "original_500_postgresql_readonly_candidate",
+  "license_as_declared_by_dataset_card": "cc-by-sa-4.0",
+  "dataset_revision": "f65faf4ae3b638c1fa6df1d3370c8d92c8366301",
+  "dataset_revision_last_modified": "2026-01-18T08:44:25.000Z",
+  "questions": {
+    "canonical_url": "https://huggingface.co/datasets/birdsql/bird_mini_dev/resolve/f65faf4ae3b638c1fa6df1d3370c8d92c8366301/data/mini_dev_pg-00000-of-00001.json",
+    "filename": "mini_dev_pg-00000-of-00001.json",
+    "size_bytes": 283551,
+    "sha256": "7fa740ef9225389cff6c34432120e8325d0ca3008d73db1ae38731234bc10da7",
+    "format": "JSON array",
+    "case_count": 500,
+    "unique_question_id_count": 500,
+    "keys": [
+      "question_id",
+      "db_id",
+      "question",
+      "evidence",
+      "SQL",
+      "difficulty"
+    ],
+    "database_counts": {
+      "debit_card_specializing": 30,
+      "student_club": 48,
+      "thrombosis_prediction": 50,
+      "european_football_2": 51,
+      "formula_1": 66,
+      "superhero": 52,
+      "codebase_community": 49,
+      "card_games": 52,
+      "toxicology": 40,
+      "california_schools": 30,
+      "financial": 32
+    },
+    "difficulty_counts": {
+      "simple": 148,
+      "moderate": 250,
+      "challenging": 102
+    },
+    "local_path": "E:\\PythonLearn\\datasets\\bird_mini_dev\\releases\\hf_f65faf4ae3b638c1fa6df1d3370c8d92c8366301\\mini_dev_pg-00000-of-00001.json",
+    "gold_field": "SQL",
+    "agent_visible_candidate_fields": [
+      "question",
+      "evidence"
+    ],
+    "allowed_schema": "Derived from db_id by controlled runtime; not all public tables.",
+    "small_files_downloaded_and_hashed": true
+  },
+  "database_archive": {
+    "official_download_page": "https://drive.google.com/file/d/13VLWIwpw5E3d5DUkMvzw7hvHE67a4XkG/view",
+    "file_id": "13VLWIwpw5E3d5DUkMvzw7hvHE67a4XkG",
+    "filename": "minidev_0703.zip",
+    "size_bytes": 799944582,
+    "size_mib": 762.887,
+    "last_modified_http": "Thu, 03 Jul 2025 05:45:10 GMT",
+    "sha256": null,
+    "full_payload_downloaded": false,
+    "full_payload_verified": false,
+    "directory_verified_via_http_ranges": true,
+    "zip_entry_count": 246,
+    "full_uncompressed_bytes": 3539193972,
+    "selected_file_count": 79,
+    "selected_uncompressed_bytes": 1002510820,
+    "local_download_path": "E:\\PythonLearn\\datasets\\bird_mini_dev\\downloads\\minidev_0703.zip",
+    "local_extract_root": "E:\\PythonLearn\\datasets\\bird_mini_dev\\extracted",
+    "required_entries": [
+      {
+        "path": "minidev/MINIDEV/dev_tables.json",
+        "size": 158301,
+        "compressed_size": 9995,
+        "crc32": "ceaad6f1",
+        "compression": 8,
+        "header_offset": 21167,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/mini_dev_postgresql.json",
+        "size": 283525,
+        "compressed_size": 47335,
+        "crc32": "beef00c8",
+        "compression": 8,
+        "header_offset": 128942,
+        "purpose": "version_reference_only"
+      },
+      {
+        "path": "minidev/MINIDEV/mini_dev_postgresql_gold.sql",
+        "size": 109574,
+        "compressed_size": 17108,
+        "crc32": "1a0a325a",
+        "compression": 8,
+        "header_offset": 193816,
+        "purpose": "version_reference_only"
+      },
+      {
+        "path": "minidev/MINIDEV_postgresql/BIRD_dev.sql",
+        "size": 1001882533,
+        "compressed_size": 226699805,
+        "crc32": "6f0bd3d7",
+        "compression": 8,
+        "header_offset": 227824543,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/customers.csv",
+        "size": 208,
+        "compressed_size": 131,
+        "crc32": "157b7ea7",
+        "compression": 8,
+        "header_offset": 799847277,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/gasstations.csv",
+        "size": 233,
+        "compressed_size": 127,
+        "crc32": "77344b32",
+        "compression": 8,
+        "header_offset": 799847850,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/products.csv",
+        "size": 158,
+        "compressed_size": 97,
+        "crc32": "71ab24d1",
+        "compression": 8,
+        "header_offset": 799848423,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/yearmonth.csv",
+        "size": 179,
+        "compressed_size": 115,
+        "crc32": "237f058a",
+        "compression": 8,
+        "header_offset": 799848960,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/transactions_1k.csv",
+        "size": 445,
+        "compressed_size": 213,
+        "crc32": "3857f10a",
+        "compression": 8,
+        "header_offset": 799849517,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/loan.csv",
+        "size": 630,
+        "compressed_size": 293,
+        "crc32": "da3bb066",
+        "compression": 8,
+        "header_offset": 799850184,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/client.csv",
+        "size": 252,
+        "compressed_size": 159,
+        "crc32": "ef5b068f",
+        "compression": 8,
+        "header_offset": 799850881,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/district.csv",
+        "size": 1095,
+        "compressed_size": 340,
+        "crc32": "a88ce666",
+        "compression": 8,
+        "header_offset": 799851448,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/trans.csv",
+        "size": 1155,
+        "compressed_size": 520,
+        "crc32": "d9c574f3",
+        "compression": 8,
+        "header_offset": 799852200,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/account.csv",
+        "size": 480,
+        "compressed_size": 250,
+        "crc32": "dcdf50b3",
+        "compression": 8,
+        "header_offset": 799853126,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/card.csv",
+        "size": 415,
+        "compressed_size": 216,
+        "crc32": "c2bbabdc",
+        "compression": 8,
+        "header_offset": 799853786,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/order.csv",
+        "size": 602,
+        "compressed_size": 294,
+        "crc32": "2c2b563a",
+        "compression": 8,
+        "header_offset": 799854406,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/disp.csv",
+        "size": 423,
+        "compressed_size": 250,
+        "crc32": "f7e586c8",
+        "compression": 8,
+        "header_offset": 799855106,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/circuits.csv",
+        "size": 556,
+        "compressed_size": 247,
+        "crc32": "adc78925",
+        "compression": 8,
+        "header_offset": 799855760,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/status.csv",
+        "size": 200,
+        "compressed_size": 124,
+        "crc32": "611cd4c2",
+        "compression": 8,
+        "header_offset": 799856419,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/drivers.csv",
+        "size": 553,
+        "compressed_size": 262,
+        "crc32": "1afac5b2",
+        "compression": 8,
+        "header_offset": 799856951,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/driverStandings.csv",
+        "size": 548,
+        "compressed_size": 259,
+        "crc32": "ab90748a",
+        "compression": 8,
+        "header_offset": 799857623,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/races.csv",
+        "size": 393,
+        "compressed_size": 193,
+        "crc32": "0766f80c",
+        "compression": 8,
+        "header_offset": 799858308,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/constructors.csv",
+        "size": 542,
+        "compressed_size": 239,
+        "crc32": "dbed3c53",
+        "compression": 8,
+        "header_offset": 799858907,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/constructorResults.csv",
+        "size": 289,
+        "compressed_size": 128,
+        "crc32": "aab8d797",
+        "compression": 8,
+        "header_offset": 799859566,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/lapTimes.csv",
+        "size": 410,
+        "compressed_size": 195,
+        "crc32": "4e5096bc",
+        "compression": 8,
+        "header_offset": 799860126,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/qualifying.csv",
+        "size": 1824,
+        "compressed_size": 732,
+        "crc32": "9b0ff45b",
+        "compression": 8,
+        "header_offset": 799860733,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/pitStops.csv",
+        "size": 410,
+        "compressed_size": 181,
+        "crc32": "c0ffac86",
+        "compression": 8,
+        "header_offset": 799861881,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/seasons.csv",
+        "size": 215,
+        "compressed_size": 141,
+        "crc32": "1ec8b1f4",
+        "compression": 8,
+        "header_offset": 799862474,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/constructorStandings.csv",
+        "size": 543,
+        "compressed_size": 250,
+        "crc32": "31ece58b",
+        "compression": 8,
+        "header_offset": 799863025,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/results.csv",
+        "size": 1748,
+        "compressed_size": 644,
+        "crc32": "331a78ab",
+        "compression": 8,
+        "header_offset": 799863711,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/california_schools/database_description/schools.csv",
+        "size": 11957,
+        "compressed_size": 3223,
+        "crc32": "f550f771",
+        "compression": 8,
+        "header_offset": 799864765,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/california_schools/database_description/satscores.csv",
+        "size": 1057,
+        "compressed_size": 381,
+        "crc32": "97b07a22",
+        "compression": 8,
+        "header_offset": 799868416,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/california_schools/database_description/frpm.csv",
+        "size": 1651,
+        "compressed_size": 531,
+        "crc32": "65a47efc",
+        "compression": 8,
+        "header_offset": 799869229,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/legalities.csv",
+        "size": 272,
+        "compressed_size": 170,
+        "crc32": "35209233",
+        "compression": 8,
+        "header_offset": 799870182,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/cards.csv",
+        "size": 9101,
+        "compressed_size": 3251,
+        "crc32": "b011a2a9",
+        "compression": 8,
+        "header_offset": 799870770,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/rulings.csv",
+        "size": 205,
+        "compressed_size": 123,
+        "crc32": "44c511e3",
+        "compression": 8,
+        "header_offset": 799874429,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/set_translations.csv",
+        "size": 260,
+        "compressed_size": 141,
+        "crc32": "efc2fffa",
+        "compression": 8,
+        "header_offset": 799874964,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/sets.csv",
+        "size": 2351,
+        "compressed_size": 981,
+        "crc32": "92b80f95",
+        "compression": 8,
+        "header_offset": 799875535,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/foreign_data.csv",
+        "size": 514,
+        "compressed_size": 226,
+        "crc32": "43819788",
+        "compression": 8,
+        "header_offset": 799876922,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Team_Attributes.csv",
+        "size": 3145,
+        "compressed_size": 963,
+        "crc32": "84653be9",
+        "compression": 8,
+        "header_offset": 799877570,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Player.csv",
+        "size": 588,
+        "compressed_size": 270,
+        "crc32": "a3bdfe00",
+        "compression": 8,
+        "header_offset": 799878979,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Match.csv",
+        "size": 2962,
+        "compressed_size": 794,
+        "crc32": "4af305d2",
+        "compression": 8,
+        "header_offset": 799879677,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/League.csv",
+        "size": 206,
+        "compressed_size": 116,
+        "crc32": "d7b4653f",
+        "compression": 8,
+        "header_offset": 799880897,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Country.csv",
+        "size": 149,
+        "compressed_size": 100,
+        "crc32": "a3373bd8",
+        "compression": 8,
+        "header_offset": 799881441,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Player_Attributes.csv",
+        "size": 4808,
+        "compressed_size": 1085,
+        "crc32": "b1b20020",
+        "compression": 8,
+        "header_offset": 799881971,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Team.csv",
+        "size": 408,
+        "compressed_size": 174,
+        "crc32": "a49cc587",
+        "compression": 8,
+        "header_offset": 799883506,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/thrombosis_prediction/database_description/Laboratory.csv",
+        "size": 3676,
+        "compressed_size": 907,
+        "crc32": "9e644ccc",
+        "compression": 8,
+        "header_offset": 799884104,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/thrombosis_prediction/database_description/Patient.csv",
+        "size": 560,
+        "compressed_size": 276,
+        "crc32": "4498716b",
+        "compression": 8,
+        "header_offset": 799885451,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/thrombosis_prediction/database_description/Examination.csv",
+        "size": 1187,
+        "compressed_size": 391,
+        "crc32": "5ea8acd1",
+        "compression": 8,
+        "header_offset": 799886161,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/toxicology/database_description/bond.csv",
+        "size": 382,
+        "compressed_size": 234,
+        "crc32": "584973c4",
+        "compression": 8,
+        "header_offset": 799886994,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/toxicology/database_description/molecule.csv",
+        "size": 293,
+        "compressed_size": 153,
+        "crc32": "79dca42d",
+        "compression": 8,
+        "header_offset": 799887634,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/toxicology/database_description/atom.csv",
+        "size": 538,
+        "compressed_size": 295,
+        "crc32": "f3e32b3b",
+        "compression": 8,
+        "header_offset": 799888201,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/toxicology/database_description/connected.csv",
+        "size": 238,
+        "compressed_size": 128,
+        "crc32": "2ab76e1e",
+        "compression": 8,
+        "header_offset": 799888902,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Income.csv",
+        "size": 522,
+        "compressed_size": 271,
+        "crc32": "777fa12a",
+        "compression": 8,
+        "header_offset": 799889446,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Budget.csv",
+        "size": 1307,
+        "compressed_size": 565,
+        "crc32": "4210084c",
+        "compression": 8,
+        "header_offset": 799890131,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Zip_Code.csv",
+        "size": 673,
+        "compressed_size": 334,
+        "crc32": "a3a32f68",
+        "compression": 8,
+        "header_offset": 799891110,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Expense.csv",
+        "size": 738,
+        "compressed_size": 347,
+        "crc32": "33dd52e1",
+        "compression": 8,
+        "header_offset": 799891862,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Member.csv",
+        "size": 888,
+        "compressed_size": 414,
+        "crc32": "dac376fd",
+        "compression": 8,
+        "header_offset": 799892625,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Attendance.csv",
+        "size": 319,
+        "compressed_size": 157,
+        "crc32": "7fdae60d",
+        "compression": 8,
+        "header_offset": 799893453,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Event.csv",
+        "size": 641,
+        "compressed_size": 329,
+        "crc32": "93ea1522",
+        "compression": 8,
+        "header_offset": 799894032,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Major.csv",
+        "size": 331,
+        "compressed_size": 153,
+        "crc32": "9941ed69",
+        "compression": 8,
+        "header_offset": 799894773,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/gender.csv",
+        "size": 173,
+        "compressed_size": 106,
+        "crc32": "20f30163",
+        "compression": 8,
+        "header_offset": 799895338,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/superpower.csv",
+        "size": 183,
+        "compressed_size": 108,
+        "crc32": "c9ee5970",
+        "compression": 8,
+        "header_offset": 799895852,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/publisher.csv",
+        "size": 182,
+        "compressed_size": 107,
+        "crc32": "98be3c40",
+        "compression": 8,
+        "header_offset": 799896376,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/superhero.csv",
+        "size": 1438,
+        "compressed_size": 474,
+        "crc32": "20ed5099",
+        "compression": 8,
+        "header_offset": 799896897,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/colour.csv",
+        "size": 191,
+        "compressed_size": 124,
+        "crc32": "e9e83eb2",
+        "compression": 8,
+        "header_offset": 799897785,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/attribute.csv",
+        "size": 482,
+        "compressed_size": 270,
+        "crc32": "0930e3f9",
+        "compression": 8,
+        "header_offset": 799898317,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/hero_power.csv",
+        "size": 453,
+        "compressed_size": 244,
+        "crc32": "7dd5bc82",
+        "compression": 8,
+        "header_offset": 799899001,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/race.csv",
+        "size": 355,
+        "compressed_size": 203,
+        "crc32": "383fa103",
+        "compression": 8,
+        "header_offset": 799899661,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/alignment.csv",
+        "size": 1024,
+        "compressed_size": 518,
+        "crc32": "36aa7b5b",
+        "compression": 8,
+        "header_offset": 799900268,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/hero_attribute.csv",
+        "size": 628,
+        "compressed_size": 289,
+        "crc32": "8a174d6f",
+        "compression": 8,
+        "header_offset": 799901200,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/postLinks.csv",
+        "size": 343,
+        "compressed_size": 164,
+        "crc32": "50cd3636",
+        "compression": 8,
+        "header_offset": 799901913,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/postHistory.csv",
+        "size": 592,
+        "compressed_size": 263,
+        "crc32": "c5eb078e",
+        "compression": 8,
+        "header_offset": 799902509,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/badges.csv",
+        "size": 264,
+        "compressed_size": 145,
+        "crc32": "77350e67",
+        "compression": 8,
+        "header_offset": 799903208,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/posts.csv",
+        "size": 1823,
+        "compressed_size": 619,
+        "crc32": "7fbf8d1a",
+        "compression": 8,
+        "header_offset": 799903779,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/users.csv",
+        "size": 924,
+        "compressed_size": 424,
+        "crc32": "31e4b610",
+        "compression": 8,
+        "header_offset": 799904822,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/tags.csv",
+        "size": 381,
+        "compressed_size": 196,
+        "crc32": "85102a52",
+        "compression": 8,
+        "header_offset": 799905670,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/votes.csv",
+        "size": 389,
+        "compressed_size": 184,
+        "crc32": "60b4420a",
+        "compression": 8,
+        "header_offset": 799906288,
+        "purpose": "postgres_data_or_schema_description"
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/comments.csv",
+        "size": 629,
+        "compressed_size": 300,
+        "crc32": "54d5c959",
+        "compression": 8,
+        "header_offset": 799906896,
+        "purpose": "postgres_data_or_schema_description"
+      }
+    ],
+    "all_zip_entries": [
+      {
+        "path": "minidev/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 0
+      },
+      {
+        "path": "__MACOSX/._minidev",
+        "size": 219,
+        "compressed_size": 131,
+        "crc32": "4fe71ff1",
+        "compression": 8,
+        "header_offset": 70
+      },
+      {
+        "path": "minidev/.DS_Store",
+        "size": 6148,
+        "compressed_size": 378,
+        "crc32": "ee92407e",
+        "compression": 8,
+        "header_offset": 297
+      },
+      {
+        "path": "__MACOSX/minidev/._.DS_Store",
+        "size": 120,
+        "compressed_size": 53,
+        "crc32": "38c0880b",
+        "compression": 8,
+        "header_offset": 770
+      },
+      {
+        "path": "minidev/MINIDEV/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 929
+      },
+      {
+        "path": "__MACOSX/minidev/._MINIDEV",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 1007
+      },
+      {
+        "path": "minidev/MINIDEV_mysql/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 1210
+      },
+      {
+        "path": "__MACOSX/minidev/._MINIDEV_mysql",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 1294
+      },
+      {
+        "path": "minidev/MINIDEV_postgresql/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 1503
+      },
+      {
+        "path": "__MACOSX/minidev/._MINIDEV_postgresql",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 1592
+      },
+      {
+        "path": "minidev/MINIDEV/mini_dev_mysql_gold.sql",
+        "size": 129044,
+        "compressed_size": 18676,
+        "crc32": "1995ae14",
+        "compression": 8,
+        "header_offset": 1806
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/._mini_dev_mysql_gold.sql",
+        "size": 219,
+        "compressed_size": 131,
+        "crc32": "4fe71ff1",
+        "compression": 8,
+        "header_offset": 20599
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 20858
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/._dev_databases",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 20950
+      },
+      {
+        "path": "minidev/MINIDEV/dev_tables.json",
+        "size": 158301,
+        "compressed_size": 9995,
+        "crc32": "ceaad6f1",
+        "compression": 8,
+        "header_offset": 21167
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/._dev_tables.json",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 31271
+      },
+      {
+        "path": "minidev/MINIDEV/mini_dev_mysql.json",
+        "size": 306595,
+        "compressed_size": 49929,
+        "crc32": "5a8f9501",
+        "compression": 8,
+        "header_offset": 31490
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/._mini_dev_mysql.json",
+        "size": 219,
+        "compressed_size": 131,
+        "crc32": "4fe71ff1",
+        "compression": 8,
+        "header_offset": 81532
+      },
+      {
+        "path": "minidev/MINIDEV/mini_dev_sqlite.json",
+        "size": 278499,
+        "compressed_size": 46785,
+        "crc32": "41b8d93b",
+        "compression": 8,
+        "header_offset": 81787
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/._mini_dev_sqlite.json",
+        "size": 219,
+        "compressed_size": 131,
+        "crc32": "4fe71ff1",
+        "compression": 8,
+        "header_offset": 128686
+      },
+      {
+        "path": "minidev/MINIDEV/mini_dev_postgresql.json",
+        "size": 283525,
+        "compressed_size": 47335,
+        "crc32": "beef00c8",
+        "compression": 8,
+        "header_offset": 128942
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/._mini_dev_postgresql.json",
+        "size": 219,
+        "compressed_size": 131,
+        "crc32": "4fe71ff1",
+        "compression": 8,
+        "header_offset": 176395
+      },
+      {
+        "path": "minidev/MINIDEV/mini_dev_sqlite_gold.sql",
+        "size": 104895,
+        "compressed_size": 16783,
+        "crc32": "6bd38750",
+        "compression": 8,
+        "header_offset": 176655
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/._mini_dev_sqlite_gold.sql",
+        "size": 219,
+        "compressed_size": 131,
+        "crc32": "4fe71ff1",
+        "compression": 8,
+        "header_offset": 193556
+      },
+      {
+        "path": "minidev/MINIDEV/mini_dev_postgresql_gold.sql",
+        "size": 109574,
+        "compressed_size": 17108,
+        "crc32": "1a0a325a",
+        "compression": 8,
+        "header_offset": 193816
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/._mini_dev_postgresql_gold.sql",
+        "size": 219,
+        "compressed_size": 131,
+        "crc32": "4fe71ff1",
+        "compression": 8,
+        "header_offset": 211046
+      },
+      {
+        "path": "minidev/MINIDEV_mysql/BIRD_dev.sql",
+        "size": 1042548099,
+        "compressed_size": 227612899,
+        "crc32": "85826939",
+        "compression": 8,
+        "header_offset": 211310
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV_mysql/._BIRD_dev.sql",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 227824321
+      },
+      {
+        "path": "minidev/MINIDEV_postgresql/BIRD_dev.sql",
+        "size": 1001882533,
+        "compressed_size": 226699805,
+        "crc32": "6f0bd3d7",
+        "compression": 8,
+        "header_offset": 227824543
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV_postgresql/._BIRD_dev.sql",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454524465
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454524692
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/._debit_card_specializing",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454524808
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454525049
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/._financial",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454525151
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454525378
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/._formula_1",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454525480
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/california_schools/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454525707
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/._california_schools",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454525818
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454526054
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/._card_games",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454526157
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454526385
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/._european_football_2",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454526497
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/thrombosis_prediction/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454526734
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/._thrombosis_prediction",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454526848
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/toxicology/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454527087
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/._toxicology",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454527190
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454527418
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/._student_club",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454527523
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454527753
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/._superhero",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454527855
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454528082
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/._codebase_community",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454528193
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 454528429
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/debit_card_specializing/._database_description",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 454528566
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/debit_card_specializing.sqlite",
+        "size": 34635776,
+        "compressed_size": 13042882,
+        "crc32": "f5f1b6bb",
+        "compression": 8,
+        "header_offset": 454528828
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/debit_card_specializing/._debit_card_specializing.sqlite",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 467571872
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/financial.sqlite",
+        "size": 71294976,
+        "compressed_size": 21542731,
+        "crc32": "1ac9f6af",
+        "compression": 8,
+        "header_offset": 467572144
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/financial/._financial.sqlite",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 489115009
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 489115253
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/financial/._database_description",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 489115376
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/formula_1.sqlite",
+        "size": 22360064,
+        "compressed_size": 9444822,
+        "crc32": "356f791f",
+        "compression": 8,
+        "header_offset": 489115624
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/._formula_1.sqlite",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 498560580
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 498560824
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/._database_description",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 498560947
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/california_schools/database_description/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 498561195
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/california_schools/._database_description",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 498561327
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/california_schools/california_schools.sqlite",
+        "size": 11116544,
+        "compressed_size": 2760073,
+        "crc32": "281d2c21",
+        "compression": 8,
+        "header_offset": 498561584
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/california_schools/._california_schools.sqlite",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 501321809
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/card_games.sqlite",
+        "size": 261820416,
+        "compressed_size": 90409072,
+        "crc32": "8f918999",
+        "compression": 8,
+        "header_offset": 501322071
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/card_games/._card_games.sqlite",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 591731279
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 591731525
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/card_games/._database_description",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 591731649
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 591731898
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/european_football_2/._database_description",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 591732031
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/european_football_2.sqlite",
+        "size": 597754880,
+        "compressed_size": 61308956,
+        "crc32": "ce1a9489",
+        "compression": 8,
+        "header_offset": 591732289
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/european_football_2/._european_football_2.sqlite",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 653041399
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/thrombosis_prediction/thrombosis_prediction.sqlite",
+        "size": 7327744,
+        "compressed_size": 3133529,
+        "crc32": "3c69d91f",
+        "compression": 8,
+        "header_offset": 653041663
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/thrombosis_prediction/._thrombosis_prediction.sqlite",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 656175350
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/thrombosis_prediction/database_description/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 656175618
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/thrombosis_prediction/._database_description",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 656175753
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/toxicology/toxicology.sqlite",
+        "size": 2678784,
+        "compressed_size": 651154,
+        "crc32": "7f2a715b",
+        "compression": 8,
+        "header_offset": 656176013
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/toxicology/._toxicology.sqlite",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 656827303
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/toxicology/database_description/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 656827549
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/toxicology/._database_description",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 656827673
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 656827922
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/student_club/._database_description",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 656828048
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/student_club.sqlite",
+        "size": 2641920,
+        "compressed_size": 611834,
+        "crc32": "eb085afa",
+        "compression": 8,
+        "header_offset": 656828299
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/student_club/._student_club.sqlite",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 657440273
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/superhero.sqlite",
+        "size": 237568,
+        "compressed_size": 103336,
+        "crc32": "81b0a9ae",
+        "compression": 8,
+        "header_offset": 657440523
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/._superhero.sqlite",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 657543993
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 657544237
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/._database_description",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 657544360
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/codebase_community.sqlite",
+        "size": 481419264,
+        "compressed_size": 142301834,
+        "crc32": "c46f191f",
+        "compression": 8,
+        "header_offset": 657544608
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/codebase_community/._codebase_community.sqlite",
+        "size": 219,
+        "compressed_size": 131,
+        "crc32": "4fe71ff1",
+        "compression": 8,
+        "header_offset": 799846594
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/",
+        "size": 0,
+        "compressed_size": 0,
+        "crc32": "00000000",
+        "compression": 0,
+        "header_offset": 799846888
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/codebase_community/._database_description",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799847020
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/customers.csv",
+        "size": 208,
+        "compressed_size": 131,
+        "crc32": "157b7ea7",
+        "compression": 8,
+        "header_offset": 799847277
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/._customers.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799847574
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/gasstations.csv",
+        "size": 233,
+        "compressed_size": 127,
+        "crc32": "77344b32",
+        "compression": 8,
+        "header_offset": 799847850
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/._gasstations.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799848145
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/products.csv",
+        "size": 158,
+        "compressed_size": 97,
+        "crc32": "71ab24d1",
+        "compression": 8,
+        "header_offset": 799848423
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/._products.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799848685
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/yearmonth.csv",
+        "size": 179,
+        "compressed_size": 115,
+        "crc32": "237f058a",
+        "compression": 8,
+        "header_offset": 799848960
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/._yearmonth.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799849241
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/transactions_1k.csv",
+        "size": 445,
+        "compressed_size": 213,
+        "crc32": "3857f10a",
+        "compression": 8,
+        "header_offset": 799849517
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/debit_card_specializing/database_description/._transactions_1k.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799849902
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/loan.csv",
+        "size": 630,
+        "compressed_size": 293,
+        "crc32": "da3bb066",
+        "compression": 8,
+        "header_offset": 799850184
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/financial/database_description/._loan.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799850624
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/client.csv",
+        "size": 252,
+        "compressed_size": 159,
+        "crc32": "ef5b068f",
+        "compression": 8,
+        "header_offset": 799850881
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/financial/database_description/._client.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799851189
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/district.csv",
+        "size": 1095,
+        "compressed_size": 340,
+        "crc32": "a88ce666",
+        "compression": 8,
+        "header_offset": 799851448
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/financial/database_description/._district.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799851939
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/trans.csv",
+        "size": 1155,
+        "compressed_size": 520,
+        "crc32": "d9c574f3",
+        "compression": 8,
+        "header_offset": 799852200
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/financial/database_description/._trans.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799852868
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/account.csv",
+        "size": 480,
+        "compressed_size": 250,
+        "crc32": "dcdf50b3",
+        "compression": 8,
+        "header_offset": 799853126
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/financial/database_description/._account.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799853526
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/card.csv",
+        "size": 415,
+        "compressed_size": 216,
+        "crc32": "c2bbabdc",
+        "compression": 8,
+        "header_offset": 799853786
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/financial/database_description/._card.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799854149
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/order.csv",
+        "size": 602,
+        "compressed_size": 294,
+        "crc32": "2c2b563a",
+        "compression": 8,
+        "header_offset": 799854406
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/financial/database_description/._order.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799854848
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/financial/database_description/disp.csv",
+        "size": 423,
+        "compressed_size": 250,
+        "crc32": "f7e586c8",
+        "compression": 8,
+        "header_offset": 799855106
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/financial/database_description/._disp.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799855503
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/circuits.csv",
+        "size": 556,
+        "compressed_size": 247,
+        "crc32": "adc78925",
+        "compression": 8,
+        "header_offset": 799855760
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._circuits.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799856158
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/status.csv",
+        "size": 200,
+        "compressed_size": 124,
+        "crc32": "611cd4c2",
+        "compression": 8,
+        "header_offset": 799856419
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._status.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799856692
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/drivers.csv",
+        "size": 553,
+        "compressed_size": 262,
+        "crc32": "1afac5b2",
+        "compression": 8,
+        "header_offset": 799856951
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._drivers.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799857363
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/driverStandings.csv",
+        "size": 548,
+        "compressed_size": 259,
+        "crc32": "ab90748a",
+        "compression": 8,
+        "header_offset": 799857623
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._driverStandings.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799858040
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/races.csv",
+        "size": 393,
+        "compressed_size": 193,
+        "crc32": "0766f80c",
+        "compression": 8,
+        "header_offset": 799858308
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._races.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799858649
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/constructors.csv",
+        "size": 542,
+        "compressed_size": 239,
+        "crc32": "dbed3c53",
+        "compression": 8,
+        "header_offset": 799858907
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._constructors.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799859301
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/constructorResults.csv",
+        "size": 289,
+        "compressed_size": 128,
+        "crc32": "aab8d797",
+        "compression": 8,
+        "header_offset": 799859566
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._constructorResults.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799859855
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/lapTimes.csv",
+        "size": 410,
+        "compressed_size": 195,
+        "crc32": "4e5096bc",
+        "compression": 8,
+        "header_offset": 799860126
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._lapTimes.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799860472
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/qualifying.csv",
+        "size": 1824,
+        "compressed_size": 732,
+        "crc32": "9b0ff45b",
+        "compression": 8,
+        "header_offset": 799860733
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._qualifying.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799861618
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/pitStops.csv",
+        "size": 410,
+        "compressed_size": 181,
+        "crc32": "c0ffac86",
+        "compression": 8,
+        "header_offset": 799861881
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._pitStops.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799862213
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/seasons.csv",
+        "size": 215,
+        "compressed_size": 141,
+        "crc32": "1ec8b1f4",
+        "compression": 8,
+        "header_offset": 799862474
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._seasons.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799862765
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/constructorStandings.csv",
+        "size": 543,
+        "compressed_size": 250,
+        "crc32": "31ece58b",
+        "compression": 8,
+        "header_offset": 799863025
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._constructorStandings.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799863438
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/formula_1/database_description/results.csv",
+        "size": 1748,
+        "compressed_size": 644,
+        "crc32": "331a78ab",
+        "compression": 8,
+        "header_offset": 799863711
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/formula_1/database_description/._results.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799864505
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/california_schools/database_description/schools.csv",
+        "size": 11957,
+        "compressed_size": 3223,
+        "crc32": "f550f771",
+        "compression": 8,
+        "header_offset": 799864765
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/california_schools/database_description/._schools.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799868147
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/california_schools/database_description/satscores.csv",
+        "size": 1057,
+        "compressed_size": 381,
+        "crc32": "97b07a22",
+        "compression": 8,
+        "header_offset": 799868416
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/california_schools/database_description/._satscores.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799868958
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/california_schools/database_description/frpm.csv",
+        "size": 1651,
+        "compressed_size": 531,
+        "crc32": "65a47efc",
+        "compression": 8,
+        "header_offset": 799869229
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/california_schools/database_description/._frpm.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799869916
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/legalities.csv",
+        "size": 272,
+        "compressed_size": 170,
+        "crc32": "35209233",
+        "compression": 8,
+        "header_offset": 799870182
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/card_games/database_description/._legalities.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799870506
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/cards.csv",
+        "size": 9101,
+        "compressed_size": 3251,
+        "crc32": "b011a2a9",
+        "compression": 8,
+        "header_offset": 799870770
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/card_games/database_description/._cards.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799874170
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/rulings.csv",
+        "size": 205,
+        "compressed_size": 123,
+        "crc32": "44c511e3",
+        "compression": 8,
+        "header_offset": 799874429
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/card_games/database_description/._rulings.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799874703
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/set_translations.csv",
+        "size": 260,
+        "compressed_size": 141,
+        "crc32": "efc2fffa",
+        "compression": 8,
+        "header_offset": 799874964
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/card_games/database_description/._set_translations.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799875265
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/sets.csv",
+        "size": 2351,
+        "compressed_size": 981,
+        "crc32": "92b80f95",
+        "compression": 8,
+        "header_offset": 799875535
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/card_games/database_description/._sets.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799876664
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/card_games/database_description/foreign_data.csv",
+        "size": 514,
+        "compressed_size": 226,
+        "crc32": "43819788",
+        "compression": 8,
+        "header_offset": 799876922
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/card_games/database_description/._foreign_data.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799877304
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Team_Attributes.csv",
+        "size": 3145,
+        "compressed_size": 963,
+        "crc32": "84653be9",
+        "compression": 8,
+        "header_offset": 799877570
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/european_football_2/database_description/._Team_Attributes.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799878701
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Player.csv",
+        "size": 588,
+        "compressed_size": 270,
+        "crc32": "a3bdfe00",
+        "compression": 8,
+        "header_offset": 799878979
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/european_football_2/database_description/._Player.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799879408
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Match.csv",
+        "size": 2962,
+        "compressed_size": 794,
+        "crc32": "4af305d2",
+        "compression": 8,
+        "header_offset": 799879677
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/european_football_2/database_description/._Match.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799880629
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/League.csv",
+        "size": 206,
+        "compressed_size": 116,
+        "crc32": "d7b4653f",
+        "compression": 8,
+        "header_offset": 799880897
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/european_football_2/database_description/._League.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799881172
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Country.csv",
+        "size": 149,
+        "compressed_size": 100,
+        "crc32": "a3373bd8",
+        "compression": 8,
+        "header_offset": 799881441
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/european_football_2/database_description/._Country.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799881701
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Player_Attributes.csv",
+        "size": 4808,
+        "compressed_size": 1085,
+        "crc32": "b1b20020",
+        "compression": 8,
+        "header_offset": 799881971
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/european_football_2/database_description/._Player_Attributes.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799883226
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/european_football_2/database_description/Team.csv",
+        "size": 408,
+        "compressed_size": 174,
+        "crc32": "a49cc587",
+        "compression": 8,
+        "header_offset": 799883506
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/european_football_2/database_description/._Team.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799883837
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/thrombosis_prediction/database_description/Laboratory.csv",
+        "size": 3676,
+        "compressed_size": 907,
+        "crc32": "9e644ccc",
+        "compression": 8,
+        "header_offset": 799884104
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/thrombosis_prediction/database_description/._Laboratory.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799885176
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/thrombosis_prediction/database_description/Patient.csv",
+        "size": 560,
+        "compressed_size": 276,
+        "crc32": "4498716b",
+        "compression": 8,
+        "header_offset": 799885451
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/thrombosis_prediction/database_description/._Patient.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799885889
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/thrombosis_prediction/database_description/Examination.csv",
+        "size": 1187,
+        "compressed_size": 391,
+        "crc32": "5ea8acd1",
+        "compression": 8,
+        "header_offset": 799886161
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/thrombosis_prediction/database_description/._Examination.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799886718
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/toxicology/database_description/bond.csv",
+        "size": 382,
+        "compressed_size": 234,
+        "crc32": "584973c4",
+        "compression": 8,
+        "header_offset": 799886994
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/toxicology/database_description/._bond.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799887376
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/toxicology/database_description/molecule.csv",
+        "size": 293,
+        "compressed_size": 153,
+        "crc32": "79dca42d",
+        "compression": 8,
+        "header_offset": 799887634
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/toxicology/database_description/._molecule.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799887939
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/toxicology/database_description/atom.csv",
+        "size": 538,
+        "compressed_size": 295,
+        "crc32": "f3e32b3b",
+        "compression": 8,
+        "header_offset": 799888201
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/toxicology/database_description/._atom.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799888644
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/toxicology/database_description/connected.csv",
+        "size": 238,
+        "compressed_size": 128,
+        "crc32": "2ab76e1e",
+        "compression": 8,
+        "header_offset": 799888902
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/toxicology/database_description/._connected.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799889183
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Income.csv",
+        "size": 522,
+        "compressed_size": 271,
+        "crc32": "777fa12a",
+        "compression": 8,
+        "header_offset": 799889446
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/student_club/database_description/._Income.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799889869
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Budget.csv",
+        "size": 1307,
+        "compressed_size": 565,
+        "crc32": "4210084c",
+        "compression": 8,
+        "header_offset": 799890131
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/student_club/database_description/._Budget.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799890848
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Zip_Code.csv",
+        "size": 673,
+        "compressed_size": 334,
+        "crc32": "a3a32f68",
+        "compression": 8,
+        "header_offset": 799891110
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/student_club/database_description/._Zip_Code.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799891598
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Expense.csv",
+        "size": 738,
+        "compressed_size": 347,
+        "crc32": "33dd52e1",
+        "compression": 8,
+        "header_offset": 799891862
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/student_club/database_description/._Expense.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799892362
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Member.csv",
+        "size": 888,
+        "compressed_size": 414,
+        "crc32": "dac376fd",
+        "compression": 8,
+        "header_offset": 799892625
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/student_club/database_description/._Member.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799893191
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Attendance.csv",
+        "size": 319,
+        "compressed_size": 157,
+        "crc32": "7fdae60d",
+        "compression": 8,
+        "header_offset": 799893453
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/student_club/database_description/._Attendance.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799893766
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Event.csv",
+        "size": 641,
+        "compressed_size": 329,
+        "crc32": "93ea1522",
+        "compression": 8,
+        "header_offset": 799894032
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/student_club/database_description/._Event.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799894512
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/student_club/database_description/Major.csv",
+        "size": 331,
+        "compressed_size": 153,
+        "crc32": "9941ed69",
+        "compression": 8,
+        "header_offset": 799894773
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/student_club/database_description/._Major.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799895077
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/gender.csv",
+        "size": 173,
+        "compressed_size": 106,
+        "crc32": "20f30163",
+        "compression": 8,
+        "header_offset": 799895338
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/database_description/._gender.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799895593
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/superpower.csv",
+        "size": 183,
+        "compressed_size": 108,
+        "crc32": "c9ee5970",
+        "compression": 8,
+        "header_offset": 799895852
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/database_description/._superpower.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799896113
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/publisher.csv",
+        "size": 182,
+        "compressed_size": 107,
+        "crc32": "98be3c40",
+        "compression": 8,
+        "header_offset": 799896376
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/database_description/._publisher.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799896635
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/superhero.csv",
+        "size": 1438,
+        "compressed_size": 474,
+        "crc32": "20ed5099",
+        "compression": 8,
+        "header_offset": 799896897
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/database_description/._superhero.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799897523
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/colour.csv",
+        "size": 191,
+        "compressed_size": 124,
+        "crc32": "e9e83eb2",
+        "compression": 8,
+        "header_offset": 799897785
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/database_description/._colour.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799898058
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/attribute.csv",
+        "size": 482,
+        "compressed_size": 270,
+        "crc32": "0930e3f9",
+        "compression": 8,
+        "header_offset": 799898317
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/database_description/._attribute.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799898739
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/hero_power.csv",
+        "size": 453,
+        "compressed_size": 244,
+        "crc32": "7dd5bc82",
+        "compression": 8,
+        "header_offset": 799899001
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/database_description/._hero_power.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799899398
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/race.csv",
+        "size": 355,
+        "compressed_size": 203,
+        "crc32": "383fa103",
+        "compression": 8,
+        "header_offset": 799899661
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/database_description/._race.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799900011
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/alignment.csv",
+        "size": 1024,
+        "compressed_size": 518,
+        "crc32": "36aa7b5b",
+        "compression": 8,
+        "header_offset": 799900268
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/database_description/._alignment.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799900938
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/superhero/database_description/hero_attribute.csv",
+        "size": 628,
+        "compressed_size": 289,
+        "crc32": "8a174d6f",
+        "compression": 8,
+        "header_offset": 799901200
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/superhero/database_description/._hero_attribute.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799901646
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/postLinks.csv",
+        "size": 343,
+        "compressed_size": 164,
+        "crc32": "50cd3636",
+        "compression": 8,
+        "header_offset": 799901913
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/codebase_community/database_description/._postLinks.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799902238
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/postHistory.csv",
+        "size": 592,
+        "compressed_size": 263,
+        "crc32": "c5eb078e",
+        "compression": 8,
+        "header_offset": 799902509
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/codebase_community/database_description/._postHistory.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799902935
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/badges.csv",
+        "size": 264,
+        "compressed_size": 145,
+        "crc32": "77350e67",
+        "compression": 8,
+        "header_offset": 799903208
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/codebase_community/database_description/._badges.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799903511
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/posts.csv",
+        "size": 1823,
+        "compressed_size": 619,
+        "crc32": "7fbf8d1a",
+        "compression": 8,
+        "header_offset": 799903779
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/codebase_community/database_description/._posts.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799904555
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/users.csv",
+        "size": 924,
+        "compressed_size": 424,
+        "crc32": "31e4b610",
+        "compression": 8,
+        "header_offset": 799904822
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/codebase_community/database_description/._users.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799905403
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/tags.csv",
+        "size": 381,
+        "compressed_size": 196,
+        "crc32": "85102a52",
+        "compression": 8,
+        "header_offset": 799905670
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/codebase_community/database_description/._tags.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799906022
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/votes.csv",
+        "size": 389,
+        "compressed_size": 184,
+        "crc32": "60b4420a",
+        "compression": 8,
+        "header_offset": 799906288
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/codebase_community/database_description/._votes.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799906629
+      },
+      {
+        "path": "minidev/MINIDEV/dev_databases/codebase_community/database_description/comments.csv",
+        "size": 629,
+        "compressed_size": 300,
+        "crc32": "54d5c959",
+        "compression": 8,
+        "header_offset": 799906896
+      },
+      {
+        "path": "__MACOSX/minidev/MINIDEV/dev_databases/codebase_community/database_description/._comments.csv",
+        "size": 176,
+        "compressed_size": 99,
+        "crc32": "1060f2c3",
+        "compression": 8,
+        "header_offset": 799907356
+      }
+    ],
+    "crc32_scope": "Metadata from ZIP directory, not verification of large SQL payload."
+  },
+  "archive_question_reference_difference": [
+    {
+      "question_id": 879,
+      "db_id": "formula_1",
+      "diff": {
+        "SQL": {
+          "package": "SELECT T1.nationality FROM drivers AS T1 INNER JOIN results AS T2 ON T2.driverId = T1.driverId ORDER BY T2.fastestLapSpeed DESC NULLS LAST LIMIT 1",
+          "hf": "SELECT T1.nationality FROM drivers AS T1 INNER JOIN results AS T2 ON T2.driverId = T1.driverId ORDER BY CAST(T2.fastestLapSpeed AS DOUBLE PRECISION) DESC NULLS LAST LIMIT 1"
+        }
+      }
+    }
+  ],
+  "small_reference_files": [
+    {
+      "filename": "dev_tables.json",
+      "size_bytes": 158301,
+      "sha256": "48aa9febe7282d1690f3ed1f222dc040c182df83812ba4e9bee956084d99c8ff",
+      "local_path": "E:\\PythonLearn\\datasets\\bird_mini_dev\\reference\\minidev_0703\\dev_tables.json"
+    },
+    {
+      "filename": "mini_dev_postgresql.json",
+      "size_bytes": 283525,
+      "sha256": "3569beae23b80cb647024f56ee5e10ff51858322175f7634890d865add47e2a2",
+      "local_path": "E:\\PythonLearn\\datasets\\bird_mini_dev\\reference\\minidev_0703\\mini_dev_postgresql.json"
+    },
+    {
+      "filename": "mini_dev_postgresql_gold.sql",
+      "size_bytes": 109574,
+      "sha256": "8cb1bedb9f6c6723d209b3036a00009470416f6d698c5cabda61dc60e9783eeb",
+      "local_path": "E:\\PythonLearn\\datasets\\bird_mini_dev\\reference\\minidev_0703\\mini_dev_postgresql_gold.sql"
+    },
+    {
+      "filename": "question_version_diff.json",
+      "size_bytes": 473,
+      "sha256": "f1e70051c8ecaffbe2a46d8e7c741a9e6ec8a9a2cf1b254fe5ca9c4a4815800b",
+      "local_path": "E:\\PythonLearn\\datasets\\bird_mini_dev\\reference\\minidev_0703\\question_version_diff.json"
+    }
+  ],
+  "dump_prefix_observations": {
+    "scope": "383381 decompressed prefix bytes, not full dump validation",
+    "dumped_from_postgresql": "14.12 (Homebrew)",
+    "format": "plain SQL with COPY FROM stdin",
+    "observed_create_table_count": 75,
+    "physical_schema": "public",
+    "table_names": [
+      "public.account",
+      "public.alignment",
+      "public.atom",
+      "public.attendance",
+      "public.attribute",
+      "public.badges",
+      "public.bond",
+      "public.budget",
+      "public.card",
+      "public.cards",
+      "public.circuits",
+      "public.client",
+      "public.colour",
+      "public.comments",
+      "public.connected",
+      "public.constructorresults",
+      "public.constructors",
+      "public.constructorstandings",
+      "public.country",
+      "public.customers",
+      "public.disp",
+      "public.district",
+      "public.drivers",
+      "public.driverstandings",
+      "public.event",
+      "public.examination",
+      "public.expense",
+      "public.foreign_data",
+      "public.frpm",
+      "public.gasstations",
+      "public.gender",
+      "public.hero_attribute",
+      "public.hero_power",
+      "public.income",
+      "public.laboratory",
+      "public.laptimes",
+      "public.league",
+      "public.legalities",
+      "public.loan",
+      "public.major",
+      "public.match",
+      "public.member",
+      "public.molecule",
+      "public.\"order\"",
+      "public.patient",
+      "public.pitstops",
+      "public.player",
+      "public.player_attributes",
+      "public.posthistory",
+      "public.postlinks",
+      "public.posts",
+      "public.products",
+      "public.publisher",
+      "public.qualifying",
+      "public.race",
+      "public.races",
+      "public.results",
+      "public.rulings",
+      "public.satscores",
+      "public.schools",
+      "public.seasons",
+      "public.set_translations",
+      "public.sets",
+      "public.status",
+      "public.superhero",
+      "public.superpower",
+      "public.tags",
+      "public.team",
+      "public.team_attributes",
+      "public.trans",
+      "public.transactions_1k",
+      "public.users",
+      "public.votes",
+      "public.yearmonth",
+      "public.zip_code"
+    ],
+    "owner_statements_require_review": true,
+    "logical_db_id_count": 11,
+    "mapping_note": "db_id denotes logical domains; official dump combines tables in one public schema."
+  },
+  "legacy_download_not_selected": {
+    "url": "https://bird-bench.oss-cn-beijing.aliyuncs.com/minidev.zip",
+    "size_bytes": 800943648,
+    "last_modified_http": "Thu, 20 Jun 2024 05:01:24 GMT",
+    "reason": "Official README points new users to the updated complete package and canonical Hugging Face questions."
+  },
+  "pending": [
+    "User downloads minidev_0703.zip to local_download_path.",
+    "Verify complete archive SHA256, member CRC and selected SQL checksum after download.",
+    "Freeze split, official scoring protocol and permitted evidence.",
+    "Audit full dump and build controlled importer/source identity without assuming db_id is a physical database.",
+    "Check remote capacity before upload/import; no import footprint inferred from SQL text size."
+  ],
+  "postgresql_connected": false,
+  "database_imported": false,
+  "gold_execution_verified": false,
+  "new_model_request_count": 0
+}

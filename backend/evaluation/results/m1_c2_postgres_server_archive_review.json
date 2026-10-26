@@ -1,0 +1,56 @@
+{
+  "stage": "M1 C2 downloaded server evidence review",
+  "run_status": "complete",
+  "conclusion": "accepted_for_connection_management_and_lifecycle",
+  "reviewed_at": "2026-10-10T01:57:20.284926+00:00",
+  "server_report": {
+    "path": "evaluation/results/m1_c2_postgres_connections_server.json",
+    "sha256": "f8fd6a37aae2c2e8536c51199153e9572156bc7e12489855c05c45604777835e",
+    "started_at": "2026-10-10T01:51:27.449904+00:00",
+    "finished_at": "2026-10-10T01:51:30.635861+00:00",
+    "duration_seconds": 3.185957
+  },
+  "c1_server_report_sha256": "12b0da642fc319afd35be04c5e9d0c3b8939f73e44aeab1add329356f77a1d77",
+  "recorded_evidence_sha256": {
+    "import": "215c9ce2e1ae53e140b7c17e4222d8eae29dcce7dd423ab03f74918d13032ce9",
+    "validation": "1e8e9b757f6391b15766169b631f3c7d287a1fdd95ea933570773989a57851f6"
+  },
+  "recorded_data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+  "recorded_physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+  "server_probe_pass_count": 9,
+  "review_check_count": 20,
+  "review_checks": [
+    "run_status_and_scope",
+    "application_remains_duckdb",
+    "connected_but_full_runtime_pending",
+    "configuration_matches_c1",
+    "recorded_source_matches_recomputed_m1_b_evidence",
+    "nine_unique_complete_probes",
+    "actual_connection_identity",
+    "actual_readonly_transaction_settings",
+    "query_failure_rollback_and_recovery_expected_error",
+    "write_denied_and_recovery_expected_error",
+    "statement_timeout_and_recovery_expected_error",
+    "write_probe_commits_nothing",
+    "diagnostic_capacity_and_queue_recovery",
+    "main_manager_final_closed_without_active_or_waiting_operations",
+    "main_manager_final_identity_and_dependency_versions",
+    "probe_manager_final_closed_without_active_or_waiting_operations",
+    "probe_manager_final_identity_and_dependency_versions",
+    "expected_diagnostic_pool_statistics",
+    "timestamps_have_timezone_and_valid_order",
+    "no_raw_connection_parameter_fields"
+  ],
+  "errors": [],
+  "new_model_request_count": 0,
+  "new_database_request_count": 0,
+  "live_target_verified": false,
+  "runtime_available": false,
+  "catalog_version": null,
+  "notes": [
+    "Diagnostic requests_errors=2 are the expected queue-full and waiting-timeout probes.",
+    "Closed pool_size=1 is retained accounting in the installed pool; it is not a count of live idle connections after close.",
+    "The diagnostic pool tested one connection and one waiting slot with a two-second waiting limit; configured application limits remain 1..4 connections, 16 waiting slots and a ten-second wait.",
+    "Current complete table ACL/metadata/data version and application runtime are subsequent acceptance gates."
+  ]
+}

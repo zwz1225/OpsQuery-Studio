@@ -1,0 +1,90 @@
+{
+  "recorded_at": "2026-10-10T10:18:02.304760+00:00",
+  "archive": "M1_D2_SQL运行上下文同步包_20261010.zip",
+  "sha256": "726c201d0605ce34133727da6a0c47b8079186bdcd60f86c2eda60262df6728f",
+  "file_count": 20,
+  "crc_verified": true,
+  "all_entries_match_workspace": true,
+  "entries": [
+    {
+      "path": "backend/app/querying/sql_context.py",
+      "sha256": "bd1a233f99fdd7115c35650a074a1c9ece4d16391ae414d4e87b51fbf188af43"
+    },
+    {
+      "path": "backend/app/querying/sql_validator.py",
+      "sha256": "f094674b4bee3803a2a4e2d7c9dc3b5161756240775abb8b1025c6042843632e"
+    },
+    {
+      "path": "backend/app/querying/metric_planner.py",
+      "sha256": "ec67b981a3e7ac5276c3286b99083b4b3755402458eac7658dbceccb0e9cb812"
+    },
+    {
+      "path": "backend/app/querying/constraint_planner.py",
+      "sha256": "ee9fb3c6233ecba3e5d026f17fec903e2f57f0152da3bf77f30c94c64f7b4ec5"
+    },
+    {
+      "path": "backend/app/querying/constraint_validator.py",
+      "sha256": "c6877144182d79f2462246f1f1dd1cd68c24c840163d7769bf51964f7700f054"
+    },
+    {
+      "path": "backend/app/querying/single_database_agent.py",
+      "sha256": "5d5d2b5916e24e01c56fa5898a0d895f239827121cd483c0b24ceed8ca84e679"
+    },
+    {
+      "path": "backend/app/skills/database_query/SKILL.md",
+      "sha256": "3e5c55333da3035e1a794c2258ae75ba21e5061abf76d2ec3710e58287a34bde"
+    },
+    {
+      "path": "backend/app/retrieval/graph.py",
+      "sha256": "60195e45df0671a5c8e273aa5584a11907c87131816da5fac9773b0f6d0bf2ad"
+    },
+    {
+      "path": "backend/app/mcp_runtime/tools/database_tools.py",
+      "sha256": "4e916e5043d6bad56429f727377415bdac14c025a585fe2ab3865ef0911e83c9"
+    },
+    {
+      "path": "backend/app/mcp_runtime/server.py",
+      "sha256": "bc5cd3e3b1be1dfc2e12dc742046c44d0b701fe8893a82f4897471a0e915afdd"
+    },
+    {
+      "path": "backend/app/workflows/query_graph.py",
+      "sha256": "9b818c9309a178b049da9edf750354bf2af8ba2781bd7091ea1447bdaafe3461"
+    },
+    {
+      "path": "backend/app/workflows/result_builder.py",
+      "sha256": "bfca63b31f0b71f1e823bc59912b58a75317d80f2d34cef1abec5aec46dad72e"
+    },
+    {
+      "path": "backend/evaluation/run_benchmark.py",
+      "sha256": "d5e96f37f7ce485187667f98d5ba7847b2c043cae9f57e3a76d363a05434b1b2"
+    },
+    {
+      "path": "backend/evaluation/run_e2e.py",
+      "sha256": "110a0c398fe72265d931a7d687ce47f42af2fa5accbd9c4c970f6c782fc69d45"
+    },
+    {
+      "path": "backend/evaluation/trace_visualizer.py",
+      "sha256": "500c87379d0eb3965cbe4df56c9d945d3e9b67aa64591708cfe9d5b0225580cb"
+    },
+    {
+      "path": "backend/tests/test_m1_d2_sql_runtime.py",
+      "sha256": "3d87d97e156b46f2159e4cc8e3b91fd5cf7b7539ef82f24ff99796631c0a2e9a"
+    },
+    {
+      "path": "backend/evaluation/M1_D2_SQL_RUNTIME_ACCEPTANCE.md",
+      "sha256": "a69de373cd2552463fe65b10f1485f793f0cf2902773ce159ed047f4aa17b6ac"
+    },
+    {
+      "path": "backend/evaluation/results/m1_d2_implementation_local.json",
+      "sha256": "b7ee01f9a17ac2ced1c71728d574f2ff3e460028efad3c074d7d3f19f00e3467"
+    },
+    {
+      "path": "backend/evaluation/results/m1_d2_regression_local.json",
+      "sha256": "2d2bdea9f25f0965343d11bbbbd720dfc113393443798955b6d686898ecb3946"
+    },
+    {
+      "path": "M1_数据源依赖梳理与最小适配方案.md",
+      "sha256": "5f910737b8ebfe84b5482222cd51a9214a4a939d2b835dd2f07b87aa00439619"
+    }
+  ]
+}

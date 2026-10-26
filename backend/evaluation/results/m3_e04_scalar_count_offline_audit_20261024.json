@@ -1,0 +1,41 @@
+{
+  "stage": "M3 E04 saved-SQL public-boundary audit",
+  "run_status": "complete",
+  "formal_benchmark": false,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "public_input_sha256": "6760724e98b6da967ac5ebb2698c4e5cab385875bd150ad36a3b252ffdc52f03",
+  "contract_counts": {
+    "none": 67,
+    "advisory": 6,
+    "hard_for_simple_outer_select": 7
+  },
+  "hard_case_ids": [
+    "BIRD-PG-0072",
+    "BIRD-PG-0356",
+    "BIRD-PG-0537",
+    "BIRD-PG-1505",
+    "BIRD-PG-1509",
+    "BIRD-PG-0092",
+    "BIRD-PG-0239"
+  ],
+  "captures": {
+    "baseline": {
+      "source_sha256": "6ff077418d6ab841772f85ec08a0cd7dc85c101091e30d3be71a60d66ec176a0",
+      "saved_case_count": 80,
+      "flagged": []
+    },
+    "candidate": {
+      "source_sha256": "aef227e08d14cb6e903df2a71b2a1b8615901febe3788453af1bd12462068ff8",
+      "saved_case_count": 80,
+      "flagged": [
+        {
+          "case_id": "BIRD-PG-0092",
+          "issue_codes": [
+            "scalar_count_outer_group"
+          ]
+        }
+      ]
+    }
+  }
+}

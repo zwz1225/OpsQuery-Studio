@@ -1,0 +1,177 @@
+{
+  "stage": "M3 E07 r10 offline prompt size audit",
+  "run_status": "complete",
+  "review_date": "2026-10-25",
+  "source_report_sha256": "c67da84731bd3833fa4c4678fb7a8be99c871c12321f4bf3ecc72d8c3107985c",
+  "policy": {
+    "policy_id": "bird_public_query_semantics_prompt_v2",
+    "development_candidate": true,
+    "scope": "advisory_prompt_only",
+    "hard_rejection": false,
+    "sql_rewriting": false,
+    "scoring_policy_changed": false,
+    "guidance_sha256": "29038ba4b553e5fd6128f0956d5acecad5090b3d7d28940da266bb4fec622222"
+  },
+  "r9_guidance_utf8_bytes": 1137,
+  "r10_guidance_utf8_bytes": 666,
+  "guidance_reduction_fraction": 0.4142480211081794,
+  "r9_system_append_utf8_bytes": 292,
+  "r10_system_append_utf8_bytes": 129,
+  "guidance_plus_system_reduction_fraction": 0.44366689993002095,
+  "r9_contracts_replayed_count": 24,
+  "cases": [
+    {
+      "case_id": "BIRD-PG-1480",
+      "r9_contract_utf8_bytes": 8506,
+      "r10_simulated_contract_utf8_bytes": 8035,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0050",
+      "r9_contract_utf8_bytes": 8816,
+      "r10_simulated_contract_utf8_bytes": 8345,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0173",
+      "r9_contract_utf8_bytes": 10978,
+      "r10_simulated_contract_utf8_bytes": 10507,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0459",
+      "r9_contract_utf8_bytes": 8738,
+      "r10_simulated_contract_utf8_bytes": 8267,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0036",
+      "r9_contract_utf8_bytes": 8963,
+      "r10_simulated_contract_utf8_bytes": 8492,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0082",
+      "r9_contract_utf8_bytes": 8506,
+      "r10_simulated_contract_utf8_bytes": 8035,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0368",
+      "r9_contract_utf8_bytes": 9638,
+      "r10_simulated_contract_utf8_bytes": 9167,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0379",
+      "r9_contract_utf8_bytes": 8506,
+      "r10_simulated_contract_utf8_bytes": 8035,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0480",
+      "r9_contract_utf8_bytes": 8779,
+      "r10_simulated_contract_utf8_bytes": 8308,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0586",
+      "r9_contract_utf8_bytes": 10476,
+      "r10_simulated_contract_utf8_bytes": 10005,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0637",
+      "r9_contract_utf8_bytes": 9757,
+      "r10_simulated_contract_utf8_bytes": 9286,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-1473",
+      "r9_contract_utf8_bytes": 8751,
+      "r10_simulated_contract_utf8_bytes": 8280,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-1486",
+      "r9_contract_utf8_bytes": 9246,
+      "r10_simulated_contract_utf8_bytes": 8775,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0095",
+      "r9_contract_utf8_bytes": 10687,
+      "r10_simulated_contract_utf8_bytes": 10216,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0159",
+      "r9_contract_utf8_bytes": 11451,
+      "r10_simulated_contract_utf8_bytes": 10980,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-1405",
+      "r9_contract_utf8_bytes": 9494,
+      "r10_simulated_contract_utf8_bytes": 9023,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-1457",
+      "r9_contract_utf8_bytes": 9392,
+      "r10_simulated_contract_utf8_bytes": 8921,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-1460",
+      "r9_contract_utf8_bytes": 10057,
+      "r10_simulated_contract_utf8_bytes": 9586,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0766",
+      "r9_contract_utf8_bytes": 9769,
+      "r10_simulated_contract_utf8_bytes": 9298,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0773",
+      "r9_contract_utf8_bytes": 10533,
+      "r10_simulated_contract_utf8_bytes": 10062,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0206",
+      "r9_contract_utf8_bytes": 10265,
+      "r10_simulated_contract_utf8_bytes": 9794,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0226",
+      "r9_contract_utf8_bytes": 10636,
+      "r10_simulated_contract_utf8_bytes": 10165,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0263",
+      "r9_contract_utf8_bytes": 11069,
+      "r10_simulated_contract_utf8_bytes": 10598,
+      "reduction_bytes": 471
+    },
+    {
+      "case_id": "BIRD-PG-0273",
+      "r9_contract_utf8_bytes": 10231,
+      "r10_simulated_contract_utf8_bytes": 9760,
+      "reduction_bytes": 471
+    }
+  ],
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "real_provider_token_growth_verified": false,
+  "actual_sql_semantics_verified": false,
+  "meaning": "UTF-8 size comparison of frozen and revised advisory text only; actual tokens, repairs and SQL require a fresh paired server run.",
+  "tests": {
+    "intent_contract_tests_passed": 44,
+    "pair_bundle_tests_passed": 5
+  }
+}

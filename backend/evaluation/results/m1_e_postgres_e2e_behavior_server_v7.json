@@ -1,0 +1,3352 @@
+{
+  "run_manifest": {
+    "source_identity": {
+      "logical_database_id": "short_video_ops",
+      "source_id": "short_video_ops_postgres",
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "prompt_dialect": "PostgreSQL",
+      "physical_schema": "askdata_ops",
+      "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+    },
+    "manifest_version": 4,
+    "mode": "e2e",
+    "scope": "behavior",
+    "dataset": {
+      "source": "evaluation/cases/all_cases.jsonl",
+      "case_list": "evaluation/cases/e2e_behavior_postgres.json",
+      "case_ids": [
+        "GROWTH_OPS-001",
+        "E2E-ROUTE-DIRECT",
+        "E2E-ROUTE-QA",
+        "E2E-PERMISSION-READ",
+        "E2E-CLARIFY-START",
+        "E2E-CLARIFY-RESUME",
+        "E2E-EMPTY-RESULT",
+        "E2E-FAILURE-PREPROCESS"
+      ],
+      "version": "34637f9ac4b70213c747820c6a25c269485190588d7c360f02b92ee8ea224648"
+    },
+    "gold_selection": {
+      "selection_version": 1,
+      "cases": [
+        {
+          "case_id": "GROWTH_OPS-001",
+          "gold": {
+            "sql": "SELECT\n  TO_CHAR(metric_date, 'YYYY-MM') AS month,\n  SUM(new_users) AS value\nFROM growth_daily_metrics\nWHERE\n  metric_date >= CAST('2026-01-01' AS DATE)\n  AND metric_date < CAST('2026-08-29' AS DATE)\nGROUP BY\n  1\nORDER BY\n  1",
+            "dialect": "postgres",
+            "selection_key": "gold_sql_by_dialect.postgres",
+            "selection_version": 1
+          }
+        },
+        {
+          "case_id": "E2E-ROUTE-DIRECT",
+          "gold": null
+        },
+        {
+          "case_id": "E2E-ROUTE-QA",
+          "gold": null
+        },
+        {
+          "case_id": "E2E-PERMISSION-READ",
+          "gold": null
+        },
+        {
+          "case_id": "E2E-CLARIFY-START",
+          "gold": null
+        },
+        {
+          "case_id": "E2E-CLARIFY-RESUME",
+          "gold": null
+        },
+        {
+          "case_id": "E2E-EMPTY-RESULT",
+          "gold": {
+            "sql": "SELECT user_id, registered_at FROM user_registrations WHERE registered_at >= DATE '1900-01-01' AND registered_at < DATE '1900-01-02' ORDER BY user_id LIMIT 20",
+            "dialect": "postgres",
+            "selection_key": "gold_sql_by_dialect.postgres",
+            "selection_version": 1
+          }
+        },
+        {
+          "case_id": "E2E-FAILURE-PREPROCESS",
+          "gold": null
+        }
+      ]
+    },
+    "result_policy": {
+      "version": 1,
+      "cases": [
+        {
+          "case_id": "GROWTH_OPS-001",
+          "policy": {
+            "allowed_auxiliary_columns": [],
+            "column_aliases": {
+              "value": [
+                "new_users"
+              ]
+            },
+            "column_mapping": "explicit_per_case_aliases_v1",
+            "expected_columns": [
+              "month",
+              "value"
+            ],
+            "normalization_version": 1,
+            "numeric_comparison": "existing_business_tolerance_v1",
+            "order_by_column": "month",
+            "order_sensitive": true,
+            "reject_truncation": true,
+            "row_limit": 10000,
+            "top_n_tie_policy": null,
+            "version": 1
+          }
+        },
+        {
+          "case_id": "E2E-ROUTE-DIRECT",
+          "policy": {
+            "allowed_auxiliary_columns": [],
+            "column_aliases": {},
+            "column_mapping": "explicit_per_case_aliases_v1",
+            "expected_columns": null,
+            "normalization_version": 1,
+            "numeric_comparison": "existing_business_tolerance_v1",
+            "order_by_column": null,
+            "order_sensitive": true,
+            "reject_truncation": true,
+            "row_limit": 10000,
+            "top_n_tie_policy": null,
+            "version": 1
+          }
+        },
+        {
+          "case_id": "E2E-ROUTE-QA",
+          "policy": {
+            "allowed_auxiliary_columns": [],
+            "column_aliases": {},
+            "column_mapping": "explicit_per_case_aliases_v1",
+            "expected_columns": null,
+            "normalization_version": 1,
+            "numeric_comparison": "existing_business_tolerance_v1",
+            "order_by_column": null,
+            "order_sensitive": true,
+            "reject_truncation": true,
+            "row_limit": 10000,
+            "top_n_tie_policy": null,
+            "version": 1
+          }
+        },
+        {
+          "case_id": "E2E-PERMISSION-READ",
+          "policy": {
+            "allowed_auxiliary_columns": [],
+            "column_aliases": {},
+            "column_mapping": "explicit_per_case_aliases_v1",
+            "expected_columns": null,
+            "normalization_version": 1,
+            "numeric_comparison": "existing_business_tolerance_v1",
+            "order_by_column": null,
+            "order_sensitive": true,
+            "reject_truncation": true,
+            "row_limit": 10000,
+            "top_n_tie_policy": null,
+            "version": 1
+          }
+        },
+        {
+          "case_id": "E2E-CLARIFY-START",
+          "policy": {
+            "allowed_auxiliary_columns": [],
+            "column_aliases": {},
+            "column_mapping": "explicit_per_case_aliases_v1",
+            "expected_columns": null,
+            "normalization_version": 1,
+            "numeric_comparison": "existing_business_tolerance_v1",
+            "order_by_column": null,
+            "order_sensitive": true,
+            "reject_truncation": true,
+            "row_limit": 10000,
+            "top_n_tie_policy": null,
+            "version": 1
+          }
+        },
+        {
+          "case_id": "E2E-CLARIFY-RESUME",
+          "policy": {
+            "allowed_auxiliary_columns": [],
+            "column_aliases": {},
+            "column_mapping": "explicit_per_case_aliases_v1",
+            "expected_columns": null,
+            "normalization_version": 1,
+            "numeric_comparison": "existing_business_tolerance_v1",
+            "order_by_column": null,
+            "order_sensitive": true,
+            "reject_truncation": true,
+            "row_limit": 10000,
+            "top_n_tie_policy": null,
+            "version": 1
+          }
+        },
+        {
+          "case_id": "E2E-EMPTY-RESULT",
+          "policy": {
+            "allowed_auxiliary_columns": [],
+            "column_aliases": {},
+            "column_mapping": "explicit_per_case_aliases_v1",
+            "expected_columns": null,
+            "normalization_version": 1,
+            "numeric_comparison": "existing_business_tolerance_v1",
+            "order_by_column": null,
+            "order_sensitive": true,
+            "reject_truncation": true,
+            "row_limit": 10000,
+            "top_n_tie_policy": null,
+            "version": 1
+          }
+        },
+        {
+          "case_id": "E2E-FAILURE-PREPROCESS",
+          "policy": {
+            "allowed_auxiliary_columns": [],
+            "column_aliases": {},
+            "column_mapping": "explicit_per_case_aliases_v1",
+            "expected_columns": null,
+            "normalization_version": 1,
+            "numeric_comparison": "existing_business_tolerance_v1",
+            "order_by_column": null,
+            "order_sensitive": true,
+            "reject_truncation": true,
+            "row_limit": 10000,
+            "top_n_tie_policy": null,
+            "version": 1
+          }
+        }
+      ]
+    },
+    "source_verification": {
+      "kind": "live_postgresql_verification",
+      "live_target_verified": true,
+      "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+      "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+      "table_count": 41,
+      "field_count": 276,
+      "row_count": 722732,
+      "full_typed_row_match_count": 41,
+      "readonly_table_acl_match_count": 41,
+      "readonly_column_acl_match_count": 41
+    },
+    "versions": {
+      "data": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+      "schema": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "application": "66a1be7e693ce39e9320fb830264d40e8fa1555d6e07efb1827bb6a5d73d2222",
+      "evaluator": "2410abbbcb30ddd2df48e8ff9ecc314c917cc95f477b2ed547b3e7767bf741a9",
+      "evaluation_code": "9192bcafc5a0957ab8173e9225d932041c288b9bebc4830bf9ce04def785fcf8",
+      "gold_selection": "bb6808ff1912f1eb19dae72e2e71f23ddefb666c6dae63f053ae9dd3d9f52079",
+      "result_policy": "12f9108e569f1e2c7da47b1d0e9bbb1a11dfe422c0541317cb9f75a6921d3d86",
+      "physical_schema": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817"
+    },
+    "config": {
+      "data_backend": "postgresql",
+      "data_source_id": "short_video_ops_postgres",
+      "postgresql": {
+        "password_configured": true,
+        "implementation_stage": "verified_runtime_implemented"
+      },
+      "api_key_configured": true,
+      "llm_model": "qwen3.7-plus",
+      "llm_enable_thinking": false,
+      "embedding_model": "text-embedding-v4",
+      "embedding_dimensions": 1024,
+      "rerank_model": "qwen3-rerank",
+      "semantic_fallbacks": false,
+      "route_availability_fallback": "direct_response_no_database",
+      "schema_recall_threshold": 0.55,
+      "bm25_top_k": 30,
+      "dense_top_k": 30,
+      "rrf_top_k": 40,
+      "max_schema_fields": 20,
+      "time_field_supplement": {
+        "enabled": false,
+        "max_extra_fields": 2,
+        "max_total_fields": 22
+      },
+      "max_saved_memories": 20,
+      "mcp_max_tool_calls": 3,
+      "short_term_memory": {
+        "summary_enabled": true,
+        "summary_trigger_tokens": 12000,
+        "summary_batch_tokens": 6000,
+        "min_recent_turns": 5,
+        "archive_enabled": false,
+        "table_row_limit": 50
+      },
+      "route_context_turns": 6,
+      "llm_temperature": 0.0,
+      "user_roles": [
+        "demo_channel_ops",
+        "demo_content_ops",
+        "demo_growth_ops"
+      ],
+      "evaluation_date": "2026-10-14"
+    },
+    "run_id": "3a75f233b6254caa82052bf20e383e91",
+    "created_at": "2026-10-14T15:09:37.886589Z",
+    "fingerprint": "ce5b5d52694916f923ac06f1d2fdbee165bfad2325f89f84cbf8f133ccd813a4"
+  },
+  "run_status": "complete",
+  "summary": {
+    "case_count": 8,
+    "behavior_pass_count": 8,
+    "behavior_success_rate": 1.0,
+    "behavior_by_type": {
+      "database_query": {
+        "count": 1,
+        "passed": 1
+      },
+      "direct_response": {
+        "count": 1,
+        "passed": 1
+      },
+      "data_qa": {
+        "count": 1,
+        "passed": 1
+      },
+      "permission_denial": {
+        "count": 1,
+        "passed": 1
+      },
+      "clarification_start": {
+        "count": 1,
+        "passed": 1
+      },
+      "clarification_recovery": {
+        "count": 1,
+        "passed": 1
+      },
+      "empty_result": {
+        "count": 1,
+        "passed": 1
+      },
+      "controlled_failure": {
+        "count": 1,
+        "passed": 1
+      }
+    },
+    "sql_case_count": 5,
+    "result_scored_count": 2,
+    "result_accuracy": 1.0,
+    "strict_scored_count": 2,
+    "strict_result_accuracy": 1.0,
+    "unscored_count": 6
+  },
+  "cases": [
+    {
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "case_id": "GROWTH_OPS-001",
+      "run_id": "3a75f233b6254caa82052bf20e383e91",
+      "trace_id": "3a75f233b6254caa82052bf20e383e91:GROWTH_OPS-001",
+      "task_id": "81b998ff9116",
+      "query": "查询2026年每个月的新增用户数；请返回月份、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+      "scenario": "growth_ops",
+      "operation": "submit",
+      "behavior_type": "database_query",
+      "route": "database_query",
+      "status": "completed",
+      "response_message": "查询完成",
+      "response_analysis": "查询结果显示2026年1月至8月的新增用户数分别为：1月1520人，2月1440人，3月1538人，4月1525人，5月1603人，6月1475人，7月1555人，8月1344人。数据按时间升序排列，但仅包含前8个月的数据。",
+      "route_reason": "用户明确请求查询2026年每月的新增用户数，属于典型的数据库指标查询请求。",
+      "direct_response_type": null,
+      "workflow_mode": "single_database_agent",
+      "result_validation_reason": "结果数据包含了2026年1月至8月的新增用户数，虽然未覆盖全年12个月（可能因数据尚未产生），但已返回现有月份的正确指标值，能够部分回答问题。",
+      "standalone_query": "查询2026年每个月的新增用户数，返回月份和指标值，按时间升序展示",
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": true,
+      "row_count": 8,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "duration_ms": 25872.846,
+      "trace": {
+        "schema_graph": {
+          "source_identity": {
+            "logical_database_id": "short_video_ops",
+            "source_id": "short_video_ops_postgres",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "askdata_ops",
+            "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+            "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+          },
+          "database": "short_video_ops",
+          "databases": [
+            "short_video_ops"
+          ],
+          "graph_version": "552915ead4c5",
+          "tables": [
+            {
+              "id": "short_video_ops.acquisition_channels",
+              "name": "acquisition_channels",
+              "label": "用户获客渠道",
+              "description": "用户获客渠道，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.growth_daily_metrics",
+              "name": "growth_daily_metrics",
+              "label": "增长运营日指标",
+              "description": "增长运营日指标，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.growth_targets",
+              "name": "growth_targets",
+              "label": "增长运营月度目标",
+              "description": "增长运营月度目标，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.recall_campaigns",
+              "name": "recall_campaigns",
+              "label": "用户召回活动",
+              "description": "用户召回活动，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.recall_touches",
+              "name": "recall_touches",
+              "label": "召回触达记录",
+              "description": "召回触达记录，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_activations",
+              "name": "user_activations",
+              "label": "新用户激活结果",
+              "description": "新用户激活结果，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_daily_activity",
+              "name": "user_daily_activity",
+              "label": "用户每日活跃汇总",
+              "description": "用户每日活跃汇总，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_devices",
+              "name": "user_devices",
+              "label": "用户常用设备",
+              "description": "用户常用设备，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_lifecycle_snapshots",
+              "name": "user_lifecycle_snapshots",
+              "label": "用户生命周期快照",
+              "description": "用户生命周期快照，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_profiles",
+              "name": "user_profiles",
+              "label": "用户画像信息",
+              "description": "用户画像信息，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_registrations",
+              "name": "user_registrations",
+              "label": "用户注册记录",
+              "description": "用户注册记录，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_retention",
+              "name": "user_retention",
+              "label": "用户留存里程碑",
+              "description": "用户留存里程碑，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_sessions",
+              "name": "user_sessions",
+              "label": "用户访问会话",
+              "description": "用户访问会话，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_tag_relations",
+              "name": "user_tag_relations",
+              "label": "用户标签关系",
+              "description": "用户标签关系，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.users",
+              "name": "users",
+              "label": "平台用户主表",
+              "description": "平台用户主表，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            }
+          ],
+          "fields": [
+            {
+              "id": "short_video_ops.growth_daily_metrics.new_users",
+              "table_id": "short_video_ops.growth_daily_metrics",
+              "table_name": "growth_daily_metrics",
+              "sql_name": "growth_daily_metrics.new_users",
+              "name": "new_users",
+              "label": "新增用户数",
+              "type": "整数",
+              "description": "增长运营日指标中的新增用户数",
+              "role": "metric",
+              "source": "retrieval",
+              "score": 0.780562
+            },
+            {
+              "id": "short_video_ops.growth_targets.new_user_target",
+              "table_id": "short_video_ops.growth_targets",
+              "table_name": "growth_targets",
+              "sql_name": "growth_targets.new_user_target",
+              "name": "new_user_target",
+              "label": "新增用户目标",
+              "type": "整数",
+              "description": "增长运营月度目标中的新增用户目标",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.748059
+            },
+            {
+              "id": "short_video_ops.growth_daily_metrics.metric_date",
+              "table_id": "short_video_ops.growth_daily_metrics",
+              "table_name": "growth_daily_metrics",
+              "sql_name": "growth_daily_metrics.metric_date",
+              "name": "metric_date",
+              "label": "指标日期",
+              "type": "日期",
+              "description": "增长运营日指标中的指标日期",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.744211
+            },
+            {
+              "id": "short_video_ops.growth_targets.target_month",
+              "table_id": "short_video_ops.growth_targets",
+              "table_name": "growth_targets",
+              "sql_name": "growth_targets.target_month",
+              "name": "target_month",
+              "label": "目标月份",
+              "type": "文本",
+              "description": "增长运营月度目标中的目标月份",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.722728
+            },
+            {
+              "id": "short_video_ops.user_lifecycle_snapshots.snapshot_date",
+              "table_id": "short_video_ops.user_lifecycle_snapshots",
+              "table_name": "user_lifecycle_snapshots",
+              "sql_name": "user_lifecycle_snapshots.snapshot_date",
+              "name": "snapshot_date",
+              "label": "SNAPSHOT日期",
+              "type": "日期",
+              "description": "用户生命周期快照中的SNAPSHOT日期",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.722637
+            },
+            {
+              "id": "short_video_ops.users.registered_at",
+              "table_id": "short_video_ops.users",
+              "table_name": "users",
+              "sql_name": "users.registered_at",
+              "name": "registered_at",
+              "label": "注册时间",
+              "type": "日期",
+              "description": "平台用户主表中的注册时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.707033
+            },
+            {
+              "id": "short_video_ops.user_registrations.registered_at",
+              "table_id": "short_video_ops.user_registrations",
+              "table_name": "user_registrations",
+              "sql_name": "user_registrations.registered_at",
+              "name": "registered_at",
+              "label": "注册时间",
+              "type": "日期",
+              "description": "用户注册记录中的注册时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.663567
+            },
+            {
+              "id": "short_video_ops.user_activations.activated_at",
+              "table_id": "short_video_ops.user_activations",
+              "table_name": "user_activations",
+              "sql_name": "user_activations.activated_at",
+              "name": "activated_at",
+              "label": "ACTIVATED时间",
+              "type": "日期",
+              "description": "新用户激活结果中的ACTIVATED时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.654884
+            },
+            {
+              "id": "short_video_ops.user_daily_activity.activity_date",
+              "table_id": "short_video_ops.user_daily_activity",
+              "table_name": "user_daily_activity",
+              "sql_name": "user_daily_activity.activity_date",
+              "name": "activity_date",
+              "label": "活跃日期",
+              "type": "日期",
+              "description": "用户每日活跃汇总中的活跃日期",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.6498
+            },
+            {
+              "id": "short_video_ops.user_profiles.updated_at",
+              "table_id": "short_video_ops.user_profiles",
+              "table_name": "user_profiles",
+              "sql_name": "user_profiles.updated_at",
+              "name": "updated_at",
+              "label": "UPDATED时间",
+              "type": "日期",
+              "description": "用户画像信息中的UPDATED时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.616058
+            },
+            {
+              "id": "short_video_ops.recall_campaigns.start_date",
+              "table_id": "short_video_ops.recall_campaigns",
+              "table_name": "recall_campaigns",
+              "sql_name": "recall_campaigns.start_date",
+              "name": "start_date",
+              "label": "START日期",
+              "type": "日期",
+              "description": "用户召回活动中的START日期",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.614422
+            },
+            {
+              "id": "short_video_ops.growth_daily_metrics.activated_users",
+              "table_id": "short_video_ops.growth_daily_metrics",
+              "table_name": "growth_daily_metrics",
+              "sql_name": "growth_daily_metrics.activated_users",
+              "name": "activated_users",
+              "label": "激活用户数",
+              "type": "整数",
+              "description": "增长运营日指标中的激活用户数",
+              "role": "metric",
+              "source": "retrieval",
+              "score": 0.612927
+            },
+            {
+              "id": "short_video_ops.user_sessions.ended_at",
+              "table_id": "short_video_ops.user_sessions",
+              "table_name": "user_sessions",
+              "sql_name": "user_sessions.ended_at",
+              "name": "ended_at",
+              "label": "ENDED时间",
+              "type": "日期",
+              "description": "用户访问会话中的ENDED时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.609424
+            },
+            {
+              "id": "short_video_ops.user_sessions.started_at",
+              "table_id": "short_video_ops.user_sessions",
+              "table_name": "user_sessions",
+              "sql_name": "user_sessions.started_at",
+              "name": "started_at",
+              "label": "STARTED时间",
+              "type": "日期",
+              "description": "用户访问会话中的STARTED时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.600502
+            },
+            {
+              "id": "short_video_ops.growth_daily_metrics.daily_active_users",
+              "table_id": "short_video_ops.growth_daily_metrics",
+              "table_name": "growth_daily_metrics",
+              "sql_name": "growth_daily_metrics.daily_active_users",
+              "name": "daily_active_users",
+              "label": "每日活跃USERS",
+              "type": "整数",
+              "description": "增长运营日指标中的每日活跃USERS",
+              "role": "metric",
+              "source": "retrieval",
+              "score": 0.599114
+            },
+            {
+              "id": "short_video_ops.user_devices.first_seen_at",
+              "table_id": "short_video_ops.user_devices",
+              "table_name": "user_devices",
+              "sql_name": "user_devices.first_seen_at",
+              "name": "first_seen_at",
+              "label": "FIRSTSEEN时间",
+              "type": "日期",
+              "description": "用户常用设备中的FIRSTSEEN时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.589041
+            },
+            {
+              "id": "short_video_ops.user_tag_relations.assigned_at",
+              "table_id": "short_video_ops.user_tag_relations",
+              "table_name": "user_tag_relations",
+              "sql_name": "user_tag_relations.assigned_at",
+              "name": "assigned_at",
+              "label": "ASSIGNED时间",
+              "type": "日期",
+              "description": "用户标签关系中的ASSIGNED时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.589036
+            },
+            {
+              "id": "short_video_ops.recall_campaigns.end_date",
+              "table_id": "short_video_ops.recall_campaigns",
+              "table_name": "recall_campaigns",
+              "sql_name": "recall_campaigns.end_date",
+              "name": "end_date",
+              "label": "END日期",
+              "type": "日期",
+              "description": "用户召回活动中的END日期",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.584356
+            },
+            {
+              "id": "short_video_ops.user_retention.registration_date",
+              "table_id": "short_video_ops.user_retention",
+              "table_name": "user_retention",
+              "sql_name": "user_retention.registration_date",
+              "name": "registration_date",
+              "label": "注册日期",
+              "type": "日期",
+              "description": "用户留存里程碑中的注册日期",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.579967
+            },
+            {
+              "id": "short_video_ops.recall_touches.sent_at",
+              "table_id": "short_video_ops.recall_touches",
+              "table_name": "recall_touches",
+              "sql_name": "recall_touches.sent_at",
+              "name": "sent_at",
+              "label": "SENT时间",
+              "type": "日期",
+              "description": "召回触达记录中的SENT时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.570766
+            },
+            {
+              "id": "short_video_ops.acquisition_channels.channel_id",
+              "table_id": "short_video_ops.acquisition_channels",
+              "table_name": "acquisition_channels",
+              "sql_name": "acquisition_channels.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "用户获客渠道中的渠道编号；用户通过渠道注册、注册归因到渠道、留存结果归因到渠道、会话来源渠道、增长指标按渠道统计、增长目标按渠道制定、广告账户归属渠道、广告计划投放至渠道、归因结果对应渠道、转化事件归因到渠道、渠道对应月度目标",
+              "role": "identifier",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.growth_daily_metrics.channel_id",
+              "table_id": "short_video_ops.growth_daily_metrics",
+              "table_name": "growth_daily_metrics",
+              "sql_name": "growth_daily_metrics.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "增长运营日指标中的渠道编号；增长指标按渠道统计",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.growth_targets.channel_id",
+              "table_id": "short_video_ops.growth_targets",
+              "table_name": "growth_targets",
+              "sql_name": "growth_targets.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "增长运营月度目标中的渠道编号；增长目标按渠道制定",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.users.register_channel_id",
+              "table_id": "short_video_ops.users",
+              "table_name": "users",
+              "sql_name": "users.register_channel_id",
+              "name": "register_channel_id",
+              "label": "REGISTER渠道编号",
+              "type": "文本",
+              "description": "平台用户主表中的REGISTER渠道编号；用户通过渠道注册",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.users.user_id",
+              "table_id": "short_video_ops.users",
+              "table_name": "users",
+              "sql_name": "users.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "平台用户主表中的用户编号；用户对应画像、用户绑定设备、用户产生注册记录、用户对应激活结果、用户产生活跃记录、用户对应留存结果、用户获得标签、用户产生访问会话、用户对应生命周期快照、用户产生流失事件、用户收到召回触达、用户对应渠道归因、用户产生渠道转化事件、用户获得视频曝光、用户产生播放、用户产生互动、用户提交内容举报",
+              "role": "identifier",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.recall_touches.user_id",
+              "table_id": "short_video_ops.recall_touches",
+              "table_name": "recall_touches",
+              "sql_name": "recall_touches.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "召回触达记录中的用户编号；用户收到召回触达",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.recall_campaigns.recall_campaign_id",
+              "table_id": "short_video_ops.recall_campaigns",
+              "table_name": "recall_campaigns",
+              "sql_name": "recall_campaigns.recall_campaign_id",
+              "name": "recall_campaign_id",
+              "label": "RECALL活动编号",
+              "type": "文本",
+              "description": "用户召回活动中的RECALL活动编号；召回活动产生触达",
+              "role": "identifier",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.recall_touches.recall_campaign_id",
+              "table_id": "short_video_ops.recall_touches",
+              "table_name": "recall_touches",
+              "sql_name": "recall_touches.recall_campaign_id",
+              "name": "recall_campaign_id",
+              "label": "RECALL活动编号",
+              "type": "文本",
+              "description": "召回触达记录中的RECALL活动编号；召回活动产生触达",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.user_activations.user_id",
+              "table_id": "short_video_ops.user_activations",
+              "table_name": "user_activations",
+              "sql_name": "user_activations.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "新用户激活结果中的用户编号；用户对应激活结果",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.user_daily_activity.user_id",
+              "table_id": "short_video_ops.user_daily_activity",
+              "table_name": "user_daily_activity",
+              "sql_name": "user_daily_activity.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "用户每日活跃汇总中的用户编号；用户产生活跃记录",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.user_devices.user_id",
+              "table_id": "short_video_ops.user_devices",
+              "table_name": "user_devices",
+              "sql_name": "user_devices.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "用户常用设备中的用户编号；用户绑定设备",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.user_lifecycle_snapshots.user_id",
+              "table_id": "short_video_ops.user_lifecycle_snapshots",
+              "table_name": "user_lifecycle_snapshots",
+              "sql_name": "user_lifecycle_snapshots.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "用户生命周期快照中的用户编号；用户对应生命周期快照",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.user_profiles.user_id",
+              "table_id": "short_video_ops.user_profiles",
+              "table_name": "user_profiles",
+              "sql_name": "user_profiles.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "用户画像信息中的用户编号；用户对应画像",
+              "role": "identifier",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.user_registrations.channel_id",
+              "table_id": "short_video_ops.user_registrations",
+              "table_name": "user_registrations",
+              "sql_name": "user_registrations.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "用户注册记录中的渠道编号；注册归因到渠道",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.user_retention.channel_id",
+              "table_id": "short_video_ops.user_retention",
+              "table_name": "user_retention",
+              "sql_name": "user_retention.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "用户留存里程碑中的渠道编号；留存结果归因到渠道",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.user_sessions.channel_id",
+              "table_id": "short_video_ops.user_sessions",
+              "table_name": "user_sessions",
+              "sql_name": "user_sessions.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "用户访问会话中的渠道编号；会话来源渠道",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.user_tag_relations.user_id",
+              "table_id": "short_video_ops.user_tag_relations",
+              "table_name": "user_tag_relations",
+              "sql_name": "user_tag_relations.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "用户标签关系中的用户编号；用户获得标签",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            }
+          ],
+          "joins": [
+            {
+              "description": "增长指标按渠道统计",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.growth_daily_metrics",
+              "right_table_name": "growth_daily_metrics"
+            },
+            {
+              "description": "增长目标按渠道制定",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.growth_targets",
+              "right_table_name": "growth_targets"
+            },
+            {
+              "description": "用户通过渠道注册",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "register_channel_id",
+              "right_table": "short_video_ops.users",
+              "right_table_name": "users"
+            },
+            {
+              "description": "用户收到召回触达",
+              "left_field": "user_id",
+              "left_table": "short_video_ops.users",
+              "left_table_name": "users",
+              "relation_type": "foreign_key",
+              "right_field": "user_id",
+              "right_table": "short_video_ops.recall_touches",
+              "right_table_name": "recall_touches"
+            },
+            {
+              "description": "召回活动产生触达",
+              "left_field": "recall_campaign_id",
+              "left_table": "short_video_ops.recall_campaigns",
+              "left_table_name": "recall_campaigns",
+              "relation_type": "foreign_key",
+              "right_field": "recall_campaign_id",
+              "right_table": "short_video_ops.recall_touches",
+              "right_table_name": "recall_touches"
+            },
+            {
+              "description": "用户对应激活结果",
+              "left_field": "user_id",
+              "left_table": "short_video_ops.users",
+              "left_table_name": "users",
+              "relation_type": "foreign_key",
+              "right_field": "user_id",
+              "right_table": "short_video_ops.user_activations",
+              "right_table_name": "user_activations"
+            },
+            {
+              "description": "用户产生活跃记录",
+              "left_field": "user_id",
+              "left_table": "short_video_ops.users",
+              "left_table_name": "users",
+              "relation_type": "foreign_key",
+              "right_field": "user_id",
+              "right_table": "short_video_ops.user_daily_activity",
+              "right_table_name": "user_daily_activity"
+            },
+            {
+              "description": "用户绑定设备",
+              "left_field": "user_id",
+              "left_table": "short_video_ops.users",
+              "left_table_name": "users",
+              "relation_type": "foreign_key",
+              "right_field": "user_id",
+              "right_table": "short_video_ops.user_devices",
+              "right_table_name": "user_devices"
+            },
+            {
+              "description": "用户对应生命周期快照",
+              "left_field": "user_id",
+              "left_table": "short_video_ops.users",
+              "left_table_name": "users",
+              "relation_type": "foreign_key",
+              "right_field": "user_id",
+              "right_table": "short_video_ops.user_lifecycle_snapshots",
+              "right_table_name": "user_lifecycle_snapshots"
+            },
+            {
+              "description": "用户对应画像",
+              "left_field": "user_id",
+              "left_table": "short_video_ops.users",
+              "left_table_name": "users",
+              "relation_type": "foreign_key",
+              "right_field": "user_id",
+              "right_table": "short_video_ops.user_profiles",
+              "right_table_name": "user_profiles"
+            },
+            {
+              "description": "注册归因到渠道",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.user_registrations",
+              "right_table_name": "user_registrations"
+            },
+            {
+              "description": "留存结果归因到渠道",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.user_retention",
+              "right_table_name": "user_retention"
+            },
+            {
+              "description": "会话来源渠道",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.user_sessions",
+              "right_table_name": "user_sessions"
+            },
+            {
+              "description": "用户获得标签",
+              "left_field": "user_id",
+              "left_table": "short_video_ops.users",
+              "left_table_name": "users",
+              "relation_type": "foreign_key",
+              "right_field": "user_id",
+              "right_table": "short_video_ops.user_tag_relations",
+              "right_table_name": "user_tag_relations"
+            }
+          ]
+        },
+        "execution_log": [
+          {
+            "stage": "mcp_tool_call",
+            "success": true,
+            "call_index": 1,
+            "tool": "query_short_video_ops",
+            "arguments": {
+              "sql": "SELECT TO_CHAR(DATE_TRUNC('month', metric_date), 'YYYY-MM') AS month, SUM(new_users) AS new_users FROM askdata_ops.growth_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01' GROUP BY DATE_TRUNC('month', metric_date) ORDER BY DATE_TRUNC('month', metric_date) ASC"
+            },
+            "query_contract": {
+              "grain": "时间趋势",
+              "source_tables": [
+                "growth_daily_metrics"
+              ],
+              "filters": [
+                {
+                  "phrase": "2026年",
+                  "field": "metric_date",
+                  "operator": "范围",
+                  "value": "2026-01-01 至 2027-01-01"
+                }
+              ],
+              "metrics": [
+                "SUM(new_users)"
+              ],
+              "output_columns": [
+                "month",
+                "new_users"
+              ],
+              "constraint_plan": {
+                "filter_constraints": [],
+                "time_constraints": [],
+                "group_constraints": [],
+                "join_constraints": [],
+                "conditional_filter_rules": [],
+                "warnings": [],
+                "time_field_resolution": {}
+              },
+              "metric_plan": {
+                "metrics": [
+                  {
+                    "name": "new_users",
+                    "kind": "aggregate",
+                    "description": "按指标日期汇总的新用户数量",
+                    "source_table": "growth_daily_metrics",
+                    "source_field": "new_users",
+                    "aggregation": "SUM",
+                    "time_field": {
+                      "table": "growth_daily_metrics",
+                      "field": "metric_date"
+                    },
+                    "source_selection": "canonical",
+                    "available": true
+                  }
+                ],
+                "formulas": [],
+                "joins": [],
+                "selected_sources": [
+                  "growth_daily_metrics.new_users"
+                ],
+                "warnings": []
+              },
+              "constraint_validation": {
+                "status": "PASS",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": []
+              }
+            },
+            "result": {
+              "database": "short_video_ops",
+              "sql": "SELECT TO_CHAR(DATE_TRUNC('month', metric_date), 'YYYY-MM') AS month, SUM(new_users) AS new_users FROM askdata_ops.growth_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01' GROUP BY DATE_TRUNC('month', metric_date) ORDER BY DATE_TRUNC('month', metric_date) ASC",
+              "success": true,
+              "columns": [
+                "month",
+                "new_users"
+              ],
+              "rows": [
+                {
+                  "month": "2026-01",
+                  "new_users": 1520.0
+                },
+                {
+                  "month": "2026-02",
+                  "new_users": 1440.0
+                },
+                {
+                  "month": "2026-03",
+                  "new_users": 1538.0
+                },
+                {
+                  "month": "2026-04",
+                  "new_users": 1525.0
+                },
+                {
+                  "month": "2026-05",
+                  "new_users": 1603.0
+                },
+                {
+                  "month": "2026-06",
+                  "new_users": 1475.0
+                },
+                {
+                  "month": "2026-07",
+                  "new_users": 1555.0
+                },
+                {
+                  "month": "2026-08",
+                  "new_users": 1344.0
+                }
+              ],
+              "row_count": 8,
+              "truncated": false,
+              "execution_ms": 2663.433,
+              "error": null
+            },
+            "reason": "根据查询契约生成并执行只读SQL",
+            "sql_validation": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "invalid_columns": []
+            },
+            "sql_validation_attempts": [
+              {
+                "status": "PASS",
+                "errors": [],
+                "warnings": [],
+                "invalid_columns": []
+              }
+            ],
+            "sql_round_numeric_repair": null,
+            "sql_bigint_boolean_repair": null,
+            "sql_order_alias_repair": null,
+            "metric_planning": {
+              "metrics": [
+                {
+                  "name": "new_users",
+                  "kind": "aggregate",
+                  "description": "按指标日期汇总的新用户数量",
+                  "source_table": "growth_daily_metrics",
+                  "source_field": "new_users",
+                  "aggregation": "SUM",
+                  "time_field": {
+                    "table": "growth_daily_metrics",
+                    "field": "metric_date"
+                  },
+                  "source_selection": "canonical",
+                  "available": true
+                }
+              ],
+              "formulas": [],
+              "joins": [],
+              "selected_sources": [
+                "growth_daily_metrics.new_users"
+              ],
+              "warnings": []
+            },
+            "metric_validation": {
+              "errors": []
+            },
+            "metric_validation_attempts": [
+              {
+                "errors": []
+              }
+            ],
+            "constraint_validation": {
+              "status": "PASS",
+              "missing_constraints": [],
+              "missing_group_constraints": [],
+              "unsupported_constraints": [],
+              "join_violations": [],
+              "warnings": []
+            },
+            "constraint_validation_attempts": [
+              {
+                "status": "PASS",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": []
+              }
+            ],
+            "sql_context": {
+              "logical_database_id": "short_video_ops",
+              "source_id": "short_video_ops_postgres",
+              "backend": "postgresql",
+              "dialect": "postgres",
+              "prompt_dialect": "PostgreSQL",
+              "physical_schema": "askdata_ops",
+              "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+              "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+            }
+          },
+          {
+            "stage": "sql_execution",
+            "source_identity": {
+              "logical_database_id": "short_video_ops",
+              "source_id": "short_video_ops_postgres",
+              "backend": "postgresql",
+              "dialect": "postgres",
+              "prompt_dialect": "PostgreSQL",
+              "physical_schema": "askdata_ops",
+              "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+              "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+            },
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "success": true,
+            "error": null,
+            "via": "mcp"
+          }
+        ],
+        "tool_calls": [
+          {
+            "call_index": 1,
+            "database": "short_video_ops",
+            "arguments": {
+              "mode": "single_database_agent",
+              "transport": "mcp_in_process",
+              "tool_name": "query_short_video_ops",
+              "schema_graph_version": "552915ead4c5",
+              "sql_source": "model_mcp",
+              "source_identity": {
+                "logical_database_id": "short_video_ops",
+                "source_id": "short_video_ops_postgres",
+                "backend": "postgresql",
+                "dialect": "postgres",
+                "prompt_dialect": "PostgreSQL",
+                "physical_schema": "askdata_ops",
+                "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+                "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+              }
+            },
+            "sql": "SELECT TO_CHAR(DATE_TRUNC('month', metric_date), 'YYYY-MM') AS month, SUM(new_users) AS new_users FROM askdata_ops.growth_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01' GROUP BY DATE_TRUNC('month', metric_date) ORDER BY DATE_TRUNC('month', metric_date) ASC",
+            "success": true,
+            "row_count": 8,
+            "truncated": false,
+            "error": null
+          }
+        ],
+        "clarification": null
+      },
+      "generated_sql": "SELECT TO_CHAR(DATE_TRUNC('month', metric_date), 'YYYY-MM') AS month, SUM(new_users) AS new_users FROM askdata_ops.growth_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01' GROUP BY DATE_TRUNC('month', metric_date) ORDER BY DATE_TRUNC('month', metric_date) ASC",
+      "strict_comparison_reason": "严格结果一致",
+      "gold_result_source": "execution",
+      "generated_result_rows": 8
+    },
+    {
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "case_id": "E2E-ROUTE-DIRECT",
+      "run_id": "3a75f233b6254caa82052bf20e383e91",
+      "trace_id": "3a75f233b6254caa82052bf20e383e91:E2E-ROUTE-DIRECT",
+      "task_id": "514d86e4183f",
+      "query": "你好，请简单介绍你能做什么。",
+      "scenario": "growth_ops",
+      "operation": "submit",
+      "behavior_type": "direct_response",
+      "route": "direct_response",
+      "status": "completed",
+      "response_message": "已直接回答",
+      "response_analysis": "你好！我是问数系统的请求预处理器。我主要负责理解你的自然语言问题，判断你是想查询新的数据库数据、分析已有的数据结果，还是进行一般交流。如果是查询数据，我会帮你提取关键指标和条件；如果是其他问题，我会直接回答你。请问有什么我可以帮你的吗？",
+      "route_reason": "用户询问系统能力介绍，属于一般交流/能力询问，不涉及数据查询或已有数据分析。",
+      "direct_response_type": "answer",
+      "workflow_mode": "direct_response",
+      "result_validation_reason": null,
+      "standalone_query": null,
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true,
+        "analysis_present": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": false,
+      "row_count": 0,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "result scoring not requested",
+      "duration_ms": 12927.121,
+      "trace": {
+        "schema_graph": null,
+        "execution_log": [],
+        "tool_calls": [],
+        "clarification": null
+      }
+    },
+    {
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "case_id": "E2E-ROUTE-QA",
+      "run_id": "3a75f233b6254caa82052bf20e383e91",
+      "trace_id": "3a75f233b6254caa82052bf20e383e91:E2E-ROUTE-QA",
+      "task_id": "375198d0ac71",
+      "query": "请解释刚才查询结果的业务含义，不要重新查询数据库。",
+      "scenario": "growth_ops",
+      "operation": "submit",
+      "behavior_type": "data_qa",
+      "route": "data_qa",
+      "status": "completed",
+      "response_message": "已进入数据问答，没有重复查询数据库。",
+      "response_analysis": "该查询结果展示了2026年1月至8月期间，每月新增用户的数量统计。具体业务含义如下：\n\n1. **数据范围**：涵盖了2026年前8个月（1月-8月）的月度新增用户数据。\n2. **指标定义**：“new_users”代表当月新注册或新增的用户总数，是一个可加总的流量/规模指标。\n3. **趋势观察**：\n   - 整体波动在1344至1603人之间。\n   - **峰值**出现在5月（1603人），表明该月拉新效果最好或处于业务高峰期。\n   - **低谷**出现在8月（1344人）和2月（1440人），其中8月为前8个月最低值，可能受季节性因素、市场活动减少或竞争加剧影响。\n4. **局限性**：当前数据仅包含前8个月，无法反映全年完整趋势，且缺乏同比或环比基准进行更深入的增长率分析。\n\n建议结合市场推广日历或季节性因素，进一步分析5月高峰和8月低谷的具体原因。",
+      "route_reason": "用户明确要求解释上下文中已存在的查询结果（2026年新增用户数统计），并显式指出不要重新查询数据库，符合data_qa意图定义。",
+      "direct_response_type": null,
+      "workflow_mode": "qa",
+      "result_validation_reason": null,
+      "standalone_query": null,
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true,
+        "analysis_present": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": false,
+      "row_count": 0,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "result scoring not requested",
+      "duration_ms": 17197.03,
+      "trace": {
+        "schema_graph": null,
+        "execution_log": [],
+        "tool_calls": [],
+        "clarification": null
+      }
+    },
+    {
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "case_id": "E2E-PERMISSION-READ",
+      "run_id": "3a75f233b6254caa82052bf20e383e91",
+      "trace_id": "3a75f233b6254caa82052bf20e383e91:E2E-PERMISSION-READ",
+      "query": "以内容运营身份读取增长运营的上一条查询任务。",
+      "scenario": "content_ops",
+      "operation": "get_task_denied",
+      "behavior_type": "permission_denial",
+      "route": "task_access",
+      "status": "denied",
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "permission_denied": true
+      },
+      "behavior_correct": true,
+      "observed_exception": "PermissionError",
+      "source_case_id": "GROWTH_OPS-001",
+      "sql_execution_success": false,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "cross-user task access denied",
+      "duration_ms": 0.029
+    },
+    {
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "case_id": "E2E-CLARIFY-START",
+      "run_id": "3a75f233b6254caa82052bf20e383e91",
+      "trace_id": "3a75f233b6254caa82052bf20e383e91:E2E-CLARIFY-START",
+      "task_id": "c1e2bdf163eb",
+      "query": "请找出2026年5月表现最好的渠道；如果“表现”没有明确指标，请先让我选择指标。",
+      "scenario": "channel_ops",
+      "operation": "submit",
+      "behavior_type": "clarification_start",
+      "route": "database_query",
+      "status": "waiting_clarification",
+      "response_message": "查询已暂停，等待你的补充信息。",
+      "response_analysis": "请问“表现最好”具体是指哪个指标最高？ 你可以直接回复：转化事件数、归因用户数、注册用户数。",
+      "route_reason": "用户明确要求查询2026年5月的数据，并指出需要确定‘表现’的具体指标。根据规则，当用户明确要求查询新数据但缺少改变查询口径的指标时，仍选择database_query，由后续智能体提供结构化澄清选项。",
+      "direct_response_type": null,
+      "workflow_mode": "single_database_agent",
+      "result_validation_reason": null,
+      "standalone_query": "查询2026年5月表现最好的渠道",
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true,
+        "clarification_options": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": false,
+      "row_count": 0,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "result scoring not requested",
+      "duration_ms": 16300.867,
+      "trace": {
+        "schema_graph": {
+          "source_identity": {
+            "logical_database_id": "short_video_ops",
+            "source_id": "short_video_ops_postgres",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "askdata_ops",
+            "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+            "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+          },
+          "database": "short_video_ops",
+          "databases": [
+            "short_video_ops"
+          ],
+          "graph_version": "cde90dc3c404",
+          "tables": [
+            {
+              "id": "short_video_ops.acquisition_channels",
+              "name": "acquisition_channels",
+              "label": "用户获客渠道",
+              "description": "用户获客渠道，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.ad_accounts",
+              "name": "ad_accounts",
+              "label": "广告投放账户",
+              "description": "广告投放账户，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.ad_campaigns",
+              "name": "ad_campaigns",
+              "label": "广告投放计划",
+              "description": "广告投放计划，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.budget_adjustments",
+              "name": "budget_adjustments",
+              "label": "投放预算调整记录",
+              "description": "投放预算调整记录，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.channel_attributions",
+              "name": "channel_attributions",
+              "label": "用户渠道归因结果",
+              "description": "用户渠道归因结果，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events",
+              "name": "channel_conversion_events",
+              "label": "渠道转化事件",
+              "description": "渠道转化事件，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.channel_targets",
+              "name": "channel_targets",
+              "label": "渠道月度投放目标",
+              "description": "渠道月度投放目标，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.users",
+              "name": "users",
+              "label": "平台用户主表",
+              "description": "平台用户主表，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            }
+          ],
+          "fields": [
+            {
+              "id": "short_video_ops.channel_targets.target_month",
+              "table_id": "short_video_ops.channel_targets",
+              "table_name": "channel_targets",
+              "sql_name": "channel_targets.target_month",
+              "name": "target_month",
+              "label": "目标月份",
+              "type": "文本",
+              "description": "渠道月度投放目标中的目标月份",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.722079
+            },
+            {
+              "id": "short_video_ops.acquisition_channels.channel_id",
+              "table_id": "short_video_ops.acquisition_channels",
+              "table_name": "acquisition_channels",
+              "sql_name": "acquisition_channels.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "用户获客渠道中的渠道编号；用户通过渠道注册、注册归因到渠道、留存结果归因到渠道、会话来源渠道、增长指标按渠道统计、增长目标按渠道制定、广告账户归属渠道、广告计划投放至渠道、归因结果对应渠道、转化事件归因到渠道、渠道对应月度目标",
+              "role": "identifier",
+              "source": "retrieval",
+              "score": 0.708176
+            },
+            {
+              "id": "short_video_ops.channel_attributions.channel_id",
+              "table_id": "short_video_ops.channel_attributions",
+              "table_name": "channel_attributions",
+              "sql_name": "channel_attributions.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "用户渠道归因结果中的渠道编号；归因结果对应渠道",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.707359
+            },
+            {
+              "id": "short_video_ops.acquisition_channels.channel_name",
+              "table_id": "short_video_ops.acquisition_channels",
+              "table_name": "acquisition_channels",
+              "sql_name": "acquisition_channels.channel_name",
+              "name": "channel_name",
+              "label": "渠道名称",
+              "type": "文本",
+              "description": "用户获客渠道中的渠道名称",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.707218
+            },
+            {
+              "id": "short_video_ops.acquisition_channels.enabled",
+              "table_id": "short_video_ops.acquisition_channels",
+              "table_name": "acquisition_channels",
+              "sql_name": "acquisition_channels.enabled",
+              "name": "enabled",
+              "label": "ENABLED",
+              "type": "整数",
+              "description": "用户获客渠道中的ENABLED",
+              "role": "filter",
+              "source": "retrieval",
+              "score": 0.698789
+            },
+            {
+              "id": "short_video_ops.acquisition_channels.channel_type",
+              "table_id": "short_video_ops.acquisition_channels",
+              "table_name": "acquisition_channels",
+              "sql_name": "acquisition_channels.channel_type",
+              "name": "channel_type",
+              "label": "渠道类型",
+              "type": "文本",
+              "description": "用户获客渠道中的渠道类型",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.698214
+            },
+            {
+              "id": "short_video_ops.ad_campaigns.channel_id",
+              "table_id": "short_video_ops.ad_campaigns",
+              "table_name": "ad_campaigns",
+              "sql_name": "ad_campaigns.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "广告投放计划中的渠道编号；广告计划投放至渠道",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.69662
+            },
+            {
+              "id": "short_video_ops.ad_accounts.channel_id",
+              "table_id": "short_video_ops.ad_accounts",
+              "table_name": "ad_accounts",
+              "sql_name": "ad_accounts.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "广告投放账户中的渠道编号；广告账户归属渠道",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.689663
+            },
+            {
+              "id": "short_video_ops.acquisition_channels.owner_team",
+              "table_id": "short_video_ops.acquisition_channels",
+              "table_name": "acquisition_channels",
+              "sql_name": "acquisition_channels.owner_team",
+              "name": "owner_team",
+              "label": "OWNERTEAM",
+              "type": "文本",
+              "description": "用户获客渠道中的OWNERTEAM",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.6884
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events.channel_id",
+              "table_id": "short_video_ops.channel_conversion_events",
+              "table_name": "channel_conversion_events",
+              "sql_name": "channel_conversion_events.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "渠道转化事件中的渠道编号；转化事件归因到渠道",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.674165
+            },
+            {
+              "id": "short_video_ops.channel_attributions.ad_campaign_id",
+              "table_id": "short_video_ops.channel_attributions",
+              "table_name": "channel_attributions",
+              "sql_name": "channel_attributions.ad_campaign_id",
+              "name": "ad_campaign_id",
+              "label": "广告计划编号",
+              "type": "文本",
+              "description": "用户渠道归因结果中的广告计划编号",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.668102
+            },
+            {
+              "id": "short_video_ops.channel_attributions.attribution_type",
+              "table_id": "short_video_ops.channel_attributions",
+              "table_name": "channel_attributions",
+              "sql_name": "channel_attributions.attribution_type",
+              "name": "attribution_type",
+              "label": "归因方式",
+              "type": "文本",
+              "description": "用户渠道归因结果中的归因方式",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.665188
+            },
+            {
+              "id": "short_video_ops.budget_adjustments.operator_name",
+              "table_id": "short_video_ops.budget_adjustments",
+              "table_name": "budget_adjustments",
+              "sql_name": "budget_adjustments.operator_name",
+              "name": "operator_name",
+              "label": "OPERATOR名称",
+              "type": "文本",
+              "description": "投放预算调整记录中的OPERATOR名称",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.663002
+            },
+            {
+              "id": "short_video_ops.channel_attributions.confidence_score",
+              "table_id": "short_video_ops.channel_attributions",
+              "table_name": "channel_attributions",
+              "sql_name": "channel_attributions.confidence_score",
+              "name": "confidence_score",
+              "label": "CONFIDENCE评分",
+              "type": "数值",
+              "description": "用户渠道归因结果中的CONFIDENCE评分",
+              "role": "metric",
+              "source": "retrieval",
+              "score": 0.653175
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events.conversion_value",
+              "table_id": "short_video_ops.channel_conversion_events",
+              "table_name": "channel_conversion_events",
+              "sql_name": "channel_conversion_events.conversion_value",
+              "name": "conversion_value",
+              "label": "转化VALUE",
+              "type": "整数",
+              "description": "渠道转化事件中的转化VALUE",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.650598
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events.ad_campaign_id",
+              "table_id": "short_video_ops.channel_conversion_events",
+              "table_name": "channel_conversion_events",
+              "sql_name": "channel_conversion_events.ad_campaign_id",
+              "name": "ad_campaign_id",
+              "label": "广告计划编号",
+              "type": "文本",
+              "description": "渠道转化事件中的广告计划编号",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.643692
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events.conversion_type",
+              "table_id": "short_video_ops.channel_conversion_events",
+              "table_name": "channel_conversion_events",
+              "sql_name": "channel_conversion_events.conversion_type",
+              "name": "conversion_type",
+              "label": "转化类型",
+              "type": "文本",
+              "description": "渠道转化事件中的转化类型",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.642073
+            },
+            {
+              "id": "short_video_ops.users.register_channel_id",
+              "table_id": "short_video_ops.users",
+              "table_name": "users",
+              "sql_name": "users.register_channel_id",
+              "name": "register_channel_id",
+              "label": "REGISTER渠道编号",
+              "type": "文本",
+              "description": "平台用户主表中的REGISTER渠道编号；用户通过渠道注册",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.641993
+            },
+            {
+              "id": "short_video_ops.channel_attributions.attribution_id",
+              "table_id": "short_video_ops.channel_attributions",
+              "table_name": "channel_attributions",
+              "sql_name": "channel_attributions.attribution_id",
+              "name": "attribution_id",
+              "label": "ATTRIBUTION编号",
+              "type": "文本",
+              "description": "用户渠道归因结果中的ATTRIBUTION编号",
+              "role": "identifier",
+              "source": "retrieval",
+              "score": 0.640935
+            },
+            {
+              "id": "short_video_ops.channel_attributions.user_id",
+              "table_id": "short_video_ops.channel_attributions",
+              "table_name": "channel_attributions",
+              "sql_name": "channel_attributions.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "用户渠道归因结果中的用户编号；用户对应渠道归因",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.63885
+            },
+            {
+              "id": "short_video_ops.ad_campaigns.ad_campaign_id",
+              "table_id": "short_video_ops.ad_campaigns",
+              "table_name": "ad_campaigns",
+              "sql_name": "ad_campaigns.ad_campaign_id",
+              "name": "ad_campaign_id",
+              "label": "广告计划编号",
+              "type": "文本",
+              "description": "广告投放计划中的广告计划编号；广告计划使用创意素材、广告计划产生每日效果、广告计划产生预算调整",
+              "role": "identifier",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.budget_adjustments.ad_campaign_id",
+              "table_id": "short_video_ops.budget_adjustments",
+              "table_name": "budget_adjustments",
+              "sql_name": "budget_adjustments.ad_campaign_id",
+              "name": "ad_campaign_id",
+              "label": "广告计划编号",
+              "type": "文本",
+              "description": "投放预算调整记录中的广告计划编号；广告计划产生预算调整",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.channel_targets.channel_id",
+              "table_id": "short_video_ops.channel_targets",
+              "table_name": "channel_targets",
+              "sql_name": "channel_targets.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "渠道月度投放目标中的渠道编号；渠道对应月度目标",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            }
+          ],
+          "joins": [
+            {
+              "description": "广告账户归属渠道",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.ad_accounts",
+              "right_table_name": "ad_accounts"
+            },
+            {
+              "description": "广告计划投放至渠道",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.ad_campaigns",
+              "right_table_name": "ad_campaigns"
+            },
+            {
+              "description": "广告计划产生预算调整",
+              "left_field": "ad_campaign_id",
+              "left_table": "short_video_ops.ad_campaigns",
+              "left_table_name": "ad_campaigns",
+              "relation_type": "foreign_key",
+              "right_field": "ad_campaign_id",
+              "right_table": "short_video_ops.budget_adjustments",
+              "right_table_name": "budget_adjustments"
+            },
+            {
+              "description": "归因结果对应渠道",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.channel_attributions",
+              "right_table_name": "channel_attributions"
+            },
+            {
+              "description": "转化事件归因到渠道",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.channel_conversion_events",
+              "right_table_name": "channel_conversion_events"
+            },
+            {
+              "description": "渠道对应月度目标",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.channel_targets",
+              "right_table_name": "channel_targets"
+            },
+            {
+              "description": "用户通过渠道注册",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "register_channel_id",
+              "right_table": "short_video_ops.users",
+              "right_table_name": "users"
+            }
+          ]
+        },
+        "execution_log": [],
+        "tool_calls": [],
+        "clarification": {
+          "parameter": "表现衡量指标",
+          "question": "请问“表现最好”具体是指哪个指标最高？",
+          "reason": "不同指标会导致不同的渠道排名结果，需要明确排序依据。",
+          "options": [
+            {
+              "id": "option_1",
+              "label": "转化事件数",
+              "description": "按渠道产生的转化事件数量从高到低排序",
+              "recommended": true
+            },
+            {
+              "id": "option_2",
+              "label": "归因用户数",
+              "description": "按渠道归因的用户数量从高到低排序",
+              "recommended": false
+            },
+            {
+              "id": "option_3",
+              "label": "注册用户数",
+              "description": "按通过该渠道注册的用户数量从高到低排序",
+              "recommended": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "case_id": "E2E-CLARIFY-RESUME",
+      "run_id": "3a75f233b6254caa82052bf20e383e91",
+      "trace_id": "3a75f233b6254caa82052bf20e383e91:E2E-CLARIFY-RESUME",
+      "task_id": "c1e2bdf163eb",
+      "query": "选择上一步澄清的第一个指标选项并继续查询。",
+      "scenario": "channel_ops",
+      "operation": "clarify",
+      "behavior_type": "clarification_recovery",
+      "route": "database_query",
+      "status": "completed",
+      "response_message": "查询完成",
+      "response_analysis": "在2026年5月，'信息流广告'渠道产生的转化事件数最多，达到434次，是表现最好的渠道；其次是'达人推广'（339次）和'搜索广告'（303次）。",
+      "route_reason": "用户明确要求查询2026年5月的数据，并指出需要确定‘表现’的具体指标。根据规则，当用户明确要求查询新数据但缺少改变查询口径的指标时，仍选择database_query，由后续智能体提供结构化澄清选项。",
+      "direct_response_type": null,
+      "workflow_mode": "single_database_agent",
+      "result_validation_reason": "查询结果直接提供了2026年5月各渠道的转化事件数，并按降序排列，可以明确识别出表现最好的渠道。",
+      "standalone_query": "查询2026年5月表现最好的渠道\n\n用户已确认的查询口径：\n- 表现衡量指标：转化事件数；按渠道产生的转化事件数量从高到低排序\n按以上确认口径继续查询，已确认的参数无需再次询问。",
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true,
+        "tool_success": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": true,
+      "row_count": 4,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "result scoring not requested",
+      "duration_ms": 14306.222,
+      "trace": {
+        "schema_graph": {
+          "source_identity": {
+            "logical_database_id": "short_video_ops",
+            "source_id": "short_video_ops_postgres",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "askdata_ops",
+            "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+            "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+          },
+          "database": "short_video_ops",
+          "databases": [
+            "short_video_ops"
+          ],
+          "graph_version": "09ab923d9ff6",
+          "tables": [
+            {
+              "id": "short_video_ops.acquisition_channels",
+              "name": "acquisition_channels",
+              "label": "用户获客渠道",
+              "description": "用户获客渠道，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.ad_accounts",
+              "name": "ad_accounts",
+              "label": "广告投放账户",
+              "description": "广告投放账户，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.ad_campaigns",
+              "name": "ad_campaigns",
+              "label": "广告投放计划",
+              "description": "广告投放计划，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.ad_daily_stats",
+              "name": "ad_daily_stats",
+              "label": "广告计划每日效果",
+              "description": "广告计划每日效果，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.channel_attributions",
+              "name": "channel_attributions",
+              "label": "用户渠道归因结果",
+              "description": "用户渠道归因结果，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events",
+              "name": "channel_conversion_events",
+              "label": "渠道转化事件",
+              "description": "渠道转化事件，用于渠道投放相关的查询、统计和分析。",
+              "domain": "渠道投放",
+              "database": "short_video_ops"
+            }
+          ],
+          "fields": [
+            {
+              "id": "short_video_ops.channel_conversion_events.converted_at",
+              "table_id": "short_video_ops.channel_conversion_events",
+              "table_name": "channel_conversion_events",
+              "sql_name": "channel_conversion_events.converted_at",
+              "name": "converted_at",
+              "label": "CONVERTED时间",
+              "type": "日期",
+              "description": "渠道转化事件中的CONVERTED时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.787283
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events.channel_id",
+              "table_id": "short_video_ops.channel_conversion_events",
+              "table_name": "channel_conversion_events",
+              "sql_name": "channel_conversion_events.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "渠道转化事件中的渠道编号；转化事件归因到渠道",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.767272
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events.conversion_event_id",
+              "table_id": "short_video_ops.channel_conversion_events",
+              "table_name": "channel_conversion_events",
+              "sql_name": "channel_conversion_events.conversion_event_id",
+              "name": "conversion_event_id",
+              "label": "转化EVENT编号",
+              "type": "文本",
+              "description": "渠道转化事件中的转化EVENT编号",
+              "role": "identifier",
+              "source": "retrieval",
+              "score": 0.730075
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events.user_id",
+              "table_id": "short_video_ops.channel_conversion_events",
+              "table_name": "channel_conversion_events",
+              "sql_name": "channel_conversion_events.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "渠道转化事件中的用户编号；用户产生渠道转化事件",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.724477
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events.ad_campaign_id",
+              "table_id": "short_video_ops.channel_conversion_events",
+              "table_name": "channel_conversion_events",
+              "sql_name": "channel_conversion_events.ad_campaign_id",
+              "name": "ad_campaign_id",
+              "label": "广告计划编号",
+              "type": "文本",
+              "description": "渠道转化事件中的广告计划编号",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.71106
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events.conversion_type",
+              "table_id": "short_video_ops.channel_conversion_events",
+              "table_name": "channel_conversion_events",
+              "sql_name": "channel_conversion_events.conversion_type",
+              "name": "conversion_type",
+              "label": "转化类型",
+              "type": "文本",
+              "description": "渠道转化事件中的转化类型",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.70466
+            },
+            {
+              "id": "short_video_ops.channel_conversion_events.conversion_value",
+              "table_id": "short_video_ops.channel_conversion_events",
+              "table_name": "channel_conversion_events",
+              "sql_name": "channel_conversion_events.conversion_value",
+              "name": "conversion_value",
+              "label": "转化VALUE",
+              "type": "整数",
+              "description": "渠道转化事件中的转化VALUE",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.703349
+            },
+            {
+              "id": "short_video_ops.acquisition_channels.channel_id",
+              "table_id": "short_video_ops.acquisition_channels",
+              "table_name": "acquisition_channels",
+              "sql_name": "acquisition_channels.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "用户获客渠道中的渠道编号；用户通过渠道注册、注册归因到渠道、留存结果归因到渠道、会话来源渠道、增长指标按渠道统计、增长目标按渠道制定、广告账户归属渠道、广告计划投放至渠道、归因结果对应渠道、转化事件归因到渠道、渠道对应月度目标",
+              "role": "identifier",
+              "source": "retrieval",
+              "score": 0.702019
+            },
+            {
+              "id": "short_video_ops.ad_daily_stats.conversions",
+              "table_id": "short_video_ops.ad_daily_stats",
+              "table_name": "ad_daily_stats",
+              "sql_name": "ad_daily_stats.conversions",
+              "name": "conversions",
+              "label": "转化次数",
+              "type": "整数",
+              "description": "广告计划每日效果中的转化次数",
+              "role": "metric",
+              "source": "retrieval",
+              "score": 0.672571
+            },
+            {
+              "id": "short_video_ops.acquisition_channels.channel_name",
+              "table_id": "short_video_ops.acquisition_channels",
+              "table_name": "acquisition_channels",
+              "sql_name": "acquisition_channels.channel_name",
+              "name": "channel_name",
+              "label": "渠道名称",
+              "type": "文本",
+              "description": "用户获客渠道中的渠道名称",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.658731
+            },
+            {
+              "id": "short_video_ops.channel_attributions.channel_id",
+              "table_id": "short_video_ops.channel_attributions",
+              "table_name": "channel_attributions",
+              "sql_name": "channel_attributions.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "用户渠道归因结果中的渠道编号；归因结果对应渠道",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.645297
+            },
+            {
+              "id": "short_video_ops.acquisition_channels.enabled",
+              "table_id": "short_video_ops.acquisition_channels",
+              "table_name": "acquisition_channels",
+              "sql_name": "acquisition_channels.enabled",
+              "name": "enabled",
+              "label": "ENABLED",
+              "type": "整数",
+              "description": "用户获客渠道中的ENABLED",
+              "role": "filter",
+              "source": "retrieval",
+              "score": 0.633428
+            },
+            {
+              "id": "short_video_ops.acquisition_channels.channel_type",
+              "table_id": "short_video_ops.acquisition_channels",
+              "table_name": "acquisition_channels",
+              "sql_name": "acquisition_channels.channel_type",
+              "name": "channel_type",
+              "label": "渠道类型",
+              "type": "文本",
+              "description": "用户获客渠道中的渠道类型",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.630023
+            },
+            {
+              "id": "short_video_ops.acquisition_channels.owner_team",
+              "table_id": "short_video_ops.acquisition_channels",
+              "table_name": "acquisition_channels",
+              "sql_name": "acquisition_channels.owner_team",
+              "name": "owner_team",
+              "label": "OWNERTEAM",
+              "type": "文本",
+              "description": "用户获客渠道中的OWNERTEAM",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.628268
+            },
+            {
+              "id": "short_video_ops.ad_campaigns.channel_id",
+              "table_id": "short_video_ops.ad_campaigns",
+              "table_name": "ad_campaigns",
+              "sql_name": "ad_campaigns.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "广告投放计划中的渠道编号；广告计划投放至渠道",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.622864
+            },
+            {
+              "id": "short_video_ops.ad_accounts.channel_id",
+              "table_id": "short_video_ops.ad_accounts",
+              "table_name": "ad_accounts",
+              "sql_name": "ad_accounts.channel_id",
+              "name": "channel_id",
+              "label": "渠道编号",
+              "type": "文本",
+              "description": "广告投放账户中的渠道编号；广告账户归属渠道",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.620686
+            },
+            {
+              "id": "short_video_ops.channel_attributions.ad_campaign_id",
+              "table_id": "short_video_ops.channel_attributions",
+              "table_name": "channel_attributions",
+              "sql_name": "channel_attributions.ad_campaign_id",
+              "name": "ad_campaign_id",
+              "label": "广告计划编号",
+              "type": "文本",
+              "description": "用户渠道归因结果中的广告计划编号",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.618357
+            },
+            {
+              "id": "short_video_ops.channel_attributions.user_id",
+              "table_id": "short_video_ops.channel_attributions",
+              "table_name": "channel_attributions",
+              "sql_name": "channel_attributions.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "用户渠道归因结果中的用户编号；用户对应渠道归因",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.590496
+            },
+            {
+              "id": "short_video_ops.ad_daily_stats.clicks",
+              "table_id": "short_video_ops.ad_daily_stats",
+              "table_name": "ad_daily_stats",
+              "sql_name": "ad_daily_stats.clicks",
+              "name": "clicks",
+              "label": "点击次数",
+              "type": "整数",
+              "description": "广告计划每日效果中的点击次数",
+              "role": "metric",
+              "source": "retrieval",
+              "score": 0.590276
+            },
+            {
+              "id": "short_video_ops.channel_attributions.attribution_type",
+              "table_id": "short_video_ops.channel_attributions",
+              "table_name": "channel_attributions",
+              "sql_name": "channel_attributions.attribution_type",
+              "name": "attribution_type",
+              "label": "归因方式",
+              "type": "文本",
+              "description": "用户渠道归因结果中的归因方式",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.58579
+            },
+            {
+              "id": "short_video_ops.ad_campaigns.ad_campaign_id",
+              "table_id": "short_video_ops.ad_campaigns",
+              "table_name": "ad_campaigns",
+              "sql_name": "ad_campaigns.ad_campaign_id",
+              "name": "ad_campaign_id",
+              "label": "广告计划编号",
+              "type": "文本",
+              "description": "广告投放计划中的广告计划编号；广告计划使用创意素材、广告计划产生每日效果、广告计划产生预算调整",
+              "role": "identifier",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.ad_daily_stats.ad_campaign_id",
+              "table_id": "short_video_ops.ad_daily_stats",
+              "table_name": "ad_daily_stats",
+              "sql_name": "ad_daily_stats.ad_campaign_id",
+              "name": "ad_campaign_id",
+              "label": "广告计划编号",
+              "type": "文本",
+              "description": "广告计划每日效果中的广告计划编号；广告计划产生每日效果",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            }
+          ],
+          "joins": [
+            {
+              "description": "广告账户归属渠道",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.ad_accounts",
+              "right_table_name": "ad_accounts"
+            },
+            {
+              "description": "广告计划投放至渠道",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.ad_campaigns",
+              "right_table_name": "ad_campaigns"
+            },
+            {
+              "description": "广告计划产生每日效果",
+              "left_field": "ad_campaign_id",
+              "left_table": "short_video_ops.ad_campaigns",
+              "left_table_name": "ad_campaigns",
+              "relation_type": "foreign_key",
+              "right_field": "ad_campaign_id",
+              "right_table": "short_video_ops.ad_daily_stats",
+              "right_table_name": "ad_daily_stats"
+            },
+            {
+              "description": "归因结果对应渠道",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.channel_attributions",
+              "right_table_name": "channel_attributions"
+            },
+            {
+              "description": "转化事件归因到渠道",
+              "left_field": "channel_id",
+              "left_table": "short_video_ops.acquisition_channels",
+              "left_table_name": "acquisition_channels",
+              "relation_type": "foreign_key",
+              "right_field": "channel_id",
+              "right_table": "short_video_ops.channel_conversion_events",
+              "right_table_name": "channel_conversion_events"
+            }
+          ]
+        },
+        "execution_log": [
+          {
+            "stage": "clarification_resolved",
+            "success": true,
+            "parameter": "表现衡量指标",
+            "option_id": "option_1",
+            "label": "转化事件数",
+            "description": "按渠道产生的转化事件数量从高到低排序",
+            "question": "请问“表现最好”具体是指哪个指标最高？"
+          },
+          {
+            "stage": "mcp_tool_call",
+            "success": true,
+            "call_index": 1,
+            "tool": "query_short_video_ops",
+            "arguments": {
+              "sql": "SELECT\n  ac.channel_name,\n  COUNT(cce.conversion_event_id) AS conversion_event_count\nFROM askdata_ops.channel_conversion_events cce\nJOIN askdata_ops.acquisition_channels ac ON cce.channel_id = ac.channel_id\nWHERE cce.converted_at >= '2026-05-01'::timestamp\n  AND cce.converted_at < '2026-06-01'::timestamp\nGROUP BY ac.channel_name\nORDER BY conversion_event_count DESC\nLIMIT 200"
+            },
+            "query_contract": {
+              "grain": "实体排行",
+              "source_tables": [
+                "channel_conversion_events",
+                "acquisition_channels"
+              ],
+              "filters": [
+                {
+                  "phrase": "2026年5月",
+                  "field": "channel_conversion_events.converted_at",
+                  "operator": "范围",
+                  "value": ">= 2026-05-01 AND < 2026-06-01"
+                }
+              ],
+              "metrics": [
+                "转化事件数"
+              ],
+              "output_columns": [
+                "channel_name",
+                "conversion_event_count"
+              ],
+              "constraint_plan": {
+                "filter_constraints": [],
+                "time_constraints": [
+                  {
+                    "field": "channel_conversion_events.converted_at",
+                    "operator": "month_equals",
+                    "value": "2026-05",
+                    "source": "validated_sql_sources_and_schema",
+                    "confidence": 1.0
+                  }
+                ],
+                "group_constraints": [],
+                "join_constraints": [],
+                "conditional_filter_rules": [],
+                "warnings": [],
+                "time_field_resolution": {
+                  "month": "2026-05",
+                  "source": "validated_sql_sources_and_schema",
+                  "status": "resolved",
+                  "candidates": [
+                    "channel_conversion_events.converted_at"
+                  ],
+                  "selected_fields": [
+                    "channel_conversion_events.converted_at"
+                  ],
+                  "sql_source_tables": [
+                    "acquisition_channels",
+                    "channel_conversion_events"
+                  ]
+                }
+              },
+              "metric_plan": {
+                "metrics": [],
+                "formulas": [],
+                "joins": [],
+                "selected_sources": [],
+                "warnings": []
+              },
+              "constraint_validation": {
+                "status": "PASS",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": []
+              }
+            },
+            "result": {
+              "database": "short_video_ops",
+              "sql": "SELECT\n  ac.channel_name,\n  COUNT(cce.conversion_event_id) AS conversion_event_count\nFROM askdata_ops.channel_conversion_events cce\nJOIN askdata_ops.acquisition_channels ac ON cce.channel_id = ac.channel_id\nWHERE cce.converted_at >= '2026-05-01'::timestamp\n  AND cce.converted_at < '2026-06-01'::timestamp\nGROUP BY ac.channel_name\nORDER BY conversion_event_count DESC\nLIMIT 200",
+              "success": true,
+              "columns": [
+                "channel_name",
+                "conversion_event_count"
+              ],
+              "rows": [
+                {
+                  "channel_name": "信息流广告",
+                  "conversion_event_count": 434
+                },
+                {
+                  "channel_name": "达人推广",
+                  "conversion_event_count": 339
+                },
+                {
+                  "channel_name": "搜索广告",
+                  "conversion_event_count": 303
+                },
+                {
+                  "channel_name": "品牌广告",
+                  "conversion_event_count": 198
+                }
+              ],
+              "row_count": 4,
+              "truncated": false,
+              "execution_ms": 2678.179,
+              "error": null
+            },
+            "reason": "根据用户确认的口径，统计2026年5月各渠道的转化事件数，并按数量降序排列以找出表现最好的渠道。使用channel_conversion_events表作为事实来源，通过channel_id关联acquisition_channels获取渠道名称。",
+            "sql_validation": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "invalid_columns": []
+            },
+            "sql_validation_attempts": [
+              {
+                "status": "PASS",
+                "errors": [],
+                "warnings": [],
+                "invalid_columns": []
+              }
+            ],
+            "sql_round_numeric_repair": null,
+            "sql_bigint_boolean_repair": null,
+            "sql_order_alias_repair": null,
+            "metric_planning": {
+              "metrics": [],
+              "formulas": [],
+              "joins": [],
+              "selected_sources": [],
+              "warnings": []
+            },
+            "metric_validation": {
+              "errors": []
+            },
+            "metric_validation_attempts": [
+              {
+                "errors": []
+              }
+            ],
+            "constraint_validation": {
+              "status": "PASS",
+              "missing_constraints": [],
+              "missing_group_constraints": [],
+              "unsupported_constraints": [],
+              "join_violations": [],
+              "warnings": []
+            },
+            "constraint_validation_attempts": [
+              {
+                "status": "PASS",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": []
+              }
+            ],
+            "sql_context": {
+              "logical_database_id": "short_video_ops",
+              "source_id": "short_video_ops_postgres",
+              "backend": "postgresql",
+              "dialect": "postgres",
+              "prompt_dialect": "PostgreSQL",
+              "physical_schema": "askdata_ops",
+              "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+              "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+            }
+          },
+          {
+            "stage": "sql_execution",
+            "source_identity": {
+              "logical_database_id": "short_video_ops",
+              "source_id": "short_video_ops_postgres",
+              "backend": "postgresql",
+              "dialect": "postgres",
+              "prompt_dialect": "PostgreSQL",
+              "physical_schema": "askdata_ops",
+              "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+              "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+            },
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "success": true,
+            "error": null,
+            "via": "mcp"
+          }
+        ],
+        "tool_calls": [
+          {
+            "call_index": 1,
+            "database": "short_video_ops",
+            "arguments": {
+              "mode": "single_database_agent",
+              "transport": "mcp_in_process",
+              "tool_name": "query_short_video_ops",
+              "schema_graph_version": "09ab923d9ff6",
+              "sql_source": "model_mcp",
+              "source_identity": {
+                "logical_database_id": "short_video_ops",
+                "source_id": "short_video_ops_postgres",
+                "backend": "postgresql",
+                "dialect": "postgres",
+                "prompt_dialect": "PostgreSQL",
+                "physical_schema": "askdata_ops",
+                "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+                "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+              }
+            },
+            "sql": "SELECT\n  ac.channel_name,\n  COUNT(cce.conversion_event_id) AS conversion_event_count\nFROM askdata_ops.channel_conversion_events cce\nJOIN askdata_ops.acquisition_channels ac ON cce.channel_id = ac.channel_id\nWHERE cce.converted_at >= '2026-05-01'::timestamp\n  AND cce.converted_at < '2026-06-01'::timestamp\nGROUP BY ac.channel_name\nORDER BY conversion_event_count DESC\nLIMIT 200",
+            "success": true,
+            "row_count": 4,
+            "truncated": false,
+            "error": null
+          }
+        ],
+        "clarification": null
+      },
+      "source_case_id": "E2E-CLARIFY-START",
+      "selected_clarification_option_id": "option_1",
+      "selected_clarification_option": {
+        "id": "option_1",
+        "label": "转化事件数",
+        "description": "按渠道产生的转化事件数量从高到低排序",
+        "recommended": true
+      }
+    },
+    {
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "case_id": "E2E-EMPTY-RESULT",
+      "run_id": "3a75f233b6254caa82052bf20e383e91",
+      "trace_id": "3a75f233b6254caa82052bf20e383e91:E2E-EMPTY-RESULT",
+      "task_id": "8dd05ea847e4",
+      "query": "请列出1900年1月1日注册的用户ID和注册时间，最多20行。",
+      "scenario": "growth_ops",
+      "operation": "submit",
+      "behavior_type": "empty_result",
+      "route": "database_query",
+      "status": "completed",
+      "response_message": "查询完成",
+      "response_analysis": "查询已成功执行，当前条件下没有匹配记录。",
+      "route_reason": "用户明确要求查询特定条件下的数据库数据（用户ID和注册时间），属于新的数据查询请求。",
+      "direct_response_type": null,
+      "workflow_mode": "single_database_agent",
+      "result_validation_reason": "SQL执行成功，结果为空",
+      "standalone_query": "请列出1900年1月1日注册的用户ID和注册时间，最多20行。",
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true,
+        "sql_contains": true,
+        "tool_success": true,
+        "empty_rows": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": true,
+      "row_count": 0,
+      "result_correct": true,
+      "strict_result_correct": true,
+      "comparison_reason": "结果一致",
+      "duration_ms": 13580.204,
+      "trace": {
+        "schema_graph": {
+          "source_identity": {
+            "logical_database_id": "short_video_ops",
+            "source_id": "short_video_ops_postgres",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "askdata_ops",
+            "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+            "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+          },
+          "database": "short_video_ops",
+          "databases": [
+            "short_video_ops"
+          ],
+          "graph_version": "58a5679ec391",
+          "tables": [
+            {
+              "id": "short_video_ops.user_activations",
+              "name": "user_activations",
+              "label": "新用户激活结果",
+              "description": "新用户激活结果，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_lifecycle_snapshots",
+              "name": "user_lifecycle_snapshots",
+              "label": "用户生命周期快照",
+              "description": "用户生命周期快照，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_registrations",
+              "name": "user_registrations",
+              "label": "用户注册记录",
+              "description": "用户注册记录，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.user_retention",
+              "name": "user_retention",
+              "label": "用户留存里程碑",
+              "description": "用户留存里程碑，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            },
+            {
+              "id": "short_video_ops.users",
+              "name": "users",
+              "label": "平台用户主表",
+              "description": "平台用户主表，用于用户增长相关的查询、统计和分析。",
+              "domain": "用户增长",
+              "database": "short_video_ops"
+            }
+          ],
+          "fields": [
+            {
+              "id": "short_video_ops.users.registered_at",
+              "table_id": "short_video_ops.users",
+              "table_name": "users",
+              "sql_name": "users.registered_at",
+              "name": "registered_at",
+              "label": "注册时间",
+              "type": "日期",
+              "description": "平台用户主表中的注册时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.706527
+            },
+            {
+              "id": "short_video_ops.user_registrations.registered_at",
+              "table_id": "short_video_ops.user_registrations",
+              "table_name": "user_registrations",
+              "sql_name": "user_registrations.registered_at",
+              "name": "registered_at",
+              "label": "注册时间",
+              "type": "日期",
+              "description": "用户注册记录中的注册时间",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.693922
+            },
+            {
+              "id": "short_video_ops.user_registrations.user_id",
+              "table_id": "short_video_ops.user_registrations",
+              "table_name": "user_registrations",
+              "sql_name": "user_registrations.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "用户注册记录中的用户编号；用户产生注册记录",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.676387
+            },
+            {
+              "id": "short_video_ops.user_activations.registration_id",
+              "table_id": "short_video_ops.user_activations",
+              "table_name": "user_activations",
+              "sql_name": "user_activations.registration_id",
+              "name": "registration_id",
+              "label": "注册记录编号",
+              "type": "文本",
+              "description": "新用户激活结果中的注册记录编号；注册产生激活结果",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.630006
+            },
+            {
+              "id": "short_video_ops.users.user_id",
+              "table_id": "short_video_ops.users",
+              "table_name": "users",
+              "sql_name": "users.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "平台用户主表中的用户编号；用户对应画像、用户绑定设备、用户产生注册记录、用户对应激活结果、用户产生活跃记录、用户对应留存结果、用户获得标签、用户产生访问会话、用户对应生命周期快照、用户产生流失事件、用户收到召回触达、用户对应渠道归因、用户产生渠道转化事件、用户获得视频曝光、用户产生播放、用户产生互动、用户提交内容举报",
+              "role": "identifier",
+              "source": "retrieval",
+              "score": 0.622069
+            },
+            {
+              "id": "short_video_ops.user_retention.registration_date",
+              "table_id": "short_video_ops.user_retention",
+              "table_name": "user_retention",
+              "sql_name": "user_retention.registration_date",
+              "name": "registration_date",
+              "label": "注册日期",
+              "type": "日期",
+              "description": "用户留存里程碑中的注册日期",
+              "role": "time",
+              "source": "retrieval",
+              "score": 0.620368
+            },
+            {
+              "id": "short_video_ops.user_registrations.registration_id",
+              "table_id": "short_video_ops.user_registrations",
+              "table_name": "user_registrations",
+              "sql_name": "user_registrations.registration_id",
+              "name": "registration_id",
+              "label": "注册记录编号",
+              "type": "文本",
+              "description": "用户注册记录中的注册记录编号；注册产生激活结果",
+              "role": "identifier",
+              "source": "retrieval",
+              "score": 0.6163
+            },
+            {
+              "id": "short_video_ops.users.register_platform",
+              "table_id": "short_video_ops.users",
+              "table_name": "users",
+              "sql_name": "users.register_platform",
+              "name": "register_platform",
+              "label": "REGISTER平台",
+              "type": "文本",
+              "description": "平台用户主表中的REGISTER平台",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.612537
+            },
+            {
+              "id": "short_video_ops.user_lifecycle_snapshots.user_id",
+              "table_id": "short_video_ops.user_lifecycle_snapshots",
+              "table_name": "user_lifecycle_snapshots",
+              "sql_name": "user_lifecycle_snapshots.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "用户生命周期快照中的用户编号；用户对应生命周期快照",
+              "role": "foreign_key",
+              "source": "retrieval",
+              "score": 0.6088
+            },
+            {
+              "id": "short_video_ops.user_registrations.registration_method",
+              "table_id": "short_video_ops.user_registrations",
+              "table_name": "user_registrations",
+              "sql_name": "user_registrations.registration_method",
+              "name": "registration_method",
+              "label": "注册METHOD",
+              "type": "文本",
+              "description": "用户注册记录中的注册METHOD",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.558117
+            },
+            {
+              "id": "short_video_ops.user_registrations.platform",
+              "table_id": "short_video_ops.user_registrations",
+              "table_name": "user_registrations",
+              "sql_name": "user_registrations.platform",
+              "name": "platform",
+              "label": "平台",
+              "type": "文本",
+              "description": "用户注册记录中的平台",
+              "role": "dimension",
+              "source": "retrieval",
+              "score": 0.550955
+            },
+            {
+              "id": "short_video_ops.user_activations.user_id",
+              "table_id": "short_video_ops.user_activations",
+              "table_name": "user_activations",
+              "sql_name": "user_activations.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "新用户激活结果中的用户编号；用户对应激活结果",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            },
+            {
+              "id": "short_video_ops.user_retention.user_id",
+              "table_id": "short_video_ops.user_retention",
+              "table_name": "user_retention",
+              "sql_name": "user_retention.user_id",
+              "name": "user_id",
+              "label": "用户编号",
+              "type": "文本",
+              "description": "用户留存里程碑中的用户编号；用户对应留存结果",
+              "role": "foreign_key",
+              "source": "relation_key",
+              "score": 1.0
+            }
+          ],
+          "joins": [
+            {
+              "description": "用户对应激活结果",
+              "left_field": "user_id",
+              "left_table": "short_video_ops.users",
+              "left_table_name": "users",
+              "relation_type": "foreign_key",
+              "right_field": "user_id",
+              "right_table": "short_video_ops.user_activations",
+              "right_table_name": "user_activations"
+            },
+            {
+              "description": "用户对应生命周期快照",
+              "left_field": "user_id",
+              "left_table": "short_video_ops.users",
+              "left_table_name": "users",
+              "relation_type": "foreign_key",
+              "right_field": "user_id",
+              "right_table": "short_video_ops.user_lifecycle_snapshots",
+              "right_table_name": "user_lifecycle_snapshots"
+            },
+            {
+              "description": "注册产生激活结果",
+              "left_field": "registration_id",
+              "left_table": "short_video_ops.user_registrations",
+              "left_table_name": "user_registrations",
+              "relation_type": "foreign_key",
+              "right_field": "registration_id",
+              "right_table": "short_video_ops.user_activations",
+              "right_table_name": "user_activations"
+            },
+            {
+              "description": "用户对应留存结果",
+              "left_field": "user_id",
+              "left_table": "short_video_ops.users",
+              "left_table_name": "users",
+              "relation_type": "foreign_key",
+              "right_field": "user_id",
+              "right_table": "short_video_ops.user_retention",
+              "right_table_name": "user_retention"
+            }
+          ]
+        },
+        "execution_log": [
+          {
+            "stage": "mcp_tool_call",
+            "success": true,
+            "call_index": 1,
+            "tool": "query_short_video_ops",
+            "arguments": {
+              "sql": "SELECT user_id, registered_at FROM askdata_ops.user_registrations WHERE registered_at >= '1900-01-01' AND registered_at < '1900-01-02' LIMIT 20"
+            },
+            "query_contract": {
+              "grain": "实体明细",
+              "source_tables": [
+                "user_registrations"
+              ],
+              "filters": [
+                {
+                  "phrase": "1900年1月1日注册",
+                  "field": "user_registrations.registered_at",
+                  "operator": "范围",
+                  "value": "['1900-01-01', '1900-01-02')"
+                }
+              ],
+              "metrics": [],
+              "output_columns": [
+                "user_id",
+                "registered_at"
+              ],
+              "constraint_plan": {
+                "filter_constraints": [],
+                "time_constraints": [
+                  {
+                    "field": "user_registrations.registered_at",
+                    "operator": "day_equals",
+                    "value": "1900-01-01",
+                    "source": "user_requirement",
+                    "confidence": 1.0
+                  }
+                ],
+                "group_constraints": [],
+                "join_constraints": [],
+                "conditional_filter_rules": [],
+                "warnings": [],
+                "time_field_resolution": {
+                  "date": "1900-01-01",
+                  "source": "validated_sql_sources_and_schema",
+                  "status": "resolved",
+                  "candidates": [
+                    "user_registrations.registered_at"
+                  ],
+                  "selected_fields": [
+                    "user_registrations.registered_at"
+                  ],
+                  "sql_source_tables": [
+                    "user_registrations"
+                  ],
+                  "retrieval_candidates": [
+                    "user_registrations.registered_at",
+                    "users.registered_at"
+                  ]
+                }
+              },
+              "metric_plan": {
+                "metrics": [],
+                "formulas": [],
+                "joins": [],
+                "selected_sources": [],
+                "warnings": []
+              },
+              "constraint_validation": {
+                "status": "PASS",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": []
+              }
+            },
+            "result": {
+              "database": "short_video_ops",
+              "sql": "SELECT user_id, registered_at FROM askdata_ops.user_registrations WHERE registered_at >= '1900-01-01' AND registered_at < '1900-01-02' LIMIT 20",
+              "success": true,
+              "columns": [
+                "user_id",
+                "registered_at"
+              ],
+              "rows": [],
+              "row_count": 0,
+              "truncated": false,
+              "execution_ms": 2628.074,
+              "error": null
+            },
+            "reason": "根据查询契约生成并执行只读SQL",
+            "sql_validation": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "invalid_columns": []
+            },
+            "sql_validation_attempts": [
+              {
+                "status": "PASS",
+                "errors": [],
+                "warnings": [],
+                "invalid_columns": []
+              }
+            ],
+            "sql_round_numeric_repair": null,
+            "sql_bigint_boolean_repair": null,
+            "sql_order_alias_repair": null,
+            "metric_planning": {
+              "metrics": [],
+              "formulas": [],
+              "joins": [],
+              "selected_sources": [],
+              "warnings": []
+            },
+            "metric_validation": {
+              "errors": []
+            },
+            "metric_validation_attempts": [
+              {
+                "errors": []
+              }
+            ],
+            "constraint_validation": {
+              "status": "PASS",
+              "missing_constraints": [],
+              "missing_group_constraints": [],
+              "unsupported_constraints": [],
+              "join_violations": [],
+              "warnings": []
+            },
+            "constraint_validation_attempts": [
+              {
+                "status": "PASS",
+                "missing_constraints": [],
+                "missing_group_constraints": [],
+                "unsupported_constraints": [],
+                "join_violations": [],
+                "warnings": []
+              }
+            ],
+            "sql_context": {
+              "logical_database_id": "short_video_ops",
+              "source_id": "short_video_ops_postgres",
+              "backend": "postgresql",
+              "dialect": "postgres",
+              "prompt_dialect": "PostgreSQL",
+              "physical_schema": "askdata_ops",
+              "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+              "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+            }
+          },
+          {
+            "stage": "sql_execution",
+            "source_identity": {
+              "logical_database_id": "short_video_ops",
+              "source_id": "short_video_ops_postgres",
+              "backend": "postgresql",
+              "dialect": "postgres",
+              "prompt_dialect": "PostgreSQL",
+              "physical_schema": "askdata_ops",
+              "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+              "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+            },
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "success": true,
+            "error": null,
+            "via": "mcp"
+          }
+        ],
+        "tool_calls": [
+          {
+            "call_index": 1,
+            "database": "short_video_ops",
+            "arguments": {
+              "mode": "single_database_agent",
+              "transport": "mcp_in_process",
+              "tool_name": "query_short_video_ops",
+              "schema_graph_version": "58a5679ec391",
+              "sql_source": "model_mcp",
+              "source_identity": {
+                "logical_database_id": "short_video_ops",
+                "source_id": "short_video_ops_postgres",
+                "backend": "postgresql",
+                "dialect": "postgres",
+                "prompt_dialect": "PostgreSQL",
+                "physical_schema": "askdata_ops",
+                "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+                "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+              }
+            },
+            "sql": "SELECT user_id, registered_at FROM askdata_ops.user_registrations WHERE registered_at >= '1900-01-01' AND registered_at < '1900-01-02' LIMIT 20",
+            "success": true,
+            "row_count": 0,
+            "truncated": false,
+            "error": null
+          }
+        ],
+        "clarification": null
+      },
+      "generated_sql": "SELECT user_id, registered_at FROM askdata_ops.user_registrations WHERE registered_at >= '1900-01-01' AND registered_at < '1900-01-02' LIMIT 20",
+      "strict_comparison_reason": "严格结果一致",
+      "gold_result_source": "execution",
+      "generated_result_rows": 0
+    },
+    {
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "case_id": "E2E-FAILURE-PREPROCESS",
+      "run_id": "3a75f233b6254caa82052bf20e383e91",
+      "trace_id": "3a75f233b6254caa82052bf20e383e91:E2E-FAILURE-PREPROCESS",
+      "task_id": "fb38f64105bd",
+      "query": "受控故障：在工作流预处理阶段注入失败，检查服务入口返回。",
+      "scenario": "growth_ops",
+      "operation": "submit_with_injected_workflow_error",
+      "behavior_type": "controlled_failure",
+      "route": "database_query",
+      "status": "failed",
+      "response_message": "处理停止：preprocess失败",
+      "response_analysis": "M0 controlled workflow failure",
+      "route_reason": "未使用本地语义兜底",
+      "direct_response_type": null,
+      "workflow_mode": "failed_explicitly",
+      "result_validation_reason": null,
+      "standalone_query": null,
+      "route_correct": true,
+      "status_correct": true,
+      "behavior_checks": {
+        "route": true,
+        "status": true,
+        "sql_present": true,
+        "failure_stage": true,
+        "workflow_mode": true
+      },
+      "behavior_correct": true,
+      "sql_execution_success": false,
+      "row_count": 0,
+      "result_correct": null,
+      "strict_result_correct": null,
+      "comparison_reason": "result scoring not requested",
+      "duration_ms": 0.645,
+      "trace": {
+        "schema_graph": null,
+        "execution_log": [
+          {
+            "stage": "preprocess",
+            "success": false,
+            "error": "M0 controlled workflow failure"
+          }
+        ],
+        "tool_calls": [],
+        "clarification": null
+      }
+    }
+  ]
+}

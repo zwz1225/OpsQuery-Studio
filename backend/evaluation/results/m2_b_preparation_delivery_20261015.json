@@ -1,0 +1,155 @@
+{
+  "stage": "M2 B1 preflight and source inventory implementation delivery",
+  "run_status": "complete",
+  "recorded_at": "2026-10-15T13:31:39.239618+00:00",
+  "packages": [
+    {
+      "filename": "M2_B_preflight_sync_20261015.zip",
+      "path": "E:\\PythonLearn\\askdata_studio_ops_release\\M2_B_preflight_sync_20261015.zip",
+      "size_bytes": 131408,
+      "sha256": "1cb2a91f834298a4e653bfd277d83f46eb62c8047f679ce33c8727d1196da82a",
+      "zip_crc_verified": true
+    },
+    {
+      "filename": "M2_B_source_data_20261015.zip",
+      "path": "E:\\PythonLearn\\askdata_studio_ops_release\\M2_B_source_data_20261015.zip",
+      "size_bytes": 226816643,
+      "sha256": "4a07f17fa0b999d81c48b569dd78120595382cb3f9a45eba15a8f5fd016b0bce",
+      "zip_crc_verified": true
+    }
+  ],
+  "code_files": [
+    {
+      "path": "backend/evaluation/M2_A_EVALUATION_PROTOCOL.md",
+      "sha256": "8f85e190eb8900fed073856f4e2c88770691f9347c7d46ca482a2cf61b6c376b"
+    },
+    {
+      "path": "backend/evaluation/M2_B_CONTROLLED_IMPORT_PLAN.md",
+      "sha256": "df212f4d6c86ec416244bc38207dd146ccf51caa13f411a859a3f24e9a000fa5"
+    },
+    {
+      "path": "backend/evaluation/M2_B_PREPARATION_ACCEPTANCE.md",
+      "sha256": "eba5000015d80f63d9773ffd6ea995158df4833073febd308c050df3e9195f26"
+    },
+    {
+      "path": "backend/evaluation/bird_protocol.py",
+      "sha256": "f1a60f00ae8bd8f757b28f3139e9be83fa196e8c981c0884e41315bb4c5e6b91"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_b_import_spec_v1.json",
+      "sha256": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/development80.json",
+      "sha256": "237b6f09f8b7ee9965f9e18b3ab2195a79b5ad949e55e6d56868a3266df29b10"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/holdout30.json",
+      "sha256": "d0bfb5d7fe63555fd00632c875ed3970e7282e754a4d03030a0af9f507f3141c"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/inputs/development80.jsonl",
+      "sha256": "6760724e98b6da967ac5ebb2698c4e5cab385875bd150ad36a3b252ffdc52f03"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/inputs/holdout30.jsonl",
+      "sha256": "1719472c9e7ab1b5f5c6aafa24f2625b40f1a3b6d7bf9f6a5dbeed6bb60edf41"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/inputs/smoke8.jsonl",
+      "sha256": "795fde65943e229ae96676d657cf05be26440cce62c66c078175e934a1323fa7"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/protocol.json",
+      "sha256": "174a4d909131d0b8333d446f5bcb0815fe27ec6023a98e51729f3096f975ac77"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/reference/official_calculate_ex.py.txt",
+      "sha256": "4a777188f2924dd194dd84d84dc85a5b9ec5631de0c8514dddb7990347528b92"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/reference/official_execute_sql.py.txt",
+      "sha256": "6f15188e26408a8d2642a7434a2c7998b274d66cb68f9dc32a0fbd478b329068"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/scorer/gold110.jsonl",
+      "sha256": "5189d2fa4700cb2f9e1ccbe5b80d0b374cd24d162a68f11fb909346e02dc349f"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/smoke8.json",
+      "sha256": "fc3983b66f9cee0b7ab24c08cf9ca0c69e6c48c2cdd0b7e6bf7206a74e542a91"
+    },
+    {
+      "path": "backend/evaluation/cases/bird_mini_dev/m2_pg_v1/source_lineage.json",
+      "sha256": "90f041a22fa37e687d8ca6da82ae375c3a6285eac3cfa16e671494cd762223c3"
+    },
+    {
+      "path": "backend/scripts/freeze_m2_bird_protocol.py",
+      "sha256": "98c45535cd283dc7b15006d8110a509dd666d0b4b877484f7c8a5f346ae879c2"
+    },
+    {
+      "path": "backend/scripts/m2_b_common.py",
+      "sha256": "47d4696ddd7a61f2a6c60b29ba4785f31eac1929c484d1b69d30d752745affef"
+    },
+    {
+      "path": "backend/scripts/m2_b_dump.py",
+      "sha256": "116345a7e0a8f3a6dc49c305b899f47655cc5d6416adcdcc8eb6bce6b0e6944f"
+    },
+    {
+      "path": "backend/scripts/preflight_m2_b_server.py",
+      "sha256": "7bf667a930b8e54d492ab48cf15bbea48f44c76c25ee60b33f7438bf59898bec"
+    },
+    {
+      "path": "backend/scripts/preflight_m2_b_source.py",
+      "sha256": "1ea6fdb1618b71c54e43923694cfbb6d33b43017eaedac6c55e616ab69fc446f"
+    },
+    {
+      "path": "backend/tests/test_m2_b_preparation.py",
+      "sha256": "d49a79a8f98220a821b57aeb445e7660ad456f23c8e4d1e3ed27aab2694caf5a"
+    },
+    {
+      "path": "backend/tests/test_m2_bird_protocol.py",
+      "sha256": "58e3e571453cdce245648adb612a5f2de4a51194bf407068b7a57c0ff2c1e068"
+    }
+  ],
+  "source_payload_file_count": 80,
+  "source_payload_uncompressed_bytes": 1002413988,
+  "source_summary": {
+    "column_count": 798,
+    "control_statement_counts": {
+      "column_default": 24,
+      "constraint": 155,
+      "create_sequence": 24,
+      "create_table": 75,
+      "index": 25,
+      "owner": 99,
+      "search_path": 1,
+      "sequence_owned_by": 24,
+      "sequence_value": 24,
+      "session_setting": 11
+    },
+    "logical_database_count": 11,
+    "question_count": 500,
+    "sequence_count": 24,
+    "source_row_count": 3898114,
+    "table_count": 75
+  },
+  "import_spec_sha256": "46bb3555b5906478264c81b6ebc8ba2e86c6c3136bc3d8e3ecfc079770b0eede",
+  "local_source_artifact_sha256": {
+    "source_preflight.json": "2b5ee790d3e4ed83998b095f6339b3954855380322ac91280d765235a350048e",
+    "import_manifest.json": "c32dbeeb015359126e393aabbe470ed4052463e69a407d7b2ba158f4349b8879",
+    "preparation_review.json": "5431cf4184812a1f89fcb6c28ee738cbb0f8743dbd903f2affcc7f168e7c632f"
+  },
+  "tests": {
+    "command": "python -m unittest discover -s tests -p 'test_m2_*.py' -v",
+    "passed": 25,
+    "failed": 0,
+    "coverage": "11 new M2 B tests plus 14 M2 A tests; PostgreSQL preflight tested with fakes, not a server integration run"
+  },
+  "server_preflight_executed": false,
+  "database_created": false,
+  "database_imported": false,
+  "target_data_verified": false,
+  "new_model_request_count": 0,
+  "next": "Upload code package only; run tests and read-only server preflight before uploading source payload"
+}

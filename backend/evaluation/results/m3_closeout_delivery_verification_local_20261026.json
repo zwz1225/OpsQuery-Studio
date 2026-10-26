@@ -1,0 +1,61 @@
+{
+  "stage": "M3 closeout delivery verification",
+  "date": "2026-10-26",
+  "run_status": "complete",
+  "original_report_reference_checks": 60,
+  "frozen_bundle_count": 12,
+  "source_hash_checks": 24,
+  "local_m3_link_checks": 39,
+  "app_files_scanned": 63,
+  "document_files": [
+    {
+      "path": "backend/evaluation/M3_EXPERIMENT_LEDGER_20261026.md",
+      "sha256": "6a8b389c769f98ee1a29351b3a64971a9ebb0cbc76d932a6d4dc91d694502dbf"
+    },
+    {
+      "path": "backend/evaluation/M3_RUNTIME_ACTIVATION_AUDIT_20261026.md",
+      "sha256": "550608b1546f6316e9e0a67512d2e3987d2f018e8ba2b0815917c4553fd66bce"
+    },
+    {
+      "path": "backend/evaluation/M3_FINAL_ACCEPTANCE_20261026.md",
+      "sha256": "64db3ef0cbb6817dda5d4dedfacd7b055b3076ab93f17f2d2cab3d8032850c59"
+    },
+    {
+      "path": "backend/evaluation/M3_OPEN_ISSUES_20261026.md",
+      "sha256": "44d72ff37eaf81de6f8aec7a631488212dd73115b369b3df6b22c00097448811"
+    },
+    {
+      "path": "backend/evaluation/README.md",
+      "sha256": "17605a42f1c9530f8891add706fbc700a5e5d567ea94022103c181425c30bac5"
+    },
+    {
+      "path": "AskData Studio 运营场景整体架构.md",
+      "sha256": "b638da0933670e4c70cd850ea3d3200c418d6976ffc18ababf95142660b94a8b"
+    },
+    {
+      "path": "AskData_Studio_后续项目改进方案.md",
+      "sha256": "b0c172f981f55d01667b314dbfabb2b543f4682fb02b513c6d57b1c97f21f43f"
+    },
+    {
+      "path": "V2版本主要流程解析.md",
+      "sha256": "696000b97412688b9f7b4edc4ff08bcfd434f3d182fac5632ca2d080bcd8e883"
+    },
+    {
+      "path": "后续参考路线.md",
+      "sha256": "4da5c3836382ba688aa24e95fd2805a1b1699138270d36c35ead420359ee238b"
+    },
+    {
+      "path": "backend/scripts/audit_m3_closeout.py",
+      "sha256": "0e198d640e6056a1f42248e34e4010316c77c87ac2f75e376018021576ee526e"
+    },
+    {
+      "path": "backend/evaluation/results/m3_closeout_audit_local_20261026_v2.json",
+      "sha256": "09a0e51c9666c41c894752130bc3ef3db73aa52186421a1166a90e9eeff8c32d"
+    }
+  ],
+  "business_source_changed": false,
+  "default_flags_changed": false,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "m4_started": false
+}

@@ -1,0 +1,53 @@
+{
+  "stage": "M3 E01 output contract local implementation checks",
+  "date": "2026-10-21",
+  "run_status": "complete",
+  "test_modules": [
+    "test_m3_output_contract",
+    "test_m2_development_diagnostics",
+    "test_m2_sql_repair",
+    "test_m2_intent_candidate",
+    "test_m2_intent_v2",
+    "test_m2_intent_v3",
+    "test_m2_intent_v4",
+    "test_m2_schema_coverage",
+    "test_m2_source_semantics",
+    "test_m2_native_replay",
+    "test_m2_units_context",
+    "test_m2_c_bird_runtime",
+    "test_m2_grain_diagnostics"
+  ],
+  "tests_run": 309,
+  "historical_provenance_tests_run": 6,
+  "historical_provenance_context": "Actual preserved v4 files, using manifest.BASE only inside historical unit tests",
+  "historical_provenance_failures": [],
+  "skipped": [
+    {
+      "test": "test_hard_supervisor_timeout (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    },
+    {
+      "test": "test_real_filesystem_network_process_and_env_isolation (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    },
+    {
+      "test": "test_real_indexer_builds_without_project_file_access (test_m2_c_bird_runtime.LinuxIsolationTest)",
+      "reason": "Linux kernel isolation is verified on the server"
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "preserved_baseline_file_count": 143,
+  "preserved_baseline_verified": true,
+  "changed_frozen_execution_paths": [
+    "evaluation/bird/case_worker.py",
+    "evaluation/bird/diagnostic_runner.py"
+  ],
+  "protected_source_files_unchanged_count": 141,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "score_improvement_verified": false,
+  "formal_holdout_rerun": false,
+  "frozen_controller_or_scoring_changed": false,
+  "caveat": "Windows fake-broker tests exercise the real Agent loop, not Linux kernel isolation or PostgreSQL execution."
+}

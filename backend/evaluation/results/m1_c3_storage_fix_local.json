@@ -1,0 +1,29 @@
+{
+  "run_status": "complete",
+  "recorded_at": "2026-10-10T05:38:51.747622+00:00",
+  "scope": "C3 report storage failure handling; server acceptance pending",
+  "tests": [
+    {
+      "command": "python -m unittest discover -s tests -p test_m1_c3_report_storage.py -v",
+      "passed": 8
+    },
+    {
+      "command": "python -m unittest discover -s tests -p test_postgres_connections.py -q",
+      "passed": 31
+    },
+    {
+      "command": "python -m unittest discover -s tests -p test_postgres_runtime.py -q",
+      "passed": 26
+    }
+  ],
+  "test_pass_count": 65,
+  "remote_postgresql_connected": false,
+  "new_model_request_count": 0,
+  "original_c3_archive_sha256": "347d6977ef3198e6f1623a3cffd7b56ba0a5aa169840c9f12b34bb02ebcfb217",
+  "modified_file_sha256": {
+    "scripts/check_m1_c3_postgres_runtime.py": "6459fcb7bf457e70194f029dc8663283dd1eaadabbc5fd7833327e413c6fa910",
+    "app/datasources/postgres_connections.py": "26b08a853c6f691a21a3f11b615f6caea7eb6eb22ab10a22a3e544ac1146f0a1",
+    "tests/test_m1_c3_report_storage.py": "d8a7f389fcbe906006c5df066db545b940860fd44c467f415614bff9d526596b",
+    "evaluation/M1_C3_STORAGE_RECOVERY.md": "476fb08b3cb5d9fdcf9508e659e740c1cc30688bcce764bf02d04bfcddeff06f"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "stage": "M3 E02 orphan-key qualifier scope",
+  "run_status": "complete",
+  "date": "2026-10-22",
+  "prior_review_sha256": "d03bcb1e9c384a3237484a7d1574fce6ce1baa257570791ebad794e24aabf472",
+  "orphan_rows": 16,
+  "orphan_distinct_keys": 3,
+  "orphan_rows_by_language": {
+    "French": 3,
+    "German": 3,
+    "Italian": 3,
+    "Japanese": 2,
+    "Portuguese (Brazil)": 2,
+    "Spanish": 3
+  },
+  "explicit_public_language": "German",
+  "german_rows": 28891,
+  "german_orphan_rows": 3,
+  "database_constraint_proven": false,
+  "runtime_relation_enabled": false,
+  "answer_computed": false,
+  "native_ex_computed": false,
+  "raw_uuid_values_exported": false,
+  "new_model_request_count": 0,
+  "postgresql_connected": false,
+  "conclusion": "Key inclusion is scoped source evidence, not a declared FK or permission to choose join type automatically"
+}

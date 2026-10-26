@@ -1,0 +1,912 @@
+{
+  "stage": "M2 final acceptance: trusted external baseline and evaluation calibration",
+  "recorded_at": "2026-10-19T10:27:01.765787+00:00",
+  "status": "complete",
+  "milestone": "M2",
+  "acceptance_basis": "Verified protocol/source/Gold isolation/budget/frozen candidate/registered attempt/native fixed-denominator scoring and archived failures; no retrospective accuracy threshold.",
+  "candidate_id": "m2_v4_97342997118d809666147b0d943f0a676fbb65e220fe5bbc62d89e4e2ecfbbfc",
+  "candidate_sha256": "97342997118d809666147b0d943f0a676fbb65e220fe5bbc62d89e4e2ecfbbfc",
+  "candidate_file_sha256": "a14e30b6bcc0b51075f0f5da5607a56ba781a4ce0557444b69c14337a149d077",
+  "attempt_id": "1218483158c643a085e7b9360dd4a7d7",
+  "formal_report_sha256": "9c8afa202a10ac9bf7f396d37d7efa4a739fe6d7f3de5bc25414ec04a0a5b008",
+  "formal_log_sha256": "7146bf74d892890b9eedbb2eb0f21b86c2b99dc36f4fb10cc0c614f05f9d690d",
+  "review_report_sha256": "2a276e9f8b6e2a19243d08c713e3383939f97cee77f304181e8395aaf1a0b8f9",
+  "check_count": 1166,
+  "check_pass_count": 1166,
+  "ledger": {
+    "attempt_id": "1218483158c643a085e7b9360dd4a7d7",
+    "event_count": 97,
+    "last_event": "completed",
+    "last_event_sha256": "6dcfecb47a28cf8acb5fb8a375236729beab535ac9cd4ca61658a04d8acd1372"
+  },
+  "development": {
+    "case_count": 80,
+    "match_count": 50,
+    "match_rate": 0.625,
+    "scope": "Iterated development diagnostics, not formal holdout"
+  },
+  "holdout": {
+    "case_count": 30,
+    "ex_pass_count": 19,
+    "primary_ex": 0.6333333333333333,
+    "complete_result_count": 30,
+    "failed_case_count": 11,
+    "by_database": {
+      "european_football_2": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "scored": 10
+        },
+        "primary_denominator": 10,
+        "ex_pass_count": 9,
+        "primary_ex": 0.9,
+        "ex_given_complete_results": 0.9,
+        "first_sql_execution_success_count": 10,
+        "final_sql_execution_success_count": 10,
+        "clarification_rate": 0.0
+      },
+      "formula_1": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "scored": 10
+        },
+        "primary_denominator": 10,
+        "ex_pass_count": 6,
+        "primary_ex": 0.6,
+        "ex_given_complete_results": 0.6,
+        "first_sql_execution_success_count": 10,
+        "final_sql_execution_success_count": 10,
+        "clarification_rate": 0.0
+      },
+      "thrombosis_prediction": {
+        "case_count": 10,
+        "complete_result_count": 10,
+        "status_counts": {
+          "scored": 10
+        },
+        "primary_denominator": 10,
+        "ex_pass_count": 4,
+        "primary_ex": 0.4,
+        "ex_given_complete_results": 0.4,
+        "first_sql_execution_success_count": 10,
+        "final_sql_execution_success_count": 10,
+        "clarification_rate": 0.0
+      }
+    },
+    "by_difficulty": {
+      "simple": {
+        "case_count": 9,
+        "complete_result_count": 9,
+        "status_counts": {
+          "scored": 9
+        },
+        "primary_denominator": 9,
+        "ex_pass_count": 6,
+        "primary_ex": 0.6666666666666666,
+        "ex_given_complete_results": 0.6666666666666666,
+        "first_sql_execution_success_count": 9,
+        "final_sql_execution_success_count": 9,
+        "clarification_rate": 0.0
+      },
+      "moderate": {
+        "case_count": 15,
+        "complete_result_count": 15,
+        "status_counts": {
+          "scored": 15
+        },
+        "primary_denominator": 15,
+        "ex_pass_count": 9,
+        "primary_ex": 0.6,
+        "ex_given_complete_results": 0.6,
+        "first_sql_execution_success_count": 15,
+        "final_sql_execution_success_count": 15,
+        "clarification_rate": 0.0
+      },
+      "challenging": {
+        "case_count": 6,
+        "complete_result_count": 6,
+        "status_counts": {
+          "scored": 6
+        },
+        "primary_denominator": 6,
+        "ex_pass_count": 4,
+        "primary_ex": 0.6666666666666666,
+        "ex_given_complete_results": 0.6666666666666666,
+        "first_sql_execution_success_count": 6,
+        "final_sql_execution_success_count": 6,
+        "clarification_rate": 0.0
+      }
+    }
+  },
+  "merged_development_holdout_score": null,
+  "official_leaderboard_score": false,
+  "issues": {
+    "BIRD-PG-1039": {
+      "category": "numeric_path_and_native_precision",
+      "evidence": "预测AVG(long_shots)返回Decimal 61.5714285714285714；参考SUM::REAL/COUNT(date)返回float。当前差异体现原生数值路径，AVG的空值分母规则与参考也非普遍等价。",
+      "direction": "通用数值路径兼容与公开公式保真；保持本次原生失败，不添加浮点容差。",
+      "case_id": "BIRD-PG-1039",
+      "database_id": "european_football_2",
+      "difficulty": "simple",
+      "generated_sql": "SELECT AVG(pa.long_shots) FROM player p JOIN player_attributes pa ON p.player_api_id = pa.player_api_id WHERE p.player_name = 'Ahmed Samir Farag'",
+      "frozen_gold_sql": "SELECT CAST(SUM(t2.long_shots) AS REAL) / NULLIF(COUNT(t2.\"date\"), 0) FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.player_name = 'Ahmed Samir Farag'",
+      "original_question": "Find the average number of long-shot done by Ahmed Samir Farag.",
+      "official_evidence": "average number of long shot = DIVIDE(SUM(long_shots), COUNT(player_fifa_api_id));",
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 1,
+        "gold_only_tuple_count": 1,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "decimal",
+                "61.5714285714285714"
+              ]
+            ]
+          ],
+          "utf8_bytes": 35,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "float",
+                "0x1.ec92492492492p+5"
+              ]
+            ]
+          ],
+          "utf8_bytes": 34,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": true,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_comparison": true,
+      "scoring_contribution": 0,
+      "hypothesis_scope": "Trusted post-run review; not a model input or scoring override"
+    },
+    "BIRD-PG-0897": {
+      "category": "output_field_group_and_aggregation",
+      "evidence": "预测将forename/surname合并为一列，输出3列；参考分别输出姓名两列，共4列。同时SUM(wins)与参考COUNT(wins)/wins>=1口径不同。本次都返回同一车手，列形态差异足以导致原生失败。",
+      "direction": "输出字段组与计数/求和角色；不能仅靠列别名处理。",
+      "case_id": "BIRD-PG-0897",
+      "database_id": "formula_1",
+      "difficulty": "moderate",
+      "generated_sql": "SELECT d.forename || ' ' || d.surname AS full_name, d.nationality, MAX(ds.points) AS max_points FROM drivers d JOIN driverstandings ds ON d.driverid = ds.driverid GROUP BY d.driverid, d.forename, d.surname, d.nationality ORDER BY SUM(ds.wins) DESC NULLS LAST LIMIT 1",
+      "frozen_gold_sql": "SELECT T1.forename, T1.surname, T1.nationality, MAX(T2.points) FROM drivers AS T1 INNER JOIN driverStandings AS T2 ON T2.driverId = T1.driverId WHERE T2.wins >= 1 GROUP BY T1.forename, T1.surname, T1.nationality ORDER BY COUNT(T2.wins) DESC NULLS LAST LIMIT 1",
+      "original_question": "Name the driver with the most winning. Mention his nationality and what is his maximum point scores.",
+      "official_evidence": "Full name of the driver refers to drivers.forename and drivers.surname; the most winning refers to MAX(COUNT(wins)); average point scores refers to MAX(points);",
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "column_count_differs",
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 3,
+        "gold_column_count": 4,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 1,
+        "gold_only_tuple_count": 1,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "Michael Schumacher"
+              ],
+              [
+                "text",
+                "German"
+              ],
+              [
+                "float",
+                "0x1.2800000000000p+7"
+              ]
+            ]
+          ],
+          "utf8_bytes": 82,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "Michael"
+              ],
+              [
+                "text",
+                "Schumacher"
+              ],
+              [
+                "text",
+                "German"
+              ],
+              [
+                "float",
+                "0x1.2800000000000p+7"
+              ]
+            ]
+          ],
+          "utf8_bytes": 93,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_comparison": true,
+      "scoring_contribution": 0,
+      "hypothesis_scope": "Trusted post-run review; not a model input or scoring override"
+    },
+    "BIRD-PG-0928": {
+      "category": "relationship_rank_role_and_reference_shape",
+      "evidence": "预测driverstandings.position=1并仅返回driverref；参考results.rank=1并返回forename、surname、driverref。本次返回的车手也不同。题面要求reference name而参考增加姓名列，另记参考形态差异。",
+      "direction": "关联表/排名字段角色，并独立记录参考输出形态问题。",
+      "case_id": "BIRD-PG-0928",
+      "database_id": "formula_1",
+      "difficulty": "moderate",
+      "generated_sql": "SELECT d.driverref\nFROM drivers d\nJOIN driverstandings ds ON d.driverid = ds.driverid\nJOIN races r ON ds.raceid = r.raceid\nWHERE r.name = 'Canadian Grand Prix'\n  AND r.year = 2007\n  AND ds.position = 1",
+      "frozen_gold_sql": "SELECT T3.forename, T3.surname, T3.driverRef FROM races AS T1 INNER JOIN results AS T2 ON T2.raceId = T1.raceId INNER JOIN drivers AS T3 ON T3.driverId = T2.driverId WHERE T1.name = 'Canadian Grand Prix' AND T2.rank = 1 AND T1.year = 2007",
+      "original_question": "Which driver ranked the first in the Canadian Grand Prix in 2007? Please give his reference name.",
+      "official_evidence": "reference name refers to driverRef; Canadian Grand Prix refers to races.name = 'Canadian Grand Prix';",
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "column_count_differs",
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 3,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 1,
+        "gold_only_tuple_count": 1,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "hamilton"
+              ]
+            ]
+          ],
+          "utf8_bytes": 21,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "Fernando"
+              ],
+              [
+                "text",
+                "Alonso"
+              ],
+              [
+                "text",
+                "alonso"
+              ]
+            ]
+          ],
+          "utf8_bytes": 57,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_comparison": true,
+      "scoring_contribution": 0,
+      "hypothesis_scope": "Trusted post-run review; not a model input or scoring override"
+    },
+    "BIRD-PG-0962": {
+      "category": "mixed_numerator_denominator_grain",
+      "evidence": "分子按比赛结果行计数，分母COUNT(DISTINCT driverid)，参考分母COUNT(*)。第一次函数错误已修复，最终SQL可执行但分子分母粒度仍不一致。",
+      "direction": "公开百分数分子/分母总体一致性，不按题号修正。",
+      "case_id": "BIRD-PG-0962",
+      "database_id": "formula_1",
+      "difficulty": "challenging",
+      "generated_sql": "SELECT CAST(COUNT(CASE WHEN EXTRACT(YEAR FROM d.dob) < 1985 AND r.laps > 50 THEN 1 END) AS REAL) * 100 / NULLIF(COUNT(DISTINCT r.driverid), 0) AS percentage FROM results r JOIN drivers d ON r.driverid = d.driverid WHERE r.raceid IN (SELECT raceid FROM races WHERE EXTRACT(YEAR FROM date) BETWEEN 2000 AND 2005)",
+      "frozen_gold_sql": "SELECT CAST(SUM(CASE WHEN TO_CHAR(CAST(T3.dob AS TIMESTAMP), 'YYYY') < '1985' AND T1.laps > 50 THEN 1 ELSE 0 END) AS REAL) * 100 / NULLIF(COUNT(*), 0) FROM results AS T1 INNER JOIN races AS T2 ON T1.raceId = T2.raceId INNER JOIN drivers AS T3 ON T1.driverId = T3.driverId WHERE T2.year BETWEEN 2000 AND 2005",
+      "original_question": "From 2000 to 2005, what percentage of drivers who were born before 1985 and the lap numbers were over 50?",
+      "official_evidence": "born before 1985 refers to year(dob)<1985; in 2000 to 2005 refers to year between 2000 and 2005; percentage = Divide(COUNT(driverId where year (dob) <1985 and laps >50),COUNT(DriverID where year between 2000 and 2005) *100;",
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 1,
+        "gold_only_tuple_count": 1,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "float",
+                "0x1.3e07627627627p+11"
+              ]
+            ]
+          ],
+          "utf8_bytes": 35,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "float",
+                "0x1.0389fb3aa1f63p+6"
+              ]
+            ]
+          ],
+          "utf8_bytes": 34,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_comparison": true,
+      "scoring_contribution": 0,
+      "hypothesis_scope": "Trusted post-run review; not a model input or scoring override"
+    },
+    "BIRD-PG-0964": {
+      "category": "public_evidence_reference_literal_conflict",
+      "evidence": "官方evidence明确nationality='America'，预测照此筛选为空；参考用'American'并返回157行。此次canonical_lookup.probe_count=0，没有执行规范值探测。",
+      "direction": "单列公开evidence与参考字面值冲突；后续只能根据授权数据值核实，不能向模型注入Gold字面值。",
+      "case_id": "BIRD-PG-0964",
+      "database_id": "formula_1",
+      "difficulty": "simple",
+      "generated_sql": "SELECT code FROM drivers WHERE nationality = 'America'",
+      "frozen_gold_sql": "SELECT code FROM drivers WHERE Nationality = 'American'",
+      "original_question": "List out the code for drivers who have nationality in America.",
+      "official_evidence": "nationality = 'America'",
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_empty_gold_nonempty",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 0,
+        "gold_row_count": 157,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 0,
+        "gold_unique_tuple_count": 3,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 3,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "SPE"
+              ]
+            ],
+            [
+              [
+                "null"
+              ]
+            ],
+            [
+              [
+                "text",
+                "RSS"
+              ]
+            ]
+          ],
+          "utf8_bytes": 42,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": true,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_comparison": false,
+      "scoring_contribution": 0,
+      "hypothesis_scope": "Trusted post-run review; not a model input or scoring override"
+    },
+    "BIRD-PG-1153": {
+      "category": "table_entity_role_alignment",
+      "evidence": "预测使用examination.diagnosis并关联laboratory，结果为空；参考从patient.diagnosis关联laboratory，返回60行。",
+      "direction": "区分实体主表与检查记录表的相同字段角色。",
+      "case_id": "BIRD-PG-1153",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "simple",
+      "generated_sql": "SELECT e.diagnosis, l.date FROM examination e JOIN laboratory l ON e.id = l.id WHERE e.id = 30609",
+      "frozen_gold_sql": "SELECT T1.Diagnosis, T2.Date FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T1.ID = 30609",
+      "original_question": "What is the disease patient '30609' diagnosed with. List all the date of laboratory tests done for this patient.",
+      "official_evidence": "'30609' is the Patient ID; disease means Diagnosis",
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_empty_gold_nonempty",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 0,
+        "gold_row_count": 60,
+        "prediction_column_count": 2,
+        "gold_column_count": 2,
+        "prediction_unique_tuple_count": 0,
+        "gold_unique_tuple_count": 60,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 60,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "SLE, MCTD"
+              ],
+              [
+                "date",
+                "1984-07-12"
+              ]
+            ],
+            [
+              [
+                "text",
+                "SLE, MCTD"
+              ],
+              [
+                "date",
+                "1984-08-02"
+              ]
+            ],
+            [
+              [
+                "text",
+                "SLE, MCTD"
+              ],
+              [
+                "date",
+                "1984-09-03"
+              ]
+            ],
+            [
+              [
+                "text",
+                "SLE, MCTD"
+              ],
+              [
+                "date",
+                "1984-10-01"
+              ]
+            ],
+            [
+              [
+                "text",
+                "SLE, MCTD"
+              ],
+              [
+                "date",
+                "1984-10-22"
+              ]
+            ]
+          ],
+          "utf8_bytes": 220,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": true
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": true,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_comparison": false,
+      "scoring_contribution": 0,
+      "hypothesis_scope": "Trusted post-run review; not a model input or scoring override"
+    },
+    "BIRD-PG-1205": {
+      "category": "native_boolean_text_output_shape",
+      "evidence": "条件表达式相同，但预测输出字符串Yes/No，参考输出原生布尔TRUE/FALSE；两边均67行。不能在冻结EX中自动转型通过。",
+      "direction": "通用布尔输出约定及参考形态披露，不回溯归一化本次结果。",
+      "case_id": "BIRD-PG-1205",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "generated_sql": "SELECT CASE WHEN (p.sex = 'M' AND l.ua > 8.0) OR (p.sex = 'F' AND l.ua > 6.5) THEN 'Yes' ELSE 'No' END AS is_normal FROM patient p JOIN laboratory l ON p.id = l.id WHERE p.id = 57266;",
+      "frozen_gold_sql": "SELECT CASE WHEN (T1.SEX = 'F' AND T2.UA > 6.5) OR (T1.SEX = 'M' AND T2.UA > 8.0) THEN TRUE ELSE FALSE END FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T1.ID = 57266",
+      "original_question": "Was the patient with the number 57266's uric acid within a normal range?",
+      "official_evidence": "uric acid within a normal range refers to UA > 8.0 and SEX = 'M'OR UA > 6.5 and SEX = 'F'",
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 67,
+        "gold_row_count": 67,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 2,
+        "gold_unique_tuple_count": 2,
+        "prediction_only_tuple_count": 2,
+        "gold_only_tuple_count": 2,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "text",
+                "No"
+              ]
+            ],
+            [
+              [
+                "text",
+                "Yes"
+              ]
+            ]
+          ],
+          "utf8_bytes": 31,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "bool",
+                false
+              ]
+            ],
+            [
+              [
+                "bool",
+                true
+              ]
+            ]
+          ],
+          "utf8_bytes": 31,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": true,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_comparison": false,
+      "scoring_contribution": 0,
+      "hypothesis_scope": "Trusted post-run review; not a model input or scoring override"
+    },
+    "BIRD-PG-1227": {
+      "category": "explicit_age_formula",
+      "evidence": "公开公式要求当前年份减出生年份；预测使用AGE后取完整岁数。预测74.5732087227414330，参考74.6853582554517134。",
+      "direction": "区分年份差与完整周岁，按公开公式选择计算路径。",
+      "case_id": "BIRD-PG-1227",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "generated_sql": "SELECT AVG(EXTRACT(YEAR FROM AGE(p.birthday))) AS average_age\nFROM patient p\nJOIN laboratory l ON p.id = l.id\nWHERE p.sex = 'M' AND l.\"T-CHO\" >= 250",
+      "frozen_gold_sql": "SELECT AVG(EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM T1.Birthday)) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.\"T-CHO\" >= 250 AND T1.SEX = 'M'",
+      "original_question": "What is the average age of the male patient with high cholesterol?",
+      "official_evidence": "average age = DIVIDE(SUM(SUBTRACT(YEAR(NOW()), YEAR(birthday))), COUNT(ID)); male patient refers to sex = 'M'; high cholesterol refers to `T-CHO` > = 250;",
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 1,
+        "gold_only_tuple_count": 1,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "decimal",
+                "74.5732087227414330"
+              ]
+            ]
+          ],
+          "utf8_bytes": 35,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "decimal",
+                "74.6853582554517134"
+              ]
+            ]
+          ],
+          "utf8_bytes": 35,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_comparison": true,
+      "scoring_contribution": 0,
+      "hypothesis_scope": "Trusted post-run review; not a model input or scoring override"
+    },
+    "BIRD-PG-1242": {
+      "category": "public_evidence_reference_time_conflict",
+      "evidence": "官方evidence明确用current_timestamp年份减出生年份；预测照此计算。参考用1984年的检验日期年份减出生年份。当前预测5行，参考76行。",
+      "direction": "单列公开evidence与参考时间锚点冲突；保留本次失败，不用Gold覆盖公开指令。",
+      "case_id": "BIRD-PG-1242",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "challenging",
+      "generated_sql": "SELECT DISTINCT p.id\nFROM patient p\nJOIN laboratory l ON p.id = l.id\nWHERE EXTRACT(YEAR FROM l.date) = 1984\n  AND (EXTRACT(YEAR FROM CURRENT_TIMESTAMP) - EXTRACT(YEAR FROM p.birthday)) < 50\n  AND l.plt BETWEEN 100 AND 400",
+      "frozen_gold_sql": "SELECT DISTINCT T1.ID FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.PLT BETWEEN 100 AND 400 AND EXTRACT(YEAR FROM T2.Date) - EXTRACT(YEAR FROM T1.Birthday) < 50 AND EXTRACT(YEAR FROM T2.Date) = 1984",
+      "original_question": "For laboratory examinations take in 1984, list all patients below 50 years old with normal platelet level.",
+      "official_evidence": "laboratory examinations take in 1984 refers to YEAR(Date) = '1984'; below 50 years old = SUBTRACT(year(current_timestamp), year(Birthday)) < 50; normal platelet level refers to PLT between 100 and 400; ",
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 5,
+        "gold_row_count": 76,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 5,
+        "gold_unique_tuple_count": 76,
+        "prediction_only_tuple_count": 0,
+        "gold_only_tuple_count": 71,
+        "prediction_only_preview": {
+          "rows": [],
+          "utf8_bytes": 0,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "int",
+                "30609"
+              ]
+            ],
+            [
+              [
+                "int",
+                "48473"
+              ]
+            ],
+            [
+              [
+                "int",
+                "52199"
+              ]
+            ],
+            [
+              [
+                "int",
+                "58139"
+              ]
+            ],
+            [
+              [
+                "int",
+                "81043"
+              ]
+            ]
+          ],
+          "utf8_bytes": 85,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": true
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_comparison": false,
+      "scoring_contribution": 0,
+      "hypothesis_scope": "Trusted post-run review; not a model input or scoring override"
+    },
+    "BIRD-PG-1267": {
+      "category": "authorized_enum_storage_mapping",
+      "evidence": "预测筛选SM IN('-', '+-')，参考用数据库存储值('negative','0')；官方evidence已经说明符号与存储值的对应关系。预测0，参考7。",
+      "direction": "落实公开值映射与授权原生枚举查找，覆盖IN列表。",
+      "case_id": "BIRD-PG-1267",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "generated_sql": "SELECT COUNT(*) FROM laboratory l JOIN examination e ON l.id = e.id WHERE l.sm IN ('-', '+-') AND e.thrombosis = 0",
+      "frozen_gold_sql": "SELECT COUNT(T1.ID) FROM Examination AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.SM IN ('negative', '0') AND T1.Thrombosis = 0",
+      "original_question": "Among the patients with normal anti-SM, how many of them does not have thrombosis?",
+      "official_evidence": "normal anti-SM refers to SM IN('-', '+-'); SM = 'negative' means '-'; SM = '0' means '+-'; SM = '1' means '+'; does not have thrombosis refers to Thrombosis = 0;",
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 1,
+        "gold_only_tuple_count": 1,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "int",
+                "0"
+              ]
+            ]
+          ],
+          "utf8_bytes": 13,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "int",
+                "7"
+              ]
+            ]
+          ],
+          "utf8_bytes": 13,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_comparison": true,
+      "scoring_contribution": 0,
+      "hypothesis_scope": "Trusted post-run review; not a model input or scoring override"
+    },
+    "BIRD-PG-1275": {
+      "category": "authorized_enum_storage_mapping",
+      "evidence": "CENTROMEA、SSB使用了显示符号('-', '+-')，参考用存储值('negative','0')；预测0，参考1。DISTINCT已经保留。",
+      "direction": "基于授权字段说明和数据值建立通用枚举映射；不得制作参考答案特例。",
+      "case_id": "BIRD-PG-1275",
+      "database_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "generated_sql": "SELECT COUNT(DISTINCT p.id) FROM patient p JOIN laboratory l ON p.id = l.id WHERE p.sex = 'M' AND l.centromea IN ('-', '+-') AND l.ssb IN ('-', '+-')",
+      "frozen_gold_sql": "SELECT COUNT(DISTINCT T1.ID) FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.CENTROMEA IN ('negative', '0') AND T2.SSB IN ('negative', '0') AND T1.SEX = 'M'",
+      "original_question": "Among the patients who has a normal level of anti-centromere and a normal level of anti-SSB, how many of them are male?",
+      "official_evidence": "normal level of anti-centromere refers to CENTROMEA IN('-', '+-'); normal level of anti-SSB refers to SSB IN('-', '+-'); male refers to Sex = 'M'; Should consider DISTINCT in the final result;",
+      "native_comparison": {
+        "matches_frozen_gold": false,
+        "difference_codes": [
+          "prediction_has_nonreference_tuples",
+          "prediction_missing_reference_tuples"
+        ],
+        "prediction_row_count": 1,
+        "gold_row_count": 1,
+        "prediction_column_count": 1,
+        "gold_column_count": 1,
+        "prediction_unique_tuple_count": 1,
+        "gold_unique_tuple_count": 1,
+        "prediction_only_tuple_count": 1,
+        "gold_only_tuple_count": 1,
+        "prediction_only_preview": {
+          "rows": [
+            [
+              [
+                "int",
+                "0"
+              ]
+            ]
+          ],
+          "utf8_bytes": 13,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "gold_only_preview": {
+          "rows": [
+            [
+              [
+                "int",
+                "1"
+              ]
+            ]
+          ],
+          "utf8_bytes": 13,
+          "oversized_rows_omitted": 0,
+          "preview_truncated": false
+        },
+        "preview_only": true,
+        "difference_preview_row_limit": 5,
+        "difference_preview_utf8_byte_limit": 65536,
+        "native_type_sets_differ": false,
+        "comparison_policy": "frozen native tuple-set predicate; names/order/duplicate multiplicity ignored; no rounding or coercion"
+      },
+      "locally_reconstructed_comparison": true,
+      "scoring_contribution": 0,
+      "hypothesis_scope": "Trusted post-run review; not a model input or scoring override"
+    }
+  },
+  "known_development_failure_count": 30,
+  "known_holdout_failure_count": 11,
+  "remaining_work_scope": "M3 general improvements; M2 baseline closed without another holdout tuning cycle",
+  "heldout_results_now_observed": true,
+  "future_holdout_reuse_must_be_disclosed": true,
+  "new_model_request_count_during_review": 0,
+  "local_postgresql_connected": false,
+  "limitations": [
+    "Only the downloaded ledger is audited; unrelated server directories, removed attempts or external runs cannot be independently ruled out.",
+    "Full result sets above the bounded20-row previews cannot be reexecuted or reconstructed locally; their recorded server diagnostics/comparisons and ledger bindings are checked.",
+    "Snapshot content hash reconstructed; the original server snapshot file was not downloaded.",
+    "Gold/prompt boundaries rely on frozen code, request whitelist and recorded isolation probes; no independent network packet capture is claimed.",
+    "This is an evidence-provided project subset, not the official leaderboard. Development and holdout are not merged into one score.",
+    "All further changes informed by these holdout results must disclose holdout reuse. No accuracy threshold was added after observation."
+  ]
+}

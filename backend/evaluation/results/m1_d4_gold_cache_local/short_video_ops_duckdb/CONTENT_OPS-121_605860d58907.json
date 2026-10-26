@@ -1,0 +1,91 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "contents": [
+        "content_count"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "min_traffic_boost",
+      "contents",
+      "avg_ranking"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": null,
+    "order_sensitive": true,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT 1.0 min_traffic_boost,COUNT(content_id) contents,ROUND(AVG(ranking),2) avg_ranking FROM topic_content_relations WHERE traffic_boost>=1.0",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "CONTENT_OPS-121",
+  "question": "流量加热系数至少1.0的热点内容数量和平均排名；请返回最低流量加热系数、内容数量、平均排名；聚合口径：数量指标按对应业务记录计数，平均指标取算术平均；按核心指标从高到低展示。",
+  "gold_sql": "SELECT 1.0 min_traffic_boost,COUNT(content_id) contents,ROUND(AVG(ranking),2) avg_ranking FROM topic_content_relations WHERE traffic_boost>=1.0",
+  "database": "short_video_ops",
+  "scenario": "content_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.content_audits",
+      "short_video_ops.content_categories",
+      "short_video_ops.content_daily_metrics",
+      "short_video_ops.content_reports",
+      "short_video_ops.content_tag_relations",
+      "short_video_ops.content_tags",
+      "short_video_ops.contents",
+      "short_video_ops.creator_daily_metrics",
+      "short_video_ops.creator_profiles",
+      "short_video_ops.creators",
+      "short_video_ops.topic_content_relations",
+      "short_video_ops.trending_topics",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users",
+      "short_video_ops.video_exposures",
+      "short_video_ops.video_interactions",
+      "short_video_ops.video_plays"
+    ],
+    "roles": [
+      "content_ops"
+    ],
+    "user_id": "demo_content_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "min_traffic_boost",
+    "contents",
+    "avg_ranking"
+  ],
+  "rows": [
+    {
+      "min_traffic_boost": 1.0,
+      "contents": 4500,
+      "avg_ranking": 251.66
+    }
+  ],
+  "generated_at": "2026-10-10T14:54:41.887788+00:00"
+}

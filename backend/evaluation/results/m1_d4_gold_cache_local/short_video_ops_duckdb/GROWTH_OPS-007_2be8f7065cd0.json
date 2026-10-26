@@ -1,0 +1,207 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {
+      "value": [
+        "activated_users"
+      ]
+    },
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "metric_date",
+      "value"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": "metric_date",
+    "order_sensitive": true,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT metric_date, SUM(activated_users) AS value FROM growth_daily_metrics WHERE strftime(metric_date, '%Y-%m') = '2026-01' GROUP BY 1 ORDER BY 1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "GROWTH_OPS-007",
+  "question": "查看2026-01每天的激活用户数变化；请返回指标日期、指标值；聚合口径：可加总指标按当前查询粒度求和；按时间升序展示。",
+  "gold_sql": "SELECT metric_date, SUM(activated_users) AS value FROM growth_daily_metrics WHERE strftime(metric_date, '%Y-%m') = '2026-01' GROUP BY 1 ORDER BY 1",
+  "database": "short_video_ops",
+  "scenario": "growth_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.growth_daily_metrics",
+      "short_video_ops.growth_targets",
+      "short_video_ops.recall_campaigns",
+      "short_video_ops.recall_results",
+      "short_video_ops.recall_touches",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_churn_events",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_lifecycle_snapshots",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.user_sessions",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "growth_ops"
+    ],
+    "user_id": "demo_growth_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "metric_date",
+    "value"
+  ],
+  "rows": [
+    {
+      "metric_date": "2026-01-01",
+      "value": 37
+    },
+    {
+      "metric_date": "2026-01-02",
+      "value": 50
+    },
+    {
+      "metric_date": "2026-01-03",
+      "value": 36
+    },
+    {
+      "metric_date": "2026-01-04",
+      "value": 33
+    },
+    {
+      "metric_date": "2026-01-05",
+      "value": 42
+    },
+    {
+      "metric_date": "2026-01-06",
+      "value": 22
+    },
+    {
+      "metric_date": "2026-01-07",
+      "value": 44
+    },
+    {
+      "metric_date": "2026-01-08",
+      "value": 38
+    },
+    {
+      "metric_date": "2026-01-09",
+      "value": 38
+    },
+    {
+      "metric_date": "2026-01-10",
+      "value": 36
+    },
+    {
+      "metric_date": "2026-01-11",
+      "value": 32
+    },
+    {
+      "metric_date": "2026-01-12",
+      "value": 31
+    },
+    {
+      "metric_date": "2026-01-13",
+      "value": 21
+    },
+    {
+      "metric_date": "2026-01-14",
+      "value": 32
+    },
+    {
+      "metric_date": "2026-01-15",
+      "value": 39
+    },
+    {
+      "metric_date": "2026-01-16",
+      "value": 48
+    },
+    {
+      "metric_date": "2026-01-17",
+      "value": 37
+    },
+    {
+      "metric_date": "2026-01-18",
+      "value": 38
+    },
+    {
+      "metric_date": "2026-01-19",
+      "value": 36
+    },
+    {
+      "metric_date": "2026-01-20",
+      "value": 34
+    },
+    {
+      "metric_date": "2026-01-21",
+      "value": 41
+    },
+    {
+      "metric_date": "2026-01-22",
+      "value": 37
+    },
+    {
+      "metric_date": "2026-01-23",
+      "value": 44
+    },
+    {
+      "metric_date": "2026-01-24",
+      "value": 38
+    },
+    {
+      "metric_date": "2026-01-25",
+      "value": 39
+    },
+    {
+      "metric_date": "2026-01-26",
+      "value": 42
+    },
+    {
+      "metric_date": "2026-01-27",
+      "value": 43
+    },
+    {
+      "metric_date": "2026-01-28",
+      "value": 46
+    },
+    {
+      "metric_date": "2026-01-29",
+      "value": 41
+    },
+    {
+      "metric_date": "2026-01-30",
+      "value": 36
+    },
+    {
+      "metric_date": "2026-01-31",
+      "value": 47
+    }
+  ],
+  "generated_at": "2026-10-10T14:55:01.905867+00:00"
+}

@@ -1,0 +1,689 @@
+{
+  "summary": {
+    "mode": "live",
+    "case_count": 1,
+    "schema_recall": 0.75,
+    "schema_precision": 0.15,
+    "sql_execution_success_rate": 0.0,
+    "average_execution_ms": null,
+    "p95_execution_ms": null,
+    "result_accuracy": 0.0,
+    "result_scored_count": 1,
+    "strict_result_accuracy": 0.0,
+    "strict_scored_count": 1,
+    "unscored_count": 0,
+    "column_name_match_rate": 0.0,
+    "clarification_count": 0,
+    "error_count": 0,
+    "timeout_count": 0,
+    "connection_error_count": 0,
+    "model_request_attempt_count": 9,
+    "model_retry_count": 0,
+    "model_timeout_event_count": 0,
+    "model_connection_error_event_count": 0,
+    "result_accuracy_given_executed_sql": 0.0
+  },
+  "cases": [
+    {
+      "case_id": "GROWTH_OPS-051",
+      "scenario": "growth_ops",
+      "category": "激活与漏斗",
+      "query_type": "转化率",
+      "difficulty": "中等",
+      "classic": false,
+      "query": "2026-01各渠道注册到激活的转化率；请返回渠道名称、注册用户数、激活用户数、激活率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+      "route_metrics": {},
+      "schema_metrics": {
+        "recall": 0.75,
+        "precision": 0.15,
+        "true_positive": 3,
+        "retrieval_ms": 594.645,
+        "retrieved_fields": [
+          "short_video_ops.user_registrations.registration_id",
+          "short_video_ops.user_registrations.channel_id",
+          "short_video_ops.users.register_channel_id",
+          "short_video_ops.acquisition_channels.channel_name",
+          "short_video_ops.user_activations.registration_id",
+          "short_video_ops.users.user_id",
+          "short_video_ops.user_registrations.registration_method",
+          "short_video_ops.user_registrations.registered_at",
+          "short_video_ops.users.registered_at",
+          "short_video_ops.acquisition_channels.channel_id",
+          "short_video_ops.growth_daily_metrics.activated_users",
+          "short_video_ops.acquisition_channels.enabled",
+          "short_video_ops.acquisition_channels.channel_type",
+          "short_video_ops.user_registrations.platform",
+          "short_video_ops.user_activations.activated_at",
+          "short_video_ops.user_registrations.user_id",
+          "short_video_ops.user_activations.user_id",
+          "short_video_ops.user_activations.activation_id",
+          "short_video_ops.acquisition_channels.owner_team",
+          "short_video_ops.users.register_platform"
+        ],
+        "gold_fields": [
+          "short_video_ops.user_registrations.registered_at",
+          "short_video_ops.user_registrations.registration_id",
+          "short_video_ops.user_activations.is_activated",
+          "short_video_ops.acquisition_channels.channel_name"
+        ]
+      },
+      "sql_metrics": {
+        "generated_sql": "SELECT\n  ac.channel_name,\n  COUNT(DISTINCT ur.registration_id) AS registered_users,\n  COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END) AS activated_users,\n  ROUND(\n    (COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END)::numeric / NULLIF(COUNT(DISTINCT ur.registration_id), 0)),\n    4\n  ) AS activation_rate\nFROM askdata_ops.user_registrations ur\nJOIN askdata_ops.acquisition_channels ac ON ur.channel_id = ac.channel_id\nLEFT JOIN askdata_ops.user_activations ua ON ur.registration_id = ua.registration_id\nWHERE ur.registered_at >= '2026-01-01' AND ur.registered_at < '2026-02-01'\nGROUP BY ac.channel_name\nORDER BY activation_rate DESC, ac.channel_name ASC",
+        "execution_success": false,
+        "execution_ms": 2642.336
+      },
+      "result_metrics": {
+        "correct": false,
+        "column_match": false,
+        "reason": "PostgreSQL query_error (SQLSTATE 42883)",
+        "strict_correct": false,
+        "strict_reason": "PostgreSQL query_error (SQLSTATE 42883)"
+      },
+      "agent_metrics": {
+        "tool_call_count": 3,
+        "tool_success_rate": 0.0,
+        "tool_failure_rate": 1.0,
+        "average_tool_latency_ms": 2657.279,
+        "p95_tool_latency_ms": 2677.405,
+        "tool_retry_count": 0,
+        "tool_usage_distribution": {
+          "query_short_video_ops": 3
+        },
+        "permission_check_count": 1,
+        "permission_success_rate": 1.0,
+        "permission_denied_count": 0,
+        "schema_permission_filter_count": 155,
+        "sql_permission_blocked_count": 0,
+        "role_distribution": {
+          "growth_ops": 1
+        },
+        "clarification_trigger_count": 0,
+        "clarification_response_count": 0,
+        "clarification_resolution_count": 0,
+        "clarification_abandon_count": 0,
+        "clarification_rate": 0.0,
+        "clarification_resolution_rate": null,
+        "action": "executed",
+        "query_contract": {
+          "grain": "分组汇总",
+          "source_tables": [
+            "user_registrations",
+            "acquisition_channels",
+            "user_activations"
+          ],
+          "filters": [
+            {
+              "phrase": "2026-01",
+              "field": "user_registrations.registered_at",
+              "operator": "range",
+              "value": "[2026-01-01, 2026-02-01)"
+            }
+          ],
+          "metrics": [
+            "registered_users",
+            "activated_users",
+            "activation_rate"
+          ],
+          "output_columns": [
+            "channel_name",
+            "registered_users",
+            "activated_users",
+            "activation_rate"
+          ],
+          "constraint_plan": {
+            "filter_constraints": [],
+            "time_constraints": [
+              {
+                "field": "user_registrations.registered_at",
+                "operator": "month_equals",
+                "value": "2026-01",
+                "source": "user_requirement",
+                "confidence": 1.0
+              }
+            ],
+            "group_constraints": [],
+            "join_constraints": [
+              {
+                "left": "user_registrations.registration_id",
+                "right": "user_activations.registration_id"
+              }
+            ],
+            "conditional_filter_rules": [],
+            "warnings": [],
+            "time_field_resolution": {
+              "month": "2026-01",
+              "source": "metric_catalog",
+              "status": "resolved",
+              "candidates": [
+                "user_registrations.registered_at"
+              ],
+              "selected_fields": [
+                "user_registrations.registered_at"
+              ]
+            }
+          },
+          "metric_plan": {
+            "metrics": [
+              {
+                "name": "activation_rate",
+                "kind": "ratio",
+                "description": "注册用户中已激活用户的比例，以注册 cohort 为统计对象",
+                "numerator": {
+                  "table": "user_activations",
+                  "field": "is_activated",
+                  "identity_field": "registration_id",
+                  "aggregation": "COUNT_IF_TRUE"
+                },
+                "denominator": {
+                  "table": "user_registrations",
+                  "field": "registration_id",
+                  "aggregation": "COUNT_DISTINCT"
+                },
+                "aggregation": "RATIO",
+                "time_field": {
+                  "table": "user_registrations",
+                  "field": "registered_at"
+                },
+                "formula": "activated_registrations / registrations",
+                "joins": [
+                  {
+                    "left": "user_registrations.registration_id",
+                    "right": "user_activations.registration_id"
+                  }
+                ],
+                "required_filters": [],
+                "available": true
+              }
+            ],
+            "formulas": [
+              {
+                "metric": "activation_rate",
+                "expression": "activated_registrations / registrations",
+                "numerator": {
+                  "table": "user_activations",
+                  "field": "is_activated",
+                  "identity_field": "registration_id",
+                  "aggregation": "COUNT_IF_TRUE"
+                },
+                "denominator": {
+                  "table": "user_registrations",
+                  "field": "registration_id",
+                  "aggregation": "COUNT_DISTINCT"
+                }
+              }
+            ],
+            "joins": [
+              {
+                "left": "user_registrations.registration_id",
+                "right": "user_activations.registration_id"
+              }
+            ],
+            "selected_sources": [
+              "user_activations.is_activated",
+              "user_registrations.registration_id"
+            ],
+            "warnings": []
+          },
+          "constraint_validation": {
+            "status": "PASS",
+            "missing_constraints": [],
+            "missing_group_constraints": [],
+            "unsupported_constraints": [],
+            "join_violations": [],
+            "warnings": []
+          }
+        },
+        "reason": "修正SQL以解决字段不存在错误。Schema中user_activations表没有is_activated字段，而是通过registration_id的存在性来表示激活。因此将COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END)改为COUNT(DISTINCT ua.registration_id)，利用LEFT JOIN后ua.registration_id非空即代表已激活的逻辑。同时保持分母为注册记录数，分子为关联到激活表的注册记录数。"
+      },
+      "trace": {
+        "request": {
+          "case_id": "GROWTH_OPS-051",
+          "question": "2026-01各渠道注册到激活的转化率；请返回渠道名称、注册用户数、激活用户数、激活率；聚合口径：数量指标按对应业务记录计数，可加总指标按当前查询粒度求和，比率按汇总后的分子除以分母。",
+          "query_type": "转化率"
+        },
+        "routing": {
+          "route": null
+        },
+        "permission": {
+          "checked": true,
+          "user_id": "demo_growth_ops",
+          "roles": [
+            "growth_ops"
+          ],
+          "allowed_databases": [
+            "short_video_ops"
+          ],
+          "allowed_tables_count": 18,
+          "schema_filter_applied": true,
+          "schema_before_filter_count": 276,
+          "schema_after_filter_count": 121,
+          "sql_permission_check": true,
+          "sql_blocked": false,
+          "denied_reason": null
+        },
+        "clarification": {
+          "triggered": false,
+          "question": null,
+          "option_count": 0,
+          "reason": null,
+          "user_responded": false,
+          "selected_option": null,
+          "continued_execution": false,
+          "final_status": "completed"
+        },
+        "schema_retrieval": {
+          "retrieved_fields": [
+            "short_video_ops.user_registrations.registration_id",
+            "short_video_ops.user_registrations.channel_id",
+            "short_video_ops.users.register_channel_id",
+            "short_video_ops.acquisition_channels.channel_name",
+            "short_video_ops.user_activations.registration_id",
+            "short_video_ops.users.user_id",
+            "short_video_ops.user_registrations.registration_method",
+            "short_video_ops.user_registrations.registered_at",
+            "short_video_ops.users.registered_at",
+            "short_video_ops.acquisition_channels.channel_id",
+            "short_video_ops.growth_daily_metrics.activated_users",
+            "short_video_ops.acquisition_channels.enabled",
+            "short_video_ops.acquisition_channels.channel_type",
+            "short_video_ops.user_registrations.platform",
+            "short_video_ops.user_activations.activated_at",
+            "short_video_ops.user_registrations.user_id",
+            "short_video_ops.user_activations.user_id",
+            "short_video_ops.user_activations.activation_id",
+            "short_video_ops.acquisition_channels.owner_team",
+            "short_video_ops.users.register_platform"
+          ],
+          "recall": 0.75,
+          "precision": 0.15,
+          "latency_ms": 594.645
+        },
+        "agent_decision": {
+          "action": "executed",
+          "clarification_required": false,
+          "reason": "修正SQL以解决字段不存在错误。Schema中user_activations表没有is_activated字段，而是通过registration_id的存在性来表示激活。因此将COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END)改为COUNT(DISTINCT ua.registration_id)，利用LEFT JOIN后ua.registration_id非空即代表已激活的逻辑。同时保持分母为注册记录数，分子为关联到激活表的注册记录数。"
+        },
+        "tool_calls": [
+          {
+            "tool_name": "query_short_video_ops",
+            "success": false,
+            "latency_ms": 2677.405,
+            "retry_count": 0,
+            "call_index": 1
+          },
+          {
+            "tool_name": "query_short_video_ops",
+            "success": false,
+            "latency_ms": 2652.095,
+            "retry_count": 0,
+            "call_index": 2
+          },
+          {
+            "tool_name": "query_short_video_ops",
+            "success": false,
+            "latency_ms": 2642.336,
+            "retry_count": 0,
+            "call_index": 3
+          }
+        ],
+        "sql_execution": {
+          "source_identity": {
+            "logical_database_id": "short_video_ops",
+            "source_id": "short_video_ops_postgres",
+            "backend": "postgresql",
+            "dialect": "postgres",
+            "prompt_dialect": "PostgreSQL",
+            "physical_schema": "askdata_ops",
+            "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+            "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+          },
+          "backend": "postgresql",
+          "dialect": "postgres",
+          "generated_sql": "SELECT\n  ac.channel_name,\n  COUNT(DISTINCT ur.registration_id) AS registered_users,\n  COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END) AS activated_users,\n  ROUND(\n    (COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END)::numeric / NULLIF(COUNT(DISTINCT ur.registration_id), 0)),\n    4\n  ) AS activation_rate\nFROM askdata_ops.user_registrations ur\nJOIN askdata_ops.acquisition_channels ac ON ur.channel_id = ac.channel_id\nLEFT JOIN askdata_ops.user_activations ua ON ur.registration_id = ua.registration_id\nWHERE ur.registered_at >= '2026-01-01' AND ur.registered_at < '2026-02-01'\nGROUP BY ac.channel_name\nORDER BY activation_rate DESC, ac.channel_name ASC",
+          "success": false,
+          "execution_ms": 2642.336
+        },
+        "result_comparison": {
+          "comparison_target": null,
+          "gold_result_source": null,
+          "correct": false,
+          "strict_correct": false,
+          "reason": "PostgreSQL query_error (SQLSTATE 42883)"
+        },
+        "errors": []
+      },
+      "errors": {},
+      "raw_output": {
+        "model_request_attempt_count": 9,
+        "model_retry_count": 0,
+        "model_timeout_event_count": 0,
+        "model_connection_error_event_count": 0
+      },
+      "schema_recall": 0.75,
+      "schema_precision": 0.15,
+      "schema_true_positive": 3,
+      "retrieval_ms": 594.645,
+      "retrieved_fields": [
+        "short_video_ops.user_registrations.registration_id",
+        "short_video_ops.user_registrations.channel_id",
+        "short_video_ops.users.register_channel_id",
+        "short_video_ops.acquisition_channels.channel_name",
+        "short_video_ops.user_activations.registration_id",
+        "short_video_ops.users.user_id",
+        "short_video_ops.user_registrations.registration_method",
+        "short_video_ops.user_registrations.registered_at",
+        "short_video_ops.users.registered_at",
+        "short_video_ops.acquisition_channels.channel_id",
+        "short_video_ops.growth_daily_metrics.activated_users",
+        "short_video_ops.acquisition_channels.enabled",
+        "short_video_ops.acquisition_channels.channel_type",
+        "short_video_ops.user_registrations.platform",
+        "short_video_ops.user_activations.activated_at",
+        "short_video_ops.user_registrations.user_id",
+        "short_video_ops.user_activations.user_id",
+        "short_video_ops.user_activations.activation_id",
+        "short_video_ops.acquisition_channels.owner_team",
+        "short_video_ops.users.register_platform"
+      ],
+      "gold_fields": [
+        "short_video_ops.user_registrations.registered_at",
+        "short_video_ops.user_registrations.registration_id",
+        "short_video_ops.user_activations.is_activated",
+        "short_video_ops.acquisition_channels.channel_name"
+      ],
+      "generated_sql": "SELECT\n  ac.channel_name,\n  COUNT(DISTINCT ur.registration_id) AS registered_users,\n  COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END) AS activated_users,\n  ROUND(\n    (COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END)::numeric / NULLIF(COUNT(DISTINCT ur.registration_id), 0)),\n    4\n  ) AS activation_rate\nFROM askdata_ops.user_registrations ur\nJOIN askdata_ops.acquisition_channels ac ON ur.channel_id = ac.channel_id\nLEFT JOIN askdata_ops.user_activations ua ON ur.registration_id = ua.registration_id\nWHERE ur.registered_at >= '2026-01-01' AND ur.registered_at < '2026-02-01'\nGROUP BY ac.channel_name\nORDER BY activation_rate DESC, ac.channel_name ASC",
+      "sql_execution_success": false,
+      "execution_ms": 2642.336,
+      "result_correct": false,
+      "strict_result_correct": false,
+      "strict_comparison_reason": "PostgreSQL query_error (SQLSTATE 42883)",
+      "column_match": false,
+      "comparison_reason": "PostgreSQL query_error (SQLSTATE 42883)",
+      "gold_result_source": null,
+      "gold_sql": null,
+      "gold_dialect": null,
+      "gold_selection_key": null,
+      "gold_selection_version": null,
+      "comparison_target": null,
+      "agent_action": "executed",
+      "query_contract": {
+        "grain": "分组汇总",
+        "source_tables": [
+          "user_registrations",
+          "acquisition_channels",
+          "user_activations"
+        ],
+        "filters": [
+          {
+            "phrase": "2026-01",
+            "field": "user_registrations.registered_at",
+            "operator": "range",
+            "value": "[2026-01-01, 2026-02-01)"
+          }
+        ],
+        "metrics": [
+          "registered_users",
+          "activated_users",
+          "activation_rate"
+        ],
+        "output_columns": [
+          "channel_name",
+          "registered_users",
+          "activated_users",
+          "activation_rate"
+        ],
+        "constraint_plan": {
+          "filter_constraints": [],
+          "time_constraints": [
+            {
+              "field": "user_registrations.registered_at",
+              "operator": "month_equals",
+              "value": "2026-01",
+              "source": "user_requirement",
+              "confidence": 1.0
+            }
+          ],
+          "group_constraints": [],
+          "join_constraints": [
+            {
+              "left": "user_registrations.registration_id",
+              "right": "user_activations.registration_id"
+            }
+          ],
+          "conditional_filter_rules": [],
+          "warnings": [],
+          "time_field_resolution": {
+            "month": "2026-01",
+            "source": "metric_catalog",
+            "status": "resolved",
+            "candidates": [
+              "user_registrations.registered_at"
+            ],
+            "selected_fields": [
+              "user_registrations.registered_at"
+            ]
+          }
+        },
+        "metric_plan": {
+          "metrics": [
+            {
+              "name": "activation_rate",
+              "kind": "ratio",
+              "description": "注册用户中已激活用户的比例，以注册 cohort 为统计对象",
+              "numerator": {
+                "table": "user_activations",
+                "field": "is_activated",
+                "identity_field": "registration_id",
+                "aggregation": "COUNT_IF_TRUE"
+              },
+              "denominator": {
+                "table": "user_registrations",
+                "field": "registration_id",
+                "aggregation": "COUNT_DISTINCT"
+              },
+              "aggregation": "RATIO",
+              "time_field": {
+                "table": "user_registrations",
+                "field": "registered_at"
+              },
+              "formula": "activated_registrations / registrations",
+              "joins": [
+                {
+                  "left": "user_registrations.registration_id",
+                  "right": "user_activations.registration_id"
+                }
+              ],
+              "required_filters": [],
+              "available": true
+            }
+          ],
+          "formulas": [
+            {
+              "metric": "activation_rate",
+              "expression": "activated_registrations / registrations",
+              "numerator": {
+                "table": "user_activations",
+                "field": "is_activated",
+                "identity_field": "registration_id",
+                "aggregation": "COUNT_IF_TRUE"
+              },
+              "denominator": {
+                "table": "user_registrations",
+                "field": "registration_id",
+                "aggregation": "COUNT_DISTINCT"
+              }
+            }
+          ],
+          "joins": [
+            {
+              "left": "user_registrations.registration_id",
+              "right": "user_activations.registration_id"
+            }
+          ],
+          "selected_sources": [
+            "user_activations.is_activated",
+            "user_registrations.registration_id"
+          ],
+          "warnings": []
+        },
+        "constraint_validation": {
+          "status": "PASS",
+          "missing_constraints": [],
+          "missing_group_constraints": [],
+          "unsupported_constraints": [],
+          "join_violations": [],
+          "warnings": []
+        }
+      },
+      "agent_reason": "修正SQL以解决字段不存在错误。Schema中user_activations表没有is_activated字段，而是通过registration_id的存在性来表示激活。因此将COUNT(DISTINCT CASE WHEN ua.is_activated = true THEN ur.registration_id END)改为COUNT(DISTINCT ua.registration_id)，利用LEFT JOIN后ua.registration_id非空即代表已激活的逻辑。同时保持分母为注册记录数，分子为关联到激活表的注册记录数。",
+      "error_stage": null,
+      "benchmark_error": "",
+      "model_request_attempt_count": 9,
+      "model_retry_count": 0,
+      "model_timeout_event_count": 0,
+      "model_connection_error_event_count": 0,
+      "run_id": "73da654adf5e4d8082b1e928e0b0b724",
+      "trace_id": "73da654adf5e4d8082b1e928e0b0b724:GROWTH_OPS-051"
+    }
+  ],
+  "run_manifest": {
+    "source_identity": {
+      "logical_database_id": "short_video_ops",
+      "source_id": "short_video_ops_postgres",
+      "backend": "postgresql",
+      "dialect": "postgres",
+      "prompt_dialect": "PostgreSQL",
+      "physical_schema": "askdata_ops",
+      "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+    },
+    "manifest_version": 4,
+    "mode": "live",
+    "scope": "all",
+    "dataset": {
+      "source": "evaluation/cases/all_cases.jsonl",
+      "case_list": "evaluation/cases/m1_e_growth051_diagnostic.json",
+      "case_ids": [
+        "GROWTH_OPS-051"
+      ],
+      "version": "a6b3afe6c42b36018ca7c26d8608d4d0473d2783ebfff8c262345cbbb2a74d31"
+    },
+    "gold_selection": {
+      "selection_version": 1,
+      "cases": [
+        {
+          "case_id": "GROWTH_OPS-051",
+          "gold": {
+            "sql": "SELECT\n  c.channel_name,\n  COUNT(r.registration_id) AS registrations,\n  SUM(CASE WHEN a.is_activated <> 0 THEN 1 ELSE 0 END) AS activated_users,\n  ROUND(\n    CAST(CAST(SUM(CASE WHEN a.is_activated <> 0 THEN 1 ELSE 0 END) * 1.0 AS DOUBLE PRECISION) / NULLIF(COUNT(r.registration_id), 0) AS DECIMAL),\n    4\n  ) AS activation_rate\nFROM user_registrations AS r\nJOIN user_activations AS a\n  ON r.registration_id = a.registration_id\nJOIN acquisition_channels AS c\n  ON r.channel_id = c.channel_id\nWHERE\n  TO_CHAR(r.registered_at, 'YYYY-MM') = '2026-01'\nGROUP BY\n  1\nORDER BY\n  4 DESC NULLS LAST,\n  1",
+            "dialect": "postgres",
+            "selection_key": "gold_sql_by_dialect.postgres",
+            "selection_version": 1
+          }
+        }
+      ]
+    },
+    "result_policy": {
+      "version": 1,
+      "cases": [
+        {
+          "case_id": "GROWTH_OPS-051",
+          "policy": {
+            "allowed_auxiliary_columns": [],
+            "column_aliases": {
+              "registrations": [
+                "registered_users"
+              ]
+            },
+            "column_mapping": "explicit_per_case_aliases_v1",
+            "expected_columns": [
+              "channel_name",
+              "registrations",
+              "activated_users",
+              "activation_rate"
+            ],
+            "normalization_version": 1,
+            "numeric_comparison": "existing_business_tolerance_v1",
+            "order_by_column": null,
+            "order_sensitive": false,
+            "reject_truncation": true,
+            "row_limit": 10000,
+            "top_n_tie_policy": null,
+            "version": 1
+          }
+        }
+      ]
+    },
+    "source_verification": {
+      "kind": "live_postgresql_verification",
+      "live_target_verified": true,
+      "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+      "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+      "table_count": 41,
+      "field_count": 276,
+      "row_count": 722732,
+      "full_typed_row_match_count": 41,
+      "readonly_table_acl_match_count": 41,
+      "readonly_column_acl_match_count": 41
+    },
+    "versions": {
+      "data": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+      "schema": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+      "application": "aeb88c6380c5a639afc7d6a5e451c8fefcda2a3640a208245909ae5f9f5f2905",
+      "evaluator": "2410abbbcb30ddd2df48e8ff9ecc314c917cc95f477b2ed547b3e7767bf741a9",
+      "evaluation_code": "9192bcafc5a0957ab8173e9225d932041c288b9bebc4830bf9ce04def785fcf8",
+      "gold_selection": "a69ad3e41da28b9a9662e19ae3fc0bff3cb81c177ddc8625c4bf297bdf8998aa",
+      "result_policy": "dae708728a786ae3c5903d4f7ab3e04bea7cb83b2a999cc4b8afeefecc8fe3f4",
+      "physical_schema": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817"
+    },
+    "config": {
+      "data_backend": "postgresql",
+      "data_source_id": "short_video_ops_postgres",
+      "postgresql": {
+        "password_configured": true,
+        "implementation_stage": "verified_runtime_implemented"
+      },
+      "api_key_configured": true,
+      "llm_model": "qwen3.7-plus",
+      "llm_enable_thinking": false,
+      "embedding_model": "text-embedding-v4",
+      "embedding_dimensions": 1024,
+      "rerank_model": "qwen3-rerank",
+      "semantic_fallbacks": false,
+      "route_availability_fallback": "direct_response_no_database",
+      "schema_recall_threshold": 0.55,
+      "bm25_top_k": 30,
+      "dense_top_k": 30,
+      "rrf_top_k": 40,
+      "max_schema_fields": 20,
+      "time_field_supplement": {
+        "enabled": false,
+        "max_extra_fields": 2,
+        "max_total_fields": 22
+      },
+      "max_saved_memories": 20,
+      "mcp_max_tool_calls": 3,
+      "short_term_memory": {
+        "summary_enabled": true,
+        "summary_trigger_tokens": 12000,
+        "summary_batch_tokens": 6000,
+        "min_recent_turns": 5,
+        "archive_enabled": false,
+        "table_row_limit": 50
+      },
+      "route_context_turns": 6,
+      "llm_temperature": 0.0,
+      "llm_timeout": 180,
+      "llm_max_retries": 3,
+      "workers": 1,
+      "user_roles": [
+        "demo_growth_ops"
+      ],
+      "evaluation_date": "2026-10-12"
+    },
+    "run_id": "73da654adf5e4d8082b1e928e0b0b724",
+    "created_at": "2026-10-12T14:06:57.064530Z",
+    "fingerprint": "c4be2b400b718bd840c66b22892c539b5fe11518bed86ff7a31e7c2d65e7c81f"
+  },
+  "run_status": "complete"
+}

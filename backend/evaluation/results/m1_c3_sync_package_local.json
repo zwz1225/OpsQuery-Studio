@@ -1,0 +1,26 @@
+{
+  "run_status": "complete",
+  "archive": "M1_C3_实时来源与执行器同步包_20261010.zip",
+  "entry_count": 15,
+  "archive_sha256": "347d6977ef3198e6f1623a3cffd7b56ba0a5aa169840c9f12b34bb02ebcfb217",
+  "entry_sha256": {
+    "backend/app/datasources/row_digest.py": "06cb48c69b2b0d2e05006de64f6555fe8b0ab4460118afb92af8e9c3efc28b06",
+    "backend/scripts/preflight_m1_b_source.py": "e198c5767259140ae275af5eaf91a7c1e8770bd79700d434ad20c553d825fd0d",
+    "backend/app/datasources/postgres_metadata.py": "1a1f3cd0bac6193231a9403e010a3c482904f851ae433abb1d95bb94183c771e",
+    "backend/app/datasources/sql_policy.py": "63794c350b9971a4a9b83ba74e96e7ec051d87ca2cff2b6512d11282bc086c82",
+    "backend/app/querying/postgres_engine.py": "eb533e3bb5a022bcab33a181fc992cf575bdca92debbbdd486a184a09df4c857",
+    "backend/app/datasources/runtime.py": "586c9024d8b8dbca5ffa9ea3f04d403190285333e4c04b3a19036e897ddcbe24",
+    "backend/app/config.py": "7e71979bf12e33bc7636d64c9a608552103c97cf176db64f8d731c73a7fc75b3",
+    "backend/tests/test_postgres_runtime.py": "63feb811cb79b33d0092de33004ff2fdb619a0cfdfbfe44d43540b56a4c6439e",
+    "backend/tests/test_postgres_config.py": "f5d3821e78465c5dd082794caee3c7a906199edbf83e5298315da5223463a5c4",
+    "backend/tests/test_datasource_runtime.py": "45c9bfccf4e3942ecb8f23b2041950663cf8b5a73a56a6f3cc5b0a2b96f0c836",
+    "backend/scripts/check_m1_c3_postgres_runtime.py": "98683740a9e46499c31845125b3823ec2e758d11a56f6db5148101f5d762cd9c",
+    "backend/evaluation/M1_C3_RUNTIME_ACCEPTANCE.md": "5c1fcdfbc7ecbac6807cb0d222c249f22f70e3e500a5c0acd8d11b2f13915b3c",
+    "backend/requirements-postgres.txt": "5ae65fcd02558d3cb1c3e24a2cfebb2cdfd4e9c079f0e508941aebfcb56a3040",
+    "M1_数据源依赖梳理与最小适配方案.md": "45409daf28694f7b3da2be2d5c5d834ec988b922e889e7aad9af762db56168f9",
+    "backend/evaluation/results/m1_c3_implementation_local.json": "f651df6bc6c3da3aae06c414098350a7aefc68b73fa82123d2ddb46e85b8ed91"
+  },
+  "entries_match_workspace": true,
+  "real_credentials_included": false,
+  "historical_reports_included": false
+}

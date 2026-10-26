@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-16T07:28:17.646435+00:00",
+  "error_count": 0,
+  "failure_count": 0,
+  "new_model_request_count": 0,
+  "passed_count": 75,
+  "postgresql_connected": false,
+  "run_status": "complete",
+  "scope": "Offline/native/policy and mocked transport/runtime tests; Linux kernel isolation tests are skipped on Windows.",
+  "skipped": [
+    {
+      "reason": "Linux kernel isolation is verified on the server",
+      "test": "test_m2_c_bird_runtime.LinuxIsolationTest.test_hard_supervisor_timeout"
+    },
+    {
+      "reason": "Linux kernel isolation is verified on the server",
+      "test": "test_m2_c_bird_runtime.LinuxIsolationTest.test_real_filesystem_network_process_and_env_isolation"
+    },
+    {
+      "reason": "Linux kernel isolation is verified on the server",
+      "test": "test_m2_c_bird_runtime.LinuxIsolationTest.test_real_indexer_builds_without_project_file_access"
+    }
+  ],
+  "stage": "M2 C local M2 regression tests",
+  "tests_run": 78
+}

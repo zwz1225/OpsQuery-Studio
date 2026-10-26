@@ -1,0 +1,5882 @@
+{
+  "run_status": "complete",
+  "run_manifest": {
+    "source_identity": {
+      "logical_database_id": "short_video_ops",
+      "source_id": "short_video_ops_duckdb",
+      "backend": "duckdb",
+      "dialect": "duckdb",
+      "prompt_dialect": "DuckDB",
+      "physical_schema": "main",
+      "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+      "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+    },
+    "manifest_version": 2,
+    "mode": "offline_rescore",
+    "scope": "classic",
+    "dataset": {
+      "source": "evaluation/cases/all_cases.jsonl",
+      "case_list": null,
+      "case_ids": [
+        "GROWTH_OPS-001",
+        "GROWTH_OPS-002",
+        "GROWTH_OPS-003",
+        "GROWTH_OPS-004",
+        "GROWTH_OPS-005",
+        "GROWTH_OPS-006",
+        "GROWTH_OPS-026",
+        "GROWTH_OPS-061",
+        "GROWTH_OPS-062",
+        "GROWTH_OPS-063",
+        "GROWTH_OPS-064",
+        "GROWTH_OPS-066",
+        "GROWTH_OPS-086",
+        "GROWTH_OPS-101",
+        "GROWTH_OPS-131",
+        "GROWTH_OPS-149",
+        "GROWTH_OPS-150",
+        "CHANNEL_OPS-001",
+        "CHANNEL_OPS-002",
+        "CHANNEL_OPS-003",
+        "CHANNEL_OPS-004",
+        "CHANNEL_OPS-005",
+        "CHANNEL_OPS-066",
+        "CHANNEL_OPS-067",
+        "CHANNEL_OPS-068",
+        "CHANNEL_OPS-069",
+        "CHANNEL_OPS-070",
+        "CHANNEL_OPS-076",
+        "CHANNEL_OPS-077",
+        "CHANNEL_OPS-078",
+        "CHANNEL_OPS-079",
+        "CHANNEL_OPS-101",
+        "CHANNEL_OPS-141",
+        "CONTENT_OPS-001",
+        "CONTENT_OPS-029",
+        "CONTENT_OPS-030",
+        "CONTENT_OPS-031",
+        "CONTENT_OPS-032",
+        "CONTENT_OPS-033",
+        "CONTENT_OPS-034",
+        "CONTENT_OPS-035",
+        "CONTENT_OPS-036",
+        "CONTENT_OPS-051",
+        "CONTENT_OPS-076",
+        "CONTENT_OPS-121",
+        "CONTENT_OPS-126",
+        "CONTENT_OPS-136",
+        "CONTENT_OPS-137",
+        "CONTENT_OPS-138"
+      ],
+      "version": "d78b471742d40d925c555227e77c2dfea403909f7922a91e058c7238a6aef4b7"
+    },
+    "versions": {
+      "data": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+      "schema": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede",
+      "application": "dc51bad3c8be8b61bb345a26c407acb2cb8635859608e5dbed5ede7fedee5231",
+      "evaluator": "1d7179a2f70dab9fc52d7ab9a1cec74489106aae2868dd9b26227f8703c0b758",
+      "evaluation_code": "5a7f7df1efb307611648f81cec5887de1774c7dae4ff40c1229221309817e87f"
+    },
+    "config": {
+      "new_model_request_count": 0,
+      "operation": "saved_sql_replay",
+      "source_run_id": "cce91d72155a44b4b7dfaf7c1c6248e8"
+    },
+    "run_id": "95f399b7508742aaa03f039d00223fce",
+    "created_at": "2026-10-07T07:25:17.285350Z",
+    "fingerprint": "205896cf21acf003d78239f46dc283ed697d356734ee6e4c2f2907b7bf476f00"
+  },
+  "mode": "offline_rescore",
+  "source_run_id": "cce91d72155a44b4b7dfaf7c1c6248e8",
+  "source_report": "m1_a_live_classic_server.json",
+  "source_report_sha256": "219d182d48314ee41eccedc6915db8dd1c8ac57565407b859226f1796785f2a2",
+  "source_manifest": {
+    "source_identity": {
+      "logical_database_id": "short_video_ops",
+      "source_id": "short_video_ops_duckdb",
+      "backend": "duckdb",
+      "dialect": "duckdb",
+      "prompt_dialect": "DuckDB",
+      "physical_schema": "main",
+      "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+      "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+    },
+    "manifest_version": 2,
+    "mode": "live",
+    "scope": "classic",
+    "dataset": {
+      "source": "evaluation/cases/all_cases.jsonl",
+      "case_list": null,
+      "case_ids": [
+        "GROWTH_OPS-001",
+        "GROWTH_OPS-002",
+        "GROWTH_OPS-003",
+        "GROWTH_OPS-004",
+        "GROWTH_OPS-005",
+        "GROWTH_OPS-006",
+        "GROWTH_OPS-026",
+        "GROWTH_OPS-061",
+        "GROWTH_OPS-062",
+        "GROWTH_OPS-063",
+        "GROWTH_OPS-064",
+        "GROWTH_OPS-066",
+        "GROWTH_OPS-086",
+        "GROWTH_OPS-101",
+        "GROWTH_OPS-131",
+        "GROWTH_OPS-149",
+        "GROWTH_OPS-150",
+        "CHANNEL_OPS-001",
+        "CHANNEL_OPS-002",
+        "CHANNEL_OPS-003",
+        "CHANNEL_OPS-004",
+        "CHANNEL_OPS-005",
+        "CHANNEL_OPS-066",
+        "CHANNEL_OPS-067",
+        "CHANNEL_OPS-068",
+        "CHANNEL_OPS-069",
+        "CHANNEL_OPS-070",
+        "CHANNEL_OPS-076",
+        "CHANNEL_OPS-077",
+        "CHANNEL_OPS-078",
+        "CHANNEL_OPS-079",
+        "CHANNEL_OPS-101",
+        "CHANNEL_OPS-141",
+        "CONTENT_OPS-001",
+        "CONTENT_OPS-029",
+        "CONTENT_OPS-030",
+        "CONTENT_OPS-031",
+        "CONTENT_OPS-032",
+        "CONTENT_OPS-033",
+        "CONTENT_OPS-034",
+        "CONTENT_OPS-035",
+        "CONTENT_OPS-036",
+        "CONTENT_OPS-051",
+        "CONTENT_OPS-076",
+        "CONTENT_OPS-121",
+        "CONTENT_OPS-126",
+        "CONTENT_OPS-136",
+        "CONTENT_OPS-137",
+        "CONTENT_OPS-138"
+      ],
+      "version": "1969cf734968afeea2f70d9e4133fed2067c0e24b3723209c357069d215c4fe5"
+    },
+    "versions": {
+      "data": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+      "schema": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede",
+      "application": "dc51bad3c8be8b61bb345a26c407acb2cb8635859608e5dbed5ede7fedee5231",
+      "evaluator": "1d7179a2f70dab9fc52d7ab9a1cec74489106aae2868dd9b26227f8703c0b758",
+      "evaluation_code": "5a7f7df1efb307611648f81cec5887de1774c7dae4ff40c1229221309817e87f"
+    },
+    "config": {
+      "data_backend": "duckdb",
+      "data_source_id": "short_video_ops_duckdb",
+      "api_key_configured": true,
+      "llm_model": "qwen3.7-plus",
+      "llm_enable_thinking": false,
+      "embedding_model": "text-embedding-v4",
+      "embedding_dimensions": 1024,
+      "rerank_model": "qwen3-rerank",
+      "semantic_fallbacks": false,
+      "route_availability_fallback": "direct_response_no_database",
+      "schema_recall_threshold": 0.55,
+      "bm25_top_k": 30,
+      "dense_top_k": 30,
+      "rrf_top_k": 40,
+      "max_schema_fields": 20,
+      "time_field_supplement": {
+        "enabled": false,
+        "max_extra_fields": 2,
+        "max_total_fields": 22
+      },
+      "max_saved_memories": 20,
+      "mcp_max_tool_calls": 3,
+      "short_term_memory": {
+        "summary_enabled": true,
+        "summary_trigger_tokens": 12000,
+        "summary_batch_tokens": 6000,
+        "min_recent_turns": 5,
+        "archive_enabled": false,
+        "table_row_limit": 50
+      },
+      "route_context_turns": 6,
+      "llm_temperature": 0.0,
+      "llm_timeout": 180,
+      "llm_max_retries": 3,
+      "workers": 1,
+      "user_roles": [
+        "demo_channel_ops",
+        "demo_content_ops",
+        "demo_growth_ops"
+      ],
+      "evaluation_date": "2026-10-07"
+    },
+    "run_id": "cce91d72155a44b4b7dfaf7c1c6248e8",
+    "created_at": "2026-10-07T03:17:31.055078Z",
+    "fingerprint": "705991273887590400b5bc40e112af021c19060016ac24533fbf62ab652b4fae"
+  },
+  "source_summary": {
+    "mode": "live",
+    "case_count": 49,
+    "schema_recall": 0.929932,
+    "schema_precision": 0.166049,
+    "sql_execution_success_rate": 1.0,
+    "average_execution_ms": 1700.72,
+    "p95_execution_ms": 1836.925,
+    "result_accuracy": 1.0,
+    "result_scored_count": 49,
+    "strict_result_accuracy": 0.836735,
+    "strict_scored_count": 49,
+    "unscored_count": 0,
+    "column_name_match_rate": 0.122449,
+    "clarification_count": 0,
+    "error_count": 0,
+    "timeout_count": 0,
+    "connection_error_count": 0,
+    "model_request_attempt_count": 183,
+    "model_retry_count": 0,
+    "model_timeout_event_count": 0,
+    "model_connection_error_event_count": 0,
+    "result_accuracy_given_executed_sql": 1.0
+  },
+  "review_report_sha256": "b553bedcd5221a472058b29e92efb1277dc2a9069dec84d77fc98c40353a294e",
+  "formal_aliases_applied": true,
+  "original_case_backup": "evaluation/results/m1_all_cases_before_classic_aliases_20261007.jsonl",
+  "original_cases_sha256": "0766d85d69794b8d8663e1f9d037f334c230da769ea55779bd00ae80a5559d36",
+  "formal_cases_sha256": "0eb11d55d07cbcc8926b4c5de6657c1f897e7559387cfb5f5c884ef20ec9e6ec",
+  "original_dataset_version": "1969cf734968afeea2f70d9e4133fed2067c0e24b3723209c357069d215c4fe5",
+  "formal_dataset_version": "d78b471742d40d925c555227e77c2dfea403909f7922a91e058c7238a6aef4b7",
+  "changed_case_ids": [
+    "CHANNEL_OPS-069",
+    "CHANNEL_OPS-101",
+    "CONTENT_OPS-029",
+    "CONTENT_OPS-035",
+    "CONTENT_OPS-036",
+    "CONTENT_OPS-051",
+    "CONTENT_OPS-136",
+    "CONTENT_OPS-137"
+  ],
+  "alias_additions": {
+    "CHANNEL_OPS-069": {
+      "avg_value": [
+        "avg_conversion_value"
+      ]
+    },
+    "CHANNEL_OPS-101": {
+      "creatives": [
+        "creative_count"
+      ]
+    },
+    "CONTENT_OPS-029": {
+      "category_name": [
+        "content_category"
+      ]
+    },
+    "CONTENT_OPS-035": {
+      "category_name": [
+        "内容分类"
+      ],
+      "interactions": [
+        "互动数"
+      ]
+    },
+    "CONTENT_OPS-036": {
+      "interaction_date": [
+        "interacted_date"
+      ]
+    },
+    "CONTENT_OPS-051": {
+      "category_name": [
+        "content_category"
+      ],
+      "contents": [
+        "content_count"
+      ],
+      "avg_duration_seconds": [
+        "avg_video_duration"
+      ]
+    },
+    "CONTENT_OPS-136": {
+      "category_name": [
+        "内容分类"
+      ],
+      "reports": [
+        "举报数量"
+      ]
+    },
+    "CONTENT_OPS-137": {
+      "category_name": [
+        "内容分类"
+      ],
+      "reports": [
+        "举报数量"
+      ]
+    }
+  },
+  "summary": {
+    "mode": "offline_rescore",
+    "case_count": 49,
+    "original_strict_pass_count": 41,
+    "original_replayed_strict_pass_count": 41,
+    "strict_pass_count": 49,
+    "strict_result_accuracy": 1.0,
+    "result_accuracy": 1.0,
+    "result_scored_count": 49,
+    "strict_scored_count": 49,
+    "unscored_count": 0,
+    "raw_column_name_match_count": 6,
+    "changed_case_count": 8,
+    "alias_addition_count": 13,
+    "new_model_request_count": 0
+  },
+  "limits": [
+    "Saved final SQL replay on matching local data; not a new server live run.",
+    "Original server result rows are absent; local rows cannot be directly compared to them.",
+    "Only per-case aliases changed; SQL, questions, ordering, precision and comparator are unchanged."
+  ],
+  "cases": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(new_users) AS new_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC",
+      "gold_sql": "SELECT strftime(metric_date, '%Y-%m') AS month, SUM(new_users) AS value FROM growth_daily_metrics WHERE metric_date >= DATE '2026-01-01' AND metric_date < DATE '2026-08-29' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "month",
+        "new_users"
+      ],
+      "actual_rows": [
+        {
+          "month": "2026-01",
+          "new_users": 1520
+        },
+        {
+          "month": "2026-02",
+          "new_users": 1440
+        },
+        {
+          "month": "2026-03",
+          "new_users": 1538
+        },
+        {
+          "month": "2026-04",
+          "new_users": 1525
+        },
+        {
+          "month": "2026-05",
+          "new_users": 1603
+        },
+        {
+          "month": "2026-06",
+          "new_users": 1475
+        },
+        {
+          "month": "2026-07",
+          "new_users": 1555
+        },
+        {
+          "month": "2026-08",
+          "new_users": 1344
+        }
+      ],
+      "gold_columns": [
+        "month",
+        "value"
+      ],
+      "gold_rows": [
+        {
+          "month": "2026-01",
+          "value": 1520
+        },
+        {
+          "month": "2026-02",
+          "value": 1440
+        },
+        {
+          "month": "2026-03",
+          "value": 1538
+        },
+        {
+          "month": "2026-04",
+          "value": 1525
+        },
+        {
+          "month": "2026-05",
+          "value": 1603
+        },
+        {
+          "month": "2026-06",
+          "value": 1475
+        },
+        {
+          "month": "2026-07",
+          "value": 1555
+        },
+        {
+          "month": "2026-08",
+          "value": 1344
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "value": [
+          "new_users"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1624.584
+    },
+    {
+      "case_id": "GROWTH_OPS-002",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT STRFTIME(metric_date, '%Y-%m') AS month, SUM(activated_users) AS activated_users FROM growth_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01' GROUP BY STRFTIME(metric_date, '%Y-%m') ORDER BY month ASC",
+      "gold_sql": "SELECT strftime(metric_date, '%Y-%m') AS month, SUM(activated_users) AS value FROM growth_daily_metrics WHERE metric_date >= DATE '2026-01-01' AND metric_date < DATE '2026-08-29' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "month",
+        "activated_users"
+      ],
+      "actual_rows": [
+        {
+          "month": "2026-01",
+          "activated_users": 1178
+        },
+        {
+          "month": "2026-02",
+          "activated_users": 1070
+        },
+        {
+          "month": "2026-03",
+          "activated_users": 1132
+        },
+        {
+          "month": "2026-04",
+          "activated_users": 1127
+        },
+        {
+          "month": "2026-05",
+          "activated_users": 1212
+        },
+        {
+          "month": "2026-06",
+          "activated_users": 1109
+        },
+        {
+          "month": "2026-07",
+          "activated_users": 1156
+        },
+        {
+          "month": "2026-08",
+          "activated_users": 994
+        }
+      ],
+      "gold_columns": [
+        "month",
+        "value"
+      ],
+      "gold_rows": [
+        {
+          "month": "2026-01",
+          "value": 1178
+        },
+        {
+          "month": "2026-02",
+          "value": 1070
+        },
+        {
+          "month": "2026-03",
+          "value": 1132
+        },
+        {
+          "month": "2026-04",
+          "value": 1127
+        },
+        {
+          "month": "2026-05",
+          "value": 1212
+        },
+        {
+          "month": "2026-06",
+          "value": 1109
+        },
+        {
+          "month": "2026-07",
+          "value": 1156
+        },
+        {
+          "month": "2026-08",
+          "value": 994
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "value": [
+          "activated_users"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1669.3
+    },
+    {
+      "case_id": "GROWTH_OPS-003",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(day1_retained_users) AS day1_retained_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC",
+      "gold_sql": "SELECT strftime(metric_date, '%Y-%m') AS month, SUM(day1_retained_users) AS value FROM growth_daily_metrics WHERE metric_date >= DATE '2026-01-01' AND metric_date < DATE '2026-08-29' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "month",
+        "day1_retained_users"
+      ],
+      "actual_rows": [
+        {
+          "month": "2026-01",
+          "day1_retained_users": 485
+        },
+        {
+          "month": "2026-02",
+          "day1_retained_users": 441
+        },
+        {
+          "month": "2026-03",
+          "day1_retained_users": 499
+        },
+        {
+          "month": "2026-04",
+          "day1_retained_users": 469
+        },
+        {
+          "month": "2026-05",
+          "day1_retained_users": 499
+        },
+        {
+          "month": "2026-06",
+          "day1_retained_users": 488
+        },
+        {
+          "month": "2026-07",
+          "day1_retained_users": 483
+        },
+        {
+          "month": "2026-08",
+          "day1_retained_users": 403
+        }
+      ],
+      "gold_columns": [
+        "month",
+        "value"
+      ],
+      "gold_rows": [
+        {
+          "month": "2026-01",
+          "value": 485
+        },
+        {
+          "month": "2026-02",
+          "value": 441
+        },
+        {
+          "month": "2026-03",
+          "value": 499
+        },
+        {
+          "month": "2026-04",
+          "value": 469
+        },
+        {
+          "month": "2026-05",
+          "value": 499
+        },
+        {
+          "month": "2026-06",
+          "value": 488
+        },
+        {
+          "month": "2026-07",
+          "value": 483
+        },
+        {
+          "month": "2026-08",
+          "value": 403
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "value": [
+          "day1_retained_users"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1660.992
+    },
+    {
+      "case_id": "GROWTH_OPS-004",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n    STRFTIME(gdm.metric_date, '%Y-%m') AS month,\n    SUM(gdm.day7_retained_users) AS day7_retained_users\nFROM growth_daily_metrics gdm\nWHERE gdm.metric_date >= '2026-01-01' AND gdm.metric_date < '2027-01-01'\nGROUP BY STRFTIME(gdm.metric_date, '%Y-%m')\nORDER BY month ASC",
+      "gold_sql": "SELECT strftime(metric_date, '%Y-%m') AS month, SUM(day7_retained_users) AS value FROM growth_daily_metrics WHERE metric_date >= DATE '2026-01-01' AND metric_date < DATE '2026-08-29' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "month",
+        "day7_retained_users"
+      ],
+      "actual_rows": [
+        {
+          "month": "2026-01",
+          "day7_retained_users": 444
+        },
+        {
+          "month": "2026-02",
+          "day7_retained_users": 425
+        },
+        {
+          "month": "2026-03",
+          "day7_retained_users": 421
+        },
+        {
+          "month": "2026-04",
+          "day7_retained_users": 420
+        },
+        {
+          "month": "2026-05",
+          "day7_retained_users": 450
+        },
+        {
+          "month": "2026-06",
+          "day7_retained_users": 434
+        },
+        {
+          "month": "2026-07",
+          "day7_retained_users": 447
+        },
+        {
+          "month": "2026-08",
+          "day7_retained_users": 301
+        }
+      ],
+      "gold_columns": [
+        "month",
+        "value"
+      ],
+      "gold_rows": [
+        {
+          "month": "2026-01",
+          "value": 444
+        },
+        {
+          "month": "2026-02",
+          "value": 425
+        },
+        {
+          "month": "2026-03",
+          "value": 421
+        },
+        {
+          "month": "2026-04",
+          "value": 420
+        },
+        {
+          "month": "2026-05",
+          "value": 450
+        },
+        {
+          "month": "2026-06",
+          "value": 434
+        },
+        {
+          "month": "2026-07",
+          "value": 447
+        },
+        {
+          "month": "2026-08",
+          "value": 301
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "value": [
+          "day7_retained_users"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1616.973
+    },
+    {
+      "case_id": "GROWTH_OPS-005",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(daily_active_users) AS daily_active_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC",
+      "gold_sql": "SELECT strftime(metric_date, '%Y-%m') AS month, SUM(daily_active_users) AS value FROM growth_daily_metrics WHERE metric_date >= DATE '2026-01-01' AND metric_date < DATE '2026-08-29' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "month",
+        "daily_active_users"
+      ],
+      "actual_rows": [
+        {
+          "month": "2026-01",
+          "daily_active_users": 2115
+        },
+        {
+          "month": "2026-02",
+          "daily_active_users": 3777
+        },
+        {
+          "month": "2026-03",
+          "daily_active_users": 5842
+        },
+        {
+          "month": "2026-04",
+          "daily_active_users": 7444
+        },
+        {
+          "month": "2026-05",
+          "daily_active_users": 10256
+        },
+        {
+          "month": "2026-06",
+          "daily_active_users": 13017
+        },
+        {
+          "month": "2026-07",
+          "daily_active_users": 18274
+        },
+        {
+          "month": "2026-08",
+          "daily_active_users": 25292
+        }
+      ],
+      "gold_columns": [
+        "month",
+        "value"
+      ],
+      "gold_rows": [
+        {
+          "month": "2026-01",
+          "value": 2115
+        },
+        {
+          "month": "2026-02",
+          "value": 3777
+        },
+        {
+          "month": "2026-03",
+          "value": 5842
+        },
+        {
+          "month": "2026-04",
+          "value": 7444
+        },
+        {
+          "month": "2026-05",
+          "value": 10256
+        },
+        {
+          "month": "2026-06",
+          "value": 13017
+        },
+        {
+          "month": "2026-07",
+          "value": 18274
+        },
+        {
+          "month": "2026-08",
+          "value": 25292
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "value": [
+          "daily_active_users"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1646.254
+    },
+    {
+      "case_id": "GROWTH_OPS-006",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT metric_date, SUM(new_users) AS new_users FROM growth_daily_metrics WHERE metric_date >= '2026-01-01' AND metric_date < '2026-02-01' GROUP BY metric_date ORDER BY metric_date ASC",
+      "gold_sql": "SELECT metric_date, SUM(new_users) AS value FROM growth_daily_metrics WHERE strftime(metric_date, '%Y-%m') = '2026-01' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "metric_date",
+        "new_users"
+      ],
+      "actual_rows": [
+        {
+          "metric_date": "2026-01-01",
+          "new_users": 49
+        },
+        {
+          "metric_date": "2026-01-02",
+          "new_users": 60
+        },
+        {
+          "metric_date": "2026-01-03",
+          "new_users": 42
+        },
+        {
+          "metric_date": "2026-01-04",
+          "new_users": 50
+        },
+        {
+          "metric_date": "2026-01-05",
+          "new_users": 45
+        },
+        {
+          "metric_date": "2026-01-06",
+          "new_users": 29
+        },
+        {
+          "metric_date": "2026-01-07",
+          "new_users": 60
+        },
+        {
+          "metric_date": "2026-01-08",
+          "new_users": 50
+        },
+        {
+          "metric_date": "2026-01-09",
+          "new_users": 52
+        },
+        {
+          "metric_date": "2026-01-10",
+          "new_users": 44
+        },
+        {
+          "metric_date": "2026-01-11",
+          "new_users": 41
+        },
+        {
+          "metric_date": "2026-01-12",
+          "new_users": 39
+        },
+        {
+          "metric_date": "2026-01-13",
+          "new_users": 28
+        },
+        {
+          "metric_date": "2026-01-14",
+          "new_users": 44
+        },
+        {
+          "metric_date": "2026-01-15",
+          "new_users": 49
+        },
+        {
+          "metric_date": "2026-01-16",
+          "new_users": 65
+        },
+        {
+          "metric_date": "2026-01-17",
+          "new_users": 43
+        },
+        {
+          "metric_date": "2026-01-18",
+          "new_users": 51
+        },
+        {
+          "metric_date": "2026-01-19",
+          "new_users": 46
+        },
+        {
+          "metric_date": "2026-01-20",
+          "new_users": 46
+        },
+        {
+          "metric_date": "2026-01-21",
+          "new_users": 54
+        },
+        {
+          "metric_date": "2026-01-22",
+          "new_users": 47
+        },
+        {
+          "metric_date": "2026-01-23",
+          "new_users": 56
+        },
+        {
+          "metric_date": "2026-01-24",
+          "new_users": 48
+        },
+        {
+          "metric_date": "2026-01-25",
+          "new_users": 51
+        },
+        {
+          "metric_date": "2026-01-26",
+          "new_users": 58
+        },
+        {
+          "metric_date": "2026-01-27",
+          "new_users": 58
+        },
+        {
+          "metric_date": "2026-01-28",
+          "new_users": 55
+        },
+        {
+          "metric_date": "2026-01-29",
+          "new_users": 53
+        },
+        {
+          "metric_date": "2026-01-30",
+          "new_users": 51
+        },
+        {
+          "metric_date": "2026-01-31",
+          "new_users": 56
+        }
+      ],
+      "gold_columns": [
+        "metric_date",
+        "value"
+      ],
+      "gold_rows": [
+        {
+          "metric_date": "2026-01-01",
+          "value": 49
+        },
+        {
+          "metric_date": "2026-01-02",
+          "value": 60
+        },
+        {
+          "metric_date": "2026-01-03",
+          "value": 42
+        },
+        {
+          "metric_date": "2026-01-04",
+          "value": 50
+        },
+        {
+          "metric_date": "2026-01-05",
+          "value": 45
+        },
+        {
+          "metric_date": "2026-01-06",
+          "value": 29
+        },
+        {
+          "metric_date": "2026-01-07",
+          "value": 60
+        },
+        {
+          "metric_date": "2026-01-08",
+          "value": 50
+        },
+        {
+          "metric_date": "2026-01-09",
+          "value": 52
+        },
+        {
+          "metric_date": "2026-01-10",
+          "value": 44
+        },
+        {
+          "metric_date": "2026-01-11",
+          "value": 41
+        },
+        {
+          "metric_date": "2026-01-12",
+          "value": 39
+        },
+        {
+          "metric_date": "2026-01-13",
+          "value": 28
+        },
+        {
+          "metric_date": "2026-01-14",
+          "value": 44
+        },
+        {
+          "metric_date": "2026-01-15",
+          "value": 49
+        },
+        {
+          "metric_date": "2026-01-16",
+          "value": 65
+        },
+        {
+          "metric_date": "2026-01-17",
+          "value": 43
+        },
+        {
+          "metric_date": "2026-01-18",
+          "value": 51
+        },
+        {
+          "metric_date": "2026-01-19",
+          "value": 46
+        },
+        {
+          "metric_date": "2026-01-20",
+          "value": 46
+        },
+        {
+          "metric_date": "2026-01-21",
+          "value": 54
+        },
+        {
+          "metric_date": "2026-01-22",
+          "value": 47
+        },
+        {
+          "metric_date": "2026-01-23",
+          "value": 56
+        },
+        {
+          "metric_date": "2026-01-24",
+          "value": 48
+        },
+        {
+          "metric_date": "2026-01-25",
+          "value": 51
+        },
+        {
+          "metric_date": "2026-01-26",
+          "value": 58
+        },
+        {
+          "metric_date": "2026-01-27",
+          "value": 58
+        },
+        {
+          "metric_date": "2026-01-28",
+          "value": 55
+        },
+        {
+          "metric_date": "2026-01-29",
+          "value": 53
+        },
+        {
+          "metric_date": "2026-01-30",
+          "value": 51
+        },
+        {
+          "metric_date": "2026-01-31",
+          "value": 56
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "value": [
+          "new_users"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1699.71
+    },
+    {
+      "case_id": "GROWTH_OPS-026",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致",
+      "column_match": true,
+      "generated_sql": "SELECT\n  ac.channel_name,\n  SUM(gdm.new_users) AS new_users\nFROM growth_daily_metrics gdm\nJOIN acquisition_channels ac ON gdm.channel_id = ac.channel_id\nWHERE gdm.metric_date >= '2026-01-01' AND gdm.metric_date < '2026-02-01'\nGROUP BY ac.channel_name\nORDER BY new_users DESC, ac.channel_name ASC",
+      "gold_sql": "SELECT c.channel_name, SUM(g.new_users) AS new_users FROM growth_daily_metrics g JOIN acquisition_channels c ON g.channel_id=c.channel_id WHERE strftime(g.metric_date, '%Y-%m')='2026-01' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "channel_name",
+        "new_users"
+      ],
+      "actual_rows": [
+        {
+          "channel_name": "信息流广告",
+          "new_users": 258
+        },
+        {
+          "channel_name": "自然推荐",
+          "new_users": 249
+        },
+        {
+          "channel_name": "达人推广",
+          "new_users": 192
+        },
+        {
+          "channel_name": "好友邀请",
+          "new_users": 171
+        },
+        {
+          "channel_name": "应用商店",
+          "new_users": 168
+        },
+        {
+          "channel_name": "搜索广告",
+          "new_users": 168
+        },
+        {
+          "channel_name": "社交分享",
+          "new_users": 108
+        },
+        {
+          "channel_name": "品牌广告",
+          "new_users": 106
+        },
+        {
+          "channel_name": "线下活动",
+          "new_users": 59
+        },
+        {
+          "channel_name": "其他渠道",
+          "new_users": 41
+        }
+      ],
+      "gold_columns": [
+        "channel_name",
+        "new_users"
+      ],
+      "gold_rows": [
+        {
+          "channel_name": "信息流广告",
+          "new_users": 258
+        },
+        {
+          "channel_name": "自然推荐",
+          "new_users": 249
+        },
+        {
+          "channel_name": "达人推广",
+          "new_users": 192
+        },
+        {
+          "channel_name": "好友邀请",
+          "new_users": 171
+        },
+        {
+          "channel_name": "应用商店",
+          "new_users": 168
+        },
+        {
+          "channel_name": "搜索广告",
+          "new_users": 168
+        },
+        {
+          "channel_name": "社交分享",
+          "new_users": 108
+        },
+        {
+          "channel_name": "品牌广告",
+          "new_users": 106
+        },
+        {
+          "channel_name": "线下活动",
+          "new_users": 59
+        },
+        {
+          "channel_name": "其他渠道",
+          "new_users": 41
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {},
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1891.517
+    },
+    {
+      "case_id": "GROWTH_OPS-061",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致",
+      "column_match": true,
+      "generated_sql": "SELECT\n  ac.channel_name,\n  AVG(ua.activation_seconds) AS avg_activation_seconds\nFROM user_activations ua\nJOIN users u ON ua.user_id = u.user_id\nJOIN acquisition_channels ac ON u.register_channel_id = ac.channel_id\nWHERE ua.is_activated = 1\n  AND ac.channel_name = '自然推荐'\nGROUP BY ac.channel_name",
+      "gold_sql": "SELECT c.channel_name, ROUND(AVG(a.activation_seconds),2) AS avg_activation_seconds FROM user_activations a JOIN user_registrations r ON a.registration_id=r.registration_id JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE a.is_activated AND c.channel_name='自然推荐' GROUP BY 1",
+      "actual_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "actual_rows": [
+        {
+          "channel_name": "自然推荐",
+          "avg_activation_seconds": 21167.636831938184
+        }
+      ],
+      "gold_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "gold_rows": [
+        {
+          "channel_name": "自然推荐",
+          "avg_activation_seconds": 21167.64
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {},
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1879.184
+    },
+    {
+      "case_id": "GROWTH_OPS-062",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致",
+      "column_match": true,
+      "generated_sql": "SELECT\n  ac.channel_name,\n  AVG(ua.activation_seconds) AS avg_activation_seconds\nFROM user_activations ua\nJOIN users u ON ua.user_id = u.user_id\nJOIN acquisition_channels ac ON u.register_channel_id = ac.channel_id\nWHERE ua.is_activated = 1\n  AND ac.channel_name = '应用商店'\nGROUP BY ac.channel_name",
+      "gold_sql": "SELECT c.channel_name, ROUND(AVG(a.activation_seconds),2) AS avg_activation_seconds FROM user_activations a JOIN user_registrations r ON a.registration_id=r.registration_id JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE a.is_activated AND c.channel_name='应用商店' GROUP BY 1",
+      "actual_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "actual_rows": [
+        {
+          "channel_name": "应用商店",
+          "avg_activation_seconds": 21533.795180722893
+        }
+      ],
+      "gold_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "gold_rows": [
+        {
+          "channel_name": "应用商店",
+          "avg_activation_seconds": 21533.8
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {},
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1742.846
+    },
+    {
+      "case_id": "GROWTH_OPS-063",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致",
+      "column_match": true,
+      "generated_sql": "SELECT\n  ac.channel_name,\n  AVG(ua.activation_seconds) AS avg_activation_seconds\nFROM user_activations ua\nJOIN users u ON ua.user_id = u.user_id\nJOIN acquisition_channels ac ON u.register_channel_id = ac.channel_id\nWHERE ua.is_activated = 1\n  AND ac.channel_name = '信息流广告'\nGROUP BY ac.channel_name",
+      "gold_sql": "SELECT c.channel_name, ROUND(AVG(a.activation_seconds),2) AS avg_activation_seconds FROM user_activations a JOIN user_registrations r ON a.registration_id=r.registration_id JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE a.is_activated AND c.channel_name='信息流广告' GROUP BY 1",
+      "actual_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "actual_rows": [
+        {
+          "channel_name": "信息流广告",
+          "avg_activation_seconds": 21554.27974947808
+        }
+      ],
+      "gold_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "gold_rows": [
+        {
+          "channel_name": "信息流广告",
+          "avg_activation_seconds": 21554.28
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {},
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1784.643
+    },
+    {
+      "case_id": "GROWTH_OPS-064",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致",
+      "column_match": true,
+      "generated_sql": "SELECT\n  ac.channel_name,\n  AVG(ua.activation_seconds) AS avg_activation_seconds\nFROM user_activations ua\nJOIN users u ON ua.user_id = u.user_id\nJOIN acquisition_channels ac ON u.register_channel_id = ac.channel_id\nWHERE ua.is_activated = 1\n  AND ac.channel_name = '搜索广告'\nGROUP BY ac.channel_name",
+      "gold_sql": "SELECT c.channel_name, ROUND(AVG(a.activation_seconds),2) AS avg_activation_seconds FROM user_activations a JOIN user_registrations r ON a.registration_id=r.registration_id JOIN acquisition_channels c ON r.channel_id=c.channel_id WHERE a.is_activated AND c.channel_name='搜索广告' GROUP BY 1",
+      "actual_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "actual_rows": [
+        {
+          "channel_name": "搜索广告",
+          "avg_activation_seconds": 21335.58067831449
+        }
+      ],
+      "gold_columns": [
+        "channel_name",
+        "avg_activation_seconds"
+      ],
+      "gold_rows": [
+        {
+          "channel_name": "搜索广告",
+          "avg_activation_seconds": 21335.58
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {},
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1633.741
+    },
+    {
+      "case_id": "GROWTH_OPS-066",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n    activation_rule,\n    COUNT(*) AS user_count\nFROM user_activations\nGROUP BY activation_rule\nORDER BY \n    CASE WHEN activation_rule = '观看3条视频' THEN 0 ELSE 1 END,\n    user_count DESC",
+      "gold_sql": "SELECT activation_rule, COUNT(activation_id) AS users FROM user_activations GROUP BY 1 ORDER BY CASE WHEN activation_rule='观看3条视频' THEN 0 ELSE 1 END, users DESC,1",
+      "actual_columns": [
+        "activation_rule",
+        "user_count"
+      ],
+      "actual_rows": [
+        {
+          "activation_rule": "观看3条视频",
+          "user_count": 3905
+        },
+        {
+          "activation_rule": "观看满5分钟",
+          "user_count": 3137
+        },
+        {
+          "activation_rule": "未达到激活条件",
+          "user_count": 3022
+        },
+        {
+          "activation_rule": "完成首次互动",
+          "user_count": 1936
+        }
+      ],
+      "gold_columns": [
+        "activation_rule",
+        "users"
+      ],
+      "gold_rows": [
+        {
+          "activation_rule": "观看3条视频",
+          "users": 3905
+        },
+        {
+          "activation_rule": "观看满5分钟",
+          "users": 3137
+        },
+        {
+          "activation_rule": "未达到激活条件",
+          "users": 3022
+        },
+        {
+          "activation_rule": "完成首次互动",
+          "users": 1936
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "users": [
+          "user_count"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1590.166
+    },
+    {
+      "case_id": "GROWTH_OPS-086",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致",
+      "column_match": true,
+      "generated_sql": "SELECT\n  up.region,\n  AVG(uda.active_minutes) AS avg_active_minutes,\n  AVG(uda.session_count) AS avg_session_count\nFROM user_daily_activity uda\nJOIN users u ON uda.user_id = u.user_id\nJOIN user_profiles up ON u.user_id = up.user_id\nWHERE up.region = '华东'\nGROUP BY up.region",
+      "gold_sql": "SELECT p.region, ROUND(AVG(a.active_minutes),2) AS avg_active_minutes, ROUND(AVG(a.session_count),2) AS avg_session_count FROM user_daily_activity a JOIN user_profiles p ON a.user_id=p.user_id WHERE p.region='华东' GROUP BY 1",
+      "actual_columns": [
+        "region",
+        "avg_active_minutes",
+        "avg_session_count"
+      ],
+      "actual_rows": [
+        {
+          "region": "华东",
+          "avg_active_minutes": 32.964010968085915,
+          "avg_session_count": 2.0622286541244574
+        }
+      ],
+      "gold_columns": [
+        "region",
+        "avg_active_minutes",
+        "avg_session_count"
+      ],
+      "gold_rows": [
+        {
+          "region": "华东",
+          "avg_active_minutes": 32.96,
+          "avg_session_count": 2.06
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {},
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1881.712
+    },
+    {
+      "case_id": "GROWTH_OPS-101",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT user_profiles.region AS region, COUNT(DISTINCT users.user_id) AS user_count FROM users JOIN user_profiles ON users.user_id = user_profiles.user_id GROUP BY user_profiles.region ORDER BY user_count DESC",
+      "gold_sql": "SELECT region, COUNT(user_id) AS users FROM user_profiles GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "region",
+        "user_count"
+      ],
+      "actual_rows": [
+        {
+          "region": "华东",
+          "user_count": 3632
+        },
+        {
+          "region": "华南",
+          "user_count": 2969
+        },
+        {
+          "region": "华北",
+          "user_count": 2184
+        },
+        {
+          "region": "西南",
+          "user_count": 1710
+        },
+        {
+          "region": "华中",
+          "user_count": 1505
+        }
+      ],
+      "gold_columns": [
+        "region",
+        "users"
+      ],
+      "gold_rows": [
+        {
+          "region": "华东",
+          "users": 3632
+        },
+        {
+          "region": "华南",
+          "users": 2969
+        },
+        {
+          "region": "华北",
+          "users": 2184
+        },
+        {
+          "region": "西南",
+          "users": 1710
+        },
+        {
+          "region": "华中",
+          "users": 1505
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "users": [
+          "user_count"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1702.298
+    },
+    {
+      "case_id": "GROWTH_OPS-131",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  rc.campaign_name,\n  COUNT(rt.touch_id) AS touch_count,\n  SUM(CASE WHEN rr.recalled = 1 THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(rr.touch_id), 0) AS recall_rate\nFROM recall_campaigns rc\nJOIN recall_touches rt ON rc.recall_campaign_id = rt.recall_campaign_id\nLEFT JOIN recall_results rr ON rt.touch_id = rr.touch_id\nWHERE rc.target_segment = '沉默7天'\nGROUP BY rc.campaign_name\nORDER BY recall_rate DESC, rc.campaign_name ASC\nLIMIT 200",
+      "gold_sql": "SELECT c.campaign_name, COUNT(*) AS touches, ROUND(SUM(CASE WHEN r.recalled THEN 1 ELSE 0 END)*1.0/COUNT(*),4) AS recall_rate FROM recall_campaigns c JOIN recall_touches t ON c.recall_campaign_id=t.recall_campaign_id JOIN recall_results r ON t.touch_id=r.touch_id WHERE c.target_segment='沉默7天' GROUP BY 1 ORDER BY 3 DESC,1",
+      "actual_columns": [
+        "campaign_name",
+        "touch_count",
+        "recall_rate"
+      ],
+      "actual_rows": [
+        {
+          "campaign_name": "沉默用户召回01",
+          "touch_count": 363,
+          "recall_rate": 0.1184573002754821
+        },
+        {
+          "campaign_name": "沉默用户召回07",
+          "touch_count": 374,
+          "recall_rate": 0.11229946524064172
+        },
+        {
+          "campaign_name": "沉默用户召回15",
+          "touch_count": 382,
+          "recall_rate": 0.07329842931937172
+        },
+        {
+          "campaign_name": "沉默用户召回06",
+          "touch_count": 362,
+          "recall_rate": 0.052486187845303865
+        },
+        {
+          "campaign_name": "沉默用户召回23",
+          "touch_count": 384,
+          "recall_rate": 0.052083333333333336
+        },
+        {
+          "campaign_name": "沉默用户召回09",
+          "touch_count": 369,
+          "recall_rate": 0.051490514905149054
+        },
+        {
+          "campaign_name": "沉默用户召回11",
+          "touch_count": 395,
+          "recall_rate": 0.04810126582278481
+        },
+        {
+          "campaign_name": "沉默用户召回21",
+          "touch_count": 371,
+          "recall_rate": 0.0431266846361186
+        }
+      ],
+      "gold_columns": [
+        "campaign_name",
+        "touches",
+        "recall_rate"
+      ],
+      "gold_rows": [
+        {
+          "campaign_name": "沉默用户召回01",
+          "touches": 363,
+          "recall_rate": 0.1185
+        },
+        {
+          "campaign_name": "沉默用户召回07",
+          "touches": 374,
+          "recall_rate": 0.1123
+        },
+        {
+          "campaign_name": "沉默用户召回15",
+          "touches": 382,
+          "recall_rate": 0.0733
+        },
+        {
+          "campaign_name": "沉默用户召回06",
+          "touches": 362,
+          "recall_rate": 0.0525
+        },
+        {
+          "campaign_name": "沉默用户召回23",
+          "touches": 384,
+          "recall_rate": 0.0521
+        },
+        {
+          "campaign_name": "沉默用户召回09",
+          "touches": 369,
+          "recall_rate": 0.0515
+        },
+        {
+          "campaign_name": "沉默用户召回11",
+          "touches": 395,
+          "recall_rate": 0.0481
+        },
+        {
+          "campaign_name": "沉默用户召回21",
+          "touches": 371,
+          "recall_rate": 0.0431
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "touches": [
+          "touch_count"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1749.899
+    },
+    {
+      "case_id": "GROWTH_OPS-149",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  ac.channel_name,\n  SUM(CASE WHEN ua.is_activated = 1 THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(ur.registration_id), 0) AS actual_activation_rate,\n  gt.activation_rate_target,\n  (SUM(CASE WHEN ua.is_activated = 1 THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(ur.registration_id), 0)) - gt.activation_rate_target AS target_gap\nFROM user_registrations ur\nJOIN user_activations ua ON ur.registration_id = ua.registration_id\nJOIN acquisition_channels ac ON ur.channel_id = ac.channel_id\nJOIN growth_targets gt ON ac.channel_id = gt.channel_id AND gt.target_month = '2026-04'\nWHERE ur.registered_at >= '2026-04-01' AND ur.registered_at < '2026-05-01'\nGROUP BY ac.channel_name, gt.activation_rate_target\nORDER BY actual_activation_rate DESC",
+      "gold_sql": "WITH actual AS (SELECT r.channel_id, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(*) AS actual_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-04' GROUP BY 1) SELECT c.channel_name,ROUND(a.actual_rate,4) AS actual_rate,t.activation_rate_target, ROUND(a.actual_rate-t.activation_rate_target,4) AS gap FROM growth_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-04' ORDER BY gap DESC,1",
+      "actual_columns": [
+        "channel_name",
+        "actual_activation_rate",
+        "activation_rate_target",
+        "target_gap"
+      ],
+      "actual_rows": [
+        {
+          "channel_name": "好友邀请",
+          "actual_activation_rate": 0.8108108108108109,
+          "activation_rate_target": 0.6823,
+          "target_gap": 0.12851081081081084
+        },
+        {
+          "channel_name": "应用商店",
+          "actual_activation_rate": 0.8012820512820513,
+          "activation_rate_target": 0.7537,
+          "target_gap": 0.047582051282051285
+        },
+        {
+          "channel_name": "自然推荐",
+          "actual_activation_rate": 0.7944664031620553,
+          "activation_rate_target": 0.7546,
+          "target_gap": 0.03986640316205525
+        },
+        {
+          "channel_name": "达人推广",
+          "actual_activation_rate": 0.7584269662921348,
+          "activation_rate_target": 0.7519,
+          "target_gap": 0.006526966292134784
+        },
+        {
+          "channel_name": "搜索广告",
+          "actual_activation_rate": 0.7554347826086957,
+          "activation_rate_target": 0.7888,
+          "target_gap": -0.03336521739130427
+        },
+        {
+          "channel_name": "社交分享",
+          "actual_activation_rate": 0.74,
+          "activation_rate_target": 0.7688,
+          "target_gap": -0.028800000000000048
+        },
+        {
+          "channel_name": "信息流广告",
+          "actual_activation_rate": 0.6863468634686347,
+          "activation_rate_target": 0.7183,
+          "target_gap": -0.031953136531365334
+        },
+        {
+          "channel_name": "线下活动",
+          "actual_activation_rate": 0.6428571428571429,
+          "activation_rate_target": 0.7696,
+          "target_gap": -0.12674285714285705
+        },
+        {
+          "channel_name": "品牌广告",
+          "actual_activation_rate": 0.639344262295082,
+          "activation_rate_target": 0.6342,
+          "target_gap": 0.005144262295082025
+        },
+        {
+          "channel_name": "其他渠道",
+          "actual_activation_rate": 0.5789473684210527,
+          "activation_rate_target": 0.7812,
+          "target_gap": -0.20225263157894735
+        }
+      ],
+      "gold_columns": [
+        "channel_name",
+        "actual_rate",
+        "activation_rate_target",
+        "gap"
+      ],
+      "gold_rows": [
+        {
+          "channel_name": "好友邀请",
+          "actual_rate": 0.8108,
+          "activation_rate_target": 0.6823,
+          "gap": 0.1285
+        },
+        {
+          "channel_name": "应用商店",
+          "actual_rate": 0.8013,
+          "activation_rate_target": 0.7537,
+          "gap": 0.0476
+        },
+        {
+          "channel_name": "自然推荐",
+          "actual_rate": 0.7945,
+          "activation_rate_target": 0.7546,
+          "gap": 0.0399
+        },
+        {
+          "channel_name": "达人推广",
+          "actual_rate": 0.7584,
+          "activation_rate_target": 0.7519,
+          "gap": 0.0065
+        },
+        {
+          "channel_name": "品牌广告",
+          "actual_rate": 0.6393,
+          "activation_rate_target": 0.6342,
+          "gap": 0.0051
+        },
+        {
+          "channel_name": "社交分享",
+          "actual_rate": 0.74,
+          "activation_rate_target": 0.7688,
+          "gap": -0.0288
+        },
+        {
+          "channel_name": "信息流广告",
+          "actual_rate": 0.6863,
+          "activation_rate_target": 0.7183,
+          "gap": -0.032
+        },
+        {
+          "channel_name": "搜索广告",
+          "actual_rate": 0.7554,
+          "activation_rate_target": 0.7888,
+          "gap": -0.0334
+        },
+        {
+          "channel_name": "线下活动",
+          "actual_rate": 0.6429,
+          "activation_rate_target": 0.7696,
+          "gap": -0.1267
+        },
+        {
+          "channel_name": "其他渠道",
+          "actual_rate": 0.5789,
+          "activation_rate_target": 0.7812,
+          "gap": -0.2023
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "actual_rate": [
+          "actual_activation_rate"
+        ],
+        "gap": [
+          "target_gap"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1775.299
+    },
+    {
+      "case_id": "GROWTH_OPS-150",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  ac.channel_name,\n  SUM(CASE WHEN ua.is_activated = 1 THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(DISTINCT ur.registration_id), 0) AS actual_activation_rate,\n  gt.activation_rate_target,\n  (SUM(CASE WHEN ua.is_activated = 1 THEN 1 ELSE 0 END) * 1.0 / NULLIF(COUNT(DISTINCT ur.registration_id), 0)) - gt.activation_rate_target AS target_gap\nFROM user_registrations ur\nJOIN acquisition_channels ac ON ur.channel_id = ac.channel_id\nLEFT JOIN user_activations ua ON ur.registration_id = ua.registration_id\nJOIN growth_targets gt ON ac.channel_id = gt.channel_id\nWHERE ur.registered_at >= '2026-05-01' AND ur.registered_at < '2026-06-01'\n  AND gt.target_month = '2026-05'\nGROUP BY ac.channel_name, gt.activation_rate_target\nORDER BY actual_activation_rate DESC",
+      "gold_sql": "WITH actual AS (SELECT r.channel_id, SUM(CASE WHEN a.is_activated THEN 1 ELSE 0 END)*1.0/COUNT(*) AS actual_rate FROM user_registrations r JOIN user_activations a ON r.registration_id=a.registration_id WHERE strftime(r.registered_at,'%Y-%m')='2026-05' GROUP BY 1) SELECT c.channel_name,ROUND(a.actual_rate,4) AS actual_rate,t.activation_rate_target, ROUND(a.actual_rate-t.activation_rate_target,4) AS gap FROM growth_targets t JOIN acquisition_channels c ON t.channel_id=c.channel_id JOIN actual a ON t.channel_id=a.channel_id WHERE substr(t.target_month,1,7)='2026-05' ORDER BY gap DESC,1",
+      "actual_columns": [
+        "channel_name",
+        "actual_activation_rate",
+        "activation_rate_target",
+        "target_gap"
+      ],
+      "actual_rows": [
+        {
+          "channel_name": "好友邀请",
+          "actual_activation_rate": 0.9190751445086706,
+          "activation_rate_target": 0.6785,
+          "target_gap": 0.24057514450867057
+        },
+        {
+          "channel_name": "自然推荐",
+          "actual_activation_rate": 0.8472727272727273,
+          "activation_rate_target": 0.8107,
+          "target_gap": 0.03657272727272731
+        },
+        {
+          "channel_name": "应用商店",
+          "actual_activation_rate": 0.7857142857142857,
+          "activation_rate_target": 0.7175,
+          "target_gap": 0.06821428571428567
+        },
+        {
+          "channel_name": "搜索广告",
+          "actual_activation_rate": 0.7823529411764706,
+          "activation_rate_target": 0.7176,
+          "target_gap": 0.06475294117647057
+        },
+        {
+          "channel_name": "社交分享",
+          "actual_activation_rate": 0.7818181818181819,
+          "activation_rate_target": 0.6441,
+          "target_gap": 0.13771818181818185
+        },
+        {
+          "channel_name": "达人推广",
+          "actual_activation_rate": 0.7760416666666666,
+          "activation_rate_target": 0.7835,
+          "target_gap": -0.007458333333333345
+        },
+        {
+          "channel_name": "信息流广告",
+          "actual_activation_rate": 0.6666666666666666,
+          "activation_rate_target": 0.7082,
+          "target_gap": -0.04153333333333342
+        },
+        {
+          "channel_name": "线下活动",
+          "actual_activation_rate": 0.6119402985074627,
+          "activation_rate_target": 0.6237,
+          "target_gap": -0.011759701492537356
+        },
+        {
+          "channel_name": "其他渠道",
+          "actual_activation_rate": 0.5813953488372093,
+          "activation_rate_target": 0.7158,
+          "target_gap": -0.13440465116279066
+        },
+        {
+          "channel_name": "品牌广告",
+          "actual_activation_rate": 0.5307692307692308,
+          "activation_rate_target": 0.756,
+          "target_gap": -0.22523076923076923
+        }
+      ],
+      "gold_columns": [
+        "channel_name",
+        "actual_rate",
+        "activation_rate_target",
+        "gap"
+      ],
+      "gold_rows": [
+        {
+          "channel_name": "好友邀请",
+          "actual_rate": 0.9191,
+          "activation_rate_target": 0.6785,
+          "gap": 0.2406
+        },
+        {
+          "channel_name": "社交分享",
+          "actual_rate": 0.7818,
+          "activation_rate_target": 0.6441,
+          "gap": 0.1377
+        },
+        {
+          "channel_name": "应用商店",
+          "actual_rate": 0.7857,
+          "activation_rate_target": 0.7175,
+          "gap": 0.0682
+        },
+        {
+          "channel_name": "搜索广告",
+          "actual_rate": 0.7824,
+          "activation_rate_target": 0.7176,
+          "gap": 0.0648
+        },
+        {
+          "channel_name": "自然推荐",
+          "actual_rate": 0.8473,
+          "activation_rate_target": 0.8107,
+          "gap": 0.0366
+        },
+        {
+          "channel_name": "达人推广",
+          "actual_rate": 0.776,
+          "activation_rate_target": 0.7835,
+          "gap": -0.0075
+        },
+        {
+          "channel_name": "线下活动",
+          "actual_rate": 0.6119,
+          "activation_rate_target": 0.6237,
+          "gap": -0.0118
+        },
+        {
+          "channel_name": "信息流广告",
+          "actual_rate": 0.6667,
+          "activation_rate_target": 0.7082,
+          "gap": -0.0415
+        },
+        {
+          "channel_name": "其他渠道",
+          "actual_rate": 0.5814,
+          "activation_rate_target": 0.7158,
+          "gap": -0.1344
+        },
+        {
+          "channel_name": "品牌广告",
+          "actual_rate": 0.5308,
+          "activation_rate_target": 0.756,
+          "gap": -0.2252
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "actual_rate": [
+          "actual_activation_rate"
+        ],
+        "gap": [
+          "target_gap"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1656.862
+    },
+    {
+      "case_id": "CHANNEL_OPS-001",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT stat_date, SUM(spend) AS ad_spend FROM ad_daily_stats WHERE stat_date >= '2026-01-01' AND stat_date < '2026-02-01' GROUP BY stat_date ORDER BY stat_date ASC",
+      "gold_sql": "SELECT stat_date,ROUND(SUM(spend),2) spend FROM ad_daily_stats WHERE strftime(stat_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "stat_date",
+        "ad_spend"
+      ],
+      "actual_rows": [
+        {
+          "stat_date": "2026-01-02",
+          "ad_spend": 547.01
+        },
+        {
+          "stat_date": "2026-01-03",
+          "ad_spend": 4092.0
+        },
+        {
+          "stat_date": "2026-01-04",
+          "ad_spend": 1326.62
+        },
+        {
+          "stat_date": "2026-01-05",
+          "ad_spend": 2622.66
+        },
+        {
+          "stat_date": "2026-01-06",
+          "ad_spend": 1151.76
+        },
+        {
+          "stat_date": "2026-01-07",
+          "ad_spend": 7150.09
+        },
+        {
+          "stat_date": "2026-01-08",
+          "ad_spend": 7481.139999999999
+        },
+        {
+          "stat_date": "2026-01-09",
+          "ad_spend": 8729.2
+        },
+        {
+          "stat_date": "2026-01-10",
+          "ad_spend": 6831.43
+        },
+        {
+          "stat_date": "2026-01-11",
+          "ad_spend": 12802.42
+        },
+        {
+          "stat_date": "2026-01-12",
+          "ad_spend": 10972.35
+        },
+        {
+          "stat_date": "2026-01-13",
+          "ad_spend": 9370.02
+        },
+        {
+          "stat_date": "2026-01-14",
+          "ad_spend": 12486.720000000001
+        },
+        {
+          "stat_date": "2026-01-15",
+          "ad_spend": 19280.280000000002
+        },
+        {
+          "stat_date": "2026-01-16",
+          "ad_spend": 14618.85
+        },
+        {
+          "stat_date": "2026-01-17",
+          "ad_spend": 16386.99
+        },
+        {
+          "stat_date": "2026-01-18",
+          "ad_spend": 17622.83
+        },
+        {
+          "stat_date": "2026-01-19",
+          "ad_spend": 17616.269999999997
+        },
+        {
+          "stat_date": "2026-01-20",
+          "ad_spend": 22490.450000000004
+        },
+        {
+          "stat_date": "2026-01-21",
+          "ad_spend": 24398.57
+        },
+        {
+          "stat_date": "2026-01-22",
+          "ad_spend": 20489.449999999997
+        },
+        {
+          "stat_date": "2026-01-23",
+          "ad_spend": 28875.65
+        },
+        {
+          "stat_date": "2026-01-24",
+          "ad_spend": 25586.03
+        },
+        {
+          "stat_date": "2026-01-25",
+          "ad_spend": 22621.799999999996
+        },
+        {
+          "stat_date": "2026-01-26",
+          "ad_spend": 28105.800000000003
+        },
+        {
+          "stat_date": "2026-01-27",
+          "ad_spend": 29406.479999999996
+        },
+        {
+          "stat_date": "2026-01-28",
+          "ad_spend": 26343.91
+        },
+        {
+          "stat_date": "2026-01-29",
+          "ad_spend": 23721.29
+        },
+        {
+          "stat_date": "2026-01-30",
+          "ad_spend": 32152.190000000006
+        },
+        {
+          "stat_date": "2026-01-31",
+          "ad_spend": 26532.57
+        }
+      ],
+      "gold_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "gold_rows": [
+        {
+          "stat_date": "2026-01-02",
+          "spend": 547.01
+        },
+        {
+          "stat_date": "2026-01-03",
+          "spend": 4092.0
+        },
+        {
+          "stat_date": "2026-01-04",
+          "spend": 1326.62
+        },
+        {
+          "stat_date": "2026-01-05",
+          "spend": 2622.66
+        },
+        {
+          "stat_date": "2026-01-06",
+          "spend": 1151.76
+        },
+        {
+          "stat_date": "2026-01-07",
+          "spend": 7150.09
+        },
+        {
+          "stat_date": "2026-01-08",
+          "spend": 7481.14
+        },
+        {
+          "stat_date": "2026-01-09",
+          "spend": 8729.2
+        },
+        {
+          "stat_date": "2026-01-10",
+          "spend": 6831.43
+        },
+        {
+          "stat_date": "2026-01-11",
+          "spend": 12802.42
+        },
+        {
+          "stat_date": "2026-01-12",
+          "spend": 10972.35
+        },
+        {
+          "stat_date": "2026-01-13",
+          "spend": 9370.02
+        },
+        {
+          "stat_date": "2026-01-14",
+          "spend": 12486.72
+        },
+        {
+          "stat_date": "2026-01-15",
+          "spend": 19280.28
+        },
+        {
+          "stat_date": "2026-01-16",
+          "spend": 14618.85
+        },
+        {
+          "stat_date": "2026-01-17",
+          "spend": 16386.99
+        },
+        {
+          "stat_date": "2026-01-18",
+          "spend": 17622.83
+        },
+        {
+          "stat_date": "2026-01-19",
+          "spend": 17616.27
+        },
+        {
+          "stat_date": "2026-01-20",
+          "spend": 22490.45
+        },
+        {
+          "stat_date": "2026-01-21",
+          "spend": 24398.57
+        },
+        {
+          "stat_date": "2026-01-22",
+          "spend": 20489.45
+        },
+        {
+          "stat_date": "2026-01-23",
+          "spend": 28875.65
+        },
+        {
+          "stat_date": "2026-01-24",
+          "spend": 25586.03
+        },
+        {
+          "stat_date": "2026-01-25",
+          "spend": 22621.8
+        },
+        {
+          "stat_date": "2026-01-26",
+          "spend": 28105.8
+        },
+        {
+          "stat_date": "2026-01-27",
+          "spend": 29406.48
+        },
+        {
+          "stat_date": "2026-01-28",
+          "spend": 26343.91
+        },
+        {
+          "stat_date": "2026-01-29",
+          "spend": 23721.29
+        },
+        {
+          "stat_date": "2026-01-30",
+          "spend": 32152.19
+        },
+        {
+          "stat_date": "2026-01-31",
+          "spend": 26532.57
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "spend": [
+          "ad_spend"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1665.638
+    },
+    {
+      "case_id": "CHANNEL_OPS-002",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT stat_date, SUM(spend) AS ad_spend FROM ad_daily_stats WHERE stat_date >= '2026-02-01' AND stat_date < '2026-03-01' GROUP BY stat_date ORDER BY stat_date ASC",
+      "gold_sql": "SELECT stat_date,ROUND(SUM(spend),2) spend FROM ad_daily_stats WHERE strftime(stat_date,'%Y-%m')='2026-02' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "stat_date",
+        "ad_spend"
+      ],
+      "actual_rows": [
+        {
+          "stat_date": "2026-02-01",
+          "ad_spend": 33307.68
+        },
+        {
+          "stat_date": "2026-02-02",
+          "ad_spend": 33982.26
+        },
+        {
+          "stat_date": "2026-02-03",
+          "ad_spend": 27042.709999999995
+        },
+        {
+          "stat_date": "2026-02-04",
+          "ad_spend": 25454.760000000002
+        },
+        {
+          "stat_date": "2026-02-05",
+          "ad_spend": 35068.30999999999
+        },
+        {
+          "stat_date": "2026-02-06",
+          "ad_spend": 39415.84999999999
+        },
+        {
+          "stat_date": "2026-02-07",
+          "ad_spend": 38061.56
+        },
+        {
+          "stat_date": "2026-02-08",
+          "ad_spend": 40581.219999999994
+        },
+        {
+          "stat_date": "2026-02-09",
+          "ad_spend": 38305.719999999994
+        },
+        {
+          "stat_date": "2026-02-10",
+          "ad_spend": 38348.81999999999
+        },
+        {
+          "stat_date": "2026-02-11",
+          "ad_spend": 35420.79
+        },
+        {
+          "stat_date": "2026-02-12",
+          "ad_spend": 45282.34
+        },
+        {
+          "stat_date": "2026-02-13",
+          "ad_spend": 48153.49
+        },
+        {
+          "stat_date": "2026-02-14",
+          "ad_spend": 47591.460000000014
+        },
+        {
+          "stat_date": "2026-02-15",
+          "ad_spend": 42912.38
+        },
+        {
+          "stat_date": "2026-02-16",
+          "ad_spend": 47495.99
+        },
+        {
+          "stat_date": "2026-02-17",
+          "ad_spend": 51535.95
+        },
+        {
+          "stat_date": "2026-02-18",
+          "ad_spend": 57036.93
+        },
+        {
+          "stat_date": "2026-02-19",
+          "ad_spend": 47023.63999999999
+        },
+        {
+          "stat_date": "2026-02-20",
+          "ad_spend": 59969.89000000001
+        },
+        {
+          "stat_date": "2026-02-21",
+          "ad_spend": 53582.55
+        },
+        {
+          "stat_date": "2026-02-22",
+          "ad_spend": 65486.07
+        },
+        {
+          "stat_date": "2026-02-23",
+          "ad_spend": 66622.25
+        },
+        {
+          "stat_date": "2026-02-24",
+          "ad_spend": 66326.63
+        },
+        {
+          "stat_date": "2026-02-25",
+          "ad_spend": 58802.79
+        },
+        {
+          "stat_date": "2026-02-26",
+          "ad_spend": 78298.90000000001
+        },
+        {
+          "stat_date": "2026-02-27",
+          "ad_spend": 58833.270000000004
+        },
+        {
+          "stat_date": "2026-02-28",
+          "ad_spend": 66137.42
+        }
+      ],
+      "gold_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "gold_rows": [
+        {
+          "stat_date": "2026-02-01",
+          "spend": 33307.68
+        },
+        {
+          "stat_date": "2026-02-02",
+          "spend": 33982.26
+        },
+        {
+          "stat_date": "2026-02-03",
+          "spend": 27042.71
+        },
+        {
+          "stat_date": "2026-02-04",
+          "spend": 25454.76
+        },
+        {
+          "stat_date": "2026-02-05",
+          "spend": 35068.31
+        },
+        {
+          "stat_date": "2026-02-06",
+          "spend": 39415.85
+        },
+        {
+          "stat_date": "2026-02-07",
+          "spend": 38061.56
+        },
+        {
+          "stat_date": "2026-02-08",
+          "spend": 40581.22
+        },
+        {
+          "stat_date": "2026-02-09",
+          "spend": 38305.72
+        },
+        {
+          "stat_date": "2026-02-10",
+          "spend": 38348.82
+        },
+        {
+          "stat_date": "2026-02-11",
+          "spend": 35420.79
+        },
+        {
+          "stat_date": "2026-02-12",
+          "spend": 45282.34
+        },
+        {
+          "stat_date": "2026-02-13",
+          "spend": 48153.49
+        },
+        {
+          "stat_date": "2026-02-14",
+          "spend": 47591.46
+        },
+        {
+          "stat_date": "2026-02-15",
+          "spend": 42912.38
+        },
+        {
+          "stat_date": "2026-02-16",
+          "spend": 47495.99
+        },
+        {
+          "stat_date": "2026-02-17",
+          "spend": 51535.95
+        },
+        {
+          "stat_date": "2026-02-18",
+          "spend": 57036.93
+        },
+        {
+          "stat_date": "2026-02-19",
+          "spend": 47023.64
+        },
+        {
+          "stat_date": "2026-02-20",
+          "spend": 59969.89
+        },
+        {
+          "stat_date": "2026-02-21",
+          "spend": 53582.55
+        },
+        {
+          "stat_date": "2026-02-22",
+          "spend": 65486.07
+        },
+        {
+          "stat_date": "2026-02-23",
+          "spend": 66622.25
+        },
+        {
+          "stat_date": "2026-02-24",
+          "spend": 66326.63
+        },
+        {
+          "stat_date": "2026-02-25",
+          "spend": 58802.79
+        },
+        {
+          "stat_date": "2026-02-26",
+          "spend": 78298.9
+        },
+        {
+          "stat_date": "2026-02-27",
+          "spend": 58833.27
+        },
+        {
+          "stat_date": "2026-02-28",
+          "spend": 66137.42
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "spend": [
+          "ad_spend"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1707.453
+    },
+    {
+      "case_id": "CHANNEL_OPS-003",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT stat_date, SUM(spend) AS ad_spend FROM ad_daily_stats WHERE stat_date >= '2026-03-01' AND stat_date < '2026-04-01' GROUP BY stat_date ORDER BY stat_date ASC",
+      "gold_sql": "SELECT stat_date,ROUND(SUM(spend),2) spend FROM ad_daily_stats WHERE strftime(stat_date,'%Y-%m')='2026-03' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "stat_date",
+        "ad_spend"
+      ],
+      "actual_rows": [
+        {
+          "stat_date": "2026-03-01",
+          "ad_spend": 65133.92000000002
+        },
+        {
+          "stat_date": "2026-03-02",
+          "ad_spend": 69180.04
+        },
+        {
+          "stat_date": "2026-03-03",
+          "ad_spend": 81906.98
+        },
+        {
+          "stat_date": "2026-03-04",
+          "ad_spend": 77252.49
+        },
+        {
+          "stat_date": "2026-03-05",
+          "ad_spend": 78808.55000000002
+        },
+        {
+          "stat_date": "2026-03-06",
+          "ad_spend": 79050.37000000002
+        },
+        {
+          "stat_date": "2026-03-07",
+          "ad_spend": 85968.33000000002
+        },
+        {
+          "stat_date": "2026-03-08",
+          "ad_spend": 97138.97000000003
+        },
+        {
+          "stat_date": "2026-03-09",
+          "ad_spend": 104047.46
+        },
+        {
+          "stat_date": "2026-03-10",
+          "ad_spend": 85905.99999999999
+        },
+        {
+          "stat_date": "2026-03-11",
+          "ad_spend": 98650.68
+        },
+        {
+          "stat_date": "2026-03-12",
+          "ad_spend": 82566.19
+        },
+        {
+          "stat_date": "2026-03-13",
+          "ad_spend": 97915.98000000001
+        },
+        {
+          "stat_date": "2026-03-14",
+          "ad_spend": 93473.46999999999
+        },
+        {
+          "stat_date": "2026-03-15",
+          "ad_spend": 96921.97999999998
+        },
+        {
+          "stat_date": "2026-03-16",
+          "ad_spend": 102122.48999999999
+        },
+        {
+          "stat_date": "2026-03-17",
+          "ad_spend": 91305.21000000002
+        },
+        {
+          "stat_date": "2026-03-18",
+          "ad_spend": 77746.94999999998
+        },
+        {
+          "stat_date": "2026-03-19",
+          "ad_spend": 98589.92000000004
+        },
+        {
+          "stat_date": "2026-03-20",
+          "ad_spend": 85961.72999999998
+        },
+        {
+          "stat_date": "2026-03-21",
+          "ad_spend": 100296.27999999998
+        },
+        {
+          "stat_date": "2026-03-22",
+          "ad_spend": 93466.23000000001
+        },
+        {
+          "stat_date": "2026-03-23",
+          "ad_spend": 90615.35000000002
+        },
+        {
+          "stat_date": "2026-03-24",
+          "ad_spend": 99537.80999999998
+        },
+        {
+          "stat_date": "2026-03-25",
+          "ad_spend": 101482.70000000003
+        },
+        {
+          "stat_date": "2026-03-26",
+          "ad_spend": 94969.16
+        },
+        {
+          "stat_date": "2026-03-27",
+          "ad_spend": 113078.34999999999
+        },
+        {
+          "stat_date": "2026-03-28",
+          "ad_spend": 83240.36999999997
+        },
+        {
+          "stat_date": "2026-03-29",
+          "ad_spend": 88721.46
+        },
+        {
+          "stat_date": "2026-03-30",
+          "ad_spend": 113108.54000000004
+        },
+        {
+          "stat_date": "2026-03-31",
+          "ad_spend": 92034.72
+        }
+      ],
+      "gold_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "gold_rows": [
+        {
+          "stat_date": "2026-03-01",
+          "spend": 65133.92
+        },
+        {
+          "stat_date": "2026-03-02",
+          "spend": 69180.04
+        },
+        {
+          "stat_date": "2026-03-03",
+          "spend": 81906.98
+        },
+        {
+          "stat_date": "2026-03-04",
+          "spend": 77252.49
+        },
+        {
+          "stat_date": "2026-03-05",
+          "spend": 78808.55
+        },
+        {
+          "stat_date": "2026-03-06",
+          "spend": 79050.37
+        },
+        {
+          "stat_date": "2026-03-07",
+          "spend": 85968.33
+        },
+        {
+          "stat_date": "2026-03-08",
+          "spend": 97138.97
+        },
+        {
+          "stat_date": "2026-03-09",
+          "spend": 104047.46
+        },
+        {
+          "stat_date": "2026-03-10",
+          "spend": 85906.0
+        },
+        {
+          "stat_date": "2026-03-11",
+          "spend": 98650.68
+        },
+        {
+          "stat_date": "2026-03-12",
+          "spend": 82566.19
+        },
+        {
+          "stat_date": "2026-03-13",
+          "spend": 97915.98
+        },
+        {
+          "stat_date": "2026-03-14",
+          "spend": 93473.47
+        },
+        {
+          "stat_date": "2026-03-15",
+          "spend": 96921.98
+        },
+        {
+          "stat_date": "2026-03-16",
+          "spend": 102122.49
+        },
+        {
+          "stat_date": "2026-03-17",
+          "spend": 91305.21
+        },
+        {
+          "stat_date": "2026-03-18",
+          "spend": 77746.95
+        },
+        {
+          "stat_date": "2026-03-19",
+          "spend": 98589.92
+        },
+        {
+          "stat_date": "2026-03-20",
+          "spend": 85961.73
+        },
+        {
+          "stat_date": "2026-03-21",
+          "spend": 100296.28
+        },
+        {
+          "stat_date": "2026-03-22",
+          "spend": 93466.23
+        },
+        {
+          "stat_date": "2026-03-23",
+          "spend": 90615.35
+        },
+        {
+          "stat_date": "2026-03-24",
+          "spend": 99537.81
+        },
+        {
+          "stat_date": "2026-03-25",
+          "spend": 101482.7
+        },
+        {
+          "stat_date": "2026-03-26",
+          "spend": 94969.16
+        },
+        {
+          "stat_date": "2026-03-27",
+          "spend": 113078.35
+        },
+        {
+          "stat_date": "2026-03-28",
+          "spend": 83240.37
+        },
+        {
+          "stat_date": "2026-03-29",
+          "spend": 88721.46
+        },
+        {
+          "stat_date": "2026-03-30",
+          "spend": 113108.54
+        },
+        {
+          "stat_date": "2026-03-31",
+          "spend": 92034.72
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "spend": [
+          "ad_spend"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1610.934
+    },
+    {
+      "case_id": "CHANNEL_OPS-004",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT stat_date, SUM(spend) AS ad_spend FROM ad_daily_stats WHERE stat_date >= '2026-04-01' AND stat_date < '2026-05-01' GROUP BY stat_date ORDER BY stat_date ASC",
+      "gold_sql": "SELECT stat_date,ROUND(SUM(spend),2) spend FROM ad_daily_stats WHERE strftime(stat_date,'%Y-%m')='2026-04' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "stat_date",
+        "ad_spend"
+      ],
+      "actual_rows": [
+        {
+          "stat_date": "2026-04-01",
+          "ad_spend": 89546.04
+        },
+        {
+          "stat_date": "2026-04-02",
+          "ad_spend": 96766.33
+        },
+        {
+          "stat_date": "2026-04-03",
+          "ad_spend": 86097.76999999999
+        },
+        {
+          "stat_date": "2026-04-04",
+          "ad_spend": 107989.39000000001
+        },
+        {
+          "stat_date": "2026-04-05",
+          "ad_spend": 92003.24
+        },
+        {
+          "stat_date": "2026-04-06",
+          "ad_spend": 99547.14000000001
+        },
+        {
+          "stat_date": "2026-04-07",
+          "ad_spend": 87134.29000000002
+        },
+        {
+          "stat_date": "2026-04-08",
+          "ad_spend": 103722.98000000001
+        },
+        {
+          "stat_date": "2026-04-09",
+          "ad_spend": 71391.59
+        },
+        {
+          "stat_date": "2026-04-10",
+          "ad_spend": 67384.85999999999
+        },
+        {
+          "stat_date": "2026-04-11",
+          "ad_spend": 81119.49999999999
+        },
+        {
+          "stat_date": "2026-04-12",
+          "ad_spend": 89656.45000000003
+        },
+        {
+          "stat_date": "2026-04-13",
+          "ad_spend": 101575.01000000005
+        },
+        {
+          "stat_date": "2026-04-14",
+          "ad_spend": 74935.94999999997
+        },
+        {
+          "stat_date": "2026-04-15",
+          "ad_spend": 105482.24
+        },
+        {
+          "stat_date": "2026-04-16",
+          "ad_spend": 94896.3
+        },
+        {
+          "stat_date": "2026-04-17",
+          "ad_spend": 78141.66999999998
+        },
+        {
+          "stat_date": "2026-04-18",
+          "ad_spend": 91694.3
+        },
+        {
+          "stat_date": "2026-04-19",
+          "ad_spend": 68601.66
+        },
+        {
+          "stat_date": "2026-04-20",
+          "ad_spend": 86752.06999999998
+        },
+        {
+          "stat_date": "2026-04-21",
+          "ad_spend": 91889.92
+        },
+        {
+          "stat_date": "2026-04-22",
+          "ad_spend": 81685.79999999997
+        },
+        {
+          "stat_date": "2026-04-23",
+          "ad_spend": 83310.53
+        },
+        {
+          "stat_date": "2026-04-24",
+          "ad_spend": 91969.87999999999
+        },
+        {
+          "stat_date": "2026-04-25",
+          "ad_spend": 79521.06000000001
+        },
+        {
+          "stat_date": "2026-04-26",
+          "ad_spend": 72313.67
+        },
+        {
+          "stat_date": "2026-04-27",
+          "ad_spend": 67559.77
+        },
+        {
+          "stat_date": "2026-04-28",
+          "ad_spend": 69462.70000000001
+        },
+        {
+          "stat_date": "2026-04-29",
+          "ad_spend": 84455.09999999999
+        },
+        {
+          "stat_date": "2026-04-30",
+          "ad_spend": 82100.08
+        }
+      ],
+      "gold_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "gold_rows": [
+        {
+          "stat_date": "2026-04-01",
+          "spend": 89546.04
+        },
+        {
+          "stat_date": "2026-04-02",
+          "spend": 96766.33
+        },
+        {
+          "stat_date": "2026-04-03",
+          "spend": 86097.77
+        },
+        {
+          "stat_date": "2026-04-04",
+          "spend": 107989.39
+        },
+        {
+          "stat_date": "2026-04-05",
+          "spend": 92003.24
+        },
+        {
+          "stat_date": "2026-04-06",
+          "spend": 99547.14
+        },
+        {
+          "stat_date": "2026-04-07",
+          "spend": 87134.29
+        },
+        {
+          "stat_date": "2026-04-08",
+          "spend": 103722.98
+        },
+        {
+          "stat_date": "2026-04-09",
+          "spend": 71391.59
+        },
+        {
+          "stat_date": "2026-04-10",
+          "spend": 67384.86
+        },
+        {
+          "stat_date": "2026-04-11",
+          "spend": 81119.5
+        },
+        {
+          "stat_date": "2026-04-12",
+          "spend": 89656.45
+        },
+        {
+          "stat_date": "2026-04-13",
+          "spend": 101575.01
+        },
+        {
+          "stat_date": "2026-04-14",
+          "spend": 74935.95
+        },
+        {
+          "stat_date": "2026-04-15",
+          "spend": 105482.24
+        },
+        {
+          "stat_date": "2026-04-16",
+          "spend": 94896.3
+        },
+        {
+          "stat_date": "2026-04-17",
+          "spend": 78141.67
+        },
+        {
+          "stat_date": "2026-04-18",
+          "spend": 91694.3
+        },
+        {
+          "stat_date": "2026-04-19",
+          "spend": 68601.66
+        },
+        {
+          "stat_date": "2026-04-20",
+          "spend": 86752.07
+        },
+        {
+          "stat_date": "2026-04-21",
+          "spend": 91889.92
+        },
+        {
+          "stat_date": "2026-04-22",
+          "spend": 81685.8
+        },
+        {
+          "stat_date": "2026-04-23",
+          "spend": 83310.53
+        },
+        {
+          "stat_date": "2026-04-24",
+          "spend": 91969.88
+        },
+        {
+          "stat_date": "2026-04-25",
+          "spend": 79521.06
+        },
+        {
+          "stat_date": "2026-04-26",
+          "spend": 72313.67
+        },
+        {
+          "stat_date": "2026-04-27",
+          "spend": 67559.77
+        },
+        {
+          "stat_date": "2026-04-28",
+          "spend": 69462.7
+        },
+        {
+          "stat_date": "2026-04-29",
+          "spend": 84455.1
+        },
+        {
+          "stat_date": "2026-04-30",
+          "spend": 82100.08
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "spend": [
+          "ad_spend"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1734.691
+    },
+    {
+      "case_id": "CHANNEL_OPS-005",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT stat_date, SUM(spend) AS ad_spend FROM ad_daily_stats WHERE stat_date >= '2026-05-01' AND stat_date < '2026-06-01' GROUP BY stat_date ORDER BY stat_date ASC",
+      "gold_sql": "SELECT stat_date,ROUND(SUM(spend),2) spend FROM ad_daily_stats WHERE strftime(stat_date,'%Y-%m')='2026-05' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "stat_date",
+        "ad_spend"
+      ],
+      "actual_rows": [
+        {
+          "stat_date": "2026-05-01",
+          "ad_spend": 90132.65000000001
+        },
+        {
+          "stat_date": "2026-05-02",
+          "ad_spend": 72881.39000000001
+        },
+        {
+          "stat_date": "2026-05-03",
+          "ad_spend": 78676.61
+        },
+        {
+          "stat_date": "2026-05-04",
+          "ad_spend": 83897.23000000001
+        },
+        {
+          "stat_date": "2026-05-05",
+          "ad_spend": 93784.65
+        },
+        {
+          "stat_date": "2026-05-06",
+          "ad_spend": 67988.79
+        },
+        {
+          "stat_date": "2026-05-07",
+          "ad_spend": 84685.91000000002
+        },
+        {
+          "stat_date": "2026-05-08",
+          "ad_spend": 72109.73000000001
+        },
+        {
+          "stat_date": "2026-05-09",
+          "ad_spend": 91047.32000000005
+        },
+        {
+          "stat_date": "2026-05-10",
+          "ad_spend": 89865.05999999998
+        },
+        {
+          "stat_date": "2026-05-11",
+          "ad_spend": 88556.79
+        },
+        {
+          "stat_date": "2026-05-12",
+          "ad_spend": 92015.68
+        },
+        {
+          "stat_date": "2026-05-13",
+          "ad_spend": 88411.65999999999
+        },
+        {
+          "stat_date": "2026-05-14",
+          "ad_spend": 81616.78000000003
+        },
+        {
+          "stat_date": "2026-05-15",
+          "ad_spend": 102027.12000000001
+        },
+        {
+          "stat_date": "2026-05-16",
+          "ad_spend": 93525.82999999997
+        },
+        {
+          "stat_date": "2026-05-17",
+          "ad_spend": 87514.26999999999
+        },
+        {
+          "stat_date": "2026-05-18",
+          "ad_spend": 107105.62000000002
+        },
+        {
+          "stat_date": "2026-05-19",
+          "ad_spend": 81555.27
+        },
+        {
+          "stat_date": "2026-05-20",
+          "ad_spend": 80798.28000000003
+        },
+        {
+          "stat_date": "2026-05-21",
+          "ad_spend": 84684.35000000003
+        },
+        {
+          "stat_date": "2026-05-22",
+          "ad_spend": 83085.70000000001
+        },
+        {
+          "stat_date": "2026-05-23",
+          "ad_spend": 74538.26
+        },
+        {
+          "stat_date": "2026-05-24",
+          "ad_spend": 86129.08
+        },
+        {
+          "stat_date": "2026-05-25",
+          "ad_spend": 85287.65
+        },
+        {
+          "stat_date": "2026-05-26",
+          "ad_spend": 89879.1
+        },
+        {
+          "stat_date": "2026-05-27",
+          "ad_spend": 81237.16000000003
+        },
+        {
+          "stat_date": "2026-05-28",
+          "ad_spend": 77224.42000000001
+        },
+        {
+          "stat_date": "2026-05-29",
+          "ad_spend": 83534.18000000001
+        },
+        {
+          "stat_date": "2026-05-30",
+          "ad_spend": 80223.09
+        },
+        {
+          "stat_date": "2026-05-31",
+          "ad_spend": 93990.72
+        }
+      ],
+      "gold_columns": [
+        "stat_date",
+        "spend"
+      ],
+      "gold_rows": [
+        {
+          "stat_date": "2026-05-01",
+          "spend": 90132.65
+        },
+        {
+          "stat_date": "2026-05-02",
+          "spend": 72881.39
+        },
+        {
+          "stat_date": "2026-05-03",
+          "spend": 78676.61
+        },
+        {
+          "stat_date": "2026-05-04",
+          "spend": 83897.23
+        },
+        {
+          "stat_date": "2026-05-05",
+          "spend": 93784.65
+        },
+        {
+          "stat_date": "2026-05-06",
+          "spend": 67988.79
+        },
+        {
+          "stat_date": "2026-05-07",
+          "spend": 84685.91
+        },
+        {
+          "stat_date": "2026-05-08",
+          "spend": 72109.73
+        },
+        {
+          "stat_date": "2026-05-09",
+          "spend": 91047.32
+        },
+        {
+          "stat_date": "2026-05-10",
+          "spend": 89865.06
+        },
+        {
+          "stat_date": "2026-05-11",
+          "spend": 88556.79
+        },
+        {
+          "stat_date": "2026-05-12",
+          "spend": 92015.68
+        },
+        {
+          "stat_date": "2026-05-13",
+          "spend": 88411.66
+        },
+        {
+          "stat_date": "2026-05-14",
+          "spend": 81616.78
+        },
+        {
+          "stat_date": "2026-05-15",
+          "spend": 102027.12
+        },
+        {
+          "stat_date": "2026-05-16",
+          "spend": 93525.83
+        },
+        {
+          "stat_date": "2026-05-17",
+          "spend": 87514.27
+        },
+        {
+          "stat_date": "2026-05-18",
+          "spend": 107105.62
+        },
+        {
+          "stat_date": "2026-05-19",
+          "spend": 81555.27
+        },
+        {
+          "stat_date": "2026-05-20",
+          "spend": 80798.28
+        },
+        {
+          "stat_date": "2026-05-21",
+          "spend": 84684.35
+        },
+        {
+          "stat_date": "2026-05-22",
+          "spend": 83085.7
+        },
+        {
+          "stat_date": "2026-05-23",
+          "spend": 74538.26
+        },
+        {
+          "stat_date": "2026-05-24",
+          "spend": 86129.08
+        },
+        {
+          "stat_date": "2026-05-25",
+          "spend": 85287.65
+        },
+        {
+          "stat_date": "2026-05-26",
+          "spend": 89879.1
+        },
+        {
+          "stat_date": "2026-05-27",
+          "spend": 81237.16
+        },
+        {
+          "stat_date": "2026-05-28",
+          "spend": 77224.42
+        },
+        {
+          "stat_date": "2026-05-29",
+          "spend": 83534.18
+        },
+        {
+          "stat_date": "2026-05-30",
+          "spend": 80223.09
+        },
+        {
+          "stat_date": "2026-05-31",
+          "spend": 93990.72
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "spend": [
+          "ad_spend"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1679.878
+    },
+    {
+      "case_id": "CHANNEL_OPS-066",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  conversion_type,\n  COUNT(*) AS conversion_count,\n  AVG(conversion_value) AS avg_conversion_value\nFROM channel_conversion_events\nWHERE conversion_type = 'registration'\nGROUP BY conversion_type\nORDER BY conversion_type ASC",
+      "gold_sql": "SELECT conversion_type,COUNT(*) conversions,ROUND(AVG(conversion_value),2) avg_value FROM channel_conversion_events WHERE conversion_type='registration' GROUP BY 1",
+      "actual_columns": [
+        "conversion_type",
+        "conversion_count",
+        "avg_conversion_value"
+      ],
+      "actual_rows": [
+        {
+          "conversion_type": "registration",
+          "conversion_count": 5816,
+          "avg_conversion_value": 1.0
+        }
+      ],
+      "gold_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "gold_rows": [
+        {
+          "conversion_type": "registration",
+          "conversions": 5816,
+          "avg_value": 1.0
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "conversions": [
+          "conversion_count"
+        ],
+        "avg_value": [
+          "avg_conversion_value"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1677.434
+    },
+    {
+      "case_id": "CHANNEL_OPS-067",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  conversion_type,\n  COUNT(*) AS conversion_count,\n  AVG(conversion_value) AS avg_conversion_value\nFROM channel_conversion_events\nWHERE conversion_type = 'activation'\nGROUP BY conversion_type\nORDER BY conversion_count DESC, conversion_type ASC",
+      "gold_sql": "SELECT conversion_type,COUNT(*) conversions,ROUND(AVG(conversion_value),2) avg_value FROM channel_conversion_events WHERE conversion_type='activation' GROUP BY 1",
+      "actual_columns": [
+        "conversion_type",
+        "conversion_count",
+        "avg_conversion_value"
+      ],
+      "actual_rows": [
+        {
+          "conversion_type": "activation",
+          "conversion_count": 4104,
+          "avg_conversion_value": 1.0
+        }
+      ],
+      "gold_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "gold_rows": [
+        {
+          "conversion_type": "activation",
+          "conversions": 4104,
+          "avg_value": 1.0
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "conversions": [
+          "conversion_count"
+        ],
+        "avg_value": [
+          "avg_conversion_value"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1593.798
+    },
+    {
+      "case_id": "CHANNEL_OPS-068",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  conversion_type,\n  COUNT(*) AS conversion_count,\n  AVG(conversion_value) AS avg_conversion_value\nFROM channel_conversion_events\nWHERE conversion_type = 'registration'\nGROUP BY conversion_type\nORDER BY conversion_type ASC",
+      "gold_sql": "SELECT conversion_type,COUNT(*) conversions,ROUND(AVG(conversion_value),2) avg_value FROM channel_conversion_events WHERE conversion_type='registration' GROUP BY 1",
+      "actual_columns": [
+        "conversion_type",
+        "conversion_count",
+        "avg_conversion_value"
+      ],
+      "actual_rows": [
+        {
+          "conversion_type": "registration",
+          "conversion_count": 5816,
+          "avg_conversion_value": 1.0
+        }
+      ],
+      "gold_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "gold_rows": [
+        {
+          "conversion_type": "registration",
+          "conversions": 5816,
+          "avg_value": 1.0
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "conversions": [
+          "conversion_count"
+        ],
+        "avg_value": [
+          "avg_conversion_value"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1926.831
+    },
+    {
+      "case_id": "CHANNEL_OPS-069",
+      "source_strict_result_correct": false,
+      "original_replayed_strict_result_correct": false,
+      "original_strict_reason": "列 avg_value 缺失或映射不唯一",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  conversion_type,\n  COUNT(*) AS conversion_count,\n  AVG(conversion_value) AS avg_conversion_value\nFROM channel_conversion_events\nWHERE conversion_type = 'activation'\nGROUP BY conversion_type",
+      "gold_sql": "SELECT conversion_type,COUNT(*) conversions,ROUND(AVG(conversion_value),2) avg_value FROM channel_conversion_events WHERE conversion_type='activation' GROUP BY 1",
+      "actual_columns": [
+        "conversion_type",
+        "conversion_count",
+        "avg_conversion_value"
+      ],
+      "actual_rows": [
+        {
+          "conversion_type": "activation",
+          "conversion_count": 4104,
+          "avg_conversion_value": 1.0
+        }
+      ],
+      "gold_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "gold_rows": [
+        {
+          "conversion_type": "activation",
+          "conversions": 4104,
+          "avg_value": 1.0
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "conversions": [
+          "conversion_count"
+        ],
+        "avg_value": [
+          "avg_conversion_value"
+        ]
+      },
+      "alias_additions": {
+        "avg_value": [
+          "avg_conversion_value"
+        ]
+      },
+      "order_sensitive": false,
+      "replay_execution_ms": 1832.984
+    },
+    {
+      "case_id": "CHANNEL_OPS-070",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  conversion_type,\n  COUNT(*) AS conversion_count,\n  AVG(conversion_value) AS avg_conversion_value\nFROM channel_conversion_events\nWHERE conversion_type = 'registration'\nGROUP BY conversion_type\nORDER BY conversion_count DESC, conversion_type ASC",
+      "gold_sql": "SELECT conversion_type,COUNT(*) conversions,ROUND(AVG(conversion_value),2) avg_value FROM channel_conversion_events WHERE conversion_type='registration' GROUP BY 1",
+      "actual_columns": [
+        "conversion_type",
+        "conversion_count",
+        "avg_conversion_value"
+      ],
+      "actual_rows": [
+        {
+          "conversion_type": "registration",
+          "conversion_count": 5816,
+          "avg_conversion_value": 1.0
+        }
+      ],
+      "gold_columns": [
+        "conversion_type",
+        "conversions",
+        "avg_value"
+      ],
+      "gold_rows": [
+        {
+          "conversion_type": "registration",
+          "conversions": 5816,
+          "avg_value": 1.0
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "conversions": [
+          "conversion_count"
+        ],
+        "avg_value": [
+          "avg_conversion_value"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1830.71
+    },
+    {
+      "case_id": "CHANNEL_OPS-076",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT status, COUNT(*) AS ad_campaign_count, SUM(budget) AS total_budget FROM ad_campaigns WHERE status = 'active' GROUP BY status",
+      "gold_sql": "SELECT status,COUNT(ad_campaign_id) campaigns,ROUND(SUM(budget),2) budget FROM ad_campaigns WHERE status='active' GROUP BY 1",
+      "actual_columns": [
+        "status",
+        "ad_campaign_count",
+        "total_budget"
+      ],
+      "actual_rows": [
+        {
+          "status": "active",
+          "ad_campaign_count": 3,
+          "total_budget": 444588
+        }
+      ],
+      "gold_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "gold_rows": [
+        {
+          "status": "active",
+          "campaigns": 3,
+          "budget": 444588
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "campaigns": [
+          "ad_campaign_count"
+        ],
+        "budget": [
+          "total_budget"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1582.793
+    },
+    {
+      "case_id": "CHANNEL_OPS-077",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  status,\n  COUNT(*) AS ad_campaign_count,\n  SUM(budget) AS total_budget\nFROM ad_campaigns\nWHERE status = 'completed'\nGROUP BY status",
+      "gold_sql": "SELECT status,COUNT(ad_campaign_id) campaigns,ROUND(SUM(budget),2) budget FROM ad_campaigns WHERE status='completed' GROUP BY 1",
+      "actual_columns": [
+        "status",
+        "ad_campaign_count",
+        "total_budget"
+      ],
+      "actual_rows": [
+        {
+          "status": "completed",
+          "ad_campaign_count": 97,
+          "total_budget": 13228949
+        }
+      ],
+      "gold_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "gold_rows": [
+        {
+          "status": "completed",
+          "campaigns": 97,
+          "budget": 13228949
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "campaigns": [
+          "ad_campaign_count"
+        ],
+        "budget": [
+          "total_budget"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1585.816
+    },
+    {
+      "case_id": "CHANNEL_OPS-078",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT status, COUNT(*) AS ad_campaign_count, SUM(budget) AS total_budget FROM ad_campaigns WHERE status = 'active' GROUP BY status",
+      "gold_sql": "SELECT status,COUNT(ad_campaign_id) campaigns,ROUND(SUM(budget),2) budget FROM ad_campaigns WHERE status='active' GROUP BY 1",
+      "actual_columns": [
+        "status",
+        "ad_campaign_count",
+        "total_budget"
+      ],
+      "actual_rows": [
+        {
+          "status": "active",
+          "ad_campaign_count": 3,
+          "total_budget": 444588
+        }
+      ],
+      "gold_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "gold_rows": [
+        {
+          "status": "active",
+          "campaigns": 3,
+          "budget": 444588
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "campaigns": [
+          "ad_campaign_count"
+        ],
+        "budget": [
+          "total_budget"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1597.599
+    },
+    {
+      "case_id": "CHANNEL_OPS-079",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  status,\n  COUNT(*) AS ad_campaign_count,\n  SUM(budget) AS total_budget\nFROM ad_campaigns\nWHERE status = 'completed'\nGROUP BY status",
+      "gold_sql": "SELECT status,COUNT(ad_campaign_id) campaigns,ROUND(SUM(budget),2) budget FROM ad_campaigns WHERE status='completed' GROUP BY 1",
+      "actual_columns": [
+        "status",
+        "ad_campaign_count",
+        "total_budget"
+      ],
+      "actual_rows": [
+        {
+          "status": "completed",
+          "ad_campaign_count": 97,
+          "total_budget": 13228949
+        }
+      ],
+      "gold_columns": [
+        "status",
+        "campaigns",
+        "budget"
+      ],
+      "gold_rows": [
+        {
+          "status": "completed",
+          "campaigns": 97,
+          "budget": 13228949
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "campaigns": [
+          "ad_campaign_count"
+        ],
+        "budget": [
+          "total_budget"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1642.617
+    },
+    {
+      "case_id": "CHANNEL_OPS-101",
+      "source_strict_result_correct": false,
+      "original_replayed_strict_result_correct": false,
+      "original_strict_reason": "列 creatives 缺失或映射不唯一",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT creative_status, COUNT(*) AS creative_count FROM ad_creatives WHERE creative_type = '短视频' GROUP BY creative_status ORDER BY creative_count DESC, creative_status ASC",
+      "gold_sql": "SELECT creative_status,COUNT(creative_id) creatives FROM ad_creatives WHERE creative_type='短视频' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "creative_status",
+        "creative_count"
+      ],
+      "actual_rows": [
+        {
+          "creative_status": "active",
+          "creative_count": 255
+        },
+        {
+          "creative_status": "paused",
+          "creative_count": 41
+        }
+      ],
+      "gold_columns": [
+        "creative_status",
+        "creatives"
+      ],
+      "gold_rows": [
+        {
+          "creative_status": "active",
+          "creatives": 255
+        },
+        {
+          "creative_status": "paused",
+          "creatives": 41
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "creative_status": [
+          "创意状态"
+        ],
+        "creatives": [
+          "创意数量",
+          "creative_count"
+        ]
+      },
+      "alias_additions": {
+        "creatives": [
+          "creative_count"
+        ]
+      },
+      "order_sensitive": false,
+      "replay_execution_ms": 1756.917
+    },
+    {
+      "case_id": "CHANNEL_OPS-141",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  ac.channel_name,\n  COUNT(*) AS conversion_count\nFROM channel_conversion_events cce\nJOIN acquisition_channels ac ON cce.channel_id = ac.channel_id\nWHERE cce.conversion_type = 'registration'\nGROUP BY ac.channel_name\nORDER BY conversion_count DESC, ac.channel_name ASC",
+      "gold_sql": "SELECT c.channel_name,COUNT(e.conversion_event_id) conversions FROM channel_conversion_events e JOIN acquisition_channels c ON e.channel_id=c.channel_id WHERE e.conversion_type='registration' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "channel_name",
+        "conversion_count"
+      ],
+      "actual_rows": [
+        {
+          "channel_name": "信息流广告",
+          "conversion_count": 2067
+        },
+        {
+          "channel_name": "达人推广",
+          "conversion_count": 1437
+        },
+        {
+          "channel_name": "搜索广告",
+          "conversion_count": 1342
+        },
+        {
+          "channel_name": "品牌广告",
+          "conversion_count": 970
+        }
+      ],
+      "gold_columns": [
+        "channel_name",
+        "conversions"
+      ],
+      "gold_rows": [
+        {
+          "channel_name": "信息流广告",
+          "conversions": 2067
+        },
+        {
+          "channel_name": "达人推广",
+          "conversions": 1437
+        },
+        {
+          "channel_name": "搜索广告",
+          "conversions": 1342
+        },
+        {
+          "channel_name": "品牌广告",
+          "conversions": 970
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "conversions": [
+          "conversion_count"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1602.413
+    },
+    {
+      "case_id": "CONTENT_OPS-001",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT\n  metric_date,\n  SUM(impressions) AS impressions,\n  SUM(play_count) AS play_count\nFROM content_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2026-02-01'\nGROUP BY metric_date\nORDER BY metric_date ASC",
+      "gold_sql": "SELECT metric_date,SUM(impressions) impressions,SUM(play_count) plays FROM content_daily_metrics WHERE strftime(metric_date,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "metric_date",
+        "impressions",
+        "play_count"
+      ],
+      "actual_rows": [
+        {
+          "metric_date": "2026-01-01",
+          "impressions": 343,
+          "play_count": 97
+        },
+        {
+          "metric_date": "2026-01-02",
+          "impressions": 187,
+          "play_count": 55
+        },
+        {
+          "metric_date": "2026-01-03",
+          "impressions": 202,
+          "play_count": 77
+        },
+        {
+          "metric_date": "2026-01-04",
+          "impressions": 224,
+          "play_count": 87
+        },
+        {
+          "metric_date": "2026-01-05",
+          "impressions": 224,
+          "play_count": 65
+        },
+        {
+          "metric_date": "2026-01-06",
+          "impressions": 214,
+          "play_count": 71
+        },
+        {
+          "metric_date": "2026-01-07",
+          "impressions": 227,
+          "play_count": 91
+        },
+        {
+          "metric_date": "2026-01-08",
+          "impressions": 235,
+          "play_count": 88
+        },
+        {
+          "metric_date": "2026-01-09",
+          "impressions": 310,
+          "play_count": 110
+        },
+        {
+          "metric_date": "2026-01-10",
+          "impressions": 262,
+          "play_count": 79
+        },
+        {
+          "metric_date": "2026-01-11",
+          "impressions": 281,
+          "play_count": 93
+        },
+        {
+          "metric_date": "2026-01-12",
+          "impressions": 212,
+          "play_count": 68
+        },
+        {
+          "metric_date": "2026-01-13",
+          "impressions": 232,
+          "play_count": 73
+        },
+        {
+          "metric_date": "2026-01-14",
+          "impressions": 415,
+          "play_count": 156
+        },
+        {
+          "metric_date": "2026-01-15",
+          "impressions": 299,
+          "play_count": 113
+        },
+        {
+          "metric_date": "2026-01-16",
+          "impressions": 273,
+          "play_count": 92
+        },
+        {
+          "metric_date": "2026-01-17",
+          "impressions": 141,
+          "play_count": 46
+        },
+        {
+          "metric_date": "2026-01-18",
+          "impressions": 366,
+          "play_count": 131
+        },
+        {
+          "metric_date": "2026-01-19",
+          "impressions": 225,
+          "play_count": 71
+        },
+        {
+          "metric_date": "2026-01-20",
+          "impressions": 322,
+          "play_count": 97
+        },
+        {
+          "metric_date": "2026-01-21",
+          "impressions": 246,
+          "play_count": 77
+        },
+        {
+          "metric_date": "2026-01-22",
+          "impressions": 187,
+          "play_count": 70
+        },
+        {
+          "metric_date": "2026-01-23",
+          "impressions": 179,
+          "play_count": 61
+        },
+        {
+          "metric_date": "2026-01-24",
+          "impressions": 303,
+          "play_count": 106
+        },
+        {
+          "metric_date": "2026-01-25",
+          "impressions": 232,
+          "play_count": 106
+        },
+        {
+          "metric_date": "2026-01-26",
+          "impressions": 237,
+          "play_count": 72
+        },
+        {
+          "metric_date": "2026-01-27",
+          "impressions": 278,
+          "play_count": 90
+        },
+        {
+          "metric_date": "2026-01-28",
+          "impressions": 227,
+          "play_count": 86
+        },
+        {
+          "metric_date": "2026-01-29",
+          "impressions": 297,
+          "play_count": 108
+        },
+        {
+          "metric_date": "2026-01-30",
+          "impressions": 201,
+          "play_count": 64
+        },
+        {
+          "metric_date": "2026-01-31",
+          "impressions": 289,
+          "play_count": 115
+        }
+      ],
+      "gold_columns": [
+        "metric_date",
+        "impressions",
+        "plays"
+      ],
+      "gold_rows": [
+        {
+          "metric_date": "2026-01-01",
+          "impressions": 343,
+          "plays": 97
+        },
+        {
+          "metric_date": "2026-01-02",
+          "impressions": 187,
+          "plays": 55
+        },
+        {
+          "metric_date": "2026-01-03",
+          "impressions": 202,
+          "plays": 77
+        },
+        {
+          "metric_date": "2026-01-04",
+          "impressions": 224,
+          "plays": 87
+        },
+        {
+          "metric_date": "2026-01-05",
+          "impressions": 224,
+          "plays": 65
+        },
+        {
+          "metric_date": "2026-01-06",
+          "impressions": 214,
+          "plays": 71
+        },
+        {
+          "metric_date": "2026-01-07",
+          "impressions": 227,
+          "plays": 91
+        },
+        {
+          "metric_date": "2026-01-08",
+          "impressions": 235,
+          "plays": 88
+        },
+        {
+          "metric_date": "2026-01-09",
+          "impressions": 310,
+          "plays": 110
+        },
+        {
+          "metric_date": "2026-01-10",
+          "impressions": 262,
+          "plays": 79
+        },
+        {
+          "metric_date": "2026-01-11",
+          "impressions": 281,
+          "plays": 93
+        },
+        {
+          "metric_date": "2026-01-12",
+          "impressions": 212,
+          "plays": 68
+        },
+        {
+          "metric_date": "2026-01-13",
+          "impressions": 232,
+          "plays": 73
+        },
+        {
+          "metric_date": "2026-01-14",
+          "impressions": 415,
+          "plays": 156
+        },
+        {
+          "metric_date": "2026-01-15",
+          "impressions": 299,
+          "plays": 113
+        },
+        {
+          "metric_date": "2026-01-16",
+          "impressions": 273,
+          "plays": 92
+        },
+        {
+          "metric_date": "2026-01-17",
+          "impressions": 141,
+          "plays": 46
+        },
+        {
+          "metric_date": "2026-01-18",
+          "impressions": 366,
+          "plays": 131
+        },
+        {
+          "metric_date": "2026-01-19",
+          "impressions": 225,
+          "plays": 71
+        },
+        {
+          "metric_date": "2026-01-20",
+          "impressions": 322,
+          "plays": 97
+        },
+        {
+          "metric_date": "2026-01-21",
+          "impressions": 246,
+          "plays": 77
+        },
+        {
+          "metric_date": "2026-01-22",
+          "impressions": 187,
+          "plays": 70
+        },
+        {
+          "metric_date": "2026-01-23",
+          "impressions": 179,
+          "plays": 61
+        },
+        {
+          "metric_date": "2026-01-24",
+          "impressions": 303,
+          "plays": 106
+        },
+        {
+          "metric_date": "2026-01-25",
+          "impressions": 232,
+          "plays": 106
+        },
+        {
+          "metric_date": "2026-01-26",
+          "impressions": 237,
+          "plays": 72
+        },
+        {
+          "metric_date": "2026-01-27",
+          "impressions": 278,
+          "plays": 90
+        },
+        {
+          "metric_date": "2026-01-28",
+          "impressions": 227,
+          "plays": 86
+        },
+        {
+          "metric_date": "2026-01-29",
+          "impressions": 297,
+          "plays": 108
+        },
+        {
+          "metric_date": "2026-01-30",
+          "impressions": 201,
+          "plays": 64
+        },
+        {
+          "metric_date": "2026-01-31",
+          "impressions": 289,
+          "plays": 115
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "plays": [
+          "play_count"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1770.532
+    },
+    {
+      "case_id": "CONTENT_OPS-029",
+      "source_strict_result_correct": false,
+      "original_replayed_strict_result_correct": false,
+      "original_strict_reason": "列 category_name 缺失或映射不唯一",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  cc.category_name AS content_category,\n  AVG(vp.watch_seconds) AS avg_watch_seconds,\n  AVG(vp.completion_rate) AS avg_completion_rate\nFROM video_plays vp\nJOIN contents c ON vp.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE cc.category_name = '知识'\nGROUP BY cc.category_name",
+      "gold_sql": "SELECT cat.category_name,ROUND(AVG(p.watch_seconds),2) avg_watch_seconds, ROUND(AVG(p.completion_rate),4) avg_completion_rate FROM video_plays p JOIN contents c ON p.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='知识' GROUP BY 1",
+      "actual_columns": [
+        "content_category",
+        "avg_watch_seconds",
+        "avg_completion_rate"
+      ],
+      "actual_rows": [
+        {
+          "content_category": "知识",
+          "avg_watch_seconds": 60.46368843069874,
+          "avg_completion_rate": 0.6463797250859094
+        }
+      ],
+      "gold_columns": [
+        "category_name",
+        "avg_watch_seconds",
+        "avg_completion_rate"
+      ],
+      "gold_rows": [
+        {
+          "category_name": "知识",
+          "avg_watch_seconds": 60.46,
+          "avg_completion_rate": 0.6464
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "category_name": [
+          "content_category"
+        ]
+      },
+      "alias_additions": {
+        "category_name": [
+          "content_category"
+        ]
+      },
+      "order_sensitive": false,
+      "replay_execution_ms": 1810.456
+    },
+    {
+      "case_id": "CONTENT_OPS-030",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  cc.category_name AS \"内容分类\",\n  AVG(vp.watch_seconds) AS \"平均观看时长\",\n  AVG(vp.completion_rate) AS \"平均完播率\"\nFROM video_plays vp\nJOIN contents c ON vp.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE cc.category_name = '体育'\nGROUP BY cc.category_name",
+      "gold_sql": "SELECT cat.category_name,ROUND(AVG(p.watch_seconds),2) avg_watch_seconds, ROUND(AVG(p.completion_rate),4) avg_completion_rate FROM video_plays p JOIN contents c ON p.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='体育' GROUP BY 1",
+      "actual_columns": [
+        "内容分类",
+        "平均观看时长",
+        "平均完播率"
+      ],
+      "actual_rows": [
+        {
+          "内容分类": "体育",
+          "平均观看时长": 54.659054940085916,
+          "平均完播率": 0.5824853719195108
+        }
+      ],
+      "gold_columns": [
+        "category_name",
+        "avg_watch_seconds",
+        "avg_completion_rate"
+      ],
+      "gold_rows": [
+        {
+          "category_name": "体育",
+          "avg_watch_seconds": 54.66,
+          "avg_completion_rate": 0.5825
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "category_name": [
+          "内容分类"
+        ],
+        "avg_watch_seconds": [
+          "平均观看时长"
+        ],
+        "avg_completion_rate": [
+          "平均完播率"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1711.806
+    },
+    {
+      "case_id": "CONTENT_OPS-031",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  cc.category_name AS \"内容分类\",\n  COUNT(vi.interaction_id) AS \"互动数\"\nFROM video_interactions vi\nJOIN contents c ON vi.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE vi.interaction_type = 'like'\nGROUP BY cc.category_name\nORDER BY \"互动数\" DESC, cc.category_name ASC",
+      "gold_sql": "SELECT cat.category_name,COUNT(i.interaction_id) interactions FROM video_interactions i JOIN contents c ON i.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE i.interaction_type='like' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "内容分类",
+        "互动数"
+      ],
+      "actual_rows": [
+        {
+          "内容分类": "知识",
+          "互动数": 382
+        },
+        {
+          "内容分类": "亲子",
+          "互动数": 355
+        },
+        {
+          "内容分类": "科技",
+          "互动数": 353
+        },
+        {
+          "内容分类": "美食",
+          "互动数": 328
+        },
+        {
+          "内容分类": "影视",
+          "互动数": 299
+        },
+        {
+          "内容分类": "生活",
+          "互动数": 297
+        },
+        {
+          "内容分类": "体育",
+          "互动数": 295
+        },
+        {
+          "内容分类": "旅行",
+          "互动数": 283
+        },
+        {
+          "内容分类": "时尚",
+          "互动数": 271
+        },
+        {
+          "内容分类": "搞笑",
+          "互动数": 256
+        },
+        {
+          "内容分类": "游戏",
+          "互动数": 253
+        },
+        {
+          "内容分类": "音乐",
+          "互动数": 251
+        }
+      ],
+      "gold_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "gold_rows": [
+        {
+          "category_name": "知识",
+          "interactions": 382
+        },
+        {
+          "category_name": "亲子",
+          "interactions": 355
+        },
+        {
+          "category_name": "科技",
+          "interactions": 353
+        },
+        {
+          "category_name": "美食",
+          "interactions": 328
+        },
+        {
+          "category_name": "影视",
+          "interactions": 299
+        },
+        {
+          "category_name": "生活",
+          "interactions": 297
+        },
+        {
+          "category_name": "体育",
+          "interactions": 295
+        },
+        {
+          "category_name": "旅行",
+          "interactions": 283
+        },
+        {
+          "category_name": "时尚",
+          "interactions": 271
+        },
+        {
+          "category_name": "搞笑",
+          "interactions": 256
+        },
+        {
+          "category_name": "游戏",
+          "interactions": 253
+        },
+        {
+          "category_name": "音乐",
+          "interactions": 251
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "category_name": [
+          "内容分类"
+        ],
+        "interactions": [
+          "互动数"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1711.285
+    },
+    {
+      "case_id": "CONTENT_OPS-032",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  cc.category_name AS \"内容分类\",\n  COUNT(vi.interaction_id) AS \"互动数\"\nFROM video_interactions vi\nJOIN contents c ON vi.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE vi.interaction_type = 'comment'\nGROUP BY cc.category_name\nORDER BY \"互动数\" DESC, cc.category_name ASC",
+      "gold_sql": "SELECT cat.category_name,COUNT(i.interaction_id) interactions FROM video_interactions i JOIN contents c ON i.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE i.interaction_type='comment' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "内容分类",
+        "互动数"
+      ],
+      "actual_rows": [
+        {
+          "内容分类": "科技",
+          "互动数": 80
+        },
+        {
+          "内容分类": "亲子",
+          "互动数": 79
+        },
+        {
+          "内容分类": "知识",
+          "互动数": 78
+        },
+        {
+          "内容分类": "时尚",
+          "互动数": 75
+        },
+        {
+          "内容分类": "生活",
+          "互动数": 73
+        },
+        {
+          "内容分类": "美食",
+          "互动数": 68
+        },
+        {
+          "内容分类": "旅行",
+          "互动数": 67
+        },
+        {
+          "内容分类": "音乐",
+          "互动数": 67
+        },
+        {
+          "内容分类": "游戏",
+          "互动数": 65
+        },
+        {
+          "内容分类": "体育",
+          "互动数": 62
+        },
+        {
+          "内容分类": "影视",
+          "互动数": 61
+        },
+        {
+          "内容分类": "搞笑",
+          "互动数": 52
+        }
+      ],
+      "gold_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "gold_rows": [
+        {
+          "category_name": "科技",
+          "interactions": 80
+        },
+        {
+          "category_name": "亲子",
+          "interactions": 79
+        },
+        {
+          "category_name": "知识",
+          "interactions": 78
+        },
+        {
+          "category_name": "时尚",
+          "interactions": 75
+        },
+        {
+          "category_name": "生活",
+          "interactions": 73
+        },
+        {
+          "category_name": "美食",
+          "interactions": 68
+        },
+        {
+          "category_name": "旅行",
+          "interactions": 67
+        },
+        {
+          "category_name": "音乐",
+          "interactions": 67
+        },
+        {
+          "category_name": "游戏",
+          "interactions": 65
+        },
+        {
+          "category_name": "体育",
+          "interactions": 62
+        },
+        {
+          "category_name": "影视",
+          "interactions": 61
+        },
+        {
+          "category_name": "搞笑",
+          "interactions": 52
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "category_name": [
+          "内容分类"
+        ],
+        "interactions": [
+          "互动数"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1729.993
+    },
+    {
+      "case_id": "CONTENT_OPS-033",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  cc.category_name AS \"内容分类\",\n  COUNT(vi.interaction_id) AS \"互动数\"\nFROM video_interactions vi\nJOIN contents c ON vi.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE vi.interaction_type = 'share'\nGROUP BY cc.category_name\nORDER BY \"互动数\" DESC, cc.category_name ASC",
+      "gold_sql": "SELECT cat.category_name,COUNT(i.interaction_id) interactions FROM video_interactions i JOIN contents c ON i.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE i.interaction_type='share' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "内容分类",
+        "互动数"
+      ],
+      "actual_rows": [
+        {
+          "内容分类": "科技",
+          "互动数": 74
+        },
+        {
+          "内容分类": "亲子",
+          "互动数": 71
+        },
+        {
+          "内容分类": "旅行",
+          "互动数": 70
+        },
+        {
+          "内容分类": "体育",
+          "互动数": 69
+        },
+        {
+          "内容分类": "知识",
+          "互动数": 69
+        },
+        {
+          "内容分类": "生活",
+          "互动数": 63
+        },
+        {
+          "内容分类": "影视",
+          "互动数": 60
+        },
+        {
+          "内容分类": "搞笑",
+          "互动数": 59
+        },
+        {
+          "内容分类": "美食",
+          "互动数": 59
+        },
+        {
+          "内容分类": "时尚",
+          "互动数": 58
+        },
+        {
+          "内容分类": "游戏",
+          "互动数": 48
+        },
+        {
+          "内容分类": "音乐",
+          "互动数": 45
+        }
+      ],
+      "gold_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "gold_rows": [
+        {
+          "category_name": "科技",
+          "interactions": 74
+        },
+        {
+          "category_name": "亲子",
+          "interactions": 71
+        },
+        {
+          "category_name": "旅行",
+          "interactions": 70
+        },
+        {
+          "category_name": "体育",
+          "interactions": 69
+        },
+        {
+          "category_name": "知识",
+          "interactions": 69
+        },
+        {
+          "category_name": "生活",
+          "interactions": 63
+        },
+        {
+          "category_name": "影视",
+          "interactions": 60
+        },
+        {
+          "category_name": "搞笑",
+          "interactions": 59
+        },
+        {
+          "category_name": "美食",
+          "interactions": 59
+        },
+        {
+          "category_name": "时尚",
+          "interactions": 58
+        },
+        {
+          "category_name": "游戏",
+          "interactions": 48
+        },
+        {
+          "category_name": "音乐",
+          "interactions": 45
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "category_name": [
+          "内容分类"
+        ],
+        "interactions": [
+          "互动数"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1793.942
+    },
+    {
+      "case_id": "CONTENT_OPS-034",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  cc.category_name AS \"内容分类\",\n  COUNT(vi.interaction_id) AS \"互动数\"\nFROM video_interactions vi\nJOIN contents c ON vi.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE vi.interaction_type = 'favorite'\nGROUP BY cc.category_name\nORDER BY \"互动数\" DESC, cc.category_name ASC",
+      "gold_sql": "SELECT cat.category_name,COUNT(i.interaction_id) interactions FROM video_interactions i JOIN contents c ON i.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE i.interaction_type='favorite' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "内容分类",
+        "互动数"
+      ],
+      "actual_rows": [
+        {
+          "内容分类": "科技",
+          "互动数": 82
+        },
+        {
+          "内容分类": "知识",
+          "互动数": 73
+        },
+        {
+          "内容分类": "旅行",
+          "互动数": 69
+        },
+        {
+          "内容分类": "游戏",
+          "互动数": 67
+        },
+        {
+          "内容分类": "亲子",
+          "互动数": 65
+        },
+        {
+          "内容分类": "音乐",
+          "互动数": 65
+        },
+        {
+          "内容分类": "美食",
+          "互动数": 58
+        },
+        {
+          "内容分类": "生活",
+          "互动数": 56
+        },
+        {
+          "内容分类": "搞笑",
+          "互动数": 54
+        },
+        {
+          "内容分类": "时尚",
+          "互动数": 53
+        },
+        {
+          "内容分类": "体育",
+          "互动数": 50
+        },
+        {
+          "内容分类": "影视",
+          "互动数": 50
+        }
+      ],
+      "gold_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "gold_rows": [
+        {
+          "category_name": "科技",
+          "interactions": 82
+        },
+        {
+          "category_name": "知识",
+          "interactions": 73
+        },
+        {
+          "category_name": "旅行",
+          "interactions": 69
+        },
+        {
+          "category_name": "游戏",
+          "interactions": 67
+        },
+        {
+          "category_name": "亲子",
+          "interactions": 65
+        },
+        {
+          "category_name": "音乐",
+          "interactions": 65
+        },
+        {
+          "category_name": "美食",
+          "interactions": 58
+        },
+        {
+          "category_name": "生活",
+          "interactions": 56
+        },
+        {
+          "category_name": "搞笑",
+          "interactions": 54
+        },
+        {
+          "category_name": "时尚",
+          "interactions": 53
+        },
+        {
+          "category_name": "体育",
+          "interactions": 50
+        },
+        {
+          "category_name": "影视",
+          "interactions": 50
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "category_name": [
+          "内容分类"
+        ],
+        "interactions": [
+          "互动数"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1951.749
+    },
+    {
+      "case_id": "CONTENT_OPS-035",
+      "source_strict_result_correct": false,
+      "original_replayed_strict_result_correct": false,
+      "original_strict_reason": "列 category_name 缺失或映射不唯一",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  cc.category_name AS \"内容分类\",\n  COUNT(vi.interaction_id) AS \"互动数\"\nFROM video_interactions vi\nJOIN contents c ON vi.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE vi.interaction_type = 'follow'\nGROUP BY cc.category_name\nORDER BY \"互动数\" DESC, cc.category_name ASC",
+      "gold_sql": "SELECT cat.category_name,COUNT(i.interaction_id) interactions FROM video_interactions i JOIN contents c ON i.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE i.interaction_type='follow' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "内容分类",
+        "互动数"
+      ],
+      "actual_rows": [
+        {
+          "内容分类": "亲子",
+          "互动数": 54
+        },
+        {
+          "内容分类": "科技",
+          "互动数": 54
+        },
+        {
+          "内容分类": "知识",
+          "互动数": 52
+        },
+        {
+          "内容分类": "体育",
+          "互动数": 50
+        },
+        {
+          "内容分类": "生活",
+          "互动数": 42
+        },
+        {
+          "内容分类": "时尚",
+          "互动数": 40
+        },
+        {
+          "内容分类": "游戏",
+          "互动数": 40
+        },
+        {
+          "内容分类": "美食",
+          "互动数": 40
+        },
+        {
+          "内容分类": "影视",
+          "互动数": 37
+        },
+        {
+          "内容分类": "搞笑",
+          "互动数": 34
+        },
+        {
+          "内容分类": "音乐",
+          "互动数": 32
+        },
+        {
+          "内容分类": "旅行",
+          "互动数": 31
+        }
+      ],
+      "gold_columns": [
+        "category_name",
+        "interactions"
+      ],
+      "gold_rows": [
+        {
+          "category_name": "亲子",
+          "interactions": 54
+        },
+        {
+          "category_name": "科技",
+          "interactions": 54
+        },
+        {
+          "category_name": "知识",
+          "interactions": 52
+        },
+        {
+          "category_name": "体育",
+          "interactions": 50
+        },
+        {
+          "category_name": "生活",
+          "interactions": 42
+        },
+        {
+          "category_name": "时尚",
+          "interactions": 40
+        },
+        {
+          "category_name": "游戏",
+          "interactions": 40
+        },
+        {
+          "category_name": "美食",
+          "interactions": 40
+        },
+        {
+          "category_name": "影视",
+          "interactions": 37
+        },
+        {
+          "category_name": "搞笑",
+          "interactions": 34
+        },
+        {
+          "category_name": "音乐",
+          "interactions": 32
+        },
+        {
+          "category_name": "旅行",
+          "interactions": 31
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "category_name": [
+          "content_category",
+          "内容分类"
+        ],
+        "interactions": [
+          "interaction_count",
+          "互动数"
+        ]
+      },
+      "alias_additions": {
+        "category_name": [
+          "内容分类"
+        ],
+        "interactions": [
+          "互动数"
+        ]
+      },
+      "order_sensitive": false,
+      "replay_execution_ms": 1969.286
+    },
+    {
+      "case_id": "CONTENT_OPS-036",
+      "source_strict_result_correct": false,
+      "original_replayed_strict_result_correct": false,
+      "original_strict_reason": "列 interaction_date 缺失或映射不唯一",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT CAST(interacted_at AS DATE) AS interacted_date, COUNT(*) AS interaction_count FROM video_interactions WHERE valid_interaction = 1 AND interacted_at >= '2026-01-01' AND interacted_at < '2026-02-01' GROUP BY CAST(interacted_at AS DATE) ORDER BY interacted_date ASC",
+      "gold_sql": "SELECT CAST(interacted_at AS DATE) interaction_date,COUNT(interaction_id) interactions FROM video_interactions WHERE valid_interaction AND strftime(interacted_at,'%Y-%m')='2026-01' GROUP BY 1 ORDER BY 1",
+      "actual_columns": [
+        "interacted_date",
+        "interaction_count"
+      ],
+      "actual_rows": [
+        {
+          "interacted_date": "2026-01-02",
+          "interaction_count": 1
+        },
+        {
+          "interacted_date": "2026-01-07",
+          "interaction_count": 1
+        },
+        {
+          "interacted_date": "2026-01-10",
+          "interaction_count": 1
+        },
+        {
+          "interacted_date": "2026-01-14",
+          "interaction_count": 3
+        },
+        {
+          "interacted_date": "2026-01-16",
+          "interaction_count": 1
+        },
+        {
+          "interacted_date": "2026-01-17",
+          "interaction_count": 3
+        },
+        {
+          "interacted_date": "2026-01-18",
+          "interaction_count": 1
+        },
+        {
+          "interacted_date": "2026-01-20",
+          "interaction_count": 2
+        },
+        {
+          "interacted_date": "2026-01-21",
+          "interaction_count": 2
+        },
+        {
+          "interacted_date": "2026-01-22",
+          "interaction_count": 1
+        },
+        {
+          "interacted_date": "2026-01-23",
+          "interaction_count": 1
+        },
+        {
+          "interacted_date": "2026-01-26",
+          "interaction_count": 3
+        },
+        {
+          "interacted_date": "2026-01-27",
+          "interaction_count": 1
+        },
+        {
+          "interacted_date": "2026-01-28",
+          "interaction_count": 3
+        },
+        {
+          "interacted_date": "2026-01-29",
+          "interaction_count": 4
+        },
+        {
+          "interacted_date": "2026-01-30",
+          "interaction_count": 3
+        },
+        {
+          "interacted_date": "2026-01-31",
+          "interaction_count": 3
+        }
+      ],
+      "gold_columns": [
+        "interaction_date",
+        "interactions"
+      ],
+      "gold_rows": [
+        {
+          "interaction_date": "2026-01-02",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-07",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-10",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-14",
+          "interactions": 3
+        },
+        {
+          "interaction_date": "2026-01-16",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-17",
+          "interactions": 3
+        },
+        {
+          "interaction_date": "2026-01-18",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-20",
+          "interactions": 2
+        },
+        {
+          "interaction_date": "2026-01-21",
+          "interactions": 2
+        },
+        {
+          "interaction_date": "2026-01-22",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-23",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-26",
+          "interactions": 3
+        },
+        {
+          "interaction_date": "2026-01-27",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-28",
+          "interactions": 3
+        },
+        {
+          "interaction_date": "2026-01-29",
+          "interactions": 4
+        },
+        {
+          "interaction_date": "2026-01-30",
+          "interactions": 3
+        },
+        {
+          "interaction_date": "2026-01-31",
+          "interactions": 3
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "interactions": [
+          "interaction_count"
+        ],
+        "interaction_date": [
+          "interacted_date"
+        ]
+      },
+      "alias_additions": {
+        "interaction_date": [
+          "interacted_date"
+        ]
+      },
+      "order_sensitive": true,
+      "replay_execution_ms": 1670.178
+    },
+    {
+      "case_id": "CONTENT_OPS-051",
+      "source_strict_result_correct": false,
+      "original_replayed_strict_result_correct": false,
+      "original_strict_reason": "列 category_name 缺失或映射不唯一",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  cc.category_name AS content_category,\n  COUNT(c.content_id) AS content_count,\n  AVG(c.duration_seconds) AS avg_video_duration\nFROM contents c\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE cc.category_name = '搞笑'\nGROUP BY cc.category_name\nORDER BY cc.category_name",
+      "gold_sql": "SELECT cat.category_name,COUNT(c.content_id) contents,ROUND(AVG(c.duration_seconds),2) avg_duration_seconds FROM contents c JOIN content_categories cat ON c.category_id=cat.category_id WHERE cat.category_name='搞笑' GROUP BY 1",
+      "actual_columns": [
+        "content_category",
+        "content_count",
+        "avg_video_duration"
+      ],
+      "actual_rows": [
+        {
+          "content_category": "搞笑",
+          "content_count": 1059,
+          "avg_video_duration": 96.7610953729934
+        }
+      ],
+      "gold_columns": [
+        "category_name",
+        "contents",
+        "avg_duration_seconds"
+      ],
+      "gold_rows": [
+        {
+          "category_name": "搞笑",
+          "contents": 1059,
+          "avg_duration_seconds": 96.76
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "category_name": [
+          "内容分类",
+          "content_category"
+        ],
+        "contents": [
+          "内容数量",
+          "content_count"
+        ],
+        "avg_duration_seconds": [
+          "平均视频时长",
+          "avg_video_duration"
+        ]
+      },
+      "alias_additions": {
+        "category_name": [
+          "content_category"
+        ],
+        "contents": [
+          "content_count"
+        ],
+        "avg_duration_seconds": [
+          "avg_video_duration"
+        ]
+      },
+      "order_sensitive": false,
+      "replay_execution_ms": 1956.368
+    },
+    {
+      "case_id": "CONTENT_OPS-076",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT creator_status, COUNT(*) AS creator_count FROM creators WHERE creator_level = '新星' GROUP BY creator_status ORDER BY creator_count DESC",
+      "gold_sql": "SELECT creator_status,COUNT(creator_id) creators FROM creators WHERE creator_level='新星' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "creator_status",
+        "creator_count"
+      ],
+      "actual_rows": [
+        {
+          "creator_status": "active",
+          "creator_count": 750
+        },
+        {
+          "creator_status": "inactive",
+          "creator_count": 51
+        },
+        {
+          "creator_status": "restricted",
+          "creator_count": 6
+        }
+      ],
+      "gold_columns": [
+        "creator_status",
+        "creators"
+      ],
+      "gold_rows": [
+        {
+          "creator_status": "active",
+          "creators": 750
+        },
+        {
+          "creator_status": "inactive",
+          "creators": 51
+        },
+        {
+          "creator_status": "restricted",
+          "creators": 6
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "creators": [
+          "creator_count"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1975.955
+    },
+    {
+      "case_id": "CONTENT_OPS-121",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT MIN(traffic_boost) AS min_traffic_boost, COUNT(*) AS content_count, AVG(ranking) AS avg_ranking FROM topic_content_relations WHERE traffic_boost >= 1.0",
+      "gold_sql": "SELECT 1.0 min_traffic_boost,COUNT(content_id) contents,ROUND(AVG(ranking),2) avg_ranking FROM topic_content_relations WHERE traffic_boost>=1.0",
+      "actual_columns": [
+        "min_traffic_boost",
+        "content_count",
+        "avg_ranking"
+      ],
+      "actual_rows": [
+        {
+          "min_traffic_boost": 1.0,
+          "content_count": 4500,
+          "avg_ranking": 251.65955555555556
+        }
+      ],
+      "gold_columns": [
+        "min_traffic_boost",
+        "contents",
+        "avg_ranking"
+      ],
+      "gold_rows": [
+        {
+          "min_traffic_boost": 1.0,
+          "contents": 4500,
+          "avg_ranking": 251.66
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "contents": [
+          "content_count"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": true,
+      "replay_execution_ms": 1894.352
+    },
+    {
+      "case_id": "CONTENT_OPS-126",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT risk_type, COUNT(*) AS audit_count FROM content_audits WHERE audit_status = 'approved' GROUP BY risk_type ORDER BY audit_count DESC",
+      "gold_sql": "SELECT risk_type,COUNT(audit_id) audits FROM content_audits WHERE audit_status='approved' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "risk_type",
+        "audit_count"
+      ],
+      "actual_rows": [
+        {
+          "risk_type": "无风险",
+          "audit_count": 7087
+        },
+        {
+          "risk_type": "虚假信息",
+          "audit_count": 150
+        },
+        {
+          "risk_type": "侵权",
+          "audit_count": 142
+        },
+        {
+          "risk_type": "低俗",
+          "audit_count": 129
+        }
+      ],
+      "gold_columns": [
+        "risk_type",
+        "audits"
+      ],
+      "gold_rows": [
+        {
+          "risk_type": "无风险",
+          "audits": 7087
+        },
+        {
+          "risk_type": "虚假信息",
+          "audits": 150
+        },
+        {
+          "risk_type": "侵权",
+          "audits": 142
+        },
+        {
+          "risk_type": "低俗",
+          "audits": 129
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "audits": [
+          "audit_count"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1617.417
+    },
+    {
+      "case_id": "CONTENT_OPS-136",
+      "source_strict_result_correct": false,
+      "original_replayed_strict_result_correct": false,
+      "original_strict_reason": "列 category_name 缺失或映射不唯一",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  cc.category_name AS \"内容分类\",\n  COUNT(cr.report_id) AS \"举报数量\"\nFROM content_reports cr\nJOIN contents c ON cr.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE cr.report_reason = '不感兴趣'\nGROUP BY cc.category_name\nORDER BY \"举报数量\" DESC, cc.category_name ASC",
+      "gold_sql": "SELECT cat.category_name,COUNT(r.report_id) reports FROM content_reports r JOIN contents c ON r.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE r.report_reason='不感兴趣' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "内容分类",
+        "举报数量"
+      ],
+      "actual_rows": [
+        {
+          "内容分类": "体育",
+          "举报数量": 223
+        },
+        {
+          "内容分类": "生活",
+          "举报数量": 223
+        },
+        {
+          "内容分类": "知识",
+          "举报数量": 221
+        },
+        {
+          "内容分类": "影视",
+          "举报数量": 213
+        },
+        {
+          "内容分类": "科技",
+          "举报数量": 199
+        },
+        {
+          "内容分类": "亲子",
+          "举报数量": 195
+        },
+        {
+          "内容分类": "时尚",
+          "举报数量": 195
+        },
+        {
+          "内容分类": "游戏",
+          "举报数量": 179
+        },
+        {
+          "内容分类": "旅行",
+          "举报数量": 167
+        },
+        {
+          "内容分类": "美食",
+          "举报数量": 166
+        },
+        {
+          "内容分类": "搞笑",
+          "举报数量": 153
+        },
+        {
+          "内容分类": "音乐",
+          "举报数量": 145
+        }
+      ],
+      "gold_columns": [
+        "category_name",
+        "reports"
+      ],
+      "gold_rows": [
+        {
+          "category_name": "体育",
+          "reports": 223
+        },
+        {
+          "category_name": "生活",
+          "reports": 223
+        },
+        {
+          "category_name": "知识",
+          "reports": 221
+        },
+        {
+          "category_name": "影视",
+          "reports": 213
+        },
+        {
+          "category_name": "科技",
+          "reports": 199
+        },
+        {
+          "category_name": "亲子",
+          "reports": 195
+        },
+        {
+          "category_name": "时尚",
+          "reports": 195
+        },
+        {
+          "category_name": "游戏",
+          "reports": 179
+        },
+        {
+          "category_name": "旅行",
+          "reports": 167
+        },
+        {
+          "category_name": "美食",
+          "reports": 166
+        },
+        {
+          "category_name": "搞笑",
+          "reports": 153
+        },
+        {
+          "category_name": "音乐",
+          "reports": 145
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "category_name": [
+          "content_category",
+          "内容分类"
+        ],
+        "reports": [
+          "report_count",
+          "举报数量"
+        ]
+      },
+      "alias_additions": {
+        "category_name": [
+          "内容分类"
+        ],
+        "reports": [
+          "举报数量"
+        ]
+      },
+      "order_sensitive": false,
+      "replay_execution_ms": 1754.145
+    },
+    {
+      "case_id": "CONTENT_OPS-137",
+      "source_strict_result_correct": false,
+      "original_replayed_strict_result_correct": false,
+      "original_strict_reason": "列 category_name 缺失或映射不唯一",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  cc.category_name AS \"内容分类\",\n  COUNT(cr.report_id) AS \"举报数量\"\nFROM content_reports cr\nJOIN contents c ON cr.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE cr.report_reason = '低俗内容'\nGROUP BY cc.category_name\nORDER BY \"举报数量\" DESC, cc.category_name ASC",
+      "gold_sql": "SELECT cat.category_name,COUNT(r.report_id) reports FROM content_reports r JOIN contents c ON r.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE r.report_reason='低俗内容' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "内容分类",
+        "举报数量"
+      ],
+      "actual_rows": [
+        {
+          "内容分类": "科技",
+          "举报数量": 90
+        },
+        {
+          "内容分类": "体育",
+          "举报数量": 88
+        },
+        {
+          "内容分类": "知识",
+          "举报数量": 81
+        },
+        {
+          "内容分类": "亲子",
+          "举报数量": 80
+        },
+        {
+          "内容分类": "影视",
+          "举报数量": 80
+        },
+        {
+          "内容分类": "生活",
+          "举报数量": 79
+        },
+        {
+          "内容分类": "美食",
+          "举报数量": 78
+        },
+        {
+          "内容分类": "音乐",
+          "举报数量": 71
+        },
+        {
+          "内容分类": "旅行",
+          "举报数量": 68
+        },
+        {
+          "内容分类": "时尚",
+          "举报数量": 68
+        },
+        {
+          "内容分类": "搞笑",
+          "举报数量": 67
+        },
+        {
+          "内容分类": "游戏",
+          "举报数量": 61
+        }
+      ],
+      "gold_columns": [
+        "category_name",
+        "reports"
+      ],
+      "gold_rows": [
+        {
+          "category_name": "科技",
+          "reports": 90
+        },
+        {
+          "category_name": "体育",
+          "reports": 88
+        },
+        {
+          "category_name": "知识",
+          "reports": 81
+        },
+        {
+          "category_name": "亲子",
+          "reports": 80
+        },
+        {
+          "category_name": "影视",
+          "reports": 80
+        },
+        {
+          "category_name": "生活",
+          "reports": 79
+        },
+        {
+          "category_name": "美食",
+          "reports": 78
+        },
+        {
+          "category_name": "音乐",
+          "reports": 71
+        },
+        {
+          "category_name": "旅行",
+          "reports": 68
+        },
+        {
+          "category_name": "时尚",
+          "reports": 68
+        },
+        {
+          "category_name": "搞笑",
+          "reports": 67
+        },
+        {
+          "category_name": "游戏",
+          "reports": 61
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "category_name": [
+          "content_category",
+          "内容分类"
+        ],
+        "reports": [
+          "report_count",
+          "举报数量"
+        ]
+      },
+      "alias_additions": {
+        "category_name": [
+          "内容分类"
+        ],
+        "reports": [
+          "举报数量"
+        ]
+      },
+      "order_sensitive": false,
+      "replay_execution_ms": 1682.67
+    },
+    {
+      "case_id": "CONTENT_OPS-138",
+      "source_strict_result_correct": true,
+      "original_replayed_strict_result_correct": true,
+      "original_strict_reason": "严格结果一致",
+      "strict_result_correct": true,
+      "strict_comparison_reason": "严格结果一致",
+      "result_correct": true,
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "column_match": false,
+      "generated_sql": "SELECT \n  cc.category_name AS \"内容分类\",\n  COUNT(cr.report_id) AS \"举报数量\"\nFROM content_reports cr\nJOIN contents c ON cr.content_id = c.content_id\nJOIN content_categories cc ON c.category_id = cc.category_id\nWHERE cr.report_reason = '侵权搬运'\nGROUP BY cc.category_name\nORDER BY \"举报数量\" DESC, cc.category_name ASC",
+      "gold_sql": "SELECT cat.category_name,COUNT(r.report_id) reports FROM content_reports r JOIN contents c ON r.content_id=c.content_id JOIN content_categories cat ON c.category_id=cat.category_id WHERE r.report_reason='侵权搬运' GROUP BY 1 ORDER BY 2 DESC,1",
+      "actual_columns": [
+        "内容分类",
+        "举报数量"
+      ],
+      "actual_rows": [
+        {
+          "内容分类": "亲子",
+          "举报数量": 97
+        },
+        {
+          "内容分类": "生活",
+          "举报数量": 97
+        },
+        {
+          "内容分类": "科技",
+          "举报数量": 97
+        },
+        {
+          "内容分类": "影视",
+          "举报数量": 94
+        },
+        {
+          "内容分类": "知识",
+          "举报数量": 89
+        },
+        {
+          "内容分类": "美食",
+          "举报数量": 81
+        },
+        {
+          "内容分类": "时尚",
+          "举报数量": 78
+        },
+        {
+          "内容分类": "体育",
+          "举报数量": 76
+        },
+        {
+          "内容分类": "旅行",
+          "举报数量": 75
+        },
+        {
+          "内容分类": "游戏",
+          "举报数量": 68
+        },
+        {
+          "内容分类": "音乐",
+          "举报数量": 67
+        },
+        {
+          "内容分类": "搞笑",
+          "举报数量": 66
+        }
+      ],
+      "gold_columns": [
+        "category_name",
+        "reports"
+      ],
+      "gold_rows": [
+        {
+          "category_name": "亲子",
+          "reports": 97
+        },
+        {
+          "category_name": "生活",
+          "reports": 97
+        },
+        {
+          "category_name": "科技",
+          "reports": 97
+        },
+        {
+          "category_name": "影视",
+          "reports": 94
+        },
+        {
+          "category_name": "知识",
+          "reports": 89
+        },
+        {
+          "category_name": "美食",
+          "reports": 81
+        },
+        {
+          "category_name": "时尚",
+          "reports": 78
+        },
+        {
+          "category_name": "体育",
+          "reports": 76
+        },
+        {
+          "category_name": "旅行",
+          "reports": 75
+        },
+        {
+          "category_name": "游戏",
+          "reports": 68
+        },
+        {
+          "category_name": "音乐",
+          "reports": 67
+        },
+        {
+          "category_name": "搞笑",
+          "reports": 66
+        }
+      ],
+      "gold_result_source": "cache",
+      "column_aliases": {
+        "category_name": [
+          "内容分类"
+        ],
+        "reports": [
+          "举报数量"
+        ]
+      },
+      "alias_additions": {},
+      "order_sensitive": false,
+      "replay_execution_ms": 1869.018
+    }
+  ]
+}

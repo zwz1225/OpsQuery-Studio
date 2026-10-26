@@ -1,0 +1,119 @@
+{
+  "gold_cache_version": 3,
+  "result_policy": {
+    "allowed_auxiliary_columns": [],
+    "column_aliases": {},
+    "column_mapping": "explicit_per_case_aliases_v1",
+    "expected_columns": [
+      "channel_name",
+      "new_users"
+    ],
+    "normalization_version": 1,
+    "numeric_comparison": "existing_business_tolerance_v1",
+    "order_by_column": "new_users",
+    "order_sensitive": true,
+    "reject_truncation": true,
+    "row_limit": 10000,
+    "top_n_tie_policy": null,
+    "version": 1
+  },
+  "gold_selection": {
+    "sql": "SELECT c.channel_name, SUM(g.new_users) AS new_users FROM growth_daily_metrics g JOIN acquisition_channels c ON g.channel_id=c.channel_id WHERE strftime(g.metric_date, '%Y-%m')='2026-01' GROUP BY 1 ORDER BY 2 DESC,1",
+    "dialect": "duckdb",
+    "selection_key": "gold_sql",
+    "selection_version": 1
+  },
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "case_id": "GROWTH_OPS-026",
+  "question": "2026-01各获客渠道新增用户数排名；请返回渠道名称、新增用户数；聚合口径：可加总指标按当前查询粒度求和；按核心指标从高到低展示。",
+  "gold_sql": "SELECT c.channel_name, SUM(g.new_users) AS new_users FROM growth_daily_metrics g JOIN acquisition_channels c ON g.channel_id=c.channel_id WHERE strftime(g.metric_date, '%Y-%m')='2026-01' GROUP BY 1 ORDER BY 2 DESC,1",
+  "database": "short_video_ops",
+  "scenario": "growth_ops",
+  "scope": {
+    "allowed_databases": [
+      "short_video_ops"
+    ],
+    "allowed_tables": [
+      "short_video_ops.acquisition_channels",
+      "short_video_ops.growth_daily_metrics",
+      "short_video_ops.growth_targets",
+      "short_video_ops.recall_campaigns",
+      "short_video_ops.recall_results",
+      "short_video_ops.recall_touches",
+      "short_video_ops.user_activations",
+      "short_video_ops.user_churn_events",
+      "short_video_ops.user_daily_activity",
+      "short_video_ops.user_devices",
+      "short_video_ops.user_lifecycle_snapshots",
+      "short_video_ops.user_profiles",
+      "short_video_ops.user_registrations",
+      "short_video_ops.user_retention",
+      "short_video_ops.user_sessions",
+      "short_video_ops.user_tag_relations",
+      "short_video_ops.user_tags",
+      "short_video_ops.users"
+    ],
+    "roles": [
+      "growth_ops"
+    ],
+    "user_id": "demo_growth_ops"
+  },
+  "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+  "max_result_rows": 10000,
+  "columns": [
+    "channel_name",
+    "new_users"
+  ],
+  "rows": [
+    {
+      "channel_name": "信息流广告",
+      "new_users": 258
+    },
+    {
+      "channel_name": "自然推荐",
+      "new_users": 249
+    },
+    {
+      "channel_name": "达人推广",
+      "new_users": 192
+    },
+    {
+      "channel_name": "好友邀请",
+      "new_users": 171
+    },
+    {
+      "channel_name": "应用商店",
+      "new_users": 168
+    },
+    {
+      "channel_name": "搜索广告",
+      "new_users": 168
+    },
+    {
+      "channel_name": "社交分享",
+      "new_users": 108
+    },
+    {
+      "channel_name": "品牌广告",
+      "new_users": 106
+    },
+    {
+      "channel_name": "线下活动",
+      "new_users": 59
+    },
+    {
+      "channel_name": "其他渠道",
+      "new_users": 41
+    }
+  ],
+  "generated_at": "2026-10-10T14:51:54.310575+00:00"
+}

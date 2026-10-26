@@ -1,0 +1,4250 @@
+{
+  "stage": "M1 D4 server report review",
+  "review_status": "passed",
+  "scope": "First 79 Gold cases and report/evidence isolation; not PostgreSQL live or E2E acceptance",
+  "reviewed_at": "2026-10-11T15:56:24.207278+00:00",
+  "reports": [
+    {
+      "filename": "m1_d4_duckdb_gold79_server.json",
+      "bytes": 1049894,
+      "sha256": "47fb82a3df7ac2effbda7b6428e6b3144475999739048f4e04b4afebf41aef33",
+      "canonical_content_sha256": "ae460f8049a56a8a744f19f54a740044b7508d84df18abc14c65a556dee4bad3"
+    },
+    {
+      "filename": "m1_d4_postgres_gold79_server.json",
+      "bytes": 1106499,
+      "sha256": "d47752087a112666bd38d235576ccbde06d8ec6856747f7dcdd7007c7c517a15",
+      "canonical_content_sha256": "8031edb8662065fdf21022b3c217c43c3a220ab442b8ded3424e3f7818d75a6b"
+    },
+    {
+      "filename": "m1_d4_cross_backend_gold79_server.json",
+      "bytes": 53841,
+      "sha256": "69017eae4ec38e81c400f6d01844c03ea1e71e32f5d05d9292cba20c875499ec",
+      "canonical_content_sha256": "11a263584e1e604a652577938270b3f3933639821215b3c56d66936a351380c6"
+    }
+  ],
+  "current_code_versions_match_both_reports": true,
+  "backend_reviews": [
+    {
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_duckdb",
+        "backend": "duckdb",
+        "dialect": "duckdb",
+        "prompt_dialect": "DuckDB",
+        "physical_schema": "main",
+        "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+        "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+      },
+      "run_id": "592a0f58d6c8455894f66fad758c9a75",
+      "manifest_fingerprint": "90dd5298777d8bde3d081725b01d736e20b7ec2697bba04bdd23523574793a4d",
+      "dataset_version": "461a75362007953da0d028fc44b35b4252891a558f6a26d909e711effd0266f4",
+      "versions": {
+        "data": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+        "schema": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+        "application": "b08e0b723f1d3f6c293a3fa79d9e76836d1b93642f5e23e80e1a1ff59fbed33e",
+        "evaluator": "c1d6c46cb989ed412449a3a8ce645c33c5ed26dbe6a793ebe820c2909ac78483",
+        "evaluation_code": "6565cdd5feccbcf882c871978f8dfee0d6f9b3fa04909daff331904c61b0a0b3",
+        "gold_selection": "25561d8235d6826b1fbb56082ac4097aa2c55d95144e16ee8cd9a4efab3dffa5",
+        "result_policy": "a25291c0feebd5500ff3d13e025769bcb2219313c4e2587a18b336a3ea9c85ce"
+      },
+      "source_verification": {
+        "kind": "csv_content_digest",
+        "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+        "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2"
+      },
+      "summary_recalculated_match": true,
+      "summary": {
+        "mode": "gold",
+        "case_count": 79,
+        "schema_recall": null,
+        "schema_precision": null,
+        "sql_execution_success_rate": 1.0,
+        "average_execution_ms": 1786.9,
+        "p95_execution_ms": 2170.199,
+        "result_accuracy": 1.0,
+        "result_scored_count": 79,
+        "strict_result_accuracy": 1.0,
+        "strict_scored_count": 79,
+        "unscored_count": 0,
+        "column_name_match_rate": 1.0,
+        "clarification_count": 0,
+        "error_count": 0,
+        "timeout_count": 0,
+        "connection_error_count": 0,
+        "model_request_attempt_count": 0,
+        "model_retry_count": 0,
+        "model_timeout_event_count": 0,
+        "model_connection_error_event_count": 0,
+        "result_accuracy_given_executed_sql": 1.0
+      },
+      "case_checks": [
+        {
+          "case_id": "GROWTH_OPS-001",
+          "evidence_sha256": "f40a714a37f057753f74f7ab03c39ca7edfe78ef061cfbbc2fc784b608b6977f",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-002",
+          "evidence_sha256": "3d8caaf87c1f3f02de406f1763024fc2688d867d64703ba038e09412530623e2",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-003",
+          "evidence_sha256": "16413a8c9ea50c21dc939d9b9289bc286963660096b85456e4f2f3d5216ddcd7",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-004",
+          "evidence_sha256": "b19388a6de8d634a79bfad0f4edc41153810553b44dcc45b794e191ab602d7d2",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-005",
+          "evidence_sha256": "1d7d35b2d6dc3ac6609bfc1a75513d18ae3293fdb966f9fb40e16c042c7c39ad",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-006",
+          "evidence_sha256": "114a0c3a2c68fc982c1b14cbb4789b614ae517265ea3e0e828f125879ba0e112",
+          "row_count": 31,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-026",
+          "evidence_sha256": "a68a0b2597eeb7ec3a089ffbb493857ef06a24dd752ebe88a3ef09b0019cf456",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-061",
+          "evidence_sha256": "b4dbe8e478b2250f48d9dc9f932ffec83c04939373aaa2a60267c212472ef19b",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-062",
+          "evidence_sha256": "0784fe337625911c3b862f80c9bd8dfa63403688e7a11701dcd601c5d272d6ad",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-063",
+          "evidence_sha256": "d51fba73a8d74b57023301330724c57353a6474a08d85860beb5745df8a8480b",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-064",
+          "evidence_sha256": "8455af2829e8a82d43d26fdf4114f3ef964a182d7a54bf9c3c3bb4a2a4e33f37",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-066",
+          "evidence_sha256": "ae8a75d7516fa106a1df7f5a6dc9f29086d94fdf2df865bdb59cbfdfa7d34fa6",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-086",
+          "evidence_sha256": "c1b6571f59f5a74c02e1c54fd76b790ea0548c3882cdfd24ce85e513534f7e60",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-101",
+          "evidence_sha256": "fe10ead5a4312324e6fed83ed41e615e2fce0231df41305a08ebe95dd5384da7",
+          "row_count": 5,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-131",
+          "evidence_sha256": "b66586488b5074795ae9877ba3b1cea0fb3e2cc330c5412beb1de75c558a4b32",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-149",
+          "evidence_sha256": "89fdfced3b530c7f91c14096b79342aad5f17250da270630a2b8db5b483f2fdf",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-150",
+          "evidence_sha256": "a715312236d900fe72d87824aa188e6dc9e84b091183a2741e85657843efb6f4",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-001",
+          "evidence_sha256": "5810beaa986b228876a1c88efd8ccc87565cdb0c0d585ee88d9800d59c48da83",
+          "row_count": 30,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-002",
+          "evidence_sha256": "e6342ae7a6cd9f5d690eda130d82fc8e75cdf8c5d32f2aee08294a059341ce64",
+          "row_count": 28,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-003",
+          "evidence_sha256": "b08573154904495b07f160c7d782993798a51f792c6734bfee0f17ebdabae0f7",
+          "row_count": 31,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-004",
+          "evidence_sha256": "58e30304744a3eb72306c8b0e39ab3006024a0d6cbaa0837d4643135a4b257d0",
+          "row_count": 30,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-005",
+          "evidence_sha256": "2b1dd316608bf288fb67366ca9020b3cad6ddf7773e5ea7a20f9d67a45a88077",
+          "row_count": 31,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-066",
+          "evidence_sha256": "91323886464f9b6ebf6a2586a2d58a01720211a5aa2d96c8386f5645f602988a",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-067",
+          "evidence_sha256": "c6368ed83c9ecf8c1dac93f175fc54f42a254c682fb2ab9fc7951a21a5a70daa",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-068",
+          "evidence_sha256": "154e3857dbf242ec7839aa6e85ea3155dabd598760b7e8c70923477325aebd3a",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-069",
+          "evidence_sha256": "16c28262ecfb6fa79ca7dfc2d8a48c37c31eaa22f8d4ac85dd7001084b51f61f",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-070",
+          "evidence_sha256": "e04101aff9b7dcce3ee733d91f37ee0e2fd98978d0c18e3c40388bcba64c5833",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-076",
+          "evidence_sha256": "c176a152ef9fa4ca32139cc2306efddacb42efd9eb851136170f3591bd29eb3f",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-077",
+          "evidence_sha256": "5ee1044a54e8fab21df0b517ad7ee289fb8c27ab3be441654e87b0c5caecd5ba",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-078",
+          "evidence_sha256": "d2a944a7a2eca52093654fb5e3b09c6f35bb03f336264da1ff0361ce0eff16c6",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-079",
+          "evidence_sha256": "089a1e1c00c54ba88b1f8130022d00c970409189ef1f3af0c3c7bc85ca0e8dca",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-101",
+          "evidence_sha256": "dfd63472726dba8f4b5d594f6c6fb908e9025957cb5f40adc7379705755bcc1e",
+          "row_count": 2,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-141",
+          "evidence_sha256": "a5e633ba3c9da1d49a1cc30d1246f4bb52a66dec9fa15acb9d104c0797304782",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-001",
+          "evidence_sha256": "645baebb6bd4c7f5d8e2c6e4f81eeda5943d1b009a14ff1f1d308003a07665f0",
+          "row_count": 31,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-029",
+          "evidence_sha256": "adf524677aa6a484f8950c3a741dce9223b85f6534905ac3920e3f8d4341e71e",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-030",
+          "evidence_sha256": "91bf9a4443f3dc295f14f96c13dcb84b21ce29e5cae1a60a9bed0703b66d48b4",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-031",
+          "evidence_sha256": "5a304ebba0e8626493ae60ae09da04f9d9f97bd0056a39e2840309e436a479c3",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-032",
+          "evidence_sha256": "987675b9c3a149e75bd4d28f62790ca73d863df026b816e852a7a76c65ef1381",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-033",
+          "evidence_sha256": "b55d140dbfe67f1978872d49bf1815e41018de679633b0e9587c1f9229a0421c",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-034",
+          "evidence_sha256": "1b3eaf0a4a2690f24f7182e9ebae55386671dbf7152d8017029fb042d6e90239",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-035",
+          "evidence_sha256": "942a7d2d22eebf6217d0d67e64a61e72d18b399d24db8a1cdb3c924a3ef44cf6",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-036",
+          "evidence_sha256": "22da385b1b5992697c00e2c4e04cad095058da6d11fa6a143776c729668af345",
+          "row_count": 17,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-051",
+          "evidence_sha256": "351ab720b6594f1d225097caa76d511237758c4b645c953f791361186a1d0336",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-076",
+          "evidence_sha256": "22450027b1e025c1473ddafaacc7e36c115b764f7255d20b3139f391d070bf40",
+          "row_count": 3,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-121",
+          "evidence_sha256": "9391a8799dec99251570fa3b8bfe4447fcbc9021c1cb8013cd182c78595ccb7c",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-126",
+          "evidence_sha256": "155f3d2df1c418c96e56c19c114b520f558a8fc362655a1f64f1332f911e858b",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-136",
+          "evidence_sha256": "a19e96b699bdc2af1cd0e64bcbd9e0be64046d61ff53ce4c8c9e7c7280c0753c",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-137",
+          "evidence_sha256": "4855006fb82963d1ceb047762a7f4fe561245f1836f4c30212508355fbf2ec2d",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-138",
+          "evidence_sha256": "ecd4c7f3a2e9c43fa953cde9eedd37ecaa26c44a7c4162083038c90b3d186e53",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-007",
+          "evidence_sha256": "a4f37894a3b3f70fe678e519cc118b8729a3f175d798be3985ece7051f510084",
+          "row_count": 31,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-050",
+          "evidence_sha256": "f8ebc89766537e531307dc97d8c6f86851b543d95e1278ae62b54ef6f3107b24",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-051",
+          "evidence_sha256": "6c5c58b95a7368612b4527873f992c48e287619b84daee4214023f9e57ea2ccf",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-075",
+          "evidence_sha256": "8108bc55265d43b1656cac851614672fba8d63f4d69b93bae9cffebd0add3417",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-076",
+          "evidence_sha256": "fe9b9368d0fd07c2e05c8c98b411031b450e4c09f501eb3450b0739b7fc03d9f",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-100",
+          "evidence_sha256": "b541dd1bdf0d4ead7f6925d9a85317f7cae93a0378bf7a3c8b8e298ae9210e2e",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-102",
+          "evidence_sha256": "d718bad31a97647a98fc929124112ff8cb2feb88c4f6f73a52a0811537ef99a4",
+          "row_count": 6,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-125",
+          "evidence_sha256": "db2fa4cac615780f7f7e39f5a6659c467d5db841034bb2110c968c07e1d150fc",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-126",
+          "evidence_sha256": "ee360a2fd4f2f6b788b8d83a29c62ff813a9ce41b791830cd2d7206c471d83e5",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-148",
+          "evidence_sha256": "c8c77bf3beb9ca4eacd339cf878c740aa1746fe5b8fceea0d8b960f810535917",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-006",
+          "evidence_sha256": "0a926b394dd334bd3d2299e978c931fb36925d457d7f92086d4f44deb55dc9f9",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-025",
+          "evidence_sha256": "b0c64844434952b5c41eef027150350c6ddb3e7f24d3222d15a7b7c1339ab6d4",
+          "row_count": 5,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-026",
+          "evidence_sha256": "29ea5b2aa2fdbe4bc1e97fcd95578019a6888a922f4dedaba1b614e61ada04b8",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-050",
+          "evidence_sha256": "19f4efec1bed4eb71ca2e5e6adb8e19ec1ec6c0e7d4518656ac9d79872aa9898",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-051",
+          "evidence_sha256": "c4cb2f5ce58d046a93b6dac493fb8a3d829163d3cac861e878d267314fb0d687",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-080",
+          "evidence_sha256": "f500ae2941374d7ebaa029d73225404bdd26c61d3f68a52cc3eaec995d2270a5",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-100",
+          "evidence_sha256": "bbc75e4de9f84f23f2853d69c95fb163ea2d700ff2e35e1b5922238b08f094f3",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-102",
+          "evidence_sha256": "8d38e714d6dc02cbdf01046c1d837d6f5a64ded103dc3a7e2bf366f13b4cd16a",
+          "row_count": 2,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-126",
+          "evidence_sha256": "7e900b65a9da51db8db93834ce5137eda1a74cd7218f3fcc77052fb10c17f667",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-136",
+          "evidence_sha256": "523fae1eb41b0e12d5feb0a0c6b8234db3ffd5773666fd1f61b19f119ef294e7",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-002",
+          "evidence_sha256": "147d9d550bf24cd994d58d55a2e47901a4fee7441fba7bf2033571231aa42f3a",
+          "row_count": 28,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-025",
+          "evidence_sha256": "911df99205db71cb4725642270a7bd053c3f11e8b9aef7789854f2d7a2320d5d",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-026",
+          "evidence_sha256": "a2fc5e17292c128add655381b03a35b4d0d54ece4b3ec2ea42cb60ff8fe8e1f4",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-050",
+          "evidence_sha256": "f54fc03ba11374ba45871f691ec879b7ee254b4b90ae07b681510a40926ceb42",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-052",
+          "evidence_sha256": "66b2e0e401829a944156df97675adb36802c68addc4edb470ceaca8873b2e7ec",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-077",
+          "evidence_sha256": "2b0d72f7cf6d219386a13fa5243b10bdd681a6e17316114af7b1e3d0a0067e64",
+          "row_count": 3,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-100",
+          "evidence_sha256": "8b25b802783a261535c1882bab8eca2d608f81909bf493c73505ad386d2df287",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-101",
+          "evidence_sha256": "cb4b8497f1526f246f4ff2a828571dac84aec8be535f0b67cdf36305df285e01",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-125",
+          "evidence_sha256": "cf7d92c446db818053a14a70b5b443086e20ea7cdab61dd1bd38ec52c55d5413",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-150",
+          "evidence_sha256": "0d3f5b8b8426a78f15ebf37776f60c01567e76c9ff635e8375a74a75351bad71",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        }
+      ]
+    },
+    {
+      "source_identity": {
+        "logical_database_id": "short_video_ops",
+        "source_id": "short_video_ops_postgres",
+        "backend": "postgresql",
+        "dialect": "postgres",
+        "prompt_dialect": "PostgreSQL",
+        "physical_schema": "askdata_ops",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1"
+      },
+      "run_id": "35b23e5432d04dcf8e73a107bb3373bd",
+      "manifest_fingerprint": "159ac837eb399585c095badd521b53dfa8b0ead0f801fb2927c73af0ce7ba9b7",
+      "dataset_version": "461a75362007953da0d028fc44b35b4252891a558f6a26d909e711effd0266f4",
+      "versions": {
+        "data": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+        "schema": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "application": "b08e0b723f1d3f6c293a3fa79d9e76836d1b93642f5e23e80e1a1ff59fbed33e",
+        "evaluator": "c1d6c46cb989ed412449a3a8ce645c33c5ed26dbe6a793ebe820c2909ac78483",
+        "evaluation_code": "6565cdd5feccbcf882c871978f8dfee0d6f9b3fa04909daff331904c61b0a0b3",
+        "gold_selection": "0a2af5e3834b4a7f1cdd6fcbf0420ef1b010c5f0fd23e15fa8085178327158d0",
+        "result_policy": "a25291c0feebd5500ff3d13e025769bcb2219313c4e2587a18b336a3ea9c85ce",
+        "physical_schema": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817"
+      },
+      "source_verification": {
+        "kind": "live_postgresql_verification",
+        "live_target_verified": true,
+        "data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+        "catalog_version": "94a801805965a90aa6ae015f28af196f88f72c1d887319dd1896a2973eaaa288",
+        "physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+        "table_count": 41,
+        "field_count": 276,
+        "row_count": 722732,
+        "full_typed_row_match_count": 41,
+        "readonly_table_acl_match_count": 41,
+        "readonly_column_acl_match_count": 41
+      },
+      "summary_recalculated_match": true,
+      "summary": {
+        "mode": "gold",
+        "case_count": 79,
+        "schema_recall": null,
+        "schema_precision": null,
+        "sql_execution_success_rate": 1.0,
+        "average_execution_ms": 2642.605,
+        "p95_execution_ms": 2676.193,
+        "result_accuracy": 1.0,
+        "result_scored_count": 79,
+        "strict_result_accuracy": 1.0,
+        "strict_scored_count": 79,
+        "unscored_count": 0,
+        "column_name_match_rate": 1.0,
+        "clarification_count": 0,
+        "error_count": 0,
+        "timeout_count": 0,
+        "connection_error_count": 0,
+        "model_request_attempt_count": 0,
+        "model_retry_count": 0,
+        "model_timeout_event_count": 0,
+        "model_connection_error_event_count": 0,
+        "result_accuracy_given_executed_sql": 1.0
+      },
+      "case_checks": [
+        {
+          "case_id": "GROWTH_OPS-001",
+          "evidence_sha256": "b74b71f2acc62392979a17ec7447cf153e53fb94ff88f8d03ff14a383653292c",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-002",
+          "evidence_sha256": "2f0ac2d02e3dcb3568d48b131c2caa6ae97a3004505154b729c3a05dba7170cd",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-003",
+          "evidence_sha256": "8926c8f996621cc99ff95d28c2c9508dc3bcc5ca9f47f7c24451d44a678f634b",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-004",
+          "evidence_sha256": "cb94f4db12d70b61995c0892465554eee884a8c57f5502634a92fb47b7b0371f",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-005",
+          "evidence_sha256": "7cea59e4837c152b841f9746fc7591e516579bc691ba5f56d88baa24f8efaa42",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-006",
+          "evidence_sha256": "7eb4beb616a2840510b8880e45672d94caeb7e01723f983aea896d81f8ca6a7b",
+          "row_count": 31,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-026",
+          "evidence_sha256": "89f67406d78857fd30ae512b9381c7223d66e778969ac13849d24e56bd767df8",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-061",
+          "evidence_sha256": "3452653b1836715748cbb1c26a3b4efd491e2cbc49ff60295eb1ba1c458c8bf1",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-062",
+          "evidence_sha256": "6586ae875e22b017c0bd497bd851b96ed1339a4b5f364be3cb003c90f698df69",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-063",
+          "evidence_sha256": "1af256afed53946a7b58073d404d5d65dd22f9ab8df09d2401952f603dde2997",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-064",
+          "evidence_sha256": "24f872e20f7a1d16def1689e6cfaf96d6b7798c154c0dea59a85e5dd317801f5",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-066",
+          "evidence_sha256": "930aff52a5b161b9f628048460e1e285d46545312f774a1fc10f299179c9635a",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-086",
+          "evidence_sha256": "ca18bb7da09dbe68ed2d24c7a7975ef62e7625260e7273e44ec57b5c24741813",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-101",
+          "evidence_sha256": "16e9123707aedcc268c91fee813e1b5a5131cd0f01988cc8697926504c928ac8",
+          "row_count": 5,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-131",
+          "evidence_sha256": "f9f2e5c3b9dc2d062b9dfd9ec05b0ae4735378d1db2d27c825156655fb1f9e3e",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-149",
+          "evidence_sha256": "6646f67692f030bd7dc85056eb62c40bfbd843bbf8e337e7424a36e5f2d97e1e",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-150",
+          "evidence_sha256": "809c0df80f5f558dd27c15f7ff0724f350bb6ee85c9bbfb7a890d0931d6e406c",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-001",
+          "evidence_sha256": "9598825633bb764b863f4008dd594b88b9d179d48cd7d9e1ee1a79ee9b78f12e",
+          "row_count": 30,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-002",
+          "evidence_sha256": "a438692ffe25e833ab74ffd3aba05eb56cb6a4d5f94fab9e866972b30c2257b0",
+          "row_count": 28,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-003",
+          "evidence_sha256": "ae911c4774ec2b609d802fad9d430d59f5a9e185ffb8b21b1cd6f2d0ea0fcf9e",
+          "row_count": 31,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-004",
+          "evidence_sha256": "67337a7c6cc88f8252910a1b222d647e5dc3fe9f11e4c2bbfdc3cbd3028961fe",
+          "row_count": 30,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-005",
+          "evidence_sha256": "dad4dd00f91da1f0b3b86edeade36deac269ea49f98abd82244f3a8a1080a68f",
+          "row_count": 31,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-066",
+          "evidence_sha256": "ab774eec74680fdf9c9a7ff3258db43fa08065861ef76f67b2265d84a879faf5",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-067",
+          "evidence_sha256": "8fb8838515869b5cddf6efbd0d8ab0539a8525c53e30645c4bc4e450e4995ab8",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-068",
+          "evidence_sha256": "971a16e8f30a375f464e54cbc1022ae5a82f99f434e6914bc9586e64d8d7a4a1",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-069",
+          "evidence_sha256": "4b7964694e58d02ebbbef5c5875dae11ee215ee24a6109f2f34bb260eecc99fb",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-070",
+          "evidence_sha256": "92666d7962bd14820d7d1f2955ffab1bb3a7a03bf69b3621752373583babdf53",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-076",
+          "evidence_sha256": "a15ebf3d19f497a9ad89d5a3cb880f0cfdc251b56192f01e1f017c7ff1c5b2df",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-077",
+          "evidence_sha256": "e94d5f20d4804d7d28849dcaac9b2c0408fc84c739319f6b8a54bfe3a93d0f6d",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-078",
+          "evidence_sha256": "2c9b58ff0600153077c533d8dee3bbb5f848f0cc5920b33c555b734a0c052ebb",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-079",
+          "evidence_sha256": "64224b045aa6cf1a963c71a145335b2f9a6502178c5004450067ec9fee56d898",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-101",
+          "evidence_sha256": "26c691acbf3c9573789569c5a0f0d7b247c93bff89830495fe1e38ff89d3957a",
+          "row_count": 2,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-141",
+          "evidence_sha256": "9e56b1b84d2ed6f2a2f1ad6c16f850a6a934d60d8aef9780ed9b56ad6f737a94",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-001",
+          "evidence_sha256": "76ed74cf4ece8258ce2ab99fa17d1f630056abc46dda4186214a07bc59144480",
+          "row_count": 31,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-029",
+          "evidence_sha256": "6b04230f6761e93e3fd121c51f0935ee91e57748beed5af221d2c429f2174922",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-030",
+          "evidence_sha256": "141b050fbda3bb56d2eb95151e4683ed813eeb99e469ea467018bf70cf9b309c",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-031",
+          "evidence_sha256": "ee731a9990d1df530a095f1c4ef24493235cf703aad24263a3f932b74c6d14ea",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-032",
+          "evidence_sha256": "99fc1787ca307c645c598d63a1272464dd2190bd97bd1822912eb47071f9c6d1",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-033",
+          "evidence_sha256": "e081170f0761344cb931f88f2a0b596f50726d44c04dd2c1c6c3072b0abd1590",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-034",
+          "evidence_sha256": "ade7f862d09f385359c1cb21218d4292b0ff6631f74c3dddb399605f51010abf",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-035",
+          "evidence_sha256": "b81d76307a9238e0cbb272b33b099d52c7c01d6e8c440ce4178f04fcfde0da90",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-036",
+          "evidence_sha256": "614fef5a4d18bbfb106b282cb0ca72b7e97c17c250ec786d169cf19d3e21b1d4",
+          "row_count": 17,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-051",
+          "evidence_sha256": "25612f9c60c4960094dce342e5b4c4404719f8a382fecd7f162fca53f956d612",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-076",
+          "evidence_sha256": "04378296e5be7e33c8d2d250fb5a530b8b3690ccd4a2f49ea3371308ed262d5f",
+          "row_count": 3,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-121",
+          "evidence_sha256": "a7d6f5ea622dc286a42cd4253656291f9450fd8d37b3a8b2f14c74b4ba119e20",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-126",
+          "evidence_sha256": "95d3fc755a318ff324692a9fe95ae1977453206c8b1b740a321d4532110aca51",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-136",
+          "evidence_sha256": "1644508e58c5f94a5d611ed29186862782f32639132863cad5b1c9bd9d285313",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-137",
+          "evidence_sha256": "0119cb5ca78cd660941bfbc790727a6b726089e43bb3e0125696a3656b4edd85",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-138",
+          "evidence_sha256": "82088f35e3aa8a47643d3b0837ce07957cad94bf9af86004e9ab747467f5d099",
+          "row_count": 12,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-007",
+          "evidence_sha256": "f8e4870ebcd8f3cdea6ecc72d21a41c0bef15b57f6ff4d45c1e438d61bd63721",
+          "row_count": 31,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-050",
+          "evidence_sha256": "e5acd05f9134ef923f596e37310f3f4b09ca3c886981e7508c5efd47907c29b4",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-051",
+          "evidence_sha256": "c956bef8ace444e0bef01c39189b89922a015481ba5a6172d3212ac6726f6667",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-075",
+          "evidence_sha256": "7d07e0c4698ad77c6418936c89468079cac406df3cfdd80885646ac735ad3d40",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-076",
+          "evidence_sha256": "6a2354c55407958d2dafdc70a5a8b996bb59f0d6aecef27fac74dc00153a070f",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-100",
+          "evidence_sha256": "24780fb848b0d488e1badab58e35294f4fa6126d7673d1bbe261734be0e1bd8d",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-102",
+          "evidence_sha256": "8d4fa5b4fe03d431a0fc6059339f848a8baf32be457db418ff80dc23e95e7ec1",
+          "row_count": 6,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-125",
+          "evidence_sha256": "57c3923e7132b0a55ac0f0e1fcbd82117cb7afa85bf8e5bd4e219e4914546ca7",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-126",
+          "evidence_sha256": "bb96d9a88ab08c8a3806e4cb18941aa69ed9ba040853ae8f4a94169665ba33f8",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "GROWTH_OPS-148",
+          "evidence_sha256": "22c4c7e5210e3942c6035b3dd55a09aace19d78cac4feb0e9a6284983fa6f556",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-006",
+          "evidence_sha256": "948135af34b109d851fc00d92452e61e4ef517fe1cac0bf5afcf8f4de35a75a0",
+          "row_count": 8,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-025",
+          "evidence_sha256": "87ccf1b4fc07e96d9c38dbd569ceaab64b0d5a26d29a4007f4366513e8819def",
+          "row_count": 5,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-026",
+          "evidence_sha256": "f49dee7aa2d151b955f306a8a06c7ae804a9c438d43b8e852615b494eaa4f587",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-050",
+          "evidence_sha256": "85a9c379abddf0765ff9ad985a1dff445ba08ab2c743881803eec8bae4377bdc",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-051",
+          "evidence_sha256": "c364077440b02dcbd2f0903bcd8b4071f330258da0a6b528b5364d7f31e5854b",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-080",
+          "evidence_sha256": "2948d44fe32fac0e70c3625e7dda9b31a8a2407ce474b8785747133ecb43f6ad",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-100",
+          "evidence_sha256": "6cc825da3295d4487241088c26a8f1f3380c58db2947aa785057d13775e7182f",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-102",
+          "evidence_sha256": "0e5b98dc84a6666db3b213de8f4f70545b4771a78fabb5efc2df576901912916",
+          "row_count": 2,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-126",
+          "evidence_sha256": "afa99c7edf317144078039012a39531b94daf8b5c2478d8e93396bedad9cb3b6",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CHANNEL_OPS-136",
+          "evidence_sha256": "bc0a6cf5b9caa905fe0ef4b0eeb0daa0e4be2638e4ad27db4726725909670369",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-002",
+          "evidence_sha256": "be0819fb81934cc49c64d5ced151f0b669889dab28f5649a4d6b37f2efd56f12",
+          "row_count": 28,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-025",
+          "evidence_sha256": "c8ae3255f4c919965b3e9e699d389b8bde850575ea216070dd3325d65421f79c",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-026",
+          "evidence_sha256": "0c79aac5523d3b66dc8fd5f694feab80dfed195779cdf43c8fd49b58ad9d249a",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-050",
+          "evidence_sha256": "c10c0552e572029affe82e7088e6822e0fa6ea923948a04794368076fcbe9178",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-052",
+          "evidence_sha256": "641828da995d09a870a4424389c49933c05437402c96c423331880b2c564b253",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-077",
+          "evidence_sha256": "3341337e5ca5cacd080c7d0ee88776458ac0fa0623a122c007fcdda2115cf616",
+          "row_count": 3,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-100",
+          "evidence_sha256": "95cb2919d155de11bc5f1be27783e798f4612438b6f12ada858f5fe1b0e7767b",
+          "row_count": 10,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-101",
+          "evidence_sha256": "9881fa299b2848e3c7494deb770a6bf2c0eb8cfd4c160d9633b31e6f90e695b1",
+          "row_count": 4,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-125",
+          "evidence_sha256": "5b6519f4f30106fcdab65f6c79d837de53240dcbe500400c773cf155e4d2c821",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        },
+        {
+          "case_id": "CONTENT_OPS-150",
+          "evidence_sha256": "b14865d210018fec8adf059a7c7c56123ee8fbf7552d45e1e76db61191b962ee",
+          "row_count": 1,
+          "explicit_gold_selection_key": "gold_sql_by_dialect.postgres",
+          "strict_replay_correct": true,
+          "trace_permission_source_and_cache_path_match": true
+        }
+      ]
+    }
+  ],
+  "independent_replay_filename": "m1_d4_cross_backend_gold79_replay_local.json",
+  "independent_comparison_matches_server_except_timestamp": true,
+  "cross_backend_summary": {
+    "report_type": "cross_backend_gold_result_consistency",
+    "comparison_version": 1,
+    "run_status": "complete",
+    "comparison_status": "passed",
+    "case_count": 79,
+    "pair_pass_count": 79,
+    "duckdb_expected_pass_count": 79,
+    "postgres_expected_pass_count": 79,
+    "raw_rows_identical_count": 79,
+    "reported_scores_match_replay_count": 79,
+    "run_ids": [
+      "592a0f58d6c8455894f66fad758c9a75",
+      "35b23e5432d04dcf8e73a107bb3373bd"
+    ],
+    "input_report_content_sha256": [
+      "ae460f8049a56a8a744f19f54a740044b7508d84df18abc14c65a556dee4bad3",
+      "8031edb8662065fdf21022b3c217c43c3a220ab442b8ded3424e3f7818d75a6b"
+    ],
+    "new_model_request_count": 0,
+    "database_connections_opened_by_comparator": 0,
+    "is_same_source_regression": false,
+    "comparison_rules": "Existing explicit aliases, business tolerance, order and approved Top-N ties"
+  },
+  "actual_reports_cross_source_resume_rejections": [
+    "Cannot resume across datasource identities",
+    "Cannot resume across datasource identities"
+  ],
+  "actual_reports_same_source_regression_rejection": "Incomparable benchmark runs: source_identity differs; data_version differs; schema_version differs; physical_schema_version differs; gold_selection_version differs",
+  "json_representation_audit": {
+    "python_value_equal_case_count": 79,
+    "canonical_json_equal_case_count": 61,
+    "int_float_representation_difference_case_count": 18,
+    "equal_numeric_value_type_difference_cell_count": 257,
+    "interpretation": "raw_rows_identical_count uses Python value equality, where 1520 == 1520.0; it does not establish JSON type or byte identity. Existing numeric scoring policy remains unchanged.",
+    "cases": [
+      {
+        "case_id": "GROWTH_OPS-001",
+        "cell_count": 8,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "value",
+            "duckdb_value": 1520,
+            "postgres_value": 1520.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "value",
+            "duckdb_value": 1440,
+            "postgres_value": 1440.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "value",
+            "duckdb_value": 1538,
+            "postgres_value": 1538.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "value",
+            "duckdb_value": 1525,
+            "postgres_value": 1525.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "value",
+            "duckdb_value": 1603,
+            "postgres_value": 1603.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "value",
+            "duckdb_value": 1475,
+            "postgres_value": 1475.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "value",
+            "duckdb_value": 1555,
+            "postgres_value": 1555.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "value",
+            "duckdb_value": 1344,
+            "postgres_value": 1344.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "GROWTH_OPS-002",
+        "cell_count": 8,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "value",
+            "duckdb_value": 1178,
+            "postgres_value": 1178.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "value",
+            "duckdb_value": 1070,
+            "postgres_value": 1070.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "value",
+            "duckdb_value": 1132,
+            "postgres_value": 1132.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "value",
+            "duckdb_value": 1127,
+            "postgres_value": 1127.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "value",
+            "duckdb_value": 1212,
+            "postgres_value": 1212.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "value",
+            "duckdb_value": 1109,
+            "postgres_value": 1109.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "value",
+            "duckdb_value": 1156,
+            "postgres_value": 1156.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "value",
+            "duckdb_value": 994,
+            "postgres_value": 994.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "GROWTH_OPS-003",
+        "cell_count": 8,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "value",
+            "duckdb_value": 485,
+            "postgres_value": 485.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "value",
+            "duckdb_value": 441,
+            "postgres_value": 441.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "value",
+            "duckdb_value": 499,
+            "postgres_value": 499.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "value",
+            "duckdb_value": 469,
+            "postgres_value": 469.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "value",
+            "duckdb_value": 499,
+            "postgres_value": 499.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "value",
+            "duckdb_value": 488,
+            "postgres_value": 488.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "value",
+            "duckdb_value": 483,
+            "postgres_value": 483.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "value",
+            "duckdb_value": 403,
+            "postgres_value": 403.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "GROWTH_OPS-004",
+        "cell_count": 8,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "value",
+            "duckdb_value": 444,
+            "postgres_value": 444.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "value",
+            "duckdb_value": 425,
+            "postgres_value": 425.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "value",
+            "duckdb_value": 421,
+            "postgres_value": 421.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "value",
+            "duckdb_value": 420,
+            "postgres_value": 420.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "value",
+            "duckdb_value": 450,
+            "postgres_value": 450.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "value",
+            "duckdb_value": 434,
+            "postgres_value": 434.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "value",
+            "duckdb_value": 447,
+            "postgres_value": 447.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "value",
+            "duckdb_value": 301,
+            "postgres_value": 301.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "GROWTH_OPS-005",
+        "cell_count": 8,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "value",
+            "duckdb_value": 2115,
+            "postgres_value": 2115.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "value",
+            "duckdb_value": 3777,
+            "postgres_value": 3777.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "value",
+            "duckdb_value": 5842,
+            "postgres_value": 5842.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "value",
+            "duckdb_value": 7444,
+            "postgres_value": 7444.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "value",
+            "duckdb_value": 10256,
+            "postgres_value": 10256.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "value",
+            "duckdb_value": 13017,
+            "postgres_value": 13017.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "value",
+            "duckdb_value": 18274,
+            "postgres_value": 18274.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "value",
+            "duckdb_value": 25292,
+            "postgres_value": 25292.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "GROWTH_OPS-006",
+        "cell_count": 31,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "value",
+            "duckdb_value": 49,
+            "postgres_value": 49.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "value",
+            "duckdb_value": 60,
+            "postgres_value": 60.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "value",
+            "duckdb_value": 42,
+            "postgres_value": 42.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "value",
+            "duckdb_value": 50,
+            "postgres_value": 50.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "value",
+            "duckdb_value": 45,
+            "postgres_value": 45.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "value",
+            "duckdb_value": 29,
+            "postgres_value": 29.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "value",
+            "duckdb_value": 60,
+            "postgres_value": 60.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "value",
+            "duckdb_value": 50,
+            "postgres_value": 50.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 8,
+            "column": "value",
+            "duckdb_value": 52,
+            "postgres_value": 52.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 9,
+            "column": "value",
+            "duckdb_value": 44,
+            "postgres_value": 44.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 10,
+            "column": "value",
+            "duckdb_value": 41,
+            "postgres_value": 41.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 11,
+            "column": "value",
+            "duckdb_value": 39,
+            "postgres_value": 39.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 12,
+            "column": "value",
+            "duckdb_value": 28,
+            "postgres_value": 28.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 13,
+            "column": "value",
+            "duckdb_value": 44,
+            "postgres_value": 44.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 14,
+            "column": "value",
+            "duckdb_value": 49,
+            "postgres_value": 49.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 15,
+            "column": "value",
+            "duckdb_value": 65,
+            "postgres_value": 65.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 16,
+            "column": "value",
+            "duckdb_value": 43,
+            "postgres_value": 43.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 17,
+            "column": "value",
+            "duckdb_value": 51,
+            "postgres_value": 51.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 18,
+            "column": "value",
+            "duckdb_value": 46,
+            "postgres_value": 46.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 19,
+            "column": "value",
+            "duckdb_value": 46,
+            "postgres_value": 46.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 20,
+            "column": "value",
+            "duckdb_value": 54,
+            "postgres_value": 54.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 21,
+            "column": "value",
+            "duckdb_value": 47,
+            "postgres_value": 47.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 22,
+            "column": "value",
+            "duckdb_value": 56,
+            "postgres_value": 56.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 23,
+            "column": "value",
+            "duckdb_value": 48,
+            "postgres_value": 48.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 24,
+            "column": "value",
+            "duckdb_value": 51,
+            "postgres_value": 51.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 25,
+            "column": "value",
+            "duckdb_value": 58,
+            "postgres_value": 58.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 26,
+            "column": "value",
+            "duckdb_value": 58,
+            "postgres_value": 58.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 27,
+            "column": "value",
+            "duckdb_value": 55,
+            "postgres_value": 55.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 28,
+            "column": "value",
+            "duckdb_value": 53,
+            "postgres_value": 53.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 29,
+            "column": "value",
+            "duckdb_value": 51,
+            "postgres_value": 51.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 30,
+            "column": "value",
+            "duckdb_value": 56,
+            "postgres_value": 56.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "GROWTH_OPS-026",
+        "cell_count": 10,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "new_users",
+            "duckdb_value": 258,
+            "postgres_value": 258.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "new_users",
+            "duckdb_value": 249,
+            "postgres_value": 249.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "new_users",
+            "duckdb_value": 192,
+            "postgres_value": 192.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "new_users",
+            "duckdb_value": 171,
+            "postgres_value": 171.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "new_users",
+            "duckdb_value": 168,
+            "postgres_value": 168.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "new_users",
+            "duckdb_value": 168,
+            "postgres_value": 168.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "new_users",
+            "duckdb_value": 108,
+            "postgres_value": 108.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "new_users",
+            "duckdb_value": 106,
+            "postgres_value": 106.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 8,
+            "column": "new_users",
+            "duckdb_value": 59,
+            "postgres_value": 59.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 9,
+            "column": "new_users",
+            "duckdb_value": 41,
+            "postgres_value": 41.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "CHANNEL_OPS-076",
+        "cell_count": 1,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "budget",
+            "duckdb_value": 444588,
+            "postgres_value": 444588.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "CHANNEL_OPS-077",
+        "cell_count": 1,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "budget",
+            "duckdb_value": 13228949,
+            "postgres_value": 13228949.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "CHANNEL_OPS-078",
+        "cell_count": 1,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "budget",
+            "duckdb_value": 444588,
+            "postgres_value": 444588.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "CHANNEL_OPS-079",
+        "cell_count": 1,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "budget",
+            "duckdb_value": 13228949,
+            "postgres_value": 13228949.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "CONTENT_OPS-001",
+        "cell_count": 62,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "impressions",
+            "duckdb_value": 343,
+            "postgres_value": 343.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 0,
+            "column": "plays",
+            "duckdb_value": 97,
+            "postgres_value": 97.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "impressions",
+            "duckdb_value": 187,
+            "postgres_value": 187.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "plays",
+            "duckdb_value": 55,
+            "postgres_value": 55.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "impressions",
+            "duckdb_value": 202,
+            "postgres_value": 202.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "plays",
+            "duckdb_value": 77,
+            "postgres_value": 77.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "impressions",
+            "duckdb_value": 224,
+            "postgres_value": 224.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "plays",
+            "duckdb_value": 87,
+            "postgres_value": 87.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "impressions",
+            "duckdb_value": 224,
+            "postgres_value": 224.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "plays",
+            "duckdb_value": 65,
+            "postgres_value": 65.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "impressions",
+            "duckdb_value": 214,
+            "postgres_value": 214.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "plays",
+            "duckdb_value": 71,
+            "postgres_value": 71.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "impressions",
+            "duckdb_value": 227,
+            "postgres_value": 227.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "plays",
+            "duckdb_value": 91,
+            "postgres_value": 91.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "impressions",
+            "duckdb_value": 235,
+            "postgres_value": 235.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "plays",
+            "duckdb_value": 88,
+            "postgres_value": 88.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 8,
+            "column": "impressions",
+            "duckdb_value": 310,
+            "postgres_value": 310.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 8,
+            "column": "plays",
+            "duckdb_value": 110,
+            "postgres_value": 110.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 9,
+            "column": "impressions",
+            "duckdb_value": 262,
+            "postgres_value": 262.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 9,
+            "column": "plays",
+            "duckdb_value": 79,
+            "postgres_value": 79.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 10,
+            "column": "impressions",
+            "duckdb_value": 281,
+            "postgres_value": 281.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 10,
+            "column": "plays",
+            "duckdb_value": 93,
+            "postgres_value": 93.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 11,
+            "column": "impressions",
+            "duckdb_value": 212,
+            "postgres_value": 212.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 11,
+            "column": "plays",
+            "duckdb_value": 68,
+            "postgres_value": 68.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 12,
+            "column": "impressions",
+            "duckdb_value": 232,
+            "postgres_value": 232.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 12,
+            "column": "plays",
+            "duckdb_value": 73,
+            "postgres_value": 73.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 13,
+            "column": "impressions",
+            "duckdb_value": 415,
+            "postgres_value": 415.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 13,
+            "column": "plays",
+            "duckdb_value": 156,
+            "postgres_value": 156.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 14,
+            "column": "impressions",
+            "duckdb_value": 299,
+            "postgres_value": 299.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 14,
+            "column": "plays",
+            "duckdb_value": 113,
+            "postgres_value": 113.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 15,
+            "column": "impressions",
+            "duckdb_value": 273,
+            "postgres_value": 273.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 15,
+            "column": "plays",
+            "duckdb_value": 92,
+            "postgres_value": 92.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 16,
+            "column": "impressions",
+            "duckdb_value": 141,
+            "postgres_value": 141.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 16,
+            "column": "plays",
+            "duckdb_value": 46,
+            "postgres_value": 46.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 17,
+            "column": "impressions",
+            "duckdb_value": 366,
+            "postgres_value": 366.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 17,
+            "column": "plays",
+            "duckdb_value": 131,
+            "postgres_value": 131.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 18,
+            "column": "impressions",
+            "duckdb_value": 225,
+            "postgres_value": 225.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 18,
+            "column": "plays",
+            "duckdb_value": 71,
+            "postgres_value": 71.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 19,
+            "column": "impressions",
+            "duckdb_value": 322,
+            "postgres_value": 322.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 19,
+            "column": "plays",
+            "duckdb_value": 97,
+            "postgres_value": 97.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 20,
+            "column": "impressions",
+            "duckdb_value": 246,
+            "postgres_value": 246.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 20,
+            "column": "plays",
+            "duckdb_value": 77,
+            "postgres_value": 77.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 21,
+            "column": "impressions",
+            "duckdb_value": 187,
+            "postgres_value": 187.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 21,
+            "column": "plays",
+            "duckdb_value": 70,
+            "postgres_value": 70.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 22,
+            "column": "impressions",
+            "duckdb_value": 179,
+            "postgres_value": 179.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 22,
+            "column": "plays",
+            "duckdb_value": 61,
+            "postgres_value": 61.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 23,
+            "column": "impressions",
+            "duckdb_value": 303,
+            "postgres_value": 303.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 23,
+            "column": "plays",
+            "duckdb_value": 106,
+            "postgres_value": 106.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 24,
+            "column": "impressions",
+            "duckdb_value": 232,
+            "postgres_value": 232.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 24,
+            "column": "plays",
+            "duckdb_value": 106,
+            "postgres_value": 106.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 25,
+            "column": "impressions",
+            "duckdb_value": 237,
+            "postgres_value": 237.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 25,
+            "column": "plays",
+            "duckdb_value": 72,
+            "postgres_value": 72.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 26,
+            "column": "impressions",
+            "duckdb_value": 278,
+            "postgres_value": 278.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 26,
+            "column": "plays",
+            "duckdb_value": 90,
+            "postgres_value": 90.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 27,
+            "column": "impressions",
+            "duckdb_value": 227,
+            "postgres_value": 227.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 27,
+            "column": "plays",
+            "duckdb_value": 86,
+            "postgres_value": 86.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 28,
+            "column": "impressions",
+            "duckdb_value": 297,
+            "postgres_value": 297.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 28,
+            "column": "plays",
+            "duckdb_value": 108,
+            "postgres_value": 108.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 29,
+            "column": "impressions",
+            "duckdb_value": 201,
+            "postgres_value": 201.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 29,
+            "column": "plays",
+            "duckdb_value": 64,
+            "postgres_value": 64.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 30,
+            "column": "impressions",
+            "duckdb_value": 289,
+            "postgres_value": 289.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 30,
+            "column": "plays",
+            "duckdb_value": 115,
+            "postgres_value": 115.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "GROWTH_OPS-007",
+        "cell_count": 31,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "value",
+            "duckdb_value": 37,
+            "postgres_value": 37.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "value",
+            "duckdb_value": 50,
+            "postgres_value": 50.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "value",
+            "duckdb_value": 36,
+            "postgres_value": 36.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "value",
+            "duckdb_value": 33,
+            "postgres_value": 33.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "value",
+            "duckdb_value": 42,
+            "postgres_value": 42.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "value",
+            "duckdb_value": 22,
+            "postgres_value": 22.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "value",
+            "duckdb_value": 44,
+            "postgres_value": 44.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "value",
+            "duckdb_value": 38,
+            "postgres_value": 38.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 8,
+            "column": "value",
+            "duckdb_value": 38,
+            "postgres_value": 38.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 9,
+            "column": "value",
+            "duckdb_value": 36,
+            "postgres_value": 36.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 10,
+            "column": "value",
+            "duckdb_value": 32,
+            "postgres_value": 32.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 11,
+            "column": "value",
+            "duckdb_value": 31,
+            "postgres_value": 31.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 12,
+            "column": "value",
+            "duckdb_value": 21,
+            "postgres_value": 21.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 13,
+            "column": "value",
+            "duckdb_value": 32,
+            "postgres_value": 32.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 14,
+            "column": "value",
+            "duckdb_value": 39,
+            "postgres_value": 39.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 15,
+            "column": "value",
+            "duckdb_value": 48,
+            "postgres_value": 48.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 16,
+            "column": "value",
+            "duckdb_value": 37,
+            "postgres_value": 37.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 17,
+            "column": "value",
+            "duckdb_value": 38,
+            "postgres_value": 38.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 18,
+            "column": "value",
+            "duckdb_value": 36,
+            "postgres_value": 36.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 19,
+            "column": "value",
+            "duckdb_value": 34,
+            "postgres_value": 34.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 20,
+            "column": "value",
+            "duckdb_value": 41,
+            "postgres_value": 41.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 21,
+            "column": "value",
+            "duckdb_value": 37,
+            "postgres_value": 37.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 22,
+            "column": "value",
+            "duckdb_value": 44,
+            "postgres_value": 44.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 23,
+            "column": "value",
+            "duckdb_value": 38,
+            "postgres_value": 38.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 24,
+            "column": "value",
+            "duckdb_value": 39,
+            "postgres_value": 39.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 25,
+            "column": "value",
+            "duckdb_value": 42,
+            "postgres_value": 42.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 26,
+            "column": "value",
+            "duckdb_value": 43,
+            "postgres_value": 43.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 27,
+            "column": "value",
+            "duckdb_value": 46,
+            "postgres_value": 46.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 28,
+            "column": "value",
+            "duckdb_value": 41,
+            "postgres_value": 41.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 29,
+            "column": "value",
+            "duckdb_value": 36,
+            "postgres_value": 36.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 30,
+            "column": "value",
+            "duckdb_value": 47,
+            "postgres_value": 47.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "CHANNEL_OPS-026",
+        "cell_count": 8,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "impressions",
+            "duckdb_value": 1442020,
+            "postgres_value": 1442020.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 0,
+            "column": "clicks",
+            "duckdb_value": 47492,
+            "postgres_value": 47492.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "impressions",
+            "duckdb_value": 2280774,
+            "postgres_value": 2280774.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "clicks",
+            "duckdb_value": 70666,
+            "postgres_value": 70666.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "impressions",
+            "duckdb_value": 5495886,
+            "postgres_value": 5495886.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "clicks",
+            "duckdb_value": 169774,
+            "postgres_value": 169774.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "impressions",
+            "duckdb_value": 2751490,
+            "postgres_value": 2751490.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "clicks",
+            "duckdb_value": 82883,
+            "postgres_value": 82883.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "CHANNEL_OPS-051",
+        "cell_count": 4,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "conversions",
+            "duckdb_value": 5579,
+            "postgres_value": 5579.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "conversions",
+            "duckdb_value": 17785,
+            "postgres_value": 17785.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "conversions",
+            "duckdb_value": 9662,
+            "postgres_value": 9662.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "conversions",
+            "duckdb_value": 6725,
+            "postgres_value": 6725.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "CHANNEL_OPS-080",
+        "cell_count": 1,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "budget",
+            "duckdb_value": 444588,
+            "postgres_value": 444588.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "CONTENT_OPS-002",
+        "cell_count": 56,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "impressions",
+            "duckdb_value": 247,
+            "postgres_value": 247.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 0,
+            "column": "plays",
+            "duckdb_value": 102,
+            "postgres_value": 102.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "impressions",
+            "duckdb_value": 287,
+            "postgres_value": 287.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "plays",
+            "duckdb_value": 111,
+            "postgres_value": 111.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "impressions",
+            "duckdb_value": 202,
+            "postgres_value": 202.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "plays",
+            "duckdb_value": 78,
+            "postgres_value": 78.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "impressions",
+            "duckdb_value": 271,
+            "postgres_value": 271.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "plays",
+            "duckdb_value": 88,
+            "postgres_value": 88.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "impressions",
+            "duckdb_value": 224,
+            "postgres_value": 224.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "plays",
+            "duckdb_value": 71,
+            "postgres_value": 71.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "impressions",
+            "duckdb_value": 220,
+            "postgres_value": 220.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "plays",
+            "duckdb_value": 95,
+            "postgres_value": 95.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "impressions",
+            "duckdb_value": 261,
+            "postgres_value": 261.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "plays",
+            "duckdb_value": 94,
+            "postgres_value": 94.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "impressions",
+            "duckdb_value": 241,
+            "postgres_value": 241.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "plays",
+            "duckdb_value": 94,
+            "postgres_value": 94.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 8,
+            "column": "impressions",
+            "duckdb_value": 277,
+            "postgres_value": 277.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 8,
+            "column": "plays",
+            "duckdb_value": 83,
+            "postgres_value": 83.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 9,
+            "column": "impressions",
+            "duckdb_value": 245,
+            "postgres_value": 245.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 9,
+            "column": "plays",
+            "duckdb_value": 98,
+            "postgres_value": 98.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 10,
+            "column": "impressions",
+            "duckdb_value": 267,
+            "postgres_value": 267.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 10,
+            "column": "plays",
+            "duckdb_value": 92,
+            "postgres_value": 92.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 11,
+            "column": "impressions",
+            "duckdb_value": 288,
+            "postgres_value": 288.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 11,
+            "column": "plays",
+            "duckdb_value": 115,
+            "postgres_value": 115.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 12,
+            "column": "impressions",
+            "duckdb_value": 245,
+            "postgres_value": 245.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 12,
+            "column": "plays",
+            "duckdb_value": 79,
+            "postgres_value": 79.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 13,
+            "column": "impressions",
+            "duckdb_value": 251,
+            "postgres_value": 251.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 13,
+            "column": "plays",
+            "duckdb_value": 104,
+            "postgres_value": 104.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 14,
+            "column": "impressions",
+            "duckdb_value": 258,
+            "postgres_value": 258.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 14,
+            "column": "plays",
+            "duckdb_value": 86,
+            "postgres_value": 86.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 15,
+            "column": "impressions",
+            "duckdb_value": 239,
+            "postgres_value": 239.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 15,
+            "column": "plays",
+            "duckdb_value": 84,
+            "postgres_value": 84.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 16,
+            "column": "impressions",
+            "duckdb_value": 285,
+            "postgres_value": 285.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 16,
+            "column": "plays",
+            "duckdb_value": 105,
+            "postgres_value": 105.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 17,
+            "column": "impressions",
+            "duckdb_value": 241,
+            "postgres_value": 241.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 17,
+            "column": "plays",
+            "duckdb_value": 89,
+            "postgres_value": 89.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 18,
+            "column": "impressions",
+            "duckdb_value": 266,
+            "postgres_value": 266.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 18,
+            "column": "plays",
+            "duckdb_value": 105,
+            "postgres_value": 105.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 19,
+            "column": "impressions",
+            "duckdb_value": 239,
+            "postgres_value": 239.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 19,
+            "column": "plays",
+            "duckdb_value": 85,
+            "postgres_value": 85.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 20,
+            "column": "impressions",
+            "duckdb_value": 342,
+            "postgres_value": 342.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 20,
+            "column": "plays",
+            "duckdb_value": 124,
+            "postgres_value": 124.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 21,
+            "column": "impressions",
+            "duckdb_value": 224,
+            "postgres_value": 224.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 21,
+            "column": "plays",
+            "duckdb_value": 85,
+            "postgres_value": 85.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 22,
+            "column": "impressions",
+            "duckdb_value": 423,
+            "postgres_value": 423.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 22,
+            "column": "plays",
+            "duckdb_value": 142,
+            "postgres_value": 142.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 23,
+            "column": "impressions",
+            "duckdb_value": 241,
+            "postgres_value": 241.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 23,
+            "column": "plays",
+            "duckdb_value": 89,
+            "postgres_value": 89.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 24,
+            "column": "impressions",
+            "duckdb_value": 320,
+            "postgres_value": 320.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 24,
+            "column": "plays",
+            "duckdb_value": 118,
+            "postgres_value": 118.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 25,
+            "column": "impressions",
+            "duckdb_value": 269,
+            "postgres_value": 269.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 25,
+            "column": "plays",
+            "duckdb_value": 92,
+            "postgres_value": 92.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 26,
+            "column": "impressions",
+            "duckdb_value": 320,
+            "postgres_value": 320.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 26,
+            "column": "plays",
+            "duckdb_value": 133,
+            "postgres_value": 133.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 27,
+            "column": "impressions",
+            "duckdb_value": 292,
+            "postgres_value": 292.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 27,
+            "column": "plays",
+            "duckdb_value": 101,
+            "postgres_value": 101.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      },
+      {
+        "case_id": "CONTENT_OPS-025",
+        "cell_count": 10,
+        "differences": [
+          {
+            "row_index": 0,
+            "column": "plays",
+            "duckdb_value": 9,
+            "postgres_value": 9.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 1,
+            "column": "plays",
+            "duckdb_value": 9,
+            "postgres_value": 9.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 2,
+            "column": "plays",
+            "duckdb_value": 9,
+            "postgres_value": 9.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 3,
+            "column": "plays",
+            "duckdb_value": 9,
+            "postgres_value": 9.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 4,
+            "column": "plays",
+            "duckdb_value": 9,
+            "postgres_value": 9.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 5,
+            "column": "plays",
+            "duckdb_value": 9,
+            "postgres_value": 9.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 6,
+            "column": "plays",
+            "duckdb_value": 9,
+            "postgres_value": 9.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 7,
+            "column": "plays",
+            "duckdb_value": 8,
+            "postgres_value": 8.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 8,
+            "column": "plays",
+            "duckdb_value": 8,
+            "postgres_value": 8.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          },
+          {
+            "row_index": 9,
+            "column": "plays",
+            "duckdb_value": 8,
+            "postgres_value": 8.0,
+            "duckdb_json_type": "int",
+            "postgres_json_type": "float"
+          }
+        ]
+      }
+    ]
+  },
+  "focused_cases": {
+    "CHANNEL_OPS-025": {
+      "columns": [
+        "month",
+        "spend",
+        "mom"
+      ],
+      "rows": [
+        {
+          "month": "2026-01",
+          "spend": 481812.83,
+          "mom": null
+        },
+        {
+          "month": "2026-02",
+          "spend": 1346081.63,
+          "mom": 1.7938
+        },
+        {
+          "month": "2026-03",
+          "spend": 2820198.68,
+          "mom": 1.0951
+        },
+        {
+          "month": "2026-04",
+          "spend": 2578707.29,
+          "mom": -0.0856
+        },
+        {
+          "month": "2026-05",
+          "spend": 2648010.35,
+          "mom": 0.0269
+        }
+      ],
+      "postgres_sql": "WITH m AS (\n  SELECT\n    TO_CHAR(stat_date, 'YYYY-MM') AS month,\n    SUM(spend) AS spend\n  FROM ad_daily_stats\n  WHERE\n    TO_CHAR(stat_date, 'YYYY-MM') <= '2026-05'\n  GROUP BY\n    1\n)\nSELECT\n  month,\n  ROUND(CAST(spend AS DECIMAL), 2) AS spend,\n  ROUND(\n    CAST(CAST((\n      spend - LAG(spend) OVER (ORDER BY month)\n    ) AS DOUBLE PRECISION) / NULLIF(LAG(spend) OVER (ORDER BY month), 0) AS DECIMAL),\n    4\n  ) AS mom\nFROM m\nORDER BY\n  month"
+    },
+    "CONTENT_OPS-036": {
+      "columns": [
+        "interaction_date",
+        "interactions"
+      ],
+      "rows": [
+        {
+          "interaction_date": "2026-01-02",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-07",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-10",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-14",
+          "interactions": 3
+        },
+        {
+          "interaction_date": "2026-01-16",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-17",
+          "interactions": 3
+        },
+        {
+          "interaction_date": "2026-01-18",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-20",
+          "interactions": 2
+        },
+        {
+          "interaction_date": "2026-01-21",
+          "interactions": 2
+        },
+        {
+          "interaction_date": "2026-01-22",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-23",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-26",
+          "interactions": 3
+        },
+        {
+          "interaction_date": "2026-01-27",
+          "interactions": 1
+        },
+        {
+          "interaction_date": "2026-01-28",
+          "interactions": 3
+        },
+        {
+          "interaction_date": "2026-01-29",
+          "interactions": 4
+        },
+        {
+          "interaction_date": "2026-01-30",
+          "interactions": 3
+        },
+        {
+          "interaction_date": "2026-01-31",
+          "interactions": 3
+        }
+      ],
+      "postgres_sql": "SELECT\n  CAST(interacted_at AS DATE) AS interaction_date,\n  COUNT(interaction_id) AS interactions\nFROM video_interactions\nWHERE\n  valid_interaction <> 0 AND TO_CHAR(interacted_at, 'YYYY-MM') = '2026-01'\nGROUP BY\n  1\nORDER BY\n  1"
+    },
+    "CONTENT_OPS-025": {
+      "columns": [
+        "content_title",
+        "plays"
+      ],
+      "rows": [
+        {
+          "content_title": "体育内容001763",
+          "plays": 9.0
+        },
+        {
+          "content_title": "体育内容002502",
+          "plays": 9.0
+        },
+        {
+          "content_title": "体育内容003235",
+          "plays": 9.0
+        },
+        {
+          "content_title": "体育内容006109",
+          "plays": 9.0
+        },
+        {
+          "content_title": "体育内容006165",
+          "plays": 9.0
+        },
+        {
+          "content_title": "体育内容010329",
+          "plays": 9.0
+        },
+        {
+          "content_title": "体育内容014062",
+          "plays": 9.0
+        },
+        {
+          "content_title": "体育内容002575",
+          "plays": 8.0
+        },
+        {
+          "content_title": "体育内容002711",
+          "plays": 8.0
+        },
+        {
+          "content_title": "体育内容003797",
+          "plays": 8.0
+        }
+      ],
+      "postgres_sql": "SELECT\n  c.content_title,\n  SUM(m.play_count) AS plays\nFROM content_daily_metrics AS m\nJOIN contents AS c\n  ON m.content_id = c.content_id\nJOIN content_categories AS cat\n  ON c.category_id = cat.category_id\nWHERE\n  cat.category_name = '体育'\nGROUP BY\n  1\nORDER BY\n  2 DESC NULLS LAST,\n  1\nLIMIT 10"
+    },
+    "GROWTH_OPS-051": {
+      "columns": [
+        "channel_name",
+        "registrations",
+        "activated_users",
+        "activation_rate"
+      ],
+      "rows": [
+        {
+          "channel_name": "自然推荐",
+          "registrations": 249,
+          "activated_users": 217,
+          "activation_rate": 0.8715
+        },
+        {
+          "channel_name": "好友邀请",
+          "registrations": 171,
+          "activated_users": 147,
+          "activation_rate": 0.8596
+        },
+        {
+          "channel_name": "社交分享",
+          "registrations": 108,
+          "activated_users": 90,
+          "activation_rate": 0.8333
+        },
+        {
+          "channel_name": "达人推广",
+          "registrations": 192,
+          "activated_users": 156,
+          "activation_rate": 0.8125
+        },
+        {
+          "channel_name": "应用商店",
+          "registrations": 168,
+          "activated_users": 126,
+          "activation_rate": 0.75
+        },
+        {
+          "channel_name": "线下活动",
+          "registrations": 59,
+          "activated_users": 44,
+          "activation_rate": 0.7458
+        },
+        {
+          "channel_name": "信息流广告",
+          "registrations": 258,
+          "activated_users": 190,
+          "activation_rate": 0.7364
+        },
+        {
+          "channel_name": "搜索广告",
+          "registrations": 168,
+          "activated_users": 116,
+          "activation_rate": 0.6905
+        },
+        {
+          "channel_name": "品牌广告",
+          "registrations": 106,
+          "activated_users": 68,
+          "activation_rate": 0.6415
+        },
+        {
+          "channel_name": "其他渠道",
+          "registrations": 41,
+          "activated_users": 24,
+          "activation_rate": 0.5854
+        }
+      ],
+      "postgres_sql": "SELECT\n  c.channel_name,\n  COUNT(r.registration_id) AS registrations,\n  SUM(CASE WHEN a.is_activated <> 0 THEN 1 ELSE 0 END) AS activated_users,\n  ROUND(\n    CAST(CAST(SUM(CASE WHEN a.is_activated <> 0 THEN 1 ELSE 0 END) * 1.0 AS DOUBLE PRECISION) / NULLIF(COUNT(r.registration_id), 0) AS DECIMAL),\n    4\n  ) AS activation_rate\nFROM user_registrations AS r\nJOIN user_activations AS a\n  ON r.registration_id = a.registration_id\nJOIN acquisition_channels AS c\n  ON r.channel_id = c.channel_id\nWHERE\n  TO_CHAR(r.registered_at, 'YYYY-MM') = '2026-01'\nGROUP BY\n  1\nORDER BY\n  4 DESC NULLS LAST,\n  1"
+    },
+    "GROWTH_OPS-075": {
+      "columns": [
+        "month",
+        "registrations",
+        "activated_users",
+        "activation_rate"
+      ],
+      "rows": [
+        {
+          "month": "2026-05",
+          "registrations": 1603,
+          "activated_users": 1212,
+          "activation_rate": 0.7561
+        }
+      ],
+      "postgres_sql": "SELECT\n  '2026-05' AS month,\n  COUNT(r.registration_id) AS registrations,\n  SUM(CASE WHEN a.is_activated <> 0 THEN 1 ELSE 0 END) AS activated_users,\n  ROUND(\n    CAST(CAST(SUM(CASE WHEN a.is_activated <> 0 THEN 1 ELSE 0 END) * 1.0 AS DOUBLE PRECISION) / COUNT(r.registration_id) AS DECIMAL),\n    4\n  ) AS activation_rate\nFROM user_registrations AS r\nJOIN user_activations AS a\n  ON r.registration_id = a.registration_id\nWHERE\n  TO_CHAR(r.registered_at, 'YYYY-MM') = '2026-05'"
+    },
+    "GROWTH_OPS-076": {
+      "columns": [
+        "channel_name",
+        "observed_users",
+        "retention_rate"
+      ],
+      "rows": [
+        {
+          "channel_name": "好友邀请",
+          "observed_users": 1318,
+          "retention_rate": 0.4499
+        },
+        {
+          "channel_name": "自然推荐",
+          "observed_users": 1878,
+          "retention_rate": 0.3807
+        },
+        {
+          "channel_name": "社交分享",
+          "observed_users": 826,
+          "retention_rate": 0.3692
+        },
+        {
+          "channel_name": "达人推广",
+          "observed_users": 1433,
+          "retention_rate": 0.3475
+        },
+        {
+          "channel_name": "应用商店",
+          "observed_users": 1291,
+          "retention_rate": 0.3215
+        },
+        {
+          "channel_name": "搜索广告",
+          "observed_users": 1336,
+          "retention_rate": 0.2732
+        },
+        {
+          "channel_name": "信息流广告",
+          "observed_users": 2058,
+          "retention_rate": 0.2337
+        },
+        {
+          "channel_name": "线下活动",
+          "observed_users": 482,
+          "retention_rate": 0.2324
+        },
+        {
+          "channel_name": "品牌广告",
+          "observed_users": 967,
+          "retention_rate": 0.2265
+        },
+        {
+          "channel_name": "其他渠道",
+          "observed_users": 365,
+          "retention_rate": 0.1753
+        }
+      ],
+      "postgres_sql": "SELECT\n  c.channel_name,\n  COUNT(*) AS observed_users,\n  ROUND(\n    CAST(CAST(SUM(CASE WHEN r.is_retained <> 0 THEN 1 ELSE 0 END) * 1.0 AS DOUBLE PRECISION) / COUNT(*) AS DECIMAL),\n    4\n  ) AS retention_rate\nFROM user_retention AS r\nJOIN acquisition_channels AS c\n  ON r.channel_id = c.channel_id\nWHERE\n  r.retention_day = 1\nGROUP BY\n  1\nORDER BY\n  3 DESC NULLS LAST,\n  1"
+    },
+    "GROWTH_OPS-126": {
+      "columns": [
+        "touch_channel",
+        "touches",
+        "delivery_rate",
+        "click_rate",
+        "recall_rate"
+      ],
+      "rows": [
+        {
+          "touch_channel": "push",
+          "touches": 5207,
+          "delivery_rate": 0.9366,
+          "click_rate": 0.1755,
+          "recall_rate": 0.102
+        }
+      ],
+      "postgres_sql": "SELECT\n  t.touch_channel,\n  COUNT(*) AS touches,\n  ROUND(\n    CAST(CAST(SUM(CASE WHEN t.delivered <> 0 THEN 1 ELSE 0 END) * 1.0 AS DOUBLE PRECISION) / COUNT(*) AS DECIMAL),\n    4\n  ) AS delivery_rate,\n  ROUND(\n    CAST(CAST(SUM(CASE WHEN t.clicked <> 0 THEN 1 ELSE 0 END) * 1.0 AS DOUBLE PRECISION) / COUNT(*) AS DECIMAL),\n    4\n  ) AS click_rate,\n  ROUND(\n    CAST(CAST(SUM(CASE WHEN r.recalled <> 0 THEN 1 ELSE 0 END) * 1.0 AS DOUBLE PRECISION) / COUNT(*) AS DECIMAL),\n    4\n  ) AS recall_rate\nFROM recall_touches AS t\nJOIN recall_results AS r\n  ON t.touch_id = r.touch_id\nWHERE\n  t.touch_channel = 'push'\nGROUP BY\n  1"
+    },
+    "GROWTH_OPS-148": {
+      "columns": [
+        "channel_name",
+        "actual_rate",
+        "activation_rate_target",
+        "gap"
+      ],
+      "rows": [
+        {
+          "channel_name": "好友邀请",
+          "actual_rate": 0.8372,
+          "activation_rate_target": 0.6454,
+          "gap": 0.1918
+        },
+        {
+          "channel_name": "应用商店",
+          "actual_rate": 0.7582,
+          "activation_rate_target": 0.6281,
+          "gap": 0.1301
+        },
+        {
+          "channel_name": "达人推广",
+          "actual_rate": 0.7887,
+          "activation_rate_target": 0.6767,
+          "gap": 0.112
+        },
+        {
+          "channel_name": "社交分享",
+          "actual_rate": 0.8241,
+          "activation_rate_target": 0.7661,
+          "gap": 0.058
+        },
+        {
+          "channel_name": "自然推荐",
+          "actual_rate": 0.8311,
+          "activation_rate_target": 0.7833,
+          "gap": 0.0478
+        },
+        {
+          "channel_name": "搜索广告",
+          "actual_rate": 0.6647,
+          "activation_rate_target": 0.6267,
+          "gap": 0.038
+        },
+        {
+          "channel_name": "其他渠道",
+          "actual_rate": 0.5686,
+          "activation_rate_target": 0.6482,
+          "gap": -0.0796
+        },
+        {
+          "channel_name": "信息流广告",
+          "actual_rate": 0.6955,
+          "activation_rate_target": 0.8125,
+          "gap": -0.117
+        },
+        {
+          "channel_name": "品牌广告",
+          "actual_rate": 0.5827,
+          "activation_rate_target": 0.7103,
+          "gap": -0.1276
+        },
+        {
+          "channel_name": "线下活动",
+          "actual_rate": 0.5577,
+          "activation_rate_target": 0.6871,
+          "gap": -0.1294
+        }
+      ],
+      "postgres_sql": "WITH actual AS (\n  SELECT\n    r.channel_id,\n    CAST(SUM(CASE WHEN a.is_activated <> 0 THEN 1 ELSE 0 END) * 1.0 AS DOUBLE PRECISION) / COUNT(*) AS actual_rate\n  FROM user_registrations AS r\n  JOIN user_activations AS a\n    ON r.registration_id = a.registration_id\n  WHERE\n    TO_CHAR(r.registered_at, 'YYYY-MM') = '2026-03'\n  GROUP BY\n    1\n)\nSELECT\n  c.channel_name,\n  ROUND(CAST(a.actual_rate AS DECIMAL), 4) AS actual_rate,\n  t.activation_rate_target,\n  ROUND(CAST(a.actual_rate - t.activation_rate_target AS DECIMAL), 4) AS gap\nFROM growth_targets AS t\nJOIN acquisition_channels AS c\n  ON t.channel_id = c.channel_id\nJOIN actual AS a\n  ON t.channel_id = a.channel_id\nWHERE\n  SUBSTRING(t.target_month FROM 1 FOR 7) = '2026-03'\nORDER BY\n  gap DESC NULLS LAST,\n  1"
+    },
+    "GROWTH_OPS-149": {
+      "columns": [
+        "channel_name",
+        "actual_rate",
+        "activation_rate_target",
+        "gap"
+      ],
+      "rows": [
+        {
+          "channel_name": "好友邀请",
+          "actual_rate": 0.8108,
+          "activation_rate_target": 0.6823,
+          "gap": 0.1285
+        },
+        {
+          "channel_name": "应用商店",
+          "actual_rate": 0.8013,
+          "activation_rate_target": 0.7537,
+          "gap": 0.0476
+        },
+        {
+          "channel_name": "自然推荐",
+          "actual_rate": 0.7945,
+          "activation_rate_target": 0.7546,
+          "gap": 0.0399
+        },
+        {
+          "channel_name": "达人推广",
+          "actual_rate": 0.7584,
+          "activation_rate_target": 0.7519,
+          "gap": 0.0065
+        },
+        {
+          "channel_name": "品牌广告",
+          "actual_rate": 0.6393,
+          "activation_rate_target": 0.6342,
+          "gap": 0.0051
+        },
+        {
+          "channel_name": "社交分享",
+          "actual_rate": 0.74,
+          "activation_rate_target": 0.7688,
+          "gap": -0.0288
+        },
+        {
+          "channel_name": "信息流广告",
+          "actual_rate": 0.6863,
+          "activation_rate_target": 0.7183,
+          "gap": -0.032
+        },
+        {
+          "channel_name": "搜索广告",
+          "actual_rate": 0.7554,
+          "activation_rate_target": 0.7888,
+          "gap": -0.0334
+        },
+        {
+          "channel_name": "线下活动",
+          "actual_rate": 0.6429,
+          "activation_rate_target": 0.7696,
+          "gap": -0.1267
+        },
+        {
+          "channel_name": "其他渠道",
+          "actual_rate": 0.5789,
+          "activation_rate_target": 0.7812,
+          "gap": -0.2023
+        }
+      ],
+      "postgres_sql": "WITH actual AS (\n  SELECT\n    r.channel_id,\n    CAST(SUM(CASE WHEN a.is_activated <> 0 THEN 1 ELSE 0 END) * 1.0 AS DOUBLE PRECISION) / COUNT(*) AS actual_rate\n  FROM user_registrations AS r\n  JOIN user_activations AS a\n    ON r.registration_id = a.registration_id\n  WHERE\n    TO_CHAR(r.registered_at, 'YYYY-MM') = '2026-04'\n  GROUP BY\n    1\n)\nSELECT\n  c.channel_name,\n  ROUND(CAST(a.actual_rate AS DECIMAL), 4) AS actual_rate,\n  t.activation_rate_target,\n  ROUND(CAST(a.actual_rate - t.activation_rate_target AS DECIMAL), 4) AS gap\nFROM growth_targets AS t\nJOIN acquisition_channels AS c\n  ON t.channel_id = c.channel_id\nJOIN actual AS a\n  ON t.channel_id = a.channel_id\nWHERE\n  SUBSTRING(t.target_month FROM 1 FOR 7) = '2026-04'\nORDER BY\n  gap DESC NULLS LAST,\n  1"
+    },
+    "GROWTH_OPS-150": {
+      "columns": [
+        "channel_name",
+        "actual_rate",
+        "activation_rate_target",
+        "gap"
+      ],
+      "rows": [
+        {
+          "channel_name": "好友邀请",
+          "actual_rate": 0.9191,
+          "activation_rate_target": 0.6785,
+          "gap": 0.2406
+        },
+        {
+          "channel_name": "社交分享",
+          "actual_rate": 0.7818,
+          "activation_rate_target": 0.6441,
+          "gap": 0.1377
+        },
+        {
+          "channel_name": "应用商店",
+          "actual_rate": 0.7857,
+          "activation_rate_target": 0.7175,
+          "gap": 0.0682
+        },
+        {
+          "channel_name": "搜索广告",
+          "actual_rate": 0.7824,
+          "activation_rate_target": 0.7176,
+          "gap": 0.0648
+        },
+        {
+          "channel_name": "自然推荐",
+          "actual_rate": 0.8473,
+          "activation_rate_target": 0.8107,
+          "gap": 0.0366
+        },
+        {
+          "channel_name": "达人推广",
+          "actual_rate": 0.776,
+          "activation_rate_target": 0.7835,
+          "gap": -0.0075
+        },
+        {
+          "channel_name": "线下活动",
+          "actual_rate": 0.6119,
+          "activation_rate_target": 0.6237,
+          "gap": -0.0118
+        },
+        {
+          "channel_name": "信息流广告",
+          "actual_rate": 0.6667,
+          "activation_rate_target": 0.7082,
+          "gap": -0.0415
+        },
+        {
+          "channel_name": "其他渠道",
+          "actual_rate": 0.5814,
+          "activation_rate_target": 0.7158,
+          "gap": -0.1344
+        },
+        {
+          "channel_name": "品牌广告",
+          "actual_rate": 0.5308,
+          "activation_rate_target": 0.756,
+          "gap": -0.2252
+        }
+      ],
+      "postgres_sql": "WITH actual AS (\n  SELECT\n    r.channel_id,\n    CAST(SUM(CASE WHEN a.is_activated <> 0 THEN 1 ELSE 0 END) * 1.0 AS DOUBLE PRECISION) / COUNT(*) AS actual_rate\n  FROM user_registrations AS r\n  JOIN user_activations AS a\n    ON r.registration_id = a.registration_id\n  WHERE\n    TO_CHAR(r.registered_at, 'YYYY-MM') = '2026-05'\n  GROUP BY\n    1\n)\nSELECT\n  c.channel_name,\n  ROUND(CAST(a.actual_rate AS DECIMAL), 4) AS actual_rate,\n  t.activation_rate_target,\n  ROUND(CAST(a.actual_rate - t.activation_rate_target AS DECIMAL), 4) AS gap\nFROM growth_targets AS t\nJOIN acquisition_channels AS c\n  ON t.channel_id = c.channel_id\nJOIN actual AS a\n  ON t.channel_id = a.channel_id\nWHERE\n  SUBSTRING(t.target_month FROM 1 FOR 7) = '2026-05'\nORDER BY\n  gap DESC NULLS LAST,\n  1"
+    },
+    "CHANNEL_OPS-051": {
+      "columns": [
+        "channel_name",
+        "conversions",
+        "conversion_rate",
+        "cpa"
+      ],
+      "rows": [
+        {
+          "channel_name": "达人推广",
+          "conversions": 5579.0,
+          "conversion_rate": 0.1175,
+          "cpa": 11.43
+        },
+        {
+          "channel_name": "信息流广告",
+          "conversions": 17785.0,
+          "conversion_rate": 0.1048,
+          "cpa": 11.55
+        },
+        {
+          "channel_name": "搜索广告",
+          "conversions": 9662.0,
+          "conversion_rate": 0.1166,
+          "cpa": 12.21
+        },
+        {
+          "channel_name": "品牌广告",
+          "conversions": 6725.0,
+          "conversion_rate": 0.0952,
+          "cpa": 14.08
+        }
+      ],
+      "postgres_sql": "SELECT\n  c.channel_name,\n  SUM(s.conversions) AS conversions,\n  ROUND(\n    CAST(CAST(SUM(s.conversions) * 1.0 AS DOUBLE PRECISION) / NULLIF(SUM(s.clicks), 0) AS DECIMAL),\n    4\n  ) AS conversion_rate,\n  ROUND(\n    CAST(CAST(SUM(s.spend) AS DOUBLE PRECISION) / NULLIF(SUM(s.conversions), 0) AS DECIMAL),\n    2\n  ) AS cpa\nFROM ad_daily_stats AS s\nJOIN ad_campaigns AS p\n  ON s.ad_campaign_id = p.ad_campaign_id\nJOIN acquisition_channels AS c\n  ON p.channel_id = c.channel_id\nWHERE\n  TO_CHAR(s.stat_date, 'YYYY-MM') = '2026-01'\nGROUP BY\n  1\nORDER BY\n  4,\n  1"
+    },
+    "CHANNEL_OPS-136": {
+      "columns": [
+        "channel_name",
+        "actual_cpa",
+        "target_cpa",
+        "gap"
+      ],
+      "rows": [
+        {
+          "channel_name": "信息流广告",
+          "actual_cpa": 11.55,
+          "target_cpa": 211.25,
+          "gap": -199.7
+        },
+        {
+          "channel_name": "品牌广告",
+          "actual_cpa": 14.08,
+          "target_cpa": 180.63,
+          "gap": -166.55
+        },
+        {
+          "channel_name": "搜索广告",
+          "actual_cpa": 12.21,
+          "target_cpa": 149.87,
+          "gap": -137.66
+        },
+        {
+          "channel_name": "达人推广",
+          "actual_cpa": 11.43,
+          "target_cpa": 143.5,
+          "gap": -132.07
+        }
+      ],
+      "postgres_sql": "WITH actual AS (\n  SELECT\n    p.channel_id,\n    CAST(SUM(s.spend) AS DOUBLE PRECISION) / NULLIF(SUM(s.conversions), 0) AS cpa\n  FROM ad_daily_stats AS s\n  JOIN ad_campaigns AS p\n    ON s.ad_campaign_id = p.ad_campaign_id\n  WHERE\n    TO_CHAR(s.stat_date, 'YYYY-MM') = '2026-01'\n  GROUP BY\n    1\n)\nSELECT\n  c.channel_name,\n  ROUND(CAST(a.cpa AS DECIMAL), 2) AS actual_cpa,\n  t.target_cpa,\n  ROUND(CAST(a.cpa - t.target_cpa AS DECIMAL), 2) AS gap\nFROM channel_targets AS t\nJOIN acquisition_channels AS c\n  ON t.channel_id = c.channel_id\nJOIN actual AS a\n  ON t.channel_id = a.channel_id\nWHERE\n  SUBSTRING(t.target_month FROM 1 FOR 7) = '2026-01'\nORDER BY\n  gap,\n  1"
+    }
+  },
+  "accepted_data_equivalence": {
+    "kind": "accepted_M1_B_import_and_validation",
+    "validation_evidence_verified": true,
+    "logical_database_id": "short_video_ops",
+    "postgres_source_id": "short_video_ops_postgres",
+    "postgres_physical_schema": "askdata_ops",
+    "duckdb_data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+    "postgres_data_version": "882ba07c90b4db91328344b37974f362edf737b1f4f82379c8658fe514c10fa1",
+    "postgres_physical_schema_version": "b12bffb567ee4aa3ca126d48154ddfb36c1721d1af7c6e8b65efc4780615a817",
+    "import_report_sha256": "215c9ce2e1ae53e140b7c17e4222d8eae29dcce7dd423ab03f74918d13032ce9",
+    "validation_report_sha256": "1e8e9b757f6391b15766169b631f3c7d287a1fdd95ea933570773989a57851f6"
+  },
+  "new_model_request_count": 0,
+  "database_connections_opened_for_review": 0,
+  "server_regression_logs_reviewed_in_this_turn": false,
+  "pending": [
+    "Remaining 351 explicit PostgreSQL Gold variants",
+    "Formal PostgreSQL live evaluation and service E2E acceptance"
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "stage": "M1 A E2E review",
+  "status": "passed_with_recorded_followups",
+  "reviewed_at": "2026-10-07T05:14:16.882439+00:00",
+  "source_report_sha256": "5ca11905581ea279d898af744cdf9116aca210ef93ac88164e2cb2b5bac64056",
+  "source_run_id": "6f84aa1ac88d44479b08f62160402b2a",
+  "source_identity": {
+    "logical_database_id": "short_video_ops",
+    "source_id": "short_video_ops_duckdb",
+    "backend": "duckdb",
+    "dialect": "duckdb",
+    "prompt_dialect": "DuckDB",
+    "physical_schema": "main",
+    "catalog_version": "68bc24f95eef81021c03a8d8819b00c43fc04fbaf13fbbf295268ebd857e60c2",
+    "data_version": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8"
+  },
+  "verified_versions": {
+    "data": "d23481ffef242c04bc2adcf1f5a7082ec65ce392d30a48b16e7ccb0b3a3809b8",
+    "schema": "8f5f97512879342a95da5df4973cf9c3b622b9d3bd8e7dec2c3b9ef7a2641ede",
+    "application": "dc51bad3c8be8b61bb345a26c407acb2cb8635859608e5dbed5ede7fedee5231",
+    "evaluator": "1d7179a2f70dab9fc52d7ab9a1cec74489106aae2868dd9b26227f8703c0b758",
+    "evaluation_code": "5a7f7df1efb307611648f81cec5887de1774c7dae4ff40c1229221309817e87f"
+  },
+  "verified_dataset": {
+    "source": "evaluation/cases/all_cases.jsonl",
+    "case_list": "evaluation/cases/e2e_behavior.json",
+    "case_ids": [
+      "GROWTH_OPS-001",
+      "E2E-ROUTE-DIRECT",
+      "E2E-ROUTE-QA",
+      "E2E-PERMISSION-READ",
+      "E2E-CLARIFY-START",
+      "E2E-CLARIFY-RESUME",
+      "E2E-EMPTY-RESULT",
+      "E2E-FAILURE-PREPROCESS"
+    ],
+    "version": "0e5fb4622d37de473a2af3c09bcee8f1007fb5b05aa849cefc20be7698d816cf"
+  },
+  "summary": {
+    "case_count": 8,
+    "behavior_pass_count": 8,
+    "behavior_success_rate": 1.0,
+    "behavior_by_type": {
+      "database_query": {
+        "count": 1,
+        "passed": 1
+      },
+      "direct_response": {
+        "count": 1,
+        "passed": 1
+      },
+      "data_qa": {
+        "count": 1,
+        "passed": 1
+      },
+      "permission_denial": {
+        "count": 1,
+        "passed": 1
+      },
+      "clarification_start": {
+        "count": 1,
+        "passed": 1
+      },
+      "clarification_recovery": {
+        "count": 1,
+        "passed": 1
+      },
+      "empty_result": {
+        "count": 1,
+        "passed": 1
+      },
+      "controlled_failure": {
+        "count": 1,
+        "passed": 1
+      }
+    },
+    "sql_case_count": 5,
+    "result_scored_count": 2,
+    "result_accuracy": 1.0,
+    "strict_scored_count": 2,
+    "strict_result_accuracy": 1.0,
+    "unscored_count": 6
+  },
+  "new_model_request_count": 0,
+  "graph_source_identity_verified_cases": [
+    "GROWTH_OPS-001",
+    "E2E-CLARIFY-START",
+    "E2E-CLARIFY-RESUME",
+    "E2E-EMPTY-RESULT"
+  ],
+  "clarification": {
+    "same_task_id": "a83f11258593",
+    "selected_option": {
+      "id": "option_1",
+      "label": "转化事件数",
+      "description": "按渠道产生的转化事件总数量从高到低排序",
+      "recommended": true
+    },
+    "standalone_query": "查询2026年5月表现最好的渠道\n\n用户已确认的查询口径：\n- 表现最好的衡量指标：转化事件数；按渠道产生的转化事件总数量从高到低排序\n按以上确认口径继续查询，已确认的参数无需再次询问。",
+    "resolution_log": {
+      "stage": "clarification_resolved",
+      "success": true,
+      "parameter": "表现最好的衡量指标",
+      "option_id": "option_1",
+      "label": "转化事件数",
+      "description": "按渠道产生的转化事件总数量从高到低排序",
+      "question": "请问“表现最好”具体是指哪个指标最高？"
+    }
+  },
+  "sql_replays": [
+    {
+      "case_id": "GROWTH_OPS-001",
+      "sql": "SELECT\n  STRFTIME(metric_date, '%Y-%m') AS month,\n  SUM(new_users) AS new_users\nFROM growth_daily_metrics\nWHERE metric_date >= '2026-01-01' AND metric_date < '2027-01-01'\nGROUP BY STRFTIME(metric_date, '%Y-%m')\nORDER BY month ASC",
+      "columns": [
+        "month",
+        "new_users"
+      ],
+      "rows": [
+        {
+          "month": "2026-01",
+          "new_users": 1520
+        },
+        {
+          "month": "2026-02",
+          "new_users": 1440
+        },
+        {
+          "month": "2026-03",
+          "new_users": 1538
+        },
+        {
+          "month": "2026-04",
+          "new_users": 1525
+        },
+        {
+          "month": "2026-05",
+          "new_users": 1603
+        },
+        {
+          "month": "2026-06",
+          "new_users": 1475
+        },
+        {
+          "month": "2026-07",
+          "new_users": 1555
+        },
+        {
+          "month": "2026-08",
+          "new_users": 1344
+        }
+      ],
+      "server_rows_equal": true,
+      "loose_correct": true,
+      "strict_correct": true,
+      "gold_result_source": "cache",
+      "comparison_reason": "结果一致（忽略列顺序和辅助列）",
+      "strict_reason": "严格结果一致"
+    },
+    {
+      "case_id": "E2E-CLARIFY-RESUME",
+      "sql": "SELECT\n  ac.channel_name,\n  COUNT(*) AS conversion_event_count\nFROM channel_conversion_events cce\nJOIN acquisition_channels ac ON cce.channel_id = ac.channel_id\nWHERE cce.converted_at >= '2026-05-01' AND cce.converted_at < '2026-06-01'\nGROUP BY ac.channel_name\nORDER BY conversion_event_count DESC, ac.channel_name ASC",
+      "columns": [
+        "channel_name",
+        "conversion_event_count"
+      ],
+      "rows": [
+        {
+          "channel_name": "信息流广告",
+          "conversion_event_count": 434
+        },
+        {
+          "channel_name": "达人推广",
+          "conversion_event_count": 339
+        },
+        {
+          "channel_name": "搜索广告",
+          "conversion_event_count": 303
+        },
+        {
+          "channel_name": "品牌广告",
+          "conversion_event_count": 198
+        }
+      ],
+      "server_rows_equal": true
+    },
+    {
+      "case_id": "E2E-EMPTY-RESULT",
+      "sql": "SELECT user_id, registered_at FROM user_registrations WHERE registered_at >= '1900-01-01' AND registered_at < '1900-01-02' LIMIT 20",
+      "columns": [
+        "user_id",
+        "registered_at"
+      ],
+      "rows": [],
+      "server_rows_equal": true,
+      "loose_correct": true,
+      "strict_correct": true,
+      "gold_result_source": "execution",
+      "comparison_reason": "结果一致",
+      "strict_reason": "严格结果一致"
+    }
+  ],
+  "constraint_warnings": [
+    {
+      "case_id": "E2E-CLARIFY-RESUME",
+      "warnings": [
+        "问题包含月份 2026-05，但没有可用指标时间字段可用于确定过滤列"
+      ]
+    }
+  ],
+  "recovered_tool_failures": [
+    {
+      "case_id": "E2E-CLARIFY-RESUME",
+      "sql": "SELECT\n  ac.channel_name,\n  COUNT(*) AS conversion_event_count\nFROM short_video_ops.channel_conversion_events cce\nJOIN short_video_ops.acquisition_channels ac ON cce.channel_id = ac.channel_id\nWHERE cce.converted_at >= '2026-05-01' AND cce.converted_at < '2026-06-01'\nGROUP BY ac.channel_name\nORDER BY conversion_event_count DESC, ac.channel_name ASC",
+      "error": "SQL引用了不允许的schema或catalog限定来源"
+    }
+  ],
+  "growth_source_coverage": {
+    "min_metric_date": "2026-01-01",
+    "max_metric_date": "2026-08-28",
+    "row_count": 2400,
+    "months_in_2026": [
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08"
+    ]
+  },
+  "response_quality_followups": [
+    {
+      "case_id": "E2E-ROUTE-DIRECT",
+      "issue": "Reply identifies an internal preprocessing component instead of the user-facing assistant."
+    },
+    {
+      "case_id": "E2E-ROUTE-QA",
+      "issue": "Reply conflates new_users with registered or activated users and speculates about causes without evidence."
+    },
+    {
+      "case_id": "GROWTH_OPS-001",
+      "issue": "Validation calls a correct result partial because the fixed dataset contains only Jan-Aug; missing months alone do not prove incomplete SQL."
+    }
+  ],
+  "limits": [
+    "Service-entry in-process evaluation, not real HTTP/browser acceptance.",
+    "Only the first clarification option was exercised; recovery is not a Gold-scored case.",
+    "Empty-set equality verifies state and columns but alone cannot prove all date-boundary behavior.",
+    "Four database-graph identities are directly visible; non-database/preprocessing-failure paths have no graph.",
+    "No application, case, original report, or scoring-rule changes."
+  ]
+}

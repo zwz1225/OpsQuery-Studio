@@ -1,0 +1,102 @@
+{
+  "stage": "M3 E02 minimum adaptation design; implementation pending",
+  "date": "2026-10-22",
+  "active_variable": "demand_closed_authorized_schema_context",
+  "baseline": "verified_v4_behavior; E01 output-contract switch disabled",
+  "limits": {
+    "max_fields": 20,
+    "max_intent_additions": 8,
+    "max_coverage_additions": 4,
+    "max_related_hops": 2,
+    "max_model_http": 16,
+    "max_chat": 10,
+    "max_sql_tools": 3
+  },
+  "work_items": [
+    {
+      "id": "D1",
+      "item": "Collect output/condition/relation requirements with original spans, roles and unresolved ownership",
+      "implementation_pending": true
+    },
+    {
+      "id": "D2",
+      "item": "Retain bounded public condition coverage hints across anchor rejection; samples alone never become predicates",
+      "implementation_pending": true
+    },
+    {
+      "id": "D3",
+      "item": "Expose declared FK and undeclared reviewed relation candidates with separate authority and source/version binding",
+      "implementation_pending": true
+    },
+    {
+      "id": "D4",
+      "item": "Budget required fields and join keys together; record disconnected/cap/ambiguous status instead of claiming coverage",
+      "implementation_pending": true
+    },
+    {
+      "id": "D5",
+      "item": "Keep existing generation/scoring/budgets and clarify on unresolved required roles; no automatic SQL rewriting",
+      "implementation_pending": true
+    }
+  ],
+  "positive_cases": [
+    "P1 Explicit public payment currency + unique authorized currency owner + stored value match => coverage candidate, not a sample-only hard predicate",
+    "P2 Reviewed parent unique key + compatible child key + recorded same-domain evidence => bounded annotated candidate relation",
+    "P3 Explicit evidence output group across selected tables => diagnose missing join keys even when output fields exist",
+    "P4 Declared FK bridge => preserve prior path behavior and include both key ends",
+    "P5 Composite unique index => preserve entire key; never treat a subset as unique",
+    "P6 Output/filter/key closure within original20 fields and2 hops => record reason and authority for each field"
+  ],
+  "negative_cases": [
+    "N1 Same name/type alone without ownership or verified unique target => no confirmed edge",
+    "N2 Profile sample code without an explicit public condition role => advisory coverage only",
+    "N3 Multiple currency owners or competing actor/owner edges => retain ambiguity; no mandatory conjunction",
+    "N4 Nonunique parent, orphan or incompatible key types => reject high-confidence relation candidate",
+    "N5 A null or orphan child does not authorize filling data, coercing IDs or arbitrary inner joins",
+    "N6 Cross-database/schema or unauthorized field => reject before value profiling",
+    "N7 Field/addition/hop cap exceeded => record incomplete context; do not drop the business condition silently",
+    "N8 Only old3 samples or frozen-dump support without live source binding => do not claim current server validation",
+    "N9 Token case, renamed case_id or public paraphrase => no case-ID rules or answer-dependent branch",
+    "N10 E01 output observer, numeric unit behavior, Gold and EX policy => unchanged/disabled as specified"
+  ],
+  "implementation_tests_executed": false,
+  "server_generation_started": false,
+  "new_model_request_count": 0,
+  "PostgreSQL_connected": false,
+  "holdout_used_for_tuning": false,
+  "deferred": [
+    "0085 public formula realization",
+    "0050 school-name role ambiguity",
+    "per-stage latency instrumentation as separate observation work"
+  ],
+  "evidence_sha256": "d03bcb1e9c384a3237484a7d1574fce6ce1baa257570791ebad794e24aabf472",
+  "orphan_scope_sha256": "d07938812906e5231df8d076857b058470d07c567bf97f14f4406f81187a28f7",
+  "review_completed": true,
+  "implementation_started": false,
+  "first_candidate_scope": "Bounded condition-field and key coverage for a uniquely grounded condition through a reviewed, source-bound zero-orphan relation candidate; record rejected proposals first.",
+  "case1479": {
+    "status": "ready_for_minimal_candidate_design",
+    "required_fields": [
+      "debit_card_specializing.customers.currency",
+      "debit_card_specializing.customers.customerid",
+      "debit_card_specializing.yearmonth.customerid"
+    ],
+    "declared_foreign_key": false,
+    "review_candidate_only": true,
+    "source_key_coverage": 1.0
+  },
+  "case0407": {
+    "status": "diagnostic_and_relation_review_only_for_first_candidate",
+    "declared_foreign_key": false,
+    "orphan_rows": 16,
+    "german_orphan_rows": 3,
+    "baseline_selection_full_20": true,
+    "deferred": [
+      "Undeclared relation behavior with orphans and unspecified join type",
+      "Allocation of required join keys when20 selected fields already occupy the cap"
+    ]
+  },
+  "metadata_gap": "Runtime catalog retains primary-key role and declared foreign keys; unique secondary keys are verified but not represented as relation evidence.",
+  "graph_budget_caveat": "Existing20 applies before graph key supplementation; first candidate must not silently reinterpret this as a pre-existing hard graph cap or bypass it.1479 needs only5 fields.0407 allocation remains separate.",
+  "index_and_pair_caveat": "E01 requires identical index-producer code and identical observed Schema. A retrieval experiment needs separately frozen index provenance and comparison rules; never force old cache hits or edit E01 conclusions."
+}
